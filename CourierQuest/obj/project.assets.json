@@ -1,94 +1,11 @@
 {
   "version": 3,
   "targets": {
-    ".NETStandard,Version=v2.1": {
-      "Unity.XR.Hands.Samples.VisualizerSample/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Unity.XR.Hands.Samples.VisualizerSample.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Unity.XR.Hands.Samples.VisualizerSample.dll": {}
-        }
-      },
-      "Unity.XR.Interaction.Toolkit.Samples.Hands/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.Hands.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.Hands.dll": {}
-        }
-      },
-      "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.dll": {}
-        }
-      },
-      "Unity.XR.Interaction.Toolkit.Samples.StarterAssets/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.dll": {}
-        }
-      },
-      "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.dll": {}
-        }
-      }
-    }
+    ".NETStandard,Version=v2.1": {}
   },
-  "libraries": {
-    "Unity.XR.Hands.Samples.VisualizerSample/1.0.0": {
-      "type": "project",
-      "path": "Unity.XR.Hands.Samples.VisualizerSample.csproj",
-      "msbuildProject": "Unity.XR.Hands.Samples.VisualizerSample.csproj"
-    },
-    "Unity.XR.Interaction.Toolkit.Samples.Hands/1.0.0": {
-      "type": "project",
-      "path": "Unity.XR.Interaction.Toolkit.Samples.Hands.csproj",
-      "msbuildProject": "Unity.XR.Interaction.Toolkit.Samples.Hands.csproj"
-    },
-    "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor/1.0.0": {
-      "type": "project",
-      "path": "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj",
-      "msbuildProject": "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj"
-    },
-    "Unity.XR.Interaction.Toolkit.Samples.StarterAssets/1.0.0": {
-      "type": "project",
-      "path": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj",
-      "msbuildProject": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj"
-    },
-    "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor/1.0.0": {
-      "type": "project",
-      "path": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj",
-      "msbuildProject": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETStandard,Version=v2.1": [
-      "Unity.XR.Hands.Samples.VisualizerSample >= 1.0.0",
-      "Unity.XR.Interaction.Toolkit.Samples.Hands >= 1.0.0",
-      "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor >= 1.0.0",
-      "Unity.XR.Interaction.Toolkit.Samples.StarterAssets >= 1.0.0",
-      "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor >= 1.0.0"
-    ]
+    ".NETStandard,Version=v2.1": []
   },
   "packageFolders": {
     "C:\\Users\\GGPC\\.nuget\\packages\\": {}
@@ -96,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Assembly-CSharp.csproj",
-      "projectName": "Assembly-CSharp",
-      "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Assembly-CSharp.csproj",
+      "projectUniqueName": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj",
+      "projectName": "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor",
+      "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj",
       "packagesPath": "C:\\Users\\GGPC\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\obj\\",
       "projectStyle": "PackageReference",
@@ -114,23 +31,7 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {
-            "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Hands.Samples.VisualizerSample.csproj": {
-              "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Hands.Samples.VisualizerSample.csproj"
-            },
-            "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.Hands.csproj": {
-              "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.Hands.csproj"
-            },
-            "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj": {
-              "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj"
-            },
-            "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj": {
-              "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj"
-            },
-            "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj": {
-              "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
