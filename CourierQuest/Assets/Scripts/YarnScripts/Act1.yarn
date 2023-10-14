@@ -1,0 +1,96 @@
+﻿title: Start
+position: -156,-57
+---
+The land has been ravaged by the ongoing war between human and goblin civilizations. It's been 50 years. However, recently, the war has escalated. Goblins have been spotted near major human settlements. Rumors abound that their intentions for an imminent assault are gaining momentum.
+
+Where are you in all of this you ask? You are a villager living in the kingdom of Granbell, a large human settlement ruled by the Aurelian royal family. You've had a comfortable life so far, working as a simple courier. Now that the war has escalated, courier jobs have been scarce. You've been taking any job that the courier guildhall provides just to survive.
+
+Yet today, you might find yourself delivering something that could alter the course of your destiny forever.
+
+<<jump Start_the_day>>
+===
+
+title: Start_the_day
+position: 182,-84
+---
+You wake up. Look around. The weather is grey and gloomy. Looks like it might rain. 
+
+You need to make a delivery today. You start walking to work.
+
+Frankie, your childhood friend walks beside you leading a cow alongside him.
+
+Frankie: Hey pal! How’s your morning going?
+
+What do you say? (Timed)
+-> Say that you're headed to work.
+    <<jump Say_that_youre_headed_to_work>>
+-> Jokingly say that you’re going to the tavern.
+    <<jump Jokingly_say_that_youre_going_to_the_tavern>>
+Timeout. Ignore Frankie.
+    <<jump Ignore_Frankie>>
+
+<<declare $magicRock = false>>
+<<declare $whistle = false>>
+
+<<declare $metPetunia = false>>
+<<declare $pattersbyOriginal = false>>
+<<declare $metBjorn = false>>
+<<declare $muscleSpirit = false>>
+
+<<declare $metOli = false>>
+<<declare $diamond = false>>
+<<declare $metMudbrick = false>>
+<<declare $animalPendant = false>>
+<<declare $metFinn = false>>
+<<declare $smokeVial = false>>
+
+<<declare $metLeyton = false>>
+<<declare $dagger = false>>
+<<declare $metThakali = false>>
+<<declare $axe = false>>
+<<declare $metDaisy = false>>
+<<declare $lantern = false>>
+<<declare $magicalCompass = false>>
+<<declare $metVal = false>>
+<<declare $assassin = false>>
+===
+
+title: Say_that_youre_headed_to_work
+position: 594,-806
+---
+Player: Morning Frankie! I'm just headed to work today. How's Bessie doing?
+
+Frankie: Oh you know how the old girl is.
+
+Frankie pats the cow on the belly.
+
+Frankie: Have you heard the news about the war.
+
+What do you say?
+-> Ask about the war.
+-> Say that you don't care.
+-> Tell Frankie that you'd better hurry to work. 
+===
+
+title: Jokingly_say_that_youre_going_to_the_tavern
+position: 649,-489
+---
+Player: I'm on my way to the tavern for an early morning pick me up.
+
+Frankie: Ha ha! Sounds like some serious business. Have you heard the news about the war.
+
+What do you say?
+-> Ask about the war.
+-> Say that you don't care.
+-> Tell Frankie that you'd better hurry to work.
+===
+
+title: Ignore_Frankie
+position: 660,-75
+---
+*You ignore Frankie*
+
+Frankie: Alright buddy. Just be careful when delivering today!
+
+-> Go to the courier guildhall.
+===
