@@ -26,11 +26,20 @@ What do you say? (Timed)
     <<jump Say_that_youre_headed_to_work>>
 -> Jokingly say that you’re going to the tavern.
     <<jump Jokingly_say_that_youre_going_to_the_tavern>>
-Timeout. Ignore Frankie.
+-> Timeout. Ignore Frankie.
+    <<wait 5>> 
     <<jump Ignore_Frankie>>
 
+<<declare $specialPackage = false>>
 <<declare $magicRock = false>>
+
+<<declare $firstPackage = "">>
+<<declare $secondPackage = "">>
+<<declare $thirdPackage = "">>
+<<declare $followedPath = true>>
 <<declare $whistle = false>>
+<<declare $whistleBlown = false>>
+<<declare $path = "">>
 
 <<declare $metPetunia = false>>
 <<declare $pattersbyOriginal = false>>
@@ -55,6 +64,17 @@ Timeout. Ignore Frankie.
 <<declare $assassin = false>>
 ===
 
+title: Ignore_Frankie
+position: 660,-75
+---
+*You ignore Frankie*
+
+Frankie: Alright buddy. Just be careful when delivering today!
+
+-> Go to the courier guildhall.
+    <<jump Go_to_the_courier_guildhall>>
+===
+
 title: Say_that_youre_headed_to_work
 position: 594,-806
 ---
@@ -68,8 +88,11 @@ Frankie: Have you heard the news about the war.
 
 What do you say?
 -> Ask about the war.
+    <<jump Ask_about_the_war>>
 -> Say that you don't care.
--> Tell Frankie that you'd better hurry to work. 
+    <<jump Say_that_you_dont_care>>
+-> Tell Frankie that you'd better hurry to work.
+    <<jump Tell_Frankie_that_youd_better_hurry_to_work>>
 ===
 
 title: Jokingly_say_that_youre_going_to_the_tavern
@@ -81,16 +104,1008 @@ Frankie: Ha ha! Sounds like some serious business. Have you heard the news about
 
 What do you say?
 -> Ask about the war.
+    <<jump Ask_about_the_war>>
 -> Say that you don't care.
+    <<jump Say_that_you_dont_care>>
 -> Tell Frankie that you'd better hurry to work.
+    <<jump Tell_Frankie_that_youd_better_hurry_to_work>>
 ===
 
-title: Ignore_Frankie
-position: 660,-75
+title: Ask_about_the_war
 ---
-*You ignore Frankie*
+Player: What's happened now?
 
-Frankie: Alright buddy. Just be careful when delivering today!
+Frankie: Don't you know? Eldoria has been taken over by goblins. Which means that we're the next closest human settlement. What's worse is that people are saying that the Aurelian's haven't been putting any more guards on the walls of the kingdom. Any day now we'll be swarmed with goblins. Make sure you're prepared for anything.
+
+What do you say?
+-> Ask Frankie what goblins look like.
+    <<jump Ask_Frankie_what_goblins_look_like>>
+-> Tell Frankie that he's acting a little crazy.
+    <<jump Tell_Frankie_that_hes_acting_a_little_crazy>>
+===
+
+title: Say_that_you_dont_care
+---
+Player: Sorry Frankie, I don't feel like hearing about the war today. I've already got enough on my plate.
+
+Frankie: Well, at least be careful about delivering today. You might see some goblins.
+
+What do you say?
+-> Tell Frankie that you'd better hurry to work.
+    <<jump Tell_Frankie_that_youd_better_hurry_to_work>>
+-> Tell Frankie that he's acting a little crazy.
+    <<jump Tell_Frankie_that_hes_acting_a_little_crazy>>
+-> Ignore Frankie.
+    <<jump Ignore_Frankie>>
+===
+
+title: Tell_Frankie_that_hes_acting_a_little_crazy
+---
+Player: Frankie, that sounds like nonsense. I heard that the Goblins haven't made any attacks since the Veridian Vale, a year ago.
+
+Frankie: That's just it! I don't think any of us were expecting it. Apparently, there were Goblins disguised as people within the walls of Eldoria. *Frankie wearily looks around*. 
+
+What do you do?
+-> Ask Frankie what goblins look like.
+    <<jump Ask_Frankie_what_goblins_look_like>>
+-> Tell Frankie that you'd better hurry to work.
+    <<jump Tell_Frankie_that_youd_better_hurry_to_work>>
+===
+
+title: Ask_Frankie_what_goblins_look_like
+---
+Player: I've never seen a goblin. What do they look like? In case I ever run across one.
+
+Frankie: Oh, they're terribly hideous creatures. Short. Big ears. Big nose. Green. Thats about all I can remember. If you ever come across one make sure you run as fast as you can. They can be cunning little creatures.
+
+What do you say?
+-> Thank Frankie for the info.
+    <<jump Thank_Frankie_for_the_info>>
+-> Jokingly tell Frankie that you think you've seen plenty of drunk goblins at the tavern.
+    <<jump Jokingly_tell_Frankie_that_you_think_youve_seen_plenty_of_drunk_goblins_at_the_tavern>>
+===
+
+title: Thank_Frankie_for_the_info
+---
+Player: Thanks for the info Frankie. I'll look out for them if I end up delivering outside of the kingdom today.
+
+Frankie: No problem. Oh one more thing, I heard that they don't like magic. Here take my light-rock. The rock will shine with a bright glowing magical light when you say the command word, "Luminos".
+
+*Frankie hands you a magical rock*
+
+What do you do?
+-> Take the rock.
+    <<jump Take_the_rock>>
+-> Tell Frankie that you'd better hurry to work.
+    <<jump Tell_Frankie_that_youd_better_hurry_to_work>>
+===
+
+title: Jokingly_tell_Frankie_that_you_think_youve_seen_plenty_of_drunk_goblins_at_the_tavern
+---
+Player: From that descrption, I think I've seen plenty of goblins coming out of the tavern at night.
+
+Frankie: Ha ha, that sounds about right. But seriously be cafeful today when you're delivering outside of the kingdom.
+
+What do you say?
+-> Thank Frankie for the info.
+    <<jump Thank_Frankie_for_the_info>>
+-> Tell Frankie that you'd better hurry to work.
+    <<jump Tell_Frankie_that_youd_better_hurry_to_work>>
+===
+
+title: Take_the_rock
+---
+*You take the rock and pocket it for later.*
+
+Player: Thanks again Frankie. So I just hold out the rock and say "Luminos".
+
+Frankie: You got it.
+
+What do you say?
+-> Tell Frankie that you'd better hurry to work.
+    <<jump Tell_Frankie_that_youd_better_hurry_to_work>>
+-> Ignore Frankie.
+    <<jump Ignore_Frankie>>
+
+<<set $magicRock to true>>
+===
+
+title: Tell_Frankie_that_youd_better_hurry_to_work
+---
+Player: Sorry Frankie, I've gotta get to the guildhall before the other couriers take all the packages.
+
+Frankie: No problem. Seeya round buddy!
 
 -> Go to the courier guildhall.
+    <<jump Go_to_the_courier_guildhall>>
+===
+
+title: Go_to_the_courier_guildhall
+---
+You arrive at the courier guildhall. It doesn't seem very busy today. Hopefully there are still  packages to deliver. Maybe the other couriers took all the packages already.
+
+You spot your boss, Mistress Ellastra, she seems to be talking to a few guards.
+
+Ellastra: Yes, we'll deliver this right away. I'll make sure to get our best courier on the job. Hopefully this offering will fix things for everyone.
+
+Mistress Ellastra turns around and sees that you've turned up to work.
+
+What do you say? (Timed)
+-> Ask what that was about.
+    <<jump Ask_what_that_was_about>>
+-> Ask if there are any packages for you today.
+    <<jump Ask_if_there_are_any_packages_for_you_today>>
+Timeout. Say nothing.
+    <<jump Say_nothing>>
+
+<<set $specialPackage to false>>
+===
+
+title: Say_nothing
+---
+*You stand there saying nothing.*
+
+Ellastra: Well, look who turned up early today. Take your pick of the packages.
+
+-> Go choose your package deliveries.
+    <<jump Go_choose_your_package_deliveries>>
+===
+
+title: Ask_what_that_was_about
+---
+Player: What were you talking to the guards about? Are we shutting down?
+
+Ellastra: Don't be ridiculous there will always be a need for couriers. The guards and I were just speaking about a very special package that needs delivering ASAP, and since you've arrived today at this time. How would you like to deliver the package?
+
+What do you say?
+-> Say that you can deliver the package.
+    <<jump Say_that_you_can_deliver_the_package>>
+-> Turn down the special delivery.
+    <<jump Turn_down_the_special_delivery>>
+===
+
+title: Say_that_you_can_deliver_the_package
+---
+Player: I can deliver the package. But why's it so special?
+
+Ellastra: I can't disclose that to you until it has been delivered.
+
+What do you say?
+-> Ask what is inside the package.
+    <<jump Ask_what_is_inside_the_package>>
+-> Take the package.
+    <<jump Take_the_package>>
+===
+
+title: Ask_if_there_are_any_packages_for_you_today
+---
+Player: Good morning, Mistress Ellastra. Are there any packages for me today?
+
+Ellastra: There sure is. Hmm. Since you're here. How would you feel about delivering a special package?
+
+What do you say?
+-> Say that you can deliver the package.
+    <<jump Say_that_you_can_deliver_the_package>>
+-> Turn down the special delivery.
+    <<jump Turn_down_the_special_delivery>>
+===
+
+title: Turn_down_the_special_delivery
+---
+Player: Sorry, Mistress Ellastra. I can't deliver this package for you. You're gonna have to find someone else who's reckless enough to take on that delivery.
+
+Ellastra: I see... Go choose what you want to deliver today.
+
+-> Go choose your package deliveries.
+    <<jump Go_choose_your_package_deliveries>>
+===
+
+title: Ask_what_is_inside_the_package
+---
+Player: What's inside the package?
+
+Ellastra: All I can tell you is that the package comes straight from the Aurelians. Apparently, it will help us settle this war once and for all. Now, are you going to take the package or what?
+
+What do you say?
+-> Further ask what the package is.
+    <<jump Further_ask_what_the_package_is>>
+-> Take the package.
+    <<jump Take_the_package>>
+-> Turn down the special delivery.
+    <<jump Turn_down_the_special_delivery>>
+===
+
+title: Take_the_package
+---
+Player: Fine, I'll take the package.
+
+*You take the package.*
+
+Ellastra: Go choose your other delivery packages.
+
+-> Go choose your package deliveries.
+    <<jump Go_choose_your_package_deliveries>>
+
+<<set $specialPackage to true>>
+===
+
+title: Further_ask_what_the_package_is
+---
+Player: Come on, Ellastra, you can tell me what's inside. I am your *best* courier after all.
+
+*Ellastra looks angry*
+
+Ellastra: If you ask me one more time you won't have *ANY* packages to deliver today.
+
+What do you do?
+-> Take the package.
+    <<jump Take_the_package>>
+-> Turn down the special delivery.
+    <<jump Turn_down_the_special_delivery>>
+===
+
+title: Go_choose_your_package_deliveries
+---
+*You look over at the packages that need delivering. You're given 2 choices first.*
+
+Choose your first package?
+-> First Package - Choose the small package.
+    <<jump First_Package_Choose_the_small_package>>
+-> First Package - Choose the large package.
+    <<jump First_Package_Choose_the_large_package>>
+===
+
+title: First_Package_Choose_the_small_package
+---
+*You take the small package.*
+The package is addressed to Petunia.
+
+-> Choose your second package.
+    <<jump Choose_your_second_package>>
+
+<<set $firstPackage to "small">>
+===
+
+title: First_Package_Choose_the_large_package
+---
+*You take the large package.*
+The package is addressed to Bjorn.
+
+-> Choose your second package.
+    <<jump Choose_your_second_package>>
+
+<<set $firstPackage to "large">>
+===
+
+title: Choose_your_second_package
+---
+*You look over at the packages that need delivering. You're given 3 choices.*
+
+Choose your second package?
+-> Second Package - Choose the round package.
+    <<jump Second_Package_Choose_the_round_package>>
+-> Second Package - Choose the square package.
+    <<jump Second_Package_Choose_the_square_package>>
+-> Second Package - Choose the triangle package.
+    <<jump Second_Package_Choose_the_triangle_package>>
+===
+
+title: Second_Package_Choose_the_round_package
+---
+*You take the round package.*
+The package is addressed to Mudbrick.
+
+-> Choose your third package.
+    <<jump Choose_your_third_package>>
+
+<<set $secondPackage to "round">>
+===
+
+title: Second_Package_Choose_the_square_package
+---
+*You take the square package.*
+The package is addressed to Oli.
+
+-> Choose your third package.
+    <<jump Choose_your_third_package>>
+
+<<set $secondPackage to "square">>
+===
+
+title: Second_Package_Choose_the_triangle_package
+---
+*You take the triangle package.*
+The package is addressed to Finn.
+
+-> Choose your third package.
+    <<jump Choose_your_third_package>>
+
+<<set $secondPackage to "triangle">>
+===
+
+title: Choose_your_third_package
+---
+*You look over at the packages that need delivering. You're given 4 choices.*
+
+Choose your 2nd package?
+-> Third Package - Choose the red package.
+-> Third Package - Choose the green package.
+-> Third Package - Choose the blue package.
+-> Third Package - Choose the yellow package.
+===
+
+title: Third_Package_Choose_the_red_package
+---
+*You take the red package.*
+The package is addressed to Leyton.
+
+-> Finalize your choices with Mistress Ellastra.
+
+<<set $thirdPackage to "red">>
+===
+
+title: Third_Package_Choose_the_green_package
+---
+*You take the green package.*
+The package is addressed to Thakali.
+
+-> Finalize your choices with Mistress Ellastra.
+
+<<set $thirdPackage to "green">>
+===
+
+title: Third_Package_Choose_the_blue_package
+---
+*You take the blue package.*
+The package is addressed to Daisy.
+
+-> Finalize your choices with Mistress Ellastra.
+
+<<set $thirdPackage to "blue">>
+===
+
+title: Third_Package_Choose_the_yellow_package
+---
+*You take the yellow package.*
+The package is addressed to Val.
+
+-> Finalize your choices with Mistress Ellastra.
+
+<<set $thirdPackage to "yellow">>
+===
+
+title: Finalize_your_choices_with_Mistress_Ellastra
+---
+Ellastra: Seems like you've got all your packages ready. You'd better start leaving soon before the storm arrives.
+
+-> Take your leave.
+===
+
+title: Take_your_leave
+---
+You gather supplies for your journey. You head to the courier stables where the stable master provides you with a special courier horse.
+
+Stablemaster: Seeing as there might be a storm coming. Stormhoof here won't be startled by thunder. Take care of her will ya.
+
+What do you do?
+-> Thank the stablemaster.
+-> Say nothing and take the reins.
+===
+
+title: Thank_the_stablemaster
+---
+Player: Thanks for the horse. I'll take good care of her. *You pat Stormhoof on her side.*
+
+Stablemaster: *The stablemaster tips his hat to you.* And she'll easily outrun a goblin.
+
+-> Take the reins.
+===
+
+title: Say_nothing_and_take_the_reins
+---
+You say nothing and take the reins from the stablemaster.
+
+-> Take the reins.
+===
+
+title: Take_the_reins
+---
+You take the reins and hop on the saddle atop Stormhoof.
+
+-> Start your journey.
+===
+
+title: Start_your_journey
+---
+On horseback, you pass through the kingdom gates and begin your journey through the woods towards your delivery destinations.
+
+The storm above you looks like it's getting worse. The clouds are a darker grey now and much denser than before. You'd better speed up to avoid the storm as much as possible.
+
+You need to make sure you follow the well-trodden path and avoid any obstructions on the path. Any wrong turns or slip-ups will have an impact on your delivery quality and if Mistress Ellastra finds out you'd be sent to the jail house for sure.
+
+*During this section, the player will need to avoid obstacles on the path.*
+-> Successfully follow the path and avoids obstacles.
+-> Unsuccessfully follow the main path.
+-> Knocked into too many obstacles.
+-> Got lost and hit too many obstacles.
+===
+
+title: Successfully_follow_the_path_and_avoids_obstacles
+---
+You managed to follow the path and you avoided the obstacles. It seems like you're ahead of the storm now.
+
+Looks like you'll keep your job.
+
+What do you do? (Timed)
+-> Give Stormhoof a treat.
+-> Pat Stormhoof on the back.
+-> Timed. Do nothing.
+
+<<set $followedPath to true>>
+===
+
+title: Unsuccessfully_follow_the_main_path
+---
+You failed to follow the path but you avoided enough obstacles. It seems like the storm is closer.
+
+You're not sure if you *might* keep your job after this.
+
+You don't recognise this path from your delivery journeys. Maybe it would be best to ride further forward and make camp then find a way back to the main path in the morning.
+
+-> Failed - You see a small figure ride alongside you.
+
+<<set $followedPath to false>>
+===
+
+title: Knocked_into_too_many_obstacles
+---
+You managed to follow the path but you didn't avoided enough obstacles. It seems like you're slightly ahead of the storm.
+
+Looks like you *might* keep your job.
+
+You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
+
+-> Success - You see a small figure ride alongside you.
+
+<<set $followedPath to true>>
+===
+
+title: Got_lost_and_hit_too_many_obstacles
+---
+You failed to follow the path and you didn't avoid enough obstacles. It seems like the storm is imminent.
+
+You have a feeling that when Mistress Ellastra finds out about this you're gonna get thrown in the pit. Unless... you manage to deliver these packages on time.
+
+You don't recognise this path from your delivery journeys. Maybe it would be best to ride further forward and make camp then find a way back to the main path in the morning.
+
+-> Failed - You see a small figure ride alongside you.
+
+<<set $followedPath to false>>
+===
+
+title: Give_Stormhoof_a_treat
+---
+In celebration you give Stormhoof a treat from your pack. She responds with a celebratory *neigh*.
+
+You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
+
+-> Success - You see a small figure ride alongside you.
+===
+
+title: Pat_Stormhoof_on_the_back
+---
+In celebration you pat Stormhoof on the back. She responds with a celebratory *neigh*.
+
+You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
+
+-> Success - You see a small figure ride alongside you.
+===
+
+title: Do_nothing
+---
+You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
+
+-> Success - You see a small figure ride alongside you.
+===
+
+title: Ask_what_the_creature_is_talking_about
+---
+Player: What are you talking about?
+
+Garbanzo: The offering! I know you have it!
+
+What do you say? (Timed)
+-> Ask what exactly is the offering.
+-> Say that you don't have it.
+-> Say that you won't give it.
+-> Timed. Say nothing to the creature.
+===
+
+title: Say_that_you_dont_have_it
+---
+Player: I don't have what you're talking about. Now get away from me!
+
+<<if $specialPackage is false>>
+    Garbanzo: I know you have it, I saw you talk to that tall woman!
+<<elseif $specialPackage is true>>
+    Garbanzo: I know you have it. I saw you take it from that tall woman!
+<<endif>>
+
+The creature must be talking about Mistress Ellastra. How did it know?
+
+What do you say?
+-> Ask how it knew that.
+-> Remain silent.
+===
+
+title: Say_that_you_wont_give_it
+---
+Player: I won't give it to you. It's not for you!
+
+Garbanzo: If you won't give it to me then I'll just have to *take* it from you.
+
+The creature gets comfortable in its saddle and begins to ride closer to you.
+
+You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+
+*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+-> Outrun the creature.
+===
+
+title: Say_nothing_to_the_creature
+---
+*You remain silent.*
+
+The creature appears to get angrier the longer you wait to answer its demands.
+
+Garbanzo: I won't hurt you. I promise.
+
+You don't believe a word the creature has said.
+
+What do you do?
+-> Remain silent.
+-> Ask what the creature is talking about.
+===
+
+title: Ask_what_exactly_is_the_offering
+---
+Player: What exactly is the offering? You're not being clear.
+
+The creature squints at you and looks at the packages.
+
+Garbanzo: It's my ticket to power. Now give it to me!
+
+The creature gets comfortable in its saddle and begins to ride closer to you.
+
+You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+
+*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+-> Outrun the creature.
+===
+
+title: Success_You_see_a_small_figure_ride_alongside_you
+---
+You look at the small figure riding next to you. It's small and green. It has pointy ears and a big nose, and it seems to be riding a large RAT!
+
+It turns its head to face you.
+
+You see its face light up from a flash of lightning, and a crackle of thunder echoes through the woods. Rain begins to pour down.
+
+Don't. Stop. Riding.
+
+Garbanzo: Do you have it? Where is it? Give it to me.
+
+The creature doesn't seem hostile. Yet.
+
+What do you say? (Timed)
+-> Ask what the creature is talking about.
+-> Say that you don't have it.
+-> Say that you won't give it.
+-> Timed. Say nothing to the creature.
+===
+
+title: Failed_You_see_a_small_figure_ride_alongside_you
+---
+You look at the small figure riding next to you. It's small and green. It has pointy ears and a big nose, and it seems to be riding a large RAT!
+
+It turns its head to face you.
+
+You see its face light up from a flash of lightning, and a crackle of thunder echoes through the woods. Rain begins to pour down.
+
+Don't. Stop. Riding.
+
+Garbanzo: Looks like you're lost. I can help you find you're way back. But only if you give me what I want.
+
+The creature doesn't seem hostile. Yet.
+
+What do you say? (Timed)
+-> Ask what the creature wants.
+-> Ask where you are.
+-> Timed. Don't answer the creature.
+===
+
+title: Remain_silent
+---
+*You remain silent.*
+
+Garbanzo: If that's the way you want to be then I'll just have to take it from you.
+
+The creature gets comfortable in its saddle and begins to ride closer to you.
+
+You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+
+*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+-> Outrun the creature.
+===
+
+title: Outrun_the_creature
+---
+You kept a steady gallop allowing you to outrun the creature and it's mount. 
+
+Garbanzo: I'll be back! You'd better sleep with one eye open!
+
+<<if $followedPath is true>>
+    Just up ahead is the abandoned hut you remember.
+<<elseif $followedPath is false>>
+    There should be a good spot to make camp nearby.
+<<endif>>
+
+Just before you find a place to camp you reach a fork in the road. At the junction of the fork there is a sign that says Eldoria is along the left path.
+
+<<if $specialPackage is false>>
+    Next to the sign you see a figure sprawled out in the mud. They seem unresponsive. 
+
+    You notice a small package in the bush beside the figure. You pick up the package. The package says that it needs to go to Eldoria. You have a feeling like this is the special package that Mistress Ellastra wanted you to deliver.
+
+    Do you still want to deliver the package?
+    -> Deliver the package.
+    -> Don't deliver the package.
+    <<if $whistle is true>>
+        -> Blow the creature's whistle.
+    <<endif>>
+<<endif>>
+
+<<if $specialPackage is true>>
+    The rain gets heavier. You need to find shelter quickly.
+
+    Which path do you take?
+    -> Take the left path.
+    -> Take the right path.
+<<endif>>
+===
+
+title: Ask_how_it_knew_that
+---
+Player: How do you know about Miss Ellastra?!
+
+The creature chuckles quietly to itself and squints its eyes at you.
+
+Garbanzo: You'll never know. I'm everywhere and nowhere. I'm everyone and anyone.
+
+The creature laughs out loud.
+
+Garbanzo: Now..., you know what I want. So give it!
+
+What do you say?
+-> Ask why the creature wants the package.
+-> Remain silent.
+===
+
+title: Ask_why_the_creature_wants_the_package
+---
+Player: What's so important about the package?
+
+Garbanzo: It'll change how the goblins view humans. But I know you humans can't be trusted. Enough questions! I'll be taking that package off your hands.
+
+The creature gets comfortable in its saddle and begins to ride closer to you.
+
+You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+
+*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+-> Outrun the creature.
+===
+
+title: Ask_what_the_creature_wants
+---
+Player: What do you want from me?
+
+Garbanzo: The offering! I know you have it!
+
+What do you say? (Timed)
+-> Ask what the offering is.
+-> Ask where you are.
+-> Timed. Ignore the creature.
+===
+
+title: Ask_where_you_are
+---
+Player: I don't recognise this road. Where am I?
+
+Garbanzo: No idea, all I know is that this is the wrong path to Eldoria. You're wanting to go to Eldoria, right?
+
+What do you say? (Timed)
+-> Ask how it knew your destination.
+<<if $specialPackage is false>>
+    -> Tell the creature that you're not going to Eldoria.
+<<endif>>
+-> Timed. Don't answer the creature.
+===
+
+title: Dont_answer_the_creature
+---
+*You remain silent.*
+
+The creature appears to get angrier the longer you wait to answer its demands.
+
+Garbanzo: I won't hurt you. I promise.
+
+You don't believe a word the creature has said.
+
+What do you do? (Timed)
+-> Ask what the creature wants.
+-> Ask what the creature is.
+-> Timed. Ignore the creature.
+===
+
+title: Ask_how_it_knew_your_destination
+---
+Player: How did you know I was going to Eldoria?
+
+The creature chuckles quietly to itself and squints its eyes at you.
+
+Garbanzo: You'll never know. I'm everywhere and nowhere. I'm everyone and anyone.
+
+The creature laughs out loud.
+
+Garbanzo: Now..., you know what I want. So give it!
+
+What do you say? (Timed)
+-> Say that you can't give it.
+-> Ask what the creature is.
+-> Timed. Ignore the creature.
+===
+
+title: Tell_the_creature_that_youre_not_going_to_Eldoria
+---
+Player: I'm not going to Eldoria. What makes you think I'm going to Eldoria?
+
+Garbanzo: That can't be right?! You have the offering. I saw you talking to the tall woman.
+
+You assume that the creature is talking about Mistress Ellastra's job to deliver a special package. But how did it know?
+
+What do you say?
+-> Ask how it knew about the job.
+-> Say that you can help it find the package.
+===
+
+title: Ask_what_the_offering_is
+---
+Player: What exactly is the offering? You're not being clear.
+
+The creature squints at you and looks at the packages.
+
+Garbanzo: It's my ticket to power. Now give it to me!
+
+The creature gets comfortable in its saddle and begins to ride closer to you.
+
+You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+
+*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+-> Outrun the creature.
+===
+
+title: Ask_what_the_creature_is
+---
+Player: What are you?
+
+The creature sarcastically but quickly remarks.
+
+Garbanzo: I'm a magical fairy. Enough chatter.
+
+The creature gets comfortable in its saddle and begins to ride closer to you.
+
+You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+
+*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+-> Outrun the creature.
+===
+
+title: Say_that_you_can't_give_it
+---
+Player: I won't give it to you. It's not for you!
+
+Garbanzo: If you won't give it to me then I'll just have to *take* it from you.
+
+The creature gets comfortable in its saddle and begins to ride closer to you.
+
+You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+
+*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+-> Outrun the creature.
+===
+
+title: Ignore_the_creature
+---
+*You remain silent.*
+
+Garbanzo: If that's the way you want to be then I'll just have to take it from you.
+
+The creature gets comfortable in its saddle and begins to ride closer to you.
+
+You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+
+*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+-> Outrun the creature.
+===
+
+title: Ask_how_it_knew_about_the_job
+---
+Player: How did you know about the job?
+
+The creature chuckles quietly to itself and squints its eyes at you.
+
+Garbanzo: You'll never know. I'm everywhere and nowhere. I'm everyone and anyone.
+
+The creature laughs out loud.
+
+Garbanzo: Now..., you know what I want. So give it!
+
+What do you say? (Timed)
+-> Say that you can't give it.
+-> Ask what the creature is.
+-> Timed. Ignore the creature.
+===
+
+title: Say_that_you_can_help_it_find_the_package
+---
+Player: What if I helped you find the package?
+
+Garbanzo: Hmm.
+
+The creature stares at you for a little bit, analysing you.
+
+Garbanzo: Fine. If you find the offering. Use this.
+
+The creature hands you a small wooden whistle. 
+*You take the whistle.* 
+<<set $whistle to true>>
+<<set $whistleBlown to false>>
+
+Garbanzo: Blow on it and I will come to collect the offering. Then I will make sure that this war never ends.
+
+The creature looks at your other packages.
+
+Garbanzo: For now I might as well indulge myself in a little highway robbery. Those are some nice packages you got there.
+
+The creature gets comfortable in its saddle and begins to ride closer to you.
+
+You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+
+*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+-> Outrun the creature.
+===
+
+title: Dont_deliver_the_package
+---
+You think that whatever is inside the package must be causing bad luck. Maybe thats why Mistress Ellastra wanted you to deliver this to Eldoria. Does she want to harm the ones at Eldoria?
+
+You should dispose of it so that no one gets hurt. You know that there is an active volcano nearby. If you throw the package into the volcano no one will know that you got rid of the package and you might have saved whoever the package was going to.
+
+You recall that the volcano should be along the right path.
+
+The rain gets heavier. You need to find shelter quickly.
+
+Which path do you take?
+-> Take the left path.
+-> Take the right path.
+===
+
+title: Deliver_the_package
+---
+If the creature wanted this so badly then maybe you should keep it safe with you. You don't know what that creature wants the package for. You have a job to do as well.
+
+The rain gets heavier. You need to find shelter quickly.
+
+Which path do you take?
+-> Take the left path.
+-> Take the right path.
+===
+
+title: Take_the_right_path
+---
+You follow the right path.
+
+You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
+
+Where do you want to camp?
+-> Set up camp on the side of the path.
+-> Set up camp in some bushes.
+
+<<set $path to "right">>
+===
+
+title: Take_the_left_path
+---
+You follow the left path.
+
+<<if $followedPath is true>>
+    You see the abandoned hut. You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
+
+    Where do you want to camp?
+    -> Set up camp in the abandoned hut.
+    -> Set up camp in some bushes.
+
+<<elseif $followedPath is false>>
+    You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
+
+    Where do you want to camp?
+    -> Set up camp on the side of the path.
+    -> Set up camp in some bushes.
+<<endif>>
+
+<<set $path to "left">>
+===
+
+title: Blow_the_creatures_whistle
+---
+You purse your lips around the wooden whistle. You blow hard into the whistle. You hear nothing. Stormhoof shakes her head. Seems like it's not working. 
+
+The storm is getting worse and you need to find shelter.
+
+Which path do you take?
+-> Take the left path.
+-> Take the right path.
+
+<<set $whistleBlown to true>>
+===
+
+title: Set_up_camp_in_the_abandoned_hut
+---
+The hut you're in has been abandoned for years and has many leaks coming through the roof. However, this hut seems very sturdy and will shelter you if the storm gets worse. You set up your bedroll and lie down.
+
+-> Sleep in the hut.
+===
+
+title: Set_up_camp_in_some_bushes
+---
+You find a set of bushes that could easily hide your tent. You set up your tent and bedroll. You lie down.
+
+-> Sleep in the bushes.
+===
+
+title: Set_up_camp_on_the_side_of_the_path
+---
+You figure that the best place to rest would be next to the path and away from the unknown creatures of the woods. You set up your tent and bedroll. You lie down.
+
+-> Sleep near the road.
+===
+
+title: Sleep_in_the_bushes
+---
+You need to rest. The sound of rain lulls you to sleep. You fall asleep. 
+
+Hopefully you'll be safe.
+
+*Player must take a break here before moving on.*
+-> Wake up in the bushes.
+===
+
+title: Sleep_in_the_hut
+---
+You need to rest. The sound of rain lulls you to sleep. You fall asleep. 
+
+Hopefully you'll be safe.
+
+*Player must take a break here before moving on.*
+-> Wake up in the hut.
+===
+
+title: Sleep_near_the_road
+---
+You need to rest. The sound of rain lulls you to sleep. You fall asleep. 
+
+Hopefully you'll be safe.
+
+*Player must take a break here before moving on.*
+-> Wake up near the road.
 ===
