@@ -1523,6 +1523,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452348040}
   m_CullTransparentMesh: 1
+--- !u!1 &505514011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2753718018764665327, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 362752415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &505514014 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 362752415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505514011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &505514015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505514011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dedd4c15fac41548a7413c0e8564d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 505514014}
+  customOptionsListView: {fileID: 1365680738}
 --- !u!114 &514841925 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3375235153017956517, guid: aced51e1e8d794946bdcb39dc566a426,

@@ -18,13 +18,16 @@ public class CustomOptionsListView : DialogueViewBase
     [SerializeField] bool showUnavailableOptions = false;
 
     // A cached pool of OptionView objects so that we can reuse them
-    List<OptionView> optionViews = new List<OptionView>();
+    public List<OptionView> optionViews = new List<OptionView>();
 
     // The method we should call when an option has been selected.
     Action<int> OnOptionSelected;
 
     // The line we saw most recently.
     LocalizedLine lastSeenLine;
+
+    // Current number of options
+    public int numberOfOptions = 0;
 
     public void Start()
     {
@@ -88,6 +91,9 @@ public class CustomOptionsListView : DialogueViewBase
 
             optionViewsCreated += 1;
         }
+
+        // Update the number of options
+        numberOfOptions = optionViewsCreated;
 
         // Update the last line, if one is configured
         if (lastLineText != null)

@@ -7,29 +7,6 @@ Where are you in all of this you ask? You are a villager living in the kingdom o
 
 Yet today, you might find yourself delivering something that could alter the course of your destiny forever.
 
-<<jump Start_the_day>>
-===
-
-title: Start_the_day
-position: 182,-84
----
-You wake up. Look around. The weather is grey and gloomy. Looks like it might rain. 
-
-You need to make a delivery today. You start walking to work.
-
-Frankie, your childhood friend walks beside you leading a cow alongside him.
-
-Frankie: Hey pal! How’s your morning going?
-
-What do you say? (Timed)
--> Say that you're headed to work.
-    <<jump Say_that_youre_headed_to_work>>
--> Jokingly say that you’re going to the tavern.
-    <<jump Jokingly_say_that_youre_going_to_the_tavern>>
--> Timeout. Ignore Frankie.
-    <<wait 5>> 
-    <<jump Ignore_Frankie>>
-
 <<declare $specialPackage = false>>
 <<declare $magicRock = false>>
 
@@ -62,6 +39,32 @@ What do you say? (Timed)
 <<declare $magicalCompass = false>>
 <<declare $metVal = false>>
 <<declare $assassin = false>>
+ 
+<<jump Start_the_day>>
+===
+
+title: Start_the_day
+position: 182,-84
+---
+You wake up. Look around. The weather is grey and gloomy. Looks like it might rain. 
+
+You need to make a delivery today. You start walking to work.
+
+Frankie, your childhood friend walks beside you leading a cow alongside him.
+
+Frankie: Hey pal! How’s your morning going?
+
+What do you say? (Timed)
+<<startTimer Ignore_Frankie>>
+-> Say that you're headed to work.
+    <<interrruptTimer None>>
+    <<jump Say_that_youre_headed_to_work>>
+-> Jokingly say that you’re going to the tavern.
+    <<interrruptTimer None>>
+    <<jump Jokingly_say_that_youre_going_to_the_tavern>>
+-> Timeout. Ignore Frankie.
+    <<interrruptTimer None>>
+    <<jump Ignore_Frankie>>
 ===
 
 title: Ignore_Frankie
