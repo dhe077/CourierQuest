@@ -5,10 +5,9 @@ using TMPro;
 using UnityEngine;
 using Yarn.Unity;
 
-public class CustomOptionsListView1 : DialogueViewBase
+public class CustomOptionsListView : DialogueViewBase
 {
     [SerializeField] CanvasGroup canvasGroup;
-    [SerializeField] GameObject testCube;
 
     [SerializeField] OptionView optionViewPrefab;
 
