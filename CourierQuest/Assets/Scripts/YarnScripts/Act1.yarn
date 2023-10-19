@@ -44,7 +44,6 @@ Yet today, you might find yourself delivering something that could alter the cou
 ===
 
 title: Start_the_day
-tags: #timed
 position: 182,-84
 ---
 You wake up. Look around. The weather is grey and gloomy. Looks like it might rain. 
@@ -235,11 +234,15 @@ Ellastra: Yes, we'll deliver this right away. I'll make sure to get our best cou
 Mistress Ellastra turns around and sees that you've turned up to work.
 
 What do you say? (Timed)
+<<startTimer 8>>
 -> Ask what that was about.
+    <<interrruptTimer none>>
     <<jump Ask_what_that_was_about>>
 -> Ask if there are any packages for you today.
+    <<interrruptTimer none>>
     <<jump Ask_if_there_are_any_packages_for_you_today>>
-Timeout. Say nothing.
+-> Timeout. Say nothing.
+    <<interrruptTimer none>>
     <<jump Say_nothing>>
 
 <<set $specialPackage to false>>
@@ -559,11 +562,15 @@ You managed to follow the path and you avoided the obstacles. It seems like you'
 Looks like you'll keep your job.
 
 What do you do? (Timed)
+<<startTimer 8>>
 -> Give Stormhoof a treat.
+    <<interrruptTimer none>>
     <<jump Give_Stormhoof_a_treat>>
 -> Pat Stormhoof on the back.
+    <<interrruptTimer none>>
     <<jump Pat_Stormhoof_on_the_back>>
 -> Timed. Do nothing.
+    <<interrruptTimer none>>
     <<jump Do_nothing>>
 
 <<set $followedPath to true>>

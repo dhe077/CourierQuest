@@ -13,7 +13,7 @@ public class StoryCommands : MonoBehaviour
     public CustomOptionsListView customOptionsListView;
     public Slider timerBar;
     public CanvasGroup sliderCanvasGroup;
-    private OptionView timeoutOption;
+    private OptionView timeoutOption = null;
 
     private float timer = 0f;
     private float endTimer;
@@ -90,6 +90,8 @@ public class StoryCommands : MonoBehaviour
         startTicking = false;
         updateTimerBar = false;
         FadeOutTimerBar();
+
+        ResetColor();
     }
 
 
@@ -102,6 +104,8 @@ public class StoryCommands : MonoBehaviour
         OptionView lastOptionView = customOptionsListView.optionViews[numOfOptions-1];
         lastOptionView.InvokeOptionSelected();
         FadeOutTimerBar();
+
+        ResetColor();
     }
 
     private IEnumerator Fade(float startAlpha, float endAlpha, float duration)
@@ -142,5 +146,11 @@ public class StoryCommands : MonoBehaviour
             yield return null;
         }
         timeoutOption.transform.GetChild(0).GetComponent<Image>().color = new Color(endColor, 0, 0, alpha);
+    }
+
+    public void ResetColor()
+    {
+        // Reset the color of the last option
+        timeoutOption.transform.GetChild(0).GetComponent<Image>().color = new Color(0, 0, 0, alpha);
     }
 }
