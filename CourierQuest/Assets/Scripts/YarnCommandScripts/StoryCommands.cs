@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.UI;
 using Yarn;
 using Yarn.Unity;
 
@@ -8,11 +11,16 @@ public class StoryCommands : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
     public CustomOptionsListView customOptionsListView;
+    public Slider timerBar;
+    public CanvasGroup sliderCanvasGroup;
+    private OptionView timeoutOption;
 
     private float timer = 0f;
-    private float endTimer = 5f;
+    private float endTimer;
     private bool startTicking = false;
-    private string nextNode;
+    private bool updateTimerBar = false;
+    private float fadeSpeed = 1.0f;
+    private float alpha = 0.196f;
 
     public void Awake()
     {
@@ -23,7 +31,7 @@ public class StoryCommands : MonoBehaviour
         //     CameraLookAtTarget // the method to run
         // );
 
-        dialogueRunner.AddCommandHandler<string>(
+        dialogueRunner.AddCommandHandler<float>(
             "startTimer",     // the name of the command
             StartTimer // the method to run
         );
@@ -33,46 +41,106 @@ public class StoryCommands : MonoBehaviour
             InterruptTimer // the method to run
         );
     }
+
+    public void Start()
+    {
+        // Start the slider invisible
+        sliderCanvasGroup.alpha = 0;
+    }
     
     public void Update()
     {
+        // Timer
         if (startTicking == true) 
         {
             timer += Time.deltaTime;
+            // Get the last option to set it's background for timeout
+            int numOfOptions = customOptionsListView.numberOfOptions;
+            if (numOfOptions > 0) 
+            {
+                timeoutOption = customOptionsListView.optionViews[numOfOptions-1];
+                StartCoroutine(FadeColor(0, 1, endTimer));
+            }
+            if (updateTimerBar == true)
+                timerBar.value = timer;
             if (timer >= endTimer)
             {
+                // Tell the timer to stop counting.
                 startTicking = false;
-                TimerEnd(nextNode);
-                Debug.Log("Timer done.");
+
+                // Invoke the timeout option.
+                TimerEnd();
             }
         }
     }
 
-    public void StartTimer(string node) 
+    // Yarn Commands //
+    public void StartTimer(float end) 
     {
         // Reset the timer.
         timer = 0f;
+        endTimer = end;
         startTicking = true;
-        nextNode = node;
-        Debug.Log($"Start the timer for {endTimer} seconds.");
+        updateTimerBar = true;
+        FadeInTimerBar();
     }
 
-    public void InterruptTimer(string node)
+    public void InterruptTimer(string none)
     {
         startTicking = false;
-        Debug.Log("Stop the timer!");
+        updateTimerBar = false;
+        FadeOutTimerBar();
     }
 
-    public void TimerEnd(string node)
+
+
+
+    // Functions //
+    public void TimerEnd()
     {
         int numOfOptions = customOptionsListView.numberOfOptions;
         OptionView lastOptionView = customOptionsListView.optionViews[numOfOptions-1];
         lastOptionView.InvokeOptionSelected();
-        lastOptionView.Option.IsAvailable = false;
-        
-        //dialogueRunner.Stop();
-        //dialogueRunner.StartDialogue(nextNode);
-        
+        FadeOutTimerBar();
     }
 
+    private IEnumerator Fade(float startAlpha, float endAlpha, float duration)
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < duration)
+        {
+            sliderCanvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        sliderCanvasGroup.alpha = endAlpha;
+    }
+
+    public void FadeInTimerBar()
+    {
+        // Reset the timer bar.
+        timerBar.value = timerBar.minValue;
+        // Set the timer bar maximum.
+        timerBar.maxValue = endTimer;
+        // Gradually increase the alpha value to fade in
+        StartCoroutine(Fade(0, 1, fadeSpeed));
+    }
+
+    public void FadeOutTimerBar()
+    {
+        // Gradually decrease the alpha value to fade out
+        StartCoroutine(Fade(1, 0, fadeSpeed));
+    }
+
+    private IEnumerator FadeColor(float startColor, float endColor, float duration)
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < duration)
+        {
+            timeoutOption.transform.GetChild(0).GetComponent<Image>().color = new Color(Mathf.Lerp(startColor, endColor, elapsedTime / duration), 0, 0, alpha);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        timeoutOption.transform.GetChild(0).GetComponent<Image>().color = new Color(endColor, 0, 0, alpha);
+    }
 }

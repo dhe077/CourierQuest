@@ -44,6 +44,7 @@ Yet today, you might find yourself delivering something that could alter the cou
 ===
 
 title: Start_the_day
+tags: #timed
 position: 182,-84
 ---
 You wake up. Look around. The weather is grey and gloomy. Looks like it might rain. 
@@ -54,16 +55,16 @@ Frankie, your childhood friend walks beside you leading a cow alongside him.
 
 Frankie: Hey pal! How’s your morning going?
 
-What do you say? (Timed)
-<<startTimer Ignore_Frankie>>
+What do you say? (Timed) 
+<<startTimer 8>>
 -> Say that you're headed to work.
-    <<interrruptTimer None>>
+    <<interrruptTimer none>>
     <<jump Say_that_youre_headed_to_work>>
 -> Jokingly say that you’re going to the tavern.
-    <<interrruptTimer None>>
+    <<interrruptTimer none>>
     <<jump Jokingly_say_that_youre_going_to_the_tavern>>
 -> Timeout. Ignore Frankie.
-    <<interrruptTimer None>>
+    <<interrruptTimer none>>
     <<jump Ignore_Frankie>>
 ===
 
