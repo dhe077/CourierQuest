@@ -59,7 +59,8 @@ public class StoryCommands : MonoBehaviour
             if (numOfOptions > 0) 
             {
                 timeoutOption = customOptionsListView.optionViews[numOfOptions-1];
-                StartCoroutine(FadeColor(0, 1, endTimer));
+                FadeInColor();
+                //Debug.Log(timeoutOption.transform.GetChild(0).GetComponent<Image>().color);
             }
             if (updateTimerBar == true)
                 timerBar.value = timer;
@@ -89,9 +90,10 @@ public class StoryCommands : MonoBehaviour
     {
         startTicking = false;
         updateTimerBar = false;
+        
+        StopAllCoroutines();
         FadeOutTimerBar();
-
-        ResetColor();
+        FadeOutColor();
     }
 
 
@@ -103,9 +105,10 @@ public class StoryCommands : MonoBehaviour
         int numOfOptions = customOptionsListView.numberOfOptions;
         OptionView lastOptionView = customOptionsListView.optionViews[numOfOptions-1];
         lastOptionView.InvokeOptionSelected();
+        
+        StopAllCoroutines();
         FadeOutTimerBar();
-
-        ResetColor();
+        FadeOutColor();
     }
 
     private IEnumerator Fade(float startAlpha, float endAlpha, float duration)
@@ -141,6 +144,7 @@ public class StoryCommands : MonoBehaviour
         float elapsedTime = 0;
         while (elapsedTime < duration)
         {
+            // Increase the RED value of the color
             timeoutOption.transform.GetChild(0).GetComponent<Image>().color = new Color(Mathf.Lerp(startColor, endColor, elapsedTime / duration), 0, 0, alpha);
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -148,9 +152,16 @@ public class StoryCommands : MonoBehaviour
         timeoutOption.transform.GetChild(0).GetComponent<Image>().color = new Color(endColor, 0, 0, alpha);
     }
 
-    public void ResetColor()
+    public void FadeOutColor()
     {
-        // Reset the color of the last option
-        timeoutOption.transform.GetChild(0).GetComponent<Image>().color = new Color(0, 0, 0, alpha);
+        // Gradually decrease the color value to fade out
+        StartCoroutine(FadeColor(1, 0, endTimer/2));
+        Debug.Log("Fade out!");
+    }
+
+    public void FadeInColor()
+    {
+        // Gradually decrease the color value to fade out
+        StartCoroutine(FadeColor(0, 1, endTimer));
     }
 }
