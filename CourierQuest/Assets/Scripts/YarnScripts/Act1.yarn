@@ -185,7 +185,7 @@ What do you do?
 
 title: Jokingly_tell_Frankie_that_you_think_youve_seen_plenty_of_drunk_goblins_at_the_tavern
 ---
-Player: From that descrption, I think I've seen plenty of goblins coming out of the tavern at night.
+Player: From that description, I think I've seen plenty of goblins coming out of the tavern at night.
 
 Frankie: Ha ha, that sounds about right. But seriously be cafeful today when you're delivering outside of the kingdom.
 
@@ -434,7 +434,7 @@ title: Choose_your_third_package
 ---
 *You look over at the packages that need delivering. You're given 4 choices.*
 
-Choose your 2nd package?
+Choose your third package?
 -> Choose the red package.
     <<jump Third_Package_Choose_the_red_package>>
 -> Choose the green package.
@@ -1098,21 +1098,23 @@ Just before you find a place to camp you reach a fork in the road. At the juncti
 <<if $specialPackage is true>>
     The rain gets heavier. You need to find shelter quickly.
 
-    Which path do you take?
-    -> Take the left path.
-        <<jump Take_the_left_path>>
-    -> Take the right path.
-        <<jump Take_the_right_path>>
+    After dealing with that creature you think to yourself. Is delivering this package worth your own life? That creature seemed hell-bent on getting its greedy hands on the special package. It seems that nothing will stop the creature from doing *anything* to get the package.
+
+    Do you still want to deliver the package?
+    -> Deliver the package.
+        <<jump Deliver_the_package>>
+    -> Don't deliver the package.
+        <<jump Dont_deliver_the_package>>
 <<endif>>
 ===
 
 title: Dont_deliver_the_package
 ---
-You think that whatever is inside the package must be causing bad luck. Maybe thats why Mistress Ellastra wanted you to deliver this to Eldoria. Does she want to harm the ones at Eldoria?
+You think that whatever is inside the package isn't worth delivering to its destination. Whoever receives this package will surely be hunted down by that creature. Why does Miss Ellastra want this delivered to Eldoria?
 
-You should dispose of it so that no one gets hurt. You know that there is an active volcano nearby. If you throw the package into the volcano no one will know that you got rid of the package and you might have saved whoever the package was going to.
+You should dispose of it so that no one gets hurt. You know that there is an active volcano nearby. If you throw the package into the volcano no one will know that you got rid of the package and that pesky creature will have nothing to hunt for.
 
-You recall that the volcano should be along the right path.
+You recall that the volcano should be along the right path. However, Eldoria is on the left path if you still want to deliver the package.
 
 The rain gets heavier. You need to find shelter quickly.
 
@@ -1126,6 +1128,8 @@ Which path do you take?
 title: Deliver_the_package
 ---
 If the creature wanted this so badly then maybe you should keep it safe with you. You don't know what that creature wants the package for. You have a job to do as well.
+
+You recall that Eldoria should be along the left path. However, there is a volcano down the right path if you still wish to dispose of the package.
 
 The rain gets heavier. You need to find shelter quickly.
 
@@ -1142,13 +1146,15 @@ You purse your lips around the wooden whistle. You blow hard into the whistle. Y
 
 The storm is getting worse and you need to find shelter.
 
-Which path do you take?
--> Take the left path.
-    <<jump Take_the_left_path>>
--> Take the right path.
-    <<jump Take_the_right_path>>
+After dealing with that creature you think to yourself. Is delivering this package worth your own life? That creature seemed hell-bent on getting its greedy hands on the special package. It seems that nothing will stop the creature from doing *anything* to get the package.
 
 <<set $whistleBlown to true>>
+
+Do you still want to deliver the package?
+-> Deliver the package.
+    <<jump Deliver_the_package>>
+-> Don't deliver the package.
+    <<jump Dont_deliver_the_package>>
 ===
 
 title: Take_the_right_path
@@ -1157,18 +1163,20 @@ You follow the right path.
 
 You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
+<<set $path to "right">>
+
 Where do you want to camp?
 -> Set up camp on the side of the path.
     <<jump Set_up_camp_on_the_side_of_the_path>>
 -> Set up camp in some bushes.
     <<jump Set_up_camp_in_some_bushes>>
-
-<<set $path to "right">>
 ===
 
 title: Take_the_left_path
 ---
 You follow the left path.
+
+<<set $path to "left">>
 
 <<if $followedPath is true>>
     You see the abandoned hut. You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
@@ -1188,8 +1196,6 @@ You follow the left path.
     -> Set up camp in some bushes.
         <<jump Set_up_camp_in_some_bushes>>
 <<endif>>
-
-<<set $path to "left">>
 ===
 
 title: Set_up_camp_in_the_abandoned_hut
