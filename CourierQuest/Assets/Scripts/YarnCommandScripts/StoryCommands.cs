@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Yarn;
 using Yarn.Unity;
+using UnityEngine.SceneManagement;
 
 public class StoryCommands : MonoBehaviour
 {
@@ -39,6 +40,11 @@ public class StoryCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<string>(
             "interrruptTimer",     // the name of the command
             InterruptTimer // the method to run
+        );
+
+        dialogueRunner.AddCommandHandler<string>(
+            "goToScene",
+            ToStoryScene
         );
     }
 
@@ -163,5 +169,12 @@ public class StoryCommands : MonoBehaviour
     {
         // Gradually decrease the color value to fade out
         StartCoroutine(FadeColor(0, 1, endTimer));
+    }
+
+    
+    // This function is used to transition to the next scene
+    public void ToStoryScene(string sceneName)
+    {
+        SceneChanger.Instance.ChangeScene(sceneName);
     }
 }
