@@ -15552,6 +15552,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1148245194}
   - component: {fileID: 1148245195}
+  - component: {fileID: 1148245196}
+  - component: {fileID: 1148245199}
+  - component: {fileID: 1148245198}
+  - component: {fileID: 1148245197}
   m_Layer: 0
   m_Name: PlayerView
   m_TagString: Untagged
@@ -15589,6 +15593,207 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f4975e51926b14f9f561d7433fa117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1148245196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148245193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa22073071e54cb46b7cfc4ab4d06845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splineFollower: {fileID: 1148245197}
+  bikeController: {fileID: 1148245199}
+  bikeSpeed: 0
+  bikeRPM: 0
+  bikeHeartRate: 0
+  speedText: {fileID: 0}
+  rpmText: {fileID: 0}
+  heartRateText: {fileID: 0}
+  moveSpeed: 10
+--- !u!114 &1148245197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148245193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddc1a2536715a24095c464a2c394d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateMethod: 0
+  _spline: {fileID: 0}
+  _autoUpdate: 1
+  _rotationModifier:
+    blend: 1
+    useClippedPercent: 0
+    keys: []
+  _offsetModifier:
+    blend: 1
+    useClippedPercent: 0
+    keys: []
+  _colorModifier:
+    blend: 1
+    useClippedPercent: 0
+    keys: []
+  _sizeModifier:
+    blend: 1
+    useClippedPercent: 0
+    keys: []
+  _clipFromSample:
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
+    percent: 0
+  _clipToSample:
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
+    percent: 0
+  _loopSamples: 0
+  _clipFrom: 0
+  _clipTo: 1
+  animClipFrom: 0
+  animClipTo: 1
+  multithreaded: 0
+  buildOnAwake: 1
+  buildOnEnable: 0
+  applyDirectionRotation: 1
+  useTriggers: 0
+  triggerGroup: 0
+  _direction: 1
+  _dontLerpDirection: 0
+  _physicsMode: 0
+  _motion:
+    _hasOffset: 0
+    _hasRotationOffset: 0
+    _offset: {x: 0, y: 0}
+    _rotationOffset: {x: 0, y: 0, z: 0}
+    _baseScale: {x: 1, y: 1, z: 1}
+    _2dMode: 0
+    velocityHandleMode: 0
+    applyPositionX: 1
+    applyPositionY: 1
+    applyPositionZ: 1
+    applyPosition2D: 1
+    retainLocalPosition: 0
+    direction: 1
+    applyRotationX: 1
+    applyRotationY: 1
+    applyRotationZ: 1
+    applyRotation2D: 1
+    retainLocalRotation: 0
+    applyScaleX: 0
+    applyScaleY: 0
+    applyScaleZ: 0
+    targetUser: {fileID: 0}
+  targetRigidbody: {fileID: 0}
+  targetRigidbody2D: {fileID: 0}
+  targetTransform: {fileID: 1148245194}
+  _result:
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
+    percent: 0
+  _finalResult:
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
+    percent: 0
+  wrapMode: 0
+  followMode: 0
+  autoStartPosition: 0
+  _follow: 1
+  _startPosition: 0
+  preserveUniformSpeedWithOffset: 0
+  _followSpeed: 1
+  _followDuration: 1
+  _speedModifier:
+    blend: 1
+    useClippedPercent: 0
+    keys: []
+  _unityOnEndReached:
+    m_PersistentCalls:
+      m_Calls: []
+  _unityOnBeginningReached:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1148245198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148245193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401a1ac30af62594a98edff44cf3084f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OverrideEditorSettingsWithConfigFile: 0
+  EnableLives: 0
+  EnableResistanceChanges: 0
+  EnableSounds: 0
+  EnableFanFeedback: 0
+  GameDuration: 15
+  EnableCrowd: 1
+  PlayerName: Player
+  PlayerAge: 24
+  PlayerBMI: 25
+  PlayerAssumedFitness: 4
+  MaxRPM: 170
+  MaxHR: 160
+  RecordPlayer: 0
+  RecordLevel: 0
+  UseDetailedPlaybackSettings: 1
+  SimplePlaybackEnableGhost: 0
+  SimplePlaybackEnableTrainer: 0
+  EnableBike: 1
+  EnableKinect: 0
+  EnableCamera: 1
+  BikePort: COM3
+  ResistancePort: COM1
+  UseOculus: 1
+  EnableRadar: 0
+  UsingIntervals: 0
+  WarmupMinutes: 5
+  IntervalMinutes: 4
+  RecoveryMinutes: 3
+  OVRRig: {fileID: 0}
+  MainCamera: {fileID: 0}
+--- !u!114 &1148245199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148245193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876d31d12606284499c8604aec512dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalSettings: {fileID: 1148245198}
+  PortName: COM3
+  speed: 0
+  RPM: 0
+  heartRate: 0
+  status: -1
+  enableBike: 1
+  ending: 0
 --- !u!1 &1149508043
 GameObject:
   m_ObjectHideFlags: 0
