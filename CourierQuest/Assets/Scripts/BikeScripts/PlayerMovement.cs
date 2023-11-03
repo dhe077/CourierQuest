@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public TextMeshProUGUI rpmText;
     public TextMeshProUGUI heartRateText;
 
-    public float moveSpeed = 10.0f;
+    [SerializeField] private float moveSpeed = 10.0f;
 
     // Update is called once per frame
     void Update()
@@ -53,10 +53,11 @@ public class PlayerMovement : MonoBehaviour
     // To test the speed of movement.
     public void MovePlayer()
     {
-        //Vector3 movement = new Vector3(0.0f, 0.0f, bikeSpeed) * moveSpeed * Time.deltaTime;
-
-        // Move the player
-        //transform.Translate(movement);
         splineFollower.followSpeed = bikeSpeed * moveSpeed;
+    }
+
+    public void SetMoveSpeed(float speed)
+    {
+        moveSpeed = speed;
     }
 }

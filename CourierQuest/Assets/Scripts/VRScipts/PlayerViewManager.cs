@@ -8,6 +8,7 @@ public class PlayerViewManager : MonoBehaviour
     [SerializeField] private GameObject playerView;
     [SerializeField] private Transform startingPosition;
     [SerializeField] private SplineComputer splineComputer;
+    [SerializeField] public float moveSpeedMultiplier = 10.0f;
 
     void Start()
     {
@@ -15,6 +16,7 @@ public class PlayerViewManager : MonoBehaviour
 
         SetStartingPosition();
         SetSplinePath();
+        SetMoveSpeedMultiplier();
     }
 
     private void SetStartingPosition()
@@ -26,5 +28,10 @@ public class PlayerViewManager : MonoBehaviour
     private void SetSplinePath()
     {
         playerView.GetComponent<SplineFollower>().spline = splineComputer;
+    }
+
+    private void SetMoveSpeedMultiplier()
+    {
+        playerView.GetComponent<PlayerMovement>().SetMoveSpeed(moveSpeedMultiplier);
     }
 }
