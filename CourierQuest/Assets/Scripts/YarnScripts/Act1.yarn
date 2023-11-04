@@ -51,7 +51,7 @@ You wake up. Look around. The weather is grey and gloomy. Looks like it might ra
 You need to make a delivery today. You start walking to work.
 
 <<goToScene KingdomStreet>>
-<<wait 10>>
+<<wait 5>>
 Frankie, your childhood friend walks beside you leading a cow alongside him.
 
 Frankie: Hey pal! How’s your morning going?
@@ -227,6 +227,8 @@ Frankie: No problem. Seeya round buddy!
 
 title: Go_to_the_courier_guildhall
 ---
+<<goToScene CourierGuildhall>>
+<<wait 5>>
 You arrive at the courier guildhall. It doesn't seem very busy today. Hopefully there are still  packages to deliver. Maybe the other couriers took all the packages already.
 
 You spot your boss, Mistress Ellastra, she seems to be talking to a few guards.
@@ -355,6 +357,7 @@ What do you do?
 
 title: Go_choose_your_package_deliveries
 ---
+<<nextPosition none>>
 *You look over at the packages that need delivering. You're given 2 choices first.*
 
 Choose your first package?

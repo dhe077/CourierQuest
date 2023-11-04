@@ -9464,9 +9464,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd901db119250441a233809e8fd8986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerView: {fileID: 0}
-  startingPosition: {fileID: 1149508044}
-  splineComputer: {fileID: 0}
+  playerView: {fileID: 1148245193}
+  splineComputers:
+  - {fileID: 1149508045}
+  moveSpeedMultiplier: 10
 --- !u!4 &693027170
 Transform:
   m_ObjectHideFlags: 0
@@ -15804,8 +15805,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1149508044}
+  - component: {fileID: 1149508045}
   m_Layer: 0
-  m_Name: StartingLocation
+  m_Name: WakingUpPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15826,6 +15828,69 @@ Transform:
   m_Father: {fileID: 693027170}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1149508045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149508043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorDrawPivot: 1
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  editorAlwaysDraw: 0
+  editorDrawThickness: 0
+  editorBillboardThickness: 1
+  isNewlyCreated: 0
+  editorUpdateMode: 0
+  multithreaded: 0
+  updateMode: 0
+  triggerGroups: []
+  _spline:
+    points:
+    - _type: 0
+      position: {x: 0.000000091552806, y: 0, z: 0.00000009942065}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 1, z: 0}
+      size: 1
+      tangent: {x: 0.000000091552806, y: 0, z: 0.00000009942065}
+      tangent2: {x: 0.000000091552806, y: 0, z: 0.00000009942065}
+    type: 0
+    linearAverageDirection: 1
+    customValueInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    customNormalInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    sampleRate: 10
+    closed: 0
+    _knotParametrization: 0
+  _originalSamplePercents: []
+  _is2D: 0
+  hasSamples: 0
+  _optimizeAngleThreshold: 0.5
+  _space: 1
+  _sampleMode: 0
+  _subscribers: []
+  _rawSamples:
+  - position: {x: 0.000000091552806, y: 0, z: 0.00000009942065}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0, y: 0, z: 1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0
+  _nodes: []
 --- !u!1001 &1162642012
 PrefabInstance:
   m_ObjectHideFlags: 0

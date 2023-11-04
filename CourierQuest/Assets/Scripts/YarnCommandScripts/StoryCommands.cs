@@ -16,6 +16,8 @@ public class StoryCommands : MonoBehaviour
     public CanvasGroup sliderCanvasGroup;
     private OptionView timeoutOption = null;
 
+    private PlayerViewManager playerViewManager;
+
     private float timer = 0f;
     private float endTimer;
     private bool startTicking = false;
@@ -45,6 +47,11 @@ public class StoryCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<string>(
             "goToScene",
             ToStoryScene
+        );
+
+        dialogueRunner.AddCommandHandler<string>(
+            "nextPosition",
+            NextPosition
         );
     }
 
@@ -100,6 +107,19 @@ public class StoryCommands : MonoBehaviour
         StopAllCoroutines();
         FadeOutTimerBar();
         FadeOutColor();
+    }
+
+    // This command is used to transition to the next scene
+    public void ToStoryScene(string sceneName)
+    {
+        SceneChanger.Instance.ChangeScene(sceneName);
+    }
+
+    // This command moves the player to the next position in the SAME scene
+    public void NextPosition(string none)
+    {
+        playerViewManager = GameObject.Find("PlayerViewManager").GetComponent<PlayerViewManager>();
+        playerViewManager.NextPosition();
     }
 
 
@@ -171,10 +191,4 @@ public class StoryCommands : MonoBehaviour
         StartCoroutine(FadeColor(0, 1, endTimer));
     }
 
-    
-    // This function is used to transition to the next scene
-    public void ToStoryScene(string sceneName)
-    {
-        SceneChanger.Instance.ChangeScene(sceneName);
-    }
 }
