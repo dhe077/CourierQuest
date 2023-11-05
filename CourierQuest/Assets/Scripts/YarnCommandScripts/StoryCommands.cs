@@ -120,6 +120,7 @@ public class StoryCommands : MonoBehaviour
     {
         playerViewManager = GameObject.Find("PlayerViewManager").GetComponent<PlayerViewManager>();
         playerViewManager.NextPosition();
+        
     }
 
 

@@ -12,9 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public float bikeSpeed = 0.0f;
     public int bikeRPM = 0;
     public int bikeHeartRate = 0;
-    public TextMeshProUGUI speedText;
-    public TextMeshProUGUI rpmText;
-    public TextMeshProUGUI heartRateText;
+    //public TextMeshProUGUI speedText;
+    //public TextMeshProUGUI rpmText;
+    //public TextMeshProUGUI heartRateText;
 
     [SerializeField] private float moveSpeed = 10.0f;
 
@@ -38,17 +38,17 @@ public class PlayerMovement : MonoBehaviour
         bikeHeartRate = bikeController.heartRate;
     }
 
-    public void DisplayBikeDetails()
-    {
-        Debug.Log($"Speed: {bikeSpeed}");
-        speedText.text = $"Speed: {bikeSpeed}";
+    // public void DisplayBikeDetails()
+    // {
+    //     Debug.Log($"Speed: {bikeSpeed}");
+    //     speedText.text = $"Speed: {bikeSpeed}";
 
-        Debug.Log($"RPM: {bikeRPM}");
-        rpmText.text = $"RPM: {bikeRPM}";
+    //     Debug.Log($"RPM: {bikeRPM}");
+    //     rpmText.text = $"RPM: {bikeRPM}";
 
-        Debug.Log($"Heart rate: {bikeHeartRate}");
-        heartRateText.text = $"Heart rate: {bikeHeartRate}";
-    }
+    //     Debug.Log($"Heart rate: {bikeHeartRate}");
+    //     heartRateText.text = $"Heart rate: {bikeHeartRate}";
+    // }
 
     // To test the speed of movement.
     public void MovePlayer()

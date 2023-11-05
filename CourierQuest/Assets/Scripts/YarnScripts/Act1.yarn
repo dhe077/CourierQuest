@@ -358,6 +358,7 @@ What do you do?
 title: Go_choose_your_package_deliveries
 ---
 <<nextPosition none>>
+<<wait 2>>
 *You look over at the packages that need delivering. You're given 2 choices first.*
 
 Choose your first package?
@@ -504,6 +505,8 @@ Ellastra: Seems like you've got all your packages ready. You'd better start leav
 
 title: Take_your_leave
 ---
+<<goToScene Stable>>
+<<wait 5>>
 You gather supplies for your journey. You head to the courier stables where the stable master provides you with a special courier horse.
 
 Stablemaster: Seeing as there might be a storm coming. Stormhoof here won't be startled by thunder. Take care of her will ya.
@@ -537,6 +540,8 @@ title: Take_the_reins
 ---
 You take the reins and hop on the saddle atop Stormhoof.
 
+<<nextPosition none>>
+<<wait 4>>
 -> Start your journey.
     <<jump Start_your_journey>>
 ===
