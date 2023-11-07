@@ -6,27 +6,41 @@ using UnityEngine.UI;
 
 public class PlayerViewManager : MonoBehaviour
 {
+    [Header("Player View Object")]
     [SerializeField] private GameObject playerView;
-    [SerializeField] private List<SplineComputer> splineComputers;
-    public int positionIndex = 0;
-    [SerializeField] public float moveSpeedMultiplier = 10.0f;
 
-    // For spot fading
-    public Image image;
-    public float fadeDuration = 1.0f;
+    [Header("Spline Computers")]
+    [SerializeField] private List<SplineComputer> splineComputers;
+    private int positionIndex = 0;
+
+    [Header("Player Movement")]
+    [SerializeField] public float moveSpeedMultiplier = 10.0f;
+    
+    [Header("Head Position Manager")]
+    [SerializeField] public bool enableHeadMovement = false;
+    [SerializeField] private float maxDist = 5.0f;
+
+    [Header("Spot Change")]
+    [SerializeField] private Image spotFadeImage; // For spot fading
+    [SerializeField] public float fadeDuration = 1.0f;
 
     private bool isFading = false;
 
     void Start()
     {
         playerView = GameObject.Find("PlayerView");
-
-        // Get the spot fade image
-        image = GameObject.Find("SpotChangeImage").GetComponent<Image>();
+        spotFadeImage = GameObject.Find("SpotChangeImage").GetComponent<Image>();
+        
         // Set the initial alpha of the Image to fully transparent
-        SetImageAlpha(image, 0f);
+        SetImageAlpha(spotFadeImage, 0f);
 
+        // Set the splinepath for the playerView
         SetSplinePath();
+
+        // Set PositionTracker variables
+        SetPositionTracker();
+
+        // Set PlayerMovement variables
         SetMoveSpeedMultiplier();
     }
 
@@ -38,6 +52,18 @@ public class PlayerViewManager : MonoBehaviour
     private void SetMoveSpeedMultiplier()
     {
         playerView.GetComponent<PlayerMovement>().SetMoveSpeed(moveSpeedMultiplier);
+    }
+
+    private void SetPositionTracker()
+    {
+        // Enable the playerView PositionTracker if enableHeadMovement is true
+        GameObject positionTracker = GameObject.Find("PositionTracker");
+        positionTracker.SetActive(enableHeadMovement);
+        // Set PositionTracker variables
+        HeadPositionManager headPositionManager = positionTracker.GetComponent<HeadPositionManager>();
+        headPositionManager.SetMaxDist(maxDist);
+        headPositionManager.playerView = playerView;
+        headPositionManager.splineFollower = playerView.GetComponent<SplineFollower>();
     }
 
     public void NextPosition()
@@ -55,7 +81,7 @@ public class PlayerViewManager : MonoBehaviour
         if (!isFading)
         {
             isFading = true;
-            StartCoroutine(FadeInAndOut(image, fadeDuration));
+            StartCoroutine(FadeInAndOut(spotFadeImage, fadeDuration));
         }
     }
 

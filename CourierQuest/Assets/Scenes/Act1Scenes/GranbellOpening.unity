@@ -9467,10 +9467,11 @@ MonoBehaviour:
   playerView: {fileID: 1148245193}
   splineComputers:
   - {fileID: 1149508045}
+  spotFadeImage: {fileID: 0}
   positionIndex: 0
   moveSpeedMultiplier: 10
-  image: {fileID: 1450089928}
   fadeDuration: 0.3
+  enableHeadMovement: 0
 --- !u!4 &693027170
 Transform:
   m_ObjectHideFlags: 0
@@ -9786,7 +9787,7 @@ RectTransform:
   - {fileID: 1450089927}
   - {fileID: 1211446897}
   m_Father: {fileID: 1148245194}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15583,6 +15584,7 @@ Transform:
   m_Children:
   - {fileID: 114026081}
   - {fileID: 1360822204}
+  - {fileID: 2133094356}
   - {fileID: 712027499}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -15616,7 +15618,6 @@ MonoBehaviour:
   bikeSpeed: 0
   bikeRPM: 0
   bikeHeartRate: 0
-  moveSpeed: 10
 --- !u!114 &1148245197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48382,6 +48383,91 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
+--- !u!1 &2133094355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2133094356}
+  - component: {fileID: 2133094358}
+  - component: {fileID: 2133094357}
+  m_Layer: 0
+  m_Name: PositionTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2133094356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133094355}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -3.1990001, y: 0.904, z: 2.0330007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1148245194}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2133094357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133094355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf4dcedc715c82429de23fce5269189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerView: {fileID: 1148245193}
+  splineFollower: {fileID: 1148245197}
+  _headMoveMultiplier: 10
+  _headXToMove:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxDist: 5
+--- !u!114 &2133094358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133094355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65482b950024ea441a9f49508c909626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2142959685
 GameObject:
   m_ObjectHideFlags: 0

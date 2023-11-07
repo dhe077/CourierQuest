@@ -12,7 +12,7 @@ public class ForestPathGeneration : MonoBehaviour
     [SerializeField] public Queue<GameObject> currentForestPaths;
     // This is the x position of the prefabs when intantiating them
     // Should increase by 60 every time
-    private int xPosition = 0;
+    private int zPosition = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class ForestPathGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerView.transform.position.x >= xPosition - 180)
+        if (playerView.transform.position.z >= zPosition - 180)
         {
             GeneratePath();
             GeneratePath();
@@ -55,8 +55,8 @@ public class ForestPathGeneration : MonoBehaviour
         // Get next path from list
         GameObject nextPath = forestPathPrefabs[pathIndex];
         // Make a Vector3 for the next position and move xPosition forward 60 and 
-        Vector3 nextPosition = new Vector3(xPosition, 0, 0);
-        xPosition += 60;
+        Vector3 nextPosition = new Vector3(0, 0, zPosition);
+        zPosition += 60;
         Quaternion noRotation = Quaternion.identity;
         // Instantiate path at next position
         GameObject newPath = Instantiate(nextPath, nextPosition, noRotation);
