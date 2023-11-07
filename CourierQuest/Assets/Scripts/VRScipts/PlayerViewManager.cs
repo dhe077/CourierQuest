@@ -59,11 +59,14 @@ public class PlayerViewManager : MonoBehaviour
         // Enable the playerView PositionTracker if enableHeadMovement is true
         GameObject positionTracker = GameObject.Find("PositionTracker");
         positionTracker.SetActive(enableHeadMovement);
-        // Set PositionTracker variables
-        HeadPositionManager headPositionManager = positionTracker.GetComponent<HeadPositionManager>();
-        headPositionManager.SetMaxDist(maxDist);
-        headPositionManager.playerView = playerView;
-        headPositionManager.splineFollower = playerView.GetComponent<SplineFollower>();
+        if (positionTracker.activeSelf == true)
+        {
+            // Set PositionTracker variables
+            HeadPositionManager headPositionManager = positionTracker.GetComponent<HeadPositionManager>();
+            headPositionManager.SetMaxDist(maxDist);
+            headPositionManager.playerView = playerView;
+            headPositionManager.splineFollower = playerView.GetComponent<SplineFollower>();
+        }
     }
 
     public void NextPosition()

@@ -73,7 +73,6 @@ public class StoryCommands : MonoBehaviour
             {
                 timeoutOption = customOptionsListView.optionViews[numOfOptions-1];
                 FadeInColor();
-                //Debug.Log(timeoutOption.transform.GetChild(0).GetComponent<Image>().color);
             }
             if (updateTimerBar == true)
                 timerBar.value = timer;
@@ -120,7 +119,6 @@ public class StoryCommands : MonoBehaviour
     {
         playerViewManager = GameObject.Find("PlayerViewManager").GetComponent<PlayerViewManager>();
         playerViewManager.NextPosition();
-        
     }
 
 
@@ -183,13 +181,28 @@ public class StoryCommands : MonoBehaviour
     {
         // Gradually decrease the color value to fade out
         StartCoroutine(FadeColor(1, 0, endTimer/2));
-        Debug.Log("Fade out!");
     }
 
     public void FadeInColor()
     {
         // Gradually decrease the color value to fade out
         StartCoroutine(FadeColor(0, 1, endTimer));
+    }
+
+    public void ChooseOption(int optionIndex)
+    {
+        // Get the chosen option
+        OptionView chosenOptionView = customOptionsListView.optionViews[optionIndex];
+
+        // Choose that option
+        chosenOptionView.InvokeOptionSelected();
+        
+        //StopAllCoroutines();
+    }
+
+    public void StartFrom(string nodeName)
+    {
+        dialogueRunner.StartDialogue(nodeName);
     }
 
 }

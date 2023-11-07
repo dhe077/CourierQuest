@@ -541,7 +541,7 @@ title: Take_the_reins
 You take the reins and hop on the saddle atop Stormhoof.
 
 <<nextPosition none>>
-<<wait 4>>
+<<wait 3>>
 -> Start your journey.
     <<jump Start_your_journey>>
 ===
@@ -550,19 +550,25 @@ title: Start_your_journey
 ---
 On horseback, you pass through the kingdom gates and begin your journey through the woods towards your delivery destinations.
 
+<<goToScene ForestRoad>>
+<<wait 2>>
 The storm above you looks like it's getting worse. The clouds are a darker grey now and much denser than before. You'd better speed up to avoid the storm as much as possible.
 
 You need to make sure you follow the well-trodden path and avoid any obstructions on the path. Any wrong turns or slip-ups will have an impact on your delivery quality and if Mistress Ellastra finds out you'd be sent to the jail house for sure.
 
-*During this section, the player will need to avoid obstacles on the path.*
--> Successfully follow the path and avoids obstacles.
-    <<jump Successfully_follow_the_path_and_avoids_obstacles>>
--> Unsuccessfully follow the main path.
-    <<jump Unsuccessfully_follow_the_main_path>>
--> Knocked into too many obstacles.
-    <<jump Knocked_into_too_many_obstacles>>
--> Got lost and hit too many obstacles.
-    <<jump Got_lost_and_hit_too_many_obstacles>>
+Are you ready? Continue when you're ready.
+<<goToScene ObstacleForestRoad>>
+<<stop>>
+
+// *During this section, the player will need to avoid obstacles on the path.*
+// -> Successfully follow the path and avoids obstacles.
+//     <<jump Successfully_follow_the_path_and_avoids_obstacles>>
+// -> Unsuccessfully follow the main path.
+//     <<jump Unsuccessfully_follow_the_main_path>>
+// -> Knocked into too many obstacles.
+//     <<jump Knocked_into_too_many_obstacles>>
+// -> Got lost and hit too many obstacles.
+//     <<jump Got_lost_and_hit_too_many_obstacles>>
 ===
 
 title: Successfully_follow_the_path_and_avoids_obstacles
