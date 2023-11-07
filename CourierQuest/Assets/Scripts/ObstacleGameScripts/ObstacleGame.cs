@@ -6,15 +6,16 @@ public class ObstacleGame : MonoBehaviour
 {
     [SerializeField] private GameObject playerView;
     [SerializeField] private StoryCommands storyCommands;
+    [SerializeField] private ObstacleGenerator obstacleGenerator;
 
-    public int obstaclesHit = 0;
+    [SerializeField] private int obstaclesHit = 0;
     public int idealObstaclesHit = 10;
 
     private bool followedPath = true;
 
-    private float spawnTimer = 0f;
+    private float spawnTimer = 5f;
     [SerializeField] private float timer = 0f;
-    public float maxTime = 10.0f;
+    public float maxTime = 20.0f;
     private bool startTicking = false;
 
     private void Start()
@@ -36,6 +37,10 @@ public class ObstacleGame : MonoBehaviour
                 startTicking = false;
                 ObstacleGameOutcome();
             }
+            if (timer >= spawnTimer)
+            {
+                obstacleGenerator.startGenerating = true;
+            }
         }
     }
 
@@ -50,4 +55,11 @@ public class ObstacleGame : MonoBehaviour
         else if (obstaclesHit >= idealObstaclesHit && followedPath == false)
             storyCommands.StartFrom("Got_lost_and_hit_too_many_obstacles");
     }
+
+    public void HitObstacle()
+    {
+        obstaclesHit += 1;
+    }
+
+
 }
