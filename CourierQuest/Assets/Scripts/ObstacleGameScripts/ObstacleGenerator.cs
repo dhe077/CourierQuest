@@ -11,7 +11,7 @@ public class ObstacleGenerator : MonoBehaviour
     private int zPosition = 0;
     public int maxSpread = 5;
 
-    public bool startGenerating = false;
+    private bool startGenerating = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +43,7 @@ public class ObstacleGenerator : MonoBehaviour
         }
     }
 
-    private int ChooseForestPath()
+    private int ChooseObstaclePrefab()
     {
         System.Random rnd = new System.Random();
         int obstacleIndex = rnd.Next(0, obstaclePrefabs.Count);
@@ -55,14 +55,22 @@ public class ObstacleGenerator : MonoBehaviour
         System.Random rnd = new System.Random();
         int zVal = rnd.Next(min, max);
         int xVal = rnd.Next(-maxSpread, maxSpread);
-        Vector3 newPosition = new Vector3(xVal, 0.4f, zVal);
+        Vector3 newPosition = new Vector3(xVal, 0, zVal);
         return newPosition;
+    }
+
+    private Quaternion RandomRotation()
+    {
+        System.Random rnd = new System.Random();
+        int rotation = rnd.Next(0, 180);
+        Quaternion newRotation = Quaternion.Euler(0, rotation, 0);
+        return newRotation;
     }
 
     private void GenerateObstacle()
     {
         // Choose obstacle prefab
-        int obstacleIndex = ChooseForestPath();
+        int obstacleIndex = ChooseObstaclePrefab();
         // Get random obstacle from list
         GameObject nextObstacle = obstaclePrefabs[obstacleIndex];
         
@@ -70,10 +78,12 @@ public class ObstacleGenerator : MonoBehaviour
         //Vector3 nextPosition = new Vector3(0, 0, zPosition);
         Vector3 nextPosition = RandomPosition(zPosition, zPosition + 20);
         zPosition += 60;
-        Quaternion noRotation = Quaternion.identity;
+        
+        // Get a random rotation
+        Quaternion newRotation = RandomRotation();
         
         // Instantiate obstacle at next position
-        GameObject newObstacle = Instantiate(nextObstacle, nextPosition, noRotation);
+        GameObject newObstacle = Instantiate(nextObstacle, nextPosition, newRotation);
         currentObstacles.Enqueue(newObstacle);
     }
 
@@ -81,5 +91,20 @@ public class ObstacleGenerator : MonoBehaviour
     {
         GameObject oldPath = currentObstacles.Dequeue();
         Destroy(oldPath);
+    }
+
+    public void DestroyAllObstacles()
+    {
+        int numOfObstacles = currentObstacles.Count;
+        for(int i = 0; i < numOfObstacles; i++)
+        {
+            GameObject oldPath = currentObstacles.Dequeue();
+            Destroy(oldPath);
+        }
+    }
+
+    public void SetGenerate(bool generate)
+    {
+        startGenerating = generate;
     }
 }

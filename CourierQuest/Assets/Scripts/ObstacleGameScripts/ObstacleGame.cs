@@ -7,13 +7,14 @@ public class ObstacleGame : MonoBehaviour
     [SerializeField] private GameObject playerView;
     [SerializeField] private StoryCommands storyCommands;
     [SerializeField] private ObstacleGenerator obstacleGenerator;
+    [SerializeField] private ForestPathGeneration forestPathGeneration;
 
     [SerializeField] private int obstaclesHit = 0;
     public int idealObstaclesHit = 10;
 
     private bool followedPath = true;
 
-    private float spawnTimer = 5f;
+    private float spawnTimer = 5.0f;
     [SerializeField] private float timer = 0f;
     public float maxTime = 20.0f;
     private bool startTicking = false;
@@ -23,6 +24,10 @@ public class ObstacleGame : MonoBehaviour
         playerView = GameObject.Find("PlayerView");
         storyCommands = GameObject.Find("Custom Dialogue System").GetComponent<StoryCommands>();
 
+        // Start generating forest paths
+        forestPathGeneration.SetGenerate(true);
+
+        // Start the scene timer
         startTicking = true;
     }
 
@@ -36,10 +41,17 @@ public class ObstacleGame : MonoBehaviour
             {   
                 startTicking = false;
                 ObstacleGameOutcome();
+                // Stop generating forest and clear obstacles
+                forestPathGeneration.SetGenerate(false);
+                obstacleGenerator.SetGenerate(false);
+                obstacleGenerator.DestroyAllObstacles();
+
+                // Generate the split path
+                forestPathGeneration.GenerateSplitPath();
             }
-            if (timer >= spawnTimer)
+            else if (timer >= spawnTimer)
             {
-                obstacleGenerator.startGenerating = true;
+                obstacleGenerator.SetGenerate(true);
             }
         }
     }
