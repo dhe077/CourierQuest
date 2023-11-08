@@ -90,8 +90,13 @@ public class ObstacleGenerator : MonoBehaviour
 
     private void DestroyObstacle()
     {
-        GameObject oldPath = currentObstacles.Dequeue();
-        Destroy(oldPath);
+        // Check to see if the obstacle is behind the player.
+        GameObject oldPath = currentObstacles.Peek();
+        if (oldPath.transform.position.z < playerView.transform.position.z)
+        {
+            oldPath = currentObstacles.Dequeue();
+            Destroy(oldPath);
+        }
     }
 
     public void DestroyAllObstacles()
@@ -99,8 +104,7 @@ public class ObstacleGenerator : MonoBehaviour
         int numOfObstacles = currentObstacles.Count;
         for(int i = 0; i < numOfObstacles; i++)
         {
-            GameObject oldPath = currentObstacles.Dequeue();
-            Destroy(oldPath);
+            DestroyObstacle();
         }
     }
 

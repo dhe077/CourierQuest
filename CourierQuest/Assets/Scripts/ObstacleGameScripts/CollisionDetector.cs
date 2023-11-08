@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CollisionDetector : MonoBehaviour
 {
@@ -15,18 +16,13 @@ public class CollisionDetector : MonoBehaviour
     public float fadeDuration = 0.5f; // Adjust this value to control the fade duration
     private bool isFlashing = false;
 
+    // Check everytime a scene is loaded for the obstacle game
+    void OnEnable() { SceneManager.sceneLoaded += OnSceneLoaded; }
 
-    private void Start()
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        try
-        {
-            obstacleGame = GameObject.Find("ObstacleGameSystem").GetComponent<ObstacleGame>();
-        }
-        catch(NullReferenceException)
-        {
-            Debug.Log("No ObstacleGame set in CollisionDetector!");
-        }
-        
+        try { obstacleGame = GameObject.Find("ObstacleGameSystem").GetComponent<ObstacleGame>(); }
+        catch(NullReferenceException) { Debug.Log("No ObstacleGame set in CollisionDetector!"); }
     }
 
     private void OnTriggerEnter(Collider other)
