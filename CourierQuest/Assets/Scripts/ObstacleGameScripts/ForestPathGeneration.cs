@@ -32,6 +32,7 @@ public class ForestPathGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(playerView.transform.position);
         if (startGenerating == true)
         {
             if (playerView.transform.position.z >= zPosition - 180)

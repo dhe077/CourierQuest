@@ -30,25 +30,18 @@ public class PlayerViewManager : MonoBehaviour
     void Start()
     {
         playerView = GameObject.Find("PlayerView");
-        SetupPlayerView();
 
         // Set the initial alpha of the Image to fully transparent
         spotFadeImage = GameObject.Find("SpotChangeImage").GetComponent<Image>();
         SetImageAlpha(spotFadeImage, 0f);
+
+        SetSplinePath();
 
         // Set PositionTracker variables
         SetPositionTracker();
 
         // Set PlayerMovement variables
         SetMoveSpeedMultiplier();
-    }
-
-    private void SetupPlayerView()
-    {
-        // Set the splinepath for the playerView
-        playerView.GetComponent<SplineFollower>().spline = splineComputers[positionIndex];
-        // Setup the playerView PlayerView CollisionDetector
-        //playerView.GetComponent<CollisionDetector>().enabled = detectCollisions;
     }
 
     private void SetSplinePath()

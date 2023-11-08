@@ -574,6 +574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerView: {fileID: 0}
+  startingPos: {fileID: 2126183159}
   forestPathPrefabs:
   - {fileID: 6966740841997676741, guid: 1418a2d1ce087a144aea4067a64d9fcf, type: 3}
   forestPathSplit: {fileID: 4697096741484784740, guid: f579a9ffc464a584392e44698d547d7d,
@@ -582,6 +583,7 @@ MonoBehaviour:
     type: 3}
   forestOffPath: {fileID: 789600865868359101, guid: 0de880989bc24844ca5265324614f87b,
     type: 3}
+  startGenerating: 1
 --- !u!1 &795686901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,14 +1011,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2126183159}
   - component: {fileID: 2126183161}
-  - component: {fileID: 2126183160}
   m_Layer: 0
   m_Name: StartingCameraPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2126183159
 Transform:
   m_ObjectHideFlags: 0
@@ -1032,14 +1033,6 @@ Transform:
   m_Father: {fileID: 1892700715}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &2126183160
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126183158}
-  m_Enabled: 1
 --- !u!20 &2126183161
 Camera:
   m_ObjectHideFlags: 0
@@ -1047,7 +1040,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126183158}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}

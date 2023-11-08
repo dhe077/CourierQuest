@@ -50,7 +50,6 @@ public class ObstacleGame : MonoBehaviour
                 startTicking = false;
                 timer = 0f;
 
-                ObstacleGameOutcome();
                 // Stop generating forest and clear obstacles
                 forestPathGeneration.SetGenerate(false);
                 obstacleGenerator.SetGenerate(false);
