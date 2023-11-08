@@ -1,65 +1,11 @@
 {
   "version": 3,
   "targets": {
-    ".NETStandard,Version=v2.1": {
-      "Dreamteck.Splines/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "Dreamteck.Utilities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Dreamteck.Splines.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dreamteck.Splines.dll": {}
-        }
-      },
-      "Dreamteck.Utilities/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Dreamteck.Utilities.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dreamteck.Utilities.dll": {}
-        }
-      },
-      "Dreamteck.Utilities.Editor/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Dreamteck.Utilities.Editor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dreamteck.Utilities.Editor.dll": {}
-        }
-      }
-    }
+    ".NETStandard,Version=v2.1": {}
   },
-  "libraries": {
-    "Dreamteck.Splines/1.0.0": {
-      "type": "project",
-      "path": "Dreamteck.Splines.csproj",
-      "msbuildProject": "Dreamteck.Splines.csproj"
-    },
-    "Dreamteck.Utilities/1.0.0": {
-      "type": "project",
-      "path": "Dreamteck.Utilities.csproj",
-      "msbuildProject": "Dreamteck.Utilities.csproj"
-    },
-    "Dreamteck.Utilities.Editor/1.0.0": {
-      "type": "project",
-      "path": "Dreamteck.Utilities.Editor.csproj",
-      "msbuildProject": "Dreamteck.Utilities.Editor.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETStandard,Version=v2.1": [
-      "Dreamteck.Splines >= 1.0.0",
-      "Dreamteck.Utilities >= 1.0.0",
-      "Dreamteck.Utilities.Editor >= 1.0.0"
-    ]
+    ".NETStandard,Version=v2.1": []
   },
   "packageFolders": {
     "C:\\Users\\GGPC\\.nuget\\packages\\": {}
@@ -67,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Splines.Editor.csproj",
-      "projectName": "Dreamteck.Splines.Editor",
-      "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Splines.Editor.csproj",
+      "projectUniqueName": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj",
+      "projectName": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor",
+      "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj",
       "packagesPath": "C:\\Users\\GGPC\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\obj\\",
       "projectStyle": "PackageReference",
@@ -85,17 +31,7 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {
-            "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Splines.csproj": {
-              "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Splines.csproj"
-            },
-            "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Utilities.csproj": {
-              "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Utilities.csproj"
-            },
-            "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Utilities.Editor.csproj": {
-              "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Utilities.Editor.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

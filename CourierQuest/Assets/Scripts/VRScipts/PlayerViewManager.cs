@@ -31,10 +31,6 @@ public class PlayerViewManager : MonoBehaviour
     {
         playerView = GameObject.Find("PlayerView");
 
-        // Set the initial alpha of the Image to fully transparent
-        spotFadeImage = GameObject.Find("SpotChangeImage").GetComponent<Image>();
-        SetImageAlpha(spotFadeImage, 0f);
-
         SetSplinePath();
 
         // Set PositionTracker variables
@@ -42,11 +38,16 @@ public class PlayerViewManager : MonoBehaviour
 
         // Set PlayerMovement variables
         SetMoveSpeedMultiplier();
+
+        // Set the initial alpha of the Image to fully transparent
+        spotFadeImage = GameObject.Find("SpotChangeImage").GetComponent<Image>();
+        SetImageAlpha(spotFadeImage, 0f);
     }
 
     private void SetSplinePath()
     {
         playerView.GetComponent<SplineFollower>().spline = splineComputers[positionIndex];
+        playerView.GetComponent<SplineFollower>().SetDistance(0);
     }
 
     private void SetMoveSpeedMultiplier()

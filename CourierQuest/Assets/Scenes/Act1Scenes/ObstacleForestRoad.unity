@@ -319,7 +319,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1892700715}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &452752742
 MonoBehaviour:
@@ -476,7 +476,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1892700715}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &493876044
 MonoBehaviour:
@@ -574,7 +574,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerView: {fileID: 0}
-  startingPos: {fileID: 2126183159}
   forestPathPrefabs:
   - {fileID: 6966740841997676741, guid: 1418a2d1ce087a144aea4067a64d9fcf, type: 3}
   forestPathSplit: {fileID: 4697096741484784740, guid: f579a9ffc464a584392e44698d547d7d,
@@ -583,7 +582,6 @@ MonoBehaviour:
     type: 3}
   forestOffPath: {fileID: 789600865868359101, guid: 0de880989bc24844ca5265324614f87b,
     type: 3}
-  startGenerating: 1
 --- !u!1 &795686901
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,14 +663,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyCommands: {fileID: 0}
   forestPathGeneration: {fileID: 607476216}
-  maxSpread: 5
+  maxSpread: 8
   maxForwardSpread: 10
   obstacleGenerator: {fileID: 795686903}
   obstaclesHit: 0
   maxObstaclesHit: 5
   timer: 0
   spawnTimer: 5
-  maxTime: 20
+  maxTime: 60
 --- !u!4 &942393668
 Transform:
   m_ObjectHideFlags: 0
@@ -978,7 +976,7 @@ MonoBehaviour:
   playerView: {fileID: 0}
   splineComputers:
   - {fileID: 452752742}
-  moveSpeedMultiplier: 1
+  moveSpeedMultiplier: 10
   enableHeadMovement: 1
   maxDist: 9
   spotFadeImage: {fileID: 0}
@@ -995,8 +993,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 493876043}
   - {fileID: 452752741}
+  - {fileID: 493876043}
   - {fileID: 2126183159}
   m_Father: {fileID: 0}
   m_RootOrder: 5
