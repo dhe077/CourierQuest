@@ -8,16 +8,16 @@ public class ForestPathGeneration : MonoBehaviour
     [SerializeField] public GameObject playerView;
     [SerializeField] public List<GameObject> forestPathPrefabs;
     [SerializeField] public GameObject forestPathSplit;
+    [SerializeField] public GameObject forestMainPath;
+    [SerializeField] public GameObject forestOffPath;
 
     [SerializeField] public Queue<GameObject> currentForestPaths;
-    
-    
     
     
     // This is the x position of the prefabs when intantiating them
     // Should increase by 60 every time
     private int zPosition = 0;
-    private bool startGenerating = false;
+    private bool startGenerating = true;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +47,11 @@ public class ForestPathGeneration : MonoBehaviour
                 DestroyPath();
             }
         }
+    }
+
+    public void SetGenerate(bool generate)
+    {
+        startGenerating = generate;
     }
 
     private int ChooseForestPath()
@@ -83,6 +88,26 @@ public class ForestPathGeneration : MonoBehaviour
     {
         // Use the split path prefab
         GameObject nextPath = forestPathSplit;
+        // Make a Vector3 for the next position and move xPosition forward 
+        zPosition += 30;
+        Vector3 nextPosition = new Vector3(0, 0, zPosition);
+        zPosition += 90;
+        Quaternion noRotation = Quaternion.identity;
+        // Instantiate path at next position
+        GameObject newPath = Instantiate(nextPath, nextPosition, noRotation);
+        currentForestPaths.Enqueue(newPath);
+    }
+
+    public void GenerateSpecificPath(string path)
+    {
+        // Generate a MainPath specific path
+        // Use the split path prefab
+        GameObject nextPath = null;
+        if (path == "MainPath")
+            nextPath = forestMainPath;
+        else if (path == "OffPath")
+            nextPath = forestOffPath;
+
         // Make a Vector3 for the next position and move xPosition forward 60 and 
         Vector3 nextPosition = new Vector3(0, 0, zPosition);
         zPosition += 60;
@@ -90,10 +115,8 @@ public class ForestPathGeneration : MonoBehaviour
         // Instantiate path at next position
         GameObject newPath = Instantiate(nextPath, nextPosition, noRotation);
         currentForestPaths.Enqueue(newPath);
-    }
 
-    public void SetGenerate(bool generate)
-    {
-        startGenerating = generate;
+        // Generate the normal paths
+        SetGenerate(true);
     }
 }

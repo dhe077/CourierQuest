@@ -89,21 +89,23 @@ public class GlobalSettings : MonoBehaviour {
 			SetSettingsFromDictionary(settings);
 		}*/
         //load global settings from a config file
-        IDictionary<string, string> settings = new Dictionary<string, string>();
-        using (StreamReader configFile = new StreamReader(Environment.CurrentDirectory + "\\playerdata.cfg"))
-        {
-            string line;
-            while ((line = configFile.ReadLine()) != null)
-            {
-                int equalsIndex = line.IndexOf('=');
-                if (equalsIndex >= 0)
-                {
-                    settings.Add(line.Substring(0, equalsIndex), line.Substring(equalsIndex + 1, line.Length - (equalsIndex + 1)));
-                }
-            }
-        }
-        //now that we've read all the settings into a dictionary, parse them into our specific settings
-        SetSettingsFromDictionary(settings);
+
+        // CAN UN-COMMENT THIS SECTION IN THE FUTURE ////////////////////////
+        // IDictionary<string, string> settings = new Dictionary<string, string>();
+        // using (StreamReader configFile = new StreamReader(Environment.CurrentDirectory + "\\playerdata.cfg"))
+        // {
+        //     string line;
+        //     while ((line = configFile.ReadLine()) != null)
+        //     {
+        //         int equalsIndex = line.IndexOf('=');
+        //         if (equalsIndex >= 0)
+        //         {
+        //             settings.Add(line.Substring(0, equalsIndex), line.Substring(equalsIndex + 1, line.Length - (equalsIndex + 1)));
+        //         }
+        //     }
+        // }
+        // //now that we've read all the settings into a dictionary, parse them into our specific settings
+        // SetSettingsFromDictionary(settings);
         
         //Make some changes as required by our settings
         EnableAndDisableObjectsBasedOnSettings();

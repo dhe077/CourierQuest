@@ -6,21 +6,22 @@ using UnityEngine.UI;
 
 public class PlayerViewManager : MonoBehaviour
 {
-    [Header("Player View Object")]
+    [Header("----Player View Object----")]
     [SerializeField] private GameObject playerView;
+    //[SerializeField] private bool detectCollisions = false;
 
-    [Header("Spline Computers")]
+    [Header("----Spline Computers----")]
     [SerializeField] private List<SplineComputer> splineComputers;
     private int positionIndex = 0;
 
-    [Header("Player Movement")]
+    [Header("----Player Movement----")]
     [SerializeField] public float moveSpeedMultiplier = 10.0f;
     
-    [Header("Head Position Manager")]
+    [Header("----Head Position Manager----")]
     [SerializeField] public bool enableHeadMovement = false;
     [SerializeField] private float maxDist = 5.0f;
 
-    [Header("Spot Change")]
+    [Header("----Spot Change----")]
     [SerializeField] private Image spotFadeImage; // For spot fading
     [SerializeField] public float fadeDuration = 1.0f;
 
@@ -29,19 +30,25 @@ public class PlayerViewManager : MonoBehaviour
     void Start()
     {
         playerView = GameObject.Find("PlayerView");
-        spotFadeImage = GameObject.Find("SpotChangeImage").GetComponent<Image>();
-        
-        // Set the initial alpha of the Image to fully transparent
-        SetImageAlpha(spotFadeImage, 0f);
+        SetupPlayerView();
 
-        // Set the splinepath for the playerView
-        SetSplinePath();
+        // Set the initial alpha of the Image to fully transparent
+        spotFadeImage = GameObject.Find("SpotChangeImage").GetComponent<Image>();
+        SetImageAlpha(spotFadeImage, 0f);
 
         // Set PositionTracker variables
         SetPositionTracker();
 
         // Set PlayerMovement variables
         SetMoveSpeedMultiplier();
+    }
+
+    private void SetupPlayerView()
+    {
+        // Set the splinepath for the playerView
+        playerView.GetComponent<SplineFollower>().spline = splineComputers[positionIndex];
+        // Setup the playerView PlayerView CollisionDetector
+        //playerView.GetComponent<CollisionDetector>().enabled = detectCollisions;
     }
 
     private void SetSplinePath()

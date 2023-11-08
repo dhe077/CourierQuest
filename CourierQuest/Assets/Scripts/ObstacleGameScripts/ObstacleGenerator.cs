@@ -9,7 +9,8 @@ public class ObstacleGenerator : MonoBehaviour
     [SerializeField] public Queue<GameObject> currentObstacles;
 
     private int zPosition = 0;
-    public int maxSpread = 5;
+    private int maxSpread;
+    private int maxForwardSpread;
 
     private bool startGenerating = false;
 
@@ -76,8 +77,8 @@ public class ObstacleGenerator : MonoBehaviour
         
         // Make a random Vector3 for the next position then move xPosition forward by 60
         //Vector3 nextPosition = new Vector3(0, 0, zPosition);
-        Vector3 nextPosition = RandomPosition(zPosition, zPosition + 20);
-        zPosition += 60;
+        Vector3 nextPosition = RandomPosition(zPosition, zPosition + maxForwardSpread);
+        zPosition += 30;
         
         // Get a random rotation
         Quaternion newRotation = RandomRotation();
@@ -106,5 +107,15 @@ public class ObstacleGenerator : MonoBehaviour
     public void SetGenerate(bool generate)
     {
         startGenerating = generate;
+    }
+
+    public void SetMaxSpread(int max)
+    {
+        maxSpread = max;
+    }
+
+    public void SetMaxForwardSpread(int max)
+    {
+        maxForwardSpread = max;
     }
 }

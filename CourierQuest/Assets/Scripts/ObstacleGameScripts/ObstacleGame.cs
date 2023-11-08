@@ -4,28 +4,35 @@ using UnityEngine;
 
 public class ObstacleGame : MonoBehaviour
 {
-    [SerializeField] private GameObject playerView;
+    [Header("----From PlayerView----")]
     [SerializeField] private StoryCommands storyCommands;
-    [SerializeField] private ObstacleGenerator obstacleGenerator;
+
+    [Header("----Forest Path Generation----")]
     [SerializeField] private ForestPathGeneration forestPathGeneration;
-
-    [SerializeField] private int obstaclesHit = 0;
-    public int idealObstaclesHit = 10;
-
+    [SerializeField] private int maxSpread = 5;
+    [SerializeField] private int maxForwardSpread = 20;
     private bool followedPath = true;
 
-    private float spawnTimer = 5.0f;
+    [Header("----Obstacle Generation----")]
+    [SerializeField] private ObstacleGenerator obstacleGenerator;
+    [SerializeField] private int obstaclesHit = 0;
+    public int maxObstaclesHit = 10;
+
+    [Header("----Timer Variables----")]
     [SerializeField] private float timer = 0f;
+    [SerializeField] private float spawnTimer = 5.0f;
     public float maxTime = 20.0f;
     private bool startTicking = false;
 
     private void Start()
     {
-        playerView = GameObject.Find("PlayerView");
         storyCommands = GameObject.Find("Custom Dialogue System").GetComponent<StoryCommands>();
 
         // Start generating forest paths
         forestPathGeneration.SetGenerate(true);
+
+        // Setup obstacle variables
+        SetUpObstacleVariables();
 
         // Start the scene timer
         startTicking = true;
@@ -39,7 +46,10 @@ public class ObstacleGame : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= maxTime)
             {   
+                // Stop timer and reset it
                 startTicking = false;
+                timer = 0f;
+
                 ObstacleGameOutcome();
                 // Stop generating forest and clear obstacles
                 forestPathGeneration.SetGenerate(false);
@@ -58,19 +68,35 @@ public class ObstacleGame : MonoBehaviour
 
     private void ObstacleGameOutcome()
     {
-        if (obstaclesHit < idealObstaclesHit && followedPath == true)
+        if (obstaclesHit < maxObstaclesHit && followedPath == true)
             storyCommands.StartFrom("Successfully_follow_the_path_and_avoids_obstacles");
-        else if (obstaclesHit < idealObstaclesHit && followedPath == false)
+        else if (obstaclesHit < maxObstaclesHit && followedPath == false)
             storyCommands.StartFrom("Unsuccessfully_follow_the_main_path");
-        else if (obstaclesHit >= idealObstaclesHit && followedPath == true)
+        else if (obstaclesHit >= maxObstaclesHit && followedPath == true)
             storyCommands.StartFrom("Knocked_into_too_many_obstacles");
-        else if (obstaclesHit >= idealObstaclesHit && followedPath == false)
+        else if (obstaclesHit >= maxObstaclesHit && followedPath == false)
             storyCommands.StartFrom("Got_lost_and_hit_too_many_obstacles");
     }
 
     public void HitObstacle()
     {
         obstaclesHit += 1;
+    }
+
+    public void ForestSplitMain(string pathName)
+    {
+        forestPathGeneration.GenerateSpecificPath(pathName);
+        if (pathName == "MainPath")
+            followedPath = true;
+        else if (pathName == "OffPath")
+            followedPath = false;
+        ObstacleGameOutcome();
+    }
+
+    public void SetUpObstacleVariables()
+    {
+        obstacleGenerator.SetMaxSpread(maxSpread);
+        obstacleGenerator.SetMaxForwardSpread(maxForwardSpread);
     }
 
 
