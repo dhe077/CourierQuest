@@ -598,10 +598,12 @@ You failed to follow the path but you avoided enough obstacles. It seems like th
 
 You're not sure if you *might* keep your job after this.
 
+<<goToScene OutrunGoblin>>
+<<wait 2>>
 You don't recognise this path from your delivery journeys. Maybe it would be best to ride further forward and make camp then find a way back to the main path in the morning.
 
 <<set $followedPath to false>>
-
+<<wait 10>>>
 -> Failed - You see a small figure ride alongside you.
     <<jump Failed_You_see_a_small_figure_ride_alongside_you>>
 ===
@@ -612,10 +614,12 @@ You managed to follow the path but you didn't avoided enough obstacles. It seems
 
 Looks like you *might* keep your job.
 
+<<goToScene OutrunGoblin>>
+<<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
 
 <<set $followedPath to true>>
-
+<<wait 10>>>
 -> Success - You see a small figure ride alongside you.
     <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
@@ -626,10 +630,12 @@ You failed to follow the path and you didn't avoid enough obstacles. It seems li
 
 You have a feeling that when Mistress Ellastra finds out about this you're gonna get thrown in the pit. Unless... you manage to deliver these packages on time.
 
+<<goToScene OutrunGoblin>>
+<<wait 2>>
 You don't recognise this path from your delivery journeys. Maybe it would be best to ride further forward and make camp then find a way back to the main path in the morning.
 
 <<set $followedPath to false>>
-
+<<wait 10>>>
 -> Failed - You see a small figure ride alongside you.
     <<jump Failed_You_see_a_small_figure_ride_alongside_you>>
 ===
@@ -638,8 +644,10 @@ title: Give_Stormhoof_a_treat
 ---
 In celebration you give Stormhoof a treat from your pack. She responds with a celebratory *neigh*.
 
+<<goToScene OutrunGoblin>>
+<<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
-
+<<wait 10>>>
 -> Success - You see a small figure ride alongside you.
     <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
@@ -648,16 +656,20 @@ title: Pat_Stormhoof_on_the_back
 ---
 In celebration you pat Stormhoof on the back. She responds with a celebratory *neigh*.
 
+<<goToScene OutrunGoblin>>
+<<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
-
+<<wait 10>>>
 -> Success - You see a small figure ride alongside you.
     <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
 
 title: Do_nothing
 ---
+<<goToScene OutrunGoblin>>
+<<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
-
+<<wait 10>>>
 -> Success - You see a small figure ride alongside you.
     <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
