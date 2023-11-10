@@ -1095,6 +1095,7 @@ You need to get away from this creature. You look closely at the rat and it seem
 
 title: Outrun_the_creature
 ---
+<<wait  120>> // Wait for 2 minutes of fast pedalling
 You kept a steady gallop allowing you to outrun the creature and it's mount. 
 
 Garbanzo: I'll be back! You'd better sleep with one eye open!
@@ -1105,6 +1106,7 @@ Garbanzo: I'll be back! You'd better sleep with one eye open!
     There should be a good spot to make camp nearby.
 <<endif>>
 
+<<goToScene EldoriaVolcanoSign>>
 Just before you find a place to camp you reach a fork in the road. At the junction of the fork there is a sign that says Eldoria is along the left path.
 
 <<if $specialPackage is false>>
@@ -1187,6 +1189,7 @@ Do you still want to deliver the package?
 
 title: Take_the_right_path
 ---
+<<specificPosition 1>> // right path position
 You follow the right path.
 
 You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
@@ -1202,11 +1205,13 @@ Where do you want to camp?
 
 title: Take_the_left_path
 ---
+<<specificPosition 2>> // left path position
 You follow the left path.
 
 <<set $path to "left">>
 
 <<if $followedPath is true>>
+    <<goToScene AbandonedHutAndBushes>>
     You see the abandoned hut. You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
     Where do you want to camp?
@@ -1216,6 +1221,7 @@ You follow the left path.
         <<jump Set_up_camp_in_some_bushes>>
 
 <<elseif $followedPath is false>>
+    <<goToScene BushesAndRoad>>
     You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
     Where do you want to camp?

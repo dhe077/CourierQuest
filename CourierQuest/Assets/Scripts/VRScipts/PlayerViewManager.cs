@@ -76,6 +76,12 @@ public class PlayerViewManager : MonoBehaviour
         StartFading();
     }
 
+    public void SpecificPosition(int index)
+    {
+        positionIndex = index;
+        StartFading();
+    }
+
     ////
     // This section of code for fading in and out is a real mess
     ////

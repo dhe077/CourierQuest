@@ -53,6 +53,11 @@ public class StoryCommands : MonoBehaviour
             "nextPosition",
             NextPosition
         );
+
+        dialogueRunner.AddCommandHandler<int>(
+            "specificPosition",
+            SpecificPosition
+        );
     }
 
     public void Start()
@@ -119,6 +124,13 @@ public class StoryCommands : MonoBehaviour
     {
         playerViewManager = GameObject.Find("PlayerViewManager").GetComponent<PlayerViewManager>();
         playerViewManager.NextPosition();
+    }
+
+    // This command moves the player to a specific position in the SAME scene
+    public void SpecificPosition(int index)
+    {
+        playerViewManager = GameObject.Find("PlayerViewManager").GetComponent<PlayerViewManager>();
+        playerViewManager.SpecificPosition(index);
     }
 
 
