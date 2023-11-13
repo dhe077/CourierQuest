@@ -1193,15 +1193,13 @@ Do you still want to deliver the package?
 
 title: Take_the_right_path
 ---
-//<<specificPosition 1>> // right path position
+<<specificPosition RightPath>>
 You follow the right path.
 <<set $path to "right">>
 
 <<goToScene BushesAndRoad>>
 <<wait 2>>
-You need to take shelter before the storm gets worse. 
-<<nextPosition none>> // TieStormhoofSpot
-You tie Stormhoof to a nearby tree. 
+You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
 Where do you want to camp?
 -> Set up camp on the side of the path.
@@ -1212,7 +1210,7 @@ Where do you want to camp?
 
 title: Take_the_left_path
 ---
-//<<specificPosition 2>> // left path position
+<<specificPosition LeftPath>>
 You follow the left path.
 <<set $path to "left">>
 
