@@ -7,9 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     public SplineFollower splineFollower;
     public BikeController bikeController;
-    public float bikeSpeed = 0.0f;
-    public int bikeRPM = 0;
-    public int bikeHeartRate = 0;
+    private float bikeSpeed = 0.0f;
+    private int bikeRPM = 0;
+    private int bikeHeartRate = 0;
 
     private float moveSpeed = 10.0f;
 

@@ -282,13 +282,13 @@ GameObject:
   - component: {fileID: 2094318414101331984}
   - component: {fileID: 2094318414101332014}
   - component: {fileID: 2094318414101331990}
-  - component: {fileID: 2094318414101331986}
-  - component: {fileID: 2094318414101331991}
   - component: {fileID: 2094318414101331989}
   - component: {fileID: 2094318414101331988}
   - component: {fileID: 2094318414101331985}
-  - component: {fileID: 1025299502018019570}
   - component: {fileID: 2627318030446222655}
+  - component: {fileID: 3088808452231683221}
+  - component: {fileID: 2094318414101331986}
+  - component: {fileID: 2094318414101331991}
   m_Layer: 6
   m_Name: PlayerView
   m_TagString: Player
@@ -303,8 +303,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094318414101331993}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 2.033, y: -0.904, z: 3.199}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -313,7 +313,7 @@ Transform:
   - {fileID: 2094318413924916331}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &2094318414101331984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -460,6 +460,84 @@ MonoBehaviour:
   _unityOnBeginningReached:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2094318414101331989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094318414101331993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa22073071e54cb46b7cfc4ab4d06845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splineFollower: {fileID: 2094318414101331990}
+  bikeController: {fileID: 2094318414101331988}
+--- !u!114 &2094318414101331988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094318414101331993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876d31d12606284499c8604aec512dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalSettings: {fileID: 2094318414101331991}
+  PortName: COM3
+  speed: 0
+  RPM: 0
+  heartRate: 0
+  status: -1
+  enableBike: 1
+  ending: 0
+--- !u!114 &2094318414101331985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094318414101331993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff90f45d309e394ca16373c3b451b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleGame: {fileID: 0}
+  ouchImage: {fileID: 864355981}
+  flashColor: {r: 1, g: 0, b: 0, a: 0.25}
+  flashDuration: 1
+  fadeDuration: 0.5
+--- !u!114 &2627318030446222655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094318414101331993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fea95a6ad4482041ba4de136b2d50cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 4349870083530016910}
+  headCamera: {fileID: 8355808245799607442}
+  offset: 0.2
+--- !u!114 &3088808452231683221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094318414101331993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b539ace649d25e439a131d726f0f418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2094318414101331986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,86 +593,6 @@ MonoBehaviour:
   RecoveryMinutes: 3
   OVRRig: {fileID: 0}
   MainCamera: {fileID: 0}
---- !u!114 &2094318414101331989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094318414101331993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa22073071e54cb46b7cfc4ab4d06845, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  splineFollower: {fileID: 2094318414101331990}
-  bikeController: {fileID: 2094318414101331988}
-  bikeSpeed: 0
-  bikeRPM: 0
-  bikeHeartRate: 0
---- !u!114 &2094318414101331988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094318414101331993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 876d31d12606284499c8604aec512dc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  globalSettings: {fileID: 2094318414101331991}
-  PortName: COM3
-  speed: 0
-  RPM: 0
-  heartRate: 0
-  status: -1
-  enableBike: 1
-  ending: 0
---- !u!114 &2094318414101331985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094318414101331993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff90f45d309e394ca16373c3b451b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstacleGame: {fileID: 0}
-  ouchImage: {fileID: 864355981}
-  flashColor: {r: 1, g: 0, b: 0, a: 0.25}
-  flashDuration: 1
-  fadeDuration: 0.5
---- !u!114 &1025299502018019570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094318414101331993}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65482b950024ea441a9f49508c909626, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2627318030446222655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094318414101331993}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fea95a6ad4482041ba4de136b2d50cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 4349870083530016910}
-  offset: 1.5
 --- !u!1 &2094318414157622727
 GameObject:
   m_ObjectHideFlags: 0
