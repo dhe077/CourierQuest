@@ -7,7 +7,10 @@ public class KeepTextInView : MonoBehaviour
 {
     private PositionTracker inputData;
     private Vector3 headPos = Vector3.zero;
+    [SerializeField] private Vector3 transHeadPos = Vector3.zero;
     public GameObject dialogueObject;
+
+    [SerializeField] private Camera headCamera;
 
     public float offset = 30f;
 
@@ -20,12 +23,17 @@ public class KeepTextInView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inputData.head.TryGetFeatureValue(CommonUsages.centerEyePosition, out Vector3 position))
-        {
-            // Position of the head
-            headPos = position;
+        // if (inputData.head.TryGetFeatureValue(CommonUsages.centerEyePosition, out Vector3 position))
+        // {
+        //     // Position of the head
+        //     //headPos = position;
+        //     transHeadPos = transform.TransformPoint(position);
 
-            dialogueObject.transform.position = new Vector3(0, headPos.y + offset, 0.6f);
-        }
+        //     dialogueObject.transform.position = new Vector3(0, transHeadPos.y, 0);
+        // }
+
+        Vector3 newPos = headCamera.transform.position;
+        Vector3 oldPos = dialogueObject.transform.position;
+        dialogueObject.transform.position = new Vector3(oldPos.x, newPos.y + 0.2f, oldPos.z);
     }
 }
