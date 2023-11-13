@@ -76,8 +76,10 @@ public class PlayerViewManager : MonoBehaviour
         StartFading();
     }
 
-    public void SpecificPosition(int index)
+    public void SpecificPosition(string splineName)
     {
+        SplineComputer spline = GameObject.Find(splineName).GetComponent<SplineComputer>();
+        int index = splineComputers.IndexOf(spline);
         positionIndex = index;
         StartFading();
     }

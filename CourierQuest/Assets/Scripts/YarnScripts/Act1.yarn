@@ -603,7 +603,7 @@ You're not sure if you *might* keep your job after this.
 You don't recognise this path from your delivery journeys. Maybe it would be best to ride further forward and make camp then find a way back to the main path in the morning.
 
 <<set $followedPath to false>>
-<<wait 10>>>
+<<wait 10>>
 -> Failed - You see a small figure ride alongside you.
     <<jump Failed_You_see_a_small_figure_ride_alongside_you>>
 ===
@@ -619,7 +619,7 @@ Looks like you *might* keep your job.
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
 
 <<set $followedPath to true>>
-<<wait 10>>>
+<<wait 10>>
 -> Success - You see a small figure ride alongside you.
     <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
@@ -635,7 +635,7 @@ You have a feeling that when Mistress Ellastra finds out about this you're gonna
 You don't recognise this path from your delivery journeys. Maybe it would be best to ride further forward and make camp then find a way back to the main path in the morning.
 
 <<set $followedPath to false>>
-<<wait 10>>>
+<<wait 10>>
 -> Failed - You see a small figure ride alongside you.
     <<jump Failed_You_see_a_small_figure_ride_alongside_you>>
 ===
@@ -647,7 +647,8 @@ In celebration you give Stormhoof a treat from your pack. She responds with a ce
 <<goToScene OutrunGoblin>>
 <<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
-<<wait 10>>>
+
+<<wait 10>>
 -> Success - You see a small figure ride alongside you.
     <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
@@ -659,7 +660,8 @@ In celebration you pat Stormhoof on the back. She responds with a celebratory *n
 <<goToScene OutrunGoblin>>
 <<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
-<<wait 10>>>
+
+<<wait 10>>
 -> Success - You see a small figure ride alongside you.
     <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
@@ -669,7 +671,8 @@ title: Do_nothing
 <<goToScene OutrunGoblin>>
 <<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
-<<wait 10>>>
+
+<<wait 10>>
 -> Success - You see a small figure ride alongside you.
     <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
@@ -946,7 +949,7 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
 
-*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+// *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
     <<jump Outrun_the_creature>>
 ===
@@ -963,7 +966,7 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
 
-*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+// *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
     <<jump Outrun_the_creature>>
 ===
@@ -978,7 +981,7 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
 
-*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+// *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
     <<jump Outrun_the_creature>>
 ===
@@ -993,7 +996,7 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
 
-*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+// *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
     <<jump Outrun_the_creature>>
 ===
@@ -1011,7 +1014,7 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
 
-*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+// *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
     <<jump Outrun_the_creature>>
 ===
@@ -1028,7 +1031,7 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
 
-*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+// *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
     <<jump Outrun_the_creature>>
 ===
@@ -1043,7 +1046,7 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
 
-*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+// *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
     <<jump Outrun_the_creature>>
 ===
@@ -1058,7 +1061,7 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
 
-*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+// *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
     <<jump Outrun_the_creature>>
 ===
@@ -1088,7 +1091,7 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
 
-*During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
+// *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
     <<jump Outrun_the_creature>>
 ===
@@ -1107,6 +1110,7 @@ Garbanzo: I'll be back! You'd better sleep with one eye open!
 <<endif>>
 
 <<goToScene EldoriaVolcanoSign>>
+<<wait 2>>
 Just before you find a place to camp you reach a fork in the road. At the junction of the fork there is a sign that says Eldoria is along the left path.
 
 <<if $specialPackage is false>>
@@ -1189,12 +1193,15 @@ Do you still want to deliver the package?
 
 title: Take_the_right_path
 ---
-<<specificPosition 1>> // right path position
+//<<specificPosition 1>> // right path position
 You follow the right path.
-
-You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
-
 <<set $path to "right">>
+
+<<goToScene BushesAndRoad>>
+<<wait 2>>
+You need to take shelter before the storm gets worse. 
+<<nextPosition none>> // TieStormhoofSpot
+You tie Stormhoof to a nearby tree. 
 
 Where do you want to camp?
 -> Set up camp on the side of the path.
@@ -1205,13 +1212,13 @@ Where do you want to camp?
 
 title: Take_the_left_path
 ---
-<<specificPosition 2>> // left path position
+//<<specificPosition 2>> // left path position
 You follow the left path.
-
 <<set $path to "left">>
 
 <<if $followedPath is true>>
     <<goToScene AbandonedHutAndBushes>>
+    <<wait 2>>
     You see the abandoned hut. You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
     Where do you want to camp?
@@ -1222,6 +1229,7 @@ You follow the left path.
 
 <<elseif $followedPath is false>>
     <<goToScene BushesAndRoad>>
+    <<wait 2>>
     You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
     Where do you want to camp?
@@ -1234,7 +1242,11 @@ You follow the left path.
 
 title: Set_up_camp_in_the_abandoned_hut
 ---
-The hut you're in has been abandoned for years and has many leaks coming through the roof. However, this hut seems very sturdy and will shelter you if the storm gets worse. You set up your bedroll and lie down.
+<<specificPosition OutsideHutSpot>>
+The hut you're in has been abandoned for years and has many leaks coming through the roof. However, this hut seems very sturdy and will shelter you if the storm gets worse. 
+
+<<specificPosition InsideHutSpot>>
+You set up your bedroll and lie down.
 
 -> Sleep in the hut.
     <<jump Sleep_in_the_hut>>
@@ -1242,7 +1254,11 @@ The hut you're in has been abandoned for years and has many leaks coming through
 
 title: Set_up_camp_in_some_bushes
 ---
-You find a set of bushes that could easily hide your tent. You set up your tent and bedroll. You lie down.
+<<specificPosition OutsideBushesSpot>>
+You find a set of bushes that could easily hide your tent. 
+
+<<specificPosition InsideBushesSpot>>
+You set up your tent and bedroll. You lie down.
 
 -> Sleep in the bushes.
     <<jump Sleep_in_the_bushes>>

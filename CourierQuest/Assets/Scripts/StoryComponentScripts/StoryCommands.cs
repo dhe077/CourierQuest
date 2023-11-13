@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using Yarn;
 using Yarn.Unity;
 using UnityEngine.SceneManagement;
+using Dreamteck.Splines;
 
 public class StoryCommands : MonoBehaviour
 {
@@ -54,7 +55,7 @@ public class StoryCommands : MonoBehaviour
             NextPosition
         );
 
-        dialogueRunner.AddCommandHandler<int>(
+        dialogueRunner.AddCommandHandler<string>(
             "specificPosition",
             SpecificPosition
         );
@@ -127,10 +128,10 @@ public class StoryCommands : MonoBehaviour
     }
 
     // This command moves the player to a specific position in the SAME scene
-    public void SpecificPosition(int index)
+    public void SpecificPosition(string splineName)
     {
         playerViewManager = GameObject.Find("PlayerViewManager").GetComponent<PlayerViewManager>();
-        playerViewManager.SpecificPosition(index);
+        playerViewManager.SpecificPosition(splineName);
     }
 
 
