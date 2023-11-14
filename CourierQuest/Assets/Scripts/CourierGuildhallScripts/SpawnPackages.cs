@@ -31,8 +31,8 @@ public class SpawnPackages : MonoBehaviour
     {
         if (index == 0)
         {
-            GameObject smallPackage = Instantiate(firstPackages[0], position2, noRotation);
-            GameObject largePackage = Instantiate(firstPackages[1], position3, noRotation);
+            GameObject smallPackage = Instantiate(firstPackages[0], position2, RandomRotation());
+            GameObject largePackage = Instantiate(firstPackages[1], position3, RandomRotation());
 
             allPackages.Enqueue(smallPackage);
             allPackages.Enqueue(largePackage);
@@ -42,9 +42,9 @@ public class SpawnPackages : MonoBehaviour
         {
             DestroyPackage();
             DestroyPackage();
-            GameObject roundPackage = Instantiate(secondPackages[0], position1, noRotation);
-            GameObject squarePackage = Instantiate(secondPackages[1], position2, noRotation);
-            GameObject trianglePackage = Instantiate(secondPackages[2], position3, noRotation);
+            GameObject roundPackage = Instantiate(secondPackages[0], position1, RandomRotation());
+            GameObject squarePackage = Instantiate(secondPackages[1], position2, RandomRotation());
+            GameObject trianglePackage = Instantiate(secondPackages[2], position3, RandomRotation());
             allPackages.Enqueue(roundPackage);
             allPackages.Enqueue(squarePackage);
             allPackages.Enqueue(trianglePackage);
@@ -55,10 +55,10 @@ public class SpawnPackages : MonoBehaviour
             DestroyPackage();
             DestroyPackage();
             DestroyPackage();
-            GameObject redPackage = Instantiate(thirdPackages[0], position1, noRotation);
-            GameObject greenPackage = Instantiate(thirdPackages[1], position2, noRotation);
-            GameObject bluePackage = Instantiate(thirdPackages[2], position3, noRotation);
-            GameObject yellowPackage = Instantiate(thirdPackages[3], position4, noRotation);
+            GameObject redPackage = Instantiate(thirdPackages[0], position1, RandomRotation());
+            GameObject greenPackage = Instantiate(thirdPackages[1], position2, RandomRotation());
+            GameObject bluePackage = Instantiate(thirdPackages[2], position3, RandomRotation());
+            GameObject yellowPackage = Instantiate(thirdPackages[3], position4, RandomRotation());
 
             allPackages.Enqueue(redPackage);
             allPackages.Enqueue(greenPackage);
@@ -75,4 +75,12 @@ public class SpawnPackages : MonoBehaviour
         
     }
 
+    private Quaternion RandomRotation()
+    {
+        System.Random rnd = new System.Random();
+        int yRotation = rnd.Next(0, 180);
+        // int xRotation = rnd.Next(0, 180);
+        Quaternion newRotation = Quaternion.Euler(0, yRotation, 0);
+        return newRotation;
+    }
 }
