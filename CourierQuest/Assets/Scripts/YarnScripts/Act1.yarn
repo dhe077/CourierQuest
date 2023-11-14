@@ -1264,7 +1264,11 @@ You set up your tent and bedroll. You lie down.
 
 title: Set_up_camp_on_the_side_of_the_path
 ---
-You figure that the best place to rest would be next to the path and away from the unknown creatures of the woods. You set up your tent and bedroll. You lie down.
+<<specificPosition Roadside>>
+You figure that the best place to rest would be next to the path and away from the unknown creatures of the woods. 
+
+<<specificPosition InsideRoadsideTent>>
+You set up your tent and bedroll. You lie down.
 
 -> Sleep near the road.
     <<jump Sleep_near_the_road>>

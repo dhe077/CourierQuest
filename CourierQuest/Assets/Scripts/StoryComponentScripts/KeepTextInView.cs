@@ -6,6 +6,7 @@ using UnityEngine.XR;
 public class KeepTextInView : MonoBehaviour
 {
     public GameObject dialogueObject;
+    public float moveSpeed = 1f;
 
     [SerializeField] private Camera headCamera;
 
@@ -16,6 +17,9 @@ public class KeepTextInView : MonoBehaviour
     {
         Vector3 newPos = headCamera.transform.position;
         Vector3 oldPos = dialogueObject.transform.position;
-        dialogueObject.transform.position = new Vector3(oldPos.x, newPos.y + offset, oldPos.z);
+
+        
+        Vector3 targetPosition = new Vector3(oldPos.x, newPos.y + offset, oldPos.z);
+        dialogueObject.transform.position = Vector3.Lerp(dialogueObject.transform.position, targetPosition, moveSpeed * Time.deltaTime);
     }
 }
