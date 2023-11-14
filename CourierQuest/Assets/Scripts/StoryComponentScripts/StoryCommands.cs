@@ -18,6 +18,7 @@ public class StoryCommands : MonoBehaviour
     private OptionView timeoutOption = null;
 
     private PlayerViewManager playerViewManager;
+    private EnvironmentManager environmentManager;
 
     private float timer = 0f;
     private float endTimer;
@@ -58,6 +59,12 @@ public class StoryCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<string>(
             "specificPosition",
             SpecificPosition
+        );
+
+        // Specifically for the CourierHall
+        dialogueRunner.AddCommandHandler<string>(
+            "spawnPackages",
+            SpawnPackages
         );
     }
 
@@ -132,6 +139,13 @@ public class StoryCommands : MonoBehaviour
     {
         playerViewManager = GameObject.Find("PlayerViewManager").GetComponent<PlayerViewManager>();
         playerViewManager.SpecificPosition(splineName);
+    }
+
+    // This command spawns the packages in the CourierGuildhall
+    public void SpawnPackages(string none)
+    {
+        environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
+        environmentManager.SpawnPackageObjects();
     }
 
 

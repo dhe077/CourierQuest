@@ -358,7 +358,8 @@ What do you do?
 title: Go_choose_your_package_deliveries
 ---
 <<nextPosition none>>
-<<wait 2>>
+<<wait 3>>
+<<spawnPackages none>>
 *You look over at the packages that need delivering. You're given 2 choices first.*
 
 Choose your first package?
@@ -392,6 +393,7 @@ The package is addressed to Bjorn.
 
 title: Choose_your_second_package
 ---
+<<spawnPackages none>>
 *You look over at the packages that need delivering. You're given 3 choices.*
 
 Choose your second package?
@@ -438,6 +440,7 @@ The package is addressed to Finn.
 
 title: Choose_your_third_package
 ---
+<<spawnPackages none>>
 *You look over at the packages that need delivering. You're given 4 choices.*
 
 Choose your third package?
