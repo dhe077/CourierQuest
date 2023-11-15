@@ -70,7 +70,7 @@ What do you say? (Timed)
 ===
 
 title: Ignore_Frankie
-position: 660,-75
+position: 684,65
 ---
 *You ignore Frankie*
 
@@ -117,6 +117,7 @@ What do you say?
 ===
 
 title: Ask_about_the_war
+position: 890,-1025
 ---
 Player: What's happened now?
 
@@ -130,6 +131,7 @@ What do you say?
 ===
 
 title: Say_that_you_dont_care
+position: 1096,-864
 ---
 Player: Sorry Frankie, I don't feel like hearing about the war today. I've already got enough on my plate.
 
@@ -145,6 +147,7 @@ What do you say?
 ===
 
 title: Tell_Frankie_that_hes_acting_a_little_crazy
+position: 1015,-523
 ---
 Player: Frankie, that sounds like nonsense. I heard that the Goblins haven't made any attacks since the Veridian Vale, a year ago.
 
@@ -158,6 +161,7 @@ What do you do?
 ===
 
 title: Ask_Frankie_what_goblins_look_like
+position: 852,-714
 ---
 Player: I've never seen a goblin. What do they look like? In case I ever run across one.
 
@@ -171,6 +175,7 @@ What do you say?
 ===
 
 title: Thank_Frankie_for_the_info
+position: 1277,-650
 ---
 Player: Thanks for the info Frankie. I'll look out for them if I end up delivering outside of the kingdom today.
 
@@ -186,6 +191,7 @@ What do you do?
 ===
 
 title: Jokingly_tell_Frankie_that_you_think_youve_seen_plenty_of_drunk_goblins_at_the_tavern
+position: 1299,-1029
 ---
 Player: From that description, I think I've seen plenty of goblins coming out of the tavern at night.
 
@@ -199,6 +205,7 @@ What do you say?
 ===
 
 title: Take_the_rock
+position: 1325,-423
 ---
 *You take the rock and pocket it for later.*
 
@@ -216,6 +223,7 @@ What do you say?
 ===
 
 title: Tell_Frankie_that_youd_better_hurry_to_work
+position: 1174,-129
 ---
 Player: Sorry Frankie, I've gotta get to the guildhall before the other couriers take all the packages.
 
@@ -226,6 +234,7 @@ Frankie: No problem. Seeya round buddy!
 ===
 
 title: Go_to_the_courier_guildhall
+position: 1696,-285
 ---
 <<goToScene CourierGuildhall>>
 <<wait 5>>
@@ -253,6 +262,7 @@ What do you say? (Timed)
 ===
 
 title: Say_nothing
+position: 2287,-65
 ---
 *You stand there saying nothing.*
 
@@ -263,6 +273,7 @@ Ellastra: Well, look who turned up early today. Take your pick of the packages.
 ===
 
 title: Ask_what_that_was_about
+position: 2328,-678
 ---
 Player: What were you talking to the guards about? Are we shutting down?
 
@@ -276,6 +287,7 @@ What do you say?
 ===
 
 title: Say_that_you_can_deliver_the_package
+position: 2808,-683
 ---
 Player: I can deliver the package. But why's it so special?
 
@@ -289,6 +301,7 @@ What do you say?
 ===
 
 title: Ask_if_there_are_any_packages_for_you_today
+position: 2485,-400
 ---
 Player: Good morning, Mistress Ellastra. Are there any packages for me today?
 
@@ -302,6 +315,7 @@ What do you say?
 ===
 
 title: Turn_down_the_special_delivery
+position: 2722,-899
 ---
 Player: Sorry, Mistress Ellastra. I can't deliver this package for you. You're gonna have to find someone else who's reckless enough to take on that delivery.
 
@@ -312,6 +326,7 @@ Ellastra: I see... Go choose what you want to deliver today.
 ===
 
 title: Ask_what_is_inside_the_package
+position: 2691,-1277
 ---
 Player: What's inside the package?
 
@@ -327,6 +342,7 @@ What do you say?
 ===
 
 title: Take_the_package
+position: 2361,-1033
 ---
 Player: Fine, I'll take the package.
 
@@ -341,6 +357,7 @@ Ellastra: Go choose your other delivery packages.
 ===
 
 title: Further_ask_what_the_package_is
+position: 3064,-1205
 ---
 Player: Come on, Ellastra, you can tell me what's inside. I am your *best* courier after all.
 
@@ -356,6 +373,7 @@ What do you do?
 ===
 
 title: Go_choose_your_package_deliveries
+position: 3165,-473
 ---
 <<nextPosition none>>
 <<wait 3>>
@@ -370,6 +388,7 @@ Choose your first package?
 ===
 
 title: First_Package_Choose_the_small_package
+position: 3430,-171
 ---
 *You take the small package.*
 The package is addressed to Petunia.
@@ -381,6 +400,7 @@ The package is addressed to Petunia.
 ===
 
 title: First_Package_Choose_the_large_package
+position: 3629,-361
 ---
 *You take the large package.*
 The package is addressed to Bjorn.
@@ -392,6 +412,7 @@ The package is addressed to Bjorn.
 ===
 
 title: Choose_your_second_package
+position: 3780,-95
 ---
 <<spawnPackages none>>
 *You look over at the packages that need delivering. You're given 3 choices.*
@@ -406,6 +427,7 @@ Choose your second package?
 ===
 
 title: Second_Package_Choose_the_round_package
+position: 3944,199
 ---
 *You take the round package.*
 The package is addressed to Mudbrick.
@@ -417,6 +439,7 @@ The package is addressed to Mudbrick.
 ===
 
 title: Second_Package_Choose_the_square_package
+position: 4190,15
 ---
 *You take the square package.*
 The package is addressed to Oli.
@@ -428,6 +451,7 @@ The package is addressed to Oli.
 ===
 
 title: Second_Package_Choose_the_triangle_package
+position: 4194,-205
 ---
 *You take the triangle package.*
 The package is addressed to Finn.
@@ -439,6 +463,7 @@ The package is addressed to Finn.
 ===
 
 title: Choose_your_third_package
+position: 4764,119
 ---
 <<spawnPackages none>>
 *You look over at the packages that need delivering. You're given 4 choices.*
@@ -455,6 +480,7 @@ Choose your third package?
 ===
 
 title: Third_Package_Choose_the_red_package
+position: 5088,-110
 ---
 *You take the red package.*
 The package is addressed to Leyton.
@@ -466,6 +492,7 @@ The package is addressed to Leyton.
 ===
 
 title: Third_Package_Choose_the_green_package
+position: 4798,538
 ---
 *You take the green package.*
 The package is addressed to Thakali.
@@ -477,6 +504,7 @@ The package is addressed to Thakali.
 ===
 
 title: Third_Package_Choose_the_blue_package
+position: 5115,92
 ---
 *You take the blue package.*
 The package is addressed to Daisy.
@@ -488,6 +516,7 @@ The package is addressed to Daisy.
 ===
 
 title: Third_Package_Choose_the_yellow_package
+position: 4995,331
 ---
 *You take the yellow package.*
 The package is addressed to Val.
@@ -499,6 +528,7 @@ The package is addressed to Val.
 ===
 
 title: Finalize_your_choices_with_Mistress_Ellastra
+position: 5378,362
 ---
 Ellastra: Seems like you've got all your packages ready. You'd better start leaving soon before the storm arrives.
 
@@ -507,6 +537,7 @@ Ellastra: Seems like you've got all your packages ready. You'd better start leav
 ===
 
 title: Take_your_leave
+position: 5666,175
 ---
 <<goToScene Stable>>
 <<wait 5>>
@@ -522,6 +553,7 @@ What do you do?
 ===
 
 title: Thank_the_stablemaster
+position: 5945,-71
 ---
 Player: Thanks for the horse. I'll take good care of her. *You pat Stormhoof on her side.*
 
@@ -532,6 +564,7 @@ Stablemaster: *The stablemaster tips his hat to you.* And she'll easily outrun a
 ===
 
 title: Say_nothing_and_take_the_reins
+position: 6045,199
 ---
 You say nothing and take the reins from the stablemaster.
 
@@ -540,6 +573,7 @@ You say nothing and take the reins from the stablemaster.
 ===
 
 title: Take_the_reins
+position: 6303,-88
 ---
 You take the reins and hop on the saddle atop Stormhoof.
 
@@ -550,6 +584,7 @@ You take the reins and hop on the saddle atop Stormhoof.
 ===
 
 title: Start_your_journey
+position: 6735,-515
 ---
 On horseback, you pass through the kingdom gates and begin your journey through the woods towards your delivery destinations.
 
@@ -575,6 +610,7 @@ Are you ready? Continue when you're ready.
 ===
 
 title: Successfully_follow_the_path_and_avoids_obstacles
+position: 7252,-858
 ---
 You managed to follow the path and you avoided the obstacles. It seems like you're ahead of the storm now.
 
@@ -596,6 +632,7 @@ What do you do? (Timed)
 ===
 
 title: Unsuccessfully_follow_the_main_path
+position: 7263,-410
 ---
 You failed to follow the path but you avoided enough obstacles. It seems like the storm is closer.
 
@@ -606,12 +643,15 @@ You're not sure if you *might* keep your job after this.
 You don't recognise this path from your delivery journeys. Maybe it would be best to ride further forward and make camp then find a way back to the main path in the morning.
 
 <<set $followedPath to false>>
-<<wait 10>>
+<<wait 5>>
+<<startChase none>>
+<<wait 5>>
 -> Failed - You see a small figure ride alongside you.
     <<jump Failed_You_see_a_small_figure_ride_alongside_you>>
 ===
 
 title: Knocked_into_too_many_obstacles
+position: 7258,-621
 ---
 You managed to follow the path but you didn't avoided enough obstacles. It seems like you're slightly ahead of the storm.
 
@@ -622,12 +662,15 @@ Looks like you *might* keep your job.
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
 
 <<set $followedPath to true>>
-<<wait 10>>
+<<wait 5>>
+<<startChase none>>
+<<wait 5>>
 -> Success - You see a small figure ride alongside you.
     <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
 
 title: Got_lost_and_hit_too_many_obstacles
+position: 7245,-199
 ---
 You failed to follow the path and you didn't avoid enough obstacles. It seems like the storm is imminent.
 
@@ -638,12 +681,15 @@ You have a feeling that when Mistress Ellastra finds out about this you're gonna
 You don't recognise this path from your delivery journeys. Maybe it would be best to ride further forward and make camp then find a way back to the main path in the morning.
 
 <<set $followedPath to false>>
-<<wait 10>>
+<<wait 5>>
+<<startChase none>>
+<<wait 5>>
 -> Failed - You see a small figure ride alongside you.
     <<jump Failed_You_see_a_small_figure_ride_alongside_you>>
 ===
 
 title: Give_Stormhoof_a_treat
+position: 7612,-1332
 ---
 In celebration you give Stormhoof a treat from your pack. She responds with a celebratory *neigh*.
 
@@ -651,12 +697,15 @@ In celebration you give Stormhoof a treat from your pack. She responds with a ce
 <<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
 
-<<wait 10>>
+<<wait 5>>
+<<startChase none>>
+<<wait 5>>
 -> Success - You see a small figure ride alongside you.
     <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
 
 title: Pat_Stormhoof_on_the_back
+position: 7621,-1166
 ---
 In celebration you pat Stormhoof on the back. She responds with a celebratory *neigh*.
 
@@ -664,23 +713,29 @@ In celebration you pat Stormhoof on the back. She responds with a celebratory *n
 <<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
 
-<<wait 10>>
+<<wait 5>>
+<<startChase none>>
+<<wait 5>>
 -> Success - You see a small figure ride alongside you.
     <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
 
 title: Do_nothing
+position: 7623,-1010
 ---
 <<goToScene OutrunGoblin>>
 <<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
 
-<<wait 10>>
+<<wait 5>>
+<<startChase none>>
+<<wait 5>>
 -> Success - You see a small figure ride alongside you.
     <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
 
 title: Success_You_see_a_small_figure_ride_alongside_you
+position: 8096,-900
 ---
 You look at the small figure riding next to you. It's small and green. It has pointy ears and a big nose, and it seems to be riding a large RAT!
 
@@ -711,6 +766,7 @@ What do you say? (Timed)
 ===
 
 title: Failed_You_see_a_small_figure_ride_alongside_you
+position: 8051,-433
 ---
 You look at the small figure riding next to you. It's small and green. It has pointy ears and a big nose, and it seems to be riding a large RAT!
 
@@ -738,6 +794,7 @@ What do you say? (Timed)
 ===
 
 title: Ask_what_the_creature_is_talking_about
+position: 8470,-1142
 ---
 Player: What are you talking about?
 
@@ -760,6 +817,7 @@ What do you say? (Timed)
 ===
 
 title: Say_that_you_dont_have_it
+position: 8474,-745
 ---
 Player: I don't have what you're talking about. Now get away from me!
 
@@ -779,6 +837,7 @@ What do you say?
 ===
 
 title: Say_nothing_to_the_creature
+position: 8533,-946
 ---
 *You remain silent.*
 
@@ -796,6 +855,7 @@ What do you do?
 ===
 
 title: Ask_how_it_knew_that
+position: 8842,-722
 ---
 Player: How do you know about Miss Ellastra?!
 
@@ -815,6 +875,7 @@ What do you say?
 ===
 
 title: Ask_what_the_creature_wants
+position: 8508,-195
 ---
 Player: What do you want from me?
 
@@ -834,6 +895,7 @@ What do you say? (Timed)
 ===
 
 title: Ask_where_you_are
+position: 8441,43
 ---
 Player: I don't recognise this road. Where am I?
 
@@ -855,6 +917,7 @@ What do you say? (Timed)
 ===
 
 title: Dont_answer_the_creature
+position: 8472,-467
 ---
 *You remain silent.*
 
@@ -878,6 +941,7 @@ What do you do? (Timed)
 ===
 
 title: Ask_how_it_knew_your_destination
+position: 8832,16
 ---
 Player: How did you know I was going to Eldoria?
 
@@ -903,6 +967,7 @@ What do you say? (Timed)
 ===
 
 title: Tell_the_creature_that_youre_not_going_to_Eldoria
+position: 8841,-224
 ---
 Player: I'm not going to Eldoria. What makes you think I'm going to Eldoria?
 
@@ -918,6 +983,7 @@ What do you say?
 ===
 
 title: Ask_how_it_knew_about_the_job
+position: 9147,-222
 ---
 Player: How did you know about the job?
 
@@ -943,14 +1009,17 @@ What do you say? (Timed)
 ===
 
 title: Say_that_you_wont_give_it
+position: 8933,-1314
 ---
 Player: I won't give it to you. It's not for you!
 
 Garbanzo: If you won't give it to me then I'll just have to *take* it from you.
 
 The creature gets comfortable in its saddle and begins to ride closer to you.
+<<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -958,6 +1027,7 @@ You need to get away from this creature. You look closely at the rat and it seem
 ===
 
 title: Ask_what_exactly_is_the_offering
+position: 8930,-1101
 ---
 Player: What exactly is the offering? You're not being clear.
 
@@ -966,8 +1036,10 @@ The creature squints at you and looks at the packages.
 Garbanzo: It's my ticket to power. Now give it to me!
 
 The creature gets comfortable in its saddle and begins to ride closer to you.
+<<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -975,14 +1047,17 @@ You need to get away from this creature. You look closely at the rat and it seem
 ===
 
 title: Remain_silent
+position: 9338,-685
 ---
 *You remain silent.*
 
 Garbanzo: If that's the way you want to be then I'll just have to take it from you.
 
 The creature gets comfortable in its saddle and begins to ride closer to you.
+<<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -990,14 +1065,17 @@ You need to get away from this creature. You look closely at the rat and it seem
 ===
 
 title: Ask_why_the_creature_wants_the_package
+position: 9296,-835
 ---
 Player: What's so important about the package?
 
 Garbanzo: It'll change how the goblins view humans. But I know you humans can't be trusted. Enough questions! I'll be taking that package off your hands.
 
 The creature gets comfortable in its saddle and begins to ride closer to you.
+<<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1006,6 +1084,7 @@ You need to get away from this creature. You look closely at the rat and it seem
 
 
 title: Ask_what_the_offering_is
+position: 9419,158
 ---
 Player: What exactly is the offering? You're not being clear.
 
@@ -1014,8 +1093,10 @@ The creature squints at you and looks at the packages.
 Garbanzo: It's my ticket to power. Now give it to me!
 
 The creature gets comfortable in its saddle and begins to ride closer to you.
+<<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1023,6 +1104,7 @@ You need to get away from this creature. You look closely at the rat and it seem
 ===
 
 title: Ask_what_the_creature_is
+position: 9432,369
 ---
 Player: What are you?
 
@@ -1031,8 +1113,10 @@ The creature sarcastically but quickly remarks.
 Garbanzo: I'm a magical fairy. Enough chatter.
 
 The creature gets comfortable in its saddle and begins to ride closer to you.
+<<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1040,14 +1124,17 @@ You need to get away from this creature. You look closely at the rat and it seem
 ===
 
 title: Say_that_you_cant_give_it
+position: 9422,-8
 ---
 Player: I won't give it to you. It's not for you!
 
 Garbanzo: If you won't give it to me then I'll just have to *take* it from you.
 
 The creature gets comfortable in its saddle and begins to ride closer to you.
+<<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1055,14 +1142,17 @@ You need to get away from this creature. You look closely at the rat and it seem
 ===
 
 title: Ignore_the_creature
+position: 9440,-364
 ---
 *You remain silent.*
 
 Garbanzo: If that's the way you want to be then I'll just have to take it from you.
 
 The creature gets comfortable in its saddle and begins to ride closer to you.
+<<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1070,6 +1160,7 @@ You need to get away from this creature. You look closely at the rat and it seem
 ===
 
 title: Say_that_you_can_help_it_find_the_package
+position: 9443,-191
 ---
 Player: What if I helped you find the package?
 
@@ -1091,8 +1182,10 @@ The creature looks at your other packages.
 Garbanzo: For now I might as well indulge myself in a little highway robbery. Those are some nice packages you got there.
 
 The creature gets comfortable in its saddle and begins to ride closer to you.
+<<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
+<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1100,6 +1193,7 @@ You need to get away from this creature. You look closely at the rat and it seem
 ===
 
 title: Outrun_the_creature
+position: 10363,-659
 ---
 <<wait  120>> // Wait for 2 minutes of fast pedalling
 You kept a steady gallop allowing you to outrun the creature and it's mount. 
@@ -1146,6 +1240,7 @@ Just before you find a place to camp you reach a fork in the road. At the juncti
 ===
 
 title: Dont_deliver_the_package
+position: 10794,-916
 ---
 You think that whatever is inside the package isn't worth delivering to its destination. Whoever receives this package will surely be hunted down by that creature. Why does Miss Ellastra want this delivered to Eldoria?
 
@@ -1163,6 +1258,7 @@ Which path do you take?
 ===
 
 title: Deliver_the_package
+position: 10919,-388
 ---
 If the creature wanted this so badly then maybe you should keep it safe with you. You don't know what that creature wants the package for. You have a job to do as well.
 
@@ -1178,6 +1274,7 @@ Which path do you take?
 ===
 
 title: Blow_the_creatures_whistle
+position: 10573,-371
 ---
 You purse your lips around the wooden whistle. You blow hard into the whistle. You hear nothing. Stormhoof shakes her head. Seems like it's not working. 
 
@@ -1195,6 +1292,7 @@ Do you still want to deliver the package?
 ===
 
 title: Take_the_right_path
+position: 11365,-957
 ---
 <<specificPosition RightPath>>
 You follow the right path.
@@ -1212,6 +1310,7 @@ Where do you want to camp?
 ===
 
 title: Take_the_left_path
+position: 11349,-320
 ---
 <<specificPosition LeftPath>>
 You follow the left path.
@@ -1242,6 +1341,7 @@ You follow the left path.
 ===
 
 title: Set_up_camp_in_the_abandoned_hut
+position: 11731,-684
 ---
 <<specificPosition OutsideHutSpot>>
 The hut you're in has been abandoned for years and has many leaks coming through the roof. However, this hut seems very sturdy and will shelter you if the storm gets worse. 
@@ -1254,6 +1354,7 @@ You set up your bedroll and lie down.
 ===
 
 title: Set_up_camp_in_some_bushes
+position: 11687,-1118
 ---
 <<specificPosition OutsideBushesSpot>>
 You find a set of bushes that could easily hide your tent. 
@@ -1266,6 +1367,7 @@ You set up your tent and bedroll. You lie down.
 ===
 
 title: Set_up_camp_on_the_side_of_the_path
+position: 11624,-78
 ---
 <<specificPosition Roadside>>
 You figure that the best place to rest would be next to the path and away from the unknown creatures of the woods. 
@@ -1278,6 +1380,7 @@ You set up your tent and bedroll. You lie down.
 ===
 
 title: Sleep_in_the_bushes
+position: 12093,-1142
 ---
 You need to rest. The sound of rain lulls you to sleep. You fall asleep. 
 
@@ -1288,6 +1391,7 @@ Hopefully you'll be safe.
 ===
 
 title: Sleep_in_the_hut
+position: 12127,-681
 ---
 You need to rest. The sound of rain lulls you to sleep. You fall asleep. 
 
@@ -1298,6 +1402,7 @@ Hopefully you'll be safe.
 ===
 
 title: Sleep_near_the_road
+position: 12144,-94
 ---
 You need to rest. The sound of rain lulls you to sleep. You fall asleep. 
 

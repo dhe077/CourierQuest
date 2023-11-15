@@ -61,10 +61,20 @@ public class StoryCommands : MonoBehaviour
             SpecificPosition
         );
 
-        // Specifically for the CourierHall
+        // Courier Guildhall
         dialogueRunner.AddCommandHandler<string>(
             "spawnPackages",
             SpawnPackages
+        );
+
+        // Outrun Creature
+        dialogueRunner.AddCommandHandler<string>(
+            "startChase",
+            StartChase
+        );
+        dialogueRunner.AddCommandHandler<bool>(
+            "moveClose",
+            MoveClose
         );
     }
 
@@ -146,6 +156,18 @@ public class StoryCommands : MonoBehaviour
     {
         environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
         environmentManager.SpawnPackageObjects();
+    }
+
+    // These command starts makes the goblin chase the player in the Outrun Goblin scene
+    public void StartChase(string none)
+    {
+        environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
+        environmentManager.StartChasing();
+    }
+    public void MoveClose(bool close)
+    {
+        environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
+        environmentManager.SetAtPlayerSide(close);
     }
 
 

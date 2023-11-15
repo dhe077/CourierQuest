@@ -232,8 +232,8 @@ MonoBehaviour:
   playerView: {fileID: 0}
   splineComputers:
   - {fileID: 1843047935}
-  moveSpeedMultiplier: 10
-  enableHeadMovement: 1
+  moveSpeedMultiplier: 1
+  enableHeadMovement: 0
   maxDist: 9
   spotFadeImage: {fileID: 0}
   fadeDuration: 1
@@ -253,7 +253,7 @@ Transform:
   - {fileID: 1364913600}
   - {fileID: 118791801}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1253558197
 GameObject:
@@ -398,7 +398,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-21198
+  m_Name: pb_Mesh-39630
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -912,7 +912,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-21200
+  m_Name: pb_Mesh-39644
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1070,3 +1070,87 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &2050591768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2050591771}
+  - component: {fileID: 2050591770}
+  - component: {fileID: 2050591773}
+  - component: {fileID: 2050591772}
+  m_Layer: 0
+  m_Name: EnvironmentManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2050591770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050591768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e2bee8346f715498d3d1bd3e1340e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableSpawnPackages: 0
+  enablePlayerChaser: 1
+  goblin: {fileID: 6948984171607625688, guid: 15da55ba07d2de3468d8f27d9075708e, type: 3}
+--- !u!4 &2050591771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050591768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 92.96031, y: 17.305073, z: -8.494235}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2050591772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050591768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6454ae5df525fe4fbafc55a0061b64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaserObject: {fileID: 0}
+  atPlayerSide: 1
+  playerCloseOffset: 2
+  playerFarOffset: 3
+--- !u!114 &2050591773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050591768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7424d206fb0ad04418fdfa2f95f71a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstPackages: []
+  secondPackages: []
+  thirdPackages: []
+  position1: {x: 0, y: 0, z: 0}
+  position2: {x: 0, y: 0, z: 0}
+  position3: {x: 0, y: 0, z: 0}
+  position4: {x: 0, y: 0, z: 0}
