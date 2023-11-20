@@ -1,4 +1,5 @@
 ﻿title: Wake_up_in_the_bushes
+position: -304,-609
 ---
 You open your eyes. You're safe.
 
@@ -8,9 +9,268 @@ On your way to Stormhoof's tree you spot a small creature dart across the path. 
 
 You see the tree that Stormhoof should be tied to but no Stormhoof.
 
+-> Find Stormhoof.
+    <<jump Find_Stormhoof>>
+===
+
+title: Find_Stormhoof
+position: 148,-731
+---
+Looking around you see hoof prints leading down the path a little.
+
+You follow the tracks. You finally see Stormhoof, but shes standing with a very large man. He looks to be about 8ft tall. He's holding the reins of Stormhoof in his hands. He's also carrying around what looks to be a rod.
+
+What do you do? (Timed)
+<<startTimer 8>>
+-> Call out to the man.
+    <<interrruptTimer none>>
+    <<jump Call_out_to_the_man>>
+-> Whistle for Stormhoof.
+    <<interrruptTimer none>>
+    <<jump Whistle_for_Stormhoof>>
+-> Wait to see what he does.
+    <<interrruptTimer none>>
+    <<jump Wait_to_see_what_he_does>>
+===
+
+title: Call_out_to_the_man
+position: 720,-1029
+---
+Player: Excuse me sir! That's my horse.
+
+The man turns to face you. His eyes are glowing white. Small streaks of lightning shoot out from his gaze.
+
+Oli: This is your horse? I scared away the foul creature that was trying to steal it. Who are you?
+
+What do you say?
+-> Say that you're a courier.
+    <<jump Say_that_youre_a_courier>>
+-> Say that you're an adventurer.
+    <<jump Say_that_youre_an_adventurer>>
+===
+
+title: Whistle_for_Stormhoof
+position: 472,-709
+---
+You attempt a whistle to catch Stormhoof's attention. 
+
+Stormhoof pays no attention.
+
+The man turns to face you. His eyes are glowing white. Small streaks of lightning shoot out from his gaze.
+
+Oli: I can still smell you. I know you're still here.
+
+What do you do? (Timed)
+<<startTimer 6>>
+-> Call out to the man.
+    <<interrruptTimer none>>
+    <<jump Call_out_to_the_man>>
+-> Wait to see what he does.
+    <<interrruptTimer none>>
+    <<jump Wait_to_see_what_he_does>>
+===
+
+title: Wait_to_see_what_he_does
+position: 572,-348
+---
+You wait and watch the man as he ties Stormhoof to a tree then rummages around in the bushes.
+
+Oli: I can still smell you. I know you're still here.
+
+What do you do?
+-> Call out to the man.
+    <<jump Call_out_to_the_man>>
+-> Attempt to take Stormhoof.
+    <<jump Attempt_to_take_Stormhoof>>
+===
+
+title: Attempt_to_take_Stormhoof
+position: 1217,-332
+---
+You walk up to the ropes that tie Stormhoof to the tree. You loosen the ropes without a sound. The man seems oblivious to the situation.
+
+You quickly jump on Stormhoof and ride into the woods and towards the path.
+
+You have a job to do.
+
+-> Find the path and deliver the packages.
+    <<jump Find_the_path_and_deliver_the_packages>>
+===
+
+title: Say_that_youre_a_courier
+position: 1047,-1255
+---
+Player: Yes that is my horse, and I'm just a courier from Granbell. Who did you scare off?
+
+He hands you the reins.
+
+Oli: It was an evil creature. A goblin.
+
+What do you say?
+-> Ask what it looked like.
+    <<jump Ask_what_it_looked_like>>
+-> Thank the man.
+    <<jump Thank_the_man>>
+===
+
+title: Say_that_youre_an_adventurer
+position: 1119,-822
+---
+Player: Yes, that is my horse. I'm an adventurer. Who did you scare off?
+
+He hands you the reins.
+
+Oli: An adventurer who has not seen a goblin?
+
+What do you say?
+-> Ask the man about the rod.
+    <<jump Ask_the_man_about_the_rod>>
+-> Ask what it looked like.
+    <<jump Ask_what_it_looked_like>>
+===
+
+title: Ask_what_it_looked_like
+position: 1362,-1438
+---
+Player: A goblin!? What did the creature look like?
+
+The man lowers himself close to the ground and gestures as if to show height.
+
+Oli: Small.
+
+The man stands and points to his nose.
+
+Oli: Big nose.
+
+The man points to his ears.
+
+Oli: Pointy ears.
+
+The man points to the foliage around him.
+
+Oli: Green.
+
+The man looks inquisitively at you.
+
+Oli: You said you're a courier from Granbell? I've been awaiting a delivery from there. My name is Oli.
+
+What do you do?
+-> Ask if he's working with the goblin.
+    <<jump Ask_if_hes_working_with_the_goblin>>
+<<if $secondPackage is "square">>
+    -> Tell him that you have his package.
+        <<jump Tell_him_that_you_have_his_package>>
+<<endif>>
+===
+
+title: Ask_the_man_about_the_rod
+position: 1678,-850
+---
+Player: What is that rod you are carrying?
+
+Oli: It is my hammer. I know it might not look like it but it is. I am waiting on a delivery from Granbell for Oli.
+
+What do you say?
+-> Thank the man.
+    <<jump Thank_the_man>>
+<<if $secondPackage is "square">>
+    -> Tell him that you have his package.
+        <<jump Tell_him_that_you_have_his_package>>
+<<endif>>
+===
+
+title: Ask_if_hes_working_with_the_goblin
+position: 1389,-1833
+---
+You look him up and down.
+
+Player: Don't tell me you're working with the creature?
+
+Oli: I most certainly am NOT! How dare you assume I'd work with evil.
+
+His eyes glow brighter and the streaks of lightning grow longer and more frequent.
+
+What do you say?
+-> Apologise for insulting him.
+    <<jump Apologise_for_insulting_him>>
+<<if $secondPackage is "square">>
+    -> Tell him that you have his package.
+        <<jump Tell_him_that_you_have_his_package>>
+<<endif>>
+===
+
+title: Apologise_for_insulting_him
+position: 1766,-1798
+---
+Player: I'm sorry!
+
+Oli: I *destroy* evil.
+
+He looks at you closely.
+
+Oli: I sense no evil on you... So far.
+
+What do you say?
+-> Thank the man.
+<<if $secondPackage is "square">>
+    -> Tell him that you have his package.
+        <<jump Tell_him_that_you_have_his_package>>
+<<endif>>
+===
+
+title: Tell_him_that_you_have_his_package
+position: 1715,-1438
+---
+Player: Sir, I have a delivery for you.
+
+You pull out the square package.
+
+Oli: Yes, thank you. This must be the hammer head I ordered.
+
+He lifts up the rod he has been holding.
+
+Oli: Could you please just deliver it to my camp nearby, I will pick it up once I deal with the goblin. Be careful when entering my camp. I've put up a defensive spell to protect my belongings.
+
+Oli reaches into a pouch on his waist and pulls out a crystal.
+
+Oli: Use this diamond to enter my campsite safely. Hold it above your head and walk toward the center of my campsite. As long as you keep the diamond above your head you will be safe.
+
+Oli demonstrates his instructions then hands you the diamond. *You take the diamond.* 
+
+<<set $diamond to true>>
+<<set $metOli to true>>
+
+-> Thank the man.
+    <<jump Thank_the_man>>
+===
+
+title: Thank_the_man
+position: 1973,-441
+---
+Player: Thank you for keeping my horse safe.
+
+Oli: You're welcome.
+
+-> Find the path and deliver the packages.
+    <<jump Find_the_path_and_deliver_the_packages>>
+===
+
+title: Find_the_path_and_deliver_the_packages
+position: 2688,-88
+---
+You ride atop Stormhoof and decide you should deliver your first package.
+
+<<if $firstPackage is "small">>
+    -> Deliver the small package.
+        <<jump Deliver_the_small_package>>
+<<elseif $firstPackage is "large">>
+    -> Deliver the large package.
+        <<jump Deliver_the_large_package>>
+<<endif>>
 ===
 
 title: Wake_up_in_the_hut
+position: -294,318
 ---
 You open your eyes. The morning sun streaks across the hut's interior. You're safe.
 
@@ -19,25 +279,602 @@ You pack up your camp and head to the tree that Stormhoof is tied to.
 On your way to Stormhoof's tree you spot a pair of small footprints across the path. That creature seems to have been trying to find you. Best be on your guard from now on.
 
 You see Stormhoof happily grazing on the greenery around her.
+
+-> Get Stormhoof and continue on your delivery.
+    <<jump Get_Stormhoof_and_continue_on_your_delivery>>
+===
+
+title: Get_Stormhoof_and_continue_on_your_delivery
+position: 2679,563
+---
+You ride atop Stormhoof and decide you should deliver your first package.
+
+<<if $firstPackage is "small">>
+    -> Deliver the small package.
+        <<jump Deliver_the_small_package>>
+<<elseif $firstPackage is "large">>
+    -> Deliver the large package.
+        <<jump Deliver_the_large_package>>
+<<endif>>
 ===
 
 title: Wake_up_near_the_road
+position: -283,1193
 ---
 You open your eyes. The creature stands over you, dagger outstretched towards you.
 
-// (if: $whistleBlown is true)[
-// (set: $whistleBlown to false)
-// Garbanzo: I heard the whistle. You better have what I want.
+<<if $whistleBlown is true>>
+    <<set $whistleBlown to false>>
+    Garbanzo: I heard the whistle. You better have what I want.
 
-// What do you do?
-// 1. [[Say that you have the package.]]
-// 2. [[Say that you accidentally blew the whistle.]]
-// ]
-// (else:)[
-// Garbanzo: Peekaboo!
+    What do you do?
+    <<if $specialPackage is true>>
+        -> Say that you have the package.
+            <<jump Say_that_you_have_the_package>>
+        -> Say that you accidentally blew the whistle.
+            <<jump Say_that_you_accidentally_blew_the_whistle>>
+    <<else>>
+        -> Say that you accidentally blew the whistle.
+            <<jump Say_that_you_accidentally_blew_the_whistle>>
+    <<endif>>
+<<else>>
+    Garbanzo: Peekaboo!
+<<endif>>
 
-// What do you do? (Timed)
-// 1. [[Attempt to escape.]]
-// (if: $magicRock is true)[2. [[Hold out the magical rock.]]]
-// Timed. [[Plead with the creature.]]
+What do you do? (Timed)
+<<startTimer 6>>
+<<if $magicRock is true>>
+    -> Attempt to escape.
+        <<interrruptTimer none>>
+        <<jump Attempt_to_escape>>
+    -> Hold out the magical rock.
+        <<interrruptTimer none>>
+        <<jump Hold_out_the_magical_rock>>
+    -> Plead with the creature. #timeout
+        <<interrruptTimer none>>
+        <<jump Plead_with_the_creature>>
+<<else>>
+    -> Attempt to escape.
+        <<interrruptTimer none>>
+        <<jump Attempt_to_escape>>
+    -> Plead with the creature. #timeout
+        <<interrruptTimer none>>
+        <<jump Plead_with_the_creature>>
+<<endif>>
+===
+
+title: Say_that_you_have_the_package
+position: 736,1153
+---
+Player: I have the package that you wanted.
+
+Garbanzo: Well, cough it up human.
+
+What do you do?
+-> Pretend to give the creature the package.
+    <<jump Pretend_to_give_the_creature_the_package>>
+-> Don't give it to the creature.
+    <<jump Dont_give_it_to_the_creature>>
+===
+
+title: Say_that_you_accidentally_blew_the_whistle
+position: 1518,2035
+---
+Player: Sorry, I accidentally blew the whistle.
+
+Garbanzo: I WILL GUT YOU IF YOU DO THAT AGAIN! Don't waste my time human. I'm giving you one more chance.
+
+The creature slinks away into the woods.
+
+You should probably find Stormhoof and continue delivering.
+
+-> Find Stormhoof and continue delivering.
+    <<jump Find_Stormhoof_and_continue_delivering>>
+===
+
+title: Attempt_to_escape
+position: 1529,1756
+---
+You smack the dagger out of the creatures hands and away from you. The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof. Your pack seems a little lighter.
+
+<<set $specialPackage to false>>
+-> Find Stormhoof and continue delivering.
+    <<jump Find_Stormhoof_and_continue_delivering>>
+===
+
+title: Hold_out_the_magical_rock
+position: 397,1776
+---
+You remember you have the rock that Frankie gave you. You quickly pull out the rock from your pouch and hold it out towards the creature.
+
+What do you do? (Timed)
+<<startTimer 6>>
+-> Say "Lux".
+    <<interrruptTimer none>>
+    <<jump Say_Lux>>
+-> Say "Luminos".
+    <<interrruptTimer none>>
+    <<jump Say_Luminos>>
+-> Say "Light".
+    <<interrruptTimer none>>
+    <<jump Say_Light>>
+-> Attempt to escape
+    <<interrruptTimer none>>
+    <<jump Attempt_to_escape>>
+===
+
+title: Plead_with_the_creature
+position: 1065,2056
+---
+Player: Get away foul creature!
+
+Garbanzo: Foul?! I'll get you for that.
+
+The creature moves closer to you.
+
+What do you do?
+<<if $magicRock is true>>
+    <<if $specialPackage is true>>
+        -> Hold out the magical rock.
+            <<jump Hold_out_the_magical_rock>>
+        -> Attempt to escape.
+            <<jump Attempt_to_escape>>
+        -> Pretend to give the creature the package.
+            <<jump Pretend_to_give_the_creature_the_package>>
+    <<else>>
+        -> Hold out the magical rock.
+            <<jump Hold_out_the_magical_rock>>
+        -> Attempt to escape.
+            <<jump Attempt_to_escape>>
+    <<endif>>
+<<else>>
+    <<if $specialPackage is true>>
+        -> Attempt to escape.
+            <<jump Attempt_to_escape>>
+        -> Pretend to give the creature the package.
+            <<jump Pretend_to_give_the_creature_the_package>>
+    <<else>>
+        -> Attempt to escape.
+            <<jump Attempt_to_escape>>
+    <<endif>>
+<<endif>>
+===
+
+title: Say_Lux
+position: 788,1532
+---
+While holding the magical rock in front of you facing the creature you shout the magical word.
+
+Player: Lux!
+
+The magical rock produces a warm glow briefly then it fades to nothing.
+
+The magic rock didn't seem to work.
+
+The creature moves closer to you.
+
+-> Attempt to escape.
+    <<jump Attempt_to_escape>>
+===
+
+title: Say_Light
+position: 795,1673
+---
+While holding the magical rock in front of you facing the creature you shout the magical word.
+
+Player: Light!
+
+The magical rock produces a warm glow briefly then it fades to nothing.
+
+The magic rock didn't seem to work.
+
+The creature moves closer to you.
+
+-> Attempt to escape.
+    <<jump Attempt_to_escape>>
+===
+
+title: Say_Luminos
+position: 1432,2312
+---
+While holding the magical rock in front of you facing the creature you shout the magical word.
+
+Player: Luminos!
+
+The magical rock produces a warm glow then flashes a bright light directly at the creature.
+
+The magic rock worked!
+
+The creature stumbles back dropping its weapon and rubbing its eyes.  The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof.
+
+-> Find Stormhoof and continue delivering.
+    <<jump Find_Stormhoof_and_continue_delivering>>
+===
+
+title: Dont_give_it_to_the_creature
+position: 1459,981
+---
+You refrain from giving the package to the creature.
+
+Player: I'm not giving you the package anymore.
+
+The creature moves closer to you.
+
+You smack the dagger out of the creatures hands and away from you. The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof.
+
+-> Find Stormhoof and continue delivering.
+    <<jump Find_Stormhoof_and_continue_delivering>>
+===
+
+title: Pretend_to_give_the_creature_the_package
+position: 1442,1294
+---
+You pretend to hand over the package to the creature.
+
+The creature is quick, it grabbed the package before you could pull away to trick the creature.
+
+Garbanzo: Now that wasn't so hard was it. I'll be seeing you around.
+
+<<set $specialPackage to false>>
+-> Find Stormhoof and continue delivering.
+    <<jump Find_Stormhoof_and_continue_delivering>>
+===
+
+title: Find_Stormhoof_and_continue_delivering
+position: 2194,1758
+---
+You narrowly escaped the creature with your life. Best you stay on guard and continue delivering.
+
+You find Stormhoof happily grazing on the greenery around her.
+
+-> Start delivering the packages.
+    <<jump Start_delivering_the_packages>>
+===
+
+title: Start_delivering_the_packages
+position: 2691,1230
+---
+You ride atop Stormhoof and decide you should deliver your first package.
+
+<<if $firstPackage is "small">>
+    -> Deliver the small package.
+        <<jump Deliver_the_small_package>>
+<<elseif $firstPackage is "large">>
+    -> Deliver the large package.
+        <<jump Deliver_the_large_package>>
+<<endif>>
+===
+
+title: Deliver_the_small_package
+position: 3618,335
+---
+The package is small and light. You look at the delivery label. It is addressed to Petunia Pattersby. The address isn't too far from where you are. You'd better start moving.
+
+-> Travel to your first delivery.
+    <<jump Travel_to_your_first_delivery>>
+===
+
+title: Deliver_the_large_package
+position: 3612,838
+---
+The package is large and heavy. You look at the delivery label. It is addressed to Bjorn. The address isn't too far from where you are. You'd better start moving.
+
+-> Travel to your first delivery.
+    <<jump Travel_to_your_first_delivery>>
+===
+
+title: Travel_to_your_first_delivery
+position: 4242,601
+---
+Unlike the day before, the weather is bright and sunny. What an amazing day!
+
+// *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
+-> Arrive at your first destination.
+    <<jump Arrive_at_your_first_destination>>
+===
+
+title: Arrive_at_your_first_destination
+position: 4678,605
+---
+You've arrived at the address labelled on the delivery package.
+
+<<if $firstPackage is "small">>
+    The place looks like a small bakery store. Above the entrance to the store is a sign that says, "Pattersby's Pastries".
+
+    What do you do?
+    -> Call out for Petunia.
+        <<jump Call_out_for_Petunia>>
+    -> Wait and see if anyone comes.
+        <<jump Wait_and_see_if_anyone_comes>>
+<<elseif $firstPackage is "large">>
+    The place looks like a large tent. A wooden sign stuck in the dirt reads, "See the mighty Bjorn wrestle a bear!".
+
+    What do you do?
+    -> Call out for Bjorn.
+        <<jump Call_out_for_Bjorn>>
+    -> Drop the package at the entrance.
+        <<jump Drop_the_package_at_the_entrance>>
+<<endif>>
+===
+
+title: Call_out_for_Petunia
+position: 5335,-168
+---
+Player: Delivery for Petunia Pattersby!
+
+A little old woman comes out from the entrance of the store. She waves you down.
+
+Petunia: Hello deary. I'm Petunia Pattersby. Are you the sweet courier with my delivery?
+
+What do you say?
+-> Say that you have Petunia's delivery.
+    <<jump Say_that_you_have_Petunias_delivery>>
+-> Ask her what she sells.
+    <<jump Ask_her_what_she_sells>>
+===
+
+title: Wait_and_see_if_anyone_comes
+position: 5318,239
+---
+You wait in silence for someone to come out.
+
+A small old woman comes out from the entrance of the store. She waves you down.
+
+Petunia: Hello deary. I'm Petunia Pattersby. Are you the sweet courier with my delivery?
+
+-> Say that you have Petunia's delivery.
+    <<jump Say_that_you_have_Petunias_delivery>>
+===
+
+title: Ask_her_what_she_sells
+position: 5721,-343
+---
+Player: What do you sell here? I've never seen this shop before on my journeys along this path.
+
+Petunia: Well deary, pastries. Pastries that I have perfected over the 400 years of baking and cooking that I've lived through. One bite of my original Patersby Pastries will sweeten your day.
+
+What do you say?
+-> Ask her how she's lived for over 400 years.
+    <<jump Ask_her_how_shes_lived_for_over_400_years>>
+-> Say that you have Petunia's delivery.
+    <<jump Say_that_you_have_Petunias_delivery>>
+===
+
+title: Ask_her_how_shes_lived_for_over_400_years
+position: 6083,-339
+---
+Player: How have you lived for over 400 years?
+
+Petunia: Oh sweetie, I'm a gnome. Gnomes tend to live for quite a long time. Which I'm quite grateful for since you don't become good at baking over night.
+
+Petunia puts on a wide smile.
+
+Petunia: Now deary, are you the courier from Granbell with my delivery?
+
+-> Say that you have Petunia's delivery.
+    <<jump Say_that_you_have_Petunias_delivery>>
+===
+
+title: Say_that_you_have_Petunias_delivery
+position: 5968,78
+---
+Player: Here is your delivery from Granbell.
+
+You hand her the small package.
+
+Petunia: Oh thank you so much deary.
+
+She proceeds to open her package. The package held a set of silver cutlery.
+
+Petunia: Finally! The silver cutlery that I ordered. Now my customers can enjoy their Pattersby pastries with these beautiful utensils. My last set of silver cutlery was stolen from me not too long ago. Wait here a moment I've got something for you.
+
+She walks into the store. You wait for a moment. She comes back out with what looks like a baked pastry and hands it to you.
+
+*You take the Pattersby Pastry*
+<<set $pattersbyOriginal to true>>
+
+Petunia: Here you go deary, a Pattersby Pastry. This is for your wonderful delivery service. I hope you enjoy it. Take care now. I've heard that there are goblins around these parts.
+
+What do you say?
+-> Ask Petunia what goblins look like.
+    <<jump Ask_Petunia_what_goblins_look_like>>
+-> Thank her for the pastry and continue delivering.
+    <<jump Thank_her_for_the_pastry_and_continue_delivering>>
+===
+
+title: Ask_Petunia_what_goblins_look_like
+position: 6529,-363
+---
+Player: What do goblins look like?
+
+Petunia: Oh they're terrible creatures they are. They lurk in the shadows and get up to all kinds of evil mischief. They're small, about my height, and green, like the trees. Oh and they have big noses and pointy ears too. If you see any, make sure you run as fast as you can. They can be *very* sneaky.
+
+What do you say?
+-> Tell her that you saw one.
+    <<jump Tell_her_that_you_saw_one>>
+-> Thank her for the pastry and continue delivering.
+    <<jump Thank_her_for_the_pastry_and_continue_delivering>>
+===
+
+title: Tell_her_that_you_saw_one
+position: 7147,-414
+---
+Player: I think I saw one recently. It tried stealing my packages. I ran as fast as I could and I managed to outrun it. It might be trying to follow me. Do you have any tips on how to deter goblins?
+
+Petunia: Well, if I remember from my adventuring days. Magical light seems to ward them off for a while. I also remember that goblins hate the smell of heartberries. I'd give you some deary but unfortunately I'm all out of heartberries.
+
+-> Thank her for the pastry and continue delivering.
+    <<jump Thank_her_for_the_pastry_and_continue_delivering>>
+===
+
+title: Thank_her_for_the_pastry_and_continue_delivering
+position: 7419,273
+---
+Player: Thank you for the pastry Petunia. It looks delicious.
+
+Petunia: No, thank you.
+
+Petunia waves you a goodbye as you leave. You start to head on your way to your second delivery. 
+
+<<set $metPetunia to true>>
+-> Make your second delivery.
+    <<jump Make_your_second_delivery>>
+===
+
+title: Drop_the_package_at_the_entrance
+position: 5329,909
+---
+The package is heavy so you drop it on the ground near the entrance of the tent. A loud thud is heard.
+
+A very large muscular man steps out from under the tent.
+
+Bjorn: Ah hallo! Are you the delivery human that has my package?
+
+-> Say that you have Bjorn's delivery.
+    <<jump Say_that_you_have_Bjorns_delivery>>
+===
+
+title: Call_out_for_Bjorn
+position: 5354,1291
+---
+Player: Delivery for Bjorn!
+
+A very large muscular man steps out from under the tent.
+
+Bjorn: Ah hallo! Are you the delivery human that has my package?
+
+What do you say?
+-> Say that you have Bjorn's delivery.
+    <<jump Say_that_you_have_Bjorns_delivery>>
+-> Ask why he is wrestling a bear.
+    <<jump Ask_why_he_is_wrestling_a_bear>>
+===
+
+title: Ask_why_he_is_wrestling_a_bear
+position: 5694,1715
+---
+Player: What's going on here? Why are you wrestling a bear?
+
+Bjorn looks at the you with one eyebrow raised.
+
+Bjorn: How do you not know who I am!? I am Bjorn! The mighty wrestler and body builder! I thought all the people of Granbell knew of these marvelous muscles.
+
+Bjorn proceeds to strike a pose.
+
+Bjorn: I'm wrestling a bear because the bear is the strongest animal of the forest. Conviniently, I happen to have a friend that is a bear. He's agreed to wrestle me but he hasn't arrived yet. I hope he isn't lost.
+
+What do you say?
+-> Tell him that you've never heard of him.
+    <<jump Tell_him_that_youve_never_heard_of_him>>
+-> Say that you have Bjorn's delivery.
+    <<jump Say_that_you_have_Bjorns_delivery>>
+===
+
+title: Say_that_you_have_Bjorns_delivery
+position: 6173,1018
+---
+Player: Here is your delivery from Granbell.
+
+You hand him the large package.
+
+Bjorn: Ho ho ho! It's finally here!
+
+He proceeds to open his package. The package held a giant set of barbells.
+
+Bjorn: Now I can get even stronger! Granbell makes the best training equipment! How can I thank you for your service?!
+
+He stands and thinks for a moment before reaching a conclusion.
+
+Bjorn: I can give you the MUSCLE SPIRIT!
+
+He strikes a pose and puts his arm on your bicep.
+
+*You gain muscle spirit*
+<<set $muscleSpirit to true>>
+
+Bjorn: Now you have the muscle spirit. Be careful out there. I saw a few goblins around.
+
+What do you say?
+-> Ask what muscle spirit is.
+    <<jump Ask_what_muscle_spirit_is>>
+-> Thank him for the muscle spirit and continue delivering.
+    <<jump Thank_him_for_the_muscle_spirit_and_continue_delivering>>
+===
+
+title: Tell_him_that_youve_never_heard_of_him
+position: 6148,1590
+---
+Player: Sorry sir, I've never heard of you or your muscles.
+
+Bjorn looks at you in surprise.
+
+Bjorn: Well now you have. Tell all your freinds and family about the mighty Bjorn and his miraculous muscles!
+
+-> Say that you have Bjorn's delivery.
+    <<jump Say_that_you_have_Bjorns_delivery>>
+===
+
+title: Ask_what_muscle_spirit_is
+position: 6644,1434
+---
+Player: You didn't give me anything. What is muscle spirit? 
+
+Bjorn: You do have something. Muscle spirit is the compelling force within you that you can use any time you need extra strength!
+
+What do you say?
+-> Tell him that you think you saw a goblin.
+    <<jump Tell_him_that_you_think_you_saw_a_goblin>>
+-> Thank him for the muscle spirit and continue delivering.
+    <<jump Thank_him_for_the_muscle_spirit_and_continue_delivering>>
+===
+
+title: Thank_him_for_the_muscle_spirit_and_continue_delivering
+position: 7422,961
+---
+Player: Thank you for the muscle spirit. Good luck with the bear.
+
+Bjorn: Ah no need for luck when you are as strong as me!
+
+Bjorn waves you a goodbye as you leave. You start to head on your way to your second delivery. 
+
+<<set $metBjorn to true>>
+-> Make your second delivery.
+    <<jump Make_your_second_delivery>>
+===
+
+title: Tell_him_that_you_think_you_saw_a_goblin
+position: 7169,1428
+---
+Player: I think I saw a goblin chasing me earlier. Does muscle spirit work on goblins?
+
+Bjorn: If the creature looked green, had a big nose, had pointy ears, and was very small then that was a goblin. Muscle spirit will work on goblins. Just strike a pose and it will be terrified by your presence. Like this.
+
+Bjorn begins to show off his muscles in as many poses as he can.
+
+-> Thank him for the muscle spirit and continue delivering.
+    <<jump Thank_him_for_the_muscle_spirit_and_continue_delivering>>
+===
+
+title: Make_your_second_delivery
+position: 8344,656
+---
+You ride atop Stormhoof and decide you should deliver your second package.
+
+<<if $secondPackage is "round">>
+    -> Deliver the round package.
+        <<jump Deliver_the_round_package>>
+<<elseif $secondPackage is "square">>
+    -> Deliver the square package.
+        <<jump Deliver_the_square_package>>
+<<elseif $secondPackage is "triangle">>
+    -> Deliver the triangle package.
+        <<jump Deliver_the_triangle>>
+<<endif>>
+===
+
+title: Deliver_the_round_package
+---
+The package is round and feels smooth. You look at the delivery label. It is addressed to Mudbrick. The address isn't too far from where you are. You'd better start moving.
+
+-> Travel to your second delivery.
 ===

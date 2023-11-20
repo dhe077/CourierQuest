@@ -903,17 +903,21 @@ Garbanzo: No idea, all I know is that this is the wrong path to Eldoria. You're 
 
 What do you say? (Timed)
 <<startTimer 10>>
--> Ask how it knew your destination.
-    <<interrruptTimer none>>
-    <<jump Ask_how_it_knew_your_destination>>
 <<if $specialPackage is false>>
     -> Tell the creature that you're not going to Eldoria.
         <<interrruptTimer none>>
         <<jump Tell_the_creature_that_youre_not_going_to_Eldoria>>
+    -> Don't answer the creature. #timeout
+        <<interrruptTimer none>>
+        <<jump Dont_answer_the_creature>>
+<<else>>
+    -> Ask how it knew your destination.
+        <<interrruptTimer none>>
+        <<jump Ask_how_it_knew_your_destination>>
+    -> Don't answer the creature. #timeout
+        <<interrruptTimer none>>
+        <<jump Dont_answer_the_creature>>
 <<endif>>
--> Don't answer the creature. #timeout
-    <<interrruptTimer none>>
-    <<jump Dont_answer_the_creature>>
 ===
 
 title: Dont_answer_the_creature
@@ -1019,7 +1023,6 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 <<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
-<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1039,7 +1042,6 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 <<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
-<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1057,7 +1059,6 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 <<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
-<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1075,7 +1076,6 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 <<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
-<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1096,7 +1096,6 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 <<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
-<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1116,7 +1115,6 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 <<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
-<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1134,7 +1132,6 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 <<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
-<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1152,7 +1149,6 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 <<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
-<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1185,7 +1181,6 @@ The creature gets comfortable in its saddle and begins to ride closer to you.
 <<moveClose true>>
 
 You need to get away from this creature. You look closely at the rat and it seems to be struggling to keep up with you. Maybe you could lose the creature by out running it.
-<<moveClose false>>
 
 // *During this section the player must pedal fast enough to outrun the goblin. They must maintain the RPM for a set amount of time to pass.*
 -> Outrun the creature.
@@ -1195,6 +1190,7 @@ You need to get away from this creature. You look closely at the rat and it seem
 title: Outrun_the_creature
 position: 10363,-659
 ---
+<<moveClose false>>
 <<wait  120>> // Wait for 2 minutes of fast pedalling
 You kept a steady gallop allowing you to outrun the creature and it's mount. 
 
@@ -1216,13 +1212,18 @@ Just before you find a place to camp you reach a fork in the road. At the juncti
     You notice a small package in the bush beside the figure. You pick up the package. The package says that it needs to go to Eldoria. You have a feeling like this is the special package that Mistress Ellastra wanted you to deliver.
 
     Do you still want to deliver the package?
-    -> Deliver the package.
-        <<jump Deliver_the_package>>
-    -> Don't deliver the package.
-        <<jump Dont_deliver_the_package>>
     <<if $whistle is true>>
+        -> Deliver the package.
+            <<jump Deliver_the_package>>
+        -> Don't deliver the package.
+            <<jump Dont_deliver_the_package>>
         -> Blow the creature's whistle.
             <<jump Blow_the_creatures_whistle>>
+    <<else>>
+        -> Deliver the package.
+            <<jump Deliver_the_package>>
+        -> Don't deliver the package.
+            <<jump Dont_deliver_the_package>>
     <<endif>>
 <<endif>>
 
@@ -1326,7 +1327,6 @@ You follow the left path.
         <<jump Set_up_camp_in_the_abandoned_hut>>
     -> Set up camp in some bushes.
         <<jump Set_up_camp_in_some_bushes>>
-
 <<elseif $followedPath is false>>
     <<goToScene BushesAndRoad>>
     <<wait 2>>
