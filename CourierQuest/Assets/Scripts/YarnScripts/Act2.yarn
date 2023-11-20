@@ -1,0 +1,43 @@
+﻿title: Wake_up_in_the_bushes
+---
+You open your eyes. You're safe.
+
+You pack up your camp and head to the tree that Stormhoof is tied to.
+
+On your way to Stormhoof's tree you spot a small creature dart across the path. That creature seems to have been trying to find you. It's missed you this time. Best be on your guard from now on.
+
+You see the tree that Stormhoof should be tied to but no Stormhoof.
+
+===
+
+title: Wake_up_in_the_hut
+---
+You open your eyes. The morning sun streaks across the hut's interior. You're safe.
+
+You pack up your camp and head to the tree that Stormhoof is tied to.
+
+On your way to Stormhoof's tree you spot a pair of small footprints across the path. That creature seems to have been trying to find you. Best be on your guard from now on.
+
+You see Stormhoof happily grazing on the greenery around her.
+===
+
+title: Wake_up_near_the_road
+---
+You open your eyes. The creature stands over you, dagger outstretched towards you.
+
+// (if: $whistleBlown is true)[
+// (set: $whistleBlown to false)
+// Garbanzo: I heard the whistle. You better have what I want.
+
+// What do you do?
+// 1. [[Say that you have the package.]]
+// 2. [[Say that you accidentally blew the whistle.]]
+// ]
+// (else:)[
+// Garbanzo: Peekaboo!
+
+// What do you do? (Timed)
+// 1. [[Attempt to escape.]]
+// (if: $magicRock is true)[2. [[Hold out the magical rock.]]]
+// Timed. [[Plead with the creature.]]
+===
