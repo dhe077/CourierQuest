@@ -1,0 +1,875 @@
+﻿title: Travel_to_your_second_delivery
+position: -787,702
+---
+So far the weather has been wonderful but you have a gut feeling like another storm may happen.
+
+// *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
+-> Arrive at your second destination.
+    <<jump Arrive_at_your_second_destination>>
+===
+
+title: Arrive_at_your_second_destination
+position: -408,698
+---
+You've arrived at the address labelled on the delivery package.
+<<if $secondPackage is "round">>
+    The address has led you to a murky pond covered in algae and lily pads. It doesn't look like there is a house here. You notice a small group of tortoises gathering together into a circular formation, near the lake.
+
+    What do you do?
+    -> Call out for Mudbrick.
+        <<jump Call_out_for_Mudbrick>>
+    -> Approach the tortoises.
+        <<jump Approach_the_tortoises>>
+<<elseif $secondPackage is "square">>
+    The place looks like a typical campsite with a large tent. Around the campsite you see a random array of what looks like scorch marks.
+
+    What do you do?
+    -> Call out for Oli.
+        <<jump Call_out_for_Oli>>
+    -> Examine the scorch marks.
+        <<jump Examine_the_scorch_marks>>
+<<elseif $secondPackage is "triangle">>
+    The address has led you to a tower. Atop the tower sits a room with a tall spire. Seems like this tower was used a long time ago but is now abandoned or at least it seems to look that way. 
+
+    What do you do?
+    -> Call out for Finn.
+        <<jump Call_out_for_Finn>>
+    -> Approach the tower and knock on the door.
+        <<jump Approach_the_tower_and_knock_on_the_door>>
+<<endif>>
+===
+
+title: Call_out_for_Mudbrick
+position: 978,-2241
+---
+Player: Delivery for Mudbrick!
+
+From the pond a tortoise approaches you. The tortoise is standing on two legs and is walking with the help of a wooden branch. It looks very old. The tortoise looks up at you.
+
+Mudbrick: H-h-hello. You said you have a d-delivery for me?
+
+What do you say?
+-> Ask Mudbrick what he is.
+    <<jump Ask_Mudbrick_what_he_is>>
+-> Say that you have Mudbrick's delivery.
+    <<jump Say_that_you_have_Mudbricks_delivery>>
+===
+
+title: Approach_the_tortoises
+position: 978,-1972
+---
+You approach the group of tortoises. They all stare at you with intent, waiting for your words.
+
+Player: I have a delivery for Mudbrick?
+
+The gathered tortoises you approached look away and lose interest as they shuffle away from you.
+
+From the pond a tortoise approaches you. The tortoise is standing on two legs and is walking with the help of a wooden branch. It looks very old. The tortoise looks up at you.
+
+Mudbrick: H-h-hello. You said you have a d-delivery for me?
+
+What do you say?
+-> Ask Mudbrick what he is.
+    <<jump Ask_Mudbrick_what_he_is>>
+-> Say that you have Mudbrick's delivery.
+    <<jump Say_that_you_have_Mudbricks_delivery>>
+===
+
+title: Ask_Mudbrick_what_he_is
+position: 1334,-2460
+---
+Player: Um, may I ask...what are you?
+
+Mudbrick: I'm M-mudbrick. I'm here for the annual ritual.
+
+What do you say?
+-> Ask what kind of creature he is.
+    <<jump Ask_what_kind_of_creature_he_is>>
+-> Ask about the ritual.
+    <<jump Ask_about_the_ritual>>
+===
+
+title: Ask_about_the_ritual
+position: 1434,-2704
+---
+Player: What ritual are you talking about?
+
+Mudbrick: The annual Druids of the P-pond ritual.
+
+What do you say?
+-> Say that you have Mudbrick's delivery.
+    <<jump Ssay_that_you_have_Mudbricks_delivery>>
+-> Ask what the ritual does.
+    <<jump Ask_what_the_ritual_does>>
+===
+
+title: Ask_what_the_ritual_does
+position: 1725,-2904
+---
+Player: What is the Druids of the Pond ritual for?
+
+Mudbrick: This ritual is done once a year. It gathers magical essence from across the lands to this p-p-pond and allows for creatures like myself to be born from the mixture of pond life and magic.
+
+What do you say?
+-> Ask Mudbrick if he's seen any bad creatures lately.
+    <<jump Ask_Mudbrick_if_hes_seen_any_bad_creatures_lately>>
+-> Say that you have Mudbrick's delivery.
+    <<jump Say_that_you_have_Mudbricks_delivery>>
+===
+
+title: Ask_Mudbrick_if_hes_seen_any_bad_creatures_lately
+position: 2065,-2990
+---
+Player: Have you seen any evil creatures around here lately?
+
+Mudbrick: I don't recall seeing any evil creatures around our pond but I did hear about a particular g-g-goblin that has been s-s-skulking around down the path towards Eldoria.
+ 
+-> Say that you have Mudbrick's delivery.
+    <<jump Say_that_you_have_Mudbricks_delivery>>
+===
+
+title: Ask_what_kind_of_creature_he_is
+position: 1734,-2626
+---
+Player: No, I mean what *are* you?
+
+Mudbrick: Have you not seen a t-t-tortoise before.
+
+What do you say?
+-> Say that you have Mudbrick's delivery.
+    <<jump Say_that_you_have_Mudbricks_delivery>>
+-> Say that you've never seen a tortoise walk on two legs before.
+    <<jump Say_that_youve_never_seen_a_tortoise_walk_on_two_legs_before>>
+===
+
+title: Say_that_youve_never_seen_a_tortoise_walk_on_two_legs_before
+position: 1985,-2733
+---
+Player: I've seen tortoises before but never any that walk on two legs.
+
+Mudbrick: In t-time you'll see more of us. The more m-m-magic around this pond the more you'll see tortoises walking on two legs. Like me.
+
+-> Say that you have Mudbrick's delivery.
+    <<jump Say_that_you_have_Mudbricks_delivery>>
+===
+
+title: Say_that_you_have_Mudbricks_delivery
+position: 2162,-2472
+---
+Player: I have a package for you from Granbell.
+
+Mudbrick: Oh m-my. All the way from Granbell. That m-must have been far.
+
+He unwraps the package and reveals that what was inside. The package contained a round and smooth shell cover made from various animal hides. 
+
+Mudbrick: W-w-wow! This is the exact ritual sh-sh-shell cover I requested. Thank you! Good timing as well. You've d-d-delivered this to me just in time for our annual ritual.
+
+Mudbrick gestures to the gathering tortoises across the lake. The tortoises have wheeled a large wooden machine that's attatched to a heavy stone statue.
+
+Mudbrick: Would you mind helping us lift up our ritual's m-m-monument? Someone or something knocked it over during the night.
+
+What do you say?
+-> Say that you can help. (Exercise Quest)
+    <<jump Say_that_you_can_help>>
+-> Apologise and say that you need to make more deliveries.
+    <<jump Apologise_and_say_that_you_need_to_make_more_deliveries>>
+===
+
+title: Say_that_you_can_help
+position: 2601,-2913
+---
+Player: Stormhoof and I can help you lift the statue.
+
+Mudbrick: Thank you so m-m-much.
+
+You go to the statue. The tortoises gather around you. A rope is attatched to Stormhoofs harness. 
+
+Mudbrick: Ok courier. Start p-p-pulling the rope.
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+-> Lift the statue.
+    <<jump Lift_the_statue>>
+===
+
+title: Apologise_and_say_that_you_need_to_make_more_deliveries
+position: 4333,-2202
+---
+Player: Sorry sir, I can't help you right now. I've got some urgent deliveries to make.
+
+Mudbrick: I understand. Move along now. I don't want to s-s-s-slow you down.
+
+You continue down the path towards your next delivery location.
+
+You sense an evil presence in the air around you.
+
+// *Ignore Exercise Quest: The player will need to exercise to outrun the goblin.*
+-> You spot the creature.
+    <<jump You_spot_the_creature>>
+===
+
+title: Lift_the_statue
+position: 3080,-2888
+---
+You managed to lift the statue upright.
+
+Mudbrick: Now the ritual can continue. Thank you so m-m-much for the help. Here take this as a gift.
+
+Mudbrick holds up his hands offering you a small green pendant.
+
+*You take the pendant.*
+<<set $animalPendant to true>> 
+<<set $metMudbrick to true>>
+
+Mudbrick: This pendant can b-b-be used to summon the animals of the forest to assist you. Just wear the pendant and c-c-call for the forest's aid. 
+
+-> Thank Mudbrick for the pendant.
+    <<jump Thank_Mudbrick_for_the_pendant>>
+===
+
+title: Thank_Mudbrick_for_the_pendant
+position: 4343,-2679
+---
+Player: Thank you for the pendant. I'm sure it will be very useful on my journey.
+
+Mudbrick: I thank you for the delivery *and* the assistance with the statue.
+
+You continue down the path towards your next delivery location.
+
+-> Make your third delivery.
+    <<jump Make_your_third_delivery>>
+===
+
+title: Call_out_for_Oli
+position: 1179,671
+---
+Player: Delivery for Oli!
+
+You wait for a moment for any response. Nothing.
+
+<<if $metOli is true>>
+    You remember that you saw Oli earlier. He's probably still away from his camp.
+<<endif>>
+
+What do you do?
+-> Leave the package at Oli's camp.
+    <<jump Leave_the_package_at_Olis_camp>>
+-> Call out for Oli again.
+    <<jump Call_out_for_Oli_again>>
+===
+
+title: Examine_the_scorch_marks
+position: 1189,926
+---
+You examine the scorch marks. There are small craters of exposed dirt at the center of every scorch mark. The scorch marks seem like they were created with such energy and force that you assume there was a small explosion at each scorch location.
+
+What do you do?
+-> Leave the package at Oli's camp.
+    <<jump Leave_the_package_at_Olis_camp>>
+-> Take a closer examination of the scorch marks.
+    <<jump Take_a_closer_examination_of_the_scorch_marks>>
+===
+
+title: Leave_the_package_at_Olis_camp
+position: 1671,40
+---
+It seems like nobody is here. You can just leave the package near his camp in a safe location.
+
+<<if $diamond is true>>
+    You remember that Oli gave you a diamond to safely get into his camp. You pull out the diamond and raise it above your head. You walk slowly toward the center of his camp.
+
+    All of a sudden a bolt of lightning streaks down from above and strikes the diamond above your head. You feel nothing. The diamond has kept you safe from the lightning. The sky rumbles with thunder.
+
+    You continue walking towards Oli's camp and lightning keeps striking the diamond above you. As long as you keep the diamond above your head you will be fine. 
+
+    // *The player must walk (pedal) towards the camp.*
+    -> Walk to Oli's camp.
+        <<jump Walk_to_Olis_camp>>
+<<else>>
+    You approach the outskirts of the campsite. But suddenly a loud rustling from behind the dense forest foliage stops you in your tracks. 
+
+    A gelantinous blue slime creature appears from the location of the noise. It seems non-hostile at the moment. As you look closer at the blue slime cube, you notice within it's translucent body, a set of various bones and a human skull! The slime pauses its movement and begins moving towards you at an alarming speed.
+
+    What do you do?
+    -> Run from the cube!
+        <<jump Run_from_the_cube>>
+    -> Wait to see if it's friendly.
+        <<jump Wait_to_see_if_its_friendly>>
+<<endif>>
+===
+
+title: Call_out_for_Oli_again
+position: 1572,664
+---
+Player: Hello?! Is anyone here? I have a delivery for Oli!
+
+You call out again but no response. Then suddenly you hear a rustling in the bushes.
+
+What do you do?
+-> Wait to see what made the noise. (Exercise Quest)
+    <<jump Wait_to_see_what_made_the_noise>>
+-> Hide from the noise.
+    <<jump Hide_from_the_noise>>
+===
+
+title: Take_a_closer_examination_of_the_scorch_marks
+position: 1491,1144
+---
+As you approach the scorch marks to get a closer look, there is a rustling in the bushes that catches your attention.
+
+What do you do?
+-> Wait to see what made the noise. (Exercise Quest)
+    <<jump Wait_to_see_what_made_the_noise>>
+-> Hide from the noise.
+    <<jump Hide_from_the_noise>>
+===
+
+title: Wait_to_see_what_made_the_noise
+position: 2072,465
+---
+You wait to see what made the noise.
+
+The rustling amongst the bushes grows louder. Then suddenly a gelantinous blue slime creature moves out from behind the foliage.
+
+It seems non-hostile at the moment. As you look closer at the blue slime cube, you notice within it's translucent body, a set of various bones and a human skull! The slime pauses its movement and begins moving towards you at an alarming speed.
+
+What do you do?
+-> Run from the cube!
+    <<jump Run_from_the_cube>>
+-> Wait to see if it's friendly.
+    <<jump Wait_to_see_if_its_friendly>>
+===
+
+title: Hide_from_the_noise
+position: 1943,1280
+---
+You lead Stormhoof away from the camp and tie her to a tree. You jump down into the bushes nearby the campsite and wait for what ever made those noises to show itself.
+
+You wait, hidden amongst the dense bushes, for something to emerge from the forest. From where you heard the noise, a gelantinous blue slime creature moves out from behind the foliage. It's headed towards Oli's campsite.
+
+What do you do? (Timed)
+<<startTimer 8>>
+-> Jump out and stop the slime. (Exercise Quest)
+    <<interrruptTimer none>>
+    <<jump Jump_out_and_stop_the_slime>>
+-> Let the slime move towards Oli's camp.
+    <<interrruptTimer none>>
+    <<jump Let_the_slime_move_towards_Olis_camp>>
+===
+
+title: Walk_to_Olis_camp
+position: 2627,49
+---
+You survive Oli's defences. You leave the package near the tent's entrance. You believe that it will be safe from creatures since there is already a line of defence.
+
+// *The player must walk (pedal) away from the camp.*
+-> Walk away from Oli's camp.
+    <<jump Walk_away_from_Olis_camp>>
+===
+
+title: Wait_to_see_if_its_friendly
+position: 2444,735
+---
+You wait for its approach. It quickly lurches towards you then it grabs you and pulls you into its viscous body.
+
+You need to move as much as you can to get out of the slime!
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+-> Escape the slime.
+    <<jump Escape_the_slime>>
+===
+
+title: Run_from_the_cube
+position: 3034,663
+---
+You turn to start running from the cube but the slime is too fast and you're grabbed and pulled into the ooze.
+
+You need to move as much as you can to get out of the slime!
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+-> Escape the slime.
+    <<jump Escape_the_slime>>
+===
+
+title: Jump_out_and_stop_the_slime
+position: 2285,1090
+---
+You jump out and distract the blue slime in an attempt to misdirect it away from Oli's campsite. It changes its movement from a slow viscous crawl in the direction of Oli's camp to a quick glooping flow towards your location.
+
+What do you do?
+-> Run from the cube!
+    <<jump Run_from_the_cube>>
+-> Wait to see if it's friendly.
+    <<jump Wait_to_see_if_its_friendly>>
+===
+
+title: Let_the_slime_move_towards_Olis_camp
+position: 2443,1388
+---
+You sit in silence waiting for the slime to advance into Oli's campsite. It lurches towards the campsite but as it approaches closer to the campsite you hear the sky begin to rumble then a loud CRACK, as a bolt of lightning from above spears through the slime turning its cuboid form into an explosion of goo.
+
+Seems like you avoided two things that would have been detrimental to your delivery process.
+
+What do you do?
+<<if $diamond is true>>
+    -> Throw package towards the campsite.
+        <<jump Throw_package_towards_the_campsite>>
+    -> Deliver the package to the camp.
+        <<jump Deliver_the_package_to_the_camp>>
+<<else>>
+    -> Throw package towards the campsite.
+        <<jump Throw_package_towards_the_campsite>>
+<<endif>>
+===
+
+title: Walk_away_from_Olis_camp
+position: 3117,51
+---
+You walk out of the campsite's defences. You can surely say you made a perfect delivery.
+
+The diamond that you were using has cracked in several places but remains intact. It seems after all it's use against the lightning the diamond has been damaged quite badly.
+
+What do you do?
+-> Discard the diamond.
+    <<jump Discard_the_diamond>>
+-> Keep the diamond.
+    <<jump Keep_the_diamond>>
+===
+
+title: Escape_the_slime
+position: 3233,931
+---
+You narrowly escaped alive from the clutches of the blue slime. The slime retreats back into the forest. You still need to make that delivery. 
+
+<<set $escapedSlime to true>>
+
+What do you do?
+<<if $diamond is true>>
+    -> Throw package towards the campsite.
+        <<jump Throw_package_towards_the_campsite>>
+    -> Deliver the package to the camp.
+        <<jump Deliver_the_package_to_the_camp>>
+<<else>>
+    -> Throw package towards the campsite.
+        <<jump Throw_package_towards_the_campsite>>
+<<endif>>
+===
+
+title: Throw_package_towards_the_campsite
+position: 3542,1200
+---
+You swing the package above your head and attempt to throw it as far as you can. It flies through the air and lands about half way up to the camp.
+
+Mistress Ellastra won't be happy when she finds out about this delivery. Hopefully you don't get fired or worse...
+
+You continue down the path towards your next delivery location.
+
+<<if $escapedSlime is true>>
+    -> Make your third delivery.
+        <<jump Make_your_third_delivery>>
+<<else>>
+    -> Make your third delivery.
+        <<jump Make_your_third_delivery>>
+    -> There's an evil presence around Oli's camp.
+        <<jump Theres_an_evil_presence_around_Olis_camp>>
+<<endif>>
+===
+
+title: Deliver_the_package_to_the_camp
+position: 2885,1591
+---
+You remember that Oli gave you a diamond to safely get into his camp. You pull out the diamond and raise it above your head. You walk slowly toward the center of his camp.
+
+All of a sudden a bolt of lightning streaks down from above and strikes the diamond above your head. You feel nothing. The diamond has kept you safe from the lightning. The sky rumbles with thunder.
+
+You continue walking towards Oli's camp and lightning keeps striking the diamond above you. As long as you keep the diamond above your head you will be fine. 
+
+// *The player must walk (pedal) towards the camp.*
+-> Walk to Oli's camp.
+    <<jump Walk_to_Olis_camp>>
+===
+
+title: Discard_the_diamond
+position: 3606,1
+---
+You throw away the diamond that kept you safe. You think it's about time to go to your next delivery. 
+<<set $diamond to false>>
+
+You continue down the path towards your next delivery location.
+
+<<if $escapedSlime is true>>
+    -> Make your third delivery.
+        <<jump Make_your_third_delivery>>
+<<else>>
+    -> There's an evil presence around Oli's camp.
+        <<jump Theres_an_evil_presence_around_Olis_camp>>
+<<endif>>
+===
+
+title: Keep_the_diamond
+position: 3594,243
+---
+You keep the diamond that kept you safe. You think it's about time to go to your next delivery.
+<<set $diamond to true>>
+
+You continue down the path towards your next delivery location.
+
+<<if $escapedSlime is true>>
+    -> Make your third delivery.
+        <<jump Make_your_third_delivery>>
+<<else>>
+    -> There's an evil presence around Oli's camp.
+        <<jump Theres_an_evil_presence_around_Olis_camp>>
+<<endif>>
+===
+
+title: Theres_an_evil_presence_around_Olis_camp
+position: 4542,630
+---
+You sense an evil presence around the camp site.
+
+-> You spot the creature.
+    <<jump You_spot_the_creature>>
+===
+
+title: Approach_the_tower_and_knock_on_the_door
+position: 1110,3038
+---
+You approach the tower with caution. You knock lightly on the door. No answer. 
+
+You bang loudly on the door. The sound of footsteps come from within the tower. The door opens and you see, before you, a half-elf. He's reading a thick book. Seems like he is entranced by the words on the pages.
+
+Finn: Could you please stop making such loud noises. It makes it hard to concentrate.
+
+-> Tell Finn you have a package for him.
+    <<jump Tell_Finn_you_have_a_package_for_him>>
+===
+
+title: Call_out_for_Finn
+position: 1103,3353
+---
+Player: Delivery for Finn!
+
+You hear the footsteps of someone coming down the tower's staircase. The door opens and you see before you, a half-elf. He's reading a thick book. Seems like he is entranced by the words on the pages.
+
+Finn: Hello? What do you want?
+
+-> Tell Finn you have a package for him.
+    <<jump Tell_Finn_you_have_a_package_for_him>>
+===
+
+title: Tell_Finn_you_have_a_package_for_him
+position: 1543,3362
+---
+Player: I have a package delivery from Granbell.
+
+Finn: Really? Give it to me.
+
+At no point does he look up from his book to see you. His arm reaches out to you and gestures for you to place the package in his hand. 
+
+You place the triangular package in his grasp and await his response. He doesn't look at the package at all and puts it in his pouch.
+
+What do you say?
+-> Ask him if he's ok.
+    <<jump Ask_him_if_hes_ok>>
+-> Ask what he is reading.
+    <<jump Ask_what_he_is_reading>>
+===
+
+title: Ask_him_if_hes_ok
+position: 2012,3104
+---
+Player: Are you ok?
+
+Finn: Sorry, I need to finish reading all these books before they all go to waste sitting in this abandoned tower.
+
+You've made your delivery already but it seems like Finn might need some help.
+
+What do you do?
+-> Ask how you can help.
+    <<jump Ask_how_you_can_help>>
+-> Wish him good luck and continue delivering.
+    <<jump Wish_him_good_luck_and_continue_delivering>>
+===
+
+title: Ask_what_he_is_reading
+position: 1331,3837
+---
+Player: Seems like that book has got you hooked.
+
+Finn: This *book* is just one of many in this tower that contains various useful spells.
+
+What do you say?
+-> Ask why he needs all those spells.
+    <<jump Ask_why_he_needs_all_those_spells>>
+-> Ask how you can help.
+    <<jump Ask_how_you_can_help>>
+===
+
+title: Ask_why_he_needs_all_those_spells
+position: 1796,4104
+---
+Player: Why do you even need all those spells?
+
+Finn: These spells will prove useful against dangerous enemies. You see, spells are like tools. The more tools you have, the more situations you can pull yourself out of. If I see spells that're worth learning I'll spend my time learning those spells. It takes time to learn a spell, days or weeks, and other times it takes a few hours.
+
+Finn looks behind him at all the books piled up near the stairs.
+
+Finn: But this might take years.
+
+What do you do?
+-> Ask how you can help.
+    <<jump Ask_how_you_can_help>>
+-> Say that you've never met a real wizard before.
+    <<jump Say_that_youve_never_met_a_real_wizard_before>>
+-> Wish him good luck and continue delivering.
+    <<jump Wish_him_good_luck_and_continue_delivering>>
+===
+
+title: Say_that_youve_never_met_a_real_wizard_before
+position: 2183,4250
+---
+Player: I've never met a *real* wizard before. I've only ever heard stories about them.
+
+Finn: Yes, there are very few of us left. Especially, since we are being hunted by those who despise magic in all its forms. In fact, I met a dastardly creature that hated me using magic so much that it stole my horse.
+
+Finn angrily looks away.
+
+-> Ask how you can help.
+    <<jump Ask_how_you_can_help>>
+===
+
+title: Ask_how_you_can_help
+position: 2612,3620
+---
+Player: Is there anything I can do to help you?
+
+Finn: No there isn't much you can d--wait, there is something you can do!
+
+Finn disappears up the stairs and returns with a book in his hands.
+
+Finn: If I can split my mind into many versions of myself a few times then just merge my mind back into one I'd have all the knowledge collected from these books in no time.
+
+Finn looks around.
+
+Finn: But first I need something to channel my magic through.
+
+Finn's eyes light up and grabs the triangular package from his pouch. He proceeds to unwrap the package revealing a pointed wizard's hat.
+
+Finn: This is exactly what I need. I can use this with the magic generator.
+
+What do you do?
+-> Ask when you can get started helping.
+    <<jump Ask_when_you_can_get_started_helping>>
+-> Ask what the magic generator is.
+    <<jump Ask_what_the_magic_generator_is>>
+-> Wish him good luck and continue delivering.
+    <<jump Wish_him_good_luck_and_continue_delivering>>
+===
+
+title: Ask_what_the_magic_generator_is
+position: 2552,4225
+---
+Player: What is a magic generator?
+
+Finn: The magic generator is a special contraption that I've found within this tower. I'm assuming the previous owner of this tower used it to create magic out of physical movement.
+
+-> Ask when you can get started helping.
+    <<jump Ask_when_you_can_get_started_helping>>
+===
+
+title: Ask_when_you_can_get_started_helping
+position: 2874,4283
+---
+Player: When can I start helping?
+
+Finn: We can get started immediately.
+
+Finn bolts up the tower again and comes down holding a small metal object. He places the object on the floor and starts casting a spell on it. The object floats up and begins to shake then it burts into a grand structure much larger than its previous form.
+
+Finn: Here is the magic generator. It'll help in creating all the magic needed for my spell. Could you please get inside the machine?
+
+What do you say?
+-> Ask if it's safe.
+    <<jump Ask_if_its_safe>>
+-> Get into the machine. (Exercise Quest)
+    <<jump Get_into_the_machine>>
+===
+
+title: Ask_if_its_safe
+position: 3154,3812
+---
+Player: Is this safe? You know, I still have more deliveries to make.
+
+Finn: Oh, it's *extremely* safe.
+
+You can sense a feeling of sarcasm in his voice.
+
+What do you do?
+-> Get into the machine. (Exercise Quest)
+    <<jump Get_into_the_machine>>
+-> Wish him good luck and continue delivering.
+    <<jump Wish_him_good_luck_and_continue_delivering>>
+===
+
+title: Get_into_the_machine
+position: 3183,4050
+---
+You hop into the contraption. It's surprisingly comfortable.
+
+Finn: Ok just put your feet in the pedals there and begin pedaling. Are you ready? I'll be casting the spell now.
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+-> Pedal to help Finn.
+    <<jump Pedal_to_help_Finn>>
+===
+
+title: Pedal_to_help_Finn
+position: 3558,3895
+---
+You move around in the machine to pump out magic for Finn. It seems to be working. More Finn's are appearing from busts of magical energy around you!
+
+Finn: Ok I think that is enough. You can stop now.
+
+An army of Finns surround you.
+
+Finn: Ok everyone get inside and start reading.
+
+The mass of Finn clones march up the tower.
+
+What do you say?
+-> Ask if he'll need help later to bring them together.
+    <<jump Ask_if_hell_need_help_later_to_bring_them_together>>
+-> Tell him that you hope that this works.
+    <<jump Tell_him_that_you_hope_that_this_works>>
+===
+
+title: Tell_him_that_you_hope_that_this_works
+position: 3927,3655
+---
+Player: I hope for your sake that this will work.
+
+Finn: I think that it'll work out exactly as I need it to. Thank you so much for the help. Here take this.
+
+He hands you a small vial.
+
+*You take the vial.*
+<<set $smokeVial to true>>
+<<set $metFinn to true>>
+
+Finn: It's a vial of magical smoke. If you ever need a quick escape just throw this on the ground and it'll create a large cloud of smog, blinding your enemies.
+
+-> Thank Finn for the vial and continue delivering.
+    <<jump Thank_Finn_for_the_vial_and_continue_delivering>>
+===
+
+title: Ask_if_hell_need_help_later_to_bring_them_together
+position: 3970,3921
+---
+Player: I hope for your sake that this will work.
+
+Finn: I think that it'll work out exactly as I need it to. Thank you so much for the help. Here take this.
+
+He hands you a small vial.
+
+*You take the vial.*
+<<set $smokeVial to true>>
+<<set $metFinn to true>>
+
+Finn: It's a vial of magical smoke. If you ever need a quick escape just throw this on the ground and it'll create a large cloud of smog, blinding your enemies.
+
+-> Thank Finn for the vial and continue delivering.
+    <<jump Thank_Finn_for_the_vial_and_continue_delivering>>
+===
+
+title: Thank_Finn_for_the_vial_and_continue_delivering
+position: 4503,3390
+---
+Player: Thank you for the smoke vial. I hope you'll be able to read all these books soon enough.
+
+Finn: Thank you. Make sure you stay safe on the path to Eldoria. I bumped into a nasty looking goblin asking if I had seen someone carrying an "offering".
+
+He waves you a goodbye.
+
+-> Make your third delivery.
+    <<jump Make_you_third_delivery>>
+===
+
+title: Wish_him_good_luck_and_continue_delivering
+position: 4481,2921
+---
+Player: Well I hope you manage to read them all. Don't forget to get some fresh air every now and then.
+
+You continue down the path towards your next delivery location.
+
+You sense an evil presence in the air.
+-> You spot the creature.
+    <<jump You_spot_the_creature>>
+===
+
+title: You_spot_the_creature
+position: 5382,-194
+---
+That creature that chased you has appeared once again. It does not ask questions and it doesn't seem to have any intention to speak with you. It rides close.
+
+You need to outrun the creature again.
+
+You escape the creature once more.
+-> Make your third delivery.
+    <<jump Make_your_third_delivery>>
+===
+
+title: Make_your_third_delivery
+position: 5733,63
+---
+You ride atop Stormhoof and decide you should deliver your third package.
+
+<<if $thirdPackage is "red">>
+    -> Deliver the red package.
+        <<jump Deliver_the_red_package>>
+<<elseif $thirdPackage is "green">>
+    -> Deliver the green package.
+        <<jump Deliver_the_green_package>>
+<<elseif $thirdPackage is "blue">>
+    -> Deliver the blue package.
+        <<jump Deliver_the_blue_package>>
+<<elseif $thirdPackage is "yellow">>
+    -> Deliver the yellow package.
+        <<jump Deliver_the_yellow_package>>
+<<endif>>
+===
+
+title: Deliver_the_red_package
+position: 7310,-235
+---
+The package is coloured red and feels lumpy. You look at the delivery label. It is addressed to Leyton. The address isn't too far from where you are. You'd better start moving.
+
+-> Travel to your third delivery.
+    <<jump Travel_to_your_third_delivery>>
+===
+
+title: Deliver_the_green_package
+position: 7308,-16
+---
+The package is coloured green and smells like plants. You look at the delivery label. It is addressed to Thakali. The address isn't too far from where you are. You'd better start moving.
+
+-> Travel to your third delivery.
+    <<jump Travel_to_your_third_delivery>>
+===
+
+title: Deliver_the_blue_package
+position: 7304,202
+---
+The package is a small pouch that has been dyed blue. You look at the delivery label. It is addressed to Daisy. The address isn't too far from where you are. You'd better start moving.
+
+-> Travel to your third delivery.
+    <<jump Travel_to_your_third_delivery>>
+===
+
+title: Deliver_the_yellow_package
+position: 7295,414
+---
+The package is a large pouch that has been dyed yellow. You look at the delivery label. It is addressed to Val. The address isn't too far from where you are. You'd better start moving.
+
+-> Travel to your third delivery.
+    <<jump Travel_to_your_third_delivery>>
+===

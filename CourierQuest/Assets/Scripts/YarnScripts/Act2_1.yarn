@@ -344,7 +344,7 @@ What do you do? (Timed)
 ===
 
 title: Say_that_you_have_the_package
-position: 736,1153
+position: 881,1157
 ---
 Player: I have the package that you wanted.
 
@@ -358,7 +358,7 @@ What do you do?
 ===
 
 title: Say_that_you_accidentally_blew_the_whistle
-position: 1518,2035
+position: 1760,1958
 ---
 Player: Sorry, I accidentally blew the whistle.
 
@@ -373,7 +373,7 @@ You should probably find Stormhoof and continue delivering.
 ===
 
 title: Attempt_to_escape
-position: 1529,1756
+position: 1143,1804
 ---
 You smack the dagger out of the creatures hands and away from you. The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof. Your pack seems a little lighter.
 
@@ -383,7 +383,7 @@ You smack the dagger out of the creatures hands and away from you. The creature 
 ===
 
 title: Hold_out_the_magical_rock
-position: 397,1776
+position: 81,1717
 ---
 You remember you have the rock that Frankie gave you. You quickly pull out the rock from your pouch and hold it out towards the creature.
 
@@ -404,7 +404,7 @@ What do you do? (Timed)
 ===
 
 title: Plead_with_the_creature
-position: 1065,2056
+position: 726,2090
 ---
 Player: Get away foul creature!
 
@@ -441,7 +441,7 @@ What do you do?
 ===
 
 title: Say_Lux
-position: 788,1532
+position: 472,1473
 ---
 While holding the magical rock in front of you facing the creature you shout the magical word.
 
@@ -458,7 +458,7 @@ The creature moves closer to you.
 ===
 
 title: Say_Light
-position: 795,1673
+position: 479,1614
 ---
 While holding the magical rock in front of you facing the creature you shout the magical word.
 
@@ -475,7 +475,7 @@ The creature moves closer to you.
 ===
 
 title: Say_Luminos
-position: 1432,2312
+position: 1133,2112
 ---
 While holding the magical rock in front of you facing the creature you shout the magical word.
 
@@ -492,7 +492,7 @@ The creature stumbles back dropping its weapon and rubbing its eyes.  The creatu
 ===
 
 title: Dont_give_it_to_the_creature
-position: 1459,981
+position: 1482,947
 ---
 You refrain from giving the package to the creature.
 
@@ -507,7 +507,7 @@ You smack the dagger out of the creatures hands and away from you. The creature 
 ===
 
 title: Pretend_to_give_the_creature_the_package
-position: 1442,1294
+position: 1471,1350
 ---
 You pretend to hand over the package to the creature.
 
@@ -521,7 +521,7 @@ Garbanzo: Now that wasn't so hard was it. I'll be seeing you around.
 ===
 
 title: Find_Stormhoof_and_continue_delivering
-position: 2194,1758
+position: 2166,1237
 ---
 You narrowly escaped the creature with your life. Best you stay on guard and continue delivering.
 
@@ -656,7 +656,7 @@ Petunia: Now deary, are you the courier from Granbell with my delivery?
 ===
 
 title: Say_that_you_have_Petunias_delivery
-position: 5968,78
+position: 6062,63
 ---
 Player: Here is your delivery from Granbell.
 
@@ -697,7 +697,7 @@ What do you say?
 ===
 
 title: Tell_her_that_you_saw_one
-position: 7147,-414
+position: 7231,-368
 ---
 Player: I think I saw one recently. It tried stealing my packages. I ran as fast as I could and I managed to outrun it. It might be trying to follow me. Do you have any tips on how to deter goblins?
 
@@ -708,7 +708,7 @@ Petunia: Well, if I remember from my adventuring days. Magical light seems to wa
 ===
 
 title: Thank_her_for_the_pastry_and_continue_delivering
-position: 7419,273
+position: 7218,56
 ---
 Player: Thank you for the pastry Petunia. It looks delicious.
 
@@ -829,7 +829,7 @@ What do you say?
 ===
 
 title: Thank_him_for_the_muscle_spirit_and_continue_delivering
-position: 7422,961
+position: 7205,1032
 ---
 Player: Thank you for the muscle spirit. Good luck with the bear.
 
@@ -843,7 +843,7 @@ Bjorn waves you a goodbye as you leave. You start to head on your way to your se
 ===
 
 title: Tell_him_that_you_think_you_saw_a_goblin
-position: 7169,1428
+position: 7228,1426
 ---
 Player: I think I saw a goblin chasing me earlier. Does muscle spirit work on goblins?
 
@@ -856,7 +856,7 @@ Bjorn begins to show off his muscles in as many poses as he can.
 ===
 
 title: Make_your_second_delivery
-position: 8344,656
+position: 7905,539
 ---
 You ride atop Stormhoof and decide you should deliver your second package.
 
@@ -868,13 +868,40 @@ You ride atop Stormhoof and decide you should deliver your second package.
         <<jump Deliver_the_square_package>>
 <<elseif $secondPackage is "triangle">>
     -> Deliver the triangle package.
-        <<jump Deliver_the_triangle>>
+        <<jump Deliver_the_triangle_package>>
 <<endif>>
 ===
 
 title: Deliver_the_round_package
+position: 8509,529
 ---
 The package is round and feels smooth. You look at the delivery label. It is addressed to Mudbrick. The address isn't too far from where you are. You'd better start moving.
 
 -> Travel to your second delivery.
+    <<jump Travel_to_your_second_delivery>>
 ===
+
+title: Deliver_the_square_package
+position: 8513,795
+---
+The package is square and heavy. You look at the delivery label. It is addressed to Oli. 
+
+<<if $metOli is true>>
+    This must be the hammer head that Oli ordered.
+<<endif>>
+
+The address isn't too far from where you are. You'd better start moving.
+
+-> Travel to your second delivery.
+    <<jump Travel_to_your_second_delivery>>
+===
+
+title: Deliver_the_triangle_package
+position: 8511,279
+---
+The package is triangle and soft. You look at the delivery label. It is addressed to Finn. The address isn't too far from where you are. You'd better start moving.
+
+-> Travel to your second delivery.
+    <<jump Travel_to_your_second_delivery>>
+===
+

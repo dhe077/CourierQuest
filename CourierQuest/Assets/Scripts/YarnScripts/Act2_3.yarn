@@ -1,0 +1,1703 @@
+﻿title: Travel_to_your_third_delivery
+position: 30,469
+---
+The clouds above you begin to gather. Seems like the storm will arrive soon. You'd better deliver your third package before you find shelter.
+
+// *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
+-> Arrive at your third destination.
+    <<jump Arrive_at_your_third_destination>>
+===
+
+title: Arrive_at_your_third_destination
+position: 392,476
+---
+You've arrived at the address labelled on the delivery package.
+<<if $thirdPackage is "red">>
+    The address has led you to the entrance of a cave on a cliff above you. You notice nothing out of the ordinary for a cave mouth. Suddenly, you hear a sneeze from within the cave and a blast of fire comes streaking out of the cave.
+
+    What do you do?
+    -> Call out for Leyton.
+        <<jump Call_out_for_Leyton>>
+    -> Ask if whoever sneezed is ok.
+        <<jump Ask_if_whoever_sneezed_is_ok>>
+
+<<elseif $thirdPackage is "green">>
+    The address has led you to a luscious garden full of fruits, vegetables, and herbs. Although the clouds are gathering above you, this garden seems to have a perfect window of sunlight that shines down on the produce.
+
+    What do you do?
+    -> Call out for Thakali.
+        <<jump Call_out_for_Thakali>>
+    -> Compliment the garden.
+        <<jump Compliment_the_garden>>
+
+<<elseif $thirdPackage is "blue">>
+    The address has led you to a small campsite. There are baskets of berries dotted around the camp. A sign that says "Picked by Pattersbys" is painted on the side of a wagon nearby. (if: $metPetunia is true)[You recognise the name Pattersby. You met Petunia Pattersby earlier. Maybe this is her berry picking company?]
+
+    What do you do?
+    -> Call out for Daisy.
+        <<jump Call_out_for_Daisy>>
+    -> Take some berries.
+        <<jump Take_some_berries>>
+
+<<elseif $thirdPackage is "yellow">>
+    The address has led you to a door situated within a hill. There is a sign above the door that reads "Gamblers Grotto". The door has a small window that looks like it can slide open.
+
+    What do you do?
+    -> Call out for Val.
+        <<jump Call_out_for_Val>>
+    -> Knock on the door of the Gamblers Grotto.
+        <<jump Knock_on_the_door_of_the_Gamblers_Grotto>>
+<<endif>>
+===
+
+title: Call_out_for_Leyton
+position: 1206,-1932
+---
+Player: Delivery for Leyton!
+
+You hear a groaning from inside the cave.
+
+Leyton: I'm inside the cave. I'll be with you in a moment.
+
+You sit and wait for Leyton. You hear another sneeze come from the cave and again, a blast of flames shoot out of the cave.
+
+What do you do?
+-> Ask if he needs help getting down.
+    <<jump Ask_if_he_needs_help_getting_down>>
+-> Ask why there is fire coming out of the cave.
+    <<jump Ask_why_there_is_fire_coming_out_of_the_cave>>
+-> Leave the package on the ground and go.
+    <<jump Leave_the_package_on_the_ground_and_go>>
+===
+
+title: Ask_if_whoever_sneezed_is_ok
+position: 1201,-1530
+---
+Player: Are you ok in there?
+
+Leyton: Yup. Just a little under the weather is all. I'll be down in a moment.
+
+What do you do?
+-> Ask if he needs help getting down.
+    <<jump Ask_if_he_needs_help_getting_down>>
+-> Ask why there is fire coming out of the cave.
+    <<jump Ask_why_there_is_fire_coming_out_of_the_cave>>
+===
+
+title: Ask_if_he_needs_help_getting_down
+position: 1784,-2410
+---
+Player: Uh. Do you need help getting down from there?
+
+Leyton: No, I'll be fine.
+
+Leyton appears from the cave. You see a man with firey red hair wearing an exotic red robe. He carries a staff with a lantern wreathed in flames.
+
+Leyton: Now, why are you here again?
+
+What do you say?
+-> Tell Leyton you have a package for him.
+    <<jump Tell_Leyton_you_have>>
+-> Tell Leyton that you're here to help him get better.
+    <<jump Tell_Leyton_that_youre_here_to_help_him_get_better>>
+===
+
+title: Ask_why_there_is_fire_coming_out_of_the_cave
+position: 1763,-1976
+---
+Player: Why are there flames coming from the cave? Are you sure you're ok in the cave?
+
+Leyton: Sorry, those flames are coming from me.
+
+Leyton appears from the cave. You see a man with firey red hair wearing an exotic red robe. He carries a staff with a lantern wreathed in flames.
+
+Leyton: Now, why are you here again?
+
+What do you say?
+-> Tell Leyton you have a package for him.
+    <<jump Tell_Leyton_you_have_a_package_for_him>>
+-> Tell Leyton that you're here to help him get better.
+    <<jump Tell_Leyton_that_youre_here_to_help_him_get_better>>
+===
+
+title: Leave_the_package_on_the_ground_and_go
+position: 1709,-1516
+---
+You leave the package on the ground for him to collect. You don't want to catch whatever he has. It seems like a very dangerous disease.
+
+You slowly try sneak off.
+
+Leyton appears from the cave. You see a man with firey red hair wearing an exotic red robe. He carries a staff with a lantern wreathed in flames.
+
+Leyton: Hey! Where are you going? Where's my package!
+
+You freeze.
+
+What do you do?
+-> Tell him that you don't want to catch whatever he has.
+    <<jump Tell_him_that_you_dont_want_to_catch_whatever_he_has>>
+-> Tell him that you were just looking around the place.
+    <<jump Tell_him_that_you_were_just_looking_around_the_place>>
+===
+
+title: Tell_Leyton_you_have_a_package_for_him
+position: 2450,-2539
+---
+Player: I have a package for you from Granbell.
+
+Leyton: Oh yess! That'll help me feel better.
+
+Leyton floats down the side of the cliff face and lands softly on the dirt.
+
+You give the package to Leyton and he proceeds to open it revealing that it was a sack of coals.
+
+Leyton: Let's heat these up. I'm feeling hungry.
+
+What do you say?
+-> Ask how he floated down the cliff.
+    <<jump Ask_how_he_floated_down_the_cliff>>
+-> Offer Leyton some rations.
+    <<jump Offer_Leyton_some_rations>>
+===
+
+title: Tell_Leyton_that_youre_here_to_help_him_get_better
+position: 2452,-2288
+---
+Player: I'm here to help you get better. Seems like you might need it.
+
+Leyton: Thanks but unless you have something that can heat me up then I don't need your help. Was there anything else?
+
+What do you do?
+-> Tell Leyton you have a package for him.
+    <<jump Tell_Leyton_you_have_a_package_for_him>>
+-> Tell him that you have some hot food for him.
+    <<jump Tell_him_that_you_have_some_hot_food_for_him>>
+===
+
+title: Tell_him_that_you_dont_want_to_catch_whatever_he_has
+position: 2451,-1983
+---
+Player: You sound diseased. I'm just trying to keep my distance.
+
+Leyton: Don't worry, what I've got can't be passed to humans. I managed to avoid that storm, but some small creature poured water all over my tent and doused my flames. Now I need something to heat me up.
+
+Leyton spots his package on the ground.
+
+Leyton: Is that my package?!
+
+Leyton floats down the side of the cliff face and lands softly on the dirt. He proceeds to open the package revealing a sack of coals. Leyton shakes the bag of coals.
+
+Leyton: Yup this'll help. We're going to heat these up and I'm going to need your help.
+
+What do you say?
+-> Ask how he floated down the cliff.
+    <<jump Ask_how_he_floated_down_the_cliff>>
+-> Ask how you can help heat up the coals.
+    <<jump Ask_how_you_can_help_heat_up_the_coals>>
+===
+
+title: Tell_him_that_you_were_just_looking_around_the_place
+position: 2449,-1707
+---
+Player: I was just checking my surroundings. A goblin chased me yesterday so I'm being cautious about where I go. Your package is on the ground here.
+
+Leyton: Is that my package?!
+
+Leyton floats down the side of the cliff face and lands softly on the dirt. He proceeds to open the package revealing a sack of coals. Leyton shakes the bag of coals.
+
+Leyton: Yup this'll help. We're going to heat these up and I'm going to need your help.
+
+What do you say?
+-> Ask how he floated down the cliff.
+    <<jump Ask_how_he_floated_down_the_cliff>>
+-> Ask how you can help heat up the coals.
+    <<jump Ask_how_you_can>>
+-> Tell him that you're busy and you've a special delivery to complete.
+    <<jump Tell_him_that_youre_busy_and_that_youve_a_special_delivery_to_complete>>
+===
+
+title: Ask_how_he_floated_down_the_cliff
+position: 3076,-2580
+---
+Player: How did you just float down the cliff like that?
+
+Leyton: I have the magical ability to fly. That's how I got up there as well.
+
+What do you say?
+-> Ask him if he's a wizard.
+    <<jump Ask_him_if_hes_a_wizard>>
+-> Ask him what he's going to do with the coals.
+    <<jump Ask_him_what_hes_going_to_do_with_the_coals>>
+===
+
+title: Tell_him_that_you_have_some_hot_food_for_him
+position: 3093,-2041
+---
+Player: I have something that'll heat you up.
+
+Leyton: Really?
+
+Leyton floats down the side of the cliff face and lands softly on the dirt.
+
+Leyton: I was promised something hot where is it?
+
+Player: Hot food?
+
+Leyton: No no no, I don't want food. I want fire. All that sneezing and sickness has me leaking all my heat out. I need something to warm me up for a while.
+
+Leyton looks to your pack and sees his delivery.
+
+Leyton: Oh you have my package there. That'll help me out.
+
+You give the package to Leyton and he proceeds to open it revealing that it was a sack of coals. Leyton shakes the bag of coals.
+
+Leyton: We're going to heat these up and I'm going to need your help.
+
+What do you say?
+-> Ask how he floated down the cliff.
+    <<jump Ask_how_he_floated_down_the_cliff>>
+-> Ask how you can help heat up the coals.
+    <<jump Ask_how_you_can_help_heat_up_the_coals>>
+-> Tell him that you're busy and you've a special delivery to complete.
+    <<jump Tell_him_that_youre_busy_and_youve_a_special_delivery_to_complete>>
+===
+
+title: Offer_Leyton_some_rations
+position: 3092,-1785
+---
+Player: Here, if you're hungry I have some rations.
+
+Leyton: No no no, I don't want food. I want fire. All that sneezing and sickness has me leaking all my heat out. I need something to warm me up for a while.
+
+Leyton shakes the bag of coals.
+
+Leyton: So we're going to heat these up and I'm going to need your help.
+
+What do you say?
+-> Ask how you can help heat up the coals.
+    <<jump Ask_how_you_can_help_heat_up_the_coals>>
+-> Tell him that you're busy and you've a special delivery to complete.
+    <<jump Tell_him_that_youre_busy_and_youve_a_special_delivery_to_complete>>
+===
+
+title: Ask_him_if_hes_a_wizard
+position: 3425,-3078
+---
+Player: Are you a wizard? Not many people know how to wield magic. 
+
+<<if $metFinn is true>>
+    Player: I recently met a wizard named Finn he was quite the oddball.
+
+    Leyton: You met Finn? I used to adventure with that guy.
+<<endif>>
+
+He looks around.
+
+Leyton: No I'm not a wizard. I'm a warlock. I sold my soul to get these cool magical powers.
+
+-> Ask him what he's going to do with the coals.
+    <<jump Ask_him_what_hes_going_to_do_with_the_coals>>
+===
+
+title: Ask_him_what_hes_going_to_do_with_the_coals
+position: 3589,-2624
+---
+Player: What are you going to do with the coals?
+
+Leyton: All that sneezing and sickness has me leaking all my heat out. I need something to warm me up for a while.
+
+Leyton shakes the bag of coals.
+
+Leyton: So we're going to heat these up and I'm going to need your help.
+
+What do you say?
+-> Ask how you can help heat up the coals.
+    <<jump Ask_how_you_can_help_heat_up_the_coals>>
+-> Tell him that you're busy and you've a special delivery to complete.
+    <<jump Tell_him_that_youre_busy_and_youve_a_special_delivery_to_complete>>
+===
+
+title: Ask_how_you_can_help_heat_up_the_coals
+position: 3968,-2488
+---
+Player: How can I help heat up the coals? I don't have anything that'll get them started.
+
+Leyton pours the bag of coals on the ground then flies up to the cave and brings back a set of bellows.
+
+Leyton: On my call, use these and keep the fire stoked. 
+
+Leyton pours the coals into a stone fit pit. This'll be my last push of flames before I'm all fizzled out.
+
+Leyton: A-a-aaaaachooo!!
+
+Leyton sneezes all over the coals. A hot flame bursts from his face and onto the coals starting the heating process.
+
+<<set $metLeyton to true>>
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+-> Keep the coals hot.
+    <<jump Keep_the_coals_hot>>
+===
+
+title: Keep_the_coals_hot
+position: 4324,-2470
+---
+You manage to keep the coals hot by following Leyton's orders.
+
+Leyton: I think they're hot enough now!
+
+Leyton jumps onto the bed of coals and proceeds to get comfy.
+
+What do you do?
+-> Ask if it hurts.
+    <<jump Ask_if_it_hurts>>
+-> Ask if he feels better.
+    <<jump Ask_if_he_feels_better>>
+===
+
+title: Ask_if_it_hurts
+position: 4863,-2768
+---
+Player: Doesn't that hurt?
+
+Leyton: No this feels just right. Ahhhh.
+
+Leyton lets out a sigh of relief.
+
+You start to head to the path.
+
+Leyton: Wait, I forgot to give you this.
+
+Leyton hands you an obsidian dagger.
+
+*You take the obsidian dagger.* 
+
+<<set $dagger to true>>
+
+Leyton:  Be careful when holding it. It's exetremely sharp. I've use to it cut through almost everything. I won't be needing it any more, so you can have it.
+
+-> Thank Leyton for the dagger.
+    <<jump Thank_Leyton_for_the_dagger>>
+===
+
+title: Ask_if_he_feels_better
+position: 4880,-2258
+---
+Player: Does this feel good to you?
+
+Leyton: Ohh this feels great. I can't thank you enough for the help. I'll be better in no time.
+
+You start to head to the path.
+
+Leyton: Wait, I forgot to give you this.
+
+Leyton hands you an obsidian dagger.
+
+*You take the obsidian dagger.* 
+
+<<set $dagger to true>>
+
+Leyton:  Be careful when holding it. It's exetremely sharp. I've use to it cut through almost everything. I won't be needing it any more, so you can have it.
+
+-> Thank Leyton for the dagger.
+    <<jump Thank_Leyton_for_the_dagger>>
+===
+
+title: Thank_Leyton_for_the_dagger
+position: 6545,-2552
+---
+Player: Thank you for the gift. I'll be careful when handling it.
+
+Leyton: Oh if you see any ogres. They will be terrified of that thing too. No idea why.
+
+-> Continue on your journey.
+    <<jump Continue_on_your_journey>>
+===
+
+title: Tell_him_that_youre_busy_and_that_youve_a_special_delivery_to_complete
+position: 4356,-1586
+---
+<<if $path is "left">>
+    Player: Sorry, sir. I can't help you right now. I have a very important delivery to make to Eldoria.
+
+    Leyton: Eldoria? Why are you going there? Isn't it overrun with goblins?
+
+    What do you say?
+    -> Tell him you must do this because Granbell needs it.
+        <<jump Tell_him_you_must_do_this_because_Granbell_needs_it>>
+<<elseif $path is "right">>
+    Player: Sorry, sir. I can't help you right now. I have a very important package that needs disposing off.
+
+    Leyton: A courier disposing of one of their packages? If you'd like I could use my flames to burn it.
+
+    What do you say?
+    -> Ask him where the volcano is.
+        <<jump Ask_him_where_the_volcano_is>>
+<<endif>>
+===
+
+title: Ask_him_where_the_volcano_is
+position: 6535,-1477
+---
+Player:  I don't think you're in a good condition to do that. Where is the volcano that is nearby?
+
+Leyton looks at you in disbelief.
+
+Leyton: There's a volcano nearby? If I knew that I'd have gone there. Try further down the path.
+
+You get a feeling like you are being watched. 
+
+-> You spot the creature again.
+    <<jump You_spot_the_creature_again>>
+===
+
+title: Tell_him_you_must_do_this_because_Granbell_needs_it
+position: 6535,-1910
+---
+Player: I was given this task by my boss at the Granbell courier hall. She told me it was important. This package must be crucial to stopping the war between humans and goblins.
+
+Leyton: I wish you luck.
+
+You get a feeling like you are being watched. 
+-> You spot the creature again.
+    <<jump You_spot_the_creature_again>>
+===
+
+title: Call_out_for_Thakali
+position: 1194,-91
+---
+Player: Delivery for Thakali!
+
+You hear a groaning from the trees. Then a scream that grows louder. You see a dragon man fall from the trees above then onto the garden below. The garden is now ruined. He gets up and starts slashing wildly at the plants with his handaxes.
+
+What do you do? (Timed)
+<<startTimer 10>>
+-> Try and stop him from destroying more of the garden.
+    <<jump Try_and_stop_him_from_destroying_more_of_the_garden>>
+-> Remind him of his package.
+    <<jump Remind_him_of_his_package>>
+-> Wait and see what happens.
+    <<jump Wait_and_see_what_happens>>
+===
+
+title: Compliment_the_garden
+position: 1571,437
+---
+Player: This garden looks immaculate!
+
+You hear a groaning from the trees. Then a scream that grows louder. You see a dragon man fall from the trees above then onto the garden below. The garden is now ruined. He gets up and starts slashing wildly at the plants with his handaxes.
+
+What do you do? (Timed)
+<<startTimer 10>>
+-> Try and stop him from destroying more of the garden.
+    <<jump Try_and_stop_him_from_destroying_more_of_the_garden>>
+-> Remind him of his package.
+    <<jump Remind_him_of_his_package>>
+-> Wait and see what happens.
+    <<jump Wait_and_see_what_happens>>
+===
+
+title: Try_and_stop_him_from_destroying_more_of_the_garden
+position: 1583,-252
+---
+Player: Hey what are you doing! Stop it!
+
+Thakali: No tomatoes! Where. Are. Thakali's. Tomatoes!
+
+What do you say?
+-> Ask if he's Thakali.
+    <<jump Ask_if_hes_Thakali>>
+-> Ask why he wants tomatoes.
+    <<jump Ask_why_he_wants_tomatoes>>
+===
+
+title: Ask_why_he_wants_tomatoes
+position: 2094,-421
+---
+Player: Hey! Why do you want tomatoes anyway?
+
+The dragon man stops slashing and turns to face you.
+
+Thakali: They are the best vegetable for delicious meals. Thakali grows garden. But no tomato.
+
+What do you say?
+-> Ask if he's Thakali.
+    <<jump Ask_if_hes_Thakali>>
+-> Ask him if he planted tomato seeds.
+    <<jump Ask_him_if_he_planted_tomato_seeds>>
+===
+
+title: Ask_if_hes_Thakali
+position: 2049,57
+---
+Player: Hey! Are you Thakali?
+
+Thakali: Yes.
+
+He nods and points to himself. Seems like a man of very few words.
+
+What do you say?
+-> Remind him of his package.
+    <<jump Remind_him_of_his_package>>
+-> Say that he needs tomato seeds.
+    <<jump Say_that_he_needs_tomato_seeds>>
+===
+
+title: Wait_and_see_what_happens
+position: 2098,533
+---
+You wait and see what happens with the dragon man and the garden. You see him continue to slash the crops and destroy the remaining plants.
+
+The dragon man turns to you and begins to advance towards you. He doesn't look like he's hostile but he does seem very angry.
+
+Thakali: Do you have tomatoes?
+
+What do you say?
+-> Ask if he's Thakali.
+    <<jump Ask_if_hes_Thakali>>
+-> Say that you're just a courier.
+    <<jump Say_that_youre_just_a_courier>>
+===
+
+title: Ask_him_if_he_planted_tomato_seeds
+position: 2522,-457
+---
+Player: Did you even plant any *tomato* seeds?
+
+Thakali: *Tomato* seeds? Thakali just plant seeds that small creature give Thakali.
+
+What do you say?
+-> Ask what the creature looked like.
+    <<jump Ask_what_the_creature_looked_like>>
+-> Say that he needs tomato seeds.
+===
+
+title: Ask_what_the_creature_looked_like
+position: 2904,-382
+---
+Player: What did the creature that gave you the seeds look like?
+
+Thakali: Small, green, big nose, pointy ears.
+
+You think that it sounds similar to the creature that chased you.
+
+What do you say?
+-> Say that he needs tomato seeds.
+    <<jump Say_that_he_needs_tomato_seeds>>
+-> Ask if he's Thakali.
+    <<jump Ask_if_hes_Thakali>>
+===
+
+title: Say_that_he_needs_tomato_seeds
+position: 2888,-73
+---
+Player: You need *tomato* seeds to grow *tomatoes*.
+
+Thakali looks at you confused.
+
+-> Remind him of his package.
+    <<jump Remind_him_of_his_package>>
+===
+
+title: Say_that_youre_just_a_courier
+position: 2914,602
+---
+Player: Sorry, I'm just a courier. I'm not a farmer.
+
+Thakali gives a low growl then continues slashing at the plants.
+
+What do you say?
+-> Ask if he's Thakali.
+    <<jump Ask_if_hes_Thakali>>
+-> Ask why he wants tomatoes.
+    <<jump Ask_why_he_wants_tomatoes>>
+===
+
+title: Remind_him_of_his_package
+position: 2893,254
+---
+Player: Oh don't forget about your package.
+
+Thakali: Package? Thakali did not ask for package.
+
+You think it must be a gift from someone. You look at the packaging and it is says that it is from someone called Finn. (if: $metFinn is true)[You recall that Finn was the wizard from the tower. You suppose that Finn might have already met Thakali and realised Thakali's mistake.]
+
+You give the package to Thakali. Thakali tears open the package and finds a pouch of tomato seeds. In fact the tomato seeds look extremely large. (if: $metFinn is true)[You think that maybe Finn casted a spell on the seeds and made them magical. Better be careful with magic.]
+
+Thakali: What are these?
+
+What do you say?
+
+<<if $metFinn is true>>
+    -> Say that they are magical tomato seeds.
+        <<jump Say_that_they_are_magical_tomato_seeds>>
+    -> Tell him that they look like tomato seeds.
+        <<jump Tell_him_that_they_look_like_tomato_seeds>>
+<<else>>
+    -> Tell him that they look like tomato seeds.
+        <<jump Tell_him_that_they_look_like_tomato_seeds>>
+<<endif>>
+===
+
+title: Tell_him_that_they_look_like_tomato_seeds
+position: 3560,82
+---
+Player: They look like tomato seeds. 
+
+Thakali: Tomato!
+
+Thakali does a small dance in celebration.
+
+Thakali: We need to plant these right away!
+
+What do you do?
+-> Offer to help plant them.
+    <<jump Offer_to_help_plant_them>>
+-> Say that you can't help plant.
+    <<jump Say_that_you_cant_help_plant>>
+===
+
+title: Say_that_they_are_magical_tomato_seeds
+position: 3570,425
+---
+Player: I think that these tomato seeds are magical.
+
+Thakali: Magic tomato!
+
+Thakali does a small dance in celebration.
+
+Thakali: We need to plant these right away!
+
+What do you do?
+-> Offer to help plant them.
+    <<jump Offer_to_help_plant_them>>
+-> Say that you can't help plant.
+    <<jump Say_that_you_cant_help_plant>>
+===
+
+title: Offer_to_help_plant_them
+position: 4083,94
+---
+Player: We need to till the land first.
+
+Thakali: Thakali has a big machine for that.
+
+He pulls out a plowing device from behind a bush. Farmers uses these to efficiently dig up the land. Usually strong oxen pull these. You don't see any animals nearby.
+
+What do you do?
+-> Ask if he has something to pull the plow.
+    <<jump Ask_if_he_has_something_to_pull_the_plow>>
+-> Offer to use Stormhoof to pull the plow.
+    <<jump Offer_to_use_Stormhoof_to_pull_the_plow>>
+===
+
+title: Say_that_you_cant_help_plant
+position: 4073,420
+---
+<<if $path is "left">>
+    Player: Sorry, Thakali. I can't help you right now. I have a very important delivery to make to Eldoria.
+
+    Thakali: Eldoria? Goblins are in Eldoria. Lots of goblins.
+
+    What do you say?
+    -> Tell him you must do this because it is your job.
+        <<jump Tell_him_you_must_do_this_becuase_it_is_your_job>>
+
+<<elseif $path is "right">>
+    Player: Sorry, Thakali. I can't help you right now. I have a very important delivery to get rid of.
+
+    Thakali: You want me to slice it?!
+
+    What do you say?
+    -> Ask him if he's seen a volcano nearby.
+        <<jump Ask_him_if_hes_seen_a_volcano_nearby>>
+<<endif>>
+===
+
+title: Ask_if_he_has_something_to_pull_the_plow
+position: 4437,-315
+---
+Player: I don't see any animals around. Do you have something to pull the plow?
+
+Thakali: Thakali pull plow. Thakali is strong like ox.
+
+You're amazed that this dragon man can manage to pull this heavy farming equipment.
+
+-> Offer to use Stormhoof to pull the plow.
+    <<jump Offer_to_use_Stormhoof_to_pull_the_plow>>
+===
+
+title: Offer_to_use_Stormhoof_to_pull_the_plow
+position: 4990,-315
+---
+Player: I think Stormhoof here is strong enough to pull the plow.
+
+Thakali: That is good idea. Thakali need rest after slicing plants.
+
+Thakali straps the plow onto Stormhoof.
+
+<<set $metThakali to true>>
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+-> Pull the plow.
+    <<jump Pull_the_plow>>
+===
+
+title: Pull_the_plow
+position: 5440,3
+---
+You pull the plow and dig up the land.
+
+Thakali throws the seeds behind you into the freshly tilled soil.
+
+Player: Now just cover them up and water them.
+
+Thakali: How long will tomato grow?
+
+What do you do?
+-> Tell him that it won't be any time soon.
+    <<jump Tell_him_that_it_wont_be_any_time_soon>>
+-> Tell him that if he dances they will grow faster.
+    <<jump Tell_him_that_if_he_dances_they_will_grow_faster>>
+===
+
+title: Tell_him_that_if_he_dances_they_will_grow_faster
+position: 5452,302
+---
+You think to yourself that it might be funny to pull a harmless prank on Thakali.
+
+Player: If you dance near the plants they'll grow faster.
+
+Thakali: Really?!
+
+Thakali dances near the tomato seeds.
+
+Out of nowhere, the tomato seeds you planted sprout and grow. Leaves appear as the plants get larger, and before you know it, they're fully grown with ripe tomatoes hanging from their vines.
+
+Thakali looks over at the plants, shocked and amazed. Seems like these seeds were infused with some sort of magic.
+
+Thakali: TOMATO!!
+
+Thakali drops his axes and dives into the tomato bushes, harvesting the ripest tomatoes with a big grin on his face. Seems like Thakali is occupied with the tomatoes. He's left his axes on the ground. Maybe an axe might come in handy.
+
+What do you do?
+-> Steal the axe.
+    <<jump Steal_the_axe>>
+-> Leave the axe.
+    <<jump Leave_the_axe>>
+===
+
+title: Tell_him_that_it_wont_be_any_time_soon
+position: 5472,-302
+---
+Player: Tomatoes take a long while to grow.
+
+Thakali: But Thakali wants tomato now!
+
+Out of nowhere, the tomato seeds you planted sprout and grow. Leaves appear as the plants get larger, and before you know it, they're fully grown with ripe tomatoes hanging from their vines.
+
+Thakali looks over at the plants, shocked and amazed. Seems like these seeds were infused with some sort of magic.
+
+Thakali: TOMATO!!
+
+Thakali drops his axes and dives into the tomato bushes, harvesting the ripest tomatoes with a big grin on his face. Seems like Thakali is occupied with the tomatoes. He's left his axes on the ground. Maybe an axe might come in handy.
+
+What do you do?
+-> Steal the axe.
+    <<jump Steal_the_axe>>
+-> Leave the axe.
+    <<jump Leave_the_axe>>
+===
+
+title: Leave_the_axe
+position: 6500,-115
+---
+You leave the axe on the ground.
+
+You'd better continue on your journey.
+
+-> Continue on your journey.
+    <<jump Continue_on_your_journey>>
+===
+
+title: Steal_the_axe
+position: 6498,185
+---
+*You take the axe.*  
+
+<<set $axe to true>>
+
+Thakali has not noticed.
+
+You'd better continue on your journey.
+
+-> Continue on your journey.
+    <<jump Continue_on_your_journey>>
+===
+
+title: Tell_him_you_must_do_this_becuase_it_is_your_job
+position: 6493,741
+---
+Player: I was given this task by my boss at the Granbell courier hall. She told me it was important. This package must be crucial to stopping the war between humans and goblins.
+
+Thakali: Thakali gives you luck.
+
+You get a feeling like you are being watched. 
+
+-> You spot the creature again.
+    <<jump You_spot_the_creature_again>>
+===
+
+title: Ask_him_if_hes_seen_a_volcano_nearby
+position: 6489,1064
+---
+Player: I don't think slicing will do the trick. Have you seen a volcano nearby?
+
+Thakali: Yes. It's that way. You will see sharp rocks of volcano.
+
+He points down the path.
+
+You get a feeling like you are being watched. 
+
+-> You spot the creature again.
+    <<jump You_spot_the_creature_again>>
+===
+
+title: Call_out_for_Daisy
+position: 1280,1640
+---
+Player: Delivery for Daisy!
+
+From the bushes a voice is heard.
+
+Daisy: I'll be with you in a sec, sweetie.
+
+You look to your side. A basket of the most delicious looking berries you've ever seen lies beside you.
+
+What do you do?
+-> Wait for Daisy.
+    <<jump Wait_for_Daisy>>
+-> Take some berries.
+    <<jump Take_some_berries>>
+===
+
+title: Take_some_berries
+position: 1284,2126
+---
+You reach down towards the baskets of berries and attempt to grab a handful. Just before you touch the berries a woman with hooves and horns steps forth from the bushes.
+
+Daisy: Hey! What are you doing! Those aren't for you!
+
+What do you do?
+-> Say that you wanted to sample them.
+    <<jump Say_that_you_wanted_to_sample_them>>
+-> Say that you'd like some berries.
+    <<jump Say_that_youd_like_some_berries>>
+===
+
+title: Wait_for_Daisy
+position: 1817,1755
+---
+You wait for Daisy. You see some small woodland creatures skitter across the forest floor. 
+
+A woman with hooves and horns steps forth from the bushes.
+
+Daisy: Hello there sweetie. What can I do for you today. Are you here for some berries?
+
+What do you say?
+-> Say that you are a courier.
+    <<jump Say_that_you_are_a_courier>>
+-> Say that you'd like some berries.
+    <<jump Say_that_youd_like_some_berries>>
+===
+
+title: Say_that_youd_like_some_berries
+position: 1790,2113
+---
+Player: I just wanted some berries.
+
+Daisy: Sorry, these aren't for you. The baskets you see around you are for my mother's bakery.
+
+What do you say?
+-> Say that you are a courier.
+    <<jump Say_that_you_are_a_courier>>
+-> Ask why her mother needs so many berries.
+    <<jump Ask_why_her_mother_needs_so_many_berries>>
+-> Keep trying to reach for the berries.
+    <<jump Keep_trying_to_reach_for_the_berries>>
+===
+
+title: Say_that_you_wanted_to_sample_them
+position: 1424,2655
+---
+Player: I just wanted to sample your delicious looking berries.
+
+Daisy: Sorry, these aren't for you. The baskets you see around you are for my mother's bakery.
+
+What do you say?
+-> Say that you are a courier.
+    <<jump Say_that_you_are_a_courier>>
+-> Ask why her mother needs so many berries.
+    <<jump Ask_why_her_mother_needs_so_many_berries>>
+===
+
+title: Ask_why_her_mother_needs_so_many_berries
+position: 1822,2674
+---
+Player: Why does your mother need *this* many berries?
+
+Daisy: She bakes *alot* of pastries. Shes the proud owner of Pattersby's Pastries.
+
+<<if $metPetunia is true>>
+    Player: I met your mother earlier. I delivered a package to her as well.
+
+    Daisy: That must have been the cutlery from Granbell that she's been harping on about. I heard her last set was stolen.
+<<endif>>
+Daisy makes a deep sigh.
+
+Daisy: She's asked me to pick the berries from this orchard, but I don't have quite enough yet. Anyway, why are you even here?
+
+What do you say?
+-> Ask why she needs more when she's picked so many.
+    <<jump Ask_why_she_needs_more_when_shes_picked_so_many>>
+-> Say that you are a courier.
+    <<jump Say_that_you_are_a_courier>>
+===
+
+title: Ask_why_she_needs_more_when_shes_picked_so_many
+position: 2236,2664
+---
+Player: Why would you need more? There are so many baskets of berries here.
+
+Daisy: You don't know the half of it. These baskets of berries will only be a day's worth of pastries. Enough about me, why are you here?
+
+-> Say that you are a courier.
+    <<jump Say_that_you_are_a_courier>>
+===
+
+title: Say_that_you_are_a_courier
+position: 2448,2000
+---
+Player: I'm a courier and I have a package for Daisy. Are you Daisy?
+
+Daisy: Yes I am. What have you got for me?
+
+You give her the blue package. 
+
+Daisy: Hmm what could this be?
+
+She opens the package to reveal a large great axe made of a shiny blue metal.
+
+Daisy: Now this'll be very helpful. I know exactly who got this for me.
+
+What do you say?
+-> Ask who got Daisy the axe.
+    <<jump Ask_who_got_Daisy_the_axe>>
+-> Ask why the axe will be helpful.
+    <<jump Ask_why_the_axe_will_be_helpful>>
+===
+
+title: Keep_trying_to_reach_for_the_berries
+position: 2704,2446
+---
+You reach futher for the berries while Daisy stares you in the face. 
+
+Daisy pulls out a large greatsword from over her shoulder.
+
+Daisy: If you touch a berry I will slice that arm clean off without hesitation.
+
+You feel an intimidating presense from her.
+
+What do you do?
+-> Say that you wanted to sample them.
+    <<jump Say_that_you_wanted_to_sample_them>>
+-> Say that you are a courier.
+    <<jump Say_that_you_are_a_courier>>
+-> Touch a berry.
+    <<jump Touch_a_berry>>
+===
+
+title: Ask_why_the_axe_will_be_helpful
+position: 3143,1799
+---
+Player: What's so special about the axe?
+
+Daisy: This axe'll be helpful if I ever find out who or what's been taking my berries. This axe will make swift work of the thief.
+
+She swings around the axe.
+
+Daisy: Speaking of the thief. I don't have enough berries to take to my mother's shop. It always seems like every time I pick a basket of berries another basket disappears. My guess is that someone's been stealing them, and I need to get to the bottom of it.
+
+Out of the corner of your eye you spot a fairy making off with a pile of berries in its clutches.
+
+What do you do? (Timed)
+<<startTimer 12>>
+-> Yell at the fairy.
+    <<interrruptTimer none>>
+    <<jump Yell_at_the_fairy>>
+-> Push past Daisy and run after the fairy.
+    <<interrruptTimer none>>
+    <<jump Push_past_Daisy_and_run_after_the_fairy>>
+-> Stay quiet and wait to see what it does.
+    <<interrruptTimer none>>
+    <<jump Stay_quiet_and_wait_to_see_what_it_does>>
+===
+
+title: Ask_who_got_Daisy_the_axe
+position: 3145,2153
+---
+Player: Who got you the big blue shiny axe?
+
+Daisy: If I know my mother well enough, she must've heard about my thief problem and sent me this to deal with them.
+
+<<if $metPetunia is true>>
+    Player: I met your mother earlier. I delivered a package to her as well.
+
+    Daisy: That must have been the cutlery from Granbell that she's been harping on about.
+<<endif>>
+She hugs the axe.
+
+Daisy: Speaking of the thief. I don't have enough berries to take to my mother's shop. It always seems like every time I pick a basket of berries another basket disappears. My guess is that someone's been stealing them, and I need to get to the bottom of it.
+
+Out of the corner of your eye you spot a fairy making off with a pile of berries in its clutches.
+
+What do you do? (Timed)
+<<startTimer 12>>
+-> Yell at the fairy.
+    <<interrruptTimer none>>
+    <<jump Yell_at_the_fairy>>
+-> Push past Daisy and run after the fairy.
+    <<interrruptTimer none>>
+    <<jump Push_past_Daisy_and_run_after_the_fairy>>
+-> Stay quiet and wait to see what it does.
+    <<interrruptTimer none>>
+    <<jump Stay_quiet_and_wait_to_see_what_it_does>>
+===
+
+title: Stay_quiet_and_wait_to_see_what_it_does
+position: 3548,2238
+---
+You remain silent as you watch the fairy eat a berry then slip into the bushes with the rest of the berries.
+
+Daisy: Hey, are you there?
+
+What do you do?
+-> Tell Daisy about the fairy.
+    <<jump Tell_Daisy_about_the_fairy>>
+-> Walk towards where the fairy was.
+    <<jump Walk_towards_where_the_fairy_was>>
+===
+
+title: Yell_at_the_fairy
+position: 3909,1732
+---
+Player: Hey! Don't touch those!
+
+The fairy looks toward you in surprise and drops the berries and flies into the woods.
+
+Daisy: GET THAT FAIRY!!
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+-> Chase the fairy.
+    <<jump Chase_the_fairy>>
+===
+
+title: Push_past_Daisy_and_run_after_the_fairy
+position: 3921,1944
+---
+You push past Daisy and run towards the fairy.
+
+The fairy looks toward you in surprise and drops the berries and flies into the woods.
+
+Daisy: GET THAT FAIRY!!
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+-> Chase the fairy.
+    <<jump Chase_the_fairy>>
+===
+
+title: Tell_Daisy_about_the_fairy
+position: 3919,2159
+---
+Player: I just saw a fairy take off with your berries.
+
+Daisy: GET THAT FAIRY!!
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+-> Chase the fairy.
+    <<jump Chase_the_fairy>>
+===
+
+title: Walk_towards_where_the_fairy_was
+position: 3911,2378
+---
+You walk past Daisy. Ignoring her.
+
+Daisy: Where are you going?
+
+You reach the point where the fairy was. Not too far from you you see the fairy. It hasn't noticed you but it is moving quite quickly.
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+-> Secretly follow the fairy.
+    <<jump Secretly_follow_the_fairy>>
+===
+
+title: Chase_the_fairy
+position: 4376,1869
+---
+You chase the fairy riding Stormhoof. Daisy is close behind you following on foot... or hoof?
+
+The fairy has lead you to its hideout. The hideout is a large hollow tree. The fairy escapes up into the trunk of the tree. You see at the base of the hollowed tree a gigantic mound of berries.
+
+Daisy: So this is where they've been hiding them. Lets take them back before that fairy finds it's friends.
+
+-> Gather the berries.
+    <<jump Gather_the_berries>>
+===
+
+title: Gather_the_berries
+position: 4744,1866
+---
+You and Daisy gather the berries and take them back to Daisy's area.
+
+-> Go back to Daisy's area.
+    <<jump Go_back_to_Daisys_area>>
+===
+
+title: Secretly_follow_the_fairy
+position: 4366,2262
+---
+You chase the fairy riding Stormhoof.
+
+The fairy has lead you to its hide out. The hide out is a large hollowed out tree. The fairy escapes up into the trunk of the tree. You see at the base of the hollowed tree, a gigantic mound of berries.
+
+A lantern sits at the base of the tree illuminating the pile of berries. It might be useful to keep on you, especially at night.
+
+-> Take the lantern and head back with the berries.
+    <<jump Take_the_lantern_and_head_back_with_the_berries>>
+===
+
+title: Take_the_lantern_and_head_back_with_the_berries
+position: 4732,2260
+---
+*You take the lantern.* (set: $lantern to true)
+
+You gather the berries for Daisy. 
+
+-> Go back to Daisy's area.
+    <<jump Go_back_to_Daisys_area>>
+===
+
+title: Go_back_to_Daisys_area
+position: 5207,2152
+---
+Daisy: Thanks for finding the rest of the berries. I had no idea that fairies were stealing them. Here take this, this might help you with your deliveries.
+
+She hands you a compass.
+
+Daisy: This is a magical compass. I think it'll be more useful in your hands than mine. You'll never get lost with this.
+
+*You take the magical compass.* 
+
+<<set $magicalCompass to true>>
+<<set $metDaisy to true>>
+
+-> Thank her for the compass.
+    <<jump Thank_her_for_the_compass>>
+===
+
+title: Thank_her_for_the_compass
+position: 5592,2229
+---
+Player: Thank you for the compass. It'll help me with my last delivery.
+
+Daisy: Just let the compass know where it is and it'll guide you there. Where is your last delivery?
+
+What do you do?
+<<if $path is "left">>
+    Player: I have a very important delivery to make to Eldoria.
+
+    Daisy: Wait, isn't that place crawling with goblins?
+
+    What do you say?
+    -> Say that you must deliver it.
+        <<jump Say_that_you_must_deliver_it>>
+
+<<elseif $path is "right">>
+    Player: I need to find the nearest volcano.
+
+    Daisy: The nearest volcano? Strange. Just head down the path some more, you'll smell the volcano before you see it.
+
+    What do you say?
+    -> Thank Daisy for the information.
+        <<jump Thank_Daisy_for_the_information>>
+<<endif>>
+===
+
+title: Touch_a_berry
+position: 6593,2887
+---
+You reach futher and touch one of the many berries.
+
+Daisy: I think we found our thief.
+
+Daisy lifts her sword and brings it down on your outstretched arm.
+
+You managed to pull your arm away. You throw her the package to the ground and shoot off down the path.
+
+This delivery might reflect badly on your delivery record when you get back to Granbell.
+
+You get a feeling like you are being watched. 
+
+-> You spot the creature again.
+    <<jump You_spot_the_creature_again>>
+===
+
+title: Say_that_you_must_deliver_it
+position: 6614,2124
+---
+Player: I've got to deliver it. I've been tasked by the rulers of Granbell to deliver this package. So it must be important.
+
+Daisy scoffs.
+
+Daisy: I wouldn't trust those nobles, but I wish you a safe journey.
+
+-> Continue on your journey.
+    <<jump Continue_on_you_journey>>
+===
+
+title: Thank_Daisy_for_the_information
+position: 6598,2463
+---
+Player: Thanks for the directions.
+
+Daisy: You should know. There's something special about that volcano. I wish you a safe journey.
+
+-> Continue on your journey.
+    <<jump Continue_on_your_journey>>
+===
+
+title: Knock_on_the_door_of_the_Gamblers_Grotto
+position: 1406,3891
+---
+The small window slides open. You see a pair of eyes on the other side.
+
+Bouncer: Waddaya want?
+
+What do you say?
+-> Ask what this place is.
+    <<jump Ask_what_this_place_is>>
+-> Say that you're looking for Val.
+    <<jump Say_that_youre_looking_for_Val>>
+===
+
+title: Call_out_for_Val
+position: 1229,4670
+---
+Player: Delivery for Val!
+
+You hear no response. You move closer to the door. You hear cheering and laughter from the other side.
+
+What do you do?
+-> Knock on the door of the Gamblers Grotto.
+    <<jump Knock_on_the_door_of_the_Gamblers_Grotto>>
+-> Call out for Val again.
+    <<jump Call_out_for_Val_again>>
+===
+
+title: Call_out_for_Val_again
+position: 1679,4719
+---
+Player: Val! Delivery for Val!
+
+You look towards the door and the window slides open. You see a pair of eyes on the other side.
+
+Bouncer: Waddaya want?
+
+What do you say?
+-> Say that you're looking for Val.
+    <<jump Say_that_youre_looking_for_Val>>
+-> Ask what this place is.
+    <<jump Ask_what_this_place_is>>
+===
+
+title: Say_that_youre_looking_for_Val
+position: 2150,4105
+---
+Player: I'm looking for Val. I have a delivery for her.
+
+The pair of eyes narrow.
+
+Bouncer: What kind of delivery are we talkin 'bout? This ain't a place for big folk like yourself.
+
+What do you say?
+-> Ask what he means by big folk.
+    <<jump Ask_what_he_means_by_big_folk>>
+-> Say that you have a delivery from Granbell.
+    <<jump Say_that_you_have_a_delivery_from_Granbell>>
+===
+
+title: Ask_what_this_place_is
+position: 2137,4732
+---
+Player: What is this place?
+
+The pair of eyes narrow.
+
+Bouncer: Who wants to know? This ain't a place for big folk like yourself.
+
+What do you say?
+-> Ask what he means by big folk.
+    <<jump Ask_what_he_means_by_big_folk>>
+-> Say that you're a courier from Granbell.
+    <<jump Say_that_youre_a_courier_from_Granbell>>
+===
+
+title: Ask_what_he_means_by_big_folk
+position: 2529,5041
+---
+Player: Hey! Who you calling big!
+
+Bouncer: Alot of the big folk who pass by are not so kind to us halflings.
+
+What do you do?
+-> Drop the package at the door.
+    <<jump Drop_the_package_at_the_door>>
+-> Say that you want to gamble.
+    <<jump Say_that_you_want_to_gamble>>
+===
+
+title: Say_that_you_have_a_delivery_from_Granbell
+position: 2926,3926
+---
+Player: I have a delivery from Granbell.
+
+The pair of eyes narrow. Then the window slides shut.
+
+You hear yelling from the other side.
+
+Bouncer: Oi Val! Some biggun's got you a delivery from Granbell.
+
+You hear foot steps approach the door. As the door swings open you see before you a small halfling woman. 
+
+Val: Now what have we got here. Better hurry, I'm losing my table over there.
+
+What do you do?
+-> Ask if she's Val.
+    <<jump Ask_if_shes_Val>>
+-> Ask who that other guy was.
+    <<jump Ask_who_that_other_guy_was>>
+===
+
+title: Say_that_youre_a_courier_from_Granbell
+position: 2907,4319
+---
+Player: I'm just a courier from Granbell.
+
+The pair of eyes narrow. Then the window slides shut.
+
+You hear yelling from the other side.
+
+Bouncer: Oi Val! Some biggun's got you a delivery from Granbell.
+
+You hear foot steps approach the door. As the door swings open you see before you a small halfling woman. 
+
+Val: Now what have we got here. Better hurry, I'm losing my table over there.
+
+What do you do?
+-> Ask if she's Val.
+    <<jump Ask_if_shes_Val>>
+-> Ask who that other guy was.
+    <<jump Ask_who_that_other_guy_was>>
+===
+
+title: Say_that_you_want_to_gamble
+position: 2915,4708
+---
+Player: I just want to gamble.
+
+Bouncer: Oi Val. This biggun wants to gamble. Should we let 'em in.
+
+You hear foot steps approach the door. As the door swings open you see before you a small halfling woman. 
+
+Val: Now what have we got here. Better hurry, I'm losing my table over there.
+
+What do you do?
+-> Ask if she's Val.
+    <<jump Ask_if_shes_Val>>
+-> Ask who that other guy was.
+    <<jump Ask_who_that_other_guy_was>>
+===
+
+title: Ask_if_shes_Val
+position: 3336,3914
+---
+Player: Are you Val?
+
+Val: The one and only. Have you got something special for me? Or are you in need of some of my services?
+
+What do you do?
+-> Tell Val you have her package.
+    <<jump Tell_Val_you_have_her_package>>
+-> Ask her what her services are.
+    <<jump Ask_her_what_her_services_are>>
+===
+
+title: Ask_who_that_other_guy_was
+position: 3665,4193
+---
+Player: Who was that other guy?
+
+Val: That's Teddy. He's our bouncer. Now, have you got something special for me or are you here just to disturb *my* peace.
+
+What do you say?
+-> Ask what she was just doing.
+    <<jump Ask_what_she_was_just_doing>>
+-> Tell Val you have her package.
+    <<jump Tell_Val_you_have_her_package>>
+===
+
+title: Ask_what_she_was_just_doing
+position: 3951,4681
+---
+Player: What were you doing in there?
+
+Val: A new game of dice has just started and I wanna bet on my lucky numbers.
+
+-> Tell Val you have her package.
+    <<jump Tell_Val_you_have_her_package>>
+===
+
+title: Tell_Val_you_have_her_package
+position: 4351,3885
+---
+Player: I have a package for you from Granbell.
+
+You give Val the yellow package. She opens it up and you see the glistening sheen of gold coins. Val affixes her eyes onto the gold coins and she does not look up once.
+
+Val: Boy howdy! Payday has arrived just in time. A new game of dice just started and I'm puttin' it all on my lucky numbers!
+
+Val closes the pouch and swings it over her back and runs into the Gamblers Grotto. The door slams shut on you.
+
+-> Ask for directions to your next destination.
+    <<jump Ask_for_directions_to_your_next_destination>>
+===
+
+title: Ask_her_what_her_services_are
+position: 4358,4220
+---
+Player: What services do you offer?
+
+Val: I can *take care* of any unwanted enemies that you may have. Fair warning, this service ain't cheap.
+
+What do you say?
+-> Tell her about the creature that chased you.
+    <<jump Tell_her_about_the_creature_that_chased_you>>
+-> Tell Val you have her package.
+    <<jump Tell_Val_you_have_her_package>>
+===
+
+title: Tell_her_about_the_creature_that_chased_you
+position: 4727,4582
+---
+Player: Well there is one creature that I don't want around. There's a goblin that's been chasing me. Small, green, big nose, pointy ears.
+
+Val: Do you understand how many goblins there are with that description. That could be any old goblin.
+
+You hear from the room.
+
+Gambler: Hey Val. Get in here and place your bets.
+
+Val: You better have something good to tell me or you'll be *my* next unwanted enemy.
+
+-> Tell Val you have her package.
+===
+
+title: Ask_for_directions_to_your_next_destination
+position: 4966,3839
+---
+Player: Hey! Which way is it to-
+
+Your question is cut off by loud bangs and then yelling. Suddenly, the door bursts open and Val jumps out running at full speed towards you. She jumps on the back of Stormhoof.
+
+From the door you see arrows start flying out in every direction.
+
+Val: Ride like the wind! We ain't stickin' 'round for a showdown today!
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+-> Escape the shooters.
+    <<jump Escape_the_shooters>>
+===
+
+title: Escape_the_shooters
+position: 5290,3856
+---
+As you ride away from the shooters. Bullets wizz past your head and scatter along the ground.
+
+You've gained enough distance from them to stop and hide for a moment.
+
+Val: Phew. That was close. Swift riding there partner.
+
+What do you say?
+-> Ask Val what just happened.
+    <<jump Ask_Val_what_just_happened>>
+-> Tell Val not to call you partner.
+    <<jump Tell_Val_not_to_call_you_partner>>
+===
+
+title: Tell_Val_not_to_call_you_partner
+position: 5276,4240
+---
+Player: Don't call me partner! You almost got me killed. I could have died.
+
+Val: You don't look very dead.
+
+-> Ask Val what just happened.
+    <<jump Ask_Val_what_just_happened>>
+===
+
+title: Ask_Val_what_just_happened
+position: 5661,3853
+---
+Player: Please, explain what just happened!
+
+Val: The boys at the Gamblers Grotto did not take kindly to me bettin' with the money that I owed 'em.
+
+Val hops down from Stormhoof.
+
+Val: A cloaked gentleman spoke up about the debts I owed them. So, I told the goons. "Fellas, if I win big I'll give it to ya'll. But if you're lookin' for trouble, you'll find it at the end of these magical fingertips."
+
+Val holds out her finger and a flame shoots out and hits the rocks nearby.
+
+Val: To settle my debt with you for saving my life. When the time comes, just whisper my name to the wind, and I'll ride like a shadow to deliver the reckoning you seek.
+
+<<set $metVal to true>>
+
+What do you say?
+-> Turn down her offer.
+    <<jump Turn_down_her_offer>>
+-> Take her offer.
+    <<jump Take_her_offer>>
+===
+
+title: Take_her_offer
+position: 6034,3846
+---
+Player: So all I do is call out for you when I need someone to be "taken care of". (set: $assassin to true)
+
+Val: Yup, that's right.
+
+You've strayed from your original path a little. You might need directions to your final destination.
+
+<<if $path is "left">>
+    -> Ask Val which way Eldoria is.
+        <<jump Ask_Val_which_way_Eldoria_is>>
+
+<<elseif $path is "right">>
+    -> Ask Val which way the nearest volcano is.
+        <<jump Ask_Val_which_way_the_nearest_volcano_is>>
+<<endif>>
+===
+
+title: Turn_down_her_offer
+position: 5999,4232
+---
+Player: I don't need anyone killed. Just stay away from me. You're nothing but trouble.
+
+Val: Suit yourself.
+
+You've strayed from your original path a little. You might need directions to your final destination.
+
+<<if $path is "left">>
+    -> Ask Val which way Eldoria is.
+        <<jump Ask_Val_which_way_Eldoria_is>>
+
+<<elseif $path is "right">>
+    -> Ask Val which way the nearest volcano is.
+        <<jump Ask_Val_which_way_the_nearest_volcano_is>>
+<<endif>>
+===
+
+title: Ask_Val_which_way_Eldoria_is
+position: 6623,3852
+---
+Player: Do you know which way Eldoria is from here?
+
+Val: Eldoria? I heard that place is overrun with the vilest of creatures. Goblins. If you want to find yourself among those creatures then just head down this path here.
+
+Player: Thank you.
+
+-> Continue on your journey.
+    <<jump Continue_on_your_journey>>
+===
+
+title: Ask_Val_which_way_the_nearest_volcano_is
+position: 6599,4218
+---
+Player: Do you know which way the nearest volcano is from here?
+
+Val: My oh my, the volcano? Are you planning on gambling you're winnings at the firey pit? It's just down this path here.
+
+Player: Thank you.
+
+-> Continue on your journey.
+    <<jump Continue_on_your_journey>>
+===
+
+title: Drop_the_package_at_the_door
+position: 6624,4888
+---
+Player: Fine! I'm just going to leave the package here. Good riddance!
+
+The laugher and cheering continues on the other side of the door once more.
+
+You decide that it isn't worth dealing with these people. You need to make one more delivery.
+
+You get a feeling like you are being watched. 
+
+-> You spot the creature again.
+    <<jump You_spot_the_creature_again>>
+===
+
+title: You_spot_the_creature_again
+position: 8348,604
+---
+That creature is back again. It looks at you angrily and doesn't make any demands this time. It rides close.
+
+You need to outrun the creature again.
+
+You escape the creature once more.
+
+-> Continue on your journey.
+    <<jump Continue_on_your_journey>>
+===
+
+title: Continue_on_your_journey
+position: 8688,979
+---
+You follow the path to your final destination. 
+
+The sky above have become an angry herd of dark clouds. The sun is setting it'll be night soon. You should make camp nearby.
+
+<<if $path is "left">>
+    You ride a bit further down the path and find a good spot to make camp. You decide to make camp at the base of a large tree tonight.
+
+    Thunder rumbles and rain starts to pour down on your tent. You need to sleep.
+<<elseif $path is "right">>
+    You ride a bit further down the path and find a good spot to make camp. You decide to make camp near a few large jagged rocks. 
+
+    The weather seems to clear before you go to sleep.
+<<endif>>
+
+Hopefully you'll be safe.
+
+// *Player must take a break here before moving on.*
+<<if $path is "left">>
+    -> Wake up under the tree.
+        <<jump Wake_up_under_the_tree>>
+
+<<elseif $path is "right">>
+    -> Wake up near the rocks.
+        <<jump Wake_up_near_the_rocks>>
+<<endif>>
+===
