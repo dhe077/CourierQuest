@@ -4,8 +4,7 @@ position: 30,469
 The clouds above you begin to gather. Seems like the storm will arrive soon. You'd better deliver your third package before you find shelter.
 
 // *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
--> Arrive at your third destination.
-    <<jump Arrive_at_your_third_destination>>
+<<jump Arrive_at_your_third_destination>>
 ===
 
 title: Arrive_at_your_third_destination
@@ -295,8 +294,7 @@ He looks around.
 
 Leyton: No I'm not a wizard. I'm a warlock. I sold my soul to get these cool magical powers.
 
--> Ask him what he's going to do with the coals.
-    <<jump Ask_him_what_hes_going_to_do_with_the_coals>>
+<<jump Ask_him_what_hes_going_to_do_with_the_coals>>
 ===
 
 title: Ask_him_what_hes_going_to_do_with_the_coals
@@ -335,8 +333,7 @@ Leyton sneezes all over the coals. A hot flame bursts from his face and onto the
 <<set $metLeyton to true>>
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
--> Keep the coals hot.
-    <<jump Keep_the_coals_hot>>
+<<jump Keep_the_coals_hot>>
 ===
 
 title: Keep_the_coals_hot
@@ -376,8 +373,7 @@ Leyton hands you an obsidian dagger.
 
 Leyton:  Be careful when holding it. It's exetremely sharp. I've use to it cut through almost everything. I won't be needing it any more, so you can have it.
 
--> Thank Leyton for the dagger.
-    <<jump Thank_Leyton_for_the_dagger>>
+<<jump Thank_Leyton_for_the_dagger>>
 ===
 
 title: Ask_if_he_feels_better
@@ -399,8 +395,7 @@ Leyton hands you an obsidian dagger.
 
 Leyton:  Be careful when holding it. It's exetremely sharp. I've use to it cut through almost everything. I won't be needing it any more, so you can have it.
 
--> Thank Leyton for the dagger.
-    <<jump Thank_Leyton_for_the_dagger>>
+<<jump Thank_Leyton_for_the_dagger>>
 ===
 
 title: Thank_Leyton_for_the_dagger
@@ -410,8 +405,7 @@ Player: Thank you for the gift. I'll be careful when handling it.
 
 Leyton: Oh if you see any ogres. They will be terrified of that thing too. No idea why.
 
--> Continue on your journey.
-    <<jump Continue_on_your_journey>>
+<<jump Continue_on_your_journey>>
 ===
 
 title: Tell_him_that_youre_busy_and_that_youve_a_special_delivery_to_complete
@@ -422,17 +416,13 @@ position: 4356,-1586
 
     Leyton: Eldoria? Why are you going there? Isn't it overrun with goblins?
 
-    What do you say?
-    -> Tell him you must do this because Granbell needs it.
-        <<jump Tell_him_you_must_do_this_because_Granbell_needs_it>>
+    <<jump Tell_him_you_must_do_this_because_Granbell_needs_it>>
 <<elseif $path is "right">>
     Player: Sorry, sir. I can't help you right now. I have a very important package that needs disposing off.
 
     Leyton: A courier disposing of one of their packages? If you'd like I could use my flames to burn it.
 
-    What do you say?
-    -> Ask him where the volcano is.
-        <<jump Ask_him_where_the_volcano_is>>
+    <<jump Ask_him_where_the_volcano_is>>
 <<endif>>
 ===
 
@@ -447,8 +437,7 @@ Leyton: There's a volcano nearby? If I knew that I'd have gone there. Try furthe
 
 You get a feeling like you are being watched. 
 
--> You spot the creature again.
-    <<jump You_spot_the_creature_again>>
+<<jump You_spot_the_creature_again>>
 ===
 
 title: Tell_him_you_must_do_this_because_Granbell_needs_it
@@ -459,8 +448,8 @@ Player: I was given this task by my boss at the Granbell courier hall. She told 
 Leyton: I wish you luck.
 
 You get a feeling like you are being watched. 
--> You spot the creature again.
-    <<jump You_spot_the_creature_again>>
+
+<<jump You_spot_the_creature_again>>
 ===
 
 title: Call_out_for_Thakali
@@ -595,8 +584,7 @@ Player: You need *tomato* seeds to grow *tomatoes*.
 
 Thakali looks at you confused.
 
--> Remind him of his package.
-    <<jump Remind_him_of_his_package>>
+<<jump Remind_him_of_his_package>>
 ===
 
 title: Say_that_youre_just_a_courier
@@ -699,18 +687,14 @@ position: 4073,420
 
     Thakali: Eldoria? Goblins are in Eldoria. Lots of goblins.
 
-    What do you say?
-    -> Tell him you must do this because it is your job.
-        <<jump Tell_him_you_must_do_this_becuase_it_is_your_job>>
+    <<jump Tell_him_you_must_do_this_becuase_it_is_your_job>>
 
 <<elseif $path is "right">>
     Player: Sorry, Thakali. I can't help you right now. I have a very important delivery to get rid of.
 
     Thakali: You want me to slice it?!
 
-    What do you say?
-    -> Ask him if he's seen a volcano nearby.
-        <<jump Ask_him_if_hes_seen_a_volcano_nearby>>
+    <<jump Ask_him_if_hes_seen_a_volcano_nearby>>
 <<endif>>
 ===
 
@@ -723,8 +707,7 @@ Thakali: Thakali pull plow. Thakali is strong like ox.
 
 You're amazed that this dragon man can manage to pull this heavy farming equipment.
 
--> Offer to use Stormhoof to pull the plow.
-    <<jump Offer_to_use_Stormhoof_to_pull_the_plow>>
+<<jump Offer_to_use_Stormhoof_to_pull_the_plow>>
 ===
 
 title: Offer_to_use_Stormhoof_to_pull_the_plow
@@ -739,8 +722,7 @@ Thakali straps the plow onto Stormhoof.
 <<set $metThakali to true>>
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
--> Pull the plow.
-    <<jump Pull_the_plow>>
+<<jump Pull_the_plow>>
 ===
 
 title: Pull_the_plow
@@ -816,8 +798,7 @@ You leave the axe on the ground.
 
 You'd better continue on your journey.
 
--> Continue on your journey.
-    <<jump Continue_on_your_journey>>
+<<jump Continue_on_your_journey>>
 ===
 
 title: Steal_the_axe
@@ -831,8 +812,7 @@ Thakali has not noticed.
 
 You'd better continue on your journey.
 
--> Continue on your journey.
-    <<jump Continue_on_your_journey>>
+<<jump Continue_on_your_journey>>
 ===
 
 title: Tell_him_you_must_do_this_becuase_it_is_your_job
@@ -844,8 +824,7 @@ Thakali: Thakali gives you luck.
 
 You get a feeling like you are being watched. 
 
--> You spot the creature again.
-    <<jump You_spot_the_creature_again>>
+<<jump You_spot_the_creature_again>>
 ===
 
 title: Ask_him_if_hes_seen_a_volcano_nearby
@@ -859,8 +838,7 @@ He points down the path.
 
 You get a feeling like you are being watched. 
 
--> You spot the creature again.
-    <<jump You_spot_the_creature_again>>
+<<jump You_spot_the_creature_again>>
 ===
 
 title: Call_out_for_Daisy
@@ -971,8 +949,7 @@ Player: Why would you need more? There are so many baskets of berries here.
 
 Daisy: You don't know the half of it. These baskets of berries will only be a day's worth of pastries. Enough about me, why are you here?
 
--> Say that you are a courier.
-    <<jump Say_that_you_are_a_courier>>
+<<jump Say_that_you_are_a_courier>>
 ===
 
 title: Say_that_you_are_a_courier
@@ -1099,8 +1076,7 @@ The fairy looks toward you in surprise and drops the berries and flies into the 
 Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
--> Chase the fairy.
-    <<jump Chase_the_fairy>>
+<<jump Chase_the_fairy>>
 ===
 
 title: Push_past_Daisy_and_run_after_the_fairy
@@ -1113,8 +1089,7 @@ The fairy looks toward you in surprise and drops the berries and flies into the 
 Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
--> Chase the fairy.
-    <<jump Chase_the_fairy>>
+<<jump Chase_the_fairy>>
 ===
 
 title: Tell_Daisy_about_the_fairy
@@ -1125,8 +1100,7 @@ Player: I just saw a fairy take off with your berries.
 Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
--> Chase the fairy.
-    <<jump Chase_the_fairy>>
+<<jump Chase_the_fairy>>
 ===
 
 title: Walk_towards_where_the_fairy_was
@@ -1139,8 +1113,7 @@ Daisy: Where are you going?
 You reach the point where the fairy was. Not too far from you you see the fairy. It hasn't noticed you but it is moving quite quickly.
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
--> Secretly follow the fairy.
-    <<jump Secretly_follow_the_fairy>>
+<<jump Secretly_follow_the_fairy>>
 ===
 
 title: Chase_the_fairy
@@ -1152,8 +1125,7 @@ The fairy has lead you to its hideout. The hideout is a large hollow tree. The f
 
 Daisy: So this is where they've been hiding them. Lets take them back before that fairy finds it's friends.
 
--> Gather the berries.
-    <<jump Gather_the_berries>>
+<<jump Gather_the_berries>>
 ===
 
 title: Gather_the_berries
@@ -1161,8 +1133,7 @@ position: 4744,1866
 ---
 You and Daisy gather the berries and take them back to Daisy's area.
 
--> Go back to Daisy's area.
-    <<jump Go_back_to_Daisys_area>>
+<<jump Go_back_to_Daisys_area>>
 ===
 
 title: Secretly_follow_the_fairy
@@ -1174,8 +1145,7 @@ The fairy has lead you to its hide out. The hide out is a large hollowed out tre
 
 A lantern sits at the base of the tree illuminating the pile of berries. It might be useful to keep on you, especially at night.
 
--> Take the lantern and head back with the berries.
-    <<jump Take_the_lantern_and_head_back_with_the_berries>>
+<<jump Take_the_lantern_and_head_back_with_the_berries>>
 ===
 
 title: Take_the_lantern_and_head_back_with_the_berries
@@ -1185,8 +1155,7 @@ position: 4732,2260
 
 You gather the berries for Daisy. 
 
--> Go back to Daisy's area.
-    <<jump Go_back_to_Daisys_area>>
+<<jump Go_back_to_Daisys_area>>
 ===
 
 title: Go_back_to_Daisys_area
@@ -1203,8 +1172,7 @@ Daisy: This is a magical compass. I think it'll be more useful in your hands tha
 <<set $magicalCompass to true>>
 <<set $metDaisy to true>>
 
--> Thank her for the compass.
-    <<jump Thank_her_for_the_compass>>
+<<jump Thank_her_for_the_compass>>
 ===
 
 title: Thank_her_for_the_compass
@@ -1220,18 +1188,14 @@ What do you do?
 
     Daisy: Wait, isn't that place crawling with goblins?
 
-    What do you say?
-    -> Say that you must deliver it.
-        <<jump Say_that_you_must_deliver_it>>
+    <<jump Say_that_you_must_deliver_it>>
 
 <<elseif $path is "right">>
     Player: I need to find the nearest volcano.
 
     Daisy: The nearest volcano? Strange. Just head down the path some more, you'll smell the volcano before you see it.
 
-    What do you say?
-    -> Thank Daisy for the information.
-        <<jump Thank_Daisy_for_the_information>>
+    <<jump Thank_Daisy_for_the_information>>
 <<endif>>
 ===
 
@@ -1250,8 +1214,7 @@ This delivery might reflect badly on your delivery record when you get back to G
 
 You get a feeling like you are being watched. 
 
--> You spot the creature again.
-    <<jump You_spot_the_creature_again>>
+<<jump You_spot_the_creature_again>>
 ===
 
 title: Say_that_you_must_deliver_it
@@ -1263,8 +1226,7 @@ Daisy scoffs.
 
 Daisy: I wouldn't trust those nobles, but I wish you a safe journey.
 
--> Continue on your journey.
-    <<jump Continue_on_you_journey>>
+<<jump Continue_on_you_journey>>
 ===
 
 title: Thank_Daisy_for_the_information
@@ -1274,8 +1236,7 @@ Player: Thanks for the directions.
 
 Daisy: You should know. There's something special about that volcano. I wish you a safe journey.
 
--> Continue on your journey.
-    <<jump Continue_on_your_journey>>
+<<jump Continue_on_your_journey>>
 ===
 
 title: Knock_on_the_door_of_the_Gamblers_Grotto
@@ -1465,8 +1426,7 @@ Player: What were you doing in there?
 
 Val: A new game of dice has just started and I wanna bet on my lucky numbers.
 
--> Tell Val you have her package.
-    <<jump Tell_Val_you_have_her_package>>
+<<jump Tell_Val_you_have_her_package>>
 ===
 
 title: Tell_Val_you_have_her_package
@@ -1480,8 +1440,7 @@ Val: Boy howdy! Payday has arrived just in time. A new game of dice just started
 
 Val closes the pouch and swings it over her back and runs into the Gamblers Grotto. The door slams shut on you.
 
--> Ask for directions to your next destination.
-    <<jump Ask_for_directions_to_your_next_destination>>
+<<jump Ask_for_directions_to_your_next_destination>>
 ===
 
 title: Ask_her_what_her_services_are
@@ -1511,8 +1470,7 @@ Gambler: Hey Val. Get in here and place your bets.
 
 Val: You better have something good to tell me or you'll be *my* next unwanted enemy.
 
--> Tell Val you have her package.
-    <<jump Tell_Val_you_have_her_package>>
+<<jump Tell_Val_you_have_her_package>>
 ===
 
 title: Ask_for_directions_to_your_next_destination
@@ -1527,8 +1485,7 @@ From the door you see arrows start flying out in every direction.
 Val: Ride like the wind! We ain't stickin' 'round for a showdown today!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
--> Escape the shooters.
-    <<jump Escape_the_shooters>>
+<<jump Escape_the_shooters>>
 ===
 
 title: Escape_the_shooters
@@ -1554,8 +1511,7 @@ Player: Don't call me partner! You almost got me killed. I could have died.
 
 Val: You don't look very dead.
 
--> Ask Val what just happened.
-    <<jump Ask_Val_what_just_happened>>
+<<jump Ask_Val_what_just_happened>>
 ===
 
 title: Ask_Val_what_just_happened
@@ -1629,8 +1585,7 @@ Val: Eldoria? I heard that place is overrun with the vilest of creatures. Goblin
 
 Player: Thank you.
 
--> Continue on your journey.
-    <<jump Continue_on_your_journey>>
+<<jump Continue_on_your_journey>>
 ===
 
 title: Ask_Val_which_way_the_nearest_volcano_is
@@ -1642,8 +1597,7 @@ Val: My oh my, the volcano? Are you planning on gambling you're winnings at the 
 
 Player: Thank you.
 
--> Continue on your journey.
-    <<jump Continue_on_your_journey>>
+<<jump Continue_on_your_journey>>
 ===
 
 title: Drop_the_package_at_the_door
@@ -1657,8 +1611,7 @@ You decide that it isn't worth dealing with these people. You need to make one m
 
 You get a feeling like you are being watched. 
 
--> You spot the creature again.
-    <<jump You_spot_the_creature_again>>
+<<jump You_spot_the_creature_again>>
 ===
 
 title: You_spot_the_creature_again
@@ -1670,8 +1623,7 @@ You need to outrun the creature again.
 
 You escape the creature once more.
 
--> Continue on your journey.
-    <<jump Continue_on_your_journey>>
+<<jump Continue_on_your_journey>>
 ===
 
 title: Continue_on_your_journey

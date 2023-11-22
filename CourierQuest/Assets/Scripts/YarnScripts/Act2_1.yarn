@@ -9,8 +9,7 @@ On your way to Stormhoof's tree you spot a small creature dart across the path. 
 
 You see the tree that Stormhoof should be tied to but no Stormhoof.
 
--> Find Stormhoof.
-    <<jump Find_Stormhoof>>
+<<jump Find_Stormhoof>>
 ===
 
 title: Find_Stormhoof
@@ -93,8 +92,7 @@ You quickly jump on Stormhoof and ride into the woods and towards the path.
 
 You have a job to do.
 
--> Find the path and deliver the packages.
-    <<jump Find_the_path_and_deliver_the_packages>>
+<<jump Find_the_path_and_deliver_the_packages>>
 ===
 
 title: Say_that_youre_a_courier
@@ -162,8 +160,7 @@ What do you do?
     -> Ask if he's working with the goblin.
         <<jump Ask_if_hes_working_with_the_goblin>>
 <<else>>
-    -> Ask if he's working with the goblin.
-        <<jump Ask_if_hes_working_with_the_goblin>>
+    <<jump Ask_if_hes_working_with_the_goblin>>
 <<endif>>
 ===
 
@@ -181,8 +178,7 @@ What do you say?
     -> Thank the man.
         <<jump Thank_the_man>>
 <<else>>
-    -> Thank the man.
-        <<jump Thank_the_man>>
+    <<jump Thank_the_man>>
 <<endif>>
 ===
 
@@ -205,8 +201,7 @@ What do you say?
     -> Apologise for insulting him.
         <<jump Apologise_for_insulting_him>>
 <<else>>
-    -> Apologise for insulting him.
-        <<jump Apologise_for_insulting_him>>
+    <<jump Apologise_for_insulting_him>>
 <<endif>>
 ===
 
@@ -228,8 +223,7 @@ What do you say?
     -> Thank the man.
         <<jump Thank_the_man>>
 <<else>>
-    -> Thank the man.
-        <<jump Thank_the_man>>
+    <<jump Thank_the_man>>
 <<endif>>
 ===
 
@@ -255,8 +249,7 @@ Oli demonstrates his instructions then hands you the diamond. *You take the diam
 <<set $diamond to true>>
 <<set $metOli to true>>
 
--> Thank the man.
-    <<jump Thank_the_man>>
+<<jump Thank_the_man>>
 ===
 
 title: Thank_the_man
@@ -266,8 +259,7 @@ Player: Thank you for keeping my horse safe.
 
 Oli: You're welcome.
 
--> Find the path and deliver the packages.
-    <<jump Find_the_path_and_deliver_the_packages>>
+<<jump Find_the_path_and_deliver_the_packages>>
 ===
 
 title: Find_the_path_and_deliver_the_packages
@@ -276,11 +268,9 @@ position: 2688,-88
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<if $firstPackage is "small">>
-    -> Deliver the small package.
-        <<jump Deliver_the_small_package>>
+    <<jump Deliver_the_small_package>>
 <<elseif $firstPackage is "large">>
-    -> Deliver the large package.
-        <<jump Deliver_the_large_package>>
+    <<jump Deliver_the_large_package>>
 <<endif>>
 ===
 
@@ -295,8 +285,7 @@ On your way to Stormhoof's tree you spot a pair of small footprints across the p
 
 You see Stormhoof happily grazing on the greenery around her.
 
--> Get Stormhoof and continue on your delivery.
-    <<jump Get_Stormhoof_and_continue_on_your_delivery>>
+<<jump Get_Stormhoof_and_continue_on_your_delivery>>
 ===
 
 title: Get_Stormhoof_and_continue_on_your_delivery
@@ -305,11 +294,9 @@ position: 2679,563
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<if $firstPackage is "small">>
-    -> Deliver the small package.
-        <<jump Deliver_the_small_package>>
+    <<jump Deliver_the_small_package>>
 <<elseif $firstPackage is "large">>
-    -> Deliver the large package.
-        <<jump Deliver_the_large_package>>
+    <<jump Deliver_the_large_package>>
 <<endif>>
 ===
 
@@ -329,8 +316,7 @@ You open your eyes. The creature stands over you, dagger outstretched towards yo
         -> Say that you accidentally blew the whistle.
             <<jump Say_that_you_accidentally_blew_the_whistle>>
     <<else>>
-        -> Say that you accidentally blew the whistle.
-            <<jump Say_that_you_accidentally_blew_the_whistle>>
+        <<jump Say_that_you_accidentally_blew_the_whistle>>
     <<endif>>
 <<else>>
     Garbanzo: Peekaboo!
@@ -383,8 +369,7 @@ The creature slinks away into the woods.
 
 You should probably find Stormhoof and continue delivering.
 
--> Find Stormhoof and continue delivering.
-    <<jump Find_Stormhoof_and_continue_delivering>>
+<<jump Find_Stormhoof_and_continue_delivering>>
 ===
 
 title: Attempt_to_escape
@@ -393,8 +378,8 @@ position: 1143,1804
 You smack the dagger out of the creatures hands and away from you. The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof. Your pack seems a little lighter.
 
 <<set $specialPackage to false>>
--> Find Stormhoof and continue delivering.
-    <<jump Find_Stormhoof_and_continue_delivering>>
+
+<<jump Find_Stormhoof_and_continue_delivering>>
 ===
 
 title: Hold_out_the_magical_rock
@@ -449,8 +434,7 @@ What do you do?
         -> Pretend to give the creature the package.
             <<jump Pretend_to_give_the_creature_the_package>>
     <<else>>
-        -> Attempt to escape.
-            <<jump Attempt_to_escape>>
+        <<jump Attempt_to_escape>>
     <<endif>>
 <<endif>>
 ===
@@ -468,8 +452,7 @@ The magic rock didn't seem to work.
 
 The creature moves closer to you.
 
--> Attempt to escape.
-    <<jump Attempt_to_escape>>
+<<jump Attempt_to_escape>>
 ===
 
 title: Say_Light
@@ -485,8 +468,7 @@ The magic rock didn't seem to work.
 
 The creature moves closer to you.
 
--> Attempt to escape.
-    <<jump Attempt_to_escape>>
+<<jump Attempt_to_escape>>
 ===
 
 title: Say_Luminos
@@ -502,8 +484,7 @@ The magic rock worked!
 
 The creature stumbles back dropping its weapon and rubbing its eyes. The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof.
 
--> Find Stormhoof and continue delivering.
-    <<jump Find_Stormhoof_and_continue_delivering>>
+<<jump Find_Stormhoof_and_continue_delivering>>
 ===
 
 title: Dont_give_it_to_the_creature
@@ -517,8 +498,7 @@ The creature moves closer to you.
 
 You smack the dagger out of the creatures hands and away from you. The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof.
 
--> Find Stormhoof and continue delivering.
-    <<jump Find_Stormhoof_and_continue_delivering>>
+<<jump Find_Stormhoof_and_continue_delivering>>
 ===
 
 title: Pretend_to_give_the_creature_the_package
@@ -531,8 +511,8 @@ The creature is quick, it grabbed the package before you could pull away to tric
 Garbanzo: Now that wasn't so hard was it. I'll be seeing you around.
 
 <<set $specialPackage to false>>
--> Find Stormhoof and continue delivering.
-    <<jump Find_Stormhoof_and_continue_delivering>>
+
+<<jump Find_Stormhoof_and_continue_delivering>>
 ===
 
 title: Find_Stormhoof_and_continue_delivering
@@ -542,8 +522,7 @@ You narrowly escaped the creature with your life. Best you stay on guard and con
 
 You find Stormhoof happily grazing on the greenery around her.
 
--> Start delivering the packages.
-    <<jump Start_delivering_the_packages>>
+<<jump Start_delivering_the_packages>>
 ===
 
 title: Start_delivering_the_packages
@@ -552,11 +531,9 @@ position: 2691,1230
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<if $firstPackage is "small">>
-    -> Deliver the small package.
-        <<jump Deliver_the_small_package>>
+    <<jump Deliver_the_small_package>>
 <<elseif $firstPackage is "large">>
-    -> Deliver the large package.
-        <<jump Deliver_the_large_package>>
+    <<jump Deliver_the_large_package>>
 <<endif>>
 ===
 
@@ -565,8 +542,7 @@ position: 3618,335
 ---
 The package is small and light. You look at the delivery label. It is addressed to Petunia Pattersby. The address isn't too far from where you are. You'd better start moving.
 
--> Travel to your first delivery.
-    <<jump Travel_to_your_first_delivery>>
+<<jump Travel_to_your_first_delivery>>
 ===
 
 title: Deliver_the_large_package
@@ -574,8 +550,7 @@ position: 3612,838
 ---
 The package is large and heavy. You look at the delivery label. It is addressed to Bjorn. The address isn't too far from where you are. You'd better start moving.
 
--> Travel to your first delivery.
-    <<jump Travel_to_your_first_delivery>>
+<<jump Travel_to_your_first_delivery>>
 ===
 
 title: Travel_to_your_first_delivery
@@ -584,8 +559,7 @@ position: 4242,601
 Unlike the day before, the weather is bright and sunny. What an amazing day!
 
 // *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
--> Arrive at your first destination.
-    <<jump Arrive_at_your_first_destination>>
+<<jump Arrive_at_your_first_destination>>
 ===
 
 title: Arrive_at_your_first_destination
@@ -637,8 +611,7 @@ A small old woman comes out from the entrance of the store. She waves you down.
 
 Petunia: Hello deary. I'm Petunia Pattersby. Are you the sweet courier with my delivery?
 
--> Say that you have Petunia's delivery.
-    <<jump Say_that_you_have_Petunias_delivery>>
+<<jump Say_that_you_have_Petunias_delivery>>
 ===
 
 title: Ask_her_what_she_sells
@@ -666,8 +639,7 @@ Petunia puts on a wide smile.
 
 Petunia: Now deary, are you the courier from Granbell with my delivery?
 
--> Say that you have Petunia's delivery.
-    <<jump Say_that_you_have_Petunias_delivery>>
+<<jump Say_that_you_have_Petunias_delivery>>
 ===
 
 title: Say_that_you_have_Petunias_delivery
@@ -719,8 +691,7 @@ Player: I think I saw one recently. It tried stealing my packages. I ran as fast
 
 Petunia: Well, if I remember from my adventuring days. Magical light seems to ward them off for a while. I also remember that goblins hate the smell of heartberries. I'd give you some deary but unfortunately I'm all out of heartberries.
 
--> Thank her for the pastry and continue delivering.
-    <<jump Thank_her_for_the_pastry_and_continue_delivering>>
+<<jump Thank_her_for_the_pastry_and_continue_delivering>>
 ===
 
 title: Thank_her_for_the_pastry_and_continue_delivering
@@ -734,8 +705,7 @@ Petunia waves you a goodbye as you leave. You start to head on your way to your 
 
 <<set $metPetunia to true>>
 
--> Make your second delivery.
-    <<jump Make_your_second_delivery>>
+<<jump Make_your_second_delivery>>
 ===
 
 title: Drop_the_package_at_the_entrance
@@ -747,8 +717,7 @@ A very large muscular man steps out from under the tent.
 
 Bjorn: Ah hallo! Are you the delivery human that has my package?
 
--> Say that you have Bjorn's delivery.
-    <<jump Say_that_you_have_Bjorns_delivery>>
+<<jump Say_that_you_have_Bjorns_delivery>>
 ===
 
 title: Call_out_for_Bjorn
@@ -828,8 +797,7 @@ Bjorn looks at you in surprise.
 
 Bjorn: Well now you have. Tell all your friends and family about the mighty Bjorn and his miraculous muscles!
 
--> Say that you have Bjorn's delivery.
-    <<jump Say_that_you_have_Bjorns_delivery>>
+<<jump Say_that_you_have_Bjorns_delivery>>
 ===
 
 title: Ask_what_muscle_spirit_is
@@ -857,8 +825,7 @@ Bjorn waves you a goodbye as you leave. You start to head on your way to your se
 
 <<set $metBjorn to true>>
 
--> Make your second delivery.
-    <<jump Make_your_second_delivery>>
+<<jump Make_your_second_delivery>>
 ===
 
 title: Tell_him_that_you_think_you_saw_a_goblin
@@ -870,8 +837,7 @@ Bjorn: If the creature looked green, had a big nose, had pointy ears, and was ve
 
 Bjorn begins to show off his muscles in as many poses as he can.
 
--> Thank him for the muscle spirit and continue delivering.
-    <<jump Thank_him_for_the_muscle_spirit_and_continue_delivering>>
+<<jump Thank_him_for_the_muscle_spirit_and_continue_delivering>>
 ===
 
 title: Make_your_second_delivery
@@ -896,8 +862,7 @@ position: 8509,529
 ---
 The package is round and feels smooth. You look at the delivery label. It is addressed to Mudbrick. The address isn't too far from where you are. You'd better start moving.
 
--> Travel to your second delivery.
-    <<jump Travel_to_your_second_delivery>>
+<<jump Travel_to_your_second_delivery>>
 ===
 
 title: Deliver_the_square_package
@@ -911,8 +876,7 @@ The package is square and heavy. You look at the delivery label. It is addressed
 
 The address isn't too far from where you are. You'd better start moving.
 
--> Travel to your second delivery.
-    <<jump Travel_to_your_second_delivery>>
+<<jump Travel_to_your_second_delivery>>
 ===
 
 title: Deliver_the_triangle_package
@@ -920,7 +884,6 @@ position: 8511,279
 ---
 The package is triangle and soft. You look at the delivery label. It is addressed to Finn. The address isn't too far from where you are. You'd better start moving.
 
--> Travel to your second delivery.
-    <<jump Travel_to_your_second_delivery>>
+<<jump Travel_to_your_second_delivery>>
 ===
 
