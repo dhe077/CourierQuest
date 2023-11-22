@@ -155,11 +155,15 @@ The man looks inquisitively at you.
 Oli: You said you're a courier from Granbell? I've been awaiting a delivery from there. My name is Oli.
 
 What do you do?
--> Ask if he's working with the goblin.
-    <<jump Ask_if_hes_working_with_the_goblin>>
+
 <<if $secondPackage is "square">>
     -> Tell him that you have his package.
         <<jump Tell_him_that_you_have_his_package>>
+    -> Ask if he's working with the goblin.
+        <<jump Ask_if_hes_working_with_the_goblin>>
+<<else>>
+    -> Ask if he's working with the goblin.
+        <<jump Ask_if_hes_working_with_the_goblin>>
 <<endif>>
 ===
 
@@ -171,11 +175,14 @@ Player: What is that rod you are carrying?
 Oli: It is my hammer. I know it might not look like it but it is. I am waiting on a delivery from Granbell for Oli.
 
 What do you say?
--> Thank the man.
-    <<jump Thank_the_man>>
 <<if $secondPackage is "square">>
     -> Tell him that you have his package.
         <<jump Tell_him_that_you_have_his_package>>
+    -> Thank the man.
+        <<jump Thank_the_man>>
+<<else>>
+    -> Thank the man.
+        <<jump Thank_the_man>>
 <<endif>>
 ===
 
@@ -191,11 +198,15 @@ Oli: I most certainly am NOT! How dare you assume I'd work with evil.
 His eyes glow brighter and the streaks of lightning grow longer and more frequent.
 
 What do you say?
--> Apologise for insulting him.
-    <<jump Apologise_for_insulting_him>>
+
 <<if $secondPackage is "square">>
     -> Tell him that you have his package.
         <<jump Tell_him_that_you_have_his_package>>
+    -> Apologise for insulting him.
+        <<jump Apologise_for_insulting_him>>
+<<else>>
+    -> Apologise for insulting him.
+        <<jump Apologise_for_insulting_him>>
 <<endif>>
 ===
 
@@ -211,10 +222,14 @@ He looks at you closely.
 Oli: I sense no evil on you... So far.
 
 What do you say?
--> Thank the man.
 <<if $secondPackage is "square">>
     -> Tell him that you have his package.
         <<jump Tell_him_that_you_have_his_package>>
+    -> Thank the man.
+        <<jump Thank_the_man>>
+<<else>>
+    -> Thank the man.
+        <<jump Thank_the_man>>
 <<endif>>
 ===
 
@@ -332,14 +347,14 @@ What do you do? (Timed)
         <<jump Hold_out_the_magical_rock>>
     -> Plead with the creature. #timeout
         <<interrruptTimer none>>
-        <<jump Plead_with_the_creature>>
+        <<jump Insult_the_creature>>
 <<else>>
     -> Attempt to escape.
         <<interrruptTimer none>>
         <<jump Attempt_to_escape>>
     -> Plead with the creature. #timeout
         <<interrruptTimer none>>
-        <<jump Plead_with_the_creature>>
+        <<jump Insult_the_creature>>
 <<endif>>
 ===
 
@@ -403,7 +418,7 @@ What do you do? (Timed)
     <<jump Attempt_to_escape>>
 ===
 
-title: Plead_with_the_creature
+title: Insult_the_creature
 position: 726,2090
 ---
 Player: Get away foul creature!
@@ -485,7 +500,7 @@ The magical rock produces a warm glow then flashes a bright light directly at th
 
 The magic rock worked!
 
-The creature stumbles back dropping its weapon and rubbing its eyes.  The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof.
+The creature stumbles back dropping its weapon and rubbing its eyes. The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof.
 
 -> Find Stormhoof and continue delivering.
     <<jump Find_Stormhoof_and_continue_delivering>>
@@ -671,6 +686,7 @@ Petunia: Finally! The silver cutlery that I ordered. Now my customers can enjoy 
 She walks into the store. You wait for a moment. She comes back out with what looks like a baked pastry and hands it to you.
 
 *You take the Pattersby Pastry*
+
 <<set $pattersbyOriginal to true>>
 
 Petunia: Here you go deary, a Pattersby Pastry. This is for your wonderful delivery service. I hope you enjoy it. Take care now. I've heard that there are goblins around these parts.
@@ -717,6 +733,7 @@ Petunia: No, thank you.
 Petunia waves you a goodbye as you leave. You start to head on your way to your second delivery. 
 
 <<set $metPetunia to true>>
+
 -> Make your second delivery.
     <<jump Make_your_second_delivery>>
 ===
@@ -790,6 +807,7 @@ Bjorn: I can give you the MUSCLE SPIRIT!
 He strikes a pose and puts his arm on your bicep.
 
 *You gain muscle spirit*
+
 <<set $muscleSpirit to true>>
 
 Bjorn: Now you have the muscle spirit. Be careful out there. I saw a few goblins around.
@@ -808,7 +826,7 @@ Player: Sorry sir, I've never heard of you or your muscles.
 
 Bjorn looks at you in surprise.
 
-Bjorn: Well now you have. Tell all your freinds and family about the mighty Bjorn and his miraculous muscles!
+Bjorn: Well now you have. Tell all your friends and family about the mighty Bjorn and his miraculous muscles!
 
 -> Say that you have Bjorn's delivery.
     <<jump Say_that_you_have_Bjorns_delivery>>
@@ -838,6 +856,7 @@ Bjorn: Ah no need for luck when you are as strong as me!
 Bjorn waves you a goodbye as you leave. You start to head on your way to your second delivery. 
 
 <<set $metBjorn to true>>
+
 -> Make your second delivery.
     <<jump Make_your_second_delivery>>
 ===

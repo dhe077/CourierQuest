@@ -98,7 +98,7 @@ Mudbrick: The annual Druids of the P-pond ritual.
 
 What do you say?
 -> Say that you have Mudbrick's delivery.
-    <<jump Ssay_that_you_have_Mudbricks_delivery>>
+    <<jump Say_that_you_have_Mudbricks_delivery>>
 -> Ask what the ritual does.
     <<jump Ask_what_the_ritual_does>>
 ===
@@ -467,8 +467,6 @@ You continue down the path towards your next delivery location.
     -> Make your third delivery.
         <<jump Make_your_third_delivery>>
 <<else>>
-    -> Make your third delivery.
-        <<jump Make_your_third_delivery>>
     -> There's an evil presence around Oli's camp.
         <<jump Theres_an_evil_presence_around_Olis_camp>>
 <<endif>>
@@ -753,6 +751,7 @@ Finn: I think that it'll work out exactly as I need it to. Thank you so much for
 He hands you a small vial.
 
 *You take the vial.*
+
 <<set $smokeVial to true>>
 <<set $metFinn to true>>
 
@@ -772,6 +771,7 @@ Finn: I think that it'll work out exactly as I need it to. Thank you so much for
 He hands you a small vial.
 
 *You take the vial.*
+
 <<set $smokeVial to true>>
 <<set $metFinn to true>>
 
@@ -791,7 +791,7 @@ Finn: Thank you. Make sure you stay safe on the path to Eldoria. I bumped into a
 He waves you a goodbye.
 
 -> Make your third delivery.
-    <<jump Make_you_third_delivery>>
+    <<jump Make_your_third_delivery>>
 ===
 
 title: Wish_him_good_luck_and_continue_delivering
@@ -802,6 +802,7 @@ Player: Well I hope you manage to read them all. Don't forget to get some fresh 
 You continue down the path towards your next delivery location.
 
 You sense an evil presence in the air.
+
 -> You spot the creature.
     <<jump You_spot_the_creature>>
 ===
@@ -814,6 +815,7 @@ That creature that chased you has appeared once again. It does not ask questions
 You need to outrun the creature again.
 
 You escape the creature once more.
+
 -> Make your third delivery.
     <<jump Make_your_third_delivery>>
 ===

@@ -97,7 +97,7 @@ Leyton: Now, why are you here again?
 
 What do you say?
 -> Tell Leyton you have a package for him.
-    <<jump Tell_Leyton_you_have>>
+    <<jump Tell_Leyton_you_have_a_package_for_him>>
 -> Tell Leyton that you're here to help him get better.
     <<jump Tell_Leyton_that_youre_here_to_help_him_get_better>>
 ===
@@ -211,7 +211,7 @@ What do you say?
 -> Ask how he floated down the cliff.
     <<jump Ask_how_he_floated_down_the_cliff>>
 -> Ask how you can help heat up the coals.
-    <<jump Ask_how_you_can>>
+    <<jump Ask_how_you_can_help_heat_up_the_coals>>
 -> Tell him that you're busy and you've a special delivery to complete.
     <<jump Tell_him_that_youre_busy_and_that_youve_a_special_delivery_to_complete>>
 ===
@@ -1055,6 +1055,7 @@ Daisy: If I know my mother well enough, she must've heard about my thief problem
 
     Daisy: That must have been the cutlery from Granbell that she's been harping on about.
 <<endif>>
+
 She hugs the axe.
 
 Daisy: Speaking of the thief. I don't have enough berries to take to my mother's shop. It always seems like every time I pick a basket of berries another basket disappears. My guess is that someone's been stealing them, and I need to get to the bottom of it.
@@ -1511,6 +1512,7 @@ Gambler: Hey Val. Get in here and place your bets.
 Val: You better have something good to tell me or you'll be *my* next unwanted enemy.
 
 -> Tell Val you have her package.
+    <<jump Tell_Val_you_have_her_package>>
 ===
 
 title: Ask_for_directions_to_your_next_destination
