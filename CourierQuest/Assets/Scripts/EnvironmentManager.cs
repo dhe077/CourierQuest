@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +7,18 @@ public class EnvironmentManager : MonoBehaviour
 {
     private GameObject playerView;
 
-    [Header("Courier Guildhall")]
+    [Header("----Courier Guildhall----")]
     public bool enableSpawnPackages;
     private SpawnPackages spawnPackages;
 
-    [Header("Outrun Goblin")]
+    [Header("----Outrun Goblin----")]
     public bool enablePlayerChaser;
     private PlayerChaser playerChaser;
     public GameObject goblin;
-    //public bool testChase = false;
+    
+    [Header("----Environmental----")]
+    public GameObject lightning;
+    public float decreaseRate = 0.2f;  // Rate at which the lightning intensity lowers.
     
     
     // Start is called before the first frame update
@@ -30,14 +34,24 @@ public class EnvironmentManager : MonoBehaviour
         }
     }
 
-    // void Update()
-    // {
-    //     if (testChase == true)
-    //     {
-    //         StartChasing();
-    //         testChase = false;
-    //     } 
-    // }
+    void Update()
+    {
+        try
+        {
+            if (lightning.activeSelf == true)
+            {
+                Light lights = lightning.GetComponent<Light>();
+                // Lower the intensity gradually
+                lights.intensity = Mathf.Max(0f, lights.intensity - decreaseRate * Time.deltaTime);
+                if (lights.intensity <= 0)
+                {
+                    lightning.SetActive(false);
+                    lights.intensity = 2;
+                }
+            }
+        } catch (NullReferenceException) {}
+        
+    }
 
     public void SpawnPackageObjects()
     {
@@ -52,5 +66,10 @@ public class EnvironmentManager : MonoBehaviour
     public void SetAtPlayerSide(bool x)
     {
         playerChaser.SetAtPlayerSide(x);
+    }
+
+    public void MakeLightning()
+    {
+        lightning.SetActive(true);
     }
 }

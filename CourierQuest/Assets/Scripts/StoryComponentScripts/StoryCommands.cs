@@ -76,6 +76,10 @@ public class StoryCommands : MonoBehaviour
             "moveClose",
             MoveClose
         );
+        dialogueRunner.AddCommandHandler<string>(
+            "lightning",
+            MakeLightning
+        );
     }
 
     public void Start()
@@ -168,6 +172,13 @@ public class StoryCommands : MonoBehaviour
     {
         environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
         environmentManager.SetAtPlayerSide(close);
+    }
+
+    // This command flashes a light to simulate lightning
+    public void MakeLightning(string none)
+    {
+        environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
+        environmentManager.MakeLightning();
     }
 
 
