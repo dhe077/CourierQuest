@@ -80,6 +80,10 @@ public class StoryCommands : MonoBehaviour
             "lightning",
             MakeLightning
         );
+        dialogueRunner.AddCommandHandler<bool>(
+            "rain",
+            MakeRain
+        );
     }
 
     public void Start()
@@ -179,6 +183,13 @@ public class StoryCommands : MonoBehaviour
     {
         environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
         environmentManager.MakeLightning();
+    }
+
+    // This command flashes a light to simulate lightning
+    public void MakeRain(bool rainSwitch)
+    {
+        environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
+        environmentManager.MakeRain(rainSwitch);
     }
 
 

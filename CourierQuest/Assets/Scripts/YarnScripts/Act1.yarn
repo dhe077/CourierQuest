@@ -619,7 +619,7 @@ What do you do? (Timed)
 title: Unsuccessfully_follow_the_main_path
 position: 7263,-410
 ---
-You failed to follow the path but you avoid enough obstacles. It seems like the storm is closer.
+You failed to follow the path but you avoided enough obstacles. It seems like the storm is closer.
 
 You're not sure if you *might* keep your job after this.
 
@@ -637,7 +637,7 @@ You don't recognise this path from your delivery journeys. Maybe it would be bes
 title: Knocked_into_too_many_obstacles
 position: 7258,-621
 ---
-You managed to follow the path but you didn't avoided enough obstacles. It seems like you're slightly ahead of the storm.
+You managed to follow the path but you didn't avoid enough obstacles. It seems like you're slightly ahead of the storm.
 
 Looks like you *might* keep your job.
 
@@ -721,6 +721,7 @@ You look at the small figure riding next to you. It's small and green. It has po
 It turns its head to face you.
 
 <<lightning none>>
+<<rain true>>
 You see its face light up from a flash of lightning, and a crackle of thunder echoes through the woods. Rain begins to pour down.
 
 Don't. Stop. Riding.
@@ -753,6 +754,7 @@ You look at the small figure riding next to you. It's small and green. It has po
 It turns its head to face you.
 
 <<lightning none>>
+<<rain true>>
 You see its face light up from a flash of lightning, and a crackle of thunder echoes through the woods. Rain begins to pour down.
 
 Don't. Stop. Riding.
@@ -1176,6 +1178,7 @@ Garbanzo: I'll be back! You'd better sleep with one eye open!
 <<endif>>
 
 <<goToScene EldoriaVolcanoSign>>
+<<rain true>>
 <<wait 2>>
 Just before you find a place to camp you reach a fork in the road. At the junction of the fork there is a sign that says Eldoria is along the left path.
 
@@ -1273,6 +1276,7 @@ You follow the right path.
 <<set $path to "right">>
 
 <<goToScene BushesAndRoad>>
+<<rain true>>
 <<wait 2>>
 You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
@@ -1292,6 +1296,7 @@ You follow the left path.
 
 <<if $followedPath is true>>
     <<goToScene AbandonedHutAndBushes>>
+    <<rain true>>
     <<wait 2>>
     You see the abandoned hut. You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
@@ -1302,6 +1307,7 @@ You follow the left path.
         <<jump Set_up_camp_in_some_bushes>>
 <<elseif $followedPath is false>>
     <<goToScene BushesAndRoad>>
+    <<rain true>>
     <<wait 2>>
     You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
@@ -1320,6 +1326,7 @@ position: 11731,-684
 The hut you're in has been abandoned for years and has many leaks coming through the roof. However, this hut seems very sturdy and will shelter you if the storm gets worse. 
 
 <<specificPosition InsideHutSpot>>
+<<rain false>>
 You set up your bedroll and lie down.
 
 <<jump Sleep_in_the_hut>>
@@ -1332,6 +1339,7 @@ position: 11687,-1118
 You find a set of bushes that could easily hide your tent. 
 
 <<specificPosition InsideBushesSpot>>
+<<rain false>>
 You set up your tent and bedroll. You lie down.
 
 <<jump Sleep_in_the_bushes>>
@@ -1344,6 +1352,7 @@ position: 11624,-78
 You figure that the best place to rest would be next to the path and away from the unknown creatures of the woods. 
 
 <<specificPosition InsideRoadsideTent>>
+<<rain false>>
 You set up your tent and bedroll. You lie down.
 
 <<jump Sleep_near_the_road>>
