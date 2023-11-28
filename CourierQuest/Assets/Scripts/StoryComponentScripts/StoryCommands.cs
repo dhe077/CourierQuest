@@ -265,4 +265,9 @@ public class StoryCommands : MonoBehaviour
         dialogueRunner.StartDialogue(nodeName);
     }
 
+    public bool StillRunning()
+    {
+        return dialogueRunner.IsDialogueRunning;
+    }
+
 }

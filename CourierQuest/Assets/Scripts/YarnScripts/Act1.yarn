@@ -70,17 +70,6 @@ What do you say? (Timed)
     <<jump Ignore_Frankie>>
 ===
 
-title: Ignore_Frankie
-position: 684,65
----
-*You ignore Frankie*
-
-Frankie: Alright buddy. Just be careful when delivering today!
-
-<<stop>>
-// <<jump Go_to_the_courier_guildhall>>
-===
-
 title: Say_that_youre_headed_to_work
 position: 594,-806
 ---
@@ -221,6 +210,17 @@ What do you say?
     <<jump Tell_Frankie_that_youd_better_hurry_to_work>>
 -> Ignore Frankie.
     <<jump Ignore_Frankie>>
+===
+
+title: Ignore_Frankie
+position: 684,65
+---
+*You ignore Frankie*
+
+Frankie: Alright buddy. Just be careful when delivering today!
+
+<<stop>>
+// <<jump Go_to_the_courier_guildhall>>
 ===
 
 title: Tell_Frankie_that_youd_better_hurry_to_work

@@ -41,9 +41,14 @@ public class CollisionDetector : MonoBehaviour
         {
             obstacleGame.ForestSplitMain(other.name);
         } 
-        else if (other.tag == "NextNode")
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "NextNode")
         {
-            storyCommands.StartFrom(other.name);
+            if (storyCommands.StillRunning() == false)
+                storyCommands.StartFrom(other.name);
         }
     }
 
