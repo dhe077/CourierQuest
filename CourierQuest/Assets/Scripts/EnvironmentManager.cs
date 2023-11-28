@@ -49,7 +49,8 @@ public class EnvironmentManager : MonoBehaviour
                     lights.intensity = 2;
                 }
             }
-        } catch (NullReferenceException) {}
+        } catch (NullReferenceException) { Debug.Log("No Light set in EnvironmentManager!"); }
+        catch (UnassignedReferenceException) { Debug.Log("No Light set in EnvironmentManager!"); }
         
     }
 

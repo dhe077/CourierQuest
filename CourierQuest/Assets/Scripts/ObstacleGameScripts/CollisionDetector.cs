@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Scripting.APIUpdating;
 
 public class CollisionDetector : MonoBehaviour
 {
@@ -14,7 +15,10 @@ public class CollisionDetector : MonoBehaviour
     public Color flashColor = new Color(1.0f, 0.0f, 0.0f, 0.25f); // Red with 25% transparency
     public float flashDuration = 0.2f; // Adjust this value to control the flash duration
     public float fadeDuration = 0.5f; // Adjust this value to control the fade duration
-    private bool isFlashing = false;
+    // private bool isFlashing = false;
+
+    [Header("----StoryCommands----")]
+    public StoryCommands storyCommands;
 
     // Check everytime a scene is loaded for the obstacle game
     void OnEnable() { SceneManager.sceneLoaded += OnSceneLoaded; }
@@ -36,6 +40,10 @@ public class CollisionDetector : MonoBehaviour
         else if (other.name == "MainPath" || other.name == "OffPath")
         {
             obstacleGame.ForestSplitMain(other.name);
+        } 
+        else if (other.tag == "NextNode")
+        {
+            storyCommands.StartFrom(other.name);
         }
     }
 

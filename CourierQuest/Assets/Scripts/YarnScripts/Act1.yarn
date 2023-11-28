@@ -77,7 +77,8 @@ position: 684,65
 
 Frankie: Alright buddy. Just be careful when delivering today!
 
-<<jump Go_to_the_courier_guildhall>>
+<<stop>>
+// <<jump Go_to_the_courier_guildhall>>
 ===
 
 title: Say_that_youre_headed_to_work
@@ -229,7 +230,8 @@ Player: Sorry Frankie, I've gotta get to the guildhall before the other couriers
 
 Frankie: No problem. Seeya round buddy!
 
-<<jump Go_to_the_courier_guildhall>>
+<<stop>>
+// <<jump Go_to_the_courier_guildhall>>
 ===
 
 title: Go_to_the_courier_guildhall
@@ -562,8 +564,8 @@ position: 6303,-88
 You take the reins and hop on the saddle atop Stormhoof.
 
 <<nextPosition none>>
-<<wait 3>>
-<<jump Start_your_journey>>
+<<stop>>
+// <<jump Start_your_journey>>
 ===
 
 title: Start_your_journey
@@ -617,7 +619,7 @@ What do you do? (Timed)
 title: Unsuccessfully_follow_the_main_path
 position: 7263,-410
 ---
-You failed to follow the path but you avoided enough obstacles. It seems like the storm is closer.
+You failed to follow the path but you avoid enough obstacles. It seems like the storm is closer.
 
 You're not sure if you *might* keep your job after this.
 
