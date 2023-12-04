@@ -1,6 +1,11 @@
 ﻿title: Wake_up_in_the_bushes
 position: -304,-609
 ---
+<<if $followedPath is true>>
+    <<goToScene WakeUpBushesHut>>
+<<elseif $followedPath is false>>
+    <<goToScene WakeUpBushesRoad>>
+<<endif>>
 You open your eyes. You're safe.
 
 You pack up your camp and head to the tree that Stormhoof is tied to.
@@ -15,8 +20,10 @@ You see the tree that Stormhoof should be tied to but no Stormhoof.
 title: Find_Stormhoof
 position: 148,-731
 ---
+<<nextPosition none>>
 Looking around you see hoof prints leading down the path a little.
 
+<<nextPosition none>>
 You follow the tracks. You finally see Stormhoof, but shes standing with a very large man. He looks to be about 8ft tall. He's holding the reins of Stormhoof in his hands. He's also carrying around what looks to be a rod.
 
 What do you do? (Timed)
@@ -265,6 +272,7 @@ Oli: You're welcome.
 title: Find_the_path_and_deliver_the_packages
 position: 2688,-88
 ---
+<<nextPosition none>>
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<if $firstPackage is "small">>
@@ -277,8 +285,10 @@ You ride atop Stormhoof and decide you should deliver your first package.
 title: Wake_up_in_the_hut
 position: -294,318
 ---
+<<goToScene WakeUpHut>>
 You open your eyes. The morning sun streaks across the hut's interior. You're safe.
 
+<<nextPosition none>>
 You pack up your camp and head to the tree that Stormhoof is tied to.
 
 On your way to Stormhoof's tree you spot a pair of small footprints across the path. That creature seems to have been trying to find you. Best be on your guard from now on.
@@ -291,6 +301,7 @@ You see Stormhoof happily grazing on the greenery around her.
 title: Get_Stormhoof_and_continue_on_your_delivery
 position: 2679,563
 ---
+<<nextPosition none>>
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<if $firstPackage is "small">>
@@ -303,6 +314,7 @@ You ride atop Stormhoof and decide you should deliver your first package.
 title: Wake_up_near_the_road
 position: -283,1193
 ---
+<<goToScene WakeUpRoad>>
 You open your eyes. The creature stands over you, dagger outstretched towards you.
 
 <<if $whistleBlown is true>>
@@ -518,6 +530,7 @@ Garbanzo: Now that wasn't so hard was it. I'll be seeing you around.
 title: Find_Stormhoof_and_continue_delivering
 position: 2166,1237
 ---
+<<nextPosition none>>
 You narrowly escaped the creature with your life. Best you stay on guard and continue delivering.
 
 You find Stormhoof happily grazing on the greenery around her.
@@ -528,8 +541,10 @@ You find Stormhoof happily grazing on the greenery around her.
 title: Start_delivering_the_packages
 position: 2691,1230
 ---
+<<nextPosition none>>
 You ride atop Stormhoof and decide you should deliver your first package.
 
+<<goToScene ForestPath>>
 <<if $firstPackage is "small">>
     <<jump Deliver_the_small_package>>
 <<elseif $firstPackage is "large">>
@@ -568,6 +583,7 @@ position: 4678,605
 You've arrived at the address labelled on the delivery package.
 
 <<if $firstPackage is "small">>
+    <<goToScene PetuniasShop>>
     The place looks like a small bakery store. Above the entrance to the store is a sign that says, "Pattersby's Pastries".
 
     What do you do?
@@ -576,6 +592,7 @@ You've arrived at the address labelled on the delivery package.
     -> Wait and see if anyone comes.
         <<jump Wait_and_see_if_anyone_comes>>
 <<elseif $firstPackage is "large">>
+    <<goToScene BjornsCampsite>>
     The place looks like a large tent. A wooden sign stuck in the dirt reads, "See the mighty Bjorn wrestle a bear!".
 
     What do you do?
@@ -589,6 +606,7 @@ You've arrived at the address labelled on the delivery package.
 title: Call_out_for_Petunia
 position: 5335,-168
 ---
+<<nextPosition none>>
 Player: Delivery for Petunia Pattersby!
 
 A little old woman comes out from the entrance of the store. She waves you down.
@@ -605,6 +623,7 @@ What do you say?
 title: Wait_and_see_if_anyone_comes
 position: 5318,239
 ---
+<<nextPosition none>>
 You wait in silence for someone to come out.
 
 A small old woman comes out from the entrance of the store. She waves you down.
@@ -701,6 +720,7 @@ Player: Thank you for the pastry Petunia. It looks delicious.
 
 Petunia: No, thank you.
 
+<<nextPosition none>>
 Petunia waves you a goodbye as you leave. You start to head on your way to your second delivery. 
 
 <<set $metPetunia to true>>
@@ -711,6 +731,7 @@ Petunia waves you a goodbye as you leave. You start to head on your way to your 
 title: Drop_the_package_at_the_entrance
 position: 5329,909
 ---
+<<nextPosition none>>
 The package is heavy so you drop it on the ground near the entrance of the tent. A loud thud is heard.
 
 A very large muscular man steps out from under the tent.
@@ -723,6 +744,7 @@ Bjorn: Ah hallo! Are you the delivery human that has my package?
 title: Call_out_for_Bjorn
 position: 5354,1291
 ---
+<<nextPosition none>>
 Player: Delivery for Bjorn!
 
 A very large muscular man steps out from under the tent.
@@ -814,20 +836,6 @@ What do you say?
     <<jump Thank_him_for_the_muscle_spirit_and_continue_delivering>>
 ===
 
-title: Thank_him_for_the_muscle_spirit_and_continue_delivering
-position: 7205,1032
----
-Player: Thank you for the muscle spirit. Good luck with the bear.
-
-Bjorn: Ah no need for luck when you are as strong as me!
-
-Bjorn waves you a goodbye as you leave. You start to head on your way to your second delivery. 
-
-<<set $metBjorn to true>>
-
-<<jump Make_your_second_delivery>>
-===
-
 title: Tell_him_that_you_think_you_saw_a_goblin
 position: 7228,1426
 ---
@@ -840,9 +848,25 @@ Bjorn begins to show off his muscles in as many poses as he can.
 <<jump Thank_him_for_the_muscle_spirit_and_continue_delivering>>
 ===
 
+title: Thank_him_for_the_muscle_spirit_and_continue_delivering
+position: 7205,1032
+---
+Player: Thank you for the muscle spirit. Good luck with the bear.
+
+Bjorn: Ah no need for luck when you are as strong as me!
+
+<<nextPosition none>>
+Bjorn waves you a goodbye as you leave. You start to head on your way to your second delivery. 
+
+<<set $metBjorn to true>>
+
+<<jump Make_your_second_delivery>>
+===
+
 title: Make_your_second_delivery
 position: 7905,539
 ---
+<<goToScene ForestPath>>
 You ride atop Stormhoof and decide you should deliver your second package.
 
 <<if $secondPackage is "round">>
