@@ -12,8 +12,9 @@ position: 392,476
 ---
 You've arrived at the address labelled on the delivery package.
 <<if $thirdPackage is "red">>
+    <<goToScene LeytonsCave>>
     The address has led you to the entrance of a cave on a cliff above you. You notice nothing out of the ordinary for a cave mouth. Suddenly, you hear a sneeze from within the cave and a blast of fire comes streaking out of the cave.
-
+    <<nextPosition none>>
     What do you do?
     -> Call out for Leyton.
         <<jump Call_out_for_Leyton>>
@@ -21,8 +22,9 @@ You've arrived at the address labelled on the delivery package.
         <<jump Ask_if_whoever_sneezed_is_ok>>
 
 <<elseif $thirdPackage is "green">>
+    <<goToScene ThakalisGarden>>
     The address has led you to a luscious garden full of fruits, vegetables, and herbs. Although the clouds are gathering above you, this garden seems to have a perfect window of sunlight that shines down on the produce.
-
+    <<nextPosition none>>
     What do you do?
     -> Call out for Thakali.
         <<jump Call_out_for_Thakali>>
@@ -30,8 +32,13 @@ You've arrived at the address labelled on the delivery package.
         <<jump Compliment_the_garden>>
 
 <<elseif $thirdPackage is "blue">>
-    The address has led you to a small campsite. There are baskets of berries dotted around the camp. A sign that says "Picked by Pattersbys" is painted on the side of a wagon nearby. (if: $metPetunia is true)[You recognise the name Pattersby. You met Petunia Pattersby earlier. Maybe this is her berry picking company?]
-
+    <<goToScene DaisysBerryFarm>>
+    The address has led you to a small campsite. There are baskets of berries dotted around the camp. A sign that says "Picked by Pattersbys" is painted on the side of a wagon nearby.
+    
+    <<if $metPetunia is true>>
+        You recognise the name Pattersby. You met Petunia Pattersby earlier. Maybe this is her berry picking company?
+    <<endif>>
+    <<nextPosition none>>
     What do you do?
     -> Call out for Daisy.
         <<jump Call_out_for_Daisy>>
@@ -39,8 +46,9 @@ You've arrived at the address labelled on the delivery package.
         <<jump Take_some_berries>>
 
 <<elseif $thirdPackage is "yellow">>
+    <<goToScene ValsGamblersGrotto>>
     The address has led you to a door situated within a hill. There is a sign above the door that reads "Gamblers Grotto". The door has a small window that looks like it can slide open.
-
+    <<nextPosition none>>
     What do you do?
     -> Call out for Val.
         <<jump Call_out_for_Val>>
@@ -403,6 +411,7 @@ position: 6545,-2552
 ---
 Player: Thank you for the gift. I'll be careful when handling it.
 
+<<nextPosition none>>
 Leyton: Oh if you see any ogres. They will be terrified of that thing too. No idea why.
 
 <<jump Continue_on_your_journey>>
@@ -435,6 +444,7 @@ Leyton looks at you in disbelief.
 
 Leyton: There's a volcano nearby? If I knew that I'd have gone there. Try further down the path.
 
+<<nextPosition none>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -447,6 +457,7 @@ Player: I was given this task by my boss at the Granbell courier hall. She told 
 
 Leyton: I wish you luck.
 
+<<nextPosition none>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -795,9 +806,9 @@ title: Leave_the_axe
 position: 6500,-115
 ---
 You leave the axe on the ground.
-
+<<nextPosition none>>
 You'd better continue on your journey.
-
+<<goToScene ForestPath>>
 <<jump Continue_on_your_journey>>
 ===
 
@@ -809,9 +820,9 @@ position: 6498,185
 <<set $axe to true>>
 
 Thakali has not noticed.
-
+<<nextPosition none>>
 You'd better continue on your journey.
-
+<<goToScene ForestPath>>
 <<jump Continue_on_your_journey>>
 ===
 
@@ -821,7 +832,7 @@ position: 6493,741
 Player: I was given this task by my boss at the Granbell courier hall. She told me it was important. This package must be crucial to stopping the war between humans and goblins.
 
 Thakali: Thakali gives you luck.
-
+<<nextPosition none>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -836,6 +847,7 @@ Thakali: Yes. It's that way. You will see sharp rocks of volcano.
 
 He points down the path.
 
+<<nextPosition none>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -1617,6 +1629,7 @@ You get a feeling like you are being watched.
 title: You_spot_the_creature_again
 position: 8348,604
 ---
+<<goToScene OutrunGoblin>>
 That creature is back again. It looks at you angrily and doesn't make any demands this time. It rides close.
 
 You need to outrun the creature again.
@@ -1629,15 +1642,18 @@ You escape the creature once more.
 title: Continue_on_your_journey
 position: 8688,979
 ---
+<<goToScene ForestPath>>
 You follow the path to your final destination. 
 
-The sky above have become an angry herd of dark clouds. The sun is setting it'll be night soon. You should make camp nearby.
+The sky above has become an angry herd of dark clouds. The sun is setting it'll be night soon. You should make camp nearby.
 
 <<if $path is "left">>
+    <<goToScene LargeTreeTent>>
     You ride a bit further down the path and find a good spot to make camp. You decide to make camp at the base of a large tree tonight.
 
     Thunder rumbles and rain starts to pour down on your tent. You need to sleep.
 <<elseif $path is "right">>
+    <<goToScene LargeRocksTent>>
     You ride a bit further down the path and find a good spot to make camp. You decide to make camp near a few large jagged rocks. 
 
     The weather seems to clear before you go to sleep.
