@@ -12,6 +12,7 @@ position: -408,698
 ---
 You've arrived at the address labelled on the delivery package.
 <<if $secondPackage is "round">>
+    <<goToScene MudbricksLake>>
     The address has led you to a murky pond covered in algae and lily pads. It doesn't look like there is a house here. You notice a small group of tortoises gathering together into a circular formation, near the lake.
 
     What do you do?
@@ -20,6 +21,7 @@ You've arrived at the address labelled on the delivery package.
     -> Approach the tortoises.
         <<jump Approach_the_tortoises>>
 <<elseif $secondPackage is "square">>
+    <<goToScene OlisCamp>>
     The place looks like a typical campsite with a large tent. Around the campsite you see a random array of what looks like scorch marks.
 
     What do you do?
@@ -28,6 +30,7 @@ You've arrived at the address labelled on the delivery package.
     -> Examine the scorch marks.
         <<jump Examine_the_scorch_marks>>
 <<elseif $secondPackage is "triangle">>
+    <<goToScene FinnsTower>>
     The address has led you to a tower. Atop the tower sits a room with a tall spire. Seems like this tower was used a long time ago but is now abandoned or at least it seems to look that way. 
 
     What do you do?
@@ -41,6 +44,7 @@ You've arrived at the address labelled on the delivery package.
 title: Call_out_for_Mudbrick
 position: 978,-2241
 ---
+<<nextPosition none>>
 Player: Delivery for Mudbrick!
 
 From the pond a tortoise approaches you. The tortoise is standing on two legs and is walking with the help of a wooden branch. It looks very old. The tortoise looks up at you.
@@ -57,6 +61,7 @@ What do you say?
 title: Approach_the_tortoises
 position: 978,-1972
 ---
+<<nextPosition none>>
 You approach the group of tortoises. They all stare at you with intent, waiting for your words.
 
 Player: I have a delivery for Mudbrick?
@@ -196,6 +201,8 @@ Mudbrick: I understand. Move along now. I don't want to s-s-s-slow you down.
 
 You continue down the path towards your next delivery location.
 
+<<goToScene OutrunGoblin>>
+
 You sense an evil presence in the air around you.
 
 // *Ignore Exercise Quest: The player will need to exercise to outrun the goblin.*
@@ -227,6 +234,7 @@ Player: Thank you for the pendant. I'm sure it will be very useful on my journey
 
 Mudbrick: I thank you for the delivery *and* the assistance with the statue.
 
+<<nextPosition none>>
 You continue down the path towards your next delivery location.
 
 <<jump Make_your_third_delivery>>
@@ -235,6 +243,7 @@ You continue down the path towards your next delivery location.
 title: Call_out_for_Oli
 position: 1179,671
 ---
+<<nextPosition none>>
 Player: Delivery for Oli!
 
 You wait for a moment for any response. Nothing.
@@ -253,6 +262,7 @@ What do you do?
 title: Examine_the_scorch_marks
 position: 1189,926
 ---
+<<nextPosition none>>
 You examine the scorch marks. There are small craters of exposed dirt at the center of every scorch mark. The scorch marks seem like they were created with such energy and force that you assume there was a small explosion at each scorch location.
 
 What do you do?
@@ -275,6 +285,7 @@ It seems like nobody is here. You can just leave the package near his camp in a 
     You continue walking towards Oli's camp and lightning keeps striking the diamond above you. As long as you keep the diamond above your head you will be fine. 
 
     // *The player must walk (pedal) towards the camp.*
+    <<specificPosition WalkIntoOlisCamp>>
     <<jump Walk_to_Olis_camp>>
 <<else>>
     You approach the outskirts of the campsite. But suddenly a loud rustling from behind the dense forest foliage stops you in your tracks. 
@@ -412,6 +423,7 @@ What do you do?
 title: Walk_away_from_Olis_camp
 position: 3117,51
 ---
+<<specificPosition WalkAwayFromOlisCamp>>
 You walk out of the campsite's defences. You can surely say you made a perfect delivery.
 
 The diamond that you were using has cracked in several places but remains intact. It seems after all it's use against the lightning the diamond has been damaged quite badly.
@@ -466,6 +478,7 @@ All of a sudden a bolt of lightning streaks down from above and strikes the diam
 
 You continue walking towards Oli's camp and lightning keeps striking the diamond above you. As long as you keep the diamond above your head you will be fine. 
 
+<<specificPosition WalkIntoOlisCamp>>
 // *The player must walk (pedal) towards the camp.*
 <<jump Walk_to_Olis_camp>>
 ===
@@ -478,6 +491,7 @@ You throw away the diamond that kept you safe. You think it's about time to go t
 
 You continue down the path towards your next delivery location.
 
+<<specificPosition LeaveOlisCampsite>>
 <<if $escapedSlime is true>>
     <<jump Make_your_third_delivery>>
 <<else>>
@@ -493,6 +507,7 @@ You keep the diamond that kept you safe. You think it's about time to go to your
 
 You continue down the path towards your next delivery location.
 
+<<specificPosition LeaveOlisCampsite>>
 <<if $escapedSlime is true>>
     <<jump Make_your_third_delivery>>
 <<else>>
@@ -503,7 +518,8 @@ You continue down the path towards your next delivery location.
 title: Theres_an_evil_presence_around_Olis_camp
 position: 4542,630
 ---
-You sense an evil presence around the camp site.
+<<goToScene OutrunGoblin>>
+You sense an evil presence in the air.
 
 <<jump You_spot_the_creature>>
 ===
@@ -511,6 +527,7 @@ You sense an evil presence around the camp site.
 title: Approach_the_tower_and_knock_on_the_door
 position: 1110,3038
 ---
+<<nextPosition none>>
 You approach the tower with caution. You knock lightly on the door. No answer. 
 
 You bang loudly on the door. The sound of footsteps come from within the tower. The door opens and you see, before you, a half-elf. He's reading a thick book. Seems like he is entranced by the words on the pages.
@@ -523,6 +540,7 @@ Finn: Could you please stop making such loud noises. It makes it hard to concent
 title: Call_out_for_Finn
 position: 1103,3353
 ---
+<<nextPosition none>>
 Player: Delivery for Finn!
 
 You hear the footsteps of someone coming down the tower's staircase. The door opens and you see before you, a half-elf. He's reading a thick book. Seems like he is entranced by the words on the pages.
@@ -760,6 +778,7 @@ Player: Thank you for the smoke vial. I hope you'll be able to read all these bo
 
 Finn: Thank you. Make sure you stay safe on the path to Eldoria. I bumped into a nasty looking goblin asking if I had seen someone carrying an "offering".
 
+<<nextPosition none>>
 He waves you a goodbye.
 
 <<jump Make_your_third_delivery>>
@@ -770,7 +789,10 @@ position: 4481,2921
 ---
 Player: Well I hope you manage to read them all. Don't forget to get some fresh air every now and then.
 
+<<nextPosition none>>
 You continue down the path towards your next delivery location.
+
+<<goToScene OutrunGoblin>>
 
 You sense an evil presence in the air.
 
@@ -792,6 +814,7 @@ You escape the creature once more.
 title: Make_your_third_delivery
 position: 5733,63
 ---
+<<goToScene ForestPath>>
 You ride atop Stormhoof and decide you should deliver your third package.
 
 <<if $thirdPackage is "red">>
