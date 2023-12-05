@@ -3,13 +3,16 @@ position: -304,-609
 ---
 <<if $followedPath is true>>
     <<goToScene WakeUpBushesHut>>
+    <<wait  3>>
 <<elseif $followedPath is false>>
     <<goToScene WakeUpBushesRoad>>
+    <<wait  3>>
 <<endif>>
 You open your eyes. You're safe.
 
 You pack up your camp and head to the tree that Stormhoof is tied to.
 
+<<nextPosition none>>
 On your way to Stormhoof's tree you spot a small creature dart across the path. That creature seems to have been trying to find you. It's missed you this time. Best be on your guard from now on.
 
 You see the tree that Stormhoof should be tied to but no Stormhoof.
@@ -20,7 +23,6 @@ You see the tree that Stormhoof should be tied to but no Stormhoof.
 title: Find_Stormhoof
 position: 148,-731
 ---
-<<nextPosition none>>
 Looking around you see hoof prints leading down the path a little.
 
 <<nextPosition none>>
@@ -286,6 +288,7 @@ title: Wake_up_in_the_hut
 position: -294,318
 ---
 <<goToScene WakeUpHut>>
+<<wait  3>>
 You open your eyes. The morning sun streaks across the hut's interior. You're safe.
 
 <<nextPosition none>>
@@ -315,6 +318,7 @@ title: Wake_up_near_the_road
 position: -283,1193
 ---
 <<goToScene WakeUpRoad>>
+<<wait  3>>
 You open your eyes. The creature stands over you, dagger outstretched towards you.
 
 <<if $whistleBlown is true>>
@@ -343,14 +347,14 @@ What do you do? (Timed)
     -> Hold out the magical rock.
         <<interrruptTimer none>>
         <<jump Hold_out_the_magical_rock>>
-    -> Plead with the creature. #timeout
+    -> Insult the creature. #timeout
         <<interrruptTimer none>>
         <<jump Insult_the_creature>>
 <<else>>
     -> Attempt to escape.
         <<interrruptTimer none>>
         <<jump Attempt_to_escape>>
-    -> Plead with the creature. #timeout
+    -> Insult the creature. #timeout
         <<interrruptTimer none>>
         <<jump Insult_the_creature>>
 <<endif>>
@@ -530,9 +534,10 @@ Garbanzo: Now that wasn't so hard was it. I'll be seeing you around.
 title: Find_Stormhoof_and_continue_delivering
 position: 2166,1237
 ---
-<<nextPosition none>>
 You narrowly escaped the creature with your life. Best you stay on guard and continue delivering.
 
+<<nextPosition none>>
+<<wait 2>>
 You find Stormhoof happily grazing on the greenery around her.
 
 <<jump Start_delivering_the_packages>>
@@ -542,6 +547,7 @@ title: Start_delivering_the_packages
 position: 2691,1230
 ---
 <<nextPosition none>>
+<<wait 2>>
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<goToScene ForestPath>>
@@ -585,7 +591,7 @@ You've arrived at the address labelled on the delivery package.
 <<if $firstPackage is "small">>
     <<goToScene PetuniasShop>>
     The place looks like a small bakery store. Above the entrance to the store is a sign that says, "Pattersby's Pastries".
-
+    <<nextPosition none>>
     What do you do?
     -> Call out for Petunia.
         <<jump Call_out_for_Petunia>>
@@ -594,7 +600,7 @@ You've arrived at the address labelled on the delivery package.
 <<elseif $firstPackage is "large">>
     <<goToScene BjornsCampsite>>
     The place looks like a large tent. A wooden sign stuck in the dirt reads, "See the mighty Bjorn wrestle a bear!".
-
+    <<nextPosition none>>
     What do you do?
     -> Call out for Bjorn.
         <<jump Call_out_for_Bjorn>>
@@ -606,7 +612,6 @@ You've arrived at the address labelled on the delivery package.
 title: Call_out_for_Petunia
 position: 5335,-168
 ---
-<<nextPosition none>>
 Player: Delivery for Petunia Pattersby!
 
 A little old woman comes out from the entrance of the store. She waves you down.
@@ -623,7 +628,6 @@ What do you say?
 title: Wait_and_see_if_anyone_comes
 position: 5318,239
 ---
-<<nextPosition none>>
 You wait in silence for someone to come out.
 
 A small old woman comes out from the entrance of the store. She waves you down.
@@ -731,7 +735,6 @@ Petunia waves you a goodbye as you leave. You start to head on your way to your 
 title: Drop_the_package_at_the_entrance
 position: 5329,909
 ---
-<<nextPosition none>>
 The package is heavy so you drop it on the ground near the entrance of the tent. A loud thud is heard.
 
 A very large muscular man steps out from under the tent.
@@ -744,7 +747,6 @@ Bjorn: Ah hallo! Are you the delivery human that has my package?
 title: Call_out_for_Bjorn
 position: 5354,1291
 ---
-<<nextPosition none>>
 Player: Delivery for Bjorn!
 
 A very large muscular man steps out from under the tent.

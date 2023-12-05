@@ -1275,16 +1275,29 @@ position: 11365,-957
 You follow the right path.
 <<set $path to "right">>
 
-<<goToScene BushesAndRoad>>
-<<rain true>>
-<<wait 2>>
-You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
+<<if $followedPath is true>>
+    <<goToScene AbandonedHutAndBushes>>
+    <<rain true>>
+    <<wait 2>>
+    You see the abandoned hut. You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
-Where do you want to camp?
--> Set up camp on the side of the path.
-    <<jump Set_up_camp_on_the_side_of_the_path>>
--> Set up camp in some bushes.
-    <<jump Set_up_camp_in_some_bushes>>
+    Where do you want to camp?
+    -> Set up camp in the abandoned hut.
+        <<jump Set_up_camp_in_the_abandoned_hut>>
+    -> Set up camp in some bushes.
+        <<jump Set_up_camp_in_some_bushes>>
+<<elseif $followedPath is false>>
+    <<goToScene BushesAndRoad>>
+    <<rain true>>
+    <<wait 2>>
+    You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
+
+    Where do you want to camp?
+    -> Set up camp on the side of the path.
+        <<jump Set_up_camp_on_the_side_of_the_path>>
+    -> Set up camp in some bushes.
+        <<jump Set_up_camp_in_some_bushes>>
+<<endif>>
 ===
 
 title: Take_the_left_path

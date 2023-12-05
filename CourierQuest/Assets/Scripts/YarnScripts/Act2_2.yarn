@@ -14,7 +14,7 @@ You've arrived at the address labelled on the delivery package.
 <<if $secondPackage is "round">>
     <<goToScene MudbricksLake>>
     The address has led you to a murky pond covered in algae and lily pads. It doesn't look like there is a house here. You notice a small group of tortoises gathering together into a circular formation, near the lake.
-
+    <<nextPosition none>>
     What do you do?
     -> Call out for Mudbrick.
         <<jump Call_out_for_Mudbrick>>
@@ -23,7 +23,7 @@ You've arrived at the address labelled on the delivery package.
 <<elseif $secondPackage is "square">>
     <<goToScene OlisCamp>>
     The place looks like a typical campsite with a large tent. Around the campsite you see a random array of what looks like scorch marks.
-
+    <<nextPosition none>>
     What do you do?
     -> Call out for Oli.
         <<jump Call_out_for_Oli>>
@@ -32,7 +32,7 @@ You've arrived at the address labelled on the delivery package.
 <<elseif $secondPackage is "triangle">>
     <<goToScene FinnsTower>>
     The address has led you to a tower. Atop the tower sits a room with a tall spire. Seems like this tower was used a long time ago but is now abandoned or at least it seems to look that way. 
-
+    <<nextPosition none>>
     What do you do?
     -> Call out for Finn.
         <<jump Call_out_for_Finn>>
@@ -44,7 +44,6 @@ You've arrived at the address labelled on the delivery package.
 title: Call_out_for_Mudbrick
 position: 978,-2241
 ---
-<<nextPosition none>>
 Player: Delivery for Mudbrick!
 
 From the pond a tortoise approaches you. The tortoise is standing on two legs and is walking with the help of a wooden branch. It looks very old. The tortoise looks up at you.
@@ -61,7 +60,6 @@ What do you say?
 title: Approach_the_tortoises
 position: 978,-1972
 ---
-<<nextPosition none>>
 You approach the group of tortoises. They all stare at you with intent, waiting for your words.
 
 Player: I have a delivery for Mudbrick?
@@ -243,7 +241,6 @@ You continue down the path towards your next delivery location.
 title: Call_out_for_Oli
 position: 1179,671
 ---
-<<nextPosition none>>
 Player: Delivery for Oli!
 
 You wait for a moment for any response. Nothing.
@@ -262,7 +259,6 @@ What do you do?
 title: Examine_the_scorch_marks
 position: 1189,926
 ---
-<<nextPosition none>>
 You examine the scorch marks. There are small craters of exposed dirt at the center of every scorch mark. The scorch marks seem like they were created with such energy and force that you assume there was a small explosion at each scorch location.
 
 What do you do?
@@ -280,12 +276,13 @@ It seems like nobody is here. You can just leave the package near his camp in a 
 <<if $diamond is true>>
     You remember that Oli gave you a diamond to safely get into his camp. You pull out the diamond and raise it above your head. You walk slowly toward the center of his camp.
 
+    <<specificPosition WalkIntoOlisCamp>>
+
     All of a sudden a bolt of lightning streaks down from above and strikes the diamond above your head. You feel nothing. The diamond has kept you safe from the lightning. The sky rumbles with thunder.
 
     You continue walking towards Oli's camp and lightning keeps striking the diamond above you. As long as you keep the diamond above your head you will be fine. 
 
     // *The player must walk (pedal) towards the camp.*
-    <<specificPosition WalkIntoOlisCamp>>
     <<jump Walk_to_Olis_camp>>
 <<else>>
     You approach the outskirts of the campsite. But suddenly a loud rustling from behind the dense forest foliage stops you in your tracks. 
@@ -527,7 +524,6 @@ You sense an evil presence in the air.
 title: Approach_the_tower_and_knock_on_the_door
 position: 1110,3038
 ---
-<<nextPosition none>>
 You approach the tower with caution. You knock lightly on the door. No answer. 
 
 You bang loudly on the door. The sound of footsteps come from within the tower. The door opens and you see, before you, a half-elf. He's reading a thick book. Seems like he is entranced by the words on the pages.
@@ -540,7 +536,6 @@ Finn: Could you please stop making such loud noises. It makes it hard to concent
 title: Call_out_for_Finn
 position: 1103,3353
 ---
-<<nextPosition none>>
 Player: Delivery for Finn!
 
 You hear the footsteps of someone coming down the tower's staircase. The door opens and you see before you, a half-elf. He's reading a thick book. Seems like he is entranced by the words on the pages.
