@@ -13,8 +13,10 @@ position: -408,698
 You've arrived at the address labelled on the delivery package.
 <<if $secondPackage is "round">>
     <<goToScene MudbricksLake>>
+    <<wait 2>>
     The address has led you to a murky pond covered in algae and lily pads. It doesn't look like there is a house here. You notice a small group of tortoises gathering together into a circular formation, near the lake.
     <<nextPosition none>>
+    <<wait 2>>
     What do you do?
     -> Call out for Mudbrick.
         <<jump Call_out_for_Mudbrick>>
@@ -22,8 +24,10 @@ You've arrived at the address labelled on the delivery package.
         <<jump Approach_the_tortoises>>
 <<elseif $secondPackage is "square">>
     <<goToScene OlisCamp>>
+    <<wait 2>>
     The place looks like a typical campsite with a large tent. Around the campsite you see a random array of what looks like scorch marks.
     <<nextPosition none>>
+    <<wait 2>>
     What do you do?
     -> Call out for Oli.
         <<jump Call_out_for_Oli>>
@@ -31,8 +35,10 @@ You've arrived at the address labelled on the delivery package.
         <<jump Examine_the_scorch_marks>>
 <<elseif $secondPackage is "triangle">>
     <<goToScene FinnsTower>>
+    <<wait 2>>
     The address has led you to a tower. Atop the tower sits a room with a tall spire. Seems like this tower was used a long time ago but is now abandoned or at least it seems to look that way. 
     <<nextPosition none>>
+    <<wait 2>>
     What do you do?
     -> Call out for Finn.
         <<jump Call_out_for_Finn>>
@@ -200,6 +206,7 @@ Mudbrick: I understand. Move along now. I don't want to s-s-s-slow you down.
 You continue down the path towards your next delivery location.
 
 <<goToScene OutrunGoblin>>
+<<wait 2>>
 
 You sense an evil presence in the air around you.
 
@@ -233,6 +240,7 @@ Player: Thank you for the pendant. I'm sure it will be very useful on my journey
 Mudbrick: I thank you for the delivery *and* the assistance with the statue.
 
 <<nextPosition none>>
+<<wait 2>>
 You continue down the path towards your next delivery location.
 
 <<jump Make_your_third_delivery>>
@@ -421,6 +429,7 @@ title: Walk_away_from_Olis_camp
 position: 3117,51
 ---
 <<specificPosition WalkAwayFromOlisCamp>>
+<<wait 2>>
 You walk out of the campsite's defences. You can surely say you made a perfect delivery.
 
 The diamond that you were using has cracked in several places but remains intact. It seems after all it's use against the lightning the diamond has been damaged quite badly.
@@ -476,6 +485,7 @@ All of a sudden a bolt of lightning streaks down from above and strikes the diam
 You continue walking towards Oli's camp and lightning keeps striking the diamond above you. As long as you keep the diamond above your head you will be fine. 
 
 <<specificPosition WalkIntoOlisCamp>>
+<<wait 2>>
 // *The player must walk (pedal) towards the camp.*
 <<jump Walk_to_Olis_camp>>
 ===
@@ -489,6 +499,7 @@ You throw away the diamond that kept you safe. You think it's about time to go t
 You continue down the path towards your next delivery location.
 
 <<specificPosition LeaveOlisCampsite>>
+<<wait 2>>
 <<if $escapedSlime is true>>
     <<jump Make_your_third_delivery>>
 <<else>>
@@ -505,6 +516,7 @@ You keep the diamond that kept you safe. You think it's about time to go to your
 You continue down the path towards your next delivery location.
 
 <<specificPosition LeaveOlisCampsite>>
+<<wait 2>>
 <<if $escapedSlime is true>>
     <<jump Make_your_third_delivery>>
 <<else>>
@@ -516,6 +528,7 @@ title: Theres_an_evil_presence_around_Olis_camp
 position: 4542,630
 ---
 <<goToScene OutrunGoblin>>
+<<wait 2>>
 You sense an evil presence in the air.
 
 <<jump You_spot_the_creature>>
@@ -774,6 +787,7 @@ Player: Thank you for the smoke vial. I hope you'll be able to read all these bo
 Finn: Thank you. Make sure you stay safe on the path to Eldoria. I bumped into a nasty looking goblin asking if I had seen someone carrying an "offering".
 
 <<nextPosition none>>
+<<wait 2>>
 He waves you a goodbye.
 
 <<jump Make_your_third_delivery>>
@@ -785,10 +799,11 @@ position: 4481,2921
 Player: Well I hope you manage to read them all. Don't forget to get some fresh air every now and then.
 
 <<nextPosition none>>
+<<wait 2>>
 You continue down the path towards your next delivery location.
 
 <<goToScene OutrunGoblin>>
-
+<<wait 2>>
 You sense an evil presence in the air.
 
 <<jump You_spot_the_creature>>
@@ -810,6 +825,7 @@ title: Make_your_third_delivery
 position: 5733,63
 ---
 <<goToScene ForestPath>>
+<<wait 2>>
 You ride atop Stormhoof and decide you should deliver your third package.
 
 <<if $thirdPackage is "red">>

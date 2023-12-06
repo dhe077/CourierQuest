@@ -1187,6 +1187,7 @@ Just before you find a place to camp you reach a fork in the road. At the juncti
 
     You notice a small package in the bush beside the figure. You pick up the package. The package says that it needs to go to Eldoria. You have a feeling like this is the special package that Mistress Ellastra wanted you to deliver.
 
+    <<set $specialPackage to true>>
     Do you still want to deliver the package?
     <<if $whistle is true>>
         -> Deliver the package.
@@ -1272,6 +1273,7 @@ title: Take_the_right_path
 position: 11365,-957
 ---
 <<specificPosition RightPath>>
+<<wait 2>>
 You follow the right path.
 <<set $path to "right">>
 
@@ -1304,6 +1306,7 @@ title: Take_the_left_path
 position: 11349,-320
 ---
 <<specificPosition LeftPath>>
+<<wait 2>>
 You follow the left path.
 <<set $path to "left">>
 
@@ -1336,9 +1339,11 @@ title: Set_up_camp_in_the_abandoned_hut
 position: 11731,-684
 ---
 <<specificPosition OutsideHutSpot>>
+<<wait 2>>
 The hut you're in has been abandoned for years and has many leaks coming through the roof. However, this hut seems very sturdy and will shelter you if the storm gets worse. 
 
 <<specificPosition InsideHutSpot>>
+<<wait 2>>
 <<rain false>>
 You set up your bedroll and lie down.
 
@@ -1349,9 +1354,11 @@ title: Set_up_camp_in_some_bushes
 position: 11687,-1118
 ---
 <<specificPosition OutsideBushesSpot>>
+<<wait 2>>
 You find a set of bushes that could easily hide your tent. 
 
 <<specificPosition InsideBushesSpot>>
+<<wait 2>>
 <<rain false>>
 You set up your tent and bedroll. You lie down.
 
@@ -1362,9 +1369,11 @@ title: Set_up_camp_on_the_side_of_the_path
 position: 11624,-78
 ---
 <<specificPosition Roadside>>
+<<wait 2>>
 You figure that the best place to rest would be next to the path and away from the unknown creatures of the woods. 
 
 <<specificPosition InsideRoadsideTent>>
+<<wait 2>>
 <<rain false>>
 You set up your tent and bedroll. You lie down.
 

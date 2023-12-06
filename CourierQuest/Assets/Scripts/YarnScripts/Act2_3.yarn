@@ -13,8 +13,10 @@ position: 392,476
 You've arrived at the address labelled on the delivery package.
 <<if $thirdPackage is "red">>
     <<goToScene LeytonsCave>>
+    <<wait 2>>
     The address has led you to the entrance of a cave on a cliff above you. You notice nothing out of the ordinary for a cave mouth. Suddenly, you hear a sneeze from within the cave and a blast of fire comes streaking out of the cave.
     <<nextPosition none>>
+    <<wait 2>>
     What do you do?
     -> Call out for Leyton.
         <<jump Call_out_for_Leyton>>
@@ -23,8 +25,10 @@ You've arrived at the address labelled on the delivery package.
 
 <<elseif $thirdPackage is "green">>
     <<goToScene ThakalisGarden>>
+    <<wait 2>>
     The address has led you to a luscious garden full of fruits, vegetables, and herbs. Although the clouds are gathering above you, this garden seems to have a perfect window of sunlight that shines down on the produce.
     <<nextPosition none>>
+    <<wait 2>>
     What do you do?
     -> Call out for Thakali.
         <<jump Call_out_for_Thakali>>
@@ -33,12 +37,14 @@ You've arrived at the address labelled on the delivery package.
 
 <<elseif $thirdPackage is "blue">>
     <<goToScene DaisysBerryFarm>>
+    <<wait 2>>
     The address has led you to a small campsite. There are baskets of berries dotted around the camp. A sign that says "Picked by Pattersbys" is painted on the side of a wagon nearby.
-    
     <<if $metPetunia is true>>
         You recognise the name Pattersby. You met Petunia Pattersby earlier. Maybe this is her berry picking company?
     <<endif>>
+
     <<nextPosition none>>
+    <<wait 2>>
     What do you do?
     -> Call out for Daisy.
         <<jump Call_out_for_Daisy>>
@@ -47,8 +53,10 @@ You've arrived at the address labelled on the delivery package.
 
 <<elseif $thirdPackage is "yellow">>
     <<goToScene ValsGamblersGrotto>>
+    <<wait 2>>
     The address has led you to a door situated within a hill. There is a sign above the door that reads "Gamblers Grotto". The door has a small window that looks like it can slide open.
     <<nextPosition none>>
+    <<wait 2>>
     What do you do?
     -> Call out for Val.
         <<jump Call_out_for_Val>>
@@ -412,6 +420,7 @@ position: 6545,-2552
 Player: Thank you for the gift. I'll be careful when handling it.
 
 <<nextPosition none>>
+<<wait 2>>
 Leyton: Oh if you see any ogres. They will be terrified of that thing too. No idea why.
 
 <<jump Continue_on_your_journey>>
@@ -445,6 +454,7 @@ Leyton looks at you in disbelief.
 Leyton: There's a volcano nearby? If I knew that I'd have gone there. Try further down the path.
 
 <<nextPosition none>>
+<<wait 2>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -458,6 +468,7 @@ Player: I was given this task by my boss at the Granbell courier hall. She told 
 Leyton: I wish you luck.
 
 <<nextPosition none>>
+<<wait 2>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -474,10 +485,13 @@ What do you do? (Timed)
 <<startTimer 10>>
 -> Try and stop him from destroying more of the garden.
     <<jump Try_and_stop_him_from_destroying_more_of_the_garden>>
+    <<interrruptTimer none>>
 -> Remind him of his package.
     <<jump Remind_him_of_his_package>>
+    <<interrruptTimer none>>
 -> Wait and see what happens.
     <<jump Wait_and_see_what_happens>>
+    <<interrruptTimer none>>
 ===
 
 title: Compliment_the_garden
@@ -491,10 +505,13 @@ What do you do? (Timed)
 <<startTimer 10>>
 -> Try and stop him from destroying more of the garden.
     <<jump Try_and_stop_him_from_destroying_more_of_the_garden>>
+    <<interrruptTimer none>>
 -> Remind him of his package.
     <<jump Remind_him_of_his_package>>
+    <<interrruptTimer none>>
 -> Wait and see what happens.
     <<jump Wait_and_see_what_happens>>
+    <<interrruptTimer none>>
 ===
 
 title: Try_and_stop_him_from_destroying_more_of_the_garden
@@ -807,8 +824,8 @@ position: 6500,-115
 ---
 You leave the axe on the ground.
 <<nextPosition none>>
+<<wait 2>>
 You'd better continue on your journey.
-<<goToScene ForestPath>>
 <<jump Continue_on_your_journey>>
 ===
 
@@ -821,8 +838,8 @@ position: 6498,185
 
 Thakali has not noticed.
 <<nextPosition none>>
+<<wait 2>>
 You'd better continue on your journey.
-<<goToScene ForestPath>>
 <<jump Continue_on_your_journey>>
 ===
 
@@ -833,6 +850,7 @@ Player: I was given this task by my boss at the Granbell courier hall. She told 
 
 Thakali: Thakali gives you luck.
 <<nextPosition none>>
+<<wait 2>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -848,6 +866,7 @@ Thakali: Yes. It's that way. You will see sharp rocks of volcano.
 He points down the path.
 
 <<nextPosition none>>
+<<wait 2>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -1553,7 +1572,9 @@ What do you say?
 title: Take_her_offer
 position: 6034,3846
 ---
-Player: So all I do is call out for you when I need someone to be "taken care of". (set: $assassin to true)
+Player: So all I do is call out for you when I need someone to be "taken care of". 
+
+<<set $assassin to true>>
 
 Val: Yup, that's right.
 
@@ -1630,6 +1651,7 @@ title: You_spot_the_creature_again
 position: 8348,604
 ---
 <<goToScene OutrunGoblin>>
+<<wait 2>>
 That creature is back again. It looks at you angrily and doesn't make any demands this time. It rides close.
 
 You need to outrun the creature again.
@@ -1643,17 +1665,20 @@ title: Continue_on_your_journey
 position: 8688,979
 ---
 <<goToScene ForestPath>>
+<<wait 2>>
 You follow the path to your final destination. 
 
 The sky above has become an angry herd of dark clouds. The sun is setting it'll be night soon. You should make camp nearby.
 
 <<if $path is "left">>
     <<goToScene LargeTreeTent>>
+    <<wait 2>>
     You ride a bit further down the path and find a good spot to make camp. You decide to make camp at the base of a large tree tonight.
 
     Thunder rumbles and rain starts to pour down on your tent. You need to sleep.
 <<elseif $path is "right">>
     <<goToScene LargeRocksTent>>
+    <<wait 2>>
     You ride a bit further down the path and find a good spot to make camp. You decide to make camp near a few large jagged rocks. 
 
     The weather seems to clear before you go to sleep.

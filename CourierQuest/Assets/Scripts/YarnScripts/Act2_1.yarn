@@ -13,6 +13,7 @@ You open your eyes. You're safe.
 You pack up your camp and head to the tree that Stormhoof is tied to.
 
 <<nextPosition none>>
+<<wait 2>>
 On your way to Stormhoof's tree you spot a small creature dart across the path. That creature seems to have been trying to find you. It's missed you this time. Best be on your guard from now on.
 
 You see the tree that Stormhoof should be tied to but no Stormhoof.
@@ -26,6 +27,7 @@ position: 148,-731
 Looking around you see hoof prints leading down the path a little.
 
 <<nextPosition none>>
+<<wait 2>>
 You follow the tracks. You finally see Stormhoof, but shes standing with a very large man. He looks to be about 8ft tall. He's holding the reins of Stormhoof in his hands. He's also carrying around what looks to be a rod.
 
 What do you do? (Timed)
@@ -275,8 +277,11 @@ title: Find_the_path_and_deliver_the_packages
 position: 2688,-88
 ---
 <<nextPosition none>>
+<<wait  2>>
 You ride atop Stormhoof and decide you should deliver your first package.
 
+<<goToScene ForestPath>>
+<<wait  2>>
 <<if $firstPackage is "small">>
     <<jump Deliver_the_small_package>>
 <<elseif $firstPackage is "large">>
@@ -292,6 +297,7 @@ position: -294,318
 You open your eyes. The morning sun streaks across the hut's interior. You're safe.
 
 <<nextPosition none>>
+<<wait 2>>
 You pack up your camp and head to the tree that Stormhoof is tied to.
 
 On your way to Stormhoof's tree you spot a pair of small footprints across the path. That creature seems to have been trying to find you. Best be on your guard from now on.
@@ -305,8 +311,11 @@ title: Get_Stormhoof_and_continue_on_your_delivery
 position: 2679,563
 ---
 <<nextPosition none>>
+<<wait 2>>
 You ride atop Stormhoof and decide you should deliver your first package.
 
+<<goToScene ForestPath>>
+<<wait  2>>
 <<if $firstPackage is "small">>
     <<jump Deliver_the_small_package>>
 <<elseif $firstPackage is "large">>
@@ -551,6 +560,7 @@ position: 2691,1230
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<goToScene ForestPath>>
+<<wait  2>>
 <<if $firstPackage is "small">>
     <<jump Deliver_the_small_package>>
 <<elseif $firstPackage is "large">>
@@ -590,8 +600,10 @@ You've arrived at the address labelled on the delivery package.
 
 <<if $firstPackage is "small">>
     <<goToScene PetuniasShop>>
+    <<wait 2>>
     The place looks like a small bakery store. Above the entrance to the store is a sign that says, "Pattersby's Pastries".
     <<nextPosition none>>
+    <<wait 2>>
     What do you do?
     -> Call out for Petunia.
         <<jump Call_out_for_Petunia>>
@@ -599,8 +611,10 @@ You've arrived at the address labelled on the delivery package.
         <<jump Wait_and_see_if_anyone_comes>>
 <<elseif $firstPackage is "large">>
     <<goToScene BjornsCampsite>>
+    <<wait 2>>
     The place looks like a large tent. A wooden sign stuck in the dirt reads, "See the mighty Bjorn wrestle a bear!".
     <<nextPosition none>>
+    <<wait 2>>
     What do you do?
     -> Call out for Bjorn.
         <<jump Call_out_for_Bjorn>>
@@ -725,6 +739,7 @@ Player: Thank you for the pastry Petunia. It looks delicious.
 Petunia: No, thank you.
 
 <<nextPosition none>>
+<<wait 2>>
 Petunia waves you a goodbye as you leave. You start to head on your way to your second delivery. 
 
 <<set $metPetunia to true>>
@@ -858,6 +873,7 @@ Player: Thank you for the muscle spirit. Good luck with the bear.
 Bjorn: Ah no need for luck when you are as strong as me!
 
 <<nextPosition none>>
+<<wait 2>>
 Bjorn waves you a goodbye as you leave. You start to head on your way to your second delivery. 
 
 <<set $metBjorn to true>>
@@ -868,9 +884,10 @@ Bjorn waves you a goodbye as you leave. You start to head on your way to your se
 title: Make_your_second_delivery
 position: 7905,539
 ---
-<<goToScene ForestPath>>
 You ride atop Stormhoof and decide you should deliver your second package.
 
+<<goToScene ForestPath>>
+<<wait  2>>
 <<if $secondPackage is "round">>
     -> Deliver the round package.
         <<jump Deliver_the_round_package>>
