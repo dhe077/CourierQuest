@@ -1107,6 +1107,12 @@ The fairy looks toward you in surprise and drops the berries and flies into the 
 Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+<<goToScene FairyChase>>
+<<startChase none>>
+<<moveClose false>>
+<<wait 60>>
+<<goToScene FairyHideout>>
+<<wait 2>>
 <<jump Chase_the_fairy>>
 ===
 
@@ -1120,6 +1126,12 @@ The fairy looks toward you in surprise and drops the berries and flies into the 
 Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+<<goToScene FairyChase>>
+<<startChase none>>
+<<moveClose false>>
+<<wait 60>>
+<<goToScene FairyHideout>>
+<<wait 2>>
 <<jump Chase_the_fairy>>
 ===
 
@@ -1131,6 +1143,12 @@ Player: I just saw a fairy take off with your berries.
 Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+<<goToScene FairyChase>>
+<<startChase none>>
+<<moveClose false>>
+<<wait 60>>
+<<goToScene FairyHideout>>
+<<wait 2>>
 <<jump Chase_the_fairy>>
 ===
 
@@ -1144,6 +1162,12 @@ Daisy: Where are you going?
 You reach the point where the fairy was. Not too far from you you see the fairy. It hasn't noticed you but it is moving quite quickly.
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+<<goToScene FairyChase>>
+<<startChase none>>
+<<moveClose false>>
+<<wait 60>>
+<<goToScene FairyHideout>>
+<<wait 2>>
 <<jump Secretly_follow_the_fairy>>
 ===
 
@@ -1192,6 +1216,9 @@ You gather the berries for Daisy.
 title: Go_back_to_Daisys_area
 position: 5207,2152
 ---
+<<goToScene DaisysBerryFarm>>
+<<specificPosition BerrySpot>>
+<<wait 2>>
 Daisy: Thanks for finding the rest of the berries. I had no idea that fairies were stealing them. Here take this, this might help you with your deliveries.
 
 She hands you a compass.
@@ -1257,6 +1284,8 @@ Daisy scoffs.
 
 Daisy: I wouldn't trust those nobles, but I wish you a safe journey.
 
+<<specificPosition LeaveDaisysBerryFarm>>
+<<wait 6>>
 <<jump Continue_on_you_journey>>
 ===
 
@@ -1267,6 +1296,8 @@ Player: Thanks for the directions.
 
 Daisy: You should know. There's something special about that volcano. I wish you a safe journey.
 
+<<specificPosition LeaveDaisysBerryFarm>>
+<<wait 6>>
 <<jump Continue_on_your_journey>>
 ===
 
@@ -1516,6 +1547,7 @@ From the door you see arrows start flying out in every direction.
 Val: Ride like the wind! We ain't stickin' 'round for a showdown today!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+<<goToScene ValsEscape>>
 <<jump Escape_the_shooters>>
 ===
 
@@ -1523,8 +1555,11 @@ title: Escape_the_shooters
 position: 5290,3856
 ---
 As you ride away from the shooters. Bullets wizz past your head and scatter along the ground.
-
+<<wait 60>>
+<<goToScene ValClearing>>
+<<wait 2>>
 You've gained enough distance from them to stop and hide for a moment.
+<<nextPosition none>>
 
 Val: Phew. That was close. Swift riding there partner.
 
@@ -1640,6 +1675,8 @@ Player: Fine! I'm just going to leave the package here. Good riddance!
 
 The laugher and cheering continues on the other side of the door once more.
 
+<<specificPosition LeaveGamblersGrotto>>
+<<wait 2>>
 You decide that it isn't worth dealing with these people. You need to make one more delivery.
 
 You get a feeling like you are being watched. 
