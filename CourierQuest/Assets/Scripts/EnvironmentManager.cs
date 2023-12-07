@@ -15,7 +15,7 @@ public class EnvironmentManager : MonoBehaviour
     [Header("----Outrun Goblin----")]
     public bool enablePlayerChaser;
     private PlayerChaser playerChaser;
-    public GameObject goblin;
+    public GameObject chaseObject;
     
     [Header("----Environmental----")]
     public GameObject lightning;
@@ -50,7 +50,7 @@ public class EnvironmentManager : MonoBehaviour
 
     public void StartChasing()
     {
-        playerChaser.StartChasing(playerView, goblin);
+        playerChaser.StartChasing(playerView, chaseObject);
     }
 
     public void SetAtPlayerSide(bool x)

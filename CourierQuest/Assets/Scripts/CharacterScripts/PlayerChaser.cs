@@ -14,7 +14,7 @@ public class PlayerChaser : MonoBehaviour
 
 
     public bool atPlayerSide = true;
-    private float yVal = 2;
+    [SerializeField] private float yVal = 2;
     [SerializeField] private int playerCloseOffset = 2;
     [SerializeField] private int playerFarOffset = 3;
 
