@@ -203,11 +203,12 @@ Player: Sorry sir, I can't help you right now. I've got some urgent deliveries t
 
 Mudbrick: I understand. Move along now. I don't want to s-s-s-slow you down.
 
+<<specificPosition LeaveTheLake>>
+<<wait 2>>
 You continue down the path towards your next delivery location.
 
 <<goToScene OutrunGoblin>>
 <<wait 2>>
-
 You sense an evil presence in the air around you.
 
 // *Ignore Exercise Quest: The player will need to exercise to outrun the goblin.*
@@ -239,7 +240,7 @@ Player: Thank you for the pendant. I'm sure it will be very useful on my journey
 
 Mudbrick: I thank you for the delivery *and* the assistance with the statue.
 
-<<nextPosition none>>
+<<specificPosition LeaveTheLake>>
 <<wait 2>>
 You continue down the path towards your next delivery location.
 
@@ -496,10 +497,10 @@ position: 3606,1
 You throw away the diamond that kept you safe. You think it's about time to go to your next delivery. 
 <<set $diamond to false>>
 
-You continue down the path towards your next delivery location.
-
 <<specificPosition LeaveOlisCampsite>>
 <<wait 2>>
+You continue down the path towards your next delivery location.
+
 <<if $escapedSlime is true>>
     <<jump Make_your_third_delivery>>
 <<else>>
@@ -513,10 +514,10 @@ position: 3594,243
 You keep the diamond that kept you safe. You think it's about time to go to your next delivery.
 <<set $diamond to true>>
 
-You continue down the path towards your next delivery location.
-
 <<specificPosition LeaveOlisCampsite>>
 <<wait 2>>
+You continue down the path towards your next delivery location.
+
 <<if $escapedSlime is true>>
     <<jump Make_your_third_delivery>>
 <<else>>

@@ -889,14 +889,11 @@ You ride atop Stormhoof and decide you should deliver your second package.
 <<goToScene ForestPath>>
 <<wait  2>>
 <<if $secondPackage is "round">>
-    -> Deliver the round package.
-        <<jump Deliver_the_round_package>>
+    <<jump Deliver_the_round_package>>
 <<elseif $secondPackage is "square">>
-    -> Deliver the square package.
-        <<jump Deliver_the_square_package>>
+    <<jump Deliver_the_square_package>>
 <<elseif $secondPackage is "triangle">>
-    -> Deliver the triangle package.
-        <<jump Deliver_the_triangle_package>>
+    <<jump Deliver_the_triangle_package>>
 <<endif>>
 ===
 

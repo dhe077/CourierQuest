@@ -50,7 +50,20 @@ public class EnvironmentManager : MonoBehaviour
 
     public void StartChasing()
     {
-        playerChaser.StartChasing(playerView, chaseObject);
+        try
+        {
+            playerChaser.StartChasing(playerView, chaseObject);
+        }
+        catch (NullReferenceException)
+        {
+            string debugString = "PlayerChaser not set - Reason: ";
+            if (playerView == null)
+                debugString += "playerView null";
+            else if (chaseObject == null)
+                debugString += "chaseObject null";
+            Debug.Log(debugString);
+        }
+        
     }
 
     public void SetAtPlayerSide(bool x)

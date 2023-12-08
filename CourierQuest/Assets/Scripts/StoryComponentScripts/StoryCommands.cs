@@ -170,6 +170,7 @@ public class StoryCommands : MonoBehaviour
     public void StartChase(string none)
     {
         environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
+        Debug.Log(environmentManager);
         environmentManager.StartChasing();
     }
     public void MoveClose(bool close)

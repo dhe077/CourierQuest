@@ -18,10 +18,10 @@ public class SpawnPackages : MonoBehaviour
 
     private int index = 0;
 
-    public Vector3 position1;
-    public Vector3 position2;
-    public Vector3 position3;
-    public Vector3 position4;
+    private Vector3 position1 = new Vector3(147, 5, 70);
+    private Vector3 position2 = new Vector3(152, 5, 62);
+    private Vector3 position3 = new Vector3(160, 5, 36);
+    private Vector3 position4 = new Vector3(162, 5, 26);
 
     private Quaternion noRotation = Quaternion.identity;
 

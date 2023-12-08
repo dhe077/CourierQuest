@@ -1007,6 +1007,10 @@ PrefabInstance:
       propertyPath: RainIntensity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11437536, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
+      propertyPath: WindSoundVolumeModifier
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 19928108, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -1442,8 +1446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6454ae5df525fe4fbafc55a0061b64a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaserObject: {fileID: 0}
   atPlayerSide: 1
+  yVal: 2
   playerCloseOffset: 2
   playerFarOffset: 3
 --- !u!114 &2050591773
@@ -1461,7 +1465,3 @@ MonoBehaviour:
   firstPackages: []
   secondPackages: []
   thirdPackages: []
-  position1: {x: 0, y: 0, z: 0}
-  position2: {x: 0, y: 0, z: 0}
-  position3: {x: 0, y: 0, z: 0}
-  position4: {x: 0, y: 0, z: 0}

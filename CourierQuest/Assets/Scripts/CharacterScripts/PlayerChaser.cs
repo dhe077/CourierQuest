@@ -8,7 +8,7 @@ public class PlayerChaser : MonoBehaviour
     private GameObject playerView;
     private Vector3 playerPos;
     private bool startChasing = false;
-    [SerializeField] private GameObject chaserObject;
+    private GameObject chaserObject;
     private Vector3 targetPosition;
     private float moveSpeed = 20f;
 

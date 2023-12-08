@@ -1108,11 +1108,8 @@ Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 <<goToScene FairyChase>>
+<<wait 5>>
 <<startChase none>>
-<<moveClose false>>
-<<wait 60>>
-<<goToScene FairyHideout>>
-<<wait 2>>
 <<jump Chase_the_fairy>>
 ===
 
@@ -1127,11 +1124,8 @@ Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 <<goToScene FairyChase>>
+<<wait 5>>
 <<startChase none>>
-<<moveClose false>>
-<<wait 60>>
-<<goToScene FairyHideout>>
-<<wait 2>>
 <<jump Chase_the_fairy>>
 ===
 
@@ -1144,11 +1138,8 @@ Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 <<goToScene FairyChase>>
+<<wait 5>>
 <<startChase none>>
-<<moveClose false>>
-<<wait 60>>
-<<goToScene FairyHideout>>
-<<wait 2>>
 <<jump Chase_the_fairy>>
 ===
 
@@ -1163,11 +1154,8 @@ You reach the point where the fairy was. Not too far from you you see the fairy.
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 <<goToScene FairyChase>>
+<<wait 5>>
 <<startChase none>>
-<<moveClose false>>
-<<wait 60>>
-<<goToScene FairyHideout>>
-<<wait 2>>
 <<jump Secretly_follow_the_fairy>>
 ===
 
@@ -1175,12 +1163,36 @@ title: Chase_the_fairy
 position: 4376,1869
 ---
 You chase the fairy riding Stormhoof. Daisy is close behind you following on foot... or hoof?
+<<wait 10>>
+<<goToScene FairyHideout>>
+<<wait 2>>
 
 The fairy has lead you to its hideout. The hideout is a large hollow tree. The fairy escapes up into the trunk of the tree. You see at the base of the hollowed tree a gigantic mound of berries.
+
+<<nextPosition none>>
+<<wait 2>>
 
 Daisy: So this is where they've been hiding them. Lets take them back before that fairy finds it's friends.
 
 <<jump Gather_the_berries>>
+===
+
+title: Secretly_follow_the_fairy
+position: 4366,2262
+---
+You chase the fairy riding Stormhoof.
+<<wait 10>>
+<<goToScene FairyHideout>>
+<<wait 2>>
+
+The fairy has lead you to its hide out. The hide out is a large hollowed out tree. The fairy escapes up into the trunk of the tree. You see at the base of the hollowed tree, a gigantic mound of berries.
+
+<<nextPosition none>>
+<<wait 2>>
+
+A lantern sits at the base of the tree illuminating the pile of berries. It might be useful to keep on you, especially at night.
+
+<<jump Take_the_lantern_and_head_back_with_the_berries>>
 ===
 
 title: Gather_the_berries
@@ -1191,22 +1203,12 @@ You and Daisy gather the berries and take them back to Daisy's area.
 <<jump Go_back_to_Daisys_area>>
 ===
 
-title: Secretly_follow_the_fairy
-position: 4366,2262
----
-You chase the fairy riding Stormhoof.
-
-The fairy has lead you to its hide out. The hide out is a large hollowed out tree. The fairy escapes up into the trunk of the tree. You see at the base of the hollowed tree, a gigantic mound of berries.
-
-A lantern sits at the base of the tree illuminating the pile of berries. It might be useful to keep on you, especially at night.
-
-<<jump Take_the_lantern_and_head_back_with_the_berries>>
-===
-
 title: Take_the_lantern_and_head_back_with_the_berries
 position: 4732,2260
 ---
-*You take the lantern.* (set: $lantern to true)
+*You take the lantern.* 
+
+<<set $lantern to true>>
 
 You gather the berries for Daisy. 
 
@@ -1217,7 +1219,8 @@ title: Go_back_to_Daisys_area
 position: 5207,2152
 ---
 <<goToScene DaisysBerryFarm>>
-<<specificPosition BerrySpot>>
+<<wait 4>>
+<<nextPosition none>>
 <<wait 2>>
 Daisy: Thanks for finding the rest of the berries. I had no idea that fairies were stealing them. Here take this, this might help you with your deliveries.
 
@@ -1270,6 +1273,8 @@ You managed to pull your arm away. You throw her the package to the ground and s
 
 This delivery might reflect badly on your delivery record when you get back to Granbell.
 
+<<specificPosition LeaveDaisysBerryFarm>>
+<<wait 2>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -1286,7 +1291,8 @@ Daisy: I wouldn't trust those nobles, but I wish you a safe journey.
 
 <<specificPosition LeaveDaisysBerryFarm>>
 <<wait 6>>
-<<jump Continue_on_you_journey>>
+
+<<jump Continue_on_your_journey>>
 ===
 
 title: Thank_Daisy_for_the_information
@@ -1298,6 +1304,7 @@ Daisy: You should know. There's something special about that volcano. I wish you
 
 <<specificPosition LeaveDaisysBerryFarm>>
 <<wait 6>>
+
 <<jump Continue_on_your_journey>>
 ===
 
@@ -1547,20 +1554,21 @@ From the door you see arrows start flying out in every direction.
 Val: Ride like the wind! We ain't stickin' 'round for a showdown today!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
-<<goToScene ValsEscape>>
 <<jump Escape_the_shooters>>
 ===
 
 title: Escape_the_shooters
 position: 5290,3856
 ---
+<<goToScene ValsEscape>>
+<<wait 2>>
 As you ride away from the shooters. Bullets wizz past your head and scatter along the ground.
 <<wait 60>>
 <<goToScene ValClearing>>
 <<wait 2>>
 You've gained enough distance from them to stop and hide for a moment.
 <<nextPosition none>>
-
+<<wait 2>>
 Val: Phew. That was close. Swift riding there partner.
 
 What do you say?
@@ -1710,14 +1718,23 @@ The sky above has become an angry herd of dark clouds. The sun is setting it'll 
 <<if $path is "left">>
     <<goToScene LargeTreeTent>>
     <<wait 2>>
-    You ride a bit further down the path and find a good spot to make camp. You decide to make camp at the base of a large tree tonight.
+    You ride a bit further down the path and find a good spot to make camp. 
+    <<nextPosition none>>
+    <<wait 2>>
+    You decide to make camp at the base of a large tree tonight.
+    <<nextPosition none>>
+    <<wait 2>>
 
     Thunder rumbles and rain starts to pour down on your tent. You need to sleep.
 <<elseif $path is "right">>
     <<goToScene LargeRocksTent>>
     <<wait 2>>
-    You ride a bit further down the path and find a good spot to make camp. You decide to make camp near a few large jagged rocks. 
-
+    You ride a bit further down the path and find a good spot to make camp. 
+    <<nextPosition none>>
+    <<wait 2>>
+    You decide to make camp near a few large jagged rocks. 
+    <<nextPosition none>>
+    <<wait 2>>
     The weather seems to clear before you go to sleep.
 <<endif>>
 
