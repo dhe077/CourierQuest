@@ -1,0 +1,2687 @@
+﻿title: Wake_up_under_the_tree
+position: -153,88
+---
+<<goToScene WakeUpLargeTree>>
+<<wait 2>>
+You wake up under the tree that you made camp under. The weather did not let up over night. It's no longer raining but the clouds are still grey.
+
+It's about time that you make your final delivery to Eldoria.
+
+<<jump Ride_towards_Eldoria>>
+===
+
+title: Ride_towards_Eldoria
+position: 256,-244
+---
+<<goToScene ForestPath>>
+<<wait 2>>
+You look to your pouch where the special delivery should be.
+
+<<if $specialPackage is true>>
+    You're relieved that the special package sits there in your pouch. You think to yourself. What could be inside the package? Why do the Aurelians want this delivered to Eldoria?
+
+    <<goToScene OutrunGoblin>>
+    <<wait 5>>
+    <<startChase none>>
+    <<moveClose true>>
+    Once again you spot a creature riding a large rat beside you. It's the goblin.
+
+    Garbanzo: Aren't you happy to see me again?
+
+    The creature looks more hell bent to get the package from you. It's more prepared this time.
+
+    //*Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+    <<jump Outrun_the_goblin>>
+
+<<elseif $specialPackage is false>>
+    The special package isn't there. You think to yourself. Where could the package have gone?
+    <<goToScene OutrunGoblin>>
+    <<wait 5>>
+    <<startChase none>>
+    <<moveClose true>>
+    Once again you spot a creature riding a large rat beside you. It's the goblin.
+    
+    Garbanzo: Are you looking for this? I can't let you take this to Eldoria. But you've convinced me that humans aren't so bad. I'll help you push back the army of goblins from Eldoria. Just help me get in unnoticed. We need to get there quickly before they find out their offering isn't going to arrive any time soon.
+    
+    //*Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+    <<jump Quickly_get_to_Eldoria>>
+<<endif>>
+===
+
+title: Outrun_the_goblin
+position: 542,-600
+---
+<<moveClose false>>
+<<wait 10>>
+You zip through the forest on Stormhoof's back. You are much faster than the goblin. A river near by rushes loudly. Stomhoof kicks up a rock and it hits the goblin off it's mount and into the river.
+
+You've outrun the goblin one last time.
+
+<<jump Ride_to_Eldoria>>
+===
+
+title: Ride_to_Eldoria
+position: 1220,-1015
+---
+<<goToScene EldoriaGates>>
+<<wait 2>>
+You ride down the path towards Eldoria. You pass farms and barns as you near the kingdom. Up ahead you can see the walls of Eldoria. The walls look empty. The roads look empty. Seems like no one is here. At least... no humans...
+
+<<wait 20>>
+<<nextPosition none>>
+<<wait 2>>
+
+You approach the gates of Eldoria. The gate doors swing open and a large bear lumbers from behind the open doors. To your relief, the bear is being held down by several goblins. 
+
+A goblin atop the bear speaks to you.
+
+Bear Goblin: Oi you. What are you doin' 'ere?! You'd better get outa 'ere before my bear eats you alive. Haha.
+
+The other goblins laugh too. The bear growls and flails its arms around nearly hitting you. The goblins tighten the restraints around its neck.
+
+What do you say?
+-> Tell them that you're here to make a special delivery.
+    <<jump Tell_them_that_youre_here_to_make_a_special_delivery>>
+-> Tell them that you need to get inside.
+    <<jump Tell_them_that_you_need_to_get_inside>>
+===
+
+title: Tell_them_that_youre_here_to_make_a_special_delivery
+position: 1713,-1339
+---
+Player: I have a special delivery to make. Let. Me. In.
+
+Bear Goblin: Well well well. This one here makes demands.
+
+The goblin kicks the bear below in an attempt to get it's attention.
+
+Bear Goblin: Oi, bear. Squash this puny 'uman!
+
+The bear slowly walks towards you.
+
+What do you do?
+<<if $muscleSpirit is true>>
+    -> Wrestle the bear with your muscle spirit.
+        <<jump Wrestle_the_bear_with_your_muscle_spirit>>
+<<elseif $pattersbyOriginal is true>>
+    -> Feed the bear the Pattersby Pastry.
+        <<jump Feed_the_bear_the_Pattersby_Pastry>>
+<<endif>>
+===
+
+title: Tell_them_that_you_need_to_get_inside
+position: 1663,-696
+---
+Player: I need to get inside it's urget.
+
+Bear Goblin: If you want in. You 'ave to go frew me. Haha.
+
+The other goblins laugh. The goblin kicks the bear below in an attempt to get it's attention.
+
+Bear Goblin: Oi, bear. Squash this puny human!
+
+The bear slowly walks towards you.
+
+What do you do?
+<<if $muscleSpirit is true>>
+    -> Wrestle the bear with your muscle spirit.
+        <<jump Wrestle_the_bear_with_your_muscle_spirit>>
+<<elseif $pattersbyOriginal is true>>
+    -> Feed the bear the Pattersby Pastry.
+        <<jump Feed_the_bear_the_Pattersby_Pastry>>
+<<endif>>
+===
+
+title: Wrestle_the_bear_with_your_muscle_spirit
+position: 2171,-901
+---
+You stand your ground as the bear advances towards you. The bear stands on its hind legs and falls forward attempting to crush you underneath its paws.
+
+A sudden feeling of immense strength possesses you. You feel the power grip your muscles. It's as if you've lost control of your own body's movement. Your arms lift and outstretch towards the bear as if to hold up against its crushing weight.
+
+The bear falls onto you but you feel nothing. You look up to see the bear above you in the air. You are lifting the bear above your head. The goblins look at you in shock...and fear. The goblins scatter in every direction.
+
+You drop the bear onto the ground. It lies there tired and defeated. 
+
+<<jump Approach_the_castle_doors>>
+===
+
+title: Feed_the_bear_the_Pattersby_Pastry
+position: 2166,-1273
+---
+You pull out from your pack the Pattersby Pastry. You waft the delicious smelling pastry in front of the bear's nose. The bear's eyes follow the movements of the pastry. 
+
+Player: Nothing can resist the temptation of a Pattersby Pastry.
+
+You throw the pastry out towards the forest away from the gates.
+
+The bear dashes in the direction the pastry was thrown. The goblins that are still holding onto the restraints are dragged along the dirt path. The others who let go, scatter into the forest.
+
+<<jump Approach_the_castle_doors>> 
+===
+
+title: Approach_the_castle_doors
+position: 2784,-1294
+---
+<<nextPosition none>>
+<<wait 4>>
+<<goToScene EldoriaCourtyard>>
+<<wait 2>>
+You walk through the gates and towards the inner castle doors. You pass a stable full of horses but unlike Granbell there is no stable master tending to them. You leave Stormhoof with the other horses in the stable.
+
+You approach the castle doors. They swing open with ease. 
+
+<<goToScene EldoriaThroneRoom>>
+<<wait 2>>
+You've entered the castle's throne room. The walls are high and the are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. Ahead of you there is a goblin wielding an ornamented staff standing next to the throne. However, no one is sitting in the throne. The leader must be somewhere else.
+
+The goblin looks in your direction and points at you.
+
+Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot a lightning bolt frew your face.
+
+What do you do?
+-> Ask where their leader is.
+    <<jump Ask_where_their_leader_is>>
+-> Say that you have a special delivery from Granbell.
+    <<jump Say_that_you_have_a_special_delivery_from_Granbell>>
+===
+
+title: Say_that_you_have_a_special_delivery_from_Granbell
+position: 3123,-1503
+---
+Player: I've got a special delivery from Granbell.
+
+Goblin Shaman: Special...delivery...from...Granbell? What could be coming from that stinkin' human place. Is it a bomb? IT'S A BOMB ISNT IT!!
+
+The goblin starts to wave its staff around in the air. Loud rumbling in the air grows as the goblin twirls the staff. You see lightning flash across the sky from a hole in the roof. You get a sense that the goblin is trying to cast some sort of lightning spell.
+
+Goblin Shaman: I'm going to vaporize you.
+
+You spot a hallway to your right that leads away out of the throne room. If you could distract them somehow you could escape down that hallway.
+
+What do you do? (Timed)
+<<startTimer 14>>
+<<if $diamond is true>>
+    -> Use the diamond to counter the lightning.
+        <<interrruptTimer none>>
+        <<jump Use_the_diamond_to_counter_the_lightning>>
+<<elseif $animalPendant is true>>
+    -> Use the animal pendant to summon forest creatures.
+        <<interrruptTimer none>>
+        <<jump Use_the_animal_pendant_to_summon_forest_creatures>>
+<<elseif $smokeVial is true>>
+    -> Use the smoke vial to escape.
+        <<interrruptTimer none>>
+        <<jump Use_the_smoke_vial_to_escape>>
+<<endif>>
+-> Run out the way you came in.
+    <<interrruptTimer none>>
+    <<jump Run_out_the_way_you_came_in>>
+===
+
+title: Ask_where_their_leader_is
+position: 3103,-994
+---
+Player: I'm here to see your leader. The throne looks empty. I suppose your leader is elsewhere?
+
+Goblin Shaman: Why do you want to see our Queen? Are you here to kill her? No loyal goblin is going to let a stinkin' human go anywhere near our Queen.
+
+The goblin starts to wave its staff around in the air. Loud rumbling in the air grows as the goblin twirls the staff. You see lightning flash across the sky from a hole in the roof. You get a sense that the goblin is trying to cast some sort of lightning spell.
+
+Goblin Shaman: I'm going to vaporize you.
+
+You spot a hallway to your right that leads away out of the throne room. If you could distract them somehow you could escape down that hallway.
+
+What do you do? (Timed)
+<<startTimer 14>>
+<<if $diamond is true>>
+    -> Use the diamond to counter the lightning.
+        <<interrruptTimer none>>
+        <<jump Use_the_diamond_to_counter_the_lightning>>
+<<elseif $animalPendant is true>>
+    -> Use the animal pendant to summon forest creatures.
+        <<interrruptTimer none>>
+        <<jump Use_the_animal_pendant_to_summon_forest_creatures>>
+<<elseif $smokeVial is true>>
+    -> Use the smoke vial to escape.
+        <<interrruptTimer none>>
+        <<jump Use_the_smoke_vial_to_escape>>
+<<endif>>
+-> Run out the way you came in.
+    <<interrruptTimer none>>
+    <<jump Run_out_the_way_you_came_in>>
+===
+
+title: Use_the_diamond_to_counter_the_lightning
+position: 3571,-1688
+---
+You pull out the diamond from your pocket and hold it in front of you.
+
+The goblin laughs and a streak of lightning crashes through the roof towards the goblin and is then redirected at you. 
+
+The lightning hits the diamond with all its energy. The diamond glows a hot blue. The power of the lightning has been absorbed into the diamond. The diamond begins to crack and furiously vibrate. It's going to explode!
+
+You quickly throw the diamond in the direction of the goblin. You watch the shock on the goblin's face as it lands beside them. 
+
+<<specificPosition RunDownHall>>
+<<wait 2>>
+You slip into the hallway beside you. You hear a loud explosion behind you.
+
+<<jump Run_down_the_hall>>
+===
+
+title: Use_the_animal_pendant_to_summon_forest_creatures
+position: 3559,-1253
+---
+You don the animal pendant and close your eyes. You hear the laughter of the goblin and the rumbling of the sky. You call upon the forest's aid.
+
+Suddenly the laughter turns to screams. You open your eyes to witness the goblin surrounded by birds. The goblin is distracted. Good time to escape. You slip into the hallway beside you.
+
+<<jump Run_down_the_hall>>
+===
+
+title: Use_the_smoke_vial_to_escape
+position: 3566,-1454
+---
+You grip the smoke vial in your pocket and throw it on the ground near the goblin casting its spell. A large dense cloud of smoke engulfs the goblin. 
+
+Goblin Shaman: What is this? *cough* *cough* I can't see nuffing. *cough*
+
+The goblin agrily screams and then a sudden bolt of lightning crashes down through the hole in the roof and into the cloud of smoke. 
+
+<<specificPosition RunDownHall>>
+<<wait 2>>
+You quickly run into the hallway to your right.
+
+<<jump Run_down_the_hall>>
+===
+
+title: Run_out_the_way_you_came_in
+position: 3564,-1026
+---
+You couldn't manage to pull out anything useful from your pack. You quickly turn and jump out the castle doors that you once entered with ease.
+
+<<goToScene GoblinHordeCastle>>
+<<wait 2>>
+
+To your dismay, a horde of goblins await you.
+
+Goblins: Take 'em to the dungeon!!
+
+<<jump Go_to_the_dungeon>>
+===
+
+title: Run_down_the_hall
+position: 4012,-1451
+---
+<<goToScene OgreRoom>>
+<<wait 2>>
+You run down the hallway. It leads you to a large open area with tall stone columns. Some of these stone columns look very damaged. Opposite the hallway exit you spot a large wooden door. The door is guarded by a gigantic ogre that is wearing a grease soaked rag.
+
+What do you do?
+-> Ask the ogre what is behind the wooden door.
+    <<jump Ask_the_ogre_what_is_behind_the_wooden_door>>
+-> Tell the ogre you have a special delivery.
+    <<jump Tell_the_ogre_you_have_a_special_delivery>>
+===
+
+title: Ask_the_ogre_what_is_behind_the_wooden_door
+position: 4368,-1314
+---
+Player: Hey! What's behind that big wooden door?
+
+Ogre: Behind door? Queen. No one allowed in. No human allowed. Me squash human.
+
+The ogre slaps its hands together in a squishing motion. The ogre moves in your direction.
+
+You need to somehow get past the ogre and make your final delivery.
+
+What do you do? (Timed)
+<<startTimer 16>>
+<<if $dagger is true>>
+    -> Pull out the obsidian dagger.
+        <<jump Pull_out_the_obsidian_dagger>>
+<<elseif $axe is true>>
+    -> Use the axe on the weak columns.
+        <<jump Use_the_axe_on_the_weak_columns>>
+<<elseif $lantern is true>>
+    -> Throw the lantern at the ogre.
+        <<jump Throw_the_lantern_at_the_ogre>>
+<<elseif $assassin is true>>
+    -> Call for Val's expertise.
+        <<jump Call_for_Vals_expertise>>
+<<endif>>
+-> Wait and see what the ogre does. #timed
+    <<jump Wait_and_see_what_the_ogre_does>>
+===
+
+title: Tell_the_ogre_you_have_a_special_delivery
+position: 4367,-1645
+---
+Player: I have a special delivery for your leader. Where are they?
+
+Ogre: Leader? Queen? Behind door. No one allowed in. No human allowed. Me squash human.
+
+The ogre slaps its hands together in a squishing motion. The ogre moves in your direction.
+
+You need to somehow get past the ogre and make your final delivery.
+
+What do you do? (Timed)
+<<startTimer 16>>
+<<if $dagger is true>>
+    -> Pull out the obsidian dagger.
+        <<jump Pull_out_the_obsidian_dagger>>
+<<elseif $axe is true>>
+    -> Use the axe on the weak columns.
+        <<jump Use_the_axe_on_the_weak_columns>>
+<<elseif $lantern is true>>
+    -> Throw the lantern at the ogre.
+        <<jump Throw_the_lantern_at_the_ogre>>
+<<elseif $assassin is true>>
+    -> Call for Val's expertise.
+        <<jump Call_for_Vals_expertise>>
+<<endif>>
+-> Wait and see what the ogre does. #timed
+    <<jump Wait_and_see_what_the_ogre_does>>
+===
+
+title: Pull_out_the_obsidian_dagger
+position: 4838,-1967
+---
+You pull out the obsidian dagger that Leyton gave you. He said it would frighten ogres somehow. Let's hope he wasn't lying. You show the dagger to the ogre.
+
+The ogre looks confused then it takes a moment to register what it is looking at. The ogre shocked and afraid it falls back on its hind quarters and begins to cower in fear. It gets up and runs to hide behind a stone column while continuously maintaining eye contact with the dagger.
+
+Ogre: That's the obsidian dagger of the Ogre Slayer! Stay away from me!
+
+Looks like it worked exactly as Leyton had described. Now's your chance to get to the Queen and finally deliver the special package.
+
+<<jump Go_to_the_Queen>>
+===
+
+title: Use_the_axe_on_the_weak_columns
+position: 4833,-1787
+---
+You quickly wield the axe in your hands and run to the closest column that looks weak enough to break. You lift the axe above your head and swing it at the column. You aim for the weakest spot in the column.
+
+The axe ricochet's off the stone as the column begins to rumble and shake. You drop the axe and push the unbalanced column towards the ogre's gigantic form. The ogre lifts its hands in an attempt to stop the force of the column but it fails. 
+
+The ogre is crushed beneath the column. Now's your chance to get to the Queen and finally deliver the special package.
+
+<<jump Go_to_the_Queen>>
+===
+
+title: Throw_the_lantern_at_the_ogre
+position: 4836,-1589
+---
+You recognise that the ogre is wearing filthy greasy rags. If you throw the lantern at the ogre it will ignite the oily rags and distract the ogre.
+
+You pull the lantern from your pack and reignite it. You wind your arm back readying for a throw. You launch the lantern at the ogre's clothing and it immediately catches fire. The ogre, now in a panicked state, bats at the flames that have engulfed it's gigantic form.
+
+The ogre is distracted. Now's your chance to get to the Queen and finally deliver the special package.
+
+<<jump Go_to_the_Queen>>
+===
+
+title: Call_for_Vals_expertise
+position: 4839,-1390
+---
+You remember you have an ace up your sleeve. You ask Val for help. She said that you can ask her to "take care" of any enemies that I have. Now's a good time to do that. You whisper out for Val's help.
+
+Player: Val! Help me! Get rid of this ogre!
+
+A sudden burst of magical energy blasts the ogre in the torso. It stumbles a little bit then gathers its strength for an attack on you. Then another magical blast apears from the sky and then a halfling appears from a cloud of smoke. The ogre stumbles again.
+
+Val: My, my, looks like you've got yourself in a bit of a sticky situation?
+
+Val launches magical spells from her fingers towards the ogre. The ogre is distracted. Now's your chance to get to the Queen and finally deliver the special package.
+
+<<jump Go_to_the_Queen>>
+===
+
+title: Wait_and_see_what_the_ogre_does
+position: 4832,-1181
+---
+You stand there stunned not knowing what to do. The ogre lunges to grab you. It succeeds in restraining you. It pulls out a rope and ties it around you. 
+
+<<goToScene GoblinHordeOgreRoom>>
+<<wait 2>>
+
+A wave of goblins flows from the hallway and into the open area.
+
+Goblins: Take 'em to the dungeon!!
+
+<<jump Go_to_the_dungeon>>
+===
+
+title: Go_to_the_Queen
+position: 5536,-1687
+---
+<<nextPosition none>>
+<<wait 2>>
+You sprint to the wooden door and push it open. 
+// *The player must pedal hard to push the door open.*
+
+<<goToScene TreasureRoom>>
+<<wait 2>>
+Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. Atop the mound of riches lies a large goblin. The goblin wears a robe too big for its stature and dons many rings and necklaces. This must be their leader.
+
+<<jump Tell_them_you_have_a_special_delivery_from_Granbell>>
+===
+
+title: Tell_them_you_have_a_special_delivery_from_Granbell
+position: 6042,-1679
+---
+Player: Are you the goblin leader? I have a special delivery from Granbell just for you.
+
+The goblin looks down at you.
+
+Goblin Queen: A delivery? For meee? From Granbell you say? I hope that the humans there have acknowledged my goblin army as a force to be reckoned with. 
+
+The goblin slides down the hill of treasure and meets you. It looks you in the eyes as you hand over the package. It's gaze switched to the package now. The goblin takes it from your hands.
+
+The goblin opens the package. The package reveals a magnificent and opulent crown. The crown is adorned with precious materials and gemstones unique to the ones found in the piles of treasure in front of you. The package also contained a note which the goblin reads and ponders for a moment.
+
+Goblin Queen: Ahh. Finally. The humans are seeing us as equals. No longer do they see us as just filthy creatures to be stepped on. They've offered this crown as a means to call a truce in the war.
+
+The goblin wears the crown with glee.
+
+Goblin Queen: Fits perfectly. I think its time I had a talk with the humans and settled this whole war between our peoples.
+
+The goblin queen looks to you.
+
+Goblin Queen: Thank you, humble courier, for this delivery. You risked your life to end a very long and arduous war. There has been enough bloodshed. Please, courier, quickly ride back to Granbell and tell them I wish to speak with them.
+
+<<jump Ride_back_to_Granbell>>
+===
+
+title: Ride_back_to_Granbell
+position: 6564,-1718
+---
+// *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
+<<goToScene ForestPath>>
+<<wait 2>>
+
+You ride back to Granbell at a fast pace. On the way back you see the locations that you delivered to and some you don't recognise.
+
+You reach Granbell and tell Mistress Ellastra about what happened. She notifies the guards and they relay the information back up to the Aurelians.
+
+Word around the town has spread saying that the goblin Queen is coming to Granbell to speak with the Aurelians about ending the war.
+
+The goblin Queen arrives at Granbell and all the people of Granbell stare in silence. She rests on the detatched throne of Eldoria, carried on the back of the ogre you fought. They head into the castle. 
+
+After a few hours a guardsman walks into the market center and reads an announcement.
+
+Guard: Listen all! The Aurelians have made an announcement. "We Aurelians have talked with the goblin Queen. We have made a unanimous agreement to end the 50 year war between humans and goblins. Both human and goblin-kind will take time to heal from their wounds as a people, but once all has been done we hope to learn from the past and work towards a brighter future." That is all from the announcement. As you were!
+
+You hear the good news about the end of the war. People around you rejoice and cheer. 
+Seems like you delivered something that changed your destiny forever.
+
+<<jump The_end>>
+===
+
+title: Quickly_get_to_Eldoria
+position: 513,77
+---
+You ride swiftly down the path towards Eldoria. You pass farms and barns as you near the kingdom. Up ahead you can see the walls of Eldoria. The walls look empty. The roads look empty. Seems like no one is here. At least... no humans...
+
+Garbanzo: You go the gate. Distract the guards and I'll take them out. Oh, by the way, the name's Garbanzo.
+
+Garbanzo splits from you and slips into the shadows.
+
+<<jump Approach_the_gates>>
+===
+
+title: Approach_the_gates
+position: 1211,45
+---
+<<goToScene EldoriaGates>>
+<<wait 20>>
+
+<<nextPosition none>>
+<<wait 2>>
+You approach the gates of Eldoria. Two creatures pop out from behind the gate's doors.
+
+Gate Goblin 1: Hey you! Stop!
+
+Gate Goblin 2: Stop where you are!
+
+You can see Garbanzo nearby out of sight from the guards.
+
+What do you do?
+<<if $muscleSpirit is true>>
+    -> Use the muscle spirit.
+        <<jump Use_the_muscle_spirit>>
+<<elseif $pattersbyOriginal is true>>
+    -> Use the Pattersby Pastry.
+        <<jump Use_the_Pattersby_Pastry>>
+<<endif>>
+===
+
+title: Use_the_Pattersby_Pastry
+position: 2160,-308
+---
+You pull out the Pattersby Pastry. The smell alone is enthralling. You think to yourself that this will for sure distract these two goblins.
+
+Player: Hey! You guys want this?
+
+You waft the pastry in front of them.
+
+Gate Goblin 1: Ohhhh, that smells spectacular!
+
+Gate Goblin 2: Mmmm, lovely!
+
+You toss it towards them and they fight over the pastry. Garbanzo sneaks up behind them and wacks them on the head. They both slump over face first into the dirt.
+
+Garbanzo picks up the pastry and starts to eat it. He talks to you mouth full of pastry.
+
+Garbanzo: Ok. I'll meet you soon. I know a secret way into the castle through the dungeon.
+
+<<jump Head_to_the_dungeon_entrance>>
+===
+
+title: Use_the_muscle_spirit
+position: 2170,193
+---
+You feel an urge to flex your muscles in a way to show off your immense strength.
+
+Gate Goblin 1: Wow. Look at this human here. Now those are some muscles you don't see every day.
+
+Gate Goblin 2: Wish *I* had biceps as big as those.
+
+The goblins are enamoured by your performance. Garbanzo sneaks up behind them and wacks them on the head. They both slump over face first into the dirt.
+
+Garbanzo: Ok. I'll meet you soon. I know a secret way into the castle through the dungeon.
+
+<<jump Head_to_the_dungeon_entrance>>
+===
+
+title: Head_to_the_dungeon_entrance
+position: 2771,-452
+---
+Garbanzo slips inside the gate and you lose sight of him.
+
+<<nextPosition none>>
+<<wait 4>>
+<<goToScene GoblinHordeGates>>
+<<wait 2>>
+
+To your dismay, a horde of goblins await you.
+
+Goblins: Take 'em to the dungeon!!
+
+<<jump Go_to_the_dungeon>>
+===
+
+title: Go_to_the_dungeon
+position: 2767,15
+---
+<<nextPosition none>>
+<<wait 2>>
+The goblins lead you towards the dungeon entrance.
+
+At the entrance of the dungeon another goblin stands waiting. It looks at you and holds out its knife.
+
+Dungeon Goblin: Go on. Off to the dungeon for you.
+
+The dungeon goblin leads you down a set of old stone stairs towards a dark tunnel. 
+
+<<goToScene Dungeon>>
+<<wait 2>>
+
+It's very dark in here. The occational torch lights the tunnel. You pass by several dungeon cells barred by large thick metal rods.
+
+<<if $specialPackage is true>>
+    The goblin searches you and takes the special package from you. 
+
+    <<set $specialPackage to false>>
+
+    Dungeon Goblin: What's this? Is this a gift for me!?
+<<endif>>
+
+The goblin pushes you into an empty looking room and closes the metal gate behind you.
+
+Dungeon Goblin: Don't even fink about escaping because there's no way out. Haha.
+
+The dungeon goblin laughs as he walks back to the entrance on the dungeon tunnel. The laughter echoes down the tunnel until you can hear it no more. You sit in the darkness awaiting your end.
+
+<<jump Wait_around_for_your_eventual_demise>>
+===
+
+title: Wait_around_for_your_eventual_demise
+position: 2762,243
+---
+You sit there in the darkness. How long will the goblins keep you here? If you do get out, what will Mistress Ellastra think? You've lost the package. You will, for sure, be fired for this.
+
+<<wait 10>>
+
+A few moments pass and then a voice whispers to you. 
+
+Garbanzo: Hey, human. Why so glum? Heads up.
+
+Garbanzo drops from the ceiling with ease and makes no noise. He is holding a small candle that illuminates his face.
+
+Garbanzo: Follow me. There's a secret tunnel this way.
+
+Garbanzo pushes a large stone out of the way. Behind the stone is a tunnel with a light at the end of it.
+
+<<jump Go_through_the_tunnel>>
+===
+
+title: Go_through_the_tunnel
+position: 2756,435
+---
+<<nextPosition none>>
+<<wait 2>>
+You pass through the tunnel and reach the light ahead. 
+
+<<goToScene EldoriaThroneRoom>>
+<<specificPosition ThroneRoomThroneSpot>>
+<<wait 2>>
+You've entered the castles throne room. Looks like you've just come out from behind a secret room behind the throne. The walls are high and are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. A goblin wielding an ornamented staff stands near the entrance to the throne room. No one is sitting in the throne. The leader must be somewhere else.
+
+You look for Garbanzo but he's run off to somewhere already.
+
+The goblin looks in your direction and points at you.
+
+Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot a lightning bolt frew your face.
+
+What do you do?
+-> Insult the goblin.
+    <<jump Insult_the_goblin>>
+-> Say that you're not a human.
+    <<jump Say_that_youre_not_a_human>>
+===
+
+title: Insult_the_goblin
+position: 3138,-115
+---
+Player: Looks like a lightning bolt already went through yours.
+
+Goblin Shaman: I'll get you for that!
+
+The goblin starts to wave its staff around in the air. Loud rumbling in the air grows as the goblin twirls the staff. You see lightning flash across the sky from a hole in the roof. You get a sense that the goblin is trying to cast some sort of lightning spell.
+
+Goblin Shaman: I'm going to vaporize you.
+
+You spot Garbanzo close by. He's hidden behind a potted plant. You need to distract the goblin somehow.
+
+What do you do? Timed.
+<<startTimer 12>>
+<<if $diamond is true>>
+    -> Offer the diamond as a bribe.
+        <<interrruptTimer none>>
+        <<jump Offer_the_diamond_as_a_bribe>>
+<<elseif $animalPendant is true>>
+    -> Use the animal pendant.
+        <<interrruptTimer none>>
+        <<jump Use_the_animal_pendant>>
+<<elseif $smokeVial is true>>
+    -> Throw the smoke vial at the goblin.
+        <<interrruptTimer none>>
+        <<jump Throw_the_smoke_vial_at_the_goblin>>
+<<endif>>
+-> Hide behind the throne.
+    <<interrruptTimer none>>
+    <<jump Hide_behind_the_throne>>
+===
+
+title: Say_that_youre_not_a_human
+position: 3121,272
+---
+Player: Who're you calling human? I'm actually an elf with short ears.
+
+Goblin Shaman: You don't smell like an elf. You reek of human stench!
+
+The goblin starts to wave its staff around in the air. Loud rumbling in the air grows as the goblin twirls the staff. You see lightning flash across the sky from a hole in the roof. You get a sense that the goblin is trying to cast some sort of lightning spell.
+
+Goblin Shaman: I'm going to vaporize you.
+
+You spot Garbanzo close by. He's hidden behind a potted plant. You need to distract the goblin somehow.
+
+What do you do? Timed.
+<<startTimer 12>>
+<<if $diamond is true>>
+    -> Offer the diamond as a bribe.
+        <<interrruptTimer none>>
+        <<jump Offer_the_diamond_as_a_bribe>>
+<<elseif $animalPendant is true>>
+    -> Use the animal pendant.
+        <<interrruptTimer none>>
+        <<jump Use_the_animal_pendant>>
+<<elseif $smokeVial is true>>
+    -> Throw the smoke vial at the goblin.
+        <<interrruptTimer none>>
+        <<jump Throw_the_smoke_vial_at_the_goblin>>
+<<endif>>
+-> Hide behind the throne.
+    <<interrruptTimer none>>
+    <<jump Hide_behind_the_throne>>
+===
+
+title: Offer_the_diamond_as_a_bribe
+position: 3669,-256
+---
+Player: Wait wait wait. I have a beautiful diamond that I'd like to give to you.
+
+You pull out the diamond and hold it out towards the goblin.
+
+The goblin stops swinging its staff for a moment to see the gemstone in your hand.
+
+Goblin Shaman: Is that a real diamond? And it's for me? Why didn't you say that sooner?
+
+As the goblin lowers it's staff Garbanzo reveals himself from behind the potted plant and pounces on the goblin. Garbanzo kicks the staff away and restrains the goblin.
+
+Garbanzo: I'll take that as payment for keeping you alive.
+
+Garbanzo takes the diamond from your hand.
+
+Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
+
+<<jump Follow_Garbanzo_to_the_treasure_room>>
+===
+
+title: Use_the_animal_pendant
+position: 3692,-83
+---
+You don the animal pendant and close your eyes. You hear the laughter of the goblin and the rumbling of the sky. You call upon the forest's aid.
+
+Suddenly the laughter turns to screams. You open your eyes to observe the goblin being attacked by a large bear in restraints. Several goblins are trying to stop the bears attacks. 
+
+Garbanzo reveals himself from behind the potted plant.
+
+Garbanzo: I think I'll leave that one alone. Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
+
+<<jump Follow_Garbanzo_to_the_treasure_room>>
+===
+
+title: Throw_the_smoke_vial_at_the_goblin
+position: 3681,118
+---
+You grip the smoke vial in your pocket and throw it on the ground near the goblin casting its spell. A large dense cloud of smoke engulfs the goblin. 
+
+Goblin Shaman: What is this? *cough* *cough* I can't see nuffing. *cough*
+
+Garbanzo reveals himself from behind the potted plant. Garbanzo dives into the smoke cloud and you hear a scream followed by muffled speech. The smoke clears and Garbanzo is standing on the goblin who's in restraints.
+
+Garbanzo: Where'd you get that smoke vial? Was it from a wizard in a tower? I stole his horse but I forgot to check his pockets.
+
+Garbanzo shrugs.
+
+Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
+
+<<jump Follow_Garbanzo_to_the_treasure_room>>
+===
+
+title: Hide_behind_the_throne
+position: 3702,326
+---
+You duck back behind the throne to take cover. You hear a commotion outside followed by muffled speech. You step out and see Garbanzo is standing on the goblin who is in restraints.
+
+Garbanzo looks in your direction.
+
+Garbanzo: Pft amateur.
+
+Garbanzo rolls his eyes at you.
+
+Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
+
+<<jump Follow_Garbanzo_to_the_treasure_room>>
+===
+
+title: Follow_Garbanzo_to_the_treasure_room
+position: 4190,-75
+---
+<<nextPosition none>>
+<<wait 2>>
+You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
+
+<<goToScene OgreRoom>>
+<<wait 2>>
+You approach the exit and you enter a large open area. 
+
+This area is decorated with tall stone columns. Some of these stone columns look very damaged. Opposite the hallway exit you spot a large wooden door. The door is guarded by a gigantic ogre that is wearing a grease soaked rag.
+
+What do you do?
+-> Insult the ogre.
+    <<jump Insult_the_ogre>>
+-> Try to sneak around the ogre.
+    <<jump Try_to_sneak_around_the_ogre>>
+===
+
+title: Insult_the_ogre
+position: 4603,-278
+---
+Player: Hey, big guy! When was the last time you took a bath?!
+
+The ogre looks at you angrily. Brows furrowed. Teeth bared.
+
+Ogre: No bath big enough for ogre in Eldoria! Argh!
+
+The ogre runs at you at an alarming pace. The ground shakes as the ogre thumps it's way towards you.
+
+This time around Garbanzo is nowhere to be seen. Who's going to save you this time? You need to think fast.
+
+What do you do? (Timed)
+<<startTimer 16>>
+<<if $dagger is true>>
+    -> Throw the dagger at the ogre.
+        <<interrruptTimer none>>
+        <<jump Throw_the_dagger_at_the_ogre>>
+<<elseif $axe is true>>
+    -> Use the axe to try and defend yourself.
+        <<interrruptTimer none>>
+        <<jump Use_the_axe_to_try_and_defend_yourself>>
+<<elseif $lantern is true>>
+    -> Throw the lantern at the floor.
+        <<interrruptTimer none>>
+        <<jump Throw_the_lantern_at_the_floor>>
+<<elseif $assassin is true>>
+    -> Call out for Val's help.
+        <<interrruptTimer none>>
+        <<jump Call_out_for_Vals_help>>
+<<endif>>
+-> Prepare to be flattened.
+    <<interrruptTimer none>>
+    <<jump Prepare_to_be_flattened>>
+===
+
+title: Try_to_sneak_around_the_ogre
+position: 4609,78
+---
+The ogre doesn't seem to have noticed you yet. It's just mindlessly staring at its surroundings. You get low to the ground and sneak up to the closest column. If you could quietly dip between the columns you could make it across the room. 
+
+You make it to the next column unnoticed. As you push off to the next column you hear a crumbling sound from above you. The last column was particularly weak and there are spots along it where it's been damage. A piece of stone falls from the column and lands on the floor with a loud BANG! 
+
+Ogre: Hey! No humans allowed back here!
+
+The ogre runs at you at an alarming pace. The ground shakes as the ogre thumps it's way towards you.
+
+This time around Garbanzo is nowhere to be seen. Who's going to save you this time? You need to think fast.
+
+What do you do? (Timed)
+<<startTimer 16>>
+<<if $dagger is true>>
+    -> Throw the dagger at the ogre.
+        <<interrruptTimer none>>
+        <<jump Throw_the_dagger_at_the_ogre>>
+<<elseif $axe is true>>
+    -> Use the axe to try and defend yourself.
+        <<interrruptTimer none>>
+        <<jump Use_the_axe_to_try_and_defend_yourself>>
+<<elseif $lantern is true>>
+    -> Throw the lantern at the floor.
+        <<interrruptTimer none>>
+        <<jump Throw_the_lantern_at_the_floor>>
+<<elseif $assassin is true>>
+    -> Call out for Val's help.
+        <<interrruptTimer none>>
+        <<jump Call_out_for_Vals_help>>
+<<endif>>
+-> Prepare to be flattened.
+    <<interrruptTimer none>>
+    <<jump Prepare_to_be_flattened>>
+===
+
+title: Throw_the_dagger_at_the_ogre
+position: 5065,-477
+---
+You pull the dagger from your pack and lift your arm behind your head. You focus your aim at it's head. You launch your arm forward and watch as the dagger spins in the air and falls in front of the ogre.
+
+You failed to hit the ogre with the dagger. The ogre hasn't noticed your poor attempt at a throw and it still advances towards you.
+
+As ogre stomps in your direction and you wait for your end you hear the ogre yelp in pain as it raises it's foot up and you see the dagger wedged into it's sole. The ogre spins around and you see Garbanzo hanging on the back of the ogre. The ogre spins around once more and it falls forward towards you. THUNK! Garbanzo stands on the ogre's back with a dagger lodged in its spine.
+
+Garbanzo: That's one golden arm of yours. Who taught *you* how to throw?
+
+He chuckles to himself.
+
+Garbanzo: The queen is definitely behind that wooden door. Do what you've been doing, distract her, while I'll do what I've been doing, which is cleaning up your mess. I'll go in first.
+
+<<jump Follow_behind_Garbanzo_into_the_room>>
+===
+
+title: Use_the_axe_to_try_and_defend_yourself
+position: 5058,-206
+---
+You grit your teeth and wield the axe in your hands. You swing wildly in the air. The ogre stops in its tracks.
+
+Ogre: Haha! Human thinks it can hurt me with that little thi-
+
+The ogre's words are cut off and the ogre begins to fall forward. THUNK! The ogre lands face first onto the floor. Garbanzo stands on the ogre's back with a dagger lodged in its spine.
+
+Garbanzo: He's right. Did you really think that axe was going to work?
+
+He chuckles to himself.
+
+Garbanzo: The queen is definitely behind that wooden door. Do what you've been doing, distract her, while I'll do what I've been doing, which is cleaning up your mess. I'll go in first.
+
+<<jump Follow_behind_Garbanzo_into_the_room>>
+===
+
+title: Throw_the_lantern_at_the_floor
+position: 5061,59
+---
+In an attempt to slow down the ogre you throw the lantern onto the floor. Oil spills out from the lantern and all over the ground. The ogre unknowingly runs over the oil and loses it's balance.
+
+The ogre spins around and you see Garbanzo hanging on the back of the ogre. The ogre spins around once more and it falls forward towards you. THUNK! Garbanzo stands on the ogre's back with a dagger lodged in its spine.
+
+Garbanzo: That's one golden arm of yours. Who taught *you* how to throw?
+
+He chuckles to himself.
+
+Garbanzo: The queen is definitely behind that wooden door. Do what you've been doing, distract her, while I'll do what I've been doing, which is cleaning up your mess. I'll go in first.
+
+<<jump Follow_behind_Garbanzo_into_the_room>>
+===
+
+title: Call_out_for_Vals_help
+position: 5064,318
+---
+You remember you have an ace up your sleeve. You ask Val for help. She said that you can ask her to "take care" of any enemies that I have. Now's a good time to do that. You whisper out for Val's help.
+
+Player: Val! Help me! Get rid of this ogre!
+
+Magical chains suddenly hold the ogre's legs in place. It struggles to move its legs.
+
+Ogre: Let go! Ogre will squash huma-
+
+The ogre's words are cut off and the ogre begins to fall forward. THUNK! The ogre lands face first onto the floor. Garbanzo stands on the ogre's back with a dagger lodged in its spine.
+
+Garbanzo: Those magical chains look familiar.
+
+A halfling appears from a cloud of smoke.
+
+Val: Nice to see you again Garbanzo.
+
+Garbanzo: You still owe me for the game of cards we had.
+
+Val: Ah, well that sounds like my cue to leave.
+
+A cloud of smoke engulfs Val and then dissapates. Val is gone.
+
+Garbanzo: The queen is definitely behind that wooden door. Do what you've been doing, distract her, while I'll do what I've been doing, which is cleaning up your mess. I'll go in first.
+
+<<jump Follow_behind_Garbanzo_into_the_room>>
+===
+
+title: Prepare_to_be_flattened
+position: 5048,616
+---
+You stand there stunned by the sheer size of the creature before you. 
+
+Ogre: Ha ha little human too scared to move! Ogre is coming to squish y-
+
+The ogre's words are cut off and the ogre begins to fall forward. THUNK! The ogre lands face first onto the floor. Garbanzo stands on the ogre's back with a dagger lodged in its spine.
+
+Garbanzo: Do you do anything besides stand there?
+
+Garbanzo: The queen is definitely behind that wooden door. Do what you've been doing, distract her, while I'll do what I've been doing, which is cleaning up your mess. I'll go in first.
+
+<<jump Follow_behind_Garbanzo_into_the_room>>
+===
+
+title: Follow_behind_Garbanzo_into_the_room
+position: 5582,-106
+---
+<<nextPosition none>>
+<<wait 2>>
+You sprint to the wooden door and push it open. 
+//*The player must pedal hard to push the door open.*
+
+<<goToScene TreasureRoom>>
+<<wait 2>>
+Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. Atop the mound of riches lies a large goblin. The goblin wears a robe too big for its stature and dons many rings and necklaces. This must be their leader.
+
+The goblin leader holds Garbanzo above the ground and looks in your direction then back at Garbanzo.
+
+Goblin Queen: I see, Garbanzo. You've been working with the humans. I remember you telling me that you would never work with a "disgusting" human.
+
+Through Garbanzo's choked voice.
+
+Garbanzo: I realised that they ain't so bad.
+
+Goblin Queen: "Ain't so bad?" Do you understand that we are at war with the humans, Garbanzo. It seems like you've gone soft over the years.
+
+Garbanzo: They're tryin' to survive just like us.
+
+The goblin queen looks in your direction.
+
+<<jump Tell_them_you_want_the_war_to_end>>
+===
+
+title: Tell_them_you_want_the_war_to_end
+position: 6057,-107
+---
+Player: I just want the war to end!
+
+The goblin throws Garbanzo behind her and slides down the hill of treasure. It meets your eyes and speaks with an angry tone.
+
+Goblin Queen: Do you understand how the humans have been treating goblins for the past century. We just want to be acknowledged and respected but you humans keep on putting us down. So I decided that it was about time that we took matters into our own hands and demanded the respect we deserved. That's why Eldoria is now mine. Then Granbell will be next.
+
+The goblin queen laughs manically to herself. From the top of the mountain of riches you spot Garbanzo crawling up and readying to jump.
+
+Goblin Queen: Guards! Guards! Seize these t-
+
+Garbanzo leaps from above and plunges his knife into the back of the goblin leader. Goblins crash into the room behind you.
+
+Garbanzo: Run! I'll hold them off!
+
+You jump from the window nearby. Stormhoof rides below and you land atop her.
+
+<<jump Escape_back_to_Granbell>>
+===
+
+title: Escape_back_to_Granbell
+position: 6570,-109
+---
+// *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
+
+You ride back to Granbell at a fast pace. On the way back you see the locations that you delivered to and some you don't recognise.
+
+You reach Granbell and tell Mistress Ellastra about what happened. She notifies the guards and they relay the information back up to the Aurelians.
+
+Word around the town has spread saying that the goblin forces in Eldoria are retreating.
+
+After a few hours a guardsman walks into the market center and reads an announcement.
+
+Guard: Listen all! The Aurelians have made an announcement. "A scout has informed us that the goblins at Eldoria are retreating. Now is the best time to assemble our forces and take back the kingdom of Eldoria." That is all from the announcement. As you were!
+
+Several groups of guards march through the market and out the gate.
+
+People around you rejoice and cheer. You look into the crowd ahead of you. You notice someone attempting to hide amongst crowd. It's small and green, has pointy ears and a big nose. You look even closer at your surroundings. You see more of these creatures hiding behind things out of sight of the towns people.
+
+Seems like you delivered something that changed your destiny forever.
+
+<<jump The_end>>
+===
+
+title: Wake_up_near_the_rocks
+position: -146,1543
+---
+<<goToScene WakeUpLargeRocks>>
+<<wait 2>>
+You wake up near the rocks that you camped near. The weather cleared over night. The bright sun of the day is shining down over your campsite.
+
+It's about time that you disposed of the package at the volcano.
+
+<<jump Ride_towards_the_volcano>>
+===
+
+title: Ride_towards_the_volcano
+position: 205,1848
+---
+<<goToScene ForestPath>>
+<<wait 2>>
+You look to your pouch where the special delivery should be.
+
+<<if $specialPackage is true>>
+    You're relieved that the special package sits there in your pouch. You think to yourself. What could be inside the package?
+
+    <<if $whistle is true>>
+        You remember that you have the whistle that the goblin gave you. You might be able to lure out the goblin with it and kill him with one of your items.
+
+        <<jump Blow_the_whistle>>
+    <<else>>
+        <<goToScene VolcanoBase>>
+        <<wait 2>>
+        You spot the jagged rocks of the volcano ahead of you. You are getting closer.
+    
+        <<jump Ride_to_the_volcano>>
+    <<endif>>
+<<elseif $specialPackage is false>>
+    The special package isn't there! You think to yourself. Where could the package have gone?
+
+    <<goToScene VolcanoBase>>
+    <<wait 2>>
+    You spot the jagged rocks of the volcano ahead of you. You are getting closer. Up ahead you see the same creature again atop his giant rat mount. You could get the package back if you can catch him!
+
+    <<jump Chase_the_goblin>>
+<<endif>>
+===
+
+title: Blow_the_whistle
+position: 549,1694
+---
+<<goToScene MeetYourFriends>>
+<<wait 2>>
+You purse your lips around the wooden whistle. You blow hard into the whistle. You hear nothing. Stormhoof shakes her head. Seems like it's not working. 
+
+On the path ahead of you a flash of green streaks across the path. You hear a THUD beside you. The goblin has attached itself onto Stormhoof's harness. It speaks to you.
+
+Garbanzo: You called? 
+
+The creature winks at you.
+
+Garbanzo: The package. Where is it?
+
+What do you do?
+-> Tell the goblin that he fell for your trap.
+    <<jump Tell_the_goblin_that_he_fell_for_your_trap>>
+-> Kick off the goblin.
+    <<jump Kick_off_the_goblin>>
+===
+
+title: Tell_the_goblin_that_he_fell_for_your_trap
+position: 910,1433
+---
+You grind Stormhoof to a halt in the middle of the path. 
+
+Player: Ha ha you fell for my trap!
+
+You reach down into your pack where you keep your items. You feel nothing. The goblin jumps down off Stormhoof.
+
+Garbanzo: You looking for these?
+
+He points to a sack of items in the dirt behind him. He kicks the bag into the forest.
+
+Garbanzo: You gotta watch your pockets. 
+
+He holds up the special package above his head and laughs.
+
+Garbanzo: Finally! It's all mine.
+
+A voice can be heard from the bushes.
+
+Adventurers: Hey! I see the goblin. He's over there! Get him!
+
+Seems like someone wants the goblin. This could be your chance to finally get rid of him.
+
+What do you do?
+-> Grab onto the goblin.
+    <<jump Grab_onto_the_goblin>>
+-> Distract the goblin.
+    <<jump Distract_the_goblin>>
+===
+
+title: Kick_off_the_goblin
+position: 903,1704
+---
+You attempt to kick the goblin off your horse but the goblin clings on. You grind Stormhoof to a halt in the middle of the path. 
+
+You reach down into your pack where you keep your items. You feel nothing. The goblin jumps down off Stormhoof.
+
+Garbanzo: You looking for these?
+
+He points to a sack of items in the dirt behind him. He kicks the bag into the forest.
+
+Garbanzo: You gotta watch your pockets.
+
+He holds up the special package above his head and laughs.
+
+Garbanzo: Finally! It's all mine.
+
+A voice can be heard from the bushes.
+
+Adventurers: Hey! I see the goblin. He's over there! Get him!
+
+Seems like someone wants the goblin. This could be your chance to finally get rid of him.
+
+What do you do?
+-> Grab onto the goblin.
+    <<jump Grab_onto_the_goblin>>
+-> Distract the goblin.
+    <<jump Distract_the_goblin>>
+===
+
+title: Distract_the_goblin
+position: 1219,1436
+---
+Player: Hey goblin! Why is your nose so big?!
+
+Garbanzo: What are you talking about human? This is a normal sized nose for a goblin!
+
+You've distracted the goblin long enough for the voice to show its face.
+
+<<jump Look_at_who_called_out>>
+===
+
+title: Grab_onto_the_goblin
+position: 1196,1690
+---
+You dive onto the goblin and grab hold of him.
+
+Garbanzo: Get off me human! What are you doing!?
+
+You've distracted the goblin long enough for the voice to show its face.
+
+<<jump Look_at_who_called_out>>
+===
+
+title: Look_at_who_called_out
+position: 1649,1581
+---
+<<if $metPetunia is true>>
+    You look to the voice and you see a small old woman. It's Petunia!
+
+    Petunia: Oh hello there deary. I've come to get back the cutlery that this nasty creature stole from me.
+
+    She looks at the goblin with fire in her eyes as she pulls out a large kitchen knife.
+<<elseif $metBjorn is true>>
+    You look to the voice and you see a large muscular man. It's Bjorn!
+
+    Bjorn: What are *you* doing here!? Funny to see you here! I came here to ask this... squishable... goblin for the whereabouts of my bear.
+
+    He stomps next to the goblin in an act of intimidation and peers down at the goblin.
+<<endif>>
+
+The goblin cowers in absolute terror. He drops the package to the floor. You quickly snatch it back into your pack.
+
+<<if $metPetunia is true>>
+    Petunia ties the goblin to a tree and looks him dead in the eyes.
+
+    Petunia: I will deal with you later... deary.
+<<elseif $metBjorn is true>>
+    Bjorn ties the goblin to a tree and looks him dead in the eyes.
+
+    Bjorn: I've been needing a new punching bag.
+<<endif>>
+
+Now that you've lost all your items it'll be dangerous travelling alone. 
+
+What do you do?
+-> Ask for help to get rid of the package.
+    <<jump Ask_for_help_to_get_rid_of_the_package>>
+-> Ask for help to deliver the package.
+    <<jump Ask_for_help_to_deliver_the_package>>
+===
+
+title: Ask_for_help_to_deliver_the_package
+position: 2128,1431
+---
+Player: It's so good to see you here. I was planning on delivering this special package of mine to Eldoria. Could you help me?
+
+<<if $metPetunia is true>>
+    Petunia: Deary, you needn't ask twice. I will help you on your quest.  
+<<elseif $metBjorn is true>>
+    Bjorn: Don't worry small human. I will always help a friend in need.
+<<endif>>
+
+<<if $metOli is true>>
+    A tall man walks out from the forest wielding a glowing hammer.
+
+    Oli: I smell the goblin. Is he he-Oh hello again. Looks like the goblin is dealt with. Where are you headed? I will join.
+<<elseif $metMudbrick is true>>
+    A small tortoise walking on two legs crawls out from a nearby bush.
+
+    Mudbrick: H-h-hello? Goblin are you there? Oh h-hi. Funny seeing you here. I see the goblin is dealt with. Are you all going somewhere? May I join?
+<<elseif $metFinn is true>>
+    A slender man wearing a pointed wizards hat walks out from behind a tree.
+
+    Finn: Ah there you are. I've been looking for you. Oh it's the courier. Well done on tying up this nasty thing. Are you headed somewhere? I can test out my new spells wherever you are going.
+<<endif>>
+
+Player: I just need help getting into Eldoria to deliver this package. Call it an adventure if you will.
+
+<<if $metLeyton is true>>
+    A man glowing with flames floats down from above.
+
+    Leyton: Did someone say adventure? Count me in.
+<<elseif $metThakali is true>>
+    A dragon man runs out into the clearing.
+
+    Thakali: Adventure!!? Thakali is coming too!
+<<elseif $metDaisy is true>>
+    A woman wielding a shiny blue greataxe appears before you.
+
+    Daisy: I overheard someone say adventure. Anything to let me swing this axe.
+<<elseif $metVal is true>>
+    A small halfling woman appears from a puff of smoke.
+
+    Val: Is there money involved? If there is then I'll partake in your adventure.
+<<endif>>
+
+Player: Wow I didn't realise you wanted to help me. Let's do this!
+
+-> Deliver the package to Eldoria with the help of friends.
+    <<jump Deliver_the_package_to_Eldoria_with_the_help_of_friends>>
+===
+
+title: Deliver_the_package_to_Eldoria_with_the_help_of_friends
+position: 2486,1454
+---
+<<goToScene ForestPath>>
+<<wait 2>>
+You and your party set off towards Eldoria.
+<<wait 5>>
+
+<<goToScene EldoriaGates>>
+<<wait 20>>
+<<nextPosition none>>
+<<wait 2>>
+You approach the gates of Eldoria. The gate doors swing open and a large bear lumbers from behind the open doors. To your relief, the bear is being held down by several goblins. 
+
+A goblin atop the bear speaks to you.
+
+Bear Goblin: Oi you. What a'you doin' 'ere?! You'd better get outa 'ere before my bear eats you alive. Haha.
+
+The other goblins laugh too. The bear growls and flails its arms around nearly hitting you. The goblins tighten the restraints around its neck.
+
+<<if $metBjorn is true>>
+    Bjorn: WAIT!! I KNOW THAT BEAR!! That's *MY* bear! You were late for the show and now I see why.
+
+    Bjorn growls and charges at the goblins. One by one the goblins scamper in all directions. Bjorn rips off the restraints from the bear and gives his bear a big hug.
+
+    Bjorn: I will look out for any more who try to come in. You go inside and make your delivery.
+
+<<elseif $metPetunia is true>>
+    Petunia: No one can resist my pastries. Would you all like a pastry? I've got plenty.
+
+    Petunia pulls out an array of pastries from her backpack. All the goblins let go of the bear and run towards the pastry selection. Petunia looks over to you.
+
+    Petunia: Don't worry deary. I'll keep these goblins busy. You go ahead and deliver that package.
+<<endif>>
+
+<<jump Continue_into_Eldoria>>
+===
+
+title: Continue_into_Eldoria
+position: 2929,1470
+---
+<<goToScene EldoriaCourtyard>>
+<<wait 2>>
+You walk through the gates and towards the inner castle doors. You pass a stable full of horses. You leave Stormhoof with the other horses in the stable.
+
+You approach the castle doors. They swing open with ease. 
+
+<<goToScene EldoriaThroneRoom>>
+<<wait 2>>
+You've entered the castle's throne room. The walls are high and are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. Ahead of you there is a goblin wielding an ornamented staff standing next to the throne. However, no one is sitting in the throne. The leader must be somewhere else.
+
+The goblin looks in your direction and points at you.
+
+Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot a lightning bolt frew your face.
+
+<<if $metOli is true>>
+    Oli: A lightning bolt you say. I will show you true lightning.
+
+    Oli fires a lightning bolt from his hammer. It lands directly on the goblin's chest, blasting it back, hitting the throne.
+
+    Oli: I will vanquish you evil creature! Go courier!
+<<elseif $metMudbrick is true>>
+    Mudbrick: A l-lightning bolt?! We can't have that!
+
+    You look over at Mudbrick and you see his form begin to change. What once was a small tortoise is now a giant, house crushing, tortoise. He reaches down at the goblin that stands there stunned at what he's looking at.
+
+    Mudbrick: Goooooooo. Iiiiiiii. Willllllllll. Staaaaay. H-heeeeerrreee.
+<<elseif $metFinn is true>>
+    Finn: Haha what an amateur spell.
+
+    A group of Finn's seemed to appear out of thin air and surround the goblin. 
+
+    Finn leans over to you and whispers.
+
+    Finn: I learned an invisibility spell. However, I never got to reconnect back as one. Get going before we-I mean *I* get tired.
+<<endif>>
+
+You'd better get a move on. You spot a hallway nearby. Lets hope it takes you where you need to go.
+
+<<jump Run_down_the_hallway>>
+===
+
+title: Run_down_the_hallway
+position: 3277,1484
+---
+<<goToScene OgreRoom>>
+<<wait 2>>
+You run down the hallway and into another room with tall stone columns. Some of these stone columns look very damaged. Opposite the hallway exit you spot a large wooden door. The door is guarded by a gigantic ogre that is wearing a grease soaked rag.
+
+<<if $metLeyton is true>>
+    Leyton: This one looks flammable.
+
+    Leyton collects his hands together and a small fire begins to form into a ball in his palms. Leyton lobs this fireball directly at the ogre. The fireball explodes upon impact with the ogre. The ogre topples over onto the ground. 
+
+    Leyton: I think you need to go through that door.
+<<elseif $metThakali is true>>
+    Thakali: Thakali!!!
+
+    Thakali runs towards the ogre, swinging his axe's wildly. As he swings he occasionally hits a stone column, damaging it further. The columns begin to topple over and eventually land on the ogre.
+
+    Thakali: Hahah! Thakali wins!
+<<elseif $metDaisy is true>>
+    Daisy: Now, you're a big one. But the bigger they are the harder they fall.
+
+    Daisy runs towards the ogre axe outstretched ready to swing. She jumps up into the air with great height. She lifts her axe above her head. The axe comes crashing down onto the ogre. 
+
+    Daisy: Huh. I thought this would have been harder. Get in there courier.
+<<elseif $metVal is true>>
+    Val waves to the ogre.
+
+    Val: Long time no see Grugnar.
+
+    Grugnar: Val? Long time since Grugnar smelled deception.
+
+    Val leans over to you and whispers.
+
+    Val: Better get moving while Grugnar is distracted. Grugnar is a real talker.
+
+    Val and Grugnar proceed to have a full on conversation. Occasionally Grugnar looks away from the door. That's your chance.
+<<endif>>
+
+<<jump Go_through_the_door>>
+===
+
+title: Go_through_the_door
+position: 3675,1488
+---
+<<nextPosition none>>
+<<wait 2>>
+You sprint to the wooden door and push it open. 
+//*The player must pedal hard to push the door open.*
+<<wait 2>>
+
+<<goToScene TreasureRoom>>
+<<wait 2>>
+Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. There doesn't seem to be anyone here.
+
+Your party walks in from behind you.
+
+<<if $metPetunia is true>>
+    Petunia: This is alot of treasure deary.
+<<elseif $metBjorn is true>>
+    Bjorn: Wow! That's incredible.
+<<endif>>
+
+<<if $metOli is true>>
+    Oli: Hmmph. Doesn't seem like there are any goblins in here.
+<<elseif $metMudbrick is true>>
+    Mudbrick: I-I-I don't know if we can c-carry all of this.
+<<elseif $metFinn is true>>
+    Finn: Hmm maybe I have a spell that'll make this easier to take home.
+<<endif>>
+
+<<if $metLeyton is true>>
+    Leyton: I'm going to spend my portion on buying a house full of fireplaces.
+<<elseif $metThakali is true>>
+    Thakali: Thakali can buy more tomatoes!!
+<<elseif $metDaisy is true>>
+    Daisy: Maybe I could invest it into growing more berry bushes. Or another axe.
+<<elseif $metVal is true>>
+    Val: Pinch me. I must be dreaming!
+<<endif>>
+
+What do you do?
+-> Open the package and leave the treasure.
+    <<jump Open_the_package_and_leave_the_treasure>>
+-> Drop the package and take the treasure.
+    <<jump Drop_the_package_and_take_the_treasure>>
+===
+
+title: Open_the_package_and_leave_the_treasure
+position: 4098,1293
+---
+You tear off the cloth wrapping that covers the package. You hold in your hands a glorious crown. The crown is adorned with precious materials and gemstones that seem foreign and otherworldy. The package also contains a note which says that this crown is an offering for the goblin leader in Eldoria.
+
+"To the Goblin Queen, we hope that this reaches you safely by our esteemed courier. We, the Aurelians, bring this crown to you to acknowledge your presence in the lands. We want to grant you your freedom and your own kingdom. We hope that you will see this offering as a sign of a truce between the humans and goblins. Let this be a symbol of our peaceful future together."
+
+Seems like this would have been useful if there were someone here to deliver to. Maybe they will be back. You decide that it would be best to just leave the crown with the treasures.
+
+<<jump Leave_Eldoria>>
+===
+
+title: Drop_the_package_and_take_the_treasure
+position: 4081,1594
+---
+You throw the package away. The treasure is worth more than the trouble of delivering that package.
+
+You tell your party to start collecting as much of the treasure as they can. They start to chatter amongst themselves as they scoop up the bounty.
+
+<<if $metPetunia is true and $metDaisy is true>>
+    Daisy: Hey mum! Maybe we could invest in another bakery. That'll be great wouldn't it.
+
+    Petunia: Oh deary. You know I'd love another shop but you'd have to pick me more berries.
+
+    They chuckle to themselves.
+<<endif>>
+
+<<if $metBjorn is true and $metOli is true>>
+    Bjorn: I wonder if this could buy me a new set of weights.
+
+    Oli: Lifting this hammer is all I need.
+
+    Bjorn: That hammer doesn't look any heavier than a dog.
+
+    Oli: Try it.
+
+    Oli places the hammer on the floor. Bjorn initially struggles to lift the hammer from the floor but with alot of straining and sweating he manages to lift the hammer to his knees.
+
+    They laugh together.
+<<endif>>
+
+<<if $metMudbrick is true and $metLeyton is true>>
+    Mudbrick: I'm a little too sm-sm-small to carry anything.
+
+    Leyton: Maybe we can melt it down and mold it into another shell for you.
+
+    Leyton slaps Mudbrick's shell and they laugh.
+<<endif>>
+
+<<if $metFinn is true and $metThakali is true>>
+    Thakali: Magical elf man can you please turn all this treasure into tomatoes pleeeease!
+
+    Finn: I don't know if I have a spell fo-wait maybe I do.
+
+    Finn flicks through the pages of a spell book. Thakali waits eagerly.
+<<endif>>
+
+<<if $metVal is true>>
+    Val: Thanks courier. I can finally pay off all my debts.
+<<endif>>
+
+-> Leave Eldoria.
+    <<jump Leave_Eldoria>>
+===
+
+title: Leave_Eldoria
+position: 4535,1436
+---
+You leave Eldoria. 
+<<goToScene ForestPath>>
+<<wait 2>>
+
+One of your party members approaches you and asks if you'd like to go on more adventures with them. You can abandon your job as a courier and make your riches through adventuring with them. You accept their offer and ride with them to your next adventure. 
+
+Seems like you delivered something that changed your destiny forever.
+
+<<jump The_end>>
+===
+
+title: Ask_for_help_to_get_rid_of_the_package
+position: 2131,1868
+---
+Player: It's so good to see you here. I was planning destroying this special package. Could you help me?
+
+<<if $metPetunia is true>>
+    Petunia: Deary, you needn't ask twice. I will help you on your quest.  
+<<elseif $metBjorn is true>>
+    Bjorn: Don't worry small human. I will always help a friend in need.
+<<endif>>
+
+<<if $metOli is true>>
+    A tall man walks out from the forest wielding a glowing hammer.
+
+    Oli: I smell the goblin. Is he he-Oh hello again. Looks like the goblin is dealt with. Where are you headed? I will join.
+<<elseif $metMudbrick is true>>
+    A small tortoise walking on two legs crawls out from a nearby bush.
+
+    Mudbrick: H-h-hello? Goblin are you there? Oh h-hi. Funny seeing you here. I see the goblin is dealt with. Are you all going somewhere? May I join?
+<<elseif $metFinn is true>>
+    A slender man wearing a pointed wizards hat walks out from behind a tree.
+
+    Finn: Ah there you are. I've been looking for you. Oh it's the courier. Well done on tying up this nasty thing. Are you headed somewhere? I can test out my new spells wherever you are going.
+<<endif>>
+
+Player: I just need help getting to the volcano to destroy this package. Call it an adventure if you will.
+
+<<if $metLeyton is true>>
+    A man glowing with flames floats down from above.
+
+    Leyton: Did someone say adventure? Count me in.
+<<elseif $metThakali is true>>
+    A dragon man runs out into the clearing.
+
+    Thakali: Adventure!!? Thakali is coming too!
+<<elseif $metDaisy is true>>
+    A woman wielding a shiny blue greataxe appears before you.
+
+    Daisy: I overheard someone say adventure. Anything to let me swing this axe.
+<<elseif $metVal is true>>
+    A small halfling woman appears from a puff of smoke.
+
+    Val: Is there money involved? If there is then I'll partake in your adventure.
+<<endif>>
+
+Player: Wow I didn't realise you wanted to help me. Let's do this!
+
+-> Destroy the package with the help of friends.
+    <<jump Destroy_the_package_with_the_help_of_friends>>
+===
+
+title: Destroy_the_package_with_the_help_of_friends
+position: 2495,1867
+---
+<<goToScene ForestPath>>
+<<wait 2>>
+You and your party set off towards the volcano. 
+<<wait 5>>
+
+<<goToScene VolcanoBase>>
+<<wait 2>>
+
+You ride swiftly up the path towards the volcano. You see the forest around you transform into a bleak landscape. Jagged rocks pepper the land and molten rivers stream from the volcano. The smell of ash lingers in the air around you. There is no way anything lives here.
+
+The path is becoming too narrow for Stormhoof to safely traverse. You leave Stormhoof at the base of the volcano.
+
+You follow a path to the top of the volcano. 
+
+<<nextPosition none>>
+<<wait 2>>
+If you're going to get rid of this package you're going to need to throw it into the top of the volcano and into the lava.
+
+<<if $metBjorn is true>>
+    <<goToScene LavaRiverBjorn>>
+    <<wait 2>>
+    The path up ahead has been covered by flowing lava that is seeping out of a hole in the side of the volcano. The lava has created a barrier between your side of the track and the rest of the track that leads up the volcano.
+
+    Bjorn: No worries I've got this.
+
+    Bjorn kneels down in front of the river of lava and faces you. He indicated to jump into his hands.
+
+    Bjorn: I will lift you up and throw you over the river. Come on.
+
+    <<nextPosition none>>
+    <<wait 2>>
+    You run up to Bjorn and he tosses you, with all his strength, over the river.
+    <<wait 2>>
+
+    <<nextPosition none>>
+    <<wait 2>>
+    Bjorn: Go ahead. I'll wait with your horse.
+
+<<elseif $metPetunia is true>>
+    <<goToScene LavaRiverPetunia>>
+    <<wait 2>>
+    The path up ahead has been covered by flowing lava that is seeping out of a hole in the side of the volcano. The lava has created a barrier between your side of the track and the rest of the track that leads up the volcano.
+
+    Petunia: You're lucky that I always carry a set of heat resistant plates. I'll spread them across the lava and you just run over them.
+
+    Petunia throws out her heat resistant plates onto the lava. 
+    
+    <<nextPosition none>>
+    <<wait 2>>
+    You quickly run across the lava and over to the other side.
+    <<wait 2>>
+
+    <<nextPosition none>>
+    <<wait 2>>
+    Petunia: You go on deary. I'll wait at the base of the volcano.
+<<endif>>
+
+<<jump Continue_following_the_path_up_the_volcano>>
+===
+
+title: Continue_following_the_path_up_the_volcano
+position: 2902,1879
+---
+<<goToScene MagicFog>>
+<<wait 2>>
+The path you follow advances up the volcano and leads you to a very dark cave entrance. Looks like you must enter the cave to go up the volcano. 
+
+<<nextPosition none>>
+<<wait 2>>
+
+You approach the cave entrance. This cave seems alot darker than normal, almost as if its being shrouded by a magical black fog. You try to walk through the mist. Everything goes pitch black as you continue walking. You come out of the mist to the exact place you came in. Something seems odd about this fog.
+
+<<if $metOli is true>>
+    Oli: Magical darkness. I know how to deal with this. Fear my thunder!
+
+    Oli holds his hammer in front of himself. A loud thunderous crack is heard and the smog is split in twain. He leads the way through while the smog has been parted.
+
+    <<nextPosition none>>
+    <<wait 2>>
+
+    Oli: I will wait here for your return. The smog will close and I will part it once more.
+<<elseif $metMudbrick is true>>
+    Mudbrick: I've seen this b-b-before. It would creep up to the pond at night. We used the light of the m-m-mm-moon berries to manuever through the smog.
+
+    Mudbrick pulls out a few berries from his pocket. He shakes the berries in his fists and they glow a bright white light. Mudbrick leads a path through the smog placing a berry behind him as he walks.
+
+    <<nextPosition none>>
+    <<wait 2>>
+
+    Mudbrick: I'll wait here for you. We can use the b-b-berries to get back.
+<<elseif $metFinn is true>>
+    Finn: Ah yes. Magical darkness. I recently learned a new spell to deal with such obstructions.
+
+    Finn holds his palms outward towards the darkness. He mumbles something under his breath. The smog is then sucked into Finn's palms. You both walk through. Finn coughs up a small smog cloud.
+
+    Finn: This'll only last a moment. I'll wait here for you. Go on ahead.
+
+    <<nextPosition none>>
+    <<wait 2>>
+<<else>>
+    You figure that there is no other way up the volcano. You close your eyes and blindly run into the smog. The smog feels heavier than the last time you went into the smog.
+
+    // *Pedal to push through the smog.*
+
+    <<specificPosition IntoCaveLava>>
+    <<wait 2>>
+    You reach the other side of the smog and run close to a pool of lava. You turn and look behind you at the smog. Seems like running through the smog worked out.
+<<endif>>
+
+<<jump Go_further_into_the_cave>>
+===
+
+title: Go_further_into_the_cave
+position: 3280,1908
+---
+<<if $metLeyton is true>>
+    <<goToScene InsideVolcanoFriends>>
+    <<wait 2>>
+    The further into the cave you go the higher up the volcano you feel.
+
+    You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
+
+    At the top of a steep cliff face sits a ledge where you can just make out the cave's exit.
+
+    Leyton: No worries. I can fly you up there. You'd have to drop your pack.
+
+    <<specificPosition LeytonFlyUp>>
+    <<wait 2>>
+    You remove your pack but hold onto the package. Leyton grabs your back and you feel a sense of weightlessness as you're lifted into the air. 
+    
+    <<wait 5>>
+    Leyton places you onto the ledge where you can see out the cave's exit.
+    <<specificPosition UpOnCliff>>
+    <<wait 2>>
+
+    Leyton: Not too far to the top. I'm pretty tired. I'll wait here.
+<<elseif $metThakali is true>>
+    <<goToScene InsideVolcanoFriends>>
+    <<wait 2>>
+    The further into the cave you go the higher up the volcano you feel.
+
+    You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
+
+    At the top of a steep cliff face sits a ledge where you can just make out the cave's exit.
+
+    Thakali: Courier hold onto Thakali's tail. Thakali will climb the wall with axes.
+
+    <<specificPosition ThakaliClimbUp>>
+    <<wait 2>>
+    You remove your pack but hold onto the package. Thakali swing his axes into the cliff face and the axes, to your surprise, pierce the rock and lodge themselves securely into the stone. You hold tightly onto Thakali's tail as he climbs up the cliff. One swing at a time. 
+    <<wait 5>>
+
+    <<specificPosition UpOnCliff>>
+    <<wait 2>>
+    You make it to the top where you can see out the cave's exit.
+
+    Thakali: Courier must go up, up to top. Thakali wait here for courier when courier is finished.
+<<elseif $metDaisy is true>>
+    <<goToScene InsideVolcanoFriends>>
+    <<wait 2>>
+    The further into the cave you go the higher up the volcano you feel.
+
+    You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
+
+    At the top of a steep cliff face sits a ledge where you can just make out the cave's exit.
+
+    Daisy: Doesn't look *too* high.
+
+    Daisy runs back. Readies her hooves. She hops, skips, then jumps up just close enough to the edge for her to grab a hold of. She lifts herself up onto the side and lowers a rope down. 
+    
+    <<specificPosition DaisyRopeUp>>
+    <<wait 2>>
+    You climb the rope. 
+    <<wait 5>>
+
+    <<specificPosition UpOnCliff>>
+    <<wait 2>>
+    You make it to the top where you can see out the cave's exit.
+
+    Daisy: I'll wait here. You go do what you need to do sweetie.
+<<elseif $metVal is true>>
+    <<goToScene InsideVolcanoFriends>>
+    <<wait 2>>
+    The further into the cave you go the higher up the volcano you feel.
+
+    You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
+
+    At the top of a steep cliff face sits a ledge where you can just make out the cave's exit.
+
+    Val: Stand back. I got this.
+
+    Val fires a few firebolt's into the cave's rooftop. You feel the volcano rumble in anger. A giant stalactite falls from the roof and pierces the floor. It's top, a smooth brittle fracture from it's connection to the roof. Another falls, but smaller. Then another, and another. A set of volcanic rock stairs are formed from fallen stalactites.
+
+    <<specificPosition ValStepUp>>
+    <<wait 2>>
+    Val: Hey! It worked! I was just shooting stuff into the roof to see what would happen. It was a gamble honestly.
+    <<wait 5>>
+
+    <<specificPosition UpOnCliff>>
+    <<wait 2>>
+    You make it to the top where you can see out the cave's exit.
+<<else>>
+    <<goToScene InsideVolcanoStairs>>
+    <<wait 2>>
+    The further into the cave you go the higher up the volcano you feel.
+
+    You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
+
+    At the top of a steep cliff face sits a ledge where you can just make out the cave's exit.
+
+    You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
+    
+    A large set of stone stairs spirals to the top of the cave. You can follow these up. Although it may be a little hard with all the weight you are carrying on your back.
+
+    <<nextPosition none>>
+    <<wait 10>>
+
+    <<nextPosition none>>
+    <<wait 2>>
+    You make it to the top where you can see out the cave's exit.
+<<endif>>
+
+<<jump Go_to_the_top_of_the_volcano>>
+===
+
+title: Go_to_the_top_of_the_volcano
+position: 3644,1899
+---
+<<goToScene VolcanoTop>>
+<<wait 2>>
+You leave the cave and follow the path up the volcano a little further. You've reached the top of the volcano. You look out to the landscape and you can see Granbell and Eldoria from here. You see the forest below and the farms in the distance.
+
+<<nextPosition none>>
+<<wait 2>>
+There is an outcropping that leans over the volcano's pit of lava.
+<<wait 10>>
+
+What do you do?
+-> Open the package then throw it into the lava.
+    <<jump Open_the_package_then_throw_it_into_the_lava>>
+-> Just drop the package into the lava without opening it.
+    <<jump Just_drop_the_package_into_the_lava_without_opening_it>>
+===
+
+title: Open_the_package_then_throw_it_into_the_lava
+position: 4079,1851
+---
+<<nextPosition none>>
+<<wait 2>>
+You tear off the cloth wrapping that covers the package. You hold in your hands a glorious crown. The crown is adorned with precious materials and gemstones that seem foreign and otherworldy. The package also contains a note which says that this crown is an offering for the goblin leader in Eldoria.
+
+"To the Goblin Queen, we hope that this reaches you safely by our esteemed courier. We, the Aurelians, bring this crown to you to acknowledge your presence in the lands. We want to grant you your freedom and your own kingdom. We hope that you will see this offering as a sign of a truce between the humans and goblins. Let this be a symbol of our peaceful future together."
+
+<<jump Drop_it_into_the_lava>>
+===
+
+title: Just_drop_the_package_into_the_lava_without_opening_it
+position: 4073,2102
+---
+<<nextPosition none>>
+<<wait 2>>
+You remain clueless to what hides beneath the package's cloth wrapping. 
+
+<<jump Drop_it_into_the_lava>>
+===
+
+title: Drop_it_into_the_lava
+position: 4521,1992
+---
+You toss the package into the fiery depths and watch it plop into the lava and sink below.
+
+A bubble of molten rock bursts out from where it landed. The bubbles of molten rock begin to multiply. The volcano starts to shake. The lava rises. You need to get off the volcano, QUICKLY!
+
+<<goToScene ForestPath>>
+<<wait 2>>
+You run back to your party and escape into the forest far from the volcano. An eruption can be heard away in the distance. One of your party members approaches you and asks if you'd like to go on more adventures with them. You can abandon your job as a courier and make your riches through adventuring with them. You accept their offer and ride with them to your next adventure. 
+
+Seems like you delivered something that changed your destiny forever.
+
+<<jump The_end>>
+===
+
+title: Chase_the_goblin
+position: 568,2072
+---
+You chase the goblin up the path towards the volcano. You can't let it out of your sight. 
+
+You see the forest around you transform into a bleak landscape. Jagged rocks pepper the land and molten rivers stream from the volcano. The smell of ash lingers in the air around you. There is no way anything lives here.
+
+<<wait 10>>
+
+The path is becoming too narrow for Stormhoof to safely traverse. You leave Stormhoof at the base of the volcano.
+
+<<nextPosition none>>
+<<wait 2>>
+
+You follow the goblin up the path to the top of the volcano. As you turn around a corner of the path you lose sight of the goblin. You assume he's going to the top as well. Better keep going up.
+
+<<jump Follow_the_path_to_the_top_of_the_volcano>>
+===
+
+title: Ride_to_the_volcano
+position: 513,2721
+---
+You ride swiftly up the path towards the volcano. You see the forest around you transform into a bleak landscape. Jagged rocks pepper the land and molten rivers stream from the volcano. The smell of ash lingers in the air around you. There is no way anything lives here.
+
+<<wait 10>>
+
+The path is becoming too narrow for Stormhoof to safely traverse. You leave Stormhoof at the base of the volcano.
+
+<<nextPosition none>>
+<<wait 2>>
+
+You follow a path to the top of the volcano. If you're going to get rid of this package you're going to need to throw it into the top of the volcano and into the lava.
+
+<<jump Follow_the_path_to_the_top_of_the_volcano>>
+===
+
+title: Follow_the_path_to_the_top_of_the_volcano
+position: 995,2617
+---
+// *Pedal hard to climb the steep sections of the volcano.*
+<<if $muscleSpirit is true>>
+    <<goToScene LavaRiverMuscleSpirit>>
+    <<wait 2>>
+    The path up ahead has been covered by flowing lava that is seeping out of a hole in the side of the volcano. The lava has created a barrier between your side of the track and the rest of the track that leads up the volcano.
+
+    What do you do?
+    -> Embrace the muscle spirit.
+        <<jump Embrace_the_muscle_spirit>>
+<<elseif $pattersbyOriginal is true>>
+    <<goToScene LavaRiverPastry>>
+    <<wait 2>>
+    The path up ahead has been covered by flowing lava that is seeping out of a hole in the side of the volcano. The lava has created a barrier between your side of the track and the rest of the track that leads up the volcano.
+
+    What do you do?
+    -> Eat the Pattersby Pastry.
+        <<jump Eat_the_Pattersby_Pastry>>
+<<endif>>
+===
+
+title: Embrace_the_muscle_spirit
+position: 1473,2424
+---
+You close your eyes and you feel a sense of immense strength possess you. You feel the power grip your muscles. It's as if you've lost control of your own body's movement. Your arms reach for a large stone boulder nearby. You lift the boulder over your head and throw it into the hole that the lava is coming out of.
+
+The rock has stopped the flow of the lava. This'll only hold temporarily you'd better get across quickly. 
+
+<<nextPosition none>>
+<<wait 2>>
+You step through where the lava previously flowed and reach the other side of the track.
+<<wait 2>>
+<<nextPosition none>>
+<<wait 2>>
+
+<<jump Continue_up_the_volcano>>
+===
+
+title: Eat_the_Pattersby_Pastry
+position: 1461,2853
+---
+You grab the Pattersby Pastry from your satchel and take a big bite out of it. You feel a sudden jolt of physical energy pulse through your body. You feel as though you could jump over a mountain! You can use your new found agility to jump over the lava river.
+
+You take a few steps back. You run up to the gap and leap from the edge. 
+
+<<nextPosition none>>
+<<wait 2>>
+You fly over the river and onto the other side of the track.
+<<wait 2>>
+You've successfully crossed the lava river. Now you must press on.
+<<nextPosition none>>
+<<wait 2>>
+
+<<jump Continue_up_the_volcano>>
+===
+
+title: Continue_up_the_volcano
+position: 1986,2678
+---
+<<goToScene MagicFog>>
+<<wait 2>>
+The path you follow advances up the volcano and leads you to a very dark cave entrance. Looks like you must enter the cave to go up the volcano. 
+
+<<nextPosition none>>
+<<wait 2>>
+You approach the cave entrance. This cave seems alot darker than normal, almost as if its being shrouded by a magical black fog. 
+
+<<specificPosition IntoCaveReset>>
+<<wait 2>>
+You try to walk through the mist. Everything goes pitch black as you continue walking.
+
+<<specificPosition CaveEntrance>>
+<<wait 2>>
+You come out of the mist to the exact place you came in. Something seems odd about this fog.
+
+What do you do?
+<<if $diamond is true>>
+    -> Hold out the diamond in front of you.
+        <<jump Hold_out_the_diamond_in_front_of_you>>
+<<endif>>
+
+<<if $animalPendant is true>>
+    -> Use the animal pendant to get help from the forest.
+        <<jump Use_the_animal_pendant_to_get_help_from_the_forest>>
+<<endif>>
+
+<<if $smokeVial is true>>
+    -> Open the smoke vial.
+        <<jump Open_the_smoke_vial>>
+<<endif>>
+
+<<if $diamond is false and $animalPendant is false and $smokeVial is false>>
+    -> Close your eyes and blindly run through.
+        <<jump Close_your_eyes_and_blindly_run_through>>
+<<endif>>
+===
+
+title: Close_your_eyes_and_blindly_run_through
+position: 2516,2440
+---
+You figure that there is no other way up the volcano. You close your eyes and blindly run into the smog. 
+
+<<specificPosition IntoCaveLava>>
+<<wait 2>>
+
+The smog feels heavier than the last time you went into the smog.
+
+// *Pedal to push through the smog.*
+
+You reach the other side of the smog and run close to a pool of lava. You turn and look behind you at the smog. Seems like running through the smog worked out.
+
+<<jump Delve_further_into_the_volcano>>
+===
+
+title: Hold_out_the_diamond_in_front_of_you
+position: 2518,2629
+---
+In an attempt to try *anything* to get through the magical mist you pull out the diamond from your pocket and hold it out ahead of you as you walk into the darkness. 
+
+<<specificPosition IntoCave>>
+<<wait 2>>
+To your surprise the darkness seems to be lessening directly in front of the diamond. You can just barely see ahead of yourself. You continue walking through the smog and see a clearing on the other side.
+
+<<wait 4>>
+
+You've passed the smog and you're no longer at the entrance of the cave. You find yourself deeper within the volcano.
+
+<<jump Delve_further_into_the_volcano>>
+===
+
+title: Use_the_animal_pendant_to_get_help_from_the_forest
+position: 2517,2849
+---
+You open your pouch to find the animal pendant. You wear the pendant around your neck and close your eyes to imagine the forest creatures coming to help you.
+
+Before you open your eyes you hear a "squawk" and a "craw". You open your eyes and witness a flock of forest birds. They beat their wings in unison, creating a strong gust of wind directed at the smog. The darkness dissipates and you can clearly see the other side of the track. 
+
+<<specificPosition IntoCave>>
+<<wait 10>>
+You remove the pendant and the birds fly away.
+
+<<jump Delve_further_into_the_volcano>>
+===
+
+title: Open_the_smoke_vial
+position: 2519,3164
+---
+You wonder about the smoke vial in your pocket. How'd the smoke get in there in the first place? You think that the vial must have magical properties to hold in magical smoke. You grip the smoke vial in your pocket and hold it in the air. You pop the cork out of the top of the vial. 
+
+Exactly as you had thought, the smog from the cave is sucked into the vial you hold in your hand. The darkness has cleared and you can see the other side of the track. 
+
+<<specificPosition IntoCave>>
+<<wait 10>>
+
+<<jump Delve_further_into_the_volcano>>
+===
+
+title: Delve_further_into_the_volcano
+position: 3443,2814
+---
+<<if $dagger is true>>
+    <<goToScene InsideVolcanoLift>>
+    <<wait 2>>
+    The further into the cave you go the higher up the volcano you feel.
+
+    You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
+
+    You see a strange contraption beside the wall of the cave. It looks like a lift. You look up and it seems to connect to a cliff that gleams with the light of day.
+
+    The lift is held down on the floor by stones which are tied by a rope to the side of the lift. In the center of the lift is a foot crank. The foot crank must be the way to pull the lift up.
+
+    What do you do?
+    -> Use the lift with the weights on.
+        <<jump Use_the_lift_with_the_weights_on>>
+    -> Cut off the weights and use the lift.
+        <<jump Cut_off_the_weights_and_use_the_lift>>
+<<elseif $axe is true>>
+    <<goToScene InsideVolcanoTree>>
+    <<wait 2>>
+    The further into the cave you go the higher up the volcano you feel.
+
+    You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
+
+    You see a single tree growing within the cave reaching up to the sunlight from above. Vertically, along the cave wall there is a cliff that gleams with the light of day.
+
+    The tree is not close to the cliff but if it were to topple over and lean on the cliff it would reach the ledge.
+
+    What do you do?
+    -> Climb the tree and jump to the cliff.
+        <<jump Climb_the_tree_and_jump_to_the_cliff>>
+    -> Use the axe to chop the tree for it to lean over.
+        <<jump Use_the_axe_to_chop_the_tree_for_it_to_lean_over>>
+<<elseif $magicalCompass is true>>
+    <<goToScene InsideVolcanoPillars>>
+    <<wait 2>>
+    The further into the cave you go the higher up the volcano you feel.
+    
+    You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
+
+    You see a set of pillars of various heights that lead up to the cliff that gleams with the light of day. You approach the pillars. They are made of a kind of volcanic rock. You touch one. That one seems sturdy enough to stand on. You touch another and it crumbles to the floor in a devastating heap. Seems like some pillars are stronger than others. You'd better follow the right path up the rocks or it could mean you'd have a rough time climbing the rubble.
+
+    What do you do?
+    -> Climb the pillars randomly.
+        <<jump Climb_the_pillars_randomly>>
+    -> Use the magic compass to guide you.
+        <<jump Use_the_magic_compass_to_guide_you>>
+<<elseif $assassin is true>>
+    <<goToScene InsideVolcanoBeast>>
+    <<wait 2>>
+    The further into the cave you go the higher up the volcano you feel.
+    
+    You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
+
+    A growing hot mass of fiery lava and solid rock form into a large beast before your eyes. The lava beast looks to be guarding the way to the top of the cave. It doesn't say anything to you but you sense that if you were to approach it it would not go well. Across it's back you see a fine set of solid rock stairs that you could safely climb up to reach the cave top.
+
+    What do you do?
+    -> Attempt to climb the lava guardian.
+        <<jump Attempt_to_climb_the_lava_guardian>>
+    -> Call for Val to remove the lava guardian.
+        <<jump Call_for_Val_to_remove_the_lava_guardian>>
+<<else>>
+    <<goToScene InsideVolcanoStairs>>
+    <<wait 2>>
+    The further into the cave you go the higher up the volcano you feel.
+    
+    You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
+
+    A large set of stone stairs spirals to the top of the cave. You can follow these up. Although it may be a little hard with all the weight you are carrying on your back.
+
+    // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+
+    // *Very Hard. Walk the stone stairs.*
+    -> Walk the stone stairs to the top of the cave.
+        <<jump Walk_the_stone_stairs_to_the_top_of_the_cave>>
+<<endif>>
+===
+
+title: Use_the_lift_with_the_weights_on
+position: 3976,2982
+---
+<<nextPosition none>>
+<<wait 2>>
+You place your foot on the crank and use all your strength to pedal the crank and lift the platform. The weights are making the lift alot heavier than if they were off. However, the lift is still operable. 
+
+You use the foot pedal to lift yourself up the cave.
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+
+// *Hard. Turn the crank.*
+<<wait 10>>
+<<jump Take_the_lift_to_the_top_of_the_cave>>
+===
+
+title: Cut_off_the_weights_and_use_the_lift
+position: 3980,2730
+---
+<<nextPosition none>>
+<<wait 2>>
+You bring the obsidian dagger to the rope holding the weights. Like a hot knife through butter, the dagger slides through the fibres of the ropes and releases the lift from the weights. 
+
+You can now use the foot pedal with ease to lift yourself up the cave.
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+
+// *Easy. Turn the crank.*
+<<wait 10>>
+<<jump Take_the_lift_to_the_top_of_the_cave>>
+===
+
+title: Take_the_lift_to_the_top_of_the_cave
+position: 4346,2849
+---
+<<nextPosition none>>
+<<wait 2>>
+You use the lift to reach the top of the cave. At the top of the cave you see an opening that leads back outside.
+
+<<jump Leave_the_cave>>
+===
+
+title: Climb_the_tree_and_jump_to_the_cliff
+position: 3982,3248
+---
+<<nextPosition none>>
+<<wait 2>>
+You decide that the best you could do is climb the tree and jump from the top towards the cliff's ledge.
+
+The vertical incline of the tree is hard to climb especially with the pack you are carrying. 
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+
+// *Hard. Climb the tree.*
+<<wait 10>>
+<<jump Climb_the_tree_to_the_top_of_the_cave>>
+===
+
+title: Use_the_axe_to_chop_the_tree_for_it_to_lean_over
+position: 3957,3503
+---
+<<nextPosition none>>
+<<wait 2>>
+You remember that you have Thakali's axe. You swing at the tree's trunk. It topples over onto the edge of the cliff. It seems sturdy enough to hold your weight.
+
+You climb the sloped side of the tree up to the top of the cave.
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+
+// *Easy. Climb the tree.*
+<<wait 10>>
+<<jump Climb_the_tree_to_the_top_of_the_cave>>
+===
+
+title: Climb_the_tree_to_the_top_of_the_cave
+position: 4332,3268
+---
+<<nextPosition none>>
+<<wait 2>>
+You climb the tree to the top of the cave. At the top of the cave you see an opening that leads back outside.
+
+<<jump Leave_the_cave>>
+===
+
+title: Climb_the_pillars_randomly
+position: 3952,3772
+---
+You decide that if you just quickly but randomly climb the pillars you'd make it to the top in no time.
+
+The first pillar you stand on crumbles to the floor toppling over others in the process. A large heap of crumbled rock lies in front of you. It is tall enough to just reach the top of the cave.
+<<nextPosition none>>
+<<wait 2>>
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+
+// *Hard. Climb the rubble.*
+<<wait 10>>
+<<jump Reach_the_top_of_the_cave_using_the_pillars>>
+===
+
+title: Use_the_magic_compass_to_guide_you
+position: 3964,4026
+---
+You open the cover of the magical compass and you tell it to guide you to the top of the cave.
+
+Player: Magical compass. Please show me the way up to the top of the cave.
+
+<<nextPosition none>>
+<<wait 2>>
+The magical compass swings it's arms from left to right as it guides you to which pillar you must step on.
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+
+// *Easy. Step on the pillars.*
+<<wait 10>>
+<<jump Reach_the_top_of_the_cave_using_the_pillars>>
+===
+
+title: Reach_the_top_of_the_cave_using_the_pillars
+position: 4332,3675
+---
+<<nextPosition none>>
+<<wait 2>>
+You climb the pillars one by one all the way to the top of the cave. At the top of the cave you see an opening that leads back outside.
+
+<<jump Leave_the_cave>>
+===
+
+title: Attempt_to_climb_the_lava_guardian
+position: 3986,4312
+---
+You quickly run behind the lava guardian and jump onto it's back. The guardian moves about the cave trying to shake you off it's back. You must carefully step on the solid rocks and avoid the lava.
+
+<<nextPosition none>>
+<<wait 2>>
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+
+// *Hard. Climb the guardian.*
+<<wait 10>>
+<<jump Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
+===
+
+title: Call_for_Val_to_remove_the_lava_guardian
+position: 3957,4611
+---
+You blow a whistle with your mouth and call for Val to deal with this monstrous beast.
+
+Player: *Whistle*. Hey Val! I could use some help here!
+
+A bolt of ice shoots out form behind you and at the lava guardian. The ice freezes and solidifies part of the lava guardian. More magical icicles fly out from behind you and at the beast. Val appears from a cloud of smoke.
+
+Val: I see you're playing a dangerous game and your betting with your life.
+
+One final icicle flies towards the creature freezing it's last molten limb. The creature has formed a perfectly good set of stairs up to the top of the cave. How convenient. Val disappears into a puff of smoke.
+
+<<nextPosition none>>
+<<wait 2>>
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+
+// *Easy. Climb the guardian.*
+<<wait 10>>
+<<jump Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
+===
+
+title: Use_the_lava_guardian_to_reach_the_top_of_the_cave
+position: 4330,4267
+---
+<<nextPosition none>>
+<<wait 2>>
+You climb the side of the guardian up to the top of the cave. At the top of the cave you see an opening that leads back outside.
+
+<<jump Leave_the_cave>>
+===
+
+title: Walk_the_stone_stairs_to_the_top_of_the_cave
+position: 4000,2452
+---
+<<nextPosition none>>
+<<wait 12>>
+You take your time walking the stone stairs to the top of the cave. 
+
+<<nextPosition none>>
+<<wait 2>>
+At the top of the cave you see an opening that leads back outside.
+
+<<jump Leave_the_cave>>
+===
+
+title: Leave_the_cave
+position: 4921,3571
+---
+<<goToScene VolcanoTop>>
+<<wait 2>>
+You leave the cave and follow the path up the volcano a little further. You've reached the top of the volcano. You look out to the landscape and you can see Granbell and Eldoria from here. You see the forest below and the farms in the distance.
+
+<<nextPosition none>>
+<<wait 2>>
+There is an outcropping that leans over the volcano's pit of lava.
+
+<<if $specialPackage is true>>
+    You've decided that the package has only brought bad luck to whomever carries it. 
+    <<nextPosition none>>
+    <<wait 2>>
+    To prevent the next person who holds this package from succumbing to a wave of misfortune, you must drop the package off the side of that outcropping into the lava below.
+
+    What do you do?
+    -> Open the package then drop it.
+        <<jump Open_the_package_then_drop_it>>
+    -> Drop the package without opening it.
+        <<jump Drop_the_package_without_opening_it>>
+
+<<elseif $specialPackage is false>>
+    You see the creature standing at the end of the outcropping. He dangles the package over the fiery hot pit of lava.
+
+    Garbanzo: Finally! I will become all powerful! Hahaha!
+
+    What do you do?
+    <<if $magicRock is true>> 
+        -> Run to grab the package from him before he drops it.
+            <<jump Run_to_grab_the_package_from_him_before_he_drops_it>>
+        -> Blind the goblin with the magic rock.
+            <<jump Blind_the_goblin_with_the_magic_rock>>
+    <<else>>
+        -> Run to grab the package from him before he drops it.
+            <<jump Run_to_grab_the_package_from_him_before_he_drops_it>>
+    <<endif>>
+<<endif>>
+===
+
+title: Run_to_grab_the_package_from_him_before_he_drops_it
+position: 5309,4408
+---
+<<nextPosition none>>
+<<wait 2>>
+You run at the goblin as fast as you can. The goblin, shocked at your performance grips the package close to it's chest. You manage to reach the goblin and grab hold of the package.
+
+<<nextPosition none>>
+<<wait 2>>
+You both struggle for the package on the volcano's precipice. Back and forth you fight for the package. After the struggle you manage to pull the package from the goblin's hands. The goblin stumbles backwards towards the edge.
+
+What do you do?
+-> Grab hold of the goblin.
+    <<jump Grab_hold_of_the_goblin>>
+-> Push the goblin over.
+    <<jump Push_the_goblin_over>>
+===
+
+title: Blind_the_goblin_with_the_magic_rock
+position: 5302,4052
+---
+You pull out the magical rock that Frankie gave you and point it at the goblin. You say the command word.
+
+Player: Luminos!
+
+A bright light streams from the rock and into the eyes of the goblin. The goblin drops the package onto the ledge near his feet. 
+
+<<nextPosition none>>
+<<wait 2>>
+While the goblin is blinded you run as fast as you can towards the package. You manage to reach the goblin and grab the package.
+
+<<nextPosition none>>
+<<wait 2>>
+In his daze, the goblin stumbles backwards towards the edge, rubbing his eyes.
+
+What do you do?
+-> Grab hold of the goblin.
+    <<jump Grab_hold_of_the_goblin>>
+-> Push the goblin over.
+    <<jump Push_the_goblin_over>>
+===
+
+title: Grab_hold_of_the_goblin
+position: 5674,4066
+---
+You quickly grab onto the goblin before he falls into the lava. You hold him down beneath your shoe on the ground.
+
+Now *you* have the package. 
+<<set $specialPackage to true>>
+
+What do you do?
+-> Open the package then drop it.
+    <<jump Open_the_package_then_drop_it>>
+-> Drop the package without opening it.
+    <<jump Drop_the_package_without_opening_it>>
+===
+
+title: Push_the_goblin_over
+position: 5670,4410
+---
+You nudge the goblin slightly and he topples over the edge. The goblin screams as he falls into the lava. You don't look down but you hear an explosion as he hits the molten rock.
+
+Now *you* have the package. 
+<<set $specialPackage to true>>
+
+What do you do?
+-> Open the package then drop it.
+    <<jump Open_the_package_then_drop_it>>
+-> Drop the package without opening it.
+    <<jump Drop_the_package_without_opening_it>>
+===
+
+title: Open_the_package_then_drop_it
+position: 6306,3650
+---
+You tear off the cloth wrapping that covers the package. You hold in your hands a glorious crown. The crown is adorned with precious materials and gemstones that seem foreign and otherworldy. The package also contains a note which says that this crown is an offering for the goblin leader in Eldoria.
+
+"To the Goblin Queen, we hope that this reaches you safely by our esteemed courier. We, the Aurelians, bring this crown to you to acknowledge your presence in the lands. We want to grant you your freedom and your own kingdom. We hope that you will see this offering as a sign of a truce between the humans and goblins. Let this be a symbol of our peaceful future together."
+
+-> Drop the package into the lava.
+    <<jump Drop_the_package_into_the_lava>>
+===
+
+title: Drop_the_package_without_opening_it
+position: 6290,3905
+---
+You remain clueless to what hides beneath the package's cloth wrapping. 
+
+-> Drop the package into the lava.
+    <<jump Drop_the_package_into_the_lava>>
+===
+
+title: Drop_the_package_into_the_lava
+position: 6685,3764
+---
+You toss the package into the fiery depths and watch it plop into the lava and sink below.
+
+A bubble of molten rock bursts out from where it landed.
+
+A sudden gust of air rushes past you. You shield your eyes from any oncoming debris. Once the air subsides you out and see a dragon floating above the lava in front of you.
+
+It looks directly at you. A voice is heard in your head.
+
+Dragon: Thank you for your payment! What do you wish for?
+
+What do you say?
+-> Ask what the dragon is talking about.
+    <<jump Ask_what_the_dragon_is_talking_about>>
+-> Ask what you can wish for.
+    <<jump Ask_what_you_can_wish_for>>
+===
+
+title: Ask_what_the_dragon_is_talking_about
+position: 7075,3436
+---
+Player: What are you talking about?
+
+Dragon: You made a payment. An offering. You fed me that beautiful crown and I obliged. The crown you threw into the pit there was worth a fortune and for your generosity I will grant you one wish.
+
+-> Ask what you can wish for.
+    <<jump Ask_what_you_can_wish_for>>
+===
+
+title: Ask_what_you_can_wish_for
+position: 7378,3755
+---
+Player: What can I wish for?
+
+Dragon: Well, what do you want? What do you desire?
+
+The dragon leans in closer to you. You watch the dragon's eyes focus on you.
+
+Dragon: Tell me humble courier. What. Do. You. Wish. For.
+
+What do you wish for?
+-> Peace between the humans and goblins.
+    <<jump Peace_between_the_humans_and_goblins>>
+-> To be back home in Granbell.
+    <<jump To_be_back_home_in_Granbell>>
+-> To be the ruler of Eldoria.
+    <<jump To_be_the_ruler_of_Eldoria>>
+-> To be far far away from this land.
+    <<jump To_be_far_far_away_from_this_land>>
+===
+
+title: Peace_between_the_humans_and_goblins
+position: 7867,3307
+---
+Player: I wish for peace between humans and goblins!
+
+Dragon: Very well. Your wish is granted.
+
+The dragon disappears into a puff of smoke.
+
+You look around nothing seems different so far. 
+
+<<goToScene ReturnToEldoria>>
+<<wait 2>>
+You make your way back to Granbell. At Granbell people are rejoicing and cheering along the streets. You hear them say that the war has ended.
+
+People: Finally! The war is over! There is peace across the land! Goblins are no longer a problem!
+
+You should tell Mistress Ellastra about the packages you delivered.
+
+You head towards the courier guildhall. You look inside what is supposed to be the courier guildhall but instead it is a butchery. You call out for Mistress Ellastra.
+
+Player: Hello?! Mistress Ellastra are you in there?
+
+A small old man walks out from the butchery.
+
+Old man: I haven't heard that name in years. That was my grandmother's name. How do you know that name?
+
+<<jump Say_youre_a_courier_of_Granbell>>
+===
+
+title: Say_youre_a_courier_of_Granbell
+position: 8221,3298
+---
+Player: I'm a courier for Granbell. I'm supposed to report back to Mistress Ellastra about my recent deliveries.
+
+Old man: A courier? Why, Granbell hasn't had a courier in 200 years when the last one was sent on a special delivery to Eldoria. Ever since that courier never came back, Granbell decided to stop all courier services.
+
+<<jump Ask_how_the_war_went>>
+===
+
+title: Ask_how_the_war_went
+position: 8652,3305
+---
+Player: I was that courier. What happened with the war with the goblins?
+
+Old man: Don't be silly, you're only human. No human can live that long. Hoho. The war you say? We got recent news that the war has ended. Humans have captured enough goblin settlements to force the goblins to surrender. Anyway, enough about the war, it's over now! Come inside. You look famished. I'll roast you a nice ham.
+
+You found yourself delivering something that altered the course of your destiny forever.
+
+<<jump The_end>>
+===
+
+title: To_be_back_home_in_Granbell
+position: 8643,3573
+---
+Player: I wish to be home back in Granbell!
+
+Dragon: Very well. Your wish is granted.
+
+The dragon disappears into a puff of smoke.
+
+Everything goes dark. You wake up. Look around. The weather is grey and gloomy. Looks like it might rain. 
+
+You need to make a delivery today. You start walking to work.
+
+Frankie, your childhood friend walks beside you leading a cow alongside him.
+
+Frankie: Hey pal! How’s your morning going?
+
+You found yourself delivering something that altered the course of your destiny forever.
+
+<<jump The_end>>
+===
+
+title: To_be_the_ruler_of_Eldoria
+position: 8639,3886
+---
+Player: I wish to be the ruler of Eldoria.
+
+Dragon: Very well. Your wish is granted.
+
+The dragon disappears into a puff of smoke.
+
+Everything goes dark. You open your eyes. Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. You wear a robe too big for your stature and you are wearing many rings and necklaces.
+
+You feel alot closer to the ground than usual. You feel you ears. Pointy. You feel your nose. Big. You find a mirror amongst the treasure. You look at yourself in the mirror. Skin. Green. 
+
+You found yourself delivering something that altered the course of your destiny forever.
+
+<<jump The_end>>
+===
+
+title: To_be_far_far_away_from_this_land
+position: 8620,4225
+---
+Player: I wish to be the ruler of Eldoria.
+
+Dragon: Very well. Your wish is granted.
+
+The dragon disappears into a puff of smoke.
+
+Everything goes dark. 
+
+<<jump The_end>>
+===
+
+title: The_end
+position: 10318,2089
+---
+*The end of the story.*
+
+Thank you for playing.
+===

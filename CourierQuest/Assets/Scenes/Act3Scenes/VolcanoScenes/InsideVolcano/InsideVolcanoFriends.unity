@@ -956,6 +956,162 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &374554784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 374554785}
+  - component: {fileID: 374554786}
+  m_Layer: 0
+  m_Name: UpOnCliff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &374554785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374554784}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 936830458}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &374554786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374554784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorDrawPivot: 1
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  editorAlwaysDraw: 0
+  editorDrawThickness: 0
+  editorBillboardThickness: 1
+  isNewlyCreated: 0
+  editorUpdateMode: 0
+  multithreaded: 0
+  updateMode: 0
+  triggerGroups: []
+  _spline:
+    points:
+    - _type: 0
+      position: {x: 17.034363, y: 9.6164875, z: 105.24402}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 1, z: 0}
+      size: 1
+      tangent: {x: 17.034363, y: 9.6164875, z: 105.24402}
+      tangent2: {x: 17.034363, y: 9.6164875, z: 105.24402}
+    - _type: 0
+      position: {x: 17.354109, y: 9.508234, z: 105.54686}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 1, z: 0}
+      size: 1
+      tangent: {x: 17.354109, y: 9.508234, z: 105.54686}
+      tangent2: {x: 17.354109, y: 9.508234, z: 105.54686}
+    type: 1
+    linearAverageDirection: 1
+    customValueInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    customNormalInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    sampleRate: 10
+    closed: 0
+    _knotParametrization: 0
+  _originalSamplePercents: []
+  _is2D: 0
+  hasSamples: 1
+  _optimizeAngleThreshold: 0.5
+  _space: 1
+  _sampleMode: 0
+  _subscribers: []
+  _rawSamples:
+  - position: {x: 17.034363, y: 9.616487, z: 105.24402}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0.70509267, y: -0.23870265, z: 0.66773146}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0
+  - position: {x: 17.069891, y: 9.604459, z: 105.277664}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0.70504594, y: -0.23870271, z: 0.6677809}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.1111111111111111
+  - position: {x: 17.105417, y: 9.59243, z: 105.31132}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0.70504594, y: -0.23870271, z: 0.6677809}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.2222222222222222
+  - position: {x: 17.140945, y: 9.580402, z: 105.34496}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0.70504594, y: -0.23870271, z: 0.6677809}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.3333333333333333
+  - position: {x: 17.176472, y: 9.568374, z: 105.37862}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0.70504594, y: -0.23870271, z: 0.6677809}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.4444444444444444
+  - position: {x: 17.212, y: 9.556346, z: 105.41226}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0.70504594, y: -0.23870271, z: 0.6677809}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.5555555555555556
+  - position: {x: 17.247526, y: 9.544317, z: 105.445915}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0.70504594, y: -0.23870271, z: 0.6677809}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.6666666666666666
+  - position: {x: 17.283054, y: 9.5322895, z: 105.47956}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0.7050554, y: -0.23869951, z: 0.66777194}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.7777777777777778
+  - position: {x: 17.318583, y: 9.520261, z: 105.513214}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0.7050815, y: -0.23871475, z: 0.6677389}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.8888888888888888
+  - position: {x: 17.354109, y: 9.508233, z: 105.54685}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0.70514494, y: -0.23873317, z: 0.6676654}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 1
+  _nodes: []
 --- !u!43 &545746079
 Mesh:
   m_ObjectHideFlags: 0
@@ -6433,6 +6589,7 @@ Transform:
   - {fileID: 1752891295}
   - {fileID: 1387226756}
   - {fileID: 57026655}
+  - {fileID: 374554785}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -484,14 +484,14 @@ You hear a groaning from the trees. Then a scream that grows louder. You see a d
 What do you do? (Timed)
 <<startTimer 10>>
 -> Try and stop him from destroying more of the garden.
+    <<interrruptTimer none>>
     <<jump Try_and_stop_him_from_destroying_more_of_the_garden>>
-    <<interrruptTimer none>>
 -> Remind him of his package.
+    <<interrruptTimer none>>
     <<jump Remind_him_of_his_package>>
-    <<interrruptTimer none>>
 -> Wait and see what happens.
-    <<jump Wait_and_see_what_happens>>
     <<interrruptTimer none>>
+    <<jump Wait_and_see_what_happens>>
 ===
 
 title: Compliment_the_garden
@@ -504,14 +504,14 @@ You hear a groaning from the trees. Then a scream that grows louder. You see a d
 What do you do? (Timed)
 <<startTimer 10>>
 -> Try and stop him from destroying more of the garden.
+    <<interrruptTimer none>>
     <<jump Try_and_stop_him_from_destroying_more_of_the_garden>>
-    <<interrruptTimer none>>
 -> Remind him of his package.
+    <<interrruptTimer none>>
     <<jump Remind_him_of_his_package>>
-    <<interrruptTimer none>>
 -> Wait and see what happens.
-    <<jump Wait_and_see_what_happens>>
     <<interrruptTimer none>>
+    <<jump Wait_and_see_what_happens>>
 ===
 
 title: Try_and_stop_him_from_destroying_more_of_the_garden
@@ -1696,10 +1696,13 @@ title: You_spot_the_creature_again
 position: 8348,604
 ---
 <<goToScene OutrunGoblin>>
-<<wait 2>>
+<<wait 5>>
+<<startChase none>>
 That creature is back again. It looks at you angrily and doesn't make any demands this time. It rides close.
-
+<<moveClose true>>
 You need to outrun the creature again.
+<<moveClose false>>
+<<wait 10>>
 
 You escape the creature once more.
 
