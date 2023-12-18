@@ -301,7 +301,8 @@ position: 3564,-1026
 ---
 You couldn't manage to pull out anything useful from your pack. You quickly turn and jump out the castle doors that you once entered with ease.
 
-<<goToScene GoblinHordeCastle>>
+<<goToScene EldoriaCourtyard>>
+<<specificPosition InnerDoorsSpot>>
 <<wait 2>>
 
 To your dismay, a horde of goblins await you.
@@ -444,7 +445,7 @@ position: 4832,-1181
 ---
 You stand there stunned not knowing what to do. The ogre lunges to grab you. It succeeds in restraining you. It pulls out a rope and ties it around you. 
 
-<<goToScene GoblinHordeOgreRoom>>
+<<specificPosition TiedUp>>
 <<wait 2>>
 
 A wave of goblins flows from the hallway and into the open area.
@@ -504,9 +505,14 @@ position: 6564,-1718
 
 You ride back to Granbell at a fast pace. On the way back you see the locations that you delivered to and some you don't recognise.
 
+<<goToScene ReturnToGranbell>>
+<<wait 2>>
 You reach Granbell and tell Mistress Ellastra about what happened. She notifies the guards and they relay the information back up to the Aurelians.
 
 Word around the town has spread saying that the goblin Queen is coming to Granbell to speak with the Aurelians about ending the war.
+
+<<nextPosition none>>
+<<wait 2>>
 
 The goblin Queen arrives at Granbell and all the people of Granbell stare in silence. She rests on the detatched throne of Eldoria, carried on the back of the ogre you fought. They head into the castle. 
 
@@ -514,7 +520,8 @@ After a few hours a guardsman walks into the market center and reads an announce
 
 Guard: Listen all! The Aurelians have made an announcement. "We Aurelians have talked with the goblin Queen. We have made a unanimous agreement to end the 50 year war between humans and goblins. Both human and goblin-kind will take time to heal from their wounds as a people, but once all has been done we hope to learn from the past and work towards a brighter future." That is all from the announcement. As you were!
 
-You hear the good news about the end of the war. People around you rejoice and cheer. 
+You hear the good news about the end of the war. People around you rejoice and cheer.
+
 Seems like you delivered something that changed your destiny forever.
 
 <<jump The_end>>
@@ -603,7 +610,8 @@ Garbanzo slips inside the gate and you lose sight of him.
 
 <<nextPosition none>>
 <<wait 4>>
-<<goToScene GoblinHordeGates>>
+<<goToScene EldoriaCourtyard>>
+<<specificPosition InnerGatesSpot>>
 <<wait 2>>
 
 To your dismay, a horde of goblins await you.
@@ -1079,9 +1087,14 @@ position: 6570,-109
 
 You ride back to Granbell at a fast pace. On the way back you see the locations that you delivered to and some you don't recognise.
 
+<<goToScene ReturnToGranbell>>
+<<wait 2>>
 You reach Granbell and tell Mistress Ellastra about what happened. She notifies the guards and they relay the information back up to the Aurelians.
 
 Word around the town has spread saying that the goblin forces in Eldoria are retreating.
+
+<<nextPosition none>>
+<<wait 2>>
 
 After a few hours a guardsman walks into the market center and reads an announcement.
 
@@ -2583,7 +2596,7 @@ The dragon disappears into a puff of smoke.
 
 You look around nothing seems different so far. 
 
-<<goToScene ReturnToEldoria>>
+<<goToScene ReturnToGranbell>>
 <<wait 2>>
 You make your way back to Granbell. At Granbell people are rejoicing and cheering along the streets. You hear them say that the war has ended.
 
@@ -2591,7 +2604,11 @@ People: Finally! The war is over! There is peace across the land! Goblins are no
 
 You should tell Mistress Ellastra about the packages you delivered.
 
-You head towards the courier guildhall. You look inside what is supposed to be the courier guildhall but instead it is a butchery. You call out for Mistress Ellastra.
+You head towards the courier guildhall. 
+
+<<specificPosition ButcherySpot>>
+<<wait 2>>
+You look inside what is supposed to be the courier guildhall but instead it is a butchery. You call out for Mistress Ellastra.
 
 Player: Hello?! Mistress Ellastra are you in there?
 
@@ -2635,8 +2652,12 @@ The dragon disappears into a puff of smoke.
 
 Everything goes dark. You wake up. Look around. The weather is grey and gloomy. Looks like it might rain. 
 
+<<goToScene GranbellOpening>>
+<<wait 4>>
 You need to make a delivery today. You start walking to work.
 
+<<goToScene KingdomStreet>>
+<<wait 5>>
 Frankie, your childhood friend walks beside you leading a cow alongside him.
 
 Frankie: Hey pal! How’s your morning going?
@@ -2655,7 +2676,12 @@ Dragon: Very well. Your wish is granted.
 
 The dragon disappears into a puff of smoke.
 
-Everything goes dark. You open your eyes. Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. You wear a robe too big for your stature and you are wearing many rings and necklaces.
+Everything goes dark. 
+
+<<goToScene TreasureRoom>>
+<<wait 2>>
+
+You open your eyes. Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. You wear a robe too big for your stature and you are wearing many rings and necklaces.
 
 You feel alot closer to the ground than usual. You feel you ears. Pointy. You feel your nose. Big. You find a mirror amongst the treasure. You look at yourself in the mirror. Skin. Green. 
 
