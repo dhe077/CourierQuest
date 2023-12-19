@@ -25,6 +25,7 @@ public class ExerciseQuestManager : MonoBehaviour
                 GetComponent<MudbrickExQuest>().StartLifting();
                 break;
             case "oli":
+                GetComponent<OliExQuest>().StartEscaping();
                 break;
             case "finn":
                 break;
@@ -39,6 +40,7 @@ public class ExerciseQuestManager : MonoBehaviour
                 GetComponent<MudbrickExQuest>().PreparePlayer();
                 break;
             case "oli":
+                GetComponent<OliExQuest>().PreparePlayer();
                 break;
             case "finn":
                 break;

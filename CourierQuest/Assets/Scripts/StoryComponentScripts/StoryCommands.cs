@@ -93,7 +93,7 @@ public class StoryCommands : MonoBehaviour
             "startExerciseQuest",
             StartExerciseQuest
         );
-        dialogueRunner.AddCommandHandler<string>(
+        dialogueRunner.AddCommandHandler<string, bool>(
             "enable",
             EnableObject
         );
@@ -225,10 +225,10 @@ public class StoryCommands : MonoBehaviour
     }
 
     // This command enables an object
-    public void EnableObject(string enableObj)
+    public void EnableObject(string enableObj, bool enableBool)
     {
         environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
-        environmentManager.EnableObject(enableObj);
+        environmentManager.EnableObject(enableObj, enableBool);
     }
 
     // This command enables 1 object and disables another object

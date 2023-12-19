@@ -172,7 +172,7 @@ Mudbrick: W-w-wow! This is the exact ritual sh-sh-shell cover I requested. Thank
 
 <<specificPosition MudbricksLake>>
 <<wait 1>>
-<<enable HelpMudbrick>>
+<<enable HelpMudbrick true>>
 <<wait 2>>
 Mudbrick gestures to the gathering tortoises across the lake. The tortoises have wheeled a large wooden machine that's attatched to a heavy stone statue.
 
@@ -306,7 +306,7 @@ It seems like nobody is here. You can just leave the package near his camp in a 
 <<else>>
     You approach the outskirts of the campsite. But suddenly a loud rustling from behind the dense forest foliage stops you in your tracks. 
     
-    <<enable BushesSlimeGroup>>
+    <<enable BushesSlimeGroup true>>
     A gelantinous blue slime creature appears from the location of the noise. It seems non-hostile at the moment. As you look closer at the blue slime cube, you notice within it's translucent body, a set of various bones and a human skull!
     
     The slime pauses its movement and begins moving towards you at an alarming speed.
@@ -355,7 +355,7 @@ You wait to see what made the noise.
 
 The rustling amongst the bushes grows louder. 
 
-<<enable BushesSlimeGroup>>
+<<enable BushesSlimeGroup true>>
 Then suddenly a gelantinous blue slime creature moves out from behind the foliage.
 
 It seems non-hostile at the moment. As you look closer at the blue slime cube, you notice within it's translucent body, a set of various bones and a human skull! 
@@ -379,11 +379,11 @@ You lead Stormhoof away from the camp and tie her to a tree. You jump down into 
 
 You wait, hidden amongst the dense bushes, for something to emerge from the forest. 
 
-<<enable BushesSlimeGroup>>
+<<enable BushesSlimeGroup true>>
 From where you heard the noise, a gelantinous blue slime creature moves out from behind the foliage. 
 
-<<enableDisable MovingIntoCampSlimeGroup BushesSlimeGroup>>
 It's headed towards Oli's campsite.
+<<enableDisable MovingIntoCampSlimeGroup BushesSlimeGroup>>
 
 <<startTimer 8>>
 -> Jump out and stop the slime. (Exercise Quest)
@@ -411,6 +411,12 @@ You wait for its approach. It quickly lurches towards you then it grabs you and 
 You need to move as much as you can to get out of the slime!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+<<enableDisable ExerciseSlimeGroup AttackingSlimeGroup>>
+<<specificPosition EscapeSlime>>
+<<prepareExerciseQuest oli>>
+<<wait 2>>
+<<startExerciseQuest oli>>
+<<wait 30>>
 <<jump Escape_the_slime>>
 ===
 
@@ -422,6 +428,12 @@ You turn to start running from the cube but the slime is too fast and you're gra
 You need to move as much as you can to get out of the slime!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+<<enableDisable ExerciseSlimeGroup AttackingSlimeGroup>>
+<<specificPosition EscapeSlime>>
+<<prepareExerciseQuest oli>>
+<<wait 2>>
+<<startExerciseQuest oli>>
+<<wait 30>>
 <<jump Escape_the_slime>>
 ===
 
@@ -447,6 +459,7 @@ You sit in silence waiting for the slime to advance into Oli's campsite.
 
 <<enableDisable MovingIntoCampSlimeGroup BushesSlimeGroup>>
 It lurches towards the campsite but as it approaches closer to the campsite you hear the sky begin to rumble then a loud CRACK, as a bolt of lightning from above spears through the slime turning its cuboid form into an explosion of goo.
+<<enable MovingIntoCampSlimeGroup false>>
 
 Seems like you avoided two things that would have been detrimental to your delivery process.
 
@@ -482,7 +495,9 @@ position: 3233,931
 ---
 You narrowly escaped alive from the clutches of the blue slime. 
 
-<<enableDisable EscapedSlimeGroup AttackingSlimeGroup>>
+<<specificPosition OutsideOlisCampSpot>>
+<<enableDisable EscapedSlimeGroup ExerciseSlimeGroup>>
+<<wait 2>>
 The slime retreats back into the forest. You still need to make that delivery. 
 
 <<set $escapedSlime to true>>

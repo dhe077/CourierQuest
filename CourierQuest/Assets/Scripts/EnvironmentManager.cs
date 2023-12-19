@@ -115,10 +115,10 @@ public class EnvironmentManager : MonoBehaviour
         catch (UnassignedReferenceException) { Debug.Log("No Rain set in EnvironmentManager!"); }
     }
 
-    public void EnableObject(string enableObj)
+    public void EnableObject(string enableObj, bool enableBool)
     {
         GameObject enableGroup = FindObjectInList(enableObj);
-        enableGroup.SetActive(true);
+        enableGroup.SetActive(enableBool);
     }
 
     public void EnableAndDisableObjects(string enableObj, string disableObj)
