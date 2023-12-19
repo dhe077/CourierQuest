@@ -11,10 +11,14 @@ public class SceneSelector : MonoBehaviour
     public void JumpToMudbrickScene()
     {
         dialogueRunner.Stop();
-
         variables.SetValue("$secondPackage", "round");
-
         dialogueRunner.StartDialogue("Arrive_at_your_second_destination");
+    }
 
+    public void JumpToOliScene()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$secondPackage", "square");
+        dialogueRunner.StartDialogue("Arrive_at_your_second_destination");
     }
 }

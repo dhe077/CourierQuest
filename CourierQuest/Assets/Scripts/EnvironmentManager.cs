@@ -123,11 +123,12 @@ public class EnvironmentManager : MonoBehaviour
 
     public void EnableAndDisableObjects(string enableObj, string disableObj)
     {
-        GameObject enableGroup = FindObjectInList(enableObj);
         GameObject disableGroup = FindObjectInList(disableObj);
-
-        enableGroup.SetActive(true);
         disableGroup.SetActive(false);
+
+        GameObject enableGroup = FindObjectInList(enableObj);
+        enableGroup.SetActive(true);
+        
     }
 
     public GameObject FindObjectInList(string objName)

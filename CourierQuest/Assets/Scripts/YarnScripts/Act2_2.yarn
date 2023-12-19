@@ -305,13 +305,19 @@ It seems like nobody is here. You can just leave the package near his camp in a 
     <<jump Walk_to_Olis_camp>>
 <<else>>
     You approach the outskirts of the campsite. But suddenly a loud rustling from behind the dense forest foliage stops you in your tracks. 
+    
+    <<enable BushesSlimeGroup>>
+    A gelantinous blue slime creature appears from the location of the noise. It seems non-hostile at the moment. As you look closer at the blue slime cube, you notice within it's translucent body, a set of various bones and a human skull!
+    
+    The slime pauses its movement and begins moving towards you at an alarming speed.
+    <<enableDisable AttackingSlimeGroup BushesSlimeGroup>>
 
-    A gelantinous blue slime creature appears from the location of the noise. It seems non-hostile at the moment. As you look closer at the blue slime cube, you notice within it's translucent body, a set of various bones and a human skull! The slime pauses its movement and begins moving towards you at an alarming speed.
-
-    What do you do?
+    <<startTimer 6>>
     -> Run from the cube!
+        <<interrruptTimer none>>
         <<jump Run_from_the_cube>>
     -> Wait to see if it's friendly.
+        <<interrruptTimer none>>
         <<jump Wait_to_see_if_its_friendly>>
 <<endif>>
 ===
@@ -347,14 +353,22 @@ position: 2072,465
 ---
 You wait to see what made the noise.
 
-The rustling amongst the bushes grows louder. Then suddenly a gelantinous blue slime creature moves out from behind the foliage.
+The rustling amongst the bushes grows louder. 
 
-It seems non-hostile at the moment. As you look closer at the blue slime cube, you notice within it's translucent body, a set of various bones and a human skull! The slime pauses its movement and begins moving towards you at an alarming speed.
+<<enable BushesSlimeGroup>>
+Then suddenly a gelantinous blue slime creature moves out from behind the foliage.
 
-What do you do?
+It seems non-hostile at the moment. As you look closer at the blue slime cube, you notice within it's translucent body, a set of various bones and a human skull! 
+
+The slime pauses its movement and begins moving towards you at an alarming speed.
+<<enableDisable AttackingSlimeGroup BushesSlimeGroup>>
+
+<<startTimer 6>>
 -> Run from the cube!
+    <<interrruptTimer none>>
     <<jump Run_from_the_cube>>
 -> Wait to see if it's friendly.
+    <<interrruptTimer none>>
     <<jump Wait_to_see_if_its_friendly>>
 ===
 
@@ -363,9 +377,14 @@ position: 1943,1280
 ---
 You lead Stormhoof away from the camp and tie her to a tree. You jump down into the bushes nearby the campsite and wait for what ever made those noises to show itself.
 
-You wait, hidden amongst the dense bushes, for something to emerge from the forest. From where you heard the noise, a gelantinous blue slime creature moves out from behind the foliage. It's headed towards Oli's campsite.
+You wait, hidden amongst the dense bushes, for something to emerge from the forest. 
 
-What do you do? (Timed)
+<<enable BushesSlimeGroup>>
+From where you heard the noise, a gelantinous blue slime creature moves out from behind the foliage. 
+
+<<enableDisable MovingIntoCampSlimeGroup BushesSlimeGroup>>
+It's headed towards Oli's campsite.
+
 <<startTimer 8>>
 -> Jump out and stop the slime. (Exercise Quest)
     <<interrruptTimer none>>
@@ -410,18 +429,24 @@ title: Jump_out_and_stop_the_slime
 position: 2285,1090
 ---
 You jump out and distract the blue slime in an attempt to misdirect it away from Oli's campsite. It changes its movement from a slow viscous crawl in the direction of Oli's camp to a quick glooping flow towards your location.
+<<enableDisable MovingIntoCampSlimeGroup BushesSlimeGroup>>
 
-What do you do?
+<<startTimer 6>>
 -> Run from the cube!
+    <<interrruptTimer none>>
     <<jump Run_from_the_cube>>
 -> Wait to see if it's friendly.
+    <<interrruptTimer none>>
     <<jump Wait_to_see_if_its_friendly>>
 ===
 
 title: Let_the_slime_move_towards_Olis_camp
 position: 2443,1388
 ---
-You sit in silence waiting for the slime to advance into Oli's campsite. It lurches towards the campsite but as it approaches closer to the campsite you hear the sky begin to rumble then a loud CRACK, as a bolt of lightning from above spears through the slime turning its cuboid form into an explosion of goo.
+You sit in silence waiting for the slime to advance into Oli's campsite. 
+
+<<enableDisable MovingIntoCampSlimeGroup BushesSlimeGroup>>
+It lurches towards the campsite but as it approaches closer to the campsite you hear the sky begin to rumble then a loud CRACK, as a bolt of lightning from above spears through the slime turning its cuboid form into an explosion of goo.
 
 Seems like you avoided two things that would have been detrimental to your delivery process.
 
@@ -455,7 +480,10 @@ What do you do?
 title: Escape_the_slime
 position: 3233,931
 ---
-You narrowly escaped alive from the clutches of the blue slime. The slime retreats back into the forest. You still need to make that delivery. 
+You narrowly escaped alive from the clutches of the blue slime. 
+
+<<enableDisable EscapedSlimeGroup AttackingSlimeGroup>>
+The slime retreats back into the forest. You still need to make that delivery. 
 
 <<set $escapedSlime to true>>
 
