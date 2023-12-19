@@ -22,6 +22,7 @@ public class EnvironmentManager : MonoBehaviour
     public float decreaseRate = 0.2f;  // Rate at which the lightning intensity lowers.
     public GameObject rainGroup;
     public float increaseRate = 0.2f;
+    public List<GameObject> activatableObjects;
     
     
     // Start is called before the first frame update
@@ -112,5 +113,31 @@ public class EnvironmentManager : MonoBehaviour
             }
         } catch (NullReferenceException) { Debug.Log("No Rain set in EnvironmentManager!"); }
         catch (UnassignedReferenceException) { Debug.Log("No Rain set in EnvironmentManager!"); }
+    }
+
+    public void EnableObject(string enableObj)
+    {
+        GameObject enableGroup = FindObjectInList(enableObj);
+        enableGroup.SetActive(true);
+    }
+
+    public void EnableAndDisableObjects(string enableObj, string disableObj)
+    {
+        GameObject enableGroup = FindObjectInList(enableObj);
+        GameObject disableGroup = FindObjectInList(disableObj);
+
+        enableGroup.SetActive(true);
+        disableGroup.SetActive(false);
+    }
+
+    public GameObject FindObjectInList(string objName)
+    {
+        for (int i = 0; i < activatableObjects.Count; i++)
+        {
+            if (activatableObjects[i].name == objName)
+                return activatableObjects[i];
+        }
+        Debug.Log("Error: Object not found in list!");
+        return null;
     }
 }

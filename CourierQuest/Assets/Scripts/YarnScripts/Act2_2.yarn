@@ -170,6 +170,10 @@ He unwraps the package and reveals that what was inside. The package contained a
 
 Mudbrick: W-w-wow! This is the exact ritual sh-sh-shell cover I requested. Thank you! Good timing as well. You've d-d-delivered this to me just in time for our annual ritual.
 
+<<specificPosition MudbricksLake>>
+<<wait 1>>
+<<enable HelpMudbrick>>
+<<wait 2>>
 Mudbrick gestures to the gathering tortoises across the lake. The tortoises have wheeled a large wooden machine that's attatched to a heavy stone statue.
 
 Mudbrick: Would you mind helping us lift up our ritual's m-m-monument? Someone or something knocked it over during the night.
@@ -192,7 +196,11 @@ You go to the statue. The tortoises gather around you. A rope is attatched to St
 
 Mudbrick: Ok courier. Start p-p-pulling the rope.
 
-// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+*Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+
+<<specificPosition LiftStatue>>
+<<startExerciseQuest true>>
+<<wait 30>>
 <<jump Lift_the_statue>>
 ===
 
@@ -216,6 +224,8 @@ You sense an evil presence in the air around you.
 title: Lift_the_statue
 position: 3080,-2888
 ---
+<<specificPosition MudbricksLake>>
+<<wait 2>>
 You managed to lift the statue upright.
 
 Mudbrick: Now the ritual can continue. Thank you so m-m-much for the help. Here take this as a gift.

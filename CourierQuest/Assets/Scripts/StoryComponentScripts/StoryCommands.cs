@@ -19,6 +19,7 @@ public class StoryCommands : MonoBehaviour
 
     private PlayerViewManager playerViewManager;
     private EnvironmentManager environmentManager;
+    private ExerciseQuestManager exerciseQuestManager;
 
     private float timer = 0f;
     private float endTimer;
@@ -83,6 +84,18 @@ public class StoryCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<bool>(
             "rain",
             MakeRain
+        );
+        dialogueRunner.AddCommandHandler<bool>(
+            "startExerciseQuest",
+            StartExerciseQuest
+        );
+        dialogueRunner.AddCommandHandler<string>(
+            "enable",
+            EnableObject
+        );
+        dialogueRunner.AddCommandHandler<string, string>(
+            "enableDisable",
+            EnableAndDisableObjects
         );
     }
 
@@ -191,6 +204,27 @@ public class StoryCommands : MonoBehaviour
     {
         environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
         environmentManager.MakeRain(rainSwitch);
+    }
+
+    // This command starts the corresponding exercise quest
+    public void StartExerciseQuest(bool start)
+    {
+        exerciseQuestManager = GameObject.Find("ExerciseQuestManager").GetComponent<ExerciseQuestManager>();
+        exerciseQuestManager.SetStartQuest(start);
+    }
+
+    // This command enables an object
+    public void EnableObject(string enableObj)
+    {
+        environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
+        environmentManager.EnableObject(enableObj);
+    }
+
+    // This command enables 1 object and disables another object
+    public void EnableAndDisableObjects(string enableObj, string disableObj)
+    {
+        environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
+        environmentManager.EnableAndDisableObjects(enableObj, disableObj);
     }
 
 

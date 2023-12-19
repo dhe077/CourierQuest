@@ -42,4 +42,14 @@ public class PlayerMovement : MonoBehaviour
     {
         moveSpeed = speed;
     }
+
+    public float GetBikeSpeed()
+    {
+        return bikeSpeed;
+    }
+
+    public float GetMoveSpeedMultiplier()
+    {
+        return moveSpeed;
+    }
 }
