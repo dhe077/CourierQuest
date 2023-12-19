@@ -7,8 +7,6 @@ public class ExerciseQuestManager : MonoBehaviour
     [Header("----Player View Object----")]
     [SerializeField] private GameObject playerView;
 
-    public bool startQuest = false;
-
     void Start()
     {
         playerView = GameObject.Find("PlayerView");
@@ -19,9 +17,33 @@ public class ExerciseQuestManager : MonoBehaviour
         return playerView;
     }
 
-    public void SetStartQuest(bool start) { startQuest = start; }
+    public void StartExerciseQuest(string questName)
+    {
+        switch (questName)
+        {
+            case "mudbrick":
+                GetComponent<MudbrickExQuest>().StartLifting();
+                break;
+            case "oli":
+                break;
+            case "finn":
+                break;
+        }
+    }
 
-    public bool GetStartQuest() { return startQuest; }
+    public void PrepareExerciseQuest(string questName)
+    {
+        switch (questName)
+        {
+            case "mudbrick":
+                GetComponent<MudbrickExQuest>().PreparePlayer();
+                break;
+            case "oli":
+                break;
+            case "finn":
+                break;
+        }
+    }
 
 
 

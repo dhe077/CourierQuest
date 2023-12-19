@@ -85,7 +85,11 @@ public class StoryCommands : MonoBehaviour
             "rain",
             MakeRain
         );
-        dialogueRunner.AddCommandHandler<bool>(
+        dialogueRunner.AddCommandHandler<string>(
+            "prepareExerciseQuest",
+            PrepareExerciseQuest
+        );
+        dialogueRunner.AddCommandHandler<string>(
             "startExerciseQuest",
             StartExerciseQuest
         );
@@ -207,10 +211,17 @@ public class StoryCommands : MonoBehaviour
     }
 
     // This command starts the corresponding exercise quest
-    public void StartExerciseQuest(bool start)
+    public void PrepareExerciseQuest(string questName)
     {
         exerciseQuestManager = GameObject.Find("ExerciseQuestManager").GetComponent<ExerciseQuestManager>();
-        exerciseQuestManager.SetStartQuest(start);
+        exerciseQuestManager.PrepareExerciseQuest(questName);
+    }
+
+    // This command starts the corresponding exercise quest
+    public void StartExerciseQuest(string questName)
+    {
+        exerciseQuestManager = GameObject.Find("ExerciseQuestManager").GetComponent<ExerciseQuestManager>();
+        exerciseQuestManager.StartExerciseQuest(questName);
     }
 
     // This command enables an object

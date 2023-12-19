@@ -199,7 +199,9 @@ Mudbrick: Ok courier. Start p-p-pulling the rope.
 *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 <<specificPosition LiftStatue>>
-<<startExerciseQuest true>>
+<<prepareExerciseQuest mudbrick>>
+<<wait 2>>
+<<startExerciseQuest mudbrick>>
 <<wait 30>>
 <<jump Lift_the_statue>>
 ===
