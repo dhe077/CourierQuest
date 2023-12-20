@@ -21,4 +21,11 @@ public class SceneSelector : MonoBehaviour
         variables.SetValue("$secondPackage", "square");
         dialogueRunner.StartDialogue("Arrive_at_your_second_destination");
     }
+
+    public void JumpToFinnScene()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$secondPackage", "triangle");
+        dialogueRunner.StartDialogue("Arrive_at_your_second_destination");
+    }
 }

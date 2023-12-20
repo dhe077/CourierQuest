@@ -46,7 +46,7 @@ public class OliExQuest : MonoBehaviour
 
         // Set the duration of the exercise
         exerciseQuestManager.GetPlayerView().GetComponent<SplineFollower>().followDuration = followTime;
-        Debug.Log("Exercise details ready.");
+        Debug.Log("Player Prepared.");
     }
 
     private void ResetPlayer()

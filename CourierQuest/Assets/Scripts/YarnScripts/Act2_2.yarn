@@ -735,7 +735,12 @@ Player: When can I start helping?
 
 Finn: We can get started immediately.
 
-Finn bolts up the tower again and comes down holding a small metal object. He places the object on the floor and starts casting a spell on it. The object floats up and begins to shake then it burts into a grand structure much larger than its previous form.
+Finn bolts up the tower again and comes down holding a small metal object. 
+
+He places the object on the floor and starts casting a spell on it. 
+
+<<enable SmallMagicGeneratorGroup true>>
+The object floats up and begins to shake then it burts into a grand structure much larger than its previous form.
 
 Finn: Here is the magic generator. It'll help in creating all the magic needed for my spell. Could you please get inside the machine?
 
@@ -765,21 +770,26 @@ What do you do?
 title: Get_into_the_machine
 position: 3183,4050
 ---
+<<specificPosition MachineSpot>>
+<<wait 2>>
 You hop into the contraption. It's surprisingly comfortable.
 
 Finn: Ok just put your feet in the pedals there and begin pedaling. Are you ready? I'll be casting the spell now.
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+
 <<jump Pedal_to_help_Finn>>
 ===
 
 title: Pedal_to_help_Finn
 position: 3558,3895
 ---
-You move around in the machine to pump out magic for Finn. It seems to be working. More Finn's are appearing from busts of magical energy around you!
+You move around in the machine to pump out magic for Finn. It seems to be working. More Finn's are appearing from bursts of magical energy around you!
 
 Finn: Ok I think that is enough. You can stop now.
 
+<<specificPosition TowerSpot>>
+<<wait 2>>
 An army of Finns surround you.
 
 Finn: Ok everyone get inside and start reading.

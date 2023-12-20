@@ -28,6 +28,7 @@ public class ExerciseQuestManager : MonoBehaviour
                 GetComponent<OliExQuest>().StartEscaping();
                 break;
             case "finn":
+                GetComponent<FinnExQuest>().StartGenerating();
                 break;
         }
     }
@@ -43,6 +44,7 @@ public class ExerciseQuestManager : MonoBehaviour
                 GetComponent<OliExQuest>().PreparePlayer();
                 break;
             case "finn":
+                GetComponent<FinnExQuest>().PreparePlayer();
                 break;
         }
     }
