@@ -12,6 +12,7 @@ public class FinnExQuest : MonoBehaviour
     public GameObject greenBulbs;
     [SerializeField] private bool generating = false;
     [SerializeField] private float exerciseTime = 60;
+    [SerializeField] private float speedMultiplier = 10;
 
     private float timer = 0;
 
@@ -32,9 +33,16 @@ public class FinnExQuest : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
+        float rotationSpeed = exerciseQuestManager.GetPlayerView().GetComponent<PlayerMovement>().GetBikeSpeed() * speedMultiplier;
+        // magicWheel.transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
+        magicWheel.transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+
         if (timer <= 0)
         {
             Debug.Log("Finished!");
+            greenBulbs.SetActive(true);
+            bulbs.SetActive(false);
+
             generating = false;
             ResetPlayer();
         }

@@ -740,6 +740,7 @@ Finn bolts up the tower again and comes down holding a small metal object.
 He places the object on the floor and starts casting a spell on it. 
 
 <<enable SmallMagicGeneratorGroup true>>
+<<wait 10>>
 The object floats up and begins to shake then it burts into a grand structure much larger than its previous form.
 
 Finn: Here is the magic generator. It'll help in creating all the magic needed for my spell. Could you please get inside the machine?
@@ -777,7 +778,10 @@ You hop into the contraption. It's surprisingly comfortable.
 Finn: Ok just put your feet in the pedals there and begin pedaling. Are you ready? I'll be casting the spell now.
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
-
+<<prepareExerciseQuest finn>>
+<<wait 2>>
+<<startExerciseQuest finn>>
+<<wait 30>>
 <<jump Pedal_to_help_Finn>>
 ===
 
