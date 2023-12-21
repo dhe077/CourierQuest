@@ -336,10 +336,12 @@ position: 3968,-2488
 ---
 Player: How can I help heat up the coals? I don't have anything that'll get them started.
 
-Leyton pours the bag of coals on the ground then flies up to the cave and brings back a set of bellows.
+<<enable BellowObject true>>
+Leyton flies up to the cave and brings back a set of bellows.
 
 Leyton: On my call, use these and keep the fire stoked. 
 
+<<enable AllCoals true>>
 Leyton pours the coals into a stone fit pit. This'll be my last push of flames before I'm all fizzled out.
 
 Leyton: A-a-aaaaachooo!!
@@ -349,6 +351,11 @@ Leyton sneezes all over the coals. A hot flame bursts from his face and onto the
 <<set $metLeyton to true>>
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+<<specificPosition ExerciseQuest>>
+<<prepareExerciseQuest leyton>>
+<<wait 2>>
+<<startExerciseQuest leyton>>
+<<wait 30>>
 <<jump Keep_the_coals_hot>>
 ===
 

@@ -28,4 +28,32 @@ public class SceneSelector : MonoBehaviour
         variables.SetValue("$secondPackage", "triangle");
         dialogueRunner.StartDialogue("Arrive_at_your_second_destination");
     }
+
+    public void JumpToLeytonScene()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$thirdPackage", "red");
+        dialogueRunner.StartDialogue("Arrive_at_your_third_destination");
+    }
+
+    public void JumpToThakaliScene()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$thirdPackage", "green");
+        dialogueRunner.StartDialogue("Arrive_at_your_third_destination");
+    }
+
+    public void JumpToDaisyScene()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$thirdPackage", "blue");
+        dialogueRunner.StartDialogue("Arrive_at_your_third_destination");
+    }
+
+    public void JumpToValScene()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$thirdPackage", "yellow");
+        dialogueRunner.StartDialogue("Arrive_at_your_third_destination");
+    }
 }
