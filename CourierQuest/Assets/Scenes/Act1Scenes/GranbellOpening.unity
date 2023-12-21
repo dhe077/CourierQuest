@@ -7163,7 +7163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -26.399841, y: -160.8}
+  m_AnchoredPosition: {x: -26.399841, y: -160.79999}
   m_SizeDelta: {x: 133.20001, y: 33.369995}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &389043967
@@ -22166,7 +22166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -26.399841, y: -118.6}
+  m_AnchoredPosition: {x: -26.399841, y: -118.600006}
   m_SizeDelta: {x: 133.20001, y: 33.369995}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1443915190
@@ -50257,6 +50257,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerView
+      objectReference: {fileID: 0}
+    - target: {fileID: 2627318030446222655, guid: 99175f1d84aee704e85864921fc8cd4c,
+        type: 3}
+      propertyPath: offset
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3404762639906701540, guid: 99175f1d84aee704e85864921fc8cd4c,
         type: 3}

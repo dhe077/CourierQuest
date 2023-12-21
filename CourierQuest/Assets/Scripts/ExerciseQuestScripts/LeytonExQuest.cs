@@ -16,7 +16,8 @@ public class LeytonExQuest : MonoBehaviour
     public float angleMin = 45f;
     public float angleMax = 315f;
 
-    private float timer = 0;
+    [SerializeField] private float timer = 0;
+    private float halfTime;
 
     public void Update()
     {
@@ -37,10 +38,10 @@ public class LeytonExQuest : MonoBehaviour
     
         //float rotationSpeed = exerciseQuestManager.GetPlayerView().GetComponent<PlayerMovement>().GetBikeSpeed() * speedMultiplier;
         float rotationSpeed = 30;
-        float rotationAngle = Mathf.PingPong(Time.time * rotationSpeed, angleMax - angleMin) + angleMin;
+        float rotationAngle = Mathf.PingPong(Time.time * rotationSpeed, 60) - 30;
 
         // Apply the rotation around the Y-axis
-        bellowsTop.transform.rotation = Quaternion.Euler(rotationAngle, 0f, 0f);
+        bellowsTop.transform.Rotate(rotationAngle * Vector3.right * Time.deltaTime);
 
         if (timer <= 0)
         {
@@ -51,7 +52,7 @@ public class LeytonExQuest : MonoBehaviour
             heating = false;
             ResetPlayer();
         } 
-        else if (timer <= timer / 2 && timer > 0)
+        else if (timer <= halfTime && timer > 0)
         {
             warmCoals.SetActive(true);
             coldCoals.SetActive(false);
@@ -61,6 +62,7 @@ public class LeytonExQuest : MonoBehaviour
     public void PreparePlayer()
     {
         timer = exerciseTime;
+        halfTime = timer / 2;
 
         Debug.Log("Player Prepared.");
     }

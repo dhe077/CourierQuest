@@ -214,7 +214,7 @@ What do you say?
 title: Tell_him_that_you_were_just_looking_around_the_place
 position: 2449,-1707
 ---
-Player: I was just checking my surroundings. A goblin chased me yesterday so I'm being cautious about where I go. Your package is on the ground here.
+Player: I was just checking my surroundings. A goblin chased me recently so I'm being cautious about where I go. Your package is on the ground here.
 
 Leyton: Is that my package?!
 
@@ -334,9 +334,11 @@ What do you say?
 title: Ask_how_you_can_help_heat_up_the_coals
 position: 3968,-2488
 ---
+<<specificPosition ExerciseQuest>>
+<<wait 2>>
 Player: How can I help heat up the coals? I don't have anything that'll get them started.
 
-<<enable BellowObject true>>
+<<enable BellowsObject true>>
 Leyton flies up to the cave and brings back a set of bellows.
 
 Leyton: On my call, use these and keep the fire stoked. 
@@ -351,7 +353,6 @@ Leyton sneezes all over the coals. A hot flame bursts from his face and onto the
 <<set $metLeyton to true>>
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
-<<specificPosition ExerciseQuest>>
 <<prepareExerciseQuest leyton>>
 <<wait 2>>
 <<startExerciseQuest leyton>>
@@ -384,6 +385,8 @@ Leyton: No this feels just right. Ahhhh.
 
 Leyton lets out a sigh of relief.
 
+<<specificPosition LeytonsCave>>
+<<wait 2>>
 You start to head to the path.
 
 Leyton: Wait, I forgot to give you this.
@@ -406,6 +409,8 @@ Player: Does this feel good to you?
 
 Leyton: Ohh this feels great. I can't thank you enough for the help. I'll be better in no time.
 
+<<specificPosition LeytonsCave>>
+<<wait 2>>
 You start to head to the path.
 
 Leyton: Wait, I forgot to give you this.
@@ -426,7 +431,7 @@ position: 6545,-2552
 ---
 Player: Thank you for the gift. I'll be careful when handling it.
 
-<<nextPosition none>>
+<<specificPosition LeaveLeytonsCave>>
 <<wait 2>>
 Leyton: Oh if you see any ogres. They will be terrified of that thing too. No idea why.
 
