@@ -33,6 +33,9 @@ public class ExerciseQuestManager : MonoBehaviour
             case "leyton":
                 GetComponent<LeytonExQuest>().StartHeating();
                 break;
+            case "thakali":
+                GetComponent<ThakaliExQuest>().StartPlowing();
+                break;
         }
     }
 
@@ -52,9 +55,9 @@ public class ExerciseQuestManager : MonoBehaviour
             case "leyton":
                 GetComponent<LeytonExQuest>().PreparePlayer();
                 break;
-            // case "oli":
-            //     GetComponent<OliExQuest>().PreparePlayer();
-            //     break;
+            case "thakali":
+                GetComponent<ThakaliExQuest>().PreparePlayer();
+                break;
             // case "finn":
             //     GetComponent<FinnExQuest>().PreparePlayer();
             //     break;

@@ -491,7 +491,10 @@ position: 1194,-91
 ---
 Player: Delivery for Thakali!
 
-You hear a groaning from the trees. Then a scream that grows louder. You see a dragon man fall from the trees above then onto the garden below. The garden is now ruined. He gets up and starts slashing wildly at the plants with his handaxes.
+You hear a groaning from the trees. Then a scream that grows louder. You see a dragon man fall from the trees above then onto the garden below. 
+
+<<enableDisable HalfProduce FullProduce>>
+The garden is now ruined. He gets up and starts slashing wildly at the plants with his handaxes.
 
 What do you do? (Timed)
 <<startTimer 10>>
@@ -511,7 +514,10 @@ position: 1571,437
 ---
 Player: This garden looks immaculate!
 
-You hear a groaning from the trees. Then a scream that grows louder. You see a dragon man fall from the trees above then onto the garden below. The garden is now ruined. He gets up and starts slashing wildly at the plants with his handaxes.
+You hear a groaning from the trees. Then a scream that grows louder. You see a dragon man fall from the trees above then onto the garden below. 
+
+<<enableDisable HalfProduce FullProduce>>
+The garden is now ruined. He gets up and starts slashing wildly at the plants with his handaxes.
 
 What do you do? (Timed)
 <<startTimer 10>>
@@ -632,6 +638,7 @@ position: 2914,602
 ---
 Player: Sorry, I'm just a courier. I'm not a farmer.
 
+<<enableDisable LittleProduce HalfProduce>>
 Thakali gives a low growl then continues slashing at the plants.
 
 What do you say?
@@ -648,9 +655,15 @@ Player: Oh don't forget about your package.
 
 Thakali: Package? Thakali did not ask for package.
 
-You think it must be a gift from someone. You look at the packaging and it is says that it is from someone called Finn. (if: $metFinn is true)[You recall that Finn was the wizard from the tower. You suppose that Finn might have already met Thakali and realised Thakali's mistake.]
+You think it must be a gift from someone. You look at the packaging and it is says that it is from someone called Finn. 
+<<if $metFinn is true>>
+    You recall that Finn was the wizard from the tower. You suppose that Finn might have already met Thakali and realised Thakali's mistake.
+<<endif>>
 
-You give the package to Thakali. Thakali tears open the package and finds a pouch of tomato seeds. In fact the tomato seeds look extremely large. (if: $metFinn is true)[You think that maybe Finn casted a spell on the seeds and made them magical. Better be careful with magic.]
+You give the package to Thakali. Thakali tears open the package and finds a pouch of tomato seeds. In fact the tomato seeds look extremely large. 
+<<if $metFinn is true>>
+    You think that maybe Finn casted a spell on the seeds and made them magical. Better be careful with magic.
+<<endif>>
 
 Thakali: What are these?
 
@@ -710,6 +723,12 @@ Player: We need to till the land first.
 
 Thakali: Thakali has a big machine for that.
 
+<<specificPosition ThakalisGarden>>
+<<enable PlowNotUsing true>>
+<<enable FullProduce false>>
+<<enable HalfProduce false>>
+<<enable LittleProduce false>>
+<<wait 2>>
 He pulls out a plowing device from behind a bush. Farmers uses these to efficiently dig up the land. Usually strong oxen pull these. You don't see any animals nearby.
 
 What do you do?
@@ -757,11 +776,21 @@ Player: I think Stormhoof here is strong enough to pull the plow.
 
 Thakali: That is good idea. Thakali need rest after slicing plants.
 
+<<specificPosition PlowSpot>>
+<<enableDisable PlowUsing PlowNotUsing>>
+<<wait 2>>
 Thakali straps the plow onto Stormhoof.
 
 <<set $metThakali to true>>
 
+You start plowing the land.
+
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+<<prepareExerciseQuest thakali>>
+<<specificPosition ExerciseQuest>>
+<<wait 2>>
+<<startExerciseQuest thakali>>
+<<wait 30>>
 <<jump Pull_the_plow>>
 ===
 
@@ -771,6 +800,9 @@ position: 5440,3
 You pull the plow and dig up the land.
 
 Thakali throws the seeds behind you into the freshly tilled soil.
+
+<<specificPosition ThakalisGarden>>
+<<enable PlowUsing false>>
 
 Player: Now just cover them up and water them.
 
@@ -794,7 +826,13 @@ Thakali: Really?!
 
 Thakali dances near the tomato seeds.
 
-Out of nowhere, the tomato seeds you planted sprout and grow. Leaves appear as the plants get larger, and before you know it, they're fully grown with ripe tomatoes hanging from their vines.
+Out of nowhere, the tomato seeds you planted sprout and grow.
+<<enable SmallTomatoesProduce true>>
+<<wait 3>>
+
+<<enableDisable GrowingTomatoesProduce false>>
+<<wait 4>>
+Leaves appear as the plants get larger, and before you know it, they're fully grown with ripe tomatoes hanging from their vines.
 
 Thakali looks over at the plants, shocked and amazed. Seems like these seeds were infused with some sort of magic.
 
@@ -816,7 +854,13 @@ Player: Tomatoes take a long while to grow.
 
 Thakali: But Thakali wants tomato now!
 
-Out of nowhere, the tomato seeds you planted sprout and grow. Leaves appear as the plants get larger, and before you know it, they're fully grown with ripe tomatoes hanging from their vines.
+Out of nowhere, the tomato seeds you planted sprout and grow. 
+<<enable SmallTomatoesProduce true>>
+<<wait 3>>
+
+<<enableDisable GrowingTomatoesProduce false>>
+<<wait 4>>
+Leaves appear as the plants get larger, and before you know it, they're fully grown with ripe tomatoes hanging from their vines.
 
 Thakali looks over at the plants, shocked and amazed. Seems like these seeds were infused with some sort of magic.
 
@@ -835,7 +879,7 @@ title: Leave_the_axe
 position: 6500,-115
 ---
 You leave the axe on the ground.
-<<nextPosition none>>
+<<specificPosition LeaveThakalisGarden>>
 <<wait 2>>
 You'd better continue on your journey.
 <<jump Continue_on_your_journey>>
@@ -849,7 +893,7 @@ position: 6498,185
 <<set $axe to true>>
 
 Thakali has not noticed.
-<<nextPosition none>>
+<<specificPosition LeaveThakalisGarden>>
 <<wait 2>>
 You'd better continue on your journey.
 <<jump Continue_on_your_journey>>
