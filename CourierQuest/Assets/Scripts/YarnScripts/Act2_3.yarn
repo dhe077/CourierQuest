@@ -675,8 +675,7 @@ What do you say?
     -> Tell him that they look like tomato seeds.
         <<jump Tell_him_that_they_look_like_tomato_seeds>>
 <<else>>
-    -> Tell him that they look like tomato seeds.
-        <<jump Tell_him_that_they_look_like_tomato_seeds>>
+    <<jump Tell_him_that_they_look_like_tomato_seeds>>
 <<endif>>
 ===
 
@@ -803,6 +802,7 @@ Thakali throws the seeds behind you into the freshly tilled soil.
 
 <<specificPosition ThakalisGarden>>
 <<enable PlowUsing false>>
+<<wait 2>>
 
 Player: Now just cover them up and water them.
 
@@ -830,7 +830,7 @@ Out of nowhere, the tomato seeds you planted sprout and grow.
 <<enable SmallTomatoesProduce true>>
 <<wait 3>>
 
-<<enableDisable GrowingTomatoesProduce false>>
+<<enableDisable GrowingTomatoesProduce SmallTomatoesProduce>>
 <<wait 4>>
 Leaves appear as the plants get larger, and before you know it, they're fully grown with ripe tomatoes hanging from their vines.
 
@@ -858,7 +858,7 @@ Out of nowhere, the tomato seeds you planted sprout and grow.
 <<enable SmallTomatoesProduce true>>
 <<wait 3>>
 
-<<enableDisable GrowingTomatoesProduce false>>
+<<enableDisable GrowingTomatoesProduce SmallTomatoesProduce>>
 <<wait 4>>
 Leaves appear as the plants get larger, and before you know it, they're fully grown with ripe tomatoes hanging from their vines.
 
