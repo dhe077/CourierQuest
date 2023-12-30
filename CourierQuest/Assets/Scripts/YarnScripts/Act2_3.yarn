@@ -1607,7 +1607,7 @@ Player: Hey! Which way is it to-
 
 Your question is cut off by loud bangs and then yelling. Suddenly, the door bursts open and Val jumps out running at full speed towards you. She jumps on the back of Stormhoof.
 
-From the door you see arrows start flying out in every direction.
+From the door you see magical projectiles and arrows flying out in every direction.
 
 Val: Ride like the wind! We ain't stickin' 'round for a showdown today!
 
@@ -1620,7 +1620,7 @@ position: 5290,3856
 ---
 <<goToScene ValsEscape>>
 <<wait 2>>
-As you ride away from the shooters. Bullets wizz past your head and scatter along the ground.
+As you ride away from the shooters. Magic missles and swift arrows wizz past your head and scatter along the ground.
 <<wait 60>> // Exercise timer
 <<goToScene ValClearing>>
 <<wait 2>>
@@ -1659,7 +1659,7 @@ Val: A cloaked gentleman spoke up about the debts I owed them. So, I told the go
 
 Val holds out her finger and a flame shoots out and hits the rocks nearby.
 
-Val: To settle my debt with you for saving my life. When the time comes, just whisper my name to the wind, and I'll ride like a shadow to deliver the reckoning you seek.
+Val: To settle my debt with you for saving my life. When the time comes, just whisper my name to the wind, and I'll ride in like a shadow to deliver the reckoning you seek.
 
 <<set $metVal to true>>
 
