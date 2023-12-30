@@ -374,7 +374,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1327168821}
   - component: {fileID: 1327168820}
-  - component: {fileID: 1327168819}
   - component: {fileID: 1327168818}
   m_Layer: 0
   m_Name: EnvironmentManager
@@ -399,25 +398,6 @@ MonoBehaviour:
   yVal: 2
   playerCloseOffset: 2
   playerFarOffset: 10
---- !u!114 &1327168819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1327168817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7424d206fb0ad04418fdfa2f95f71a14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstPackages: []
-  secondPackages: []
-  thirdPackages: []
-  position1: {x: 0, y: 0, z: 0}
-  position2: {x: 0, y: 0, z: 0}
-  position3: {x: 0, y: 0, z: 0}
-  position4: {x: 0, y: 0, z: 0}
 --- !u!114 &1327168820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,6 +418,7 @@ MonoBehaviour:
   decreaseRate: 0.4
   rainGroup: {fileID: 1835963721}
   increaseRate: 0.2
+  activatableObjects: []
 --- !u!4 &1327168821
 Transform:
   m_ObjectHideFlags: 0

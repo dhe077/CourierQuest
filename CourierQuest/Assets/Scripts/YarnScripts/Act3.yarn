@@ -52,7 +52,7 @@ title: Outrun_the_goblin
 position: 542,-600
 ---
 <<moveClose false>>
-<<wait 10>>
+<<wait 10>> // Exercise timer
 You zip through the forest on Stormhoof's back. You are much faster than the goblin. A river near by rushes loudly. Stomhoof kicks up a rock and it hits the goblin off it's mount and into the river.
 
 You've outrun the goblin one last time.
@@ -530,10 +530,12 @@ Seems like you delivered something that changed your destiny forever.
 title: Quickly_get_to_Eldoria
 position: 513,77
 ---
+<<wait 10>> // Exercise timer
 You ride swiftly down the path towards Eldoria. You pass farms and barns as you near the kingdom. Up ahead you can see the walls of Eldoria. The walls look empty. The roads look empty. Seems like no one is here. At least... no humans...
 
 Garbanzo: You go the gate. Distract the guards and I'll take them out. Oh, by the way, the name's Garbanzo.
 
+<<moveClose false>>
 Garbanzo splits from you and slips into the shadows.
 
 <<jump Approach_the_gates>>
@@ -1356,7 +1358,7 @@ position: 2486,1454
 <<goToScene ForestPath>>
 <<wait 2>>
 You and your party set off towards Eldoria.
-<<wait 5>>
+<<wait 30>> // Exercise timer
 
 <<goToScene EldoriaGates>>
 <<wait 20>>
@@ -1656,7 +1658,7 @@ position: 2495,1867
 <<goToScene ForestPath>>
 <<wait 2>>
 You and your party set off towards the volcano. 
-<<wait 5>>
+<<wait 30>> // Exercise timer
 
 <<goToScene VolcanoBase>>
 <<wait 2>>

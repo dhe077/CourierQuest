@@ -133,6 +133,7 @@ public class EnvironmentManager : MonoBehaviour
 
     public GameObject FindObjectInList(string objName)
     {
+        Debug.Log(activatableObjects.Count);
         for (int i = 0; i < activatableObjects.Count; i++)
         {
             if (activatableObjects[i].name == objName)

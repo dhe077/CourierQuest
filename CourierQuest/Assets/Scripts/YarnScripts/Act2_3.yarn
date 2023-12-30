@@ -1219,7 +1219,7 @@ title: Chase_the_fairy
 position: 4376,1869
 ---
 You chase the fairy riding Stormhoof. Daisy is close behind you following on foot... or hoof?
-<<wait 10>>
+<<wait 30>> // Exercise timer
 <<goToScene FairyHideout>>
 <<wait 2>>
 
@@ -1237,9 +1237,10 @@ title: Secretly_follow_the_fairy
 position: 4366,2262
 ---
 You chase the fairy riding Stormhoof.
-<<wait 10>>
+<<wait 30>> // Exercise timer
 <<goToScene FairyHideout>>
-<<wait 2>>
+<<wait 3>>
+<<enable Lantern true>>
 
 The fairy has lead you to its hide out. The hide out is a large hollowed out tree. The fairy escapes up into the trunk of the tree. You see at the base of the hollowed tree, a gigantic mound of berries.
 
@@ -1263,6 +1264,7 @@ title: Take_the_lantern_and_head_back_with_the_berries
 position: 4732,2260
 ---
 *You take the lantern.* 
+<<enable Lantern false>>
 
 <<set $lantern to true>>
 
@@ -1619,7 +1621,7 @@ position: 5290,3856
 <<goToScene ValsEscape>>
 <<wait 2>>
 As you ride away from the shooters. Bullets wizz past your head and scatter along the ground.
-<<wait 60>>
+<<wait 60>> // Exercise timer
 <<goToScene ValClearing>>
 <<wait 2>>
 You've gained enough distance from them to stop and hide for a moment.
