@@ -1163,9 +1163,6 @@ The fairy looks toward you in surprise and drops the berries and flies into the 
 Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
-<<goToScene FairyChase>>
-<<wait 5>>
-<<startChase none>>
 <<jump Chase_the_fairy>>
 ===
 
@@ -1179,9 +1176,6 @@ The fairy looks toward you in surprise and drops the berries and flies into the 
 Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
-<<goToScene FairyChase>>
-<<wait 5>>
-<<startChase none>>
 <<jump Chase_the_fairy>>
 ===
 
@@ -1193,9 +1187,6 @@ Player: I just saw a fairy take off with your berries.
 Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
-<<goToScene FairyChase>>
-<<wait 5>>
-<<startChase none>>
 <<jump Chase_the_fairy>>
 ===
 
@@ -1209,17 +1200,19 @@ Daisy: Where are you going?
 You reach the point where the fairy was. Not too far from you you see the fairy. It hasn't noticed you but it is moving quite quickly.
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
-<<goToScene FairyChase>>
-<<wait 5>>
-<<startChase none>>
 <<jump Secretly_follow_the_fairy>>
 ===
 
 title: Chase_the_fairy
 position: 4376,1869
 ---
+<<goToScene FairyChase>>
+<<wait 5>>
+<<startChase none>>
+<<moveClose false>>
 You chase the fairy riding Stormhoof. Daisy is close behind you following on foot... or hoof?
 <<wait 30>> // Exercise timer
+
 <<goToScene FairyHideout>>
 <<wait 2>>
 
@@ -1236,8 +1229,13 @@ Daisy: So this is where they've been hiding them. Lets take them back before tha
 title: Secretly_follow_the_fairy
 position: 4366,2262
 ---
+<<goToScene FairyChase>>
+<<wait 5>>
+<<startChase none>>
+<<moveClose false>>
 You chase the fairy riding Stormhoof.
 <<wait 30>> // Exercise timer
+
 <<goToScene FairyHideout>>
 <<wait 3>>
 <<enable Lantern true>>
@@ -1760,7 +1758,7 @@ That creature is back again. It looks at you angrily and doesn't make any demand
 <<moveClose true>>
 You need to outrun the creature again.
 <<moveClose false>>
-<<wait 10>>
+<<wait 10>> // Exercise timer
 
 You escape the creature once more.
 

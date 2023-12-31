@@ -628,9 +628,6 @@ You're not sure if you *might* keep your job after this.
 You don't recognise this path from your delivery journeys. Maybe it would be best to ride further forward and make camp then find a way back to the main path in the morning.
 
 <<set $followedPath to false>>
-<<wait 5>>
-<<startChase none>>
-<<wait 5>>
 <<jump Failed_You_see_a_small_figure_ride_alongside_you>>
 ===
 
@@ -646,9 +643,6 @@ Looks like you *might* keep your job.
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
 
 <<set $followedPath to true>>
-<<wait 5>>
-<<startChase none>>
-<<wait 5>>
 <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
 
@@ -664,9 +658,6 @@ You have a feeling that when Mistress Ellastra finds out about this you're gonna
 You don't recognise this path from your delivery journeys. Maybe it would be best to ride further forward and make camp then find a way back to the main path in the morning.
 
 <<set $followedPath to false>>
-<<wait 5>>
-<<startChase none>>
-<<wait 5>>
 <<jump Failed_You_see_a_small_figure_ride_alongside_you>>
 ===
 
@@ -679,9 +670,6 @@ In celebration you give Stormhoof a treat from your pack. She responds with a ce
 <<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
 
-<<wait 5>>
-<<startChase none>>
-<<wait 5>>
 <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
 
@@ -694,9 +682,6 @@ In celebration you pat Stormhoof on the back. She responds with a celebratory *n
 <<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
 
-<<wait 5>>
-<<startChase none>>
-<<wait 5>>
 <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
 
@@ -707,15 +692,14 @@ position: 7623,-1010
 <<wait 2>>
 You remember from your recent journeys along this road that there should be an abandoned hut not too far from here. That'll be good shelter for when the storm hits. Since you're not too far away you could make it there in time.
 
-<<wait 5>>
-<<startChase none>>
-<<wait 5>>
 <<jump Success_You_see_a_small_figure_ride_alongside_you>>
 ===
 
 title: Success_You_see_a_small_figure_ride_alongside_you
 position: 8096,-900
 ---
+<<startChase none>>
+<<wait 5>>
 You look at the small figure riding next to you. It's small and green. It has pointy ears and a big nose, and it seems to be riding a large RAT!
 
 It turns its head to face you.
@@ -749,6 +733,8 @@ What do you say? (Timed)
 title: Failed_You_see_a_small_figure_ride_alongside_you
 position: 8051,-433
 ---
+<<startChase none>>
+<<wait 5>>
 You look at the small figure riding next to you. It's small and green. It has pointy ears and a big nose, and it seems to be riding a large RAT!
 
 It turns its head to face you.
@@ -1166,7 +1152,7 @@ title: Outrun_the_creature
 position: 10363,-659
 ---
 <<moveClose false>>
-<<wait 10>> // Exercise timer
+<<wait 60>> // Exercise timer
 You kept a steady gallop allowing you to outrun the creature and it's mount. 
 
 Garbanzo: I'll be back! You'd better sleep with one eye open!

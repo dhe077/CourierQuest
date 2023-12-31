@@ -70,4 +70,11 @@ public class SceneSelector : MonoBehaviour
         variables.SetValue("$followedPath", false);
         dialogueRunner.StartDialogue("Do_nothing");
     }
+
+    public void JumpToDaisyExQuest()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$thirdPackage", "blue");
+        dialogueRunner.StartDialogue("Chase_the_fairy");
+    }
 }

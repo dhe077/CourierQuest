@@ -12,7 +12,7 @@ public class LeytonExQuest : MonoBehaviour
     public GameObject bellowsTop;
     [SerializeField] private bool heating = false;
     [SerializeField] private float exerciseTime = 60;
-    [SerializeField] private float speedMultiplier = 10;
+    // [SerializeField] private float speedMultiplier = 10;
     public float angleMin = 45f;
     public float angleMax = 315f;
 
