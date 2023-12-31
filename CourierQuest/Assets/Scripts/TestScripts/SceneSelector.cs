@@ -56,4 +56,18 @@ public class SceneSelector : MonoBehaviour
         variables.SetValue("$thirdPackage", "yellow");
         dialogueRunner.StartDialogue("Arrive_at_your_third_destination");
     }
+
+    public void JumpToFollowPathLeft()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$followedPath", true);
+        dialogueRunner.StartDialogue("Do_nothing");
+    }
+
+    public void JumpToNotFollowPathLeft()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$followedPath", false);
+        dialogueRunner.StartDialogue("Do_nothing");
+    }
 }

@@ -1178,7 +1178,6 @@ Garbanzo: I'll be back! You'd better sleep with one eye open!
 <<endif>>
 
 <<goToScene EldoriaVolcanoSign>>
-<<rain true>>
 <<wait 2>>
 Just before you find a place to camp you reach a fork in the road. At the junction of the fork there is a sign that says Eldoria is along the left path.
 
@@ -1279,7 +1278,6 @@ You follow the right path.
 
 <<if $followedPath is true>>
     <<goToScene AbandonedHutAndBushes>>
-    <<rain true>>
     <<wait 2>>
     You see the abandoned hut. You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
@@ -1290,7 +1288,6 @@ You follow the right path.
         <<jump Set_up_camp_in_some_bushes>>
 <<elseif $followedPath is false>>
     <<goToScene BushesAndRoad>>
-    <<rain true>>
     <<wait 2>>
     You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
@@ -1312,7 +1309,6 @@ You follow the left path.
 
 <<if $followedPath is true>>
     <<goToScene AbandonedHutAndBushes>>
-    <<rain true>>
     <<wait 2>>
     You see the abandoned hut. You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
@@ -1323,7 +1319,6 @@ You follow the left path.
         <<jump Set_up_camp_in_some_bushes>>
 <<elseif $followedPath is false>>
     <<goToScene BushesAndRoad>>
-    <<rain true>>
     <<wait 2>>
     You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
 
@@ -1344,7 +1339,7 @@ The hut you're in has been abandoned for years and has many leaks coming through
 
 <<specificPosition InsideHutSpot>>
 <<wait 2>>
-<<rain false>>
+<<enableDisable RainLow Rain>>
 You set up your bedroll and lie down.
 
 <<jump Sleep_in_the_hut>>
@@ -1355,12 +1350,15 @@ position: 11687,-1118
 ---
 <<specificPosition OutsideBushesSpot>>
 <<wait 2>>
-You find a set of bushes that could easily hide your tent. 
+You find a set of bushes that could easily hide your tent.
+
+<<enable Tent true>>
+You set up your tent and bedroll. 
 
 <<specificPosition InsideBushesSpot>>
 <<wait 2>>
-<<rain false>>
-You set up your tent and bedroll. You lie down.
+<<enableDisable RainLow Rain>>
+You lie down.
 
 <<jump Sleep_in_the_bushes>>
 ===
@@ -1372,10 +1370,13 @@ position: 11624,-78
 <<wait 2>>
 You figure that the best place to rest would be next to the path and away from the unknown creatures of the woods. 
 
+<<enable RoadTent true>>
+You set up your tent and bedroll. 
+
 <<specificPosition InsideRoadsideTent>>
 <<wait 2>>
-<<rain false>>
-You set up your tent and bedroll. You lie down.
+<<enableDisable RainLow Rain>>
+You lie down.
 
 <<jump Sleep_near_the_road>>
 ===

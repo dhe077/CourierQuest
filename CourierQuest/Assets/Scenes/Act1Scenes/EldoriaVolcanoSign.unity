@@ -43598,7 +43598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1238168864
 Transform:
   m_ObjectHideFlags: 0
@@ -65990,7 +65990,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11437536, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
       propertyPath: RainIntensity
-      value: 0
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437536, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
+      propertyPath: WindSoundVolumeModifier
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 19928108, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
       propertyPath: m_Materials.Array.size
@@ -66609,8 +66613,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6454ae5df525fe4fbafc55a0061b64a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaserObject: {fileID: 0}
   atPlayerSide: 1
+  yVal: 2
   playerCloseOffset: 2
   playerFarOffset: 3
 --- !u!114 &1922987375
@@ -66628,10 +66632,6 @@ MonoBehaviour:
   firstPackages: []
   secondPackages: []
   thirdPackages: []
-  position1: {x: 0, y: 0, z: 0}
-  position2: {x: 0, y: 0, z: 0}
-  position3: {x: 0, y: 0, z: 0}
-  position4: {x: 0, y: 0, z: 0}
 --- !u!114 &1922987376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66646,11 +66646,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableSpawnPackages: 0
   enablePlayerChaser: 0
-  goblin: {fileID: 6948984171607625688, guid: 15da55ba07d2de3468d8f27d9075708e, type: 3}
+  chaseObject: {fileID: 0}
   lightning: {fileID: 781754582}
   decreaseRate: 0.4
   rainGroup: {fileID: 1238168863}
-  increaseRate: 0.2
+  increaseRate: 0
+  activatableObjects: []
 --- !u!4 &1922987377
 Transform:
   m_ObjectHideFlags: 0

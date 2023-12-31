@@ -2224,7 +2224,7 @@ You use the foot pedal to lift yourself up the cave.
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Hard. Turn the crank.*
-<<wait 10>>
+<<wait 10>> // Exercise timer
 <<jump Take_the_lift_to_the_top_of_the_cave>>
 ===
 
@@ -2240,7 +2240,7 @@ You can now use the foot pedal with ease to lift yourself up the cave.
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Easy. Turn the crank.*
-<<wait 10>>
+<<wait 10>> // Exercise timer
 <<jump Take_the_lift_to_the_top_of_the_cave>>
 ===
 
@@ -2266,7 +2266,7 @@ The vertical incline of the tree is hard to climb especially with the pack you a
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Hard. Climb the tree.*
-<<wait 10>>
+<<wait 10>> // Exercise timer
 <<jump Climb_the_tree_to_the_top_of_the_cave>>
 ===
 
@@ -2282,7 +2282,7 @@ You climb the sloped side of the tree up to the top of the cave.
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Easy. Climb the tree.*
-<<wait 10>>
+<<wait 10>> // Exercise timer
 <<jump Climb_the_tree_to_the_top_of_the_cave>>
 ===
 
@@ -2308,7 +2308,7 @@ The first pillar you stand on crumbles to the floor toppling over others in the 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Hard. Climb the rubble.*
-<<wait 10>>
+<<wait 10>> // Exercise timer
 <<jump Reach_the_top_of_the_cave_using_the_pillars>>
 ===
 
@@ -2326,7 +2326,7 @@ The magical compass swings it's arms from left to right as it guides you to whic
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Easy. Step on the pillars.*
-<<wait 10>>
+<<wait 10>> // Exercise timer
 <<jump Reach_the_top_of_the_cave_using_the_pillars>>
 ===
 
@@ -2351,7 +2351,7 @@ You quickly run behind the lava guardian and jump onto it's back. The guardian m
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Hard. Climb the guardian.*
-<<wait 10>>
+<<wait 10>> // Exercise timer
 <<jump Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
 ===
 
@@ -2373,7 +2373,7 @@ One final icicle flies towards the creature freezing it's last molten limb. The 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Easy. Climb the guardian.*
-<<wait 10>>
+<<wait 10>> // Exercise timer
 <<jump Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
 ===
 
@@ -2391,7 +2391,7 @@ title: Walk_the_stone_stairs_to_the_top_of_the_cave
 position: 4000,2452
 ---
 <<nextPosition none>>
-<<wait 12>>
+<<wait 10>> // Exercise timer
 You take your time walking the stone stairs to the top of the cave. 
 
 <<nextPosition none>>

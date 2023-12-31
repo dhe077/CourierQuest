@@ -1009,7 +1009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11437536, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
       propertyPath: WindSoundVolumeModifier
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 19928108, guid: 69b40ef7ee16c834c844b3fa26e0fdda, type: 3}
       propertyPath: m_Materials.Array.size
@@ -1416,6 +1416,7 @@ MonoBehaviour:
   decreaseRate: 0.4
   rainGroup: {fileID: 1964634891}
   increaseRate: 0.2
+  activatableObjects: []
 --- !u!4 &2050591771
 Transform:
   m_ObjectHideFlags: 0
