@@ -163,17 +163,19 @@ The bear dashes in the direction the pastry was thrown. The goblins that are sti
 title: Approach_the_castle_doors
 position: 2784,-1294
 ---
-<<nextPosition none>>
-<<wait 4>>
 <<goToScene EldoriaCourtyard>>
 <<wait 2>>
-You walk through the gates and towards the inner castle doors. You pass a stable full of horses but unlike Granbell there is no stable master tending to them. You leave Stormhoof with the other horses in the stable.
+You walk through the gates and towards the inner castle doors. 
+
+<<specificPosition WalkToTheDoors>>
+<<wait 2>>
+You pass a stable full of horses but unlike Granbell there is no stable master tending to them. You leave Stormhoof with the other horses in the stable.
 
 You approach the castle doors. They swing open with ease. 
 
 <<goToScene EldoriaThroneRoom>>
 <<wait 2>>
-You've entered the castle's throne room. The walls are high and the are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. Ahead of you there is a goblin wielding an ornamented staff standing next to the throne. However, no one is sitting in the throne. The leader must be somewhere else.
+You've entered the castle's throne room. The walls are high and are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. Ahead of you there is a goblin wielding an ornamented staff standing next to the throne. However, no one is sitting in the throne. The leader must be somewhere else.
 
 The goblin looks in your direction and points at you.
 
@@ -301,8 +303,7 @@ position: 3564,-1026
 ---
 You couldn't manage to pull out anything useful from your pack. You quickly turn and jump out the castle doors that you once entered with ease.
 
-<<goToScene EldoriaCourtyard>>
-<<specificPosition InnerDoorsSpot>>
+<<goToScene EldoriaCourtyardAlt>>
 <<wait 2>>
 
 To your dismay, a horde of goblins await you.
@@ -610,10 +611,7 @@ position: 2771,-452
 ---
 Garbanzo slips inside the gate and you lose sight of him.
 
-<<nextPosition none>>
-<<wait 4>>
 <<goToScene EldoriaCourtyard>>
-<<specificPosition InnerGatesSpot>>
 <<wait 2>>
 
 To your dismay, a horde of goblins await you.
@@ -626,7 +624,7 @@ Goblins: Take 'em to the dungeon!!
 title: Go_to_the_dungeon
 position: 2767,15
 ---
-<<nextPosition none>>
+<<specificPosition WalkToDungeon>>
 <<wait 2>>
 The goblins lead you towards the dungeon entrance.
 
@@ -649,11 +647,17 @@ It's very dark in here. The occational torch lights the tunnel. You pass by seve
     Dungeon Goblin: What's this? Is this a gift for me!?
 <<endif>>
 
+<<nextPosition none>>
+<<enableDisable ClosedDoor OpenDoor>>
+<<wait 2>>
+
 The goblin pushes you into an empty looking room and closes the metal gate behind you.
 
 Dungeon Goblin: Don't even fink about escaping because there's no way out. Haha.
 
-The dungeon goblin laughs as he walks back to the entrance on the dungeon tunnel. The laughter echoes down the tunnel until you can hear it no more. You sit in the darkness awaiting your end.
+The dungeon goblin laughs as he walks back to the entrance on the dungeon tunnel. The laughter echoes down the tunnel until you can hear it no more. 
+
+You sit in the darkness awaiting your end.
 
 <<jump Wait_around_for_your_eventual_demise>>
 ===
@@ -673,6 +677,7 @@ Garbanzo drops from the ceiling with ease and makes no noise. He is holding a sm
 
 Garbanzo: Follow me. There's a secret tunnel this way.
 
+<<enableDisable StoneUncovered StoneCovered>>
 Garbanzo pushes a large stone out of the way. Behind the stone is a tunnel with a light at the end of it.
 
 <<jump Go_through_the_tunnel>>
@@ -685,8 +690,7 @@ position: 2756,435
 <<wait 2>>
 You pass through the tunnel and reach the light ahead. 
 
-<<goToScene EldoriaThroneRoom>>
-<<specificPosition ThroneRoomThroneSpot>>
+<<goToScene EldoriaThroneRoomAlt>>
 <<wait 2>>
 You've entered the castles throne room. Looks like you've just come out from behind a secret room behind the throne. The walls are high and are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. A goblin wielding an ornamented staff stands near the entrance to the throne room. No one is sitting in the throne. The leader must be somewhere else.
 
@@ -1395,7 +1399,12 @@ position: 2929,1470
 ---
 <<goToScene EldoriaCourtyard>>
 <<wait 2>>
-You walk through the gates and towards the inner castle doors. You pass a stable full of horses. You leave Stormhoof with the other horses in the stable.
+You walk through the gates and towards the inner castle doors. 
+
+<<specificPosition WalkToTheDoor>>
+<<wait 2>>
+
+You pass a stable full of horses. You leave Stormhoof with the other horses in the stable.
 
 You approach the castle doors. They swing open with ease. 
 

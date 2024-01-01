@@ -77,4 +77,20 @@ public class SceneSelector : MonoBehaviour
         variables.SetValue("$thirdPackage", "blue");
         dialogueRunner.StartDialogue("Chase_the_fairy");
     }
+
+    public void JumpToEldoriaTrue()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$specialPackage", true);
+        variables.SetValue("$muscleSpirit", true);
+        dialogueRunner.StartDialogue("Ride_towards_Eldoria");
+    }
+
+    public void JumpToEldoriaFalse()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$specialPackage", false);
+        variables.SetValue("$muscleSpirit", true);
+        dialogueRunner.StartDialogue("Ride_towards_Eldoria");
+    }
 }

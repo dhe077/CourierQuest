@@ -20,6 +20,7 @@ public class PlayerViewManager : MonoBehaviour
     [Header("----Head Position Manager----")]
     [SerializeField] public bool enableHeadMovement = false;
     [SerializeField] private float maxDist = 5.0f;
+    [SerializeField] public GameObject calibrationTarget;
 
     [Header("----Spot Change----")]
     [SerializeField] private Image spotFadeImage; // For spot fading
@@ -30,6 +31,8 @@ public class PlayerViewManager : MonoBehaviour
     void Start()
     {
         playerView = GameObject.Find("PlayerView");
+
+        //SetCalibrationTarget();
 
         SetSplinePath();
 
@@ -48,6 +51,7 @@ public class PlayerViewManager : MonoBehaviour
     {
         playerView.GetComponent<SplineFollower>().spline = splineComputers[positionIndex];
         playerView.GetComponent<SplineFollower>().SetDistance(0);
+        playerView.GetComponent<SplineFollower>().motion.offset = new Vector2(0, 0);
     }
 
     private void SetMoveSpeedMultiplier()
@@ -69,6 +73,12 @@ public class PlayerViewManager : MonoBehaviour
             headPositionManager.splineFollower = playerView.GetComponent<SplineFollower>();
         }
     }
+
+    // private void SetCalibrationTarget()
+    // {
+    //     playerView.GetComponent<Calibration>().target = calibrationTarget.transform;
+    //     playerView.GetComponent<Calibration>().Recenter();
+    // }
 
     public void NextPosition()
     {

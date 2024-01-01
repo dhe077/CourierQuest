@@ -2,27 +2,6 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.1": {
-      "Assembly-CSharp/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "Dreamteck.Splines": "1.0.0",
-          "Dreamteck.Splines.Editor": "1.0.0",
-          "Dreamteck.Utilities": "1.0.0",
-          "Dreamteck.Utilities.Editor": "1.0.0",
-          "Unity.XR.Hands.Samples.VisualizerSample": "1.0.0",
-          "Unity.XR.Interaction.Toolkit.Samples.Hands": "1.0.0",
-          "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor": "1.0.0",
-          "Unity.XR.Interaction.Toolkit.Samples.StarterAssets": "1.0.0",
-          "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Assembly-CSharp.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Assembly-CSharp.dll": {}
-        }
-      },
       "Dreamteck.Splines/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -124,11 +103,6 @@
     }
   },
   "libraries": {
-    "Assembly-CSharp/1.0.0": {
-      "type": "project",
-      "path": "Assembly-CSharp.csproj",
-      "msbuildProject": "Assembly-CSharp.csproj"
-    },
     "Dreamteck.Splines/1.0.0": {
       "type": "project",
       "path": "Dreamteck.Splines.csproj",
@@ -177,7 +151,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
-      "Assembly-CSharp >= 1.0.0",
       "Dreamteck.Splines >= 1.0.0",
       "Dreamteck.Splines.Editor >= 1.0.0",
       "Dreamteck.Utilities >= 1.0.0",
@@ -195,9 +168,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Assembly-CSharp-Editor.csproj",
-      "projectName": "Assembly-CSharp-Editor",
-      "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Assembly-CSharp-Editor.csproj",
+      "projectUniqueName": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Assembly-CSharp.csproj",
+      "projectName": "Assembly-CSharp",
+      "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Assembly-CSharp.csproj",
       "packagesPath": "C:\\Users\\GGPC\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\obj\\",
       "projectStyle": "PackageReference",
@@ -214,9 +187,6 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Assembly-CSharp.csproj": {
-              "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Assembly-CSharp.csproj"
-            },
             "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Splines.csproj": {
               "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Splines.csproj"
             },

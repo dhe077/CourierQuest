@@ -5282,6 +5282,7 @@ MonoBehaviour:
   moveSpeedMultiplier: 1
   enableHeadMovement: 0
   maxDist: 9
+  calibrationTarget: {fileID: 0}
   spotFadeImage: {fileID: 0}
   fadeDuration: 1
 --- !u!4 &789466530
@@ -15170,6 +15171,62 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1325820563}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1327720189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1327720191}
+  - component: {fileID: 1327720190}
+  m_Layer: 0
+  m_Name: EnvironmentManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1327720190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327720189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e2bee8346f715498d3d1bd3e1340e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableSpawnPackages: 0
+  enablePlayerChaser: 0
+  chaseObject: {fileID: 0}
+  lightning: {fileID: 0}
+  decreaseRate: 0.2
+  rainGroup: {fileID: 0}
+  increaseRate: 0.2
+  activatableObjects:
+  - {fileID: 571900233}
+  - {fileID: 1336418391}
+  - {fileID: 2068286187}
+  - {fileID: 1195885921}
+--- !u!4 &1327720191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327720189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.173298, y: -1.8014193, z: 202.9626}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1336418391
 GameObject:
   m_ObjectHideFlags: 0
