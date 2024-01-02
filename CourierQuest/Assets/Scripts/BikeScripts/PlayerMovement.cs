@@ -13,10 +13,14 @@ public class PlayerMovement : MonoBehaviour
 
     private float moveSpeed = 10.0f;
 
+    private float testSpeedMod = 0;
+
     // Update is called once per frame
     void Update()
     {
         ReadBikeData();
+
+        TestControls();
     }
 
     void FixedUpdate()
@@ -27,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
     // This function pulls the data from the bike controller class
     public void ReadBikeData()
     {
-        bikeSpeed = bikeController.speed;
+        // bikeSpeed = bikeController.speed;
+        bikeSpeed = bikeController.speed + testSpeedMod;
         bikeRPM = bikeController.RPM;
         bikeHeartRate = bikeController.heartRate;
     }
@@ -51,5 +56,13 @@ public class PlayerMovement : MonoBehaviour
     public float GetMoveSpeedMultiplier()
     {
         return moveSpeed;
+    }
+
+    public void TestControls()
+    {
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+            testSpeedMod -= 1;
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+            testSpeedMod += 1;
     }
 }
