@@ -7,7 +7,21 @@ public class SceneSelector : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
     public InMemoryVariableStorage variables;
-    // Start is called before the first frame update
+    
+    public void JumpToBjornScene()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$firstPackage", "large");
+        dialogueRunner.StartDialogue("Arrive_at_your_first_destination");
+    }
+
+    public void JumpToPetuniaScene()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$firstPackage", "small");
+        dialogueRunner.StartDialogue("Arrive_at_your_first_destination");
+    }
+
     public void JumpToMudbrickScene()
     {
         dialogueRunner.Stop();
@@ -33,6 +47,7 @@ public class SceneSelector : MonoBehaviour
     {
         dialogueRunner.Stop();
         variables.SetValue("$thirdPackage", "red");
+        variables.SetValue("$path", "left");
         dialogueRunner.StartDialogue("Arrive_at_your_third_destination");
     }
 
@@ -40,6 +55,7 @@ public class SceneSelector : MonoBehaviour
     {
         dialogueRunner.Stop();
         variables.SetValue("$thirdPackage", "green");
+        variables.SetValue("$path", "left");
         dialogueRunner.StartDialogue("Arrive_at_your_third_destination");
     }
 
@@ -47,6 +63,7 @@ public class SceneSelector : MonoBehaviour
     {
         dialogueRunner.Stop();
         variables.SetValue("$thirdPackage", "blue");
+        variables.SetValue("$path", "left");
         dialogueRunner.StartDialogue("Arrive_at_your_third_destination");
     }
 
@@ -54,6 +71,7 @@ public class SceneSelector : MonoBehaviour
     {
         dialogueRunner.Stop();
         variables.SetValue("$thirdPackage", "yellow");
+        variables.SetValue("$path", "left");
         dialogueRunner.StartDialogue("Arrive_at_your_third_destination");
     }
 
@@ -71,11 +89,28 @@ public class SceneSelector : MonoBehaviour
         dialogueRunner.StartDialogue("Do_nothing");
     }
 
+    public void JumpToThakaliExQuest()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$thirdPackage", "green");
+        variables.SetValue("$path", "left");
+        dialogueRunner.StartDialogue("Offer_to_use_Stormhoof_to_pull_the_plow");
+    }
+
     public void JumpToDaisyExQuest()
     {
         dialogueRunner.Stop();
         variables.SetValue("$thirdPackage", "blue");
+        variables.SetValue("$path", "left");
         dialogueRunner.StartDialogue("Chase_the_fairy");
+    }
+
+    public void JumpToValExQuest()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$thirdPackage", "yellow");
+        variables.SetValue("$path", "left");
+        dialogueRunner.StartDialogue("Escape_the_shooters");
     }
 
     public void JumpToEldoriaTrue()

@@ -564,6 +564,8 @@ position: 6303,-88
 You take the reins and hop on the saddle atop Stormhoof.
 
 <<nextPosition none>>
+<<enable Stormhoof false>>
+<<rideHorse true>>
 <<stop>>
 // <<jump Start_your_journey>>
 ===
@@ -1266,6 +1268,8 @@ You follow the right path.
     <<goToScene AbandonedHutAndBushes>>
     <<wait 2>>
     You see the abandoned hut. You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
+    <<enable Stormhoof true>>
+    <<rideHorse false>>
 
     Where do you want to camp?
     -> Set up camp in the abandoned hut.
@@ -1275,7 +1279,9 @@ You follow the right path.
 <<elseif $followedPath is false>>
     <<goToScene BushesAndRoad>>
     <<wait 2>>
-    You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
+    You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree.
+    <<enable Stormhoof true>>
+    <<rideHorse false>>
 
     Where do you want to camp?
     -> Set up camp on the side of the path.
@@ -1296,7 +1302,9 @@ You follow the left path.
 <<if $followedPath is true>>
     <<goToScene AbandonedHutAndBushes>>
     <<wait 2>>
-    You see the abandoned hut. You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
+    You see the abandoned hut. You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree.
+    <<enable Stormhoof true>>
+    <<rideHorse false>> 
 
     Where do you want to camp?
     -> Set up camp in the abandoned hut.
@@ -1306,7 +1314,9 @@ You follow the left path.
 <<elseif $followedPath is false>>
     <<goToScene BushesAndRoad>>
     <<wait 2>>
-    You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree. 
+    You need to take shelter before the storm gets worse. You tie Stormhoof to a nearby tree.
+    <<enable Stormhoof true>>
+    <<rideHorse false>> 
 
     Where do you want to camp?
     -> Set up camp on the side of the path.

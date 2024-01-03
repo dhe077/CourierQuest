@@ -101,6 +101,8 @@ position: 1217,-332
 ---
 You walk up to the ropes that tie Stormhoof to the tree. You loosen the ropes without a sound. The man seems oblivious to the situation.
 
+<<enable Stormhoof false>>
+<<rideHorse true>> 
 You quickly jump on Stormhoof and ride into the woods and towards the path.
 
 You have a job to do.
@@ -279,7 +281,10 @@ title: Find_the_path_and_deliver_the_packages
 position: 2688,-88
 ---
 <<nextPosition none>>
-<<wait  2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<goToScene ForestPath>>
@@ -313,7 +318,10 @@ title: Get_Stormhoof_and_continue_on_your_delivery
 position: 2679,563
 ---
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<goToScene ForestPath>>
@@ -558,7 +566,10 @@ title: Start_delivering_the_packages
 position: 2691,1230
 ---
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<goToScene ForestPath>>
@@ -605,7 +616,10 @@ You've arrived at the address labelled on the delivery package.
     <<wait 2>>
     The place looks like a small bakery store. Above the entrance to the store is a sign that says, "Pattersby's Pastries".
     <<nextPosition none>>
-    <<wait 2>>
+    <<wait 1>>
+    <<enable Stormhoof true>>
+    <<rideHorse false>> 
+    <<wait 1>>
     What do you do?
     -> Call out for Petunia.
         <<jump Call_out_for_Petunia>>
@@ -616,7 +630,10 @@ You've arrived at the address labelled on the delivery package.
     <<wait 2>>
     The place looks like a large tent. A wooden sign stuck in the dirt reads, "See the mighty Bjorn wrestle a bear!".
     <<nextPosition none>>
-    <<wait 2>>
+    <<wait 1>>
+    <<enable Stormhoof true>>
+    <<rideHorse false>> 
+    <<wait 1>>
     What do you do?
     -> Call out for Bjorn.
         <<jump Call_out_for_Bjorn>>
@@ -741,7 +758,10 @@ Player: Thank you for the pastry Petunia. It looks delicious.
 Petunia: No, thank you.
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 Petunia waves you a goodbye as you leave. You start to head on your way to your second delivery. 
 
 <<set $metPetunia to true>>
@@ -875,7 +895,10 @@ Player: Thank you for the muscle spirit. Good luck with the bear.
 Bjorn: Ah no need for luck when you are as strong as me!
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 Bjorn waves you a goodbye as you leave. You start to head on your way to your second delivery. 
 
 <<set $metBjorn to true>>

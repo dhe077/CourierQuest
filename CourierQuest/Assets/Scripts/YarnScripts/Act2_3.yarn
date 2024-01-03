@@ -16,7 +16,10 @@ You've arrived at the address labelled on the delivery package.
     <<wait 2>>
     The address has led you to the entrance of a cave on a cliff above you. You notice nothing out of the ordinary for a cave mouth. Suddenly, you hear a sneeze from within the cave and a blast of fire comes streaking out of the cave.
     <<nextPosition none>>
-    <<wait 2>>
+    <<wait 1>>
+    <<enable Stormhoof true>>
+    <<rideHorse false>> 
+    <<wait 1>>
     What do you do?
     -> Call out for Leyton.
         <<jump Call_out_for_Leyton>>
@@ -28,7 +31,10 @@ You've arrived at the address labelled on the delivery package.
     <<wait 2>>
     The address has led you to a luscious garden full of fruits, vegetables, and herbs. Although the clouds are gathering above you, this garden seems to have a perfect window of sunlight that shines down on the produce.
     <<nextPosition none>>
-    <<wait 2>>
+    <<wait 1>>
+    <<enable Stormhoof true>>
+    <<rideHorse false>> 
+    <<wait 1>>
     What do you do?
     -> Call out for Thakali.
         <<jump Call_out_for_Thakali>>
@@ -44,7 +50,10 @@ You've arrived at the address labelled on the delivery package.
     <<endif>>
 
     <<nextPosition none>>
-    <<wait 2>>
+    <<wait 1>>
+    <<enable Stormhoof true>>
+    <<rideHorse false>> 
+    <<wait 1>>
     What do you do?
     -> Call out for Daisy.
         <<jump Call_out_for_Daisy>>
@@ -56,7 +65,10 @@ You've arrived at the address labelled on the delivery package.
     <<wait 2>>
     The address has led you to a door situated within a hill. There is a sign above the door that reads "Gamblers Grotto". The door has a small window that looks like it can slide open.
     <<nextPosition none>>
-    <<wait 2>>
+    <<wait 1>>
+    <<enable Stormhoof true>>
+    <<rideHorse false>> 
+    <<wait 1>>
     What do you do?
     -> Call out for Val.
         <<jump Call_out_for_Val>>
@@ -432,7 +444,10 @@ position: 6545,-2552
 Player: Thank you for the gift. I'll be careful when handling it.
 
 <<specificPosition LeaveLeytonsCave>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 Leyton: Oh if you see any ogres. They will be terrified of that thing too. No idea why.
 
 <<jump Continue_on_your_journey>>
@@ -466,7 +481,10 @@ Leyton looks at you in disbelief.
 Leyton: There's a volcano nearby? If I knew that I'd have gone there. Try further down the path.
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -480,7 +498,10 @@ Player: I was given this task by my boss at the Granbell courier hall. She told 
 Leyton: I wish you luck.
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -777,7 +798,10 @@ Thakali: That is good idea. Thakali need rest after slicing plants.
 
 <<specificPosition PlowSpot>>
 <<enableDisable PlowUsing PlowNotUsing>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 Thakali straps the plow onto Stormhoof.
 
 <<set $metThakali to true>>
@@ -802,7 +826,10 @@ Thakali throws the seeds behind you into the freshly tilled soil.
 
 <<specificPosition ThakalisGarden>>
 <<enable PlowUsing false>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
 
 Player: Now just cover them up and water them.
 
@@ -880,7 +907,10 @@ position: 6500,-115
 ---
 You leave the axe on the ground.
 <<specificPosition LeaveThakalisGarden>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You'd better continue on your journey.
 <<jump Continue_on_your_journey>>
 ===
@@ -894,7 +924,10 @@ position: 6498,185
 
 Thakali has not noticed.
 <<specificPosition LeaveThakalisGarden>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You'd better continue on your journey.
 <<jump Continue_on_your_journey>>
 ===
@@ -906,7 +939,10 @@ Player: I was given this task by my boss at the Granbell courier hall. She told 
 
 Thakali: Thakali gives you luck.
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -922,7 +958,10 @@ Thakali: Yes. It's that way. You will see sharp rocks of volcano.
 He points down the path.
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -1209,7 +1248,10 @@ title: Chase_the_fairy
 position: 4376,1869
 ---
 <<goToScene FairyChase>>
-<<wait 5>>
+<<wait 1>>
+<<rideHorse true>> 
+<<wait 4>>
+
 <<startChase none>>
 <<moveClose false>>
 You chase the fairy riding Stormhoof. Daisy is close behind you following on foot... or hoof?
@@ -1232,7 +1274,10 @@ title: Secretly_follow_the_fairy
 position: 4366,2262
 ---
 <<goToScene FairyChase>>
-<<wait 5>>
+<<wait 1>>
+<<rideHorse true>> 
+<<wait 4>>
+
 <<startChase none>>
 <<moveClose false>>
 You chase the fairy riding Stormhoof.
@@ -1332,7 +1377,10 @@ You managed to pull your arm away. You throw her the package to the ground and s
 This delivery might reflect badly on your delivery record when you get back to Granbell.
 
 <<specificPosition LeaveDaisysBerryFarm>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You get a feeling like you are being watched. 
 
 <<jump You_spot_the_creature_again>>
@@ -1348,7 +1396,10 @@ Daisy scoffs.
 Daisy: I wouldn't trust those nobles, but I wish you a safe journey.
 
 <<specificPosition LeaveDaisysBerryFarm>>
-<<wait 6>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 5>>
 
 <<jump Continue_on_your_journey>>
 ===
@@ -1361,7 +1412,10 @@ Player: Thanks for the directions.
 Daisy: You should know. There's something special about that volcano. I wish you a safe journey.
 
 <<specificPosition LeaveDaisysBerryFarm>>
-<<wait 6>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 5>>
 
 <<jump Continue_on_your_journey>>
 ===
@@ -1620,13 +1674,18 @@ position: 5290,3856
 ---
 <<goToScene ValsEscape>>
 <<wait 2>>
+<<rideHorse true>> 
+<<wait 1>>
 As you ride away from the shooters. Magic missles and swift arrows wizz past your head and scatter along the ground.
 <<wait 60>> // Exercise timer
 <<goToScene ValClearing>>
 <<wait 2>>
 You've gained enough distance from them to stop and hide for a moment.
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
 Val: Phew. That was close. Swift riding there partner.
 
 What do you say?
@@ -1717,6 +1776,11 @@ Player: Do you know which way Eldoria is from here?
 
 Val: Eldoria? I heard that place is overrun with the vilest of creatures. Goblins. If you want to find yourself among those creatures then just head down this path here.
 
+<<specificPosition LeaveClearing>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 Player: Thank you.
 
 <<jump Continue_on_your_journey>>
@@ -1729,6 +1793,11 @@ Player: Do you know which way the nearest volcano is from here?
 
 Val: My oh my, the volcano? Are you planning on gambling you're winnings at the firey pit? It's just down this path here.
 
+<<specificPosition LeaveClearing>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 Player: Thank you.
 
 <<jump Continue_on_your_journey>>
@@ -1742,7 +1811,10 @@ Player: Fine! I'm just going to leave the package here. Good riddance!
 The laugher and cheering continues on the other side of the door once more.
 
 <<specificPosition LeaveGamblersGrotto>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You decide that it isn't worth dealing with these people. You need to make one more delivery.
 
 You get a feeling like you are being watched. 
@@ -1781,7 +1853,10 @@ The sky above has become an angry herd of dark clouds. The sun is setting it'll 
     <<wait 2>>
     You ride a bit further down the path and find a good spot to make camp. 
     <<nextPosition none>>
-    <<wait 2>>
+    <<wait 1>>
+    <<enable Stormhoof true>>
+    <<rideHorse false>> 
+    <<wait 1>>
     You decide to make camp at the base of a large tree tonight.
     <<nextPosition none>>
     <<wait 2>>
@@ -1792,7 +1867,10 @@ The sky above has become an angry herd of dark clouds. The sun is setting it'll 
     <<wait 2>>
     You ride a bit further down the path and find a good spot to make camp. 
     <<nextPosition none>>
-    <<wait 2>>
+    <<wait 1>>
+    <<enable Stormhoof true>>
+    <<rideHorse false>> 
+    <<wait 1>>
     You decide to make camp near a few large jagged rocks. 
     <<nextPosition none>>
     <<wait 2>>
@@ -1802,8 +1880,6 @@ The sky above has become an angry herd of dark clouds. The sun is setting it'll 
 Hopefully you'll be safe.
 
 *Player must take a break here before moving on.*
-
-// *Player must take a break here before moving on.*
 <<if $path is "left">>
     -> Wake up under the tree.
         <<jump Wake_up_under_the_tree>>

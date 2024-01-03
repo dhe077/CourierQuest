@@ -7,13 +7,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public SplineFollower splineFollower;
     public BikeController bikeController;
-    private float bikeSpeed = 0.0f;
-    private int bikeRPM = 0;
+    [SerializeField] private float bikeSpeed = 0.0f;
+    [SerializeField] private int bikeRPM = 0;
     private int bikeHeartRate = 0;
 
     private float moveSpeed = 10.0f;
 
-    private float testSpeedMod = 0;
+    [SerializeField] private float testSpeedMod = 0;
+    [SerializeField] private int testRPMMod = 0;
 
     // Update is called once per frame
     void Update()
@@ -33,7 +34,9 @@ public class PlayerMovement : MonoBehaviour
     {
         // bikeSpeed = bikeController.speed;
         bikeSpeed = bikeController.speed + testSpeedMod;
-        bikeRPM = bikeController.RPM;
+        // bikeRPM = bikeController.RPM;
+        bikeRPM = bikeController.RPM + testRPMMod;
+
         bikeHeartRate = bikeController.heartRate;
     }
 
@@ -58,11 +61,23 @@ public class PlayerMovement : MonoBehaviour
         return moveSpeed;
     }
 
+    public float GetBikeRPM()
+    {
+        return bikeRPM;
+    }
+
     public void TestControls()
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
             testSpeedMod -= 1;
+            testRPMMod -= 10;
+        }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
             testSpeedMod += 1;
+            testRPMMod += 10;
+        }
+            
     }
 }

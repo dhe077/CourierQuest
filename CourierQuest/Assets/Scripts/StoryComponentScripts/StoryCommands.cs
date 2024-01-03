@@ -101,6 +101,10 @@ public class StoryCommands : MonoBehaviour
             "enableDisable",
             EnableAndDisableObjects
         );
+        dialogueRunner.AddCommandHandler<bool>(
+            "rideHorse",
+            RideHorse
+        );
     }
 
     public void Start()
@@ -235,6 +239,13 @@ public class StoryCommands : MonoBehaviour
     {
         environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
         environmentManager.EnableAndDisableObjects(enableObj, disableObj);
+    }
+
+    // This command enables the story to make the player hop on and off the horse.
+    public void RideHorse(bool hopOn)
+    {
+        environmentManager = GameObject.Find("EnvironmentManager").GetComponent<EnvironmentManager>();
+        environmentManager.RideHorse(hopOn);
     }
 
 
