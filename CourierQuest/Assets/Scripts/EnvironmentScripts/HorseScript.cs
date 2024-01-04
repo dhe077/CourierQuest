@@ -13,10 +13,10 @@ public class HorseScript : MonoBehaviour
     
     public bool startGrazing = false;
 
-    [Header("----Target RPM for Animations----")]
-    [SerializeField] private float trotRPMTarget = 70.0f;
-    [SerializeField] private float canterRPMTarget = 80.0f;
-    [SerializeField] private float gallopRPMTarget = 90.0f;
+    // [Header("----Target RPM for Animations----")]
+    // [SerializeField] private float trotRPMTarget = 70.0f;
+    // [SerializeField] private float canterRPMTarget = 80.0f;
+    // [SerializeField] private float gallopRPMTarget = 90.0f;
 
     private void Start()
     {

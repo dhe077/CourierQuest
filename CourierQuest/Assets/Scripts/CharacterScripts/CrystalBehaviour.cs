@@ -38,8 +38,6 @@ public class CrystalBehaviour : MonoBehaviour
     {
         thirdTime = maxTime / 3;
         timer = maxTime;
-
-        Debug.Log(greenColor);
     }
 
     // Update is called once per frame
@@ -146,11 +144,6 @@ public class CrystalBehaviour : MonoBehaviour
         int yR = (int) y.r;
         int yG = (int) y.g;
         int yB = (int) y.b;
-
-        Debug.Log($"{xR}-{yR}, {xG}-{yG}, {xB}-{yB}");
-        Debug.Log(xR == yR);
-        Debug.Log(xG == yG);
-        Debug.Log(xB == yB);
 
         if (xR == yR)
             if (xG == yG)

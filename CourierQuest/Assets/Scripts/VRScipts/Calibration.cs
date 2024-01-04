@@ -20,8 +20,9 @@ public class Calibration : MonoBehaviour
 
     public void Recenter()
     {
-        Debug.Log("Calibrated!");
         origin.MoveCameraToWorldLocation(target.position);
         origin.MatchOriginUpCameraForward(target.up, target.forward);
+
+        Debug.Log("Calibrated!");
     }
 }
