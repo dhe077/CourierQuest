@@ -3,8 +3,17 @@ position: -153,88
 ---
 <<goToScene WakeUpLargeTree>>
 <<wait 2>>
-You wake up under the tree that you made camp under. The weather did not let up over night. It's no longer raining but the clouds are still grey.
+You wake up under the tree that you made camp under. 
 
+<<nextPosition none>>
+<<wait 2>>
+The weather did not let up over night. It's no longer raining but the clouds are still grey.
+
+<<nextPosition none>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 It's about time that you make your final delivery to Eldoria.
 
 <<jump Ride_towards_Eldoria>>
@@ -53,7 +62,7 @@ position: 542,-600
 ---
 <<moveClose false>>
 <<wait 10>> // Exercise timer
-You zip through the forest on Stormhoof's back. You are much faster than the goblin. A river near by rushes loudly. Stomhoof kicks up a rock and it hits the goblin off it's mount and into the river.
+You zip through the forest on Stormhoof's back. You are much faster than the goblin. A river near by rushes loudly. Stormhoof kicks up a rock and it hits the goblin off it's mount and into the river.
 
 You've outrun the goblin one last time.
 
@@ -69,7 +78,10 @@ You ride down the path towards Eldoria. You pass farms and barns as you near the
 
 <<wait 20>>
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
 
 You approach the gates of Eldoria. The gate doors swing open and a large bear lumbers from behind the open doors. To your relief, the bear is being held down by several goblins. 
 
@@ -164,12 +176,19 @@ title: Approach_the_castle_doors
 position: 2784,-1294
 ---
 <<goToScene EldoriaCourtyard>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You walk through the gates and towards the inner castle doors. 
 
 <<specificPosition WalkToTheDoors>>
 <<wait 2>>
-You pass a stable full of horses but unlike Granbell there is no stable master tending to them. You leave Stormhoof with the other horses in the stable.
+You pass a stable full of horses but unlike Granbell there is no stable master tending to them. 
+
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+You leave Stormhoof with the other horses in the stable.
 
 You approach the castle doors. They swing open with ease. 
 
@@ -502,18 +521,24 @@ position: 6564,-1718
 ---
 // *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
 <<goToScene ForestPath>>
-<<wait 2>>
+<<wait 1>>
+<<rideHorse true>> 
+<<wait 1>>
 
 You ride back to Granbell at a fast pace. On the way back you see the locations that you delivered to and some you don't recognise.
 
 <<goToScene ReturnToGranbell>>
-<<wait 2>>
+<<wait 1>>
+<<rideHorse true>> 
+<<wait 1>>
 You reach Granbell and tell Mistress Ellastra about what happened. She notifies the guards and they relay the information back up to the Aurelians.
 
 Word around the town has spread saying that the goblin Queen is coming to Granbell to speak with the Aurelians about ending the war.
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<rideHorse false>> 
+<<wait 1>>
 
 The goblin Queen arrives at Granbell and all the people of Granbell stare in silence. She rests on the detatched throne of Eldoria, carried on the back of the ogre you fought. They head into the castle. 
 
@@ -549,7 +574,10 @@ position: 1211,45
 <<wait 20>>
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
 You approach the gates of Eldoria. Two creatures pop out from behind the gate's doors.
 
 Gate Goblin 1: Hey you! Stop!
@@ -612,7 +640,10 @@ position: 2771,-452
 Garbanzo slips inside the gate and you lose sight of him.
 
 <<goToScene EldoriaCourtyard>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 
 To your dismay, a horde of goblins await you.
 
@@ -625,7 +656,10 @@ title: Go_to_the_dungeon
 position: 2767,15
 ---
 <<specificPosition WalkToDungeon>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
 The goblins lead you towards the dungeon entrance.
 
 At the entrance of the dungeon another goblin stands waiting. It looks at you and holds out its knife.
@@ -1083,6 +1117,11 @@ Garbanzo: Run! I'll hold them off!
 
 You jump from the window nearby. Stormhoof rides below and you land atop her.
 
+<<goToScene ForestPath>>
+<<wait 1>>
+<<rideHorse true>> 
+<<wait 1>>
+
 <<jump Escape_back_to_Granbell>>
 ===
 
@@ -1094,13 +1133,17 @@ position: 6570,-109
 You ride back to Granbell at a fast pace. On the way back you see the locations that you delivered to and some you don't recognise.
 
 <<goToScene ReturnToGranbell>>
-<<wait 2>>
+<<wait 1>>
+<<rideHorse true>> 
+<<wait 1>>
 You reach Granbell and tell Mistress Ellastra about what happened. She notifies the guards and they relay the information back up to the Aurelians.
 
 Word around the town has spread saying that the goblin forces in Eldoria are retreating.
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<rideHorse false>> 
+<<wait 1>>
 
 After a few hours a guardsman walks into the market center and reads an announcement.
 
@@ -1120,8 +1163,17 @@ position: -146,1543
 ---
 <<goToScene WakeUpLargeRocks>>
 <<wait 2>>
-You wake up near the rocks that you camped near. The weather cleared over night. The bright sun of the day is shining down over your campsite.
+You wake up near the rocks that you camped near. 
 
+<<nextPosition none>>
+<<wait 2>>
+The weather cleared over night. The bright sun of the day is shining down over your campsite.
+
+<<nextPosition none>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 It's about time that you disposed of the package at the volcano.
 
 <<jump Ride_towards_the_volcano>>
@@ -1166,7 +1218,10 @@ position: 549,1694
 <<wait 2>>
 You purse your lips around the wooden whistle. You blow hard into the whistle. You hear nothing. Stormhoof shakes her head. Seems like it's not working. 
 
-On the path ahead of you a flash of green streaks across the path. You hear a THUD beside you. The goblin has attached itself onto Stormhoof's harness. It speaks to you.
+<<enable GarbanzoFlashGroup true>>
+On the path ahead of you a flash of green streaks across the path. 
+
+You hear a THUD beside you. The goblin has attached itself onto Stormhoof's harness. It speaks to you.
 
 Garbanzo: You called? 
 
@@ -1184,6 +1239,11 @@ What do you do?
 title: Tell_the_goblin_that_he_fell_for_your_trap
 position: 910,1433
 ---
+<<nextPosition none>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
 You grind Stormhoof to a halt in the middle of the path. 
 
 Player: Ha ha you fell for my trap!
@@ -1216,7 +1276,14 @@ What do you do?
 title: Kick_off_the_goblin
 position: 903,1704
 ---
-You attempt to kick the goblin off your horse but the goblin clings on. You grind Stormhoof to a halt in the middle of the path. 
+You attempt to kick the goblin off your horse but the goblin clings on. 
+
+<<nextPosition none>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
+You grind Stormhoof to a halt in the middle of the path. 
 
 You reach down into your pack where you keep your items. You feel nothing. The goblin jumps down off Stormhoof.
 
@@ -1360,14 +1427,19 @@ title: Deliver_the_package_to_Eldoria_with_the_help_of_friends
 position: 2486,1454
 ---
 <<goToScene ForestPath>>
-<<wait 2>>
+<<wait 1>>
+<<rideHorse true>> 
+<<wait 1>>
 You and your party set off towards Eldoria.
 <<wait 30>> // Exercise timer
 
 <<goToScene EldoriaGates>>
 <<wait 20>>
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
 You approach the gates of Eldoria. The gate doors swing open and a large bear lumbers from behind the open doors. To your relief, the bear is being held down by several goblins. 
 
 A goblin atop the bear speaks to you.
@@ -1401,7 +1473,7 @@ position: 2929,1470
 <<wait 2>>
 You walk through the gates and towards the inner castle doors. 
 
-<<specificPosition WalkToTheDoor>>
+<<specificPosition WalkToTheDoors>>
 <<wait 2>>
 
 You pass a stable full of horses. You leave Stormhoof with the other horses in the stable.
@@ -1601,7 +1673,9 @@ position: 4535,1436
 ---
 You leave Eldoria. 
 <<goToScene ForestPath>>
-<<wait 2>>
+<<wait 1>>
+<<rideHorse true>> 
+<<wait 1>>
 
 One of your party members approaches you and asks if you'd like to go on more adventures with them. You can abandon your job as a courier and make your riches through adventuring with them. You accept their offer and ride with them to your next adventure. 
 
@@ -1665,7 +1739,10 @@ title: Destroy_the_package_with_the_help_of_friends
 position: 2495,1867
 ---
 <<goToScene ForestPath>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
 You and your party set off towards the volcano. 
 <<wait 30>> // Exercise timer
 
@@ -1676,11 +1753,12 @@ You ride swiftly up the path towards the volcano. You see the forest around you 
 
 The path is becoming too narrow for Stormhoof to safely traverse. You leave Stormhoof at the base of the volcano.
 
-You follow a path to the top of the volcano. 
-
 <<nextPosition none>>
-<<wait 2>>
-If you're going to get rid of this package you're going to need to throw it into the top of the volcano and into the lava.
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
+You follow a path to the top of the volcano.  If you're going to get rid of this package you're going to need to throw it into the top of the volcano and into the lava.
 
 <<if $metBjorn is true>>
     <<goToScene LavaRiverBjorn>>
@@ -1938,7 +2016,9 @@ You toss the package into the fiery depths and watch it plop into the lava and s
 A bubble of molten rock bursts out from where it landed. The bubbles of molten rock begin to multiply. The volcano starts to shake. The lava rises. You need to get off the volcano, QUICKLY!
 
 <<goToScene ForestPath>>
-<<wait 2>>
+<<wait 1>>
+<<rideHorse true>> 
+<<wait 1>>
 You run back to your party and escape into the forest far from the volcano. An eruption can be heard away in the distance. One of your party members approaches you and asks if you'd like to go on more adventures with them. You can abandon your job as a courier and make your riches through adventuring with them. You accept their offer and ride with them to your next adventure. 
 
 Seems like you delivered something that changed your destiny forever.
@@ -1958,7 +2038,10 @@ You see the forest around you transform into a bleak landscape. Jagged rocks pep
 The path is becoming too narrow for Stormhoof to safely traverse. You leave Stormhoof at the base of the volcano.
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
 
 You follow the goblin up the path to the top of the volcano. As you turn around a corner of the path you lose sight of the goblin. You assume he's going to the top as well. Better keep going up.
 
@@ -1975,7 +2058,10 @@ You ride swiftly up the path towards the volcano. You see the forest around you 
 The path is becoming too narrow for Stormhoof to safely traverse. You leave Stormhoof at the base of the volcano.
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
 
 You follow a path to the top of the volcano. If you're going to get rid of this package you're going to need to throw it into the top of the volcano and into the lava.
 
@@ -2009,6 +2095,8 @@ title: Embrace_the_muscle_spirit
 position: 1473,2424
 ---
 You close your eyes and you feel a sense of immense strength possess you. You feel the power grip your muscles. It's as if you've lost control of your own body's movement. Your arms reach for a large stone boulder nearby. You lift the boulder over your head and throw it into the hole that the lava is coming out of.
+
+<<enableDisable RockThrown RockNotThrown>>
 
 The rock has stopped the flow of the lava. This'll only hold temporarily you'd better get across quickly. 
 
@@ -2216,8 +2304,10 @@ position: 3443,2814
     // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
     // *Very Hard. Walk the stone stairs.*
-    -> Walk the stone stairs to the top of the cave.
-        <<jump Walk_the_stone_stairs_to_the_top_of_the_cave>>
+    <<nextPosition none>>
+    <<wait 10>> // Exercise timer
+
+    <<jump Walk_the_stone_stairs_to_the_top_of_the_cave>>
 <<endif>>
 ===
 
@@ -2399,8 +2489,6 @@ You climb the side of the guardian up to the top of the cave. At the top of the 
 title: Walk_the_stone_stairs_to_the_top_of_the_cave
 position: 4000,2452
 ---
-<<nextPosition none>>
-<<wait 10>> // Exercise timer
 You take your time walking the stone stairs to the top of the cave. 
 
 <<nextPosition none>>
@@ -2427,6 +2515,8 @@ There is an outcropping that leans over the volcano's pit of lava.
     <<wait 2>>
     To prevent the next person who holds this package from succumbing to a wave of misfortune, you must drop the package off the side of that outcropping into the lava below.
 
+    <<nextPosition none>>
+    <<wait 2>>
     What do you do?
     -> Open the package then drop it.
         <<jump Open_the_package_then_drop_it>>
@@ -2608,7 +2698,9 @@ The dragon disappears into a puff of smoke.
 You look around nothing seems different so far. 
 
 <<goToScene ReturnToGranbell>>
-<<wait 2>>
+<<wait 1>>
+<<rideHorse true>> 
+<<wait 1>>
 You make your way back to Granbell. At Granbell people are rejoicing and cheering along the streets. You hear them say that the war has ended.
 
 People: Finally! The war is over! There is peace across the land! Goblins are no longer a problem!
@@ -2618,7 +2710,9 @@ You should tell Mistress Ellastra about the packages you delivered.
 You head towards the courier guildhall. 
 
 <<specificPosition ButcherySpot>>
-<<wait 2>>
+<<wait 1>>
+<<rideHorse false>> 
+<<wait 1>>
 You look inside what is supposed to be the courier guildhall but instead it is a butchery. You call out for Mistress Ellastra.
 
 Player: Hello?! Mistress Ellastra are you in there?
@@ -2663,8 +2757,10 @@ The dragon disappears into a puff of smoke.
 
 Everything goes dark. You wake up. Look around. The weather is grey and gloomy. Looks like it might rain. 
 
-<<goToScene GranbellOpening>>
-<<wait 4>>
+<<goToScene GranbellEnding>>
+<<wait 1>>
+<<rideHorse false>> 
+<<wait 3>>
 You need to make a delivery today. You start walking to work.
 
 <<goToScene KingdomStreet>>

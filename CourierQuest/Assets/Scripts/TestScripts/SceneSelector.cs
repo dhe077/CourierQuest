@@ -89,6 +89,14 @@ public class SceneSelector : MonoBehaviour
         dialogueRunner.StartDialogue("Do_nothing");
     }
 
+    public void JumpToLeytonExQuest()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$thirdPackage", "red");
+        variables.SetValue("$path", "left");
+        dialogueRunner.StartDialogue("Ask_how_you_can_help_heat_up_the_coals");
+    }
+
     public void JumpToThakaliExQuest()
     {
         dialogueRunner.Stop();
@@ -113,6 +121,8 @@ public class SceneSelector : MonoBehaviour
         dialogueRunner.StartDialogue("Escape_the_shooters");
     }
 
+    // Endings
+
     public void JumpToEldoriaTrue()
     {
         dialogueRunner.Stop();
@@ -127,5 +137,30 @@ public class SceneSelector : MonoBehaviour
         variables.SetValue("$specialPackage", false);
         variables.SetValue("$muscleSpirit", true);
         dialogueRunner.StartDialogue("Ride_towards_Eldoria");
+    }
+
+    public void JumpToVolcanoTrue()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$specialPackage", true);
+        variables.SetValue("$muscleSpirit", true);
+        dialogueRunner.StartDialogue("Ride_towards_the_volcano");
+    }
+
+    public void JumpToVolcanoFalse()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$specialPackage", false);
+        variables.SetValue("$muscleSpirit", true);
+        dialogueRunner.StartDialogue("Ride_towards_the_volcano");
+    }
+
+    public void JumpToWhistleTrue()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$specialPackage", true);
+        variables.SetValue("$whistle", true);
+        variables.SetValue("$muscleSpirit", true);
+        dialogueRunner.StartDialogue("Ride_towards_the_volcano");
     }
 }

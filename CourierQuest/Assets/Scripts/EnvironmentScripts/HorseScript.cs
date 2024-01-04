@@ -10,7 +10,7 @@ public class HorseScript : MonoBehaviour
     private Transform horseTransform;
     private Animator animator;
 
-
+    
     public bool startGrazing = false;
 
     [Header("----Target RPM for Animations----")]
@@ -55,31 +55,6 @@ public class HorseScript : MonoBehaviour
 
     public void MovementAnimation()
     {
-        if (playerMovement.GetBikeRPM() == 0)
-        {
-            animator.SetBool("Walk", false);
-        }
-        else if (playerMovement.GetBikeRPM() > 0 && playerMovement.GetBikeRPM() < trotRPMTarget)
-        {
-            animator.SetBool("Walk", true);
-            animator.SetBool("Trot", false);
-        }
-        else if (playerMovement.GetBikeRPM() >= trotRPMTarget && playerMovement.GetBikeRPM() < canterRPMTarget)
-        {
-            animator.SetBool("Walk", false);
-            animator.SetBool("Trot", true);
-            animator.SetBool("Canter", false);
-        }
-        else if (playerMovement.GetBikeRPM() >= canterRPMTarget && playerMovement.GetBikeRPM() < gallopRPMTarget)
-        {
-            animator.SetBool("Trot", false);
-            animator.SetBool("Canter", true);
-            animator.SetBool("Gallop", false);
-        }
-        else if (playerMovement.GetBikeRPM() > gallopRPMTarget)
-        {
-            animator.SetBool("Canter", false);
-            animator.SetBool("Gallop", true);
-        }
+        animator.SetFloat("RPM", playerMovement.GetBikeRPM());
     }
 }

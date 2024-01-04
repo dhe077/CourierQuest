@@ -141,18 +141,4 @@ public class EnvironmentManager : MonoBehaviour
         Debug.Log("Error: Object not found in list!");
         return null;
     }
-
-    public void RideHorse(bool hopOn)
-    {
-        playerView = GameObject.Find("PlayerView");
-        if (playerView != null)
-        {
-            GameObject horseGroup = GameObject.Find("PlayerStormhoof");
-            horseGroup.GetComponent<HorseScript>().EnableHorse(hopOn);
-        }
-        else
-        {
-            Debug.Log("No playerView found!");
-        }
-    }
 }
