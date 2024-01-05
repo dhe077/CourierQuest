@@ -1799,7 +1799,9 @@ You follow a path to the top of the volcano.  If you're going to get rid of this
     Petunia: You go on deary. I'll wait at the base of the volcano.
 <<endif>>
 
-<<jump Continue_following_the_path_up_the_volcano>>
+<<setNextNodeName Continue_following_the_path_up_the_volcano>>
+<<stop>>
+// <<jump Continue_following_the_path_up_the_volcano>>
 ===
 
 title: Continue_following_the_path_up_the_volcano
@@ -1851,7 +1853,9 @@ You approach the cave entrance. This cave seems alot darker than normal, almost 
     You reach the other side of the smog and run close to a pool of lava. You turn and look behind you at the smog. Seems like running through the smog worked out.
 <<endif>>
 
-<<jump Go_further_into_the_cave>>
+<<setNextNodeName Go_further_into_the_cave>>
+<<stop>>
+// <<jump Go_further_into_the_cave>>
 ===
 
 title: Go_further_into_the_cave
@@ -2033,8 +2037,6 @@ You chase the goblin up the path towards the volcano. You can't let it out of yo
 
 You see the forest around you transform into a bleak landscape. Jagged rocks pepper the land and molten rivers stream from the volcano. The smell of ash lingers in the air around you. There is no way anything lives here.
 
-<<wait 10>>
-
 The path is becoming too narrow for Stormhoof to safely traverse. You leave Stormhoof at the base of the volcano.
 
 <<nextPosition none>>
@@ -2045,7 +2047,9 @@ The path is becoming too narrow for Stormhoof to safely traverse. You leave Stor
 
 You follow the goblin up the path to the top of the volcano. As you turn around a corner of the path you lose sight of the goblin. You assume he's going to the top as well. Better keep going up.
 
-<<jump Follow_the_path_to_the_top_of_the_volcano>>
+<<setNextNodeName Follow_the_path_to_the_top_of_the_volcano>>
+<<stop>>
+// <<jump Follow_the_path_to_the_top_of_the_volcano>>
 ===
 
 title: Ride_to_the_volcano
@@ -2065,7 +2069,9 @@ The path is becoming too narrow for Stormhoof to safely traverse. You leave Stor
 
 You follow a path to the top of the volcano. If you're going to get rid of this package you're going to need to throw it into the top of the volcano and into the lava.
 
-<<jump Follow_the_path_to_the_top_of_the_volcano>>
+<<setNextNodeName Follow_the_path_to_the_top_of_the_volcano>>
+<<stop>>
+// <<jump Follow_the_path_to_the_top_of_the_volcano>>
 ===
 
 title: Follow_the_path_to_the_top_of_the_volcano
@@ -2107,7 +2113,9 @@ You step through where the lava previously flowed and reach the other side of th
 <<nextPosition none>>
 <<wait 2>>
 
-<<jump Continue_up_the_volcano>>
+<<setNextNodeName Continue_up_the_volcano>>
+<<stop>>
+// <<jump Continue_up_the_volcano>>
 ===
 
 title: Eat_the_Pattersby_Pastry
@@ -2125,7 +2133,9 @@ You've successfully crossed the lava river. Now you must press on.
 <<nextPosition none>>
 <<wait 2>>
 
-<<jump Continue_up_the_volcano>>
+<<setNextNodeName Continue_up_the_volcano>>
+<<stop>>
+// <<jump Continue_up_the_volcano>>
 ===
 
 title: Continue_up_the_volcano
@@ -2183,7 +2193,9 @@ The smog feels heavier than the last time you went into the smog.
 
 You reach the other side of the smog and run close to a pool of lava. You turn and look behind you at the smog. Seems like running through the smog worked out.
 
-<<jump Delve_further_into_the_volcano>>
+<<setNextNodeName Delve_further_into_the_volcano>>
+<<stop>>
+// <<jump Delve_further_into_the_volcano>>
 ===
 
 title: Hold_out_the_diamond_in_front_of_you
@@ -2199,7 +2211,9 @@ To your surprise the darkness seems to be lessening directly in front of the dia
 
 You've passed the smog and you're no longer at the entrance of the cave. You find yourself deeper within the volcano.
 
-<<jump Delve_further_into_the_volcano>>
+<<setNextNodeName Delve_further_into_the_volcano>>
+<<stop>>
+// <<jump Delve_further_into_the_volcano>>
 ===
 
 title: Use_the_animal_pendant_to_get_help_from_the_forest
@@ -2213,7 +2227,9 @@ Before you open your eyes you hear a "squawk" and a "craw". You open your eyes a
 <<wait 10>>
 You remove the pendant and the birds fly away.
 
-<<jump Delve_further_into_the_volcano>>
+<<setNextNodeName Delve_further_into_the_volcano>>
+<<stop>>
+// <<jump Delve_further_into_the_volcano>>
 ===
 
 title: Open_the_smoke_vial
@@ -2226,7 +2242,9 @@ Exactly as you had thought, the smog from the cave is sucked into the vial you h
 <<specificPosition IntoCave>>
 <<wait 10>>
 
-<<jump Delve_further_into_the_volcano>>
+<<setNextNodeName Delve_further_into_the_volcano>>
+<<stop>>
+// <<jump Delve_further_into_the_volcano>>
 ===
 
 title: Delve_further_into_the_volcano

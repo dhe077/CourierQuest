@@ -28,6 +28,8 @@ public class StoryCommands : MonoBehaviour
     private float fadeSpeed = 1.0f;
     private float alpha = 0.196f;
 
+    private string nextNodeName;
+
     public void Awake()
     {
         // Create a new command called 'camera_look', which looks at a target. 
@@ -104,6 +106,10 @@ public class StoryCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<bool>(
             "rideHorse",
             RideHorse
+        );
+        dialogueRunner.AddCommandHandler<string>(
+            "setNextNodeName",
+            SetNextNodeName
         );
     }
 
@@ -246,6 +252,12 @@ public class StoryCommands : MonoBehaviour
     {
         playerViewManager = GameObject.Find("PlayerViewManager").GetComponent<PlayerViewManager>();
         playerViewManager.RideHorse(hopOn);
+    }
+
+    public void SetNextNodeName(string nodeName)
+    {
+        playerViewManager = GameObject.Find("PlayerViewManager").GetComponent<PlayerViewManager>();
+        playerViewManager.SetSceneToChangeTo(nodeName);
     }
 
 

@@ -219,6 +219,7 @@ position: 684,65
 
 Frankie: Alright buddy. Just be careful when delivering today!
 
+<<setNextNodeName Go_to_the_courier_guildhall>>
 <<stop>>
 // <<jump Go_to_the_courier_guildhall>>
 ===
@@ -230,6 +231,7 @@ Player: Sorry Frankie, I've gotta get to the guildhall before the other couriers
 
 Frankie: No problem. Seeya round buddy!
 
+<<setNextNodeName Go_to_the_courier_guildhall>>
 <<stop>>
 // <<jump Go_to_the_courier_guildhall>>
 ===
@@ -566,6 +568,8 @@ You take the reins and hop on the saddle atop Stormhoof.
 <<nextPosition none>>
 <<enable Stormhoof false>>
 <<rideHorse true>>
+
+<<setNextNodeName Start_your_journey>>
 <<stop>>
 // <<jump Start_your_journey>>
 ===

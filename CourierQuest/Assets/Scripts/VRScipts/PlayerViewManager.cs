@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Dreamteck.Splines;
@@ -27,6 +28,10 @@ public class PlayerViewManager : MonoBehaviour
     [SerializeField] public float fadeDuration = 1.0f;
 
     private bool isFading = false;
+    
+    [Header("----Story Change----")]
+    [SerializeField] private string sceneToChangeTo;
+    [SerializeField] private bool endReached = false;
 
     void Start()
     {
@@ -158,6 +163,36 @@ public class PlayerViewManager : MonoBehaviour
         else
         {
             Debug.Log("No playerView found!");
+        }
+    }
+
+    void Update()
+    {
+        if (endReached)
+            PlayerViewChangeScene();
+    }
+
+    public void EndOfPathTrigger()
+    {
+        endReached = true;
+        //Debug.Log("End Reached");
+    }
+
+    public void SetSceneToChangeTo(string sceneName)
+    {
+        sceneToChangeTo = sceneName;
+        //Debug.Log($"Scene set to: {sceneName}");
+    }
+
+    private void PlayerViewChangeScene()
+    {
+        Debug.Log($"Changing scene: {sceneToChangeTo}");
+        StoryCommands storyCommands = playerView.GetComponent<PlayerViewObjects>().GetStoryCommands();
+        if (storyCommands.StillRunning() == false && sceneToChangeTo != "")
+        {
+            storyCommands.StartFrom(sceneToChangeTo);
+            sceneToChangeTo = "";
+            endReached = true;
         }
     }
 }

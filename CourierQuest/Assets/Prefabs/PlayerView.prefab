@@ -29805,7 +29805,7 @@ GameObject:
   - component: {fileID: 2094318414101331990}
   - component: {fileID: 2094318414101331989}
   - component: {fileID: 2094318414101331988}
-  - component: {fileID: 2627318030446222655}
+  - component: {fileID: 9089230329798326716}
   - component: {fileID: 3088808452231683221}
   - component: {fileID: 2094318414101331985}
   - component: {fileID: 2094318414101331986}
@@ -30020,7 +30020,7 @@ MonoBehaviour:
   status: -1
   enableBike: 1
   ending: 0
---- !u!114 &2627318030446222655
+--- !u!114 &9089230329798326716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -30029,14 +30029,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2094318414101331993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fea95a6ad4482041ba4de136b2d50cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 0445ec846057d2345821b14ae0d09881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 0}
-  moveSpeed: 1
-  headCamera: {fileID: 8355808245799607442}
-  xrRotation: {fileID: 0}
-  offsetVector: {x: 0, y: 0, z: 0}
 --- !u!114 &3088808452231683221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33512,9 +33507,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 2094318414101331989}
   startGrazing: 0
-  trotRPMTarget: 70
-  canterRPMTarget: 80
-  gallopRPMTarget: 90
 --- !u!4 &1658136341173509704 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3659140983634492443, guid: 4241fc939cf24a740983092f2aed5837,

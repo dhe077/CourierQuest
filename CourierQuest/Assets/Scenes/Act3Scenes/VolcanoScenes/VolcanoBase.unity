@@ -17404,9 +17404,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 0}
   startGrazing: 0
-  trotRPMTarget: 70
-  canterRPMTarget: 80
-  gallopRPMTarget: 90
 --- !u!43 &992347066
 Mesh:
   m_ObjectHideFlags: 0
@@ -23328,12 +23325,14 @@ MonoBehaviour:
   splineComputers:
   - {fileID: 619243527}
   - {fileID: 1680799196}
-  moveSpeedMultiplier: 1
+  moveSpeedMultiplier: 10
   enableHeadMovement: 0
   maxDist: 9
   calibrationTarget: {fileID: 0}
   spotFadeImage: {fileID: 0}
   fadeDuration: 1
+  sceneToChangeTo: 
+  endReached: 0
 --- !u!4 &1375523398
 Transform:
   m_ObjectHideFlags: 0
@@ -39805,7 +39804,33 @@ MonoBehaviour:
   editorUpdateMode: 0
   multithreaded: 0
   updateMode: 0
-  triggerGroups: []
+  triggerGroups:
+  - open: 1
+    enabled: 1
+    name: Trigger Group 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    triggers:
+    - name: Trigger 1
+      type: 0
+      workOnce: 0
+      position: 1
+      enabled: 1
+      color: {r: 1, g: 0, b: 0, a: 1}
+      onCross:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1375523397}
+            m_TargetAssemblyTypeName: PlayerViewManager, Assembly-CSharp
+            m_MethodName: EndOfPathTrigger
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   _spline:
     points:
     - _type: 0
