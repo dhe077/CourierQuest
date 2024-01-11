@@ -24,6 +24,8 @@ public class PlayerChaser : MonoBehaviour
     [Header ("----Foward/Backward Movement Range----")]
     [SerializeField] private float maxDiff = 5f;
     [SerializeField] private float minDiff = 1f;
+    [SerializeField] private float yOffset = 0f;
+    [SerializeField] private float besidePlayerOffset = 0f;
 
     [Header ("----Speed Range----")]
     [SerializeField] private int maxRndSpeedIncrease = 5;
@@ -67,6 +69,7 @@ public class PlayerChaser : MonoBehaviour
             }
             chaserObject.GetComponent<SplineFollower>().followSpeed = interpolatedSpeed;
 
+            // Move next to player or around the player
             if (atPlayerSide)
             {
                 FollowBesidePlayer();
@@ -84,8 +87,10 @@ public class PlayerChaser : MonoBehaviour
 
         // Spawn the object
         chaserObject = Instantiate(chaser, Vector3.zero, Quaternion.identity);
-        chaserObject.GetComponent<SplineFollower>().spline = chaserSplinePath;
+        chaserObject.name = chaser.name;
         Debug.Log("Spawned Object!");
+        chaserObject.GetComponent<SplineFollower>().spline = chaserSplinePath;
+        Debug.Log("Set object's spline!");
 
         // Begin the chase
         startChasing = true;
@@ -93,14 +98,14 @@ public class PlayerChaser : MonoBehaviour
 
     public void FollowBesidePlayer()
     {
-        float interpolatedPosition = Mathf.Lerp(chaserObject.GetComponent<SplineFollower>().motion.offset.x, 0, Time.deltaTime);
-        chaserObject.GetComponent<SplineFollower>().motion.offset = new Vector2(interpolatedPosition, 0);
+        float interpolatedPosition = Mathf.Lerp(chaserObject.GetComponent<SplineFollower>().motion.offset.x, besidePlayerOffset, Time.deltaTime);
+        chaserObject.GetComponent<SplineFollower>().motion.offset = new Vector2(interpolatedPosition, yOffset);
     }
 
     private void FollowPlayer()
     {
         float interpolatedPosition = Mathf.Lerp(chaserObject.GetComponent<SplineFollower>().motion.offset.x, splineOffset, Time.deltaTime);
-        chaserObject.GetComponent<SplineFollower>().motion.offset = new Vector2(interpolatedPosition, 0);
+        chaserObject.GetComponent<SplineFollower>().motion.offset = new Vector2(interpolatedPosition, yOffset);
     }
 
     public void SetAtPlayerSide(bool x)

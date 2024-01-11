@@ -51,6 +51,8 @@ public class EnvironmentManager : MonoBehaviour
 
     public void StartChasing()
     {
+        Debug.Log(playerView);
+        Debug.Log(chaseObject);
         try
         {
             playerChaser.StartChasing(playerView, chaseObject);

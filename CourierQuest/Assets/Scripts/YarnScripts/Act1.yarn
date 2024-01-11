@@ -52,7 +52,9 @@ You wake up. Look around. The weather is grey and gloomy. Looks like it might ra
 You need to make a delivery today. You start walking to work.
 
 <<goToScene KingdomStreet>>
-<<wait 5>>
+<<wait 4>>
+<<startChase none>>
+<<wait 1>>
 Frankie, your childhood friend walks beside you leading a cow alongside him.
 
 Frankie: Hey pal! How’s your morning going?
@@ -241,12 +243,15 @@ position: 1696,-285
 ---
 <<goToScene CourierGuildhall>>
 <<wait 5>>
+
 You arrive at the courier guildhall. It doesn't seem very busy today. Hopefully there are still  packages to deliver. Maybe the other couriers took all the packages already.
 
 You spot your boss, Mistress Ellastra, she seems to be talking to a few guards.
 
+<<animate MistressEllastraGuards Nod>>
 Ellastra: Yes, we'll deliver this right away. I'll make sure to get our best courier on the job. Hopefully this offering will fix things for everyone.
 
+<<enableDisable MistressEllastraPlayer MistressEllastraGuards>>
 Mistress Ellastra turns around and sees that you've turned up to work.
 
 <<set $specialPackage to false>>
@@ -264,21 +269,12 @@ What do you say? (Timed)
     <<jump Say_nothing>>
 ===
 
-title: Say_nothing
-position: 2287,-65
----
-*You stand there saying nothing.*
-
-Ellastra: Well, look who turned up early today. Take your pick of the packages.
-
-<<jump Go_choose_your_package_deliveries>>
-===
-
 title: Ask_what_that_was_about
 position: 2328,-678
 ---
 Player: What were you talking to the guards about? Are we shutting down?
 
+<<animate MistressEllastraPlayer HandOutTalk>>
 Ellastra: Don't be ridiculous there will always be a need for couriers. The guards and I were just speaking about a very special package that needs delivering ASAP, and since you've arrived today at this time. How would you like to deliver the package?
 
 What do you say?
@@ -288,25 +284,12 @@ What do you say?
     <<jump Turn_down_the_special_delivery>>
 ===
 
-title: Say_that_you_can_deliver_the_package
-position: 2808,-683
----
-Player: I can deliver the package. But why's it so special?
-
-Ellastra: I can't disclose that to you until it has been delivered.
-
-What do you say?
--> Ask what is inside the package.
-    <<jump Ask_what_is_inside_the_package>>
--> Take the package.
-    <<jump Take_the_package>>
-===
-
 title: Ask_if_there_are_any_packages_for_you_today
-position: 2485,-400
+position: 2323,-390
 ---
 Player: Good morning, Mistress Ellastra. Are there any packages for me today?
 
+<<animate MistressEllastraPlayer HandOutTalk>>
 Ellastra: There sure is. Hmm. Since you're here. How would you feel about delivering a special package?
 
 What do you say?
@@ -316,11 +299,39 @@ What do you say?
     <<jump Turn_down_the_special_delivery>>
 ===
 
+title: Say_nothing
+position: 2312,-59
+---
+*You stand there saying nothing.*
+
+<<animate MistressEllastraPlayer HandOutTalk>>
+Ellastra: Well, look who turned up early today. Take your pick of the packages.
+
+<<jump Go_choose_your_package_deliveries>>
+===
+
+title: Say_that_you_can_deliver_the_package
+position: 2808,-683
+---
+Player: I can deliver the package. But why's it so special?
+
+<<animate MistressEllastraPlayer WordsTalk>>
+Ellastra: I can't disclose that to you until it has been delivered.
+
+What do you say?
+-> Ask what is inside the package.
+    <<jump Ask_what_is_inside_the_package>>
+-> Take the package.
+    <<jump Take_the_package>>
+===
+
 title: Turn_down_the_special_delivery
 position: 2722,-899
 ---
 Player: Sorry, Mistress Ellastra. I can't deliver this package for you. You're gonna have to find someone else who's reckless enough to take on that delivery.
 
+<<enableDisable MistressEllastraGuards MistressEllastraPlayer>>
+<<animate MistressEllastraGuards Point>>
 Ellastra: I see... Go choose what you want to deliver today.
 
 <<jump Go_choose_your_package_deliveries>>
@@ -331,6 +342,7 @@ position: 2691,-1277
 ---
 Player: What's inside the package?
 
+<<animate MistressEllastraPlayer WordsTalk>>
 Ellastra: All I can tell you is that the package comes straight from the Aurelians. Apparently, it will help us settle this war once and for all. Now, are you going to take the package or what?
 
 What do you say?
@@ -349,6 +361,8 @@ Player: Fine, I'll take the package.
 
 *You take the package.*
 
+<<enableDisable MistressEllastraGuards MistressEllastraPlayer>>
+<<animate MistressEllastraGuards Point>>
 Ellastra: Go choose your other delivery packages.
 
 <<set $specialPackage to true>>
@@ -363,6 +377,7 @@ Player: Come on, Ellastra, you can tell me what's inside. I am your *best* couri
 
 *Ellastra looks angry*
 
+<<animate MistressEllastraPlayer AngryPoint>>
 Ellastra: If you ask me one more time you won't have *ANY* packages to deliver today.
 
 What do you do?
@@ -376,8 +391,15 @@ title: Go_choose_your_package_deliveries
 position: 3165,-473
 ---
 <<nextPosition none>>
-<<wait 3>>
+<<wait 2>>
+<<enable MistressEllastraGuards false>>
+<<enable MistressEllastraPlayer false>>
+<<enable Guard1 false>>
+<<enable Guard2 false>>
+<<enable MistressEllastraPackages true>>
+<<wait 1>>
 <<spawnPackages none>>
+<<animate MistressEllastraPackages Point>>
 *You look over at the packages that need delivering. You're given 2 choices first.*
 
 Choose your first package?
@@ -413,6 +435,7 @@ title: Choose_your_second_package
 position: 3780,-95
 ---
 <<spawnPackages none>>
+<<animate MistressEllastraPackages Point>>
 *You look over at the packages that need delivering. You're given 3 choices.*
 
 Choose your second package?
@@ -461,6 +484,7 @@ title: Choose_your_third_package
 position: 4764,119
 ---
 <<spawnPackages none>>
+<<animate MistressEllastraPackages Point>>
 *You look over at the packages that need delivering. You're given 4 choices.*
 
 Choose your third package?
@@ -521,6 +545,7 @@ The package is addressed to Val.
 title: Finalize_your_choices_with_Mistress_Ellastra
 position: 5378,362
 ---
+<<animate MistressEllastraPackages WordsTalk>>
 Ellastra: Seems like you've got all your packages ready. You'd better start leaving soon before the storm arrives.
 
 <<jump Take_your_leave>>

@@ -647,6 +647,7 @@ position: 5335,-168
 ---
 Player: Delivery for Petunia Pattersby!
 
+<<enable PetuniaComingOut true>>
 A little old woman comes out from the entrance of the store. She waves you down.
 
 Petunia: Hello deary. I'm Petunia Pattersby. Are you the sweet courier with my delivery?
@@ -663,6 +664,7 @@ position: 5318,239
 ---
 You wait in silence for someone to come out.
 
+<<enable PetuniaComingOut true>>
 A small old woman comes out from the entrance of the store. She waves you down.
 
 Petunia: Hello deary. I'm Petunia Pattersby. Are you the sweet courier with my delivery?
@@ -673,8 +675,10 @@ Petunia: Hello deary. I'm Petunia Pattersby. Are you the sweet courier with my d
 title: Ask_her_what_she_sells
 position: 5721,-343
 ---
+<<enableDisable PetuniaStanding PetuniaComingOut>>
 Player: What do you sell here? I've never seen this shop before on my journeys along this path.
 
+<<animate PetuniaStanding TellSecret>>
 Petunia: Well deary, pastries. Pastries that I have perfected over the 400 years of baking and cooking that I've lived through. One bite of my original Patersby Pastries will sweeten your day.
 
 What do you say?
@@ -684,25 +688,13 @@ What do you say?
     <<jump Say_that_you_have_Petunias_delivery>>
 ===
 
-title: Ask_her_how_shes_lived_for_over_400_years
-position: 6083,-339
----
-Player: How have you lived for over 400 years?
-
-Petunia: Oh sweetie, I'm a gnome. Gnomes tend to live for quite a long time. Which I'm quite grateful for since you don't become good at baking over night.
-
-Petunia puts on a wide smile.
-
-Petunia: Now deary, are you the courier from Granbell with my delivery?
-
-<<jump Say_that_you_have_Petunias_delivery>>
-===
-
 title: Say_that_you_have_Petunias_delivery
 position: 6062,63
 ---
+<<enableDisable PetuniaStanding PetuniaComingOut>>
 Player: Here is your delivery from Granbell.
 
+<<animate PetuniaStanding Talk>>
 You hand her the small package.
 
 Petunia: Oh thank you so much deary.
@@ -711,7 +703,12 @@ She proceeds to open her package. The package held a set of silver cutlery.
 
 Petunia: Finally! The silver cutlery that I ordered. Now my customers can enjoy their Pattersby pastries with these beautiful utensils. My last set of silver cutlery was stolen from me not too long ago. Wait here a moment I've got something for you.
 
-She walks into the store. You wait for a moment. She comes back out with what looks like a baked pastry and hands it to you.
+<<enableDisable PetuniaGoingIn PetuniaStanding>>
+She walks into the store. You wait for a moment.
+<<enableDisable PetuniaComingOutAgain PetuniaGoingIn>>
+<<wait 3>>
+She comes back out with what looks like a baked pastry and hands it to you.
+<<enableDisable PetuniaStanding PetuniaComingOutAgain>>
 
 *You take the Pattersby Pastry*
 
@@ -726,11 +723,27 @@ What do you say?
     <<jump Thank_her_for_the_pastry_and_continue_delivering>>
 ===
 
+title: Ask_her_how_shes_lived_for_over_400_years
+position: 6083,-339
+---
+Player: How have you lived for over 400 years?
+
+<<animate PetuniaStanding Talk>>
+Petunia: Oh sweetie, I'm a gnome. Gnomes tend to live for quite a long time. Which I'm quite grateful for since you don't become good at baking over night.
+
+Petunia puts on a wide smile.
+
+Petunia: Now deary, are you the courier from Granbell with my delivery?
+
+<<jump Say_that_you_have_Petunias_delivery>>
+===
+
 title: Ask_Petunia_what_goblins_look_like
 position: 6529,-363
 ---
 Player: What do goblins look like?
 
+<<animate PetuniaStanding TellSecret>>
 Petunia: Oh they're terrible creatures they are. They lurk in the shadows and get up to all kinds of evil mischief. They're small, about my height, and green, like the trees. Oh and they have big noses and pointy ears too. If you see any, make sure you run as fast as you can. They can be *very* sneaky.
 
 What do you say?
@@ -755,6 +768,7 @@ position: 7218,56
 ---
 Player: Thank you for the pastry Petunia. It looks delicious.
 
+<<animate PetuniaStanding Talk>>
 Petunia: No, thank you.
 
 <<nextPosition none>>
@@ -762,7 +776,10 @@ Petunia: No, thank you.
 <<enable Stormhoof false>>
 <<rideHorse true>> 
 <<wait 1>>
-Petunia waves you a goodbye as you leave. You start to head on your way to your second delivery. 
+
+<<animate PetuniaStanding Wave>>
+Petunia waves you a goodbye as you leave. You start to head on your way to your second delivery.
+<<animate PetuniaStanding Wave>>
 
 <<set $metPetunia to true>>
 
@@ -774,6 +791,7 @@ position: 5329,909
 ---
 The package is heavy so you drop it on the ground near the entrance of the tent. A loud thud is heard.
 
+<<enable BjornComingOut true>>
 A very large muscular man steps out from under the tent.
 
 Bjorn: Ah hallo! Are you the delivery human that has my package?
@@ -786,6 +804,7 @@ position: 5354,1291
 ---
 Player: Delivery for Bjorn!
 
+<<enable BjornComingOut true>>
 A very large muscular man steps out from under the tent.
 
 Bjorn: Ah hallo! Are you the delivery human that has my package?
@@ -800,12 +819,15 @@ What do you say?
 title: Ask_why_he_is_wrestling_a_bear
 position: 5694,1715
 ---
+<<enableDisable BjornCrouch BjornComingOut>>
 Player: What's going on here? Why are you wrestling a bear?
 
 Bjorn looks at the you with one eyebrow raised.
 
+<<animate BjornCrouch Gesture>>
 Bjorn: How do you not know who I am!? I am Bjorn! The mighty wrestler and body builder! I thought all the people of Granbell knew of these marvelous muscles.
 
+<<animate BjornCrouch Point>>
 Bjorn proceeds to strike a pose.
 
 Bjorn: I'm wrestling a bear because the bear is the strongest animal of the forest. Conviniently, I happen to have a friend that is a bear. He's agreed to wrestle me but he hasn't arrived yet. I hope he isn't lost.
@@ -820,6 +842,7 @@ What do you say?
 title: Say_that_you_have_Bjorns_delivery
 position: 6173,1018
 ---
+<<enableDisable BjornCrouch BjornComingOut>>
 Player: Here is your delivery from Granbell.
 
 You hand him the large package.
@@ -832,15 +855,19 @@ Bjorn: Now I can get even stronger! Granbell makes the best training equipment! 
 
 He stands and thinks for a moment before reaching a conclusion.
 
+<<animate BjornCrouch Point>>
 Bjorn: I can give you the MUSCLE SPIRIT!
 
+
 He strikes a pose and puts his arm on your bicep.
+<<animate BjornCrouch Crouch>>
 
 *You gain muscle spirit*
 
 <<set $muscleSpirit to true>>
 
 Bjorn: Now you have the muscle spirit. Be careful out there. I saw a few goblins around.
+<<animate BjornCrouch Stand>>
 
 What do you say?
 -> Ask what muscle spirit is.
@@ -854,6 +881,7 @@ position: 6148,1590
 ---
 Player: Sorry sir, I've never heard of you or your muscles.
 
+<<animate BjornCrouch Gesture>>
 Bjorn looks at you in surprise.
 
 Bjorn: Well now you have. Tell all your friends and family about the mighty Bjorn and his miraculous muscles!
@@ -866,6 +894,7 @@ position: 6644,1434
 ---
 Player: You didn't give me anything. What is muscle spirit? 
 
+<<animate BjornCrouch FlexUp>>
 Bjorn: You do have something. Muscle spirit is the compelling force within you that you can use any time you need extra strength!
 
 What do you say?
@@ -882,6 +911,7 @@ Player: I think I saw a goblin chasing me earlier. Does muscle spirit work on go
 
 Bjorn: If the creature looked green, had a big nose, had pointy ears, and was very small then that was a goblin. Muscle spirit will work on goblins. Just strike a pose and it will be terrified by your presence. Like this.
 
+<<animate BjornCrouch FlexDown>>
 Bjorn begins to show off his muscles in as many poses as he can.
 
 <<jump Thank_him_for_the_muscle_spirit_and_continue_delivering>>
@@ -899,8 +929,11 @@ Bjorn: Ah no need for luck when you are as strong as me!
 <<enable Stormhoof false>>
 <<rideHorse true>> 
 <<wait 1>>
-Bjorn waves you a goodbye as you leave. You start to head on your way to your second delivery. 
 
+<<enableDisable BjornWave BjornCrouch>>
+<<animate BjornWave Wave>>
+Bjorn waves you a goodbye as you leave. You start to head on your way to your second delivery. 
+<<animate BjornWave Wave>>
 <<set $metBjorn to true>>
 
 <<jump Make_your_second_delivery>>

@@ -20,6 +20,7 @@ public class StoryCommands : MonoBehaviour
     private PlayerViewManager playerViewManager;
     private EnvironmentManager environmentManager;
     private ExerciseQuestManager exerciseQuestManager;
+    private AnimationManager animationManager;
 
     private float timer = 0f;
     private float endTimer;
@@ -110,6 +111,10 @@ public class StoryCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<string>(
             "setNextNodeName",
             SetNextNodeName
+        );
+        dialogueRunner.AddCommandHandler<string, string>(
+            "animate",
+            Animate
         );
     }
 
@@ -254,10 +259,18 @@ public class StoryCommands : MonoBehaviour
         playerViewManager.RideHorse(hopOn);
     }
 
+    // This command sets the name of the next node
     public void SetNextNodeName(string nodeName)
     {
         playerViewManager = GameObject.Find("PlayerViewManager").GetComponent<PlayerViewManager>();
         playerViewManager.SetSceneToChangeTo(nodeName);
+    }
+
+    // This command plays an animation from the animation object using the objects name and an animation name
+    public void Animate(string objectName, string animationName)
+    {
+        animationManager = GameObject.Find("AnimationManager").GetComponent<AnimationManager>();
+        animationManager.PlayAnimation(objectName, animationName);
     }
 
 
