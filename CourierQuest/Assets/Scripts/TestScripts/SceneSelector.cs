@@ -163,4 +163,11 @@ public class SceneSelector : MonoBehaviour
         variables.SetValue("$muscleSpirit", true);
         dialogueRunner.StartDialogue("Ride_towards_the_volcano");
     }
+
+    public void JumpToRoadside()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$specialPackage", true);
+        dialogueRunner.StartDialogue("Wake_up_near_the_road");
+    }
 }

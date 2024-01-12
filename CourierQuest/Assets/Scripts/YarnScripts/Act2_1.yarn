@@ -337,7 +337,9 @@ title: Wake_up_near_the_road
 position: -283,1193
 ---
 <<goToScene WakeUpRoad>>
-<<wait  3>>
+<<wait 3>>
+<<enable Garbanzo true>>
+<<animate Garbanzo KnifeOut>>
 You open your eyes. The creature stands over you, dagger outstretched towards you.
 
 <<if $whistleBlown is true>>
@@ -541,9 +543,13 @@ position: 1471,1350
 ---
 You pretend to hand over the package to the creature.
 
+<<animate Garbanzo Swing>>
 The creature is quick, it grabbed the package before you could pull away to trick the creature.
 
 Garbanzo: Now that wasn't so hard was it. I'll be seeing you around.
+<<enableDisable GarbanzoEscapes Garbanzo>>
+<<wait 4>>
+<<enable GarbanzoEscapes false>>
 
 <<set $specialPackage to false>>
 
