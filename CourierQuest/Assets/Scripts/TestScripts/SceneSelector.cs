@@ -170,4 +170,18 @@ public class SceneSelector : MonoBehaviour
         variables.SetValue("$specialPackage", true);
         dialogueRunner.StartDialogue("Wake_up_near_the_road");
     }
+
+    public void JumpToBushesHut()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$followedPath", true);
+        dialogueRunner.StartDialogue("Wake_up_in_the_bushes");
+    }
+
+    public void JumpToBushesRoad()
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$followedPath", false);
+        dialogueRunner.StartDialogue("Wake_up_in_the_bushes");
+    }
 }

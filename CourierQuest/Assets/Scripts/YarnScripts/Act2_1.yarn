@@ -3,10 +3,10 @@ position: -304,-609
 ---
 <<if $followedPath is true>>
     <<goToScene WakeUpBushesHut>>
-    <<wait  3>>
+    <<wait 3>>
 <<elseif $followedPath is false>>
     <<goToScene WakeUpBushesRoad>>
-    <<wait  3>>
+    <<wait 3>>
 <<endif>>
 You open your eyes. You're safe.
 
@@ -16,7 +16,10 @@ You pack up your camp and head to the tree that Stormhoof is tied to.
 <<wait 1>>
 <<enable Tent false>>
 <<wait 1>>
-On your way to Stormhoof's tree you spot a small creature dart across the path. That creature seems to have been trying to find you. It's missed you this time. Best be on your guard from now on.
+<<enable GarbanzoRunAcrossRoad true>>
+On your way to Stormhoof's tree you spot a small creature dart across the path. 
+<<wait 3>>
+That creature seems to have been trying to find you. It's missed you this time. Best be on your guard from now on.
 
 You see the tree that Stormhoof should be tied to but no Stormhoof.
 
@@ -338,7 +341,7 @@ position: -283,1193
 ---
 <<goToScene WakeUpRoad>>
 <<wait 3>>
-<<enable Garbanzo true>>
+
 <<animate Garbanzo KnifeOut>>
 You open your eyes. The creature stands over you, dagger outstretched towards you.
 
@@ -412,7 +415,11 @@ You should probably find Stormhoof and continue delivering.
 title: Attempt_to_escape
 position: 1143,1804
 ---
-You smack the dagger out of the creatures hands and away from you. The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof. Your pack seems a little lighter.
+You smack the dagger out of the creatures hands and away from you.
+<<enableDisable GarbanzoKnockedDown Garbanzo>>
+<<animate GarbanzoKnockedDown KnockedDown>>
+
+The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof. Your pack seems a little lighter.
 
 <<set $specialPackage to false>>
 
@@ -515,10 +522,10 @@ While holding the magical rock in front of you facing the creature you shout the
 
 Player: Luminos!
 
-The magical rock produces a warm glow then flashes a bright light directly at the creature.
+The magical rock produces a warm glow then flashes a bright light directly at the creature. The magic rock worked!
 
-The magic rock worked!
-
+<<enableDisable GarbanzoKnockedDown Garbanzo>>
+<<animate GarbanzoKnockedDown KnockedDown>>
 The creature stumbles back dropping its weapon and rubbing its eyes. The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof.
 
 <<jump Find_Stormhoof_and_continue_delivering>>
@@ -533,7 +540,11 @@ Player: I'm not giving you the package anymore.
 
 The creature moves closer to you.
 
-You smack the dagger out of the creatures hands and away from you. The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof.
+You smack the dagger out of the creatures hands and away from you.
+<<enableDisable GarbanzoKnockedDown Garbanzo>>
+<<animate GarbanzoKnockedDown KnockedDown>>
+
+The creature scrambles around to grab its weapon. You quickly grab your belongings and run towards where you left Stormhoof.
 
 <<jump Find_Stormhoof_and_continue_delivering>>
 ===
@@ -549,7 +560,6 @@ The creature is quick, it grabbed the package before you could pull away to tric
 Garbanzo: Now that wasn't so hard was it. I'll be seeing you around.
 <<enableDisable GarbanzoEscapes Garbanzo>>
 <<wait 4>>
-<<enable GarbanzoEscapes false>>
 
 <<set $specialPackage to false>>
 
@@ -562,7 +572,9 @@ position: 2166,1237
 You narrowly escaped the creature with your life. Best you stay on guard and continue delivering.
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable Garbanzo false>>
+<<wait 1>>
 You find Stormhoof happily grazing on the greenery around her.
 
 <<jump Start_delivering_the_packages>>

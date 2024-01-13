@@ -584,6 +584,10 @@ Gate Goblin 1: Hey you! Stop!
 
 Gate Goblin 2: Stop where you are!
 
+<<enable GarbanzoSneakInWait true>>
+<<animate GarbanzoSneakInWait Crouch>>
+<<animate GarbanzoSneakInWait Sneak>>
+<<wait 2>>
 You can see Garbanzo nearby out of sight from the guards.
 
 What do you do?
@@ -609,7 +613,16 @@ Gate Goblin 1: Ohhhh, that smells spectacular!
 
 Gate Goblin 2: Mmmm, lovely!
 
-You toss it towards them and they fight over the pastry. Garbanzo sneaks up behind them and wacks them on the head. They both slump over face first into the dirt.
+You toss it towards them and they fight over the pastry. 
+
+<<enableDisable GarbanzoSneakInAttack GarbanzoSneakInWait>>
+<<animate GarbanzoSneakInAttack Crouch>>
+<<animate GarbanzoSneakInAttack Sneak>>
+<<wait 3>>
+Garbanzo sneaks up behind them and wacks them on the head. 
+
+<<animate GarbanzoAttack Assassination>>
+They both slump over face first into the dirt.
 
 Garbanzo picks up the pastry and starts to eat it. He talks to you mouth full of pastry.
 
@@ -627,7 +640,16 @@ Gate Goblin 1: Wow. Look at this human here. Now those are some muscles you don'
 
 Gate Goblin 2: Wish *I* had biceps as big as those.
 
-The goblins are enamoured by your performance. Garbanzo sneaks up behind them and wacks them on the head. They both slump over face first into the dirt.
+The goblins are enamoured by your performance. 
+
+<<enableDisable GarbanzoSneakInAttack GarbanzoSneakInWait>>
+<<animate GarbanzoSneakInAttack Crouch>>
+<<animate GarbanzoSneakInAttack Sneak>>
+<<wait 3>>
+Garbanzo sneaks up behind them and wacks them on the head. 
+
+<<animate GarbanzoAttack Assassination>>
+They both slump over face first into the dirt.
 
 Garbanzo: Ok. I'll meet you soon. I know a secret way into the castle through the dungeon.
 
@@ -637,7 +659,11 @@ Garbanzo: Ok. I'll meet you soon. I know a secret way into the castle through th
 title: Head_to_the_dungeon_entrance
 position: 2771,-452
 ---
+<<enableDisable GarbanzoSneakInGates GarbanzoAttack>>
+<<animate GarbanzoSneakInGates Crouch>>
+<<animate GarbanzoSneakInGates Sneak>>
 Garbanzo slips inside the gate and you lose sight of him.
+<<wait 3>>
 
 <<goToScene EldoriaCourtyard>>
 <<wait 1>>
@@ -706,11 +732,16 @@ You sit there in the darkness. How long will the goblins keep you here? If you d
 A few moments pass and then a voice whispers to you. 
 
 Garbanzo: Hey, human. Why so glum? Heads up.
+<<enable GarbanzoDropDown true>>
+<<animate GarbanzoDropDown Fall>>
 
 Garbanzo drops from the ceiling with ease and makes no noise. He is holding a small candle that illuminates his face.
 
 Garbanzo: Follow me. There's a secret tunnel this way.
 
+<<enableDisable GarbanzoTunnel GarbanzoDropDown>>
+<<animate GarbanzoTunnel Crouch>>
+<<animate GarbanzoTunnel Sneak>>
 <<enableDisable StoneUncovered StoneCovered>>
 Garbanzo pushes a large stone out of the way. Behind the stone is a tunnel with a light at the end of it.
 
@@ -726,7 +757,11 @@ You pass through the tunnel and reach the light ahead.
 
 <<goToScene EldoriaThroneRoomAlt>>
 <<wait 2>>
-You've entered the castles throne room. Looks like you've just come out from behind a secret room behind the throne. The walls are high and are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. A goblin wielding an ornamented staff stands near the entrance to the throne room. No one is sitting in the throne. The leader must be somewhere else.
+You've entered the castles throne room. Looks like you've just come out from behind a secret room behind the throne. 
+
+<<specificPosition ThroneRoomThroneSpot>>
+<<wait 2>>
+The walls are high and are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. A goblin wielding an ornamented staff stands near the entrance to the throne room. No one is sitting in the throne. The leader must be somewhere else.
 
 You look for Garbanzo but he's run off to somewhere already.
 
@@ -752,6 +787,9 @@ The goblin starts to wave its staff around in the air. Loud rumbling in the air 
 
 Goblin Shaman: I'm going to vaporize you.
 
+<<enable GarbanzoHide true>>
+<<animate GarbanzoHide Crouch>>
+<<animate GarbanzoHide Sneak>>
 You spot Garbanzo close by. He's hidden behind a potted plant. You need to distract the goblin somehow.
 
 What do you do? Timed.
@@ -785,6 +823,9 @@ The goblin starts to wave its staff around in the air. Loud rumbling in the air 
 
 Goblin Shaman: I'm going to vaporize you.
 
+<<enable GarbanzoHide true>>
+<<animate GarbanzoHide Crouch>>
+<<animate GarbanzoHide Sneak>>
 You spot Garbanzo close by. He's hidden behind a potted plant. You need to distract the goblin somehow.
 
 What do you do? Timed.
@@ -818,6 +859,7 @@ The goblin stops swinging its staff for a moment to see the gemstone in your han
 
 Goblin Shaman: Is that a real diamond? And it's for me? Why didn't you say that sooner?
 
+<<enableDisable GarbanzoSneak GarbanzoHide>>
 As the goblin lowers it's staff Garbanzo reveals himself from behind the potted plant and pounces on the goblin. Garbanzo kicks the staff away and restrains the goblin.
 
 Garbanzo: I'll take that as payment for keeping you alive.
@@ -836,6 +878,7 @@ You don the animal pendant and close your eyes. You hear the laughter of the gob
 
 Suddenly the laughter turns to screams. You open your eyes to observe the goblin being attacked by a large bear in restraints. Several goblins are trying to stop the bears attacks. 
 
+<<enableDisable GarbanzoSneak GarbanzoHide>>
 Garbanzo reveals himself from behind the potted plant.
 
 Garbanzo: I think I'll leave that one alone. Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
@@ -850,7 +893,10 @@ You grip the smoke vial in your pocket and throw it on the ground near the gobli
 
 Goblin Shaman: What is this? *cough* *cough* I can't see nuffing. *cough*
 
-Garbanzo reveals himself from behind the potted plant. Garbanzo dives into the smoke cloud and you hear a scream followed by muffled speech. The smoke clears and Garbanzo is standing on the goblin who's in restraints.
+<<enableDisable GarbanzoSneak GarbanzoHide>>
+Garbanzo reveals himself from behind the potted plant. Garbanzo dives into the smoke cloud and you hear a scream followed by muffled speech. 
+
+The smoke clears and Garbanzo is standing on the goblin who's in restraints.
 
 Garbanzo: Where'd you get that smoke vial? Was it from a wizard in a tower? I stole his horse but I forgot to check his pockets.
 
@@ -864,7 +910,16 @@ Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure
 title: Hide_behind_the_throne
 position: 3702,326
 ---
-You duck back behind the throne to take cover. You hear a commotion outside followed by muffled speech. You step out and see Garbanzo is standing on the goblin who is in restraints.
+You duck back behind the throne to take cover. 
+<<specificPosition BehindThrone>>
+<<wait 2>>
+
+<<enableDisable GarbanzoSneak GarbanzoHide>>
+You hear a commotion outside followed by muffled speech. 
+
+<<specificPosition ThroneRoomThroneSpot>>
+<<wait 2>>
+You step out and see Garbanzo is standing on the goblin who is in restraints.
 
 Garbanzo looks in your direction.
 
@@ -880,7 +935,8 @@ Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure
 title: Follow_Garbanzo_to_the_treasure_room
 position: 4190,-75
 ---
-<<nextPosition none>>
+<<specificPosition RunDownHall>>
+<<enableDisable GarbanzoRunDownHall GarbanzoSneak>>
 <<wait 2>>
 You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
 
@@ -1073,7 +1129,9 @@ title: Follow_behind_Garbanzo_into_the_room
 position: 5582,-106
 ---
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable GarbanzoWaiting true>>
+<<wait 1>>
 You sprint to the wooden door and push it open. 
 //*The player must pedal hard to push the door open.*
 
@@ -2045,6 +2103,7 @@ The path is becoming too narrow for Stormhoof to safely traverse. You leave Stor
 <<rideHorse false>> 
 <<wait 1>>
 
+<<enable GarbanzoRunUpVolcano true>>
 You follow the goblin up the path to the top of the volcano. As you turn around a corner of the path you lose sight of the goblin. You assume he's going to the top as well. Better keep going up.
 
 <<setNextNodeName Follow_the_path_to_the_top_of_the_volcano>>
@@ -2521,10 +2580,16 @@ position: 4921,3571
 ---
 <<goToScene VolcanoTop>>
 <<wait 2>>
+
 You leave the cave and follow the path up the volcano a little further. You've reached the top of the volcano. You look out to the landscape and you can see Granbell and Eldoria from here. You see the forest below and the farms in the distance.
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<if $specialPackage is false>>
+    <<enable GarbanzoWithPackage true>>
+    <<animate GarbanzoWithPackage KnifeOut>>
+<<endif>>
+<<wait 1>>
 There is an outcropping that leans over the volcano's pit of lava.
 
 <<if $specialPackage is true>>
@@ -2564,16 +2629,28 @@ position: 5309,4408
 ---
 <<nextPosition none>>
 <<wait 2>>
-You run at the goblin as fast as you can. The goblin, shocked at your performance grips the package close to it's chest. You manage to reach the goblin and grab hold of the package.
+You run at the goblin as fast as you can. 
+
+<<animate GarbanzoWithPackage GripPackage>>
+The goblin, shocked at your performance grips the package close to it's chest. You manage to reach the goblin and grab hold of the package.
 
 <<nextPosition none>>
-<<wait 2>>
-You both struggle for the package on the volcano's precipice. Back and forth you fight for the package. After the struggle you manage to pull the package from the goblin's hands. The goblin stumbles backwards towards the edge.
+<<wait 1>>
+<<animate GarbanzoWithPackage Tug>>
+<<wait 1>>
+You both struggle for the package on the volcano's precipice. Back and forth you fight for the package. After the struggle you manage to pull the package from the goblin's hands. 
+<<enableDisable GarbanzoWithoutPackage GarbanzoWithPackage>>
 
-What do you do?
+The goblin stumbles backwards towards the edge.
+<<animate GarbanzoWithoutPackage Stumble>>
+
+What do you do? (Timed)
+<<startTimer 6>>
 -> Grab hold of the goblin.
+    <<interrruptTimer none>>
     <<jump Grab_hold_of_the_goblin>>
 -> Push the goblin over.
+    <<interrruptTimer none>>
     <<jump Push_the_goblin_over>>
 ===
 
@@ -2584,6 +2661,8 @@ You pull out the magical rock that Frankie gave you and point it at the goblin. 
 
 Player: Luminos!
 
+<<enableDisable GarbanzoWithoutPackage GarbanzoWithPackage>>
+<<animate GarbanzoWithoutPackage Stun>>
 A bright light streams from the rock and into the eyes of the goblin. The goblin drops the package onto the ledge near his feet. 
 
 <<nextPosition none>>
@@ -2593,17 +2672,22 @@ While the goblin is blinded you run as fast as you can towards the package. You 
 <<nextPosition none>>
 <<wait 2>>
 In his daze, the goblin stumbles backwards towards the edge, rubbing his eyes.
+<<animate GarbanzoWithoutPackage Stumble>>
 
-What do you do?
+What do you do? (Timed)
+<<startTimer 6>>
 -> Grab hold of the goblin.
+    <<interrruptTimer none>>
     <<jump Grab_hold_of_the_goblin>>
 -> Push the goblin over.
+    <<interrruptTimer none>>
     <<jump Push_the_goblin_over>>
 ===
 
 title: Grab_hold_of_the_goblin
 position: 5674,4066
 ---
+<<animate GarbanzoWithoutPackage PullBack>>
 You quickly grab onto the goblin before he falls into the lava. You hold him down beneath your shoe on the ground.
 
 Now *you* have the package. 
@@ -2619,6 +2703,8 @@ What do you do?
 title: Push_the_goblin_over
 position: 5670,4410
 ---
+<<enableDisable GarbanzoFalling GarbanzoWithoutPackage>>
+<<animate GarbanzoWithoutPackage PushBack>>
 You nudge the goblin slightly and he topples over the edge. The goblin screams as he falls into the lava. You don't look down but you hear an explosion as he hits the molten rock.
 
 Now *you* have the package. 

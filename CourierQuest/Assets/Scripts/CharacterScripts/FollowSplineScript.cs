@@ -9,13 +9,14 @@ public class FollowSplineScript : MonoBehaviour
 
     private float speed = 0f;
     private float currentSplinePercent = 0f;
-    [SerializeField] private float stopSpeed = 0f;
-    [SerializeField] private float startSpeed = 5f;
+    private float stopSpeed = 0f;
+    private float startSpeed = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
         splineFollower = GetComponent<SplineFollower>();
+        startSpeed = splineFollower.followSpeed;
     }
 
     // Update is called once per frame

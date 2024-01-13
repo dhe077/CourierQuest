@@ -28,6 +28,7 @@ public class AnimationManager : MonoBehaviour
             catch (MissingComponentException)
             {
                 Debug.Log($"Missing Animator Component on {character}");
+                // There may be two objects in the scene with the same name as the character
             }
             
         }
