@@ -1299,6 +1299,7 @@ position: 910,1433
 ---
 <<nextPosition none>>
 <<wait 1>>
+<<enable GarbanzoStanding true>>
 <<enable Stormhoof true>>
 <<rideHorse false>> 
 <<wait 1>>
@@ -1338,6 +1339,7 @@ You attempt to kick the goblin off your horse but the goblin clings on.
 
 <<nextPosition none>>
 <<wait 1>>
+<<enable GarbanzoStanding true>>
 <<enable Stormhoof true>>
 <<rideHorse false>> 
 <<wait 1>>
@@ -1357,7 +1359,7 @@ Garbanzo: Finally! It's all mine.
 
 A voice can be heard from the bushes.
 
-Adventurers: Hey! I see the goblin. He's over there! Get him!
+Adventurer: Hey! I see the goblin. He's over there! Get him!
 
 Seems like someone wants the goblin. This could be your chance to finally get rid of him.
 
@@ -1396,26 +1398,45 @@ title: Look_at_who_called_out
 position: 1649,1581
 ---
 <<if $metPetunia is true>>
+    <<enable PetuniaWalkIn true>>
     You look to the voice and you see a small old woman. It's Petunia!
 
     Petunia: Oh hello there deary. I've come to get back the cutlery that this nasty creature stole from me.
 
+    <<enableDisable GarbanzoScared GarbanzoStanding>>
+    <<enableDisable PetuniaStanding PetuniaWalkIn>>
+    <<animate PetuniaStanding KnifeOut>>
     She looks at the goblin with fire in her eyes as she pulls out a large kitchen knife.
 <<elseif $metBjorn is true>>
+    <<enable BjornWalkIn true>>
     You look to the voice and you see a large muscular man. It's Bjorn!
 
     Bjorn: What are *you* doing here!? Funny to see you here! I came here to ask this... squishable... goblin for the whereabouts of my bear.
 
+    <<enableDisable GarbanzoScared GarbanzoStanding>>
+    <<enableDisable BjornStanding BjornWalkIn>>
+    <<animate BjornStanding Stomp>>
     He stomps next to the goblin in an act of intimidation and peers down at the goblin.
 <<endif>>
 
+<<animate GarbanzoScared Stumble>>
 The goblin cowers in absolute terror. He drops the package to the floor. You quickly snatch it back into your pack.
 
 <<if $metPetunia is true>>
+    <<animate PetuniaStanding Sheath>>
+    <<enable Knife false>>
+    <<specificPosition BlowWhistleSpot>>
+    <<wait 1>>
+    <<enableDisable GarbanzoTied GarbanzoScared>>
+    <<wait 1>>
     Petunia ties the goblin to a tree and looks him dead in the eyes.
 
     Petunia: I will deal with you later... deary.
 <<elseif $metBjorn is true>>
+    <<specificPosition BlowWhistleSpot>>
+    <<wait 1>>
+    <<enableDisable GarbanzoTied GarbanzoScared>>
+    <<wait 1>>
     Bjorn ties the goblin to a tree and looks him dead in the eyes.
 
     Bjorn: I've been needing a new punching bag.
@@ -1495,6 +1516,11 @@ You and your party set off towards Eldoria.
 <<wait 20>>
 <<nextPosition none>>
 <<wait 1>>
+<<if $metBjorn is true>>
+    <<enable BjornAtGates true>>
+<<elseif $metPetunia is true>>
+    <<enable PetuniaAtGates true>>
+<<endif>>
 <<enable Stormhoof true>>
 <<rideHorse false>> 
 <<wait 1>>
@@ -1507,15 +1533,20 @@ Bear Goblin: Oi you. What a'you doin' 'ere?! You'd better get outa 'ere before m
 The other goblins laugh too. The bear growls and flails its arms around nearly hitting you. The goblins tighten the restraints around its neck.
 
 <<if $metBjorn is true>>
+    <<animate BjornAtGates Gesture>>
     Bjorn: WAIT!! I KNOW THAT BEAR!! That's *MY* bear! You were late for the show and now I see why.
 
+    <<animate BjornAtGates Stomp>>
+    <<animate BjornAtGates FlexDown>>
     Bjorn growls and charges at the goblins. One by one the goblins scamper in all directions. Bjorn rips off the restraints from the bear and gives his bear a big hug.
 
     Bjorn: I will look out for any more who try to come in. You go inside and make your delivery.
 
 <<elseif $metPetunia is true>>
+    <<animate PetuniaAtGates Wave>>
     Petunia: No one can resist my pastries. Would you all like a pastry? I've got plenty.
 
+    <<animate PetuniaAtGates Cookies>>
     Petunia pulls out an array of pastries from her backpack. All the goblins let go of the bear and run towards the pastry selection. Petunia looks over to you.
 
     Petunia: Don't worry deary. I'll keep these goblins busy. You go ahead and deliver that package.
@@ -1816,7 +1847,7 @@ The path is becoming too narrow for Stormhoof to safely traverse. You leave Stor
 <<enable Stormhoof true>>
 <<rideHorse false>> 
 <<wait 1>>
-You follow a path to the top of the volcano.  If you're going to get rid of this package you're going to need to throw it into the top of the volcano and into the lava.
+You follow a path to the top of the volcano. If you're going to get rid of this package you're going to need to throw it into the top of the volcano and into the lava.
 
 <<if $metBjorn is true>>
     <<goToScene LavaRiverBjorn>>
@@ -1831,12 +1862,14 @@ You follow a path to the top of the volcano.  If you're going to get rid of this
 
     <<nextPosition none>>
     <<wait 2>>
+    <<animate BjornThrow Throw>>
     You run up to Bjorn and he tosses you, with all his strength, over the river.
     <<wait 2>>
 
     <<nextPosition none>>
     <<wait 2>>
     Bjorn: Go ahead. I'll wait with your horse.
+    <<animate BjornThrow Wave>>
 
 <<elseif $metPetunia is true>>
     <<goToScene LavaRiverPetunia>>
@@ -1845,6 +1878,8 @@ You follow a path to the top of the volcano.  If you're going to get rid of this
 
     Petunia: You're lucky that I always carry a set of heat resistant plates. I'll spread them across the lava and you just run over them.
 
+    <<animate PetuniaThrow Throw>>
+    <<enable Plates true>>
     Petunia throws out her heat resistant plates onto the lava. 
     
     <<nextPosition none>>
@@ -1855,6 +1890,7 @@ You follow a path to the top of the volcano.  If you're going to get rid of this
     <<nextPosition none>>
     <<wait 2>>
     Petunia: You go on deary. I'll wait at the base of the volcano.
+    <<animate PetuniaThrow Wave>>
 <<endif>>
 
 <<setNextNodeName Continue_following_the_path_up_the_volcano>>

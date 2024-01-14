@@ -160,7 +160,8 @@ public class SceneSelector : MonoBehaviour
         dialogueRunner.Stop();
         variables.SetValue("$specialPackage", true);
         variables.SetValue("$whistle", true);
-        variables.SetValue("$muscleSpirit", true);
+        variables.SetValue("$metBjorn", true);
+        //variables.SetValue("$metPetunia", true);
         dialogueRunner.StartDialogue("Ride_towards_the_volcano");
     }
 
