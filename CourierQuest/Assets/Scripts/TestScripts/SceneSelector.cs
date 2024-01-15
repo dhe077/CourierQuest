@@ -144,6 +144,7 @@ public class SceneSelector : MonoBehaviour
         dialogueRunner.Stop();
         variables.SetValue("$specialPackage", true);
         variables.SetValue("$muscleSpirit", true);
+        variables.SetValue("$dagger", true);
         dialogueRunner.StartDialogue("Ride_towards_the_volcano");
     }
 
@@ -185,5 +186,14 @@ public class SceneSelector : MonoBehaviour
         dialogueRunner.Stop();
         variables.SetValue("$followedPath", false);
         dialogueRunner.StartDialogue("Wake_up_in_the_bushes");
+    }
+
+    public void JumpToCustom(string nodeName)
+    {
+        dialogueRunner.Stop();
+        variables.SetValue("$specialPackage", true);
+        variables.SetValue("$muscleSpirit", true);
+        variables.SetValue("$dagger", true);
+        dialogueRunner.StartDialogue(nodeName);
     }
 }

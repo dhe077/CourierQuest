@@ -195,4 +195,9 @@ public class PlayerViewManager : MonoBehaviour
             endReached = true;
         }
     }
+
+    public GameObject GetPlayerView()
+    {
+        return playerView;
+    }
 }

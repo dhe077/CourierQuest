@@ -2462,6 +2462,7 @@ position: 3976,2982
 <<nextPosition none>> // Inside Lift
 <<wait 1>>
 <<enable LiftParts false>>
+<<enableDisable MovingLift Lift>>
 <<wait 1>>
 
 You place your foot on the crank and use all your strength to pedal the crank and lift the platform. The weights are making the lift alot heavier than if they were off. However, the lift is still operable. 
@@ -2472,10 +2473,12 @@ You use the foot pedal to lift yourself up the cave.
 
 // *Hard. Turn the crank.*
 <<nextPosition none>>
-<<enable LiftWeights false>>
-<<enableDisable MovingLift Lift>>
-<<wait 20>> // Exercise timer
-<<jump Take_the_lift_to_the_top_of_the_cave>>
+<<prepareExerciseQuest mudbrick>>
+<<wait 1>>
+<<startExerciseQuest mudbrick>>
+//<<wait 10>> // Exercise timer
+<<setNextNodeName Take_the_lift_to_the_top_of_the_cave>>
+// <<jump Take_the_lift_to_the_top_of_the_cave>>
 ===
 
 title: Cut_off_the_weights_and_use_the_lift
@@ -2489,14 +2492,20 @@ position: 3980,2730
 
 You bring the obsidian dagger to the rope holding the weights. Like a hot knife through butter, the dagger slides through the fibres of the ropes and releases the lift from the weights. 
 
+<<enable LiftWeights false>>
+
 You can now use the foot pedal with ease to lift yourself up the cave.
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Easy. Turn the crank.*
 <<nextPosition none>>
-<<wait 10>> // Exercise timer
-<<jump Take_the_lift_to_the_top_of_the_cave>>
+<<prepareExerciseQuest mudbrick>>
+<<wait 1>>
+<<startExerciseQuest mudbrick>>
+//<<wait 10>> // Exercise timer
+<<setNextNodeName Take_the_lift_to_the_top_of_the_cave>>
+// <<jump Take_the_lift_to_the_top_of_the_cave>>
 ===
 
 title: Take_the_lift_to_the_top_of_the_cave
