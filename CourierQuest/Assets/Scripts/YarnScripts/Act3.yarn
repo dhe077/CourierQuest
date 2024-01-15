@@ -1467,6 +1467,7 @@ Player: It's so good to see you here. I was planning on delivering this special 
 
     Oli: I smell the goblin. Is he he-Oh hello again. Looks like the goblin is dealt with. Where are you headed? I will join.
 <<elseif $metMudbrick is true>>
+    <<enable MudbrickWalkIn true>>
     A small tortoise walking on two legs crawls out from a nearby bush.
 
     Mudbrick: H-h-hello? Goblin are you there? Oh h-hi. Funny seeing you here. I see the goblin is dealt with. Are you all going somewhere? May I join?
@@ -1570,7 +1571,15 @@ You pass a stable full of horses. You leave Stormhoof with the other horses in t
 You approach the castle doors. They swing open with ease. 
 
 <<goToScene EldoriaThroneRoom>>
-<<wait 2>>
+<<wait 3>>
+<<if $metOli is true>>
+    <<enable MudbrickSmall true>>
+<<elseif $metMudbrick is true>>
+    <<enable MudbrickSmall true>>
+<<elseif $metFinn is true>>
+    <<enable MudbrickSmall true>>
+<<endif>>
+
 You've entered the castle's throne room. The walls are high and are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. Ahead of you there is a goblin wielding an ornamented staff standing next to the throne. However, no one is sitting in the throne. The leader must be somewhere else.
 
 The goblin looks in your direction and points at you.
@@ -1586,7 +1595,13 @@ Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot
 <<elseif $metMudbrick is true>>
     Mudbrick: A l-lightning bolt?! We can't have that!
 
-    You look over at Mudbrick and you see his form begin to change. What once was a small tortoise is now a giant, house crushing, tortoise. He reaches down at the goblin that stands there stunned at what he's looking at.
+    <<enableDisable MudbrickGrow MudbrickSmall>>
+    You look over at Mudbrick and you see his form begin to change. 
+    <<wait 5>>
+    
+    <<enableDisable MudbrickBigMode MudbrickGrow>>
+    <<animate MudbrickBigMode Grab>>
+    What once was a small tortoise is now a giant, house crushing, tortoise. He reaches down at the goblin that stands there stunned at what he's looking at.
 
     Mudbrick: Goooooooo. Iiiiiiii. Willllllllll. Staaaaay. H-heeeeerrreee.
 <<elseif $metFinn is true>>
@@ -1906,7 +1921,15 @@ position: 2902,1879
 The path you follow advances up the volcano and leads you to a very dark cave entrance. Looks like you must enter the cave to go up the volcano. 
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<if $metOli is true>>
+    <<enable MudbrickOutsideCave true>>
+<<elseif $metMudbrick is true>>
+    <<enable MudbrickOutsideCave true>>
+<<elseif $metFinn is true>>
+    <<enable MudbrickOutsideCave true>>
+<<endif>>
+<<wait 1>>
 
 You approach the cave entrance. This cave seems alot darker than normal, almost as if its being shrouded by a magical black fog. You try to walk through the mist. Everything goes pitch black as you continue walking. You come out of the mist to the exact place you came in. Something seems odd about this fog.
 
@@ -1922,11 +1945,20 @@ You approach the cave entrance. This cave seems alot darker than normal, almost 
 <<elseif $metMudbrick is true>>
     Mudbrick: I've seen this b-b-before. It would creep up to the pond at night. We used the light of the m-m-mm-moon berries to manuever through the smog.
 
-    Mudbrick pulls out a few berries from his pocket. He shakes the berries in his fists and they glow a bright white light. Mudbrick leads a path through the smog placing a berry behind him as he walks.
+    
+    <<animate MudbrickOutsideCave Grab>>
+    Mudbrick pulls out a few berries from his pocket. He shakes the berries in his fists and they glow a bright white light. 
+    
+    <<enableDisable MudbrickWalkIn MudbrickOutsideCave>>
+    <<enable Berries true>>
+    Mudbrick leads a path through the smog placing a berry behind him as he walks.
+    <<wait 10>>
 
     <<nextPosition none>>
-    <<wait 2>>
-
+    <<wait 1>>
+    <<enableDisable MudbrickInCave MudbrickWalkIn>>
+    <<wait 4>>
+    
     Mudbrick: I'll wait here for you. We can use the b-b-berries to get back.
 <<elseif $metFinn is true>>
     Finn: Ah yes. Magical darkness. I recently learned a new spell to deal with such obstructions.
@@ -2427,8 +2459,11 @@ position: 3443,2814
 title: Use_the_lift_with_the_weights_on
 position: 3976,2982
 ---
-<<nextPosition none>>
-<<wait 2>>
+<<nextPosition none>> // Inside Lift
+<<wait 1>>
+<<enable LiftParts false>>
+<<wait 1>>
+
 You place your foot on the crank and use all your strength to pedal the crank and lift the platform. The weights are making the lift alot heavier than if they were off. However, the lift is still operable. 
 
 You use the foot pedal to lift yourself up the cave.
@@ -2436,15 +2471,22 @@ You use the foot pedal to lift yourself up the cave.
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Hard. Turn the crank.*
-<<wait 10>> // Exercise timer
+<<nextPosition none>>
+<<enable LiftWeights false>>
+<<enableDisable MovingLift Lift>>
+<<wait 20>> // Exercise timer
 <<jump Take_the_lift_to_the_top_of_the_cave>>
 ===
 
 title: Cut_off_the_weights_and_use_the_lift
 position: 3980,2730
 ---
-<<nextPosition none>>
-<<wait 2>>
+<<nextPosition none>> // Inside Lift
+<<wait 1>>
+<<enable LiftParts false>>
+<<enableDisable MovingLift Lift>>
+<<wait 1>>
+
 You bring the obsidian dagger to the rope holding the weights. Like a hot knife through butter, the dagger slides through the fibres of the ropes and releases the lift from the weights. 
 
 You can now use the foot pedal with ease to lift yourself up the cave.
@@ -2452,6 +2494,7 @@ You can now use the foot pedal with ease to lift yourself up the cave.
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Easy. Turn the crank.*
+<<nextPosition none>>
 <<wait 10>> // Exercise timer
 <<jump Take_the_lift_to_the_top_of_the_cave>>
 ===

@@ -61,6 +61,8 @@ position: 978,-2241
 ---
 Player: Delivery for Mudbrick!
 
+<<enable MudbrickWalking true>>
+<<animate MudbrickWalking Walk>>
 From the pond a tortoise approaches you. The tortoise is standing on two legs and is walking with the help of a wooden branch. It looks very old. The tortoise looks up at you.
 
 Mudbrick: H-h-hello. You said you have a d-delivery for me?
@@ -81,6 +83,8 @@ Player: I have a delivery for Mudbrick?
 
 The gathered tortoises you approached look away and lose interest as they shuffle away from you.
 
+<<enable MudbrickWalking true>>
+<<animate MudbrickWalking Walk>>
 From the pond a tortoise approaches you. The tortoise is standing on two legs and is walking with the help of a wooden branch. It looks very old. The tortoise looks up at you.
 
 Mudbrick: H-h-hello. You said you have a d-delivery for me?
@@ -125,6 +129,7 @@ position: 1725,-2904
 ---
 Player: What is the Druids of the Pond ritual for?
 
+<<animate MudbrickStanding Gesture>>
 Mudbrick: This ritual is done once a year. It gathers magical essence from across the lands to this p-p-pond and allows for creatures like myself to be born from the mixture of pond life and magic.
 
 What do you say?
@@ -175,16 +180,20 @@ Player: I have a package for you from Granbell.
 
 Mudbrick: Oh m-my. All the way from Granbell. That m-must have been far.
 
+<<animate MudbrickStanding Handout>>
 He unwraps the package and reveals that what was inside. The package contained a round and smooth shell cover made from various animal hides. 
 
+<<animate MudbrickStanding Nod>>
 Mudbrick: W-w-wow! This is the exact ritual sh-sh-shell cover I requested. Thank you! Good timing as well. You've d-d-delivered this to me just in time for our annual ritual.
 
 <<specificPosition MudbricksLake>>
 <<wait 1>>
 <<enable HelpMudbrick true>>
 <<wait 2>>
+<<animate MudbrickStanding Gesture>>
 Mudbrick gestures to the gathering tortoises across the lake. The tortoises have wheeled a large wooden machine that's attatched to a heavy stone statue.
 
+<<animate MudbrickStanding Talk>>
 Mudbrick: Would you mind helping us lift up our ritual's m-m-monument? Someone or something knocked it over during the night.
 
 What do you say?
@@ -199,6 +208,7 @@ position: 2601,-2913
 ---
 Player: Stormhoof and I can help you lift the statue.
 
+<<animate MudbrickStanding Nod>>
 Mudbrick: Thank you so m-m-much.
 
 You go to the statue. The tortoises gather around you. A rope is attatched to Stormhoofs harness. 
@@ -210,11 +220,13 @@ Mudbrick: Ok courier. Start p-p-pulling the rope.
 <<specificPosition LiftStatue>>
 <<prepareExerciseQuest mudbrick>>
 <<wait 1>>
+<<enableDisable MudbrickWaitingExQuest MudbrickStanding>>
+<<animate MudbrickWaitingExQuest Cheer>>
 <<enable Stormhoof false>>
 <<rideHorse true>> 
 <<wait 1>>
 <<startExerciseQuest mudbrick>>
-<<wait 30>>
+<<wait 30>> // Exercise timer
 <<jump Lift_the_statue>>
 ===
 
@@ -223,6 +235,7 @@ position: 4333,-2202
 ---
 Player: Sorry sir, I can't help you right now. I've got some urgent deliveries to make.
 
+<<animate MudbrickStanding Nod>>
 Mudbrick: I understand. Move along now. I don't want to s-s-s-slow you down.
 
 <<specificPosition LeaveTheLake>>
@@ -243,6 +256,7 @@ position: 3080,-2888
 ---
 <<specificPosition MudbricksLake>>
 <<wait 1>>
+<<enableDisable MudbrickStanding MudbrickWaitingExQuest>>
 <<enable Stormhoof true>>
 <<rideHorse false>> 
 <<wait 1>>
@@ -250,12 +264,14 @@ You managed to lift the statue upright.
 
 Mudbrick: Now the ritual can continue. Thank you so m-m-much for the help. Here take this as a gift.
 
+<<animate MudbrickStanding Handout>>
 Mudbrick holds up his hands offering you a small green pendant.
 
 *You take the pendant.*
 <<set $animalPendant to true>> 
 <<set $metMudbrick to true>>
 
+<<animate MudbrickStanding Talk>>
 Mudbrick: This pendant can b-b-be used to summon the animals of the forest to assist you. Just wear the pendant and c-c-call for the forest's aid. 
 
 <<jump Thank_Mudbrick_for_the_pendant>>
@@ -266,6 +282,7 @@ position: 4343,-2679
 ---
 Player: Thank you for the pendant. I'm sure it will be very useful on my journey.
 
+<<animate MudbrickStanding Wave>>
 Mudbrick: I thank you for the delivery *and* the assistance with the statue.
 
 <<specificPosition LeaveTheLake>>
