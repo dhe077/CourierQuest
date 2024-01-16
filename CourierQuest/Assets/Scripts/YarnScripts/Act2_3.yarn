@@ -180,6 +180,8 @@ You give the package to Leyton and he proceeds to open it revealing that it was 
 
 Leyton: Let's heat these up. I'm feeling hungry.
 
+<<set $metLeyton to true>>
+
 What do you say?
 -> Ask how he floated down the cliff.
     <<jump Ask_how_he_floated_down_the_cliff>>
@@ -361,8 +363,6 @@ Leyton pours the coals into a stone fit pit. This'll be my last push of flames b
 Leyton: A-a-aaaaachooo!!
 
 Leyton sneezes all over the coals. A hot flame bursts from his face and onto the coals starting the heating process.
-
-<<set $metLeyton to true>>
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 <<prepareExerciseQuest leyton>>
@@ -688,8 +688,9 @@ You give the package to Thakali. Thakali tears open the package and finds a pouc
 
 Thakali: What are these?
 
-What do you say?
+<<set $metThakali to true>>
 
+What do you say?
 <<if $metFinn is true>>
     -> Say that they are magical tomato seeds.
         <<jump Say_that_they_are_magical_tomato_seeds>>
@@ -803,8 +804,6 @@ Thakali: That is good idea. Thakali need rest after slicing plants.
 <<rideHorse true>> 
 <<wait 1>>
 Thakali straps the plow onto Stormhoof.
-
-<<set $metThakali to true>>
 
 You start plowing the land.
 
@@ -1093,6 +1092,8 @@ She opens the package to reveal a large great axe made of a shiny blue metal.
 
 Daisy: Now this'll be very helpful. I know exactly who got this for me.
 
+<<set $metDaisy to true>>
+
 What do you say?
 -> Ask who got Daisy the axe.
     <<jump Ask_who_got_Daisy_the_axe>>
@@ -1334,7 +1335,6 @@ Daisy: This is a magical compass. I think it'll be more useful in your hands tha
 *You take the magical compass.* 
 
 <<set $magicalCompass to true>>
-<<set $metDaisy to true>>
 
 <<jump Thank_her_for_the_compass>>
 ===
@@ -1621,6 +1621,8 @@ Val: Boy howdy! Payday has arrived just in time. A new game of dice just started
 
 Val closes the pouch and swings it over her back and runs into the Gamblers Grotto. The door slams shut on you.
 
+<<set $metVal to true>>
+
 <<jump Ask_for_directions_to_your_next_destination>>
 ===
 
@@ -1719,8 +1721,6 @@ Val: A cloaked gentleman spoke up about the debts I owed them. So, I told the go
 Val holds out her finger and a flame shoots out and hits the rocks nearby.
 
 Val: To settle my debt with you for saving my life. When the time comes, just whisper my name to the wind, and I'll ride in like a shadow to deliver the reckoning you seek.
-
-<<set $metVal to true>>
 
 What do you say?
 -> Turn down her offer.

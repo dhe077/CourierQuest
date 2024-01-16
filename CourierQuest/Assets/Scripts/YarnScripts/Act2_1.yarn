@@ -17,8 +17,9 @@ You pack up your camp and head to the tree that Stormhoof is tied to.
 <<enable Tent false>>
 <<wait 1>>
 <<enable GarbanzoRunAcrossRoad true>>
-On your way to Stormhoof's tree you spot a small creature dart across the path. 
 <<wait 3>>
+On your way to Stormhoof's tree you spot a small creature dart across the path. 
+
 That creature seems to have been trying to find you. It's missed you this time. Best be on your guard from now on.
 
 You see the tree that Stormhoof should be tied to but no Stormhoof.
@@ -33,7 +34,12 @@ Looking around you see hoof prints leading down the path a little.
 
 <<nextPosition none>>
 <<wait 2>>
-You follow the tracks. You finally see Stormhoof, but shes standing with a very large man. He looks to be about 8ft tall. He's holding the reins of Stormhoof in his hands. He's also carrying around what looks to be a rod.
+You follow the tracks. // Remove
+<<wait 10>>
+
+<<nextPosition none>>
+<<wait 2>>
+You finally see Stormhoof, but shes standing with a very large man. He looks to be about 8ft tall. He's holding the reins of Stormhoof in his hands. He's also carrying around what looks to be a rod.
 
 What do you do? (Timed)
 <<startTimer 8>>
@@ -53,6 +59,7 @@ position: 720,-1029
 ---
 Player: Excuse me sir! That's my horse.
 
+<<enableDisable OliFacingPlayer OliLookingAround>>
 The man turns to face you. His eyes are glowing white. Small streaks of lightning shoot out from his gaze.
 
 Oli: This is your horse? I scared away the foul creature that was trying to steal it. Who are you?
@@ -71,6 +78,7 @@ You attempt a whistle to catch Stormhoof's attention.
 
 Stormhoof pays no attention.
 
+<<enableDisable OliFacingPlayer OliLookingAround>>
 The man turns to face you. His eyes are glowing white. Small streaks of lightning shoot out from his gaze.
 
 Oli: I can still smell you. I know you're still here.
@@ -90,6 +98,7 @@ position: 572,-348
 ---
 You wait and watch the man as he ties Stormhoof to a tree then rummages around in the bushes.
 
+<<animate OliLookingAround LookAround>>
 Oli: I can still smell you. I know you're still here.
 
 What do you do?
@@ -117,9 +126,14 @@ title: Say_that_youre_a_courier
 position: 1047,-1255
 ---
 Player: Yes that is my horse, and I'm just a courier from Granbell. Who did you scare off?
+<<enableDisable OliWalking OliFacingPlayer>>
+<<wait 6>>
 
-He hands you the reins.
+<<animate OliWithPlayer Handout>>
+He hands you the reins. // Remove.
+<<enableDisable StormhoofWithPlayer Stormhoof>>
 
+<<animate OliWithPlayer LookAround>>
 Oli: It was an evil creature. A goblin.
 
 What do you say?
@@ -133,9 +147,14 @@ title: Say_that_youre_an_adventurer
 position: 1119,-822
 ---
 Player: Yes, that is my horse. I'm an adventurer. Who did you scare off?
+<<enableDisable OliWalking OliFacingPlayer>>
+<<wait 6>>
 
-He hands you the reins.
+<<animate OliWithPlayer Handout>>
+He hands you the reins. // Remove.
+<<enableDisable StormhoofWithPlayer Stormhoof>>
 
+<<animate OliWithPlayer Think>>
 Oli: An adventurer who has not seen a goblin?
 
 What do you say?
@@ -150,28 +169,33 @@ position: 1362,-1438
 ---
 Player: A goblin!? What did the creature look like?
 
+<<animate OliWithPlayer Kneel>>
 The man lowers himself close to the ground and gestures as if to show height.
 
 Oli: Small.
 
+<<animate OliWithPlayer SelfPoint>>
 The man stands and points to his nose.
 
 Oli: Big nose.
 
+<<animate OliWithPlayer SelfPoint>>
 The man points to his ears.
 
 Oli: Pointy ears.
 
+<<animate OliWithPlayer LookAround>>
 The man points to the foliage around him.
 
 Oli: Green.
 
+<<animate OliWithPlayer Bend>>
 The man looks inquisitively at you.
 
 Oli: You said you're a courier from Granbell? I've been awaiting a delivery from there. My name is Oli.
+<<animate OliWithPlayer Stand>>
 
 What do you do?
-
 <<if $secondPackage is "square">>
     -> Tell him that you have his package.
         <<jump Tell_him_that_you_have_his_package>>
@@ -187,6 +211,7 @@ position: 1678,-850
 ---
 Player: What is that rod you are carrying?
 
+<<animate OliWithPlayer SelfLook>>
 Oli: It is my hammer. I know it might not look like it but it is. I am waiting on a delivery from Granbell for Oli.
 
 What do you say?
@@ -207,6 +232,8 @@ You look him up and down.
 
 Player: Don't tell me you're working with the creature?
 
+<<enableDisable OliWithPlayerAngry OliWithPlayer>>
+<<animate OliWithPlayerAngry AngryPoint>>
 Oli: I most certainly am NOT! How dare you assume I'd work with evil.
 
 His eyes glow brighter and the streaks of lightning grow longer and more frequent.
@@ -228,11 +255,15 @@ position: 1766,-1798
 ---
 Player: I'm sorry!
 
+<<enableDisable OliWithPlayer OliWithPlayerAngry>>
+<<animate OliWithPlayer AngryPoint>>
 Oli: I *destroy* evil.
 
+<<animate OliWithPlayer Bend>>
 He looks at you closely.
 
 Oli: I sense no evil on you... So far.
+<<animate OliWithPlayer Stand>>
 
 What do you say?
 <<if $secondPackage is "square">>
@@ -252,8 +283,10 @@ Player: Sir, I have a delivery for you.
 
 You pull out the square package.
 
+<<animate OliWithPlayer Handout>>
 Oli: Yes, thank you. This must be the hammer head I ordered.
 
+<<animate OliWithPlayer SelfLook>>
 He lifts up the rod he has been holding.
 
 Oli: Could you please just deliver it to my camp nearby, I will pick it up once I deal with the goblin. Be careful when entering my camp. I've put up a defensive spell to protect my belongings.
@@ -262,6 +295,7 @@ Oli reaches into a pouch on his waist and pulls out a crystal.
 
 Oli: Use this diamond to enter my campsite safely. Hold it above your head and walk toward the center of my campsite. As long as you keep the diamond above your head you will be safe.
 
+<<animate OliWithPlayer Handout>>
 Oli demonstrates his instructions then hands you the diamond. *You take the diamond.* 
 
 <<set $diamond to true>>
@@ -275,6 +309,7 @@ position: 1973,-441
 ---
 Player: Thank you for keeping my horse safe.
 
+<<animate OliWithPlayer Dismiss>>
 Oli: You're welcome.
 
 <<jump Find_the_path_and_deliver_the_packages>>
@@ -285,7 +320,7 @@ position: 2688,-88
 ---
 <<nextPosition none>>
 <<wait 1>>
-<<enable Stormhoof false>>
+<<enable StormhoofWithPlayer false>>
 <<rideHorse true>> 
 <<wait 1>>
 You ride atop Stormhoof and decide you should deliver your first package.

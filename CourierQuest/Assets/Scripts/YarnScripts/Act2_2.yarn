@@ -196,6 +196,8 @@ Mudbrick gestures to the gathering tortoises across the lake. The tortoises have
 <<animate MudbrickStanding Talk>>
 Mudbrick: Would you mind helping us lift up our ritual's m-m-monument? Someone or something knocked it over during the night.
 
+<<set $metMudbrick to true>>
+
 What do you say?
 -> Say that you can help. (Exercise Quest)
     <<jump Say_that_you_can_help>>
@@ -269,7 +271,6 @@ Mudbrick holds up his hands offering you a small green pendant.
 
 *You take the pendant.*
 <<set $animalPendant to true>> 
-<<set $metMudbrick to true>>
 
 <<animate MudbrickStanding Talk>>
 Mudbrick: This pendant can b-b-be used to summon the animals of the forest to assist you. Just wear the pendant and c-c-call for the forest's aid. 
@@ -671,6 +672,8 @@ At no point does he look up from his book to see you. His arm reaches out to you
 
 You place the triangular package in his grasp and await his response. He doesn't look at the package at all and puts it in his pouch.
 
+<<set $metFinn to true>>
+
 What do you say?
 -> Ask him if he's ok.
     <<jump Ask_him_if_hes_ok>>
@@ -869,7 +872,6 @@ He hands you a small vial.
 *You take the vial.*
 
 <<set $smokeVial to true>>
-<<set $metFinn to true>>
 
 Finn: It's a vial of magical smoke. If you ever need a quick escape just throw this on the ground and it'll create a large cloud of smog, blinding your enemies.
 
@@ -888,7 +890,6 @@ He hands you a small vial.
 *You take the vial.*
 
 <<set $smokeVial to true>>
-<<set $metFinn to true>>
 
 Finn: It's a vial of magical smoke. If you ever need a quick escape just throw this on the ground and it'll create a large cloud of smog, blinding your enemies.
 

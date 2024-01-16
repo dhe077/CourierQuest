@@ -196,6 +196,9 @@ You approach the castle doors. They swing open with ease.
 <<wait 2>>
 You've entered the castle's throne room. The walls are high and are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. Ahead of you there is a goblin wielding an ornamented staff standing next to the throne. However, no one is sitting in the throne. The leader must be somewhere else.
 
+<<specificPosition ThroneRoomSpot>>
+<<wait 2>>
+
 The goblin looks in your direction and points at you.
 
 Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot a lightning bolt frew your face.
@@ -288,7 +291,8 @@ You quickly throw the diamond in the direction of the goblin. You watch the shoc
 <<wait 2>>
 You slip into the hallway beside you. You hear a loud explosion behind you.
 
-<<jump Run_down_the_hall>>
+<<setNextNodeName Run_down_the_hall>>
+//<<jump Run_down_the_hall>>
 ===
 
 title: Use_the_animal_pendant_to_summon_forest_creatures
@@ -296,9 +300,14 @@ position: 3559,-1253
 ---
 You don the animal pendant and close your eyes. You hear the laughter of the goblin and the rumbling of the sky. You call upon the forest's aid.
 
-Suddenly the laughter turns to screams. You open your eyes to witness the goblin surrounded by birds. The goblin is distracted. Good time to escape. You slip into the hallway beside you.
+Suddenly the laughter turns to screams. You open your eyes to witness the goblin surrounded by birds. The goblin is distracted. Good time to escape. 
 
-<<jump Run_down_the_hall>>
+<<specificPosition RunDownHall>>
+<<wait 2>>
+You slip into the hallway beside you.
+
+<<setNextNodeName Run_down_the_hall>>
+//<<jump Run_down_the_hall>>
 ===
 
 title: Use_the_smoke_vial_to_escape
@@ -314,7 +323,8 @@ The goblin agrily screams and then a sudden bolt of lightning crashes down throu
 <<wait 2>>
 You quickly run into the hallway to your right.
 
-<<jump Run_down_the_hall>>
+<<setNextNodeName Run_down_the_hall>>
+//<<jump Run_down_the_hall>>
 ===
 
 title: Run_out_the_way_you_came_in
@@ -1463,6 +1473,7 @@ Player: It's so good to see you here. I was planning on delivering this special 
 <<endif>>
 
 <<if $metOli is true>>
+    <<enable OliWalkIn true>>
     A tall man walks out from the forest wielding a glowing hammer.
 
     Oli: I smell the goblin. Is he he-Oh hello again. Looks like the goblin is dealt with. Where are you headed? I will join.
@@ -1571,16 +1582,20 @@ You pass a stable full of horses. You leave Stormhoof with the other horses in t
 You approach the castle doors. They swing open with ease. 
 
 <<goToScene EldoriaThroneRoom>>
-<<wait 3>>
+<<wait 2>>
+
+You've entered the castle's throne room. The walls are high and are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. Ahead of you there is a goblin wielding an ornamented staff standing next to the throne. However, no one is sitting in the throne. The leader must be somewhere else.
+
+<<specificPosition ThroneRoomSpot>>
+<<wait 1>>
 <<if $metOli is true>>
-    <<enable MudbrickSmall true>>
+    <<enable OliStanding true>>
 <<elseif $metMudbrick is true>>
     <<enable MudbrickSmall true>>
 <<elseif $metFinn is true>>
     <<enable MudbrickSmall true>>
 <<endif>>
-
-You've entered the castle's throne room. The walls are high and are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. Ahead of you there is a goblin wielding an ornamented staff standing next to the throne. However, no one is sitting in the throne. The leader must be somewhere else.
+<<wait 1>>
 
 The goblin looks in your direction and points at you.
 
@@ -1588,18 +1603,25 @@ Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot
 
 <<if $metOli is true>>
     Oli: A lightning bolt you say. I will show you true lightning.
+    <<enableDisable OliWalking OliStanding>>
+    <<wait 3>>
 
+    <<animate OliAttacking LightningAttack>>
+    <<wait 1>>
+    <<enable LightningAttackObject true>>
+    <<wait 0.25>>
+    <<enable LightningAttackObject false>>
     Oli fires a lightning bolt from his hammer. It lands directly on the goblin's chest, blasting it back, hitting the throne.
+    
 
     Oli: I will vanquish you evil creature! Go courier!
 <<elseif $metMudbrick is true>>
     Mudbrick: A l-lightning bolt?! We can't have that!
 
+    You look over at Mudbrick and you see his form begin to change.
     <<enableDisable MudbrickGrow MudbrickSmall>>
-    You look over at Mudbrick and you see his form begin to change. 
     <<wait 5>>
     
-    <<enableDisable MudbrickBigMode MudbrickGrow>>
     <<animate MudbrickBigMode Grab>>
     What once was a small tortoise is now a giant, house crushing, tortoise. He reaches down at the goblin that stands there stunned at what he's looking at.
 
@@ -1615,8 +1637,10 @@ Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot
 <<endif>>
 
 You'd better get a move on. You spot a hallway nearby. Lets hope it takes you where you need to go.
+<<specificPosition RunDownHall>>
 
-<<jump Run_down_the_hallway>>
+<<setNextNodeName Run_down_the_hallway>>
+// <<jump Run_down_the_hallway>>
 ===
 
 title: Run_down_the_hallway
@@ -1923,7 +1947,7 @@ The path you follow advances up the volcano and leads you to a very dark cave en
 <<nextPosition none>>
 <<wait 1>>
 <<if $metOli is true>>
-    <<enable MudbrickOutsideCave true>>
+    <<enable OliOutsideCave true>>
 <<elseif $metMudbrick is true>>
     <<enable MudbrickOutsideCave true>>
 <<elseif $metFinn is true>>
@@ -1936,7 +1960,16 @@ You approach the cave entrance. This cave seems alot darker than normal, almost 
 <<if $metOli is true>>
     Oli: Magical darkness. I know how to deal with this. Fear my thunder!
 
-    Oli holds his hammer in front of himself. A loud thunderous crack is heard and the smog is split in twain. He leads the way through while the smog has been parted.
+    <<animate OliOutsideCave LightningAttack>>
+    <<wait 1>>
+    <<enableDisable PartedSmog Smog>> 
+    Oli holds his hammer in front of himself. A loud thunderous crack is heard and the smog is split in twain.
+    
+    
+    He leads the way through while the smog has been parted.
+    <<enableDisable OliWalkIn OliOutsideCave>>
+    <<animate OliWalkIn HammerWalk>>
+    <<wait 10>>
 
     <<nextPosition none>>
     <<wait 2>>
@@ -1949,15 +1982,13 @@ You approach the cave entrance. This cave seems alot darker than normal, almost 
     <<animate MudbrickOutsideCave Grab>>
     Mudbrick pulls out a few berries from his pocket. He shakes the berries in his fists and they glow a bright white light. 
     
+    Mudbrick leads a path through the smog placing a berry behind him as he walks.
     <<enableDisable MudbrickWalkIn MudbrickOutsideCave>>
     <<enable Berries true>>
-    Mudbrick leads a path through the smog placing a berry behind him as he walks.
     <<wait 10>>
 
     <<nextPosition none>>
-    <<wait 1>>
-    <<enableDisable MudbrickInCave MudbrickWalkIn>>
-    <<wait 4>>
+    <<wait 2>>
     
     Mudbrick: I'll wait here for you. We can use the b-b-berries to get back.
 <<elseif $metFinn is true>>
