@@ -662,12 +662,10 @@ Unlike the day before, the weather is bright and sunny. What an amazing day!
 title: Arrive_at_your_first_destination
 position: 4678,605
 ---
-You've arrived at the address labelled on the delivery package.
-
 <<if $firstPackage is "small">>
     <<goToScene PetuniasShop>>
     <<wait 2>>
-    The place looks like a small bakery store. Above the entrance to the store is a sign that says, "Pattersby's Pastries".
+    The address on the first package has lead you to a small bakery store. Above the entrance to the store is a sign that says, "Pattersby's Pastries".
     <<nextPosition none>>
     <<wait 1>>
     <<enable Stormhoof true>>
@@ -681,7 +679,7 @@ You've arrived at the address labelled on the delivery package.
 <<elseif $firstPackage is "large">>
     <<goToScene BjornsCampsite>>
     <<wait 2>>
-    The place looks like a large tent. A wooden sign stuck in the dirt reads, "See the mighty Bjorn wrestle a bear!".
+    The address on the first package has lead you to a large tent. A wooden sign stuck in the dirt reads, "See the mighty Bjorn wrestle a bear!".
     <<nextPosition none>>
     <<wait 1>>
     <<enable Stormhoof true>>

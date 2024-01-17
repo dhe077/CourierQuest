@@ -1255,11 +1255,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6454ae5df525fe4fbafc55a0061b64a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaserObject: {fileID: 0}
   atPlayerSide: 1
-  yVal: 2
-  playerCloseOffset: 2
-  playerFarOffset: 3
+  chaserSplinePath: {fileID: 0}
+  maxDiff: 5
+  minDiff: 1
+  yOffset: 0
+  besidePlayerOffset: 0
+  maxRndSpeedIncrease: 5
+  minRndSpeedIncrease: -5
+  offsetValues: 
+  changeOffsetTimeInterval: 10
+  reduceRangeTimeInterval: 10
 --- !u!114 &1275596222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1275,10 +1281,6 @@ MonoBehaviour:
   firstPackages: []
   secondPackages: []
   thirdPackages: []
-  position1: {x: 0, y: 0, z: 0}
-  position2: {x: 0, y: 0, z: 0}
-  position3: {x: 0, y: 0, z: 0}
-  position4: {x: 0, y: 0, z: 0}
 --- !u!114 &1275596223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1298,6 +1300,7 @@ MonoBehaviour:
   decreaseRate: 0.4
   rainGroup: {fileID: 1252826433}
   increaseRate: 0.2
+  activatableObjects: []
 --- !u!4 &1275596224
 Transform:
   m_ObjectHideFlags: 0
@@ -1442,11 +1445,14 @@ MonoBehaviour:
   playerView: {fileID: 0}
   splineComputers:
   - {fileID: 1111003992}
-  moveSpeedMultiplier: 1
+  moveSpeedMultiplier: 10
   enableHeadMovement: 1
   maxDist: 9
+  calibrationTarget: {fileID: 0}
   spotFadeImage: {fileID: 0}
   fadeDuration: 1
+  sceneToChangeTo: 
+  endReached: 0
 --- !u!4 &1543157692
 Transform:
   m_ObjectHideFlags: 0

@@ -2361,13 +2361,9 @@ position: 2518,2629
 ---
 In an attempt to try *anything* to get through the magical mist you pull out the diamond from your pocket and hold it out ahead of you as you walk into the darkness. 
 
-<<specificPosition IntoCave>>
-<<wait 2>>
 To your surprise the darkness seems to be lessening directly in front of the diamond. You can just barely see ahead of yourself. You continue walking through the smog and see a clearing on the other side.
 
-<<wait 4>>
-
-You've passed the smog and you're no longer at the entrance of the cave. You find yourself deeper within the volcano.
+<<specificPosition IntoCave>>
 
 <<setNextNodeName Delve_further_into_the_volcano>>
 <<stop>>
@@ -2379,11 +2375,16 @@ position: 2517,2849
 ---
 You open your pouch to find the animal pendant. You wear the pendant around your neck and close your eyes to imagine the forest creatures coming to help you.
 
+<<specificPosition CaveEntrance>>
+<<wait 1>>
+<<enableDisable PartedSmog Smog>>
+<<wait 1>>
+
 Before you open your eyes you hear a "squawk" and a "craw". You open your eyes and witness a flock of forest birds. They beat their wings in unison, creating a strong gust of wind directed at the smog. The darkness dissipates and you can clearly see the other side of the track. 
 
-<<specificPosition IntoCave>>
-<<wait 10>>
 You remove the pendant and the birds fly away.
+
+<<specificPosition IntoCave>>
 
 <<setNextNodeName Delve_further_into_the_volcano>>
 <<stop>>
@@ -2395,10 +2396,14 @@ position: 2519,3164
 ---
 You wonder about the smoke vial in your pocket. How'd the smoke get in there in the first place? You think that the vial must have magical properties to hold in magical smoke. You grip the smoke vial in your pocket and hold it in the air. You pop the cork out of the top of the vial. 
 
+<<specificPosition CaveEntrance>>
+<<wait 1>>
+<<enable Smog false>>
+<<wait 1>>
+
 Exactly as you had thought, the smog from the cave is sucked into the vial you hold in your hand. The darkness has cleared and you can see the other side of the track. 
 
 <<specificPosition IntoCave>>
-<<wait 10>>
 
 <<setNextNodeName Delve_further_into_the_volcano>>
 <<stop>>
@@ -2863,7 +2868,7 @@ You toss the package into the fiery depths and watch it plop into the lava and s
 
 A bubble of molten rock bursts out from where it landed.
 
-A sudden gust of air rushes past you. You shield your eyes from any oncoming debris. Once the air subsides you out and see a dragon floating above the lava in front of you.
+A sudden gust of air rushes past you. You shield your eyes from any oncoming debris. Once the air subsides you look out and see a dragon floating above the lava in front of you.
 
 It looks directly at you. A voice is heard in your head.
 
@@ -2922,6 +2927,7 @@ You look around nothing seems different so far.
 
 <<goToScene ReturnToGranbell>>
 <<wait 1>>
+<<enableDisable GuildhallFuture Guildhall>>
 <<rideHorse true>> 
 <<wait 1>>
 You make your way back to Granbell. At Granbell people are rejoicing and cheering along the streets. You hear them say that the war has ended.

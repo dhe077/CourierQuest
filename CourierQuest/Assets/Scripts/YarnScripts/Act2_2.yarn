@@ -10,11 +10,10 @@ So far the weather has been wonderful but you have a gut feeling like another st
 title: Arrive_at_your_second_destination
 position: -408,698
 ---
-You've arrived at the address labelled on the delivery package.
 <<if $secondPackage is "round">>
     <<goToScene MudbricksLake>>
     <<wait 2>>
-    The address has led you to a murky pond covered in algae and lily pads. It doesn't look like there is a house here. You notice a small group of tortoises gathering together into a circular formation, near the lake.
+    The address on the second package has lead you to a murky pond covered in algae and lily pads. It doesn't look like there is a house here. You notice a small group of tortoises gathering together into a circular formation, near the lake.
     <<nextPosition none>>
     <<wait 1>>
     <<enable Stormhoof true>>
@@ -28,7 +27,7 @@ You've arrived at the address labelled on the delivery package.
 <<elseif $secondPackage is "square">>
     <<goToScene OlisCamp>>
     <<wait 2>>
-    The place looks like a typical campsite with a large tent. Around the campsite you see a random array of what looks like scorch marks.
+    The address on the second package has lead you to a typical campsite with a large tent. Around the campsite you see a random array of what looks like scorch marks.
     <<nextPosition none>>
     <<wait 1>>
     <<enable Stormhoof true>>
@@ -42,7 +41,7 @@ You've arrived at the address labelled on the delivery package.
 <<elseif $secondPackage is "triangle">>
     <<goToScene FinnsTower>>
     <<wait 2>>
-    The address has led you to a tower. Atop the tower sits a room with a tall spire. Seems like this tower was used a long time ago but is now abandoned or at least it seems to look that way. 
+    The address on the second package has lead you to a tower. Atop the tower sits a room with a tall spire. Seems like this tower was used a long time ago but is now abandoned or at least it seems to look that way. 
     <<nextPosition none>>
     <<wait 1>>
     <<enable Stormhoof true>>

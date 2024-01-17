@@ -479,6 +479,8 @@ MonoBehaviour:
   chaserSplinePath: {fileID: 1201520077}
   maxDiff: 20
   minDiff: 16
+  yOffset: 0
+  besidePlayerOffset: 0
   maxRndSpeedIncrease: 10
   minRndSpeedIncrease: -5
   offsetValues: fafffffffbffffffffffffff00000000010000000200000003000000
@@ -1510,11 +1512,14 @@ MonoBehaviour:
   playerView: {fileID: 0}
   splineComputers:
   - {fileID: 2087438269}
-  moveSpeedMultiplier: 1
+  moveSpeedMultiplier: 10
   enableHeadMovement: 0
   maxDist: 9
+  calibrationTarget: {fileID: 0}
   spotFadeImage: {fileID: 0}
   fadeDuration: 1
+  sceneToChangeTo: 
+  endReached: 0
 --- !u!4 &2147478483
 Transform:
   m_ObjectHideFlags: 0

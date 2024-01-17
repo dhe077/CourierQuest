@@ -400,7 +400,6 @@ position: 3165,-473
 <<wait 1>>
 <<spawnPackages none>>
 <<animate MistressEllastraPackages Point>>
-*You look over at the packages that need delivering. You're given 2 choices first.*
 
 Choose your first package?
 -> Choose the small package.
@@ -412,8 +411,7 @@ Choose your first package?
 title: First_Package_Choose_the_small_package
 position: 3430,-171
 ---
-*You take the small package.*
-The package is addressed to Petunia.
+The small package is addressed to Petunia.
 
 <<set $firstPackage to "small">>
 
@@ -423,8 +421,7 @@ The package is addressed to Petunia.
 title: First_Package_Choose_the_large_package
 position: 3629,-361
 ---
-*You take the large package.*
-The package is addressed to Bjorn.
+The large package is addressed to Bjorn.
 
 <<set $firstPackage to "large">>
 
@@ -436,7 +433,6 @@ position: 3780,-95
 ---
 <<spawnPackages none>>
 <<animate MistressEllastraPackages Point>>
-*You look over at the packages that need delivering. You're given 3 choices.*
 
 Choose your second package?
 -> Choose the round package.
@@ -450,8 +446,7 @@ Choose your second package?
 title: Second_Package_Choose_the_round_package
 position: 3944,199
 ---
-*You take the round package.*
-The package is addressed to Mudbrick.
+The round package is addressed to Mudbrick.
 
 <<set $secondPackage to "round">>
 
@@ -461,8 +456,7 @@ The package is addressed to Mudbrick.
 title: Second_Package_Choose_the_square_package
 position: 4190,15
 ---
-*You take the square package.*
-The package is addressed to Oli.
+The square package is addressed to Oli.
 
 <<set $secondPackage to "square">>
 
@@ -472,8 +466,7 @@ The package is addressed to Oli.
 title: Second_Package_Choose_the_triangle_package
 position: 4194,-205
 ---
-*You take the triangle package.*
-The package is addressed to Finn.
+The triangle package is addressed to Finn.
 
 <<set $secondPackage to "triangle">>
 
@@ -485,7 +478,6 @@ position: 4764,119
 ---
 <<spawnPackages none>>
 <<animate MistressEllastraPackages Point>>
-*You look over at the packages that need delivering. You're given 4 choices.*
 
 Choose your third package?
 -> Choose the red package.
@@ -501,8 +493,7 @@ Choose your third package?
 title: Third_Package_Choose_the_red_package
 position: 5088,-110
 ---
-*You take the red package.*
-The package is addressed to Leyton.
+The red package is addressed to Leyton.
 
 <<set $thirdPackage to "red">>
 
@@ -512,8 +503,7 @@ The package is addressed to Leyton.
 title: Third_Package_Choose_the_green_package
 position: 4798,538
 ---
-*You take the green package.*
-The package is addressed to Thakali.
+The green package is addressed to Thakali.
 
 <<set $thirdPackage to "green">>
 
@@ -523,8 +513,7 @@ The package is addressed to Thakali.
 title: Third_Package_Choose_the_blue_package
 position: 5115,92
 ---
-*You take the blue package.*
-The package is addressed to Daisy.
+The blue package is addressed to Daisy.
 
 <<set $thirdPackage to "blue">>
 
@@ -534,8 +523,7 @@ The package is addressed to Daisy.
 title: Third_Package_Choose_the_yellow_package
 position: 4995,331
 ---
-*You take the yellow package.*
-The package is addressed to Val.
+The yellow package is addressed to Val.
 
 <<set $thirdPackage to "yellow">>
 

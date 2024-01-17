@@ -10,11 +10,10 @@ The clouds above you begin to gather. Seems like the storm will arrive soon. You
 title: Arrive_at_your_third_destination
 position: 392,476
 ---
-You've arrived at the address labelled on the delivery package.
 <<if $thirdPackage is "red">>
     <<goToScene LeytonsCave>>
     <<wait 2>>
-    The address has led you to the entrance of a cave on a cliff above you. You notice nothing out of the ordinary for a cave mouth. Suddenly, you hear a sneeze from within the cave and a blast of fire comes streaking out of the cave.
+    The address on the third package has lead you to the entrance of a cave on a cliff above you. You notice nothing out of the ordinary for a cave mouth. Suddenly, you hear a sneeze from within the cave and a blast of fire comes streaking out of the cave.
     <<nextPosition none>>
     <<wait 1>>
     <<enable Stormhoof true>>
@@ -29,7 +28,7 @@ You've arrived at the address labelled on the delivery package.
 <<elseif $thirdPackage is "green">>
     <<goToScene ThakalisGarden>>
     <<wait 2>>
-    The address has led you to a luscious garden full of fruits, vegetables, and herbs. Although the clouds are gathering above you, this garden seems to have a perfect window of sunlight that shines down on the produce.
+    The address on the third package has lead you to a luscious garden full of fruits, vegetables, and herbs. Although the clouds are gathering above you, this garden seems to have a perfect window of sunlight that shines down on the produce.
     <<nextPosition none>>
     <<wait 1>>
     <<enable Stormhoof true>>
@@ -44,7 +43,7 @@ You've arrived at the address labelled on the delivery package.
 <<elseif $thirdPackage is "blue">>
     <<goToScene DaisysBerryFarm>>
     <<wait 2>>
-    The address has led you to a small campsite. There are baskets of berries dotted around the camp. A sign that says "Picked by Pattersbys" is painted on the side of a wagon nearby.
+    The address on the third package has lead you to a small campsite. There are baskets of berries dotted around the camp. A sign that says "Picked by Pattersbys" is painted on the side of a wagon nearby.
     <<if $metPetunia is true>>
         You recognise the name Pattersby. You met Petunia Pattersby earlier. Maybe this is her berry picking company?
     <<endif>>
@@ -63,7 +62,7 @@ You've arrived at the address labelled on the delivery package.
 <<elseif $thirdPackage is "yellow">>
     <<goToScene ValsGamblersGrotto>>
     <<wait 2>>
-    The address has led you to a door situated within a hill. There is a sign above the door that reads "Gamblers Grotto". The door has a small window that looks like it can slide open.
+    The address on the third package has lead you to a door situated within a hill. There is a sign above the door that reads "Gamblers Grotto". The door has a small window that looks like it can slide open.
     <<nextPosition none>>
     <<wait 1>>
     <<enable Stormhoof true>>
@@ -745,11 +744,12 @@ Player: We need to till the land first.
 Thakali: Thakali has a big machine for that.
 
 <<specificPosition ThakalisGarden>>
+<<wait 1>>
 <<enable PlowNotUsing true>>
 <<enable FullProduce false>>
 <<enable HalfProduce false>>
 <<enable LittleProduce false>>
-<<wait 2>>
+<<wait 1>>
 He pulls out a plowing device from behind a bush. Farmers uses these to efficiently dig up the land. Usually strong oxen pull these. You don't see any animals nearby.
 
 What do you do?
@@ -1423,6 +1423,7 @@ Daisy: You should know. There's something special about that volcano. I wish you
 title: Knock_on_the_door_of_the_Gamblers_Grotto
 position: 1406,3891
 ---
+<<enableDisable DoorSliderOpening DoorSliderClosed>>
 The small window slides open. You see a pair of eyes on the other side.
 
 Bouncer: Waddaya want?
@@ -1453,6 +1454,7 @@ position: 1679,4719
 ---
 Player: Val! Delivery for Val!
 
+<<enableDisable DoorSliderOpening DoorSliderClosed>>
 You look towards the door and the window slides open. You see a pair of eyes on the other side.
 
 Bouncer: Waddaya want?
@@ -1515,13 +1517,19 @@ position: 2926,3926
 ---
 Player: I have a delivery from Granbell.
 
-The pair of eyes narrow. Then the window slides shut.
+The pair of eyes narrow. 
+
+<<enableDisable DoorSliderClosing DoorSliderOpen>>
+Then the window slides shut.
 
 You hear yelling from the other side.
 
 Bouncer: Oi Val! Some biggun's got you a delivery from Granbell.
 
-You hear foot steps approach the door. As the door swings open you see before you a small halfling woman. 
+You hear foot steps approach the door. 
+
+<<enableDisable OpenDoor Door>>
+As the door swings open you see before you a small halfling woman. 
 
 Val: Now what have we got here. Better hurry, I'm losing my table over there.
 
@@ -1537,13 +1545,19 @@ position: 2907,4319
 ---
 Player: I'm just a courier from Granbell.
 
-The pair of eyes narrow. Then the window slides shut.
+The pair of eyes narrow. 
+
+<<enableDisable DoorSliderClosing DoorSliderOpen>>
+Then the window slides shut.
 
 You hear yelling from the other side.
 
 Bouncer: Oi Val! Some biggun's got you a delivery from Granbell.
 
-You hear foot steps approach the door. As the door swings open you see before you a small halfling woman. 
+You hear foot steps approach the door. 
+
+<<enableDisable OpenDoor Door>>
+As the door swings open you see before you a small halfling woman. 
 
 Val: Now what have we got here. Better hurry, I'm losing my table over there.
 
@@ -1561,7 +1575,10 @@ Player: I just want to gamble.
 
 Bouncer: Oi Val. This biggun wants to gamble. Should we let 'em in.
 
-You hear foot steps approach the door. As the door swings open you see before you a small halfling woman. 
+You hear foot steps approach the door. 
+
+<<enableDisable OpenDoor Door>>
+As the door swings open you see before you a small halfling woman. 
 
 Val: Now what have we got here. Better hurry, I'm losing my table over there.
 
@@ -1619,7 +1636,10 @@ You give Val the yellow package. She opens it up and you see the glistening shee
 
 Val: Boy howdy! Payday has arrived just in time. A new game of dice just started and I'm puttin' it all on my lucky numbers!
 
-Val closes the pouch and swings it over her back and runs into the Gamblers Grotto. The door slams shut on you.
+Val closes the pouch and swings it over her back and runs into the Gamblers Grotto. 
+
+<<enableDisable Door OpenDoor>>
+The door slams shut on you.
 
 <<set $metVal to true>>
 
@@ -1659,9 +1679,17 @@ Val: You better have something good to tell me or you'll be *my* next unwanted e
 title: Ask_for_directions_to_your_next_destination
 position: 4966,3839
 ---
+<<specificPosition QuestionCutOff>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>>
+<<wait 1>>
 Player: Hey! Which way is it to-
 
-Your question is cut off by loud bangs and then yelling. Suddenly, the door bursts open and Val jumps out running at full speed towards you. She jumps on the back of Stormhoof.
+Your question is cut off by loud bangs and then yelling. 
+
+<<enableDisable OpenDoor Door>>
+Suddenly, the door bursts open and Val jumps out running at full speed towards you. She jumps on the back of Stormhoof.
 
 From the door you see magical projectiles and arrows flying out in every direction.
 
@@ -1808,6 +1836,7 @@ position: 6624,4888
 ---
 Player: Fine! I'm just going to leave the package here. Good riddance!
 
+<<enableDisable DoorSliderClosing DoorSliderOpen>>
 The laugher and cheering continues on the other side of the door once more.
 
 <<specificPosition LeaveGamblersGrotto>>
