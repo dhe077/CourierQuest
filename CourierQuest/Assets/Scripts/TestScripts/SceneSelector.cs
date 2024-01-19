@@ -192,7 +192,8 @@ public class SceneSelector : MonoBehaviour
     public void JumpToCustom(string nodeName)
     {
         dialogueRunner.Stop();
-        variables.SetValue("$metOli", true);
+        variables.SetValue("$metFinn", true);
+        //variables.SetValue("$metOli", true);
         //variables.SetValue("$metMudbrick", true);
         //variables.SetValue("$specialPackage", true);
         //variables.SetValue("$muscleSpirit", true);

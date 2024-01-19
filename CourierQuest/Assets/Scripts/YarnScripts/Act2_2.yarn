@@ -639,9 +639,15 @@ You sense an evil presence in the air.
 title: Approach_the_tower_and_knock_on_the_door
 position: 1110,3038
 ---
+<<specificPosition TowerDoorSpot>>
+<<wait 2>>
 You approach the tower with caution. You knock lightly on the door. No answer. 
 
-You bang loudly on the door. The sound of footsteps come from within the tower. The door opens and you see, before you, a half-elf. He's reading a thick book. Seems like he is entranced by the words on the pages.
+You bang loudly on the door.
+<<enable FinnDescendingStairs true>>
+<<animate FinnDescendingStairs Carrying>>
+<<wait 3>>
+The sound of footsteps come from within the tower. The door opens and you see, before you, a half-elf. He's reading a thick book. Seems like he is entranced by the words on the pages.
 
 Finn: Could you please stop making such loud noises. It makes it hard to concentrate.
 
@@ -653,8 +659,13 @@ position: 1103,3353
 ---
 Player: Delivery for Finn!
 
+<<enable FinnDescendingStairs true>>
+<<animate FinnDescendingStairs Carrying>>
+<<wait 3>>
 You hear the footsteps of someone coming down the tower's staircase. The door opens and you see before you, a half-elf. He's reading a thick book. Seems like he is entranced by the words on the pages.
 
+<<specificPosition TowerDoorSpot>>
+<<wait 2>>
 Finn: Hello? What do you want?
 
 <<jump Tell_Finn_you_have_a_package_for_him>>
@@ -667,6 +678,8 @@ Player: I have a package delivery from Granbell.
 
 Finn: Really? Give it to me.
 
+<<enableDisable FinnBottomOfStairs FinnDescendingStairs>>
+<<animate FinnBottomOfStairs Carrying>>
 At no point does he look up from his book to see you. His arm reaches out to you and gestures for you to place the package in his hand. 
 
 You place the triangular package in his grasp and await his response. He doesn't look at the package at all and puts it in his pouch.
@@ -717,6 +730,7 @@ Player: Why do you even need all those spells?
 
 Finn: These spells will prove useful against dangerous enemies. You see, spells are like tools. The more tools you have, the more situations you can pull yourself out of. If I see spells that're worth learning I'll spend my time learning those spells. It takes time to learn a spell, days or weeks, and other times it takes a few hours.
 
+<<animate FinnBottomOfStairs Look>>
 Finn looks behind him at all the books piled up near the stairs.
 
 Finn: But this might take years.
@@ -737,6 +751,7 @@ Player: I've never met a *real* wizard before. I've only ever heard stories abou
 
 Finn: Yes, there are very few of us left. Especially, since we are being hunted by those who despise magic in all its forms. In fact, I met a dastardly creature that hated me using magic so much that it stole my horse.
 
+<<animate FinnBottomOfStairs Angry>>
 Finn angrily looks away.
 
 <<jump Ask_how_you_can_help>>
@@ -749,14 +764,19 @@ Player: Is there anything I can do to help you?
 
 Finn: No there isn't much you can d--wait, there is something you can do!
 
+<<enableDisable FinnAscendingStairs FinnBottomOfStairs>>
 Finn disappears up the stairs and returns with a book in his hands.
+<<enableDisable FinnStairsWithBook FinnAscendingStairs>>
 
 Finn: If I can split my mind into many versions of myself a few times then just merge my mind back into one I'd have all the knowledge collected from these books in no time.
 
+<<enableDisable FinnWithBook FinnStairsWithBook>>
+<<animate FinnWithBook LookAround>>
 Finn looks around.
 
 Finn: But first I need something to channel my magic through.
 
+<<animate FinnWithBook Search>>
 Finn's eyes light up and grabs the triangular package from his pouch. He proceeds to unwrap the package revealing a pointed wizard's hat.
 
 Finn: This is exactly what I need. I can use this with the magic generator.
@@ -787,6 +807,10 @@ Player: When can I start helping?
 
 Finn: We can get started immediately.
 
+<<specificPosition TowerSpot>>
+<<wait 1>>
+<<enableDisable FinnMagicGenerator FinnWithBook>>
+<<wait 1>>
 Finn bolts up the tower again and comes down holding a small metal object. 
 
 He places the object on the floor and starts casting a spell on it. 
@@ -828,29 +852,53 @@ position: 3183,4050
 You hop into the contraption. It's surprisingly comfortable.
 
 Finn: Ok just put your feet in the pedals there and begin pedaling. Are you ready? I'll be casting the spell now.
+<<animate FinnMagicGenerator StartSpell>>
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 <<prepareExerciseQuest finn>>
 <<wait 2>>
+<<enable GreenJuice true>>
 <<startExerciseQuest finn>>
-<<wait 30>>
+<<wait 30>> // Exercise timer
 <<jump Pedal_to_help_Finn>>
 ===
 
 title: Pedal_to_help_Finn
 position: 3558,3895
 ---
-You move around in the machine to pump out magic for Finn. It seems to be working. More Finn's are appearing from bursts of magical energy around you!
+You move around in the machine to pump out magic for Finn. 
+<<specificPosition MachineSpot>>
+<<wait 1>>
+<<enable FinnGroup1 true>>
+<<wait 1>>
+It seems to be working. 
+<<specificPosition MachineSpot>>
+<<wait 1>>
+<<enable FinnGroup2 true>>
+<<wait 1>>
+More Finn's are appearing from bursts of magical energy around you!
+<<specificPosition MachineSpot>>
+<<wait 1>>
+<<enable FinnGroup3 true>>
+<<wait 1>>
 
+<<animate FinnMagicGenerator StopSpell>>
 Finn: Ok I think that is enough. You can stop now.
 
 <<specificPosition TowerSpot>>
-<<wait 2>>
+<<wait 1>>
+<<enable FinnGroup1 false>>
+<<enable FinnGroup2 false>>
+<<enable FinnGroup3 false>>
+<<enable FinnArmy true>>
+<<enableDisable FinnOriginal FinnMagicGenerator>>
+<<wait 1>>
 An army of Finns surround you.
 
 Finn: Ok everyone get inside and start reading.
 
 The mass of Finn clones march up the tower.
+<<enable FinnArmy false>>
 
 What do you say?
 -> Ask if he'll need help later to bring them together.
@@ -866,9 +914,10 @@ Player: I hope for your sake that this will work.
 
 Finn: I think that it'll work out exactly as I need it to. Thank you so much for the help. Here take this.
 
+<<animate FinnOriginal Handout>>
 He hands you a small vial.
 
-*You take the vial.*
+// *You take the vial.*
 
 <<set $smokeVial to true>>
 
@@ -884,9 +933,10 @@ Player: I hope for your sake that this will work.
 
 Finn: I think that it'll work out exactly as I need it to. Thank you so much for the help. Here take this.
 
+<<animate FinnOriginal Handout>>
 He hands you a small vial.
 
-*You take the vial.*
+// *You take the vial.*
 
 <<set $smokeVial to true>>
 
@@ -902,7 +952,7 @@ Player: Thank you for the smoke vial. I hope you'll be able to read all these bo
 
 Finn: Thank you. Make sure you stay safe on the path to Eldoria. I bumped into a nasty looking goblin asking if I had seen someone carrying an "offering".
 
-<<specificPosition LeaveFinnsTower>>
+<<specificPosition LeaveTheTower>>
 <<wait 1>>
 <<enable Stormhoof false>>
 <<rideHorse true>> 
@@ -917,7 +967,7 @@ position: 4481,2921
 ---
 Player: Well I hope you manage to read them all. Don't forget to get some fresh air every now and then.
 
-<<nextPosition none>>
+<<specificPosition LeaveTheTower>>
 <<wait 1>>
 <<enable Stormhoof false>>
 <<rideHorse true>> 

@@ -1483,6 +1483,7 @@ Player: It's so good to see you here. I was planning on delivering this special 
 
     Mudbrick: H-h-hello? Goblin are you there? Oh h-hi. Funny seeing you here. I see the goblin is dealt with. Are you all going somewhere? May I join?
 <<elseif $metFinn is true>>
+    <<enable FinnWalkIn true>>
     A slender man wearing a pointed wizards hat walks out from behind a tree.
 
     Finn: Ah there you are. I've been looking for you. Oh it's the courier. Well done on tying up this nasty thing. Are you headed somewhere? I can test out my new spells wherever you are going.
@@ -1593,7 +1594,7 @@ You've entered the castle's throne room. The walls are high and are beautifully 
 <<elseif $metMudbrick is true>>
     <<enable MudbrickSmall true>>
 <<elseif $metFinn is true>>
-    <<enable MudbrickSmall true>>
+    <<enable FinnStanding true>>
 <<endif>>
 <<wait 1>>
 
@@ -1629,10 +1630,12 @@ Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot
 <<elseif $metFinn is true>>
     Finn: Haha what an amateur spell.
 
+    <<enable FinnArmy true>>
     A group of Finn's seemed to appear out of thin air and surround the goblin. 
 
     Finn leans over to you and whispers.
 
+    <<animate FinnStanding TellSecret>>
     Finn: I learned an invisibility spell. However, I never got to reconnect back as one. Get going before we-I mean *I* get tired.
 <<endif>>
 
@@ -1824,14 +1827,17 @@ Player: It's so good to see you here. I was planning destroying this special pac
 <<endif>>
 
 <<if $metOli is true>>
+    <<enable OliWalkIn true>>
     A tall man walks out from the forest wielding a glowing hammer.
 
     Oli: I smell the goblin. Is he he-Oh hello again. Looks like the goblin is dealt with. Where are you headed? I will join.
 <<elseif $metMudbrick is true>>
+    <<enable MudbrickWalkIn true>>
     A small tortoise walking on two legs crawls out from a nearby bush.
 
     Mudbrick: H-h-hello? Goblin are you there? Oh h-hi. Funny seeing you here. I see the goblin is dealt with. Are you all going somewhere? May I join?
 <<elseif $metFinn is true>>
+    <<enable FinnWalkIn true>>
     A slender man wearing a pointed wizards hat walks out from behind a tree.
 
     Finn: Ah there you are. I've been looking for you. Oh it's the courier. Well done on tying up this nasty thing. Are you headed somewhere? I can test out my new spells wherever you are going.
@@ -1951,7 +1957,7 @@ The path you follow advances up the volcano and leads you to a very dark cave en
 <<elseif $metMudbrick is true>>
     <<enable MudbrickOutsideCave true>>
 <<elseif $metFinn is true>>
-    <<enable MudbrickOutsideCave true>>
+    <<enable FinnOutsideCave true>>
 <<endif>>
 <<wait 1>>
 
@@ -1994,7 +2000,14 @@ You approach the cave entrance. This cave seems alot darker than normal, almost 
 <<elseif $metFinn is true>>
     Finn: Ah yes. Magical darkness. I recently learned a new spell to deal with such obstructions.
 
-    Finn holds his palms outward towards the darkness. He mumbles something under his breath. The smog is then sucked into Finn's palms. You both walk through. Finn coughs up a small smog cloud.
+    Finn holds his palms outward towards the darkness. He mumbles something under his breath.
+    
+    <<animate FinnOutsideCave SuckSpell>>
+    <<wait 1>>
+    <<enableDisable PartedSmog Smog>> 
+    The smog is then sucked into Finn's palms. You both walk through. Finn coughs up a small smog cloud.
+    <<enableDisable FinnWalkIn FinnOutsideCave>> 
+    <<wait 10>>
 
     Finn: This'll only last a moment. I'll wait here for you. Go on ahead.
 
