@@ -1492,6 +1492,8 @@ Player: It's so good to see you here. I was planning on delivering this special 
 Player: I just need help getting into Eldoria to deliver this package. Call it an adventure if you will.
 
 <<if $metLeyton is true>>
+    <<enable LeytonFlyIn true>>
+    <<animate LeytonFlyIn Fly>>
     A man glowing with flames floats down from above.
 
     Leyton: Did someone say adventure? Count me in.
@@ -1653,11 +1655,35 @@ position: 3277,1484
 <<wait 2>>
 You run down the hallway and into another room with tall stone columns. Some of these stone columns look very damaged. Opposite the hallway exit you spot a large wooden door. The door is guarded by a gigantic ogre that is wearing a grease soaked rag.
 
+<<specificPosition OgreRoomSpot>>
+<<wait 1>>
+<<if $metLeyton is true>>
+    <<enable LeytonStanding true>>
+<<elseif $metThakali is true>>
+    <<enable LeytonStanding true>>
+<<elseif $metDaisy is true>>
+    <<enable LeytonStanding true>>
+<<elseif $metVal is true>>
+    <<enable LeytonStanding true>>
+<<endif>>
+<<wait 1>>
+
 <<if $metLeyton is true>>
     Leyton: This one looks flammable.
 
-    Leyton collects his hands together and a small fire begins to form into a ball in his palms. Leyton lobs this fireball directly at the ogre. The fireball explodes upon impact with the ogre. The ogre topples over onto the ground. 
+    <<animate LeytonStanding SpellCharge>>
+    <<wait 1.6>>
+    <<enable FireballCharge true>>
+    Leyton collects his hands together and a small fire begins to form into a ball in his palms. 
+    
+    <<animate LeytonStanding SpellLaunch>>
+    <<wait 0.3>>
+    <<enableDisable FireballLaunch FireballCharge>>
+    Leyton lobs this fireball directly at the ogre. The fireball explodes upon impact with the ogre. The ogre topples over onto the ground.
 
+    <<enable Ogre false>> 
+
+    <<animate LeytonStanding Point>>
     Leyton: I think you need to go through that door.
 <<elseif $metThakali is true>>
     Thakali: Thakali!!!
@@ -1685,18 +1711,28 @@ You run down the hallway and into another room with tall stone columns. Some of 
     Val and Grugnar proceed to have a full on conversation. Occasionally Grugnar looks away from the door. That's your chance.
 <<endif>>
 
-<<jump Go_through_the_door>>
+<<specificPosition RunToDoor>>
+<<wait 1>>
+<<if $metLeyton is true>>
+    <<enableDisable LeytonWaiting LeytonStanding>>
+<<elseif $metThakali is true>>
+    <<enable LeytonWaiting true>>
+<<elseif $metDaisy is true>>
+    <<enable LeytonWaiting true>>
+<<elseif $metVal is true>>
+    <<enable LeytonWaiting true>>
+<<endif>>
+<<wait 1>>
+You sprint to the wooden door and push it open. 
+//*The player must pedal hard to push the door open.*
+
+<<setNextNodeName Go_through_the_door>>
+//<<jump Go_through_the_door>>
 ===
 
 title: Go_through_the_door
 position: 3675,1488
 ---
-<<nextPosition none>>
-<<wait 2>>
-You sprint to the wooden door and push it open. 
-//*The player must pedal hard to push the door open.*
-<<wait 2>>
-
 <<goToScene TreasureRoom>>
 <<wait 2>>
 Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. There doesn't seem to be anyone here.
@@ -2034,23 +2070,35 @@ position: 3280,1908
 <<if $metLeyton is true>>
     <<goToScene InsideVolcanoFriends>>
     <<wait 2>>
+    
     The further into the cave you go the higher up the volcano you feel.
+    <<specificPosition VolcanoEntranceSpot>>
+    <<wait 1>>
+    <<enable LeytonWaiting true>>
+    <<wait 1>>
 
     You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
 
     At the top of a steep cliff face sits a ledge where you can just make out the cave's exit.
 
+    <<animate LeytonWaiting LookBehind>>
     Leyton: No worries. I can fly you up there. You'd have to drop your pack.
 
-    <<specificPosition LeytonFlyUp>>
-    <<wait 2>>
-    You remove your pack but hold onto the package. Leyton grabs your back and you feel a sense of weightlessness as you're lifted into the air. 
+    <<specificPosition PlayerLeytonFlyUp>>
+    <<wait 1>>
+    <<enableDisable LeytonFlying LeytonWaiting>>
+    <<animate LeytonFlying Fly>>
+    <<wait 1>>
+    You remove your pack but hold onto the package. You grab onto Leyton's back and you feel a sense of weightlessness as you're lifted into the air. 
     
     <<wait 5>>
     Leyton places you onto the ledge where you can see out the cave's exit.
     <<specificPosition UpOnCliff>>
-    <<wait 2>>
+    <<wait 1>>
+    <<enableDisable LeytonAtTop LeytonFlying>>
+    <<wait 1>>
 
+    <<animate LeytonAtTop LookBehind>>
     Leyton: Not too far to the top. I'm pretty tired. I'll wait here.
 <<elseif $metThakali is true>>
     <<goToScene InsideVolcanoFriends>>

@@ -13,12 +13,16 @@ position: 392,476
 <<if $thirdPackage is "red">>
     <<goToScene LeytonsCave>>
     <<wait 2>>
-    The address on the third package has lead you to the entrance of a cave on a cliff above you. You notice nothing out of the ordinary for a cave mouth. Suddenly, you hear a sneeze from within the cave and a blast of fire comes streaking out of the cave.
+    The address on the third package has lead you to the entrance of a cave on a cliff above you. You notice nothing out of the ordinary for a cave mouth.
     <<nextPosition none>>
     <<wait 1>>
     <<enable Stormhoof true>>
     <<rideHorse false>> 
-    <<wait 1>>
+    <<wait 3>>
+
+    <<enable Fireball true>>
+    Suddenly, you hear a sneeze from within the cave and a blast of fire comes streaking out of the cave.
+
     What do you do?
     -> Call out for Leyton.
         <<jump Call_out_for_Leyton>>
@@ -85,7 +89,10 @@ You hear a groaning from inside the cave.
 
 Leyton: I'm inside the cave. I'll be with you in a moment.
 
-You sit and wait for Leyton. You hear another sneeze come from the cave and again, a blast of flames shoot out of the cave.
+// You sit and wait for Leyton. 
+
+<<enable Fireball true>>
+You hear another sneeze come from the cave and again, a blast of flames shoot out of the cave.
 
 What do you do?
 -> Ask if he needs help getting down.
@@ -117,7 +124,10 @@ Player: Uh. Do you need help getting down from there?
 
 Leyton: No, I'll be fine.
 
-Leyton appears from the cave. You see a man with firey red hair wearing an exotic red robe. He carries a staff with a lantern wreathed in flames.
+<<enable LeytonExitCave true>>
+<<wait 3>>
+<<animate LeytonExitCave Wave>>
+Leyton appears from the cave. You see a man with firey red hair wearing an exotic red outfit. He carries a staff with a lantern wreathed in flames.
 
 Leyton: Now, why are you here again?
 
@@ -135,7 +145,10 @@ Player: Why are there flames coming from the cave? Are you sure you're ok in the
 
 Leyton: Sorry, those flames are coming from me.
 
-Leyton appears from the cave. You see a man with firey red hair wearing an exotic red robe. He carries a staff with a lantern wreathed in flames.
+<<enable LeytonExitCave true>>
+<<wait 3>>
+<<animate LeytonExitCave Wave>>
+Leyton appears from the cave. You see a man with firey red hair wearing an exotic red outfit. He carries a staff with a lantern wreathed in flames.
 
 Leyton: Now, why are you here again?
 
@@ -153,8 +166,12 @@ You leave the package on the ground for him to collect. You don't want to catch 
 
 You slowly try sneak off.
 
-Leyton appears from the cave. You see a man with firey red hair wearing an exotic red robe. He carries a staff with a lantern wreathed in flames.
+<<enable LeytonExitCave true>>
+<<wait 3>>
+<<animate LeytonExitCave Wave>>
+Leyton appears from the cave. You see a man with firey red hair wearing an exotic red outfit. He carries a staff with a lantern wreathed in flames.
 
+<<animate LeytonExitCave LookDown>>
 Leyton: Hey! Where are you going? Where's my package!
 
 You freeze.
@@ -171,8 +188,14 @@ position: 2450,-2539
 ---
 Player: I have a package for you from Granbell.
 
-Leyton: Oh yess! That'll help me feel better.
+<<animate LeytonExitCave Victory>>
+Leyton: Oh yeah! That'll help me feel better.
 
+<<enableDisable LeytonFlyDown LeytonExitCave>>
+<<animate LeytonFlyDown Fly>>
+<<wait 8.5>>
+<<animate LeytonFlyDown Land>>
+<<wait 1.5>>
 Leyton floats down the side of the cliff face and lands softly on the dirt.
 
 You give the package to Leyton and he proceeds to open it revealing that it was a sack of coals.
@@ -193,6 +216,7 @@ position: 2452,-2288
 ---
 Player: I'm here to help you get better. Seems like you might need it.
 
+<<animate LeytonExitCave Dismiss>>
 Leyton: Thanks but unless you have something that can heat me up then I don't need your help. Was there anything else?
 
 What do you do?
@@ -207,15 +231,22 @@ position: 2451,-1983
 ---
 Player: You sound diseased. I'm just trying to keep my distance.
 
+<<animate LeytonExitCave Dismiss>>
 Leyton: Don't worry, what I've got can't be passed to humans. I managed to avoid that storm, but some small creature poured water all over my tent and doused my flames. Now I need something to heat me up.
 
-Leyton spots his package on the ground.
-
+<<animate LeytonExitCave LookDown>>
 Leyton: Is that my package?!
 
+<<enableDisable LeytonFlyDown LeytonExitCave>>
+<<animate LeytonFlyDown Fly>>
+<<wait 8.5>>
+<<animate LeytonFlyDown Land>>
+<<wait 1.5>>
 Leyton floats down the side of the cliff face and lands softly on the dirt. He proceeds to open the package revealing a sack of coals. Leyton shakes the bag of coals.
 
 Leyton: Yup this'll help. We're going to heat these up and I'm going to need your help.
+
+<<set $metLeyton to true>>
 
 What do you say?
 -> Ask how he floated down the cliff.
@@ -229,11 +260,19 @@ position: 2449,-1707
 ---
 Player: I was just checking my surroundings. A goblin chased me recently so I'm being cautious about where I go. Your package is on the ground here.
 
+<<animate LeytonExitCave LookDown>>
 Leyton: Is that my package?!
 
+<<enableDisable LeytonFlyDown LeytonExitCave>>
+<<animate LeytonFlyDown Fly>>
+<<wait 8.5>>
+<<animate LeytonFlyDown Land>>
+<<wait 1.5>>
 Leyton floats down the side of the cliff face and lands softly on the dirt. He proceeds to open the package revealing a sack of coals. Leyton shakes the bag of coals.
 
 Leyton: Yup this'll help. We're going to heat these up and I'm going to need your help.
+
+<<set $metLeyton to true>>
 
 What do you say?
 -> Ask how he floated down the cliff.
@@ -265,6 +304,11 @@ Player: I have something that'll heat you up.
 
 Leyton: Really?
 
+<<enableDisable LeytonFlyDown LeytonExitCave>>
+<<animate LeytonFlyDown Fly>>
+<<wait 8.5>>
+<<animate LeytonFlyDown Land>>
+<<wait 1.5>>
 Leyton floats down the side of the cliff face and lands softly on the dirt.
 
 Leyton: I was promised something hot where is it?
@@ -273,6 +317,7 @@ Player: Hot food?
 
 Leyton: No no no, I don't want food. I want fire. All that sneezing and sickness has me leaking all my heat out. I need something to warm me up for a while.
 
+<<animate LeytonAtBottom LookDown>>
 Leyton looks to your pack and sees his delivery.
 
 Leyton: Oh you have my package there. That'll help me out.
@@ -281,13 +326,15 @@ You give the package to Leyton and he proceeds to open it revealing that it was 
 
 Leyton: We're going to heat these up and I'm going to need your help.
 
+<<set $metLeyton to true>>
+
 What do you say?
 -> Ask how he floated down the cliff.
     <<jump Ask_how_he_floated_down_the_cliff>>
 -> Ask how you can help heat up the coals.
     <<jump Ask_how_you_can_help_heat_up_the_coals>>
 -> Tell him that you're busy and you've a special delivery to complete.
-    <<jump Tell_him_that_youre_busy_and_youve_a_special_delivery_to_complete>>
+    <<jump Tell_him_that_youre_busy_and_that_youve_a_special_delivery_to_complete>>
 ===
 
 title: Offer_Leyton_some_rations
@@ -299,13 +346,16 @@ Leyton: No no no, I don't want food. I want fire. All that sneezing and sickness
 
 Leyton shakes the bag of coals.
 
+<<animate LeytonAtBottom LookBehind>>
 Leyton: So we're going to heat these up and I'm going to need your help.
+
+<<set $metLeyton to true>>
 
 What do you say?
 -> Ask how you can help heat up the coals.
     <<jump Ask_how_you_can_help_heat_up_the_coals>>
 -> Tell him that you're busy and you've a special delivery to complete.
-    <<jump Tell_him_that_youre_busy_and_youve_a_special_delivery_to_complete>>
+    <<jump Tell_him_that_youre_busy_and_that_youve_a_special_delivery_to_complete>>
 ===
 
 title: Ask_him_if_hes_a_wizard
@@ -316,6 +366,7 @@ Player: Are you a wizard? Not many people know how to wield magic.
 <<if $metFinn is true>>
     Player: I recently met a wizard named Finn he was quite the oddball.
 
+    <<animate LeytonAtBottom Victory>>
     Leyton: You met Finn? I used to adventure with that guy.
 <<endif>>
 
@@ -335,31 +386,41 @@ Leyton: All that sneezing and sickness has me leaking all my heat out. I need so
 
 Leyton shakes the bag of coals.
 
+<<animate LeytonAtBottom LookBehind>>
 Leyton: So we're going to heat these up and I'm going to need your help.
 
 What do you say?
 -> Ask how you can help heat up the coals.
     <<jump Ask_how_you_can_help_heat_up_the_coals>>
 -> Tell him that you're busy and you've a special delivery to complete.
-    <<jump Tell_him_that_youre_busy_and_youve_a_special_delivery_to_complete>>
+    <<jump Tell_him_that_youre_busy_and_that_youve_a_special_delivery_to_complete>>
 ===
 
 title: Ask_how_you_can_help_heat_up_the_coals
 position: 3968,-2488
 ---
 <<specificPosition ExerciseQuest>>
-<<wait 2>>
+<<wait 1>>
+<<enableDisable LeytonAtFirePit LeytonAtBottom>>
+<<wait 1>>
 Player: How can I help heat up the coals? I don't have anything that'll get them started.
 
-<<enable BellowsObject true>>
 Leyton flies up to the cave and brings back a set of bellows.
+<<specificPosition ExerciseQuest>>
+<<wait 1>>
+<<enable BellowsObject true>>
+<<wait 1>>
 
+<<animate LeytonAtFirePit Point>>
 Leyton: On my call, use these and keep the fire stoked. 
 
 <<enable AllCoals true>>
 Leyton pours the coals into a stone fit pit. This'll be my last push of flames before I'm all fizzled out.
 
 Leyton: A-a-aaaaachooo!!
+<<animate LeytonAtFirePit Sneeze>>
+<<wait 1>>
+<<enable Fire true>>
 
 Leyton sneezes all over the coals. A hot flame bursts from his face and onto the coals starting the heating process.
 
@@ -367,7 +428,7 @@ Leyton sneezes all over the coals. A hot flame bursts from his face and onto the
 <<prepareExerciseQuest leyton>>
 <<wait 2>>
 <<startExerciseQuest leyton>>
-<<wait 30>>
+<<wait 30>> // Exercise timer
 <<jump Keep_the_coals_hot>>
 ===
 
@@ -378,6 +439,8 @@ You manage to keep the coals hot by following Leyton's orders.
 
 Leyton: I think they're hot enough now!
 
+<<enableDisable LeytonJumpIn LeytonAtFirePit>>
+<<animate LeytonJumpIn Dive>>
 Leyton jumps onto the bed of coals and proceeds to get comfy.
 
 What do you do?
@@ -397,9 +460,12 @@ Leyton: No this feels just right. Ahhhh.
 Leyton lets out a sigh of relief.
 
 <<specificPosition LeytonsCave>>
-<<wait 2>>
+<<wait 1>>
+<<enableDisable LeytonAtBottom LeytonJumpIn>>
+<<wait 1>>
 You start to head to the path.
 
+<<animate LeytonAtBottom Handout>>
 Leyton: Wait, I forgot to give you this.
 
 Leyton hands you an obsidian dagger.
@@ -421,14 +487,17 @@ Player: Does this feel good to you?
 Leyton: Ohh this feels great. I can't thank you enough for the help. I'll be better in no time.
 
 <<specificPosition LeytonsCave>>
-<<wait 2>>
+<<wait 1>>
+<<enableDisable LeytonAtBottom LeytonJumpIn>>
+<<wait 1>>
 You start to head to the path.
 
+<<animate LeytonAtBottom Handout>>
 Leyton: Wait, I forgot to give you this.
 
 Leyton hands you an obsidian dagger.
 
-*You take the obsidian dagger.* 
+// *You take the obsidian dagger.* 
 
 <<set $dagger to true>>
 
@@ -812,7 +881,7 @@ You start plowing the land.
 <<specificPosition ExerciseQuest>>
 <<wait 2>>
 <<startExerciseQuest thakali>>
-<<wait 30>>
+<<wait 30>> // Exercise timer
 <<jump Pull_the_plow>>
 ===
 
@@ -1374,6 +1443,8 @@ Daisy lifts her sword and brings it down on your outstretched arm.
 
 You managed to pull your arm away. You throw her the package to the ground and shoot off down the path.
 
+<<set $metDaisy to true>>
+
 This delivery might reflect badly on your delivery record when you get back to Granbell.
 
 <<specificPosition LeaveDaisysBerryFarm>>
@@ -1707,7 +1778,7 @@ position: 5290,3856
 <<rideHorse true>> 
 <<wait 1>>
 As you ride away from the shooters. Magic missles and swift arrows wizz past your head and scatter along the ground.
-<<wait 60>> // Exercise timer
+<<wait 30>> // Exercise timer
 <<goToScene ValClearing>>
 <<wait 2>>
 You've gained enough distance from them to stop and hide for a moment.
@@ -1836,6 +1907,8 @@ position: 6624,4888
 ---
 Player: Fine! I'm just going to leave the package here. Good riddance!
 
+<<set $metDaisy to true>>
+
 <<enableDisable DoorSliderClosing DoorSliderOpen>>
 The laugher and cheering continues on the other side of the door once more.
 
@@ -1861,7 +1934,7 @@ That creature is back again. It looks at you angrily and doesn't make any demand
 <<moveClose true>>
 You need to outrun the creature again.
 <<moveClose false>>
-<<wait 10>> // Exercise timer
+<<wait 30>> // Exercise timer
 
 You escape the creature once more.
 
