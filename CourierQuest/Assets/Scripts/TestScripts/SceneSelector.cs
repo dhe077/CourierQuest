@@ -169,7 +169,8 @@ public class SceneSelector : MonoBehaviour
         //variables.SetValue("$metOli", true);
         variables.SetValue("$metFinn", true);
 
-        variables.SetValue("$metLeyton", true);
+        //variables.SetValue("$metLeyton", true);
+        variables.SetValue("$metThakali", true);
         dialogueRunner.StartDialogue("Ride_towards_the_volcano");
     }
 
@@ -197,7 +198,8 @@ public class SceneSelector : MonoBehaviour
     public void JumpToCustom(string nodeName)
     {
         dialogueRunner.Stop();
-        variables.SetValue("$metLeyton", true);
+        variables.SetValue("$metThakali", true);
+        //variables.SetValue("$metLeyton", true);
         //variables.SetValue("$metFinn", true);
         //variables.SetValue("$metOli", true);
         //variables.SetValue("$metMudbrick", true);

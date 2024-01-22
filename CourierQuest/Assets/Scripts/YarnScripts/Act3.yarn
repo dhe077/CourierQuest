@@ -1498,6 +1498,7 @@ Player: I just need help getting into Eldoria to deliver this package. Call it a
 
     Leyton: Did someone say adventure? Count me in.
 <<elseif $metThakali is true>>
+    <<enable ThakaliRunIn true>>
     A dragon man runs out into the clearing.
 
     Thakali: Adventure!!? Thakali is coming too!
@@ -1660,7 +1661,7 @@ You run down the hallway and into another room with tall stone columns. Some of 
 <<if $metLeyton is true>>
     <<enable LeytonStanding true>>
 <<elseif $metThakali is true>>
-    <<enable LeytonStanding true>>
+    <<enable ThakaliStanding true>>
 <<elseif $metDaisy is true>>
     <<enable LeytonStanding true>>
 <<elseif $metVal is true>>
@@ -1686,15 +1687,21 @@ You run down the hallway and into another room with tall stone columns. Some of 
     <<animate LeytonStanding Point>>
     Leyton: I think you need to go through that door.
 <<elseif $metThakali is true>>
+    <<animate ThakaliStanding Flex>>
     Thakali: Thakali!!!
 
-    Thakali runs towards the ogre, swinging his axe's wildly. As he swings he occasionally hits a stone column, damaging it further. The columns begin to topple over and eventually land on the ogre.
+    <<enableDisable ThakaliRunning ThakaliStanding>>
+    <<wait 10>>
+    Thakali runs towards the ogre, swinging his axe's wildly. As he swings he occasionally hits a stone column. The columns begin to topple over and eventually land on the ogre.
 
+    <<enable Ogre false>> 
+
+    <<animate ThakaliVictory Cheer>>
     Thakali: Hahah! Thakali wins!
 <<elseif $metDaisy is true>>
     Daisy: Now, you're a big one. But the bigger they are the harder they fall.
 
-    Daisy runs towards the ogre axe outstretched ready to swing. She jumps up into the air with great height. She lifts her axe above her head. The axe comes crashing down onto the ogre. 
+    Daisy runs towards the ogre, axe outstretched, ready to swing. She jumps up into the air with great height. She lifts her axe above her head. The axe comes crashing down onto the ogre. 
 
     Daisy: Huh. I thought this would have been harder. Get in there courier.
 <<elseif $metVal is true>>
@@ -1716,7 +1723,7 @@ You run down the hallway and into another room with tall stone columns. Some of 
 <<if $metLeyton is true>>
     <<enableDisable LeytonWaiting LeytonStanding>>
 <<elseif $metThakali is true>>
-    <<enable LeytonWaiting true>>
+    <<enableDisable ThakaliWaiting ThakaliVictory>>
 <<elseif $metDaisy is true>>
     <<enable LeytonWaiting true>>
 <<elseif $metVal is true>>
@@ -2103,23 +2110,35 @@ position: 3280,1908
 <<elseif $metThakali is true>>
     <<goToScene InsideVolcanoFriends>>
     <<wait 2>>
+
     The further into the cave you go the higher up the volcano you feel.
+    <<specificPosition VolcanoEntranceSpot>>
+    <<wait 1>>
+    <<enable ThakaliWaiting true>>
+    <<wait 1>>
 
     You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
 
     At the top of a steep cliff face sits a ledge where you can just make out the cave's exit.
 
+    <<animate ThakaliWaiting Flex>>
     Thakali: Courier hold onto Thakali's tail. Thakali will climb the wall with axes.
 
-    <<specificPosition ThakaliClimbUp>>
-    <<wait 2>>
+    <<specificPosition PlayerThakaliClimbUp>>
+    <<wait 1>>
+    <<enableDisable ThakaliClimbing ThakaliWaiting>>
+    <<animate ThakaliClimbing Climb>>
+    <<wait 1>>
     You remove your pack but hold onto the package. Thakali swing his axes into the cliff face and the axes, to your surprise, pierce the rock and lodge themselves securely into the stone. You hold tightly onto Thakali's tail as he climbs up the cliff. One swing at a time. 
     <<wait 5>>
 
     <<specificPosition UpOnCliff>>
-    <<wait 2>>
+    <<wait 1>>
+    <<enableDisable ThakaliAtTop ThakaliClimbing>>
+    <<wait 1>>
     You make it to the top where you can see out the cave's exit.
 
+    <<animate ThakaliAtTop LookBehind>>
     Thakali: Courier must go up, up to top. Thakali wait here for courier when courier is finished.
 <<elseif $metDaisy is true>>
     <<goToScene InsideVolcanoFriends>>
@@ -2134,7 +2153,7 @@ position: 3280,1908
 
     Daisy runs back. Readies her hooves. She hops, skips, then jumps up just close enough to the edge for her to grab a hold of. She lifts herself up onto the side and lowers a rope down. 
     
-    <<specificPosition DaisyRopeUp>>
+    <<specificPosition PlayerDaisyRopeUp>>
     <<wait 2>>
     You climb the rope. 
     <<wait 5>>
@@ -2157,7 +2176,7 @@ position: 3280,1908
 
     Val fires a few firebolt's into the cave's rooftop. You feel the volcano rumble in anger. A giant stalactite falls from the roof and pierces the floor. It's top, a smooth brittle fracture from it's connection to the roof. Another falls, but smaller. Then another, and another. A set of volcanic rock stairs are formed from fallen stalactites.
 
-    <<specificPosition ValStepUp>>
+    <<specificPosition PlayerValStepUp>>
     <<wait 2>>
     Val: Hey! It worked! I was just shooting stuff into the roof to see what would happen. It was a gamble honestly.
     <<wait 5>>

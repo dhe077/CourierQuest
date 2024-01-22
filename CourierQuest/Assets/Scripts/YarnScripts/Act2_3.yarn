@@ -580,10 +580,18 @@ position: 1194,-91
 ---
 Player: Delivery for Thakali!
 
-You hear a groaning from the trees. Then a scream that grows louder. You see a dragon man fall from the trees above then onto the garden below. 
+<<enable ThakaliFallOntoBranch true>>
+You hear a groaning from the trees. Then a scream that grows louder. 
 
-<<enableDisable HalfProduce FullProduce>>
-The garden is now ruined. He gets up and starts slashing wildly at the plants with his handaxes.
+<<enableDisable ThakaliJumpFromTree ThakaliFallOntoBranch>>
+You see a dragon man fall from the trees above then onto the garden below. The garden is now ruined. 
+
+<<enableDisable ThakaliAttackGarden ThakaliJumpFromTree>>
+<<animate ThakaliAttackGarden SwingAxe>>
+He gets up and starts slashing wildly at the plants with his handaxes.
+
+The dragon man stops slashing and turns to face you.
+<<enableDisable ThakaliLookingAtPlayer ThakaliAttackGarden>>
 
 What do you do? (Timed)
 <<startTimer 10>>
@@ -603,10 +611,18 @@ position: 1571,437
 ---
 Player: This garden looks immaculate!
 
-You hear a groaning from the trees. Then a scream that grows louder. You see a dragon man fall from the trees above then onto the garden below. 
+<<enable ThakaliFallOntoBranch true>>
+You hear a groaning from the trees. Then a scream that grows louder. 
 
-<<enableDisable HalfProduce FullProduce>>
-The garden is now ruined. He gets up and starts slashing wildly at the plants with his handaxes.
+<<enableDisable ThakaliJumpFromTree ThakaliFallOntoBranch>>
+You see a dragon man fall from the trees above then onto the garden below. The garden is now ruined. 
+
+<<enableDisable ThakaliAttackGarden ThakaliJumpFromTree>>
+<<animate ThakaliAttackGarden SwingAxe>>
+He gets up and starts slashing wildly at the plants with his handaxes.
+
+The dragon man stops slashing and turns to face you.
+<<enableDisable ThakaliLookingAtPlayer ThakaliAttackGarden>>
 
 What do you do? (Timed)
 <<startTimer 10>>
@@ -640,9 +656,9 @@ position: 2094,-421
 ---
 Player: Hey! Why do you want tomatoes anyway?
 
-The dragon man stops slashing and turns to face you.
-
+<<animate ThakaliLookingAtPlayer Cheer>>
 Thakali: They are the best vegetable for delicious meals. Thakali grows garden. But no tomato.
+<<animate ThakaliLookingAtPlayer StopCheer>>
 
 What do you say?
 -> Ask if he's Thakali.
@@ -651,28 +667,15 @@ What do you say?
     <<jump Ask_him_if_he_planted_tomato_seeds>>
 ===
 
-title: Ask_if_hes_Thakali
-position: 2049,57
----
-Player: Hey! Are you Thakali?
-
-Thakali: Yes.
-
-He nods and points to himself. Seems like a man of very few words.
-
-What do you say?
--> Remind him of his package.
-    <<jump Remind_him_of_his_package>>
--> Say that he needs tomato seeds.
-    <<jump Say_that_he_needs_tomato_seeds>>
-===
-
 title: Wait_and_see_what_happens
 position: 2098,533
 ---
-You wait and see what happens with the dragon man and the garden. You see him continue to slash the crops and destroy the remaining plants.
-
-The dragon man turns to you and begins to advance towards you. He doesn't look like he's hostile but he does seem very angry.
+// You wait and see what happens with the dragon man and the garden.
+<<enableDisable ThakaliAttackGarden ThakaliLookingAtPlayer>>
+<<animate ThakaliAttackGarden SwingAxe>>
+<<wait 5>>
+You see him continue to slash the crops and destroy the remaining plants.
+<<enableDisable ThakaliLookingAtPlayer ThakaliAttackGarden>>
 
 Thakali: Do you have tomatoes?
 
@@ -694,6 +697,7 @@ What do you say?
 -> Ask what the creature looked like.
     <<jump Ask_what_the_creature_looked_like>>
 -> Say that he needs tomato seeds.
+    <<jump Say_that_he_needs_tomato_seeds>>
 ===
 
 title: Ask_what_the_creature_looked_like
@@ -727,8 +731,13 @@ position: 2914,602
 ---
 Player: Sorry, I'm just a courier. I'm not a farmer.
 
-<<enableDisable LittleProduce HalfProduce>>
 Thakali gives a low growl then continues slashing at the plants.
+<<enableDisable ThakaliAttackGarden ThakaliLookingAtPlayer>>
+<<animate ThakaliAttackGarden SwingAxe>>
+<<wait 3>>
+<<enableDisable LittleProduce HalfProduce>>
+<<wait 1>>
+<<enableDisable ThakaliLookingAtPlayer ThakaliAttackGarden>>
 
 What do you say?
 -> Ask if he's Thakali.
@@ -737,12 +746,32 @@ What do you say?
     <<jump Ask_why_he_wants_tomatoes>>
 ===
 
+title: Ask_if_hes_Thakali
+position: 2049,57
+---
+Player: Hey! Are you Thakali?
+
+Thakali: Yes.
+
+He nods and points to himself. Seems like a man of very few words.
+
+What do you say?
+-> Remind him of his package.
+    <<jump Remind_him_of_his_package>>
+-> Say that he needs tomato seeds.
+    <<jump Say_that_he_needs_tomato_seeds>>
+===
+
 title: Remind_him_of_his_package
 position: 2893,254
 ---
 Player: Oh don't forget about your package.
 
 Thakali: Package? Thakali did not ask for package.
+
+The dragon man turns to you and begins to advance towards you. He doesn't look like he's hostile but he does seem very angry.
+<<enableDisable ThakaliWalkToPlayer ThakaliLookingAtPlayer>>
+<<wait 2>>
 
 You think it must be a gift from someone. You look at the packaging and it is says that it is from someone called Finn. 
 <<if $metFinn is true>>
@@ -777,6 +806,9 @@ Player: They look like tomato seeds.
 Thakali: Tomato!
 
 Thakali does a small dance in celebration.
+<<animate ThakaliWithPlayer Dance>>
+<<wait 5>>
+<<animate ThakaliWithPlayer StopDance>>
 
 Thakali: We need to plant these right away!
 
@@ -795,6 +827,9 @@ Player: I think that these tomato seeds are magical.
 Thakali: Magic tomato!
 
 Thakali does a small dance in celebration.
+<<animate ThakaliWithPlayer Dance>>
+<<wait 5>>
+<<animate ThakaliWithPlayer StopDance>>
 
 Thakali: We need to plant these right away!
 
@@ -852,6 +887,7 @@ position: 4437,-315
 ---
 Player: I don't see any animals around. Do you have something to pull the plow?
 
+<<animate ThakaliWithPlayer Flex>>
 Thakali: Thakali pull plow. Thakali is strong like ox.
 
 You're amazed that this dragon man can manage to pull this heavy farming equipment.
@@ -867,8 +903,9 @@ Player: I think Stormhoof here is strong enough to pull the plow.
 Thakali: That is good idea. Thakali need rest after slicing plants.
 
 <<specificPosition PlowSpot>>
-<<enableDisable PlowUsing PlowNotUsing>>
 <<wait 1>>
+<<enableDisable PlowUsing PlowNotUsing>>
+<<enableDisable ThakaliWaitingForPlayer ThakaliWithPlayer>>
 <<enable Stormhoof false>>
 <<rideHorse true>> 
 <<wait 1>>
@@ -880,27 +917,32 @@ You start plowing the land.
 <<prepareExerciseQuest thakali>>
 <<specificPosition ExerciseQuest>>
 <<wait 2>>
+<<animate ThakaliWaitingForPlayer Dance>>
 <<startExerciseQuest thakali>>
 <<wait 30>> // Exercise timer
-<<jump Pull_the_plow>>
+<<setNextNodeName Pull_the_plow>>
+//<<jump Pull_the_plow>>
 ===
 
 title: Pull_the_plow
 position: 5440,3
 ---
+<<animate ThakaliWaitingForPlayer StopDance>>
 You pull the plow and dig up the land.
 
 Thakali throws the seeds behind you into the freshly tilled soil.
 
 <<specificPosition ThakalisGarden>>
-<<enable PlowUsing false>>
 <<wait 1>>
+<<enable PlowUsing false>>
+<<enableDisable ThakaliWithTomatoes ThakaliWaitingForPlayer>>
 <<enable Stormhoof true>>
 <<rideHorse false>> 
 <<wait 1>>
 
 Player: Now just cover them up and water them.
 
+<<animate ThakaliWithTomatoes LookBehind>>
 Thakali: How long will tomato grow?
 
 What do you do?
@@ -920,6 +962,8 @@ Player: If you dance near the plants they'll grow faster.
 Thakali: Really?!
 
 Thakali dances near the tomato seeds.
+<<animate ThakaliWithTomatoes Dance>>
+<<wait 5>>
 
 Out of nowhere, the tomato seeds you planted sprout and grow.
 <<enable SmallTomatoesProduce true>>
@@ -931,13 +975,20 @@ Leaves appear as the plants get larger, and before you know it, they're fully gr
 
 Thakali looks over at the plants, shocked and amazed. Seems like these seeds were infused with some sort of magic.
 
+<<animate ThakaliWithTomatoes Cheer>>
 Thakali: TOMATO!!
+<<animate ThakaliWithTomatoes StopCheer>>
+<<animate ThakaliWithTomatoes CrouchLand>>
 
+<<enableDisable ThakaliDivesIntoTomatoes ThakaliWithTomatoes>>
+<<enable ThakaliAxes true>>
+<<animate ThakaliDivesIntoTomatoes Jump>>
+<<animate ThakaliDivesIntoTomatoes Cheer>>
 Thakali drops his axes and dives into the tomato bushes, harvesting the ripest tomatoes with a big grin on his face. Seems like Thakali is occupied with the tomatoes. He's left his axes on the ground. Maybe an axe might come in handy.
 
 What do you do?
--> Steal the axe.
-    <<jump Steal_the_axe>>
+-> Take the axe.
+    <<jump Take_the_axe>>
 -> Leave the axe.
     <<jump Leave_the_axe>>
 ===
@@ -947,6 +998,7 @@ position: 5472,-302
 ---
 Player: Tomatoes take a long while to grow.
 
+<<animate ThakaliWithTomatoes Flex>>
 Thakali: But Thakali wants tomato now!
 
 Out of nowhere, the tomato seeds you planted sprout and grow. 
@@ -959,13 +1011,20 @@ Leaves appear as the plants get larger, and before you know it, they're fully gr
 
 Thakali looks over at the plants, shocked and amazed. Seems like these seeds were infused with some sort of magic.
 
+<<animate ThakaliWithTomatoes Cheer>>
 Thakali: TOMATO!!
+<<animate ThakaliWithTomatoes StopCheer>>
+<<animate ThakaliWithTomatoes CrouchLand>>
 
+<<enableDisable ThakaliDivesIntoTomatoes ThakaliWithTomatoes>>
+<<enable ThakaliAxes true>>
+<<animate ThakaliDivesIntoTomatoes Jump>>
+<<animate ThakaliDivesIntoTomatoes Cheer>>
 Thakali drops his axes and dives into the tomato bushes, harvesting the ripest tomatoes with a big grin on his face. Seems like Thakali is occupied with the tomatoes. He's left his axes on the ground. Maybe an axe might come in handy.
 
 What do you do?
--> Steal the axe.
-    <<jump Steal_the_axe>>
+-> Take the axe.
+    <<jump Take_the_axe>>
 -> Leave the axe.
     <<jump Leave_the_axe>>
 ===
@@ -983,11 +1042,10 @@ You'd better continue on your journey.
 <<jump Continue_on_your_journey>>
 ===
 
-title: Steal_the_axe
+title: Take_the_axe
 position: 6498,185
 ---
-*You take the axe.*  
-
+<<enable TakeThakaliAxe false>>
 <<set $axe to true>>
 
 Thakali has not noticed.
