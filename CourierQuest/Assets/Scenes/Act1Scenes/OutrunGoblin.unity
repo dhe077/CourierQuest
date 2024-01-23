@@ -163,6 +163,8 @@ MonoBehaviour:
   calibrationTarget: {fileID: 0}
   spotFadeImage: {fileID: 0}
   fadeDuration: 1
+  sceneToChangeTo: 
+  endReached: 0
 --- !u!4 &276918009
 Transform:
   m_ObjectHideFlags: 0
@@ -1532,6 +1534,8 @@ MonoBehaviour:
   chaserSplinePath: {fileID: 1351817595}
   maxDiff: 5
   minDiff: 1
+  yOffset: -1
+  besidePlayerOffset: 0
   maxRndSpeedIncrease: 5
   minRndSpeedIncrease: -5
   offsetValues: fafffffffbffffffffffffff00000000010000000200000003000000

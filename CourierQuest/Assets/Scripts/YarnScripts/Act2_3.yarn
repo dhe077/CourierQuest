@@ -52,7 +52,7 @@ position: 392,476
         You recognise the name Pattersby. You met Petunia Pattersby earlier. Maybe this is her berry picking company?
     <<endif>>
 
-    <<nextPosition none>>
+    <<specificPosition BerrySpot>>
     <<wait 1>>
     <<enable Stormhoof true>>
     <<rideHorse false>> 
@@ -1115,7 +1115,10 @@ title: Take_some_berries
 position: 1284,2126
 ---
 You reach down towards the baskets of berries and attempt to grab a handful. Just before you touch the berries a woman with hooves and horns steps forth from the bushes.
+<<enable DaisyComesOut true>>
+<<wait 10>>
 
+<<animate DaisyWithPlayer AngryPoint>>
 Daisy: Hey! What are you doing! Those aren't for you!
 
 What do you do?
@@ -1131,7 +1134,10 @@ position: 1817,1755
 You wait for Daisy. You see some small woodland creatures skitter across the forest floor. 
 
 A woman with hooves and horns steps forth from the bushes.
+<<enable DaisyComesOut true>>
+<<wait 10>>
 
+<<animate DaisyWithPlayer Wave>>
 Daisy: Hello there sweetie. What can I do for you today. Are you here for some berries?
 
 What do you say?
@@ -1146,6 +1152,7 @@ position: 1790,2113
 ---
 Player: I just wanted some berries.
 
+<<animate DaisyWithPlayer DoubleHandout>>
 Daisy: Sorry, these aren't for you. The baskets you see around you are for my mother's bakery.
 
 What do you say?
@@ -1161,7 +1168,11 @@ title: Say_that_you_wanted_to_sample_them
 position: 1424,2655
 ---
 Player: I just wanted to sample your delicious looking berries.
+<<animate DaisyWithPlayer Sheath>>
+<<enable GreatSword false>>
+<<wait 1>>
 
+<<animate DaisyWithPlayer DoubleHandout>>
 Daisy: Sorry, these aren't for you. The baskets you see around you are for my mother's bakery.
 
 What do you say?
@@ -1184,6 +1195,7 @@ Daisy: She bakes *alot* of pastries. Shes the proud owner of Pattersby's Pastrie
     Daisy: That must have been the cutlery from Granbell that she's been harping on about. I heard her last set was stolen.
 <<endif>>
 Daisy makes a deep sigh.
+<<animate DaisyWithPlayer Sigh>>
 
 Daisy: She's asked me to pick the berries from this orchard, but I don't have quite enough yet. Anyway, why are you even here?
 
@@ -1211,10 +1223,13 @@ Player: I'm a courier and I have a package for Daisy. Are you Daisy?
 
 Daisy: Yes I am. What have you got for me?
 
-You give her the blue package. 
+You give her the blue package.
+<<animate DaisyWithPlayer Handout>> 
 
 Daisy: Hmm what could this be?
 
+<<animate DaisyWithPlayer Draw>>
+<<enable GreatAxe true>>
 She opens the package to reveal a large great axe made of a shiny blue metal.
 
 Daisy: Now this'll be very helpful. I know exactly who got this for me.
@@ -1233,6 +1248,8 @@ position: 2704,2446
 ---
 You reach futher for the berries while Daisy stares you in the face. 
 
+<<animate DaisyWithPlayer Draw>>
+<<enable GreatSword true>>
 Daisy pulls out a large greatsword from over her shoulder.
 
 Daisy: If you touch a berry I will slice that arm clean off without hesitation.
@@ -1243,6 +1260,8 @@ What do you do?
 -> Say that you wanted to sample them.
     <<jump Say_that_you_wanted_to_sample_them>>
 -> Say that you are a courier.
+    <<animate DaisyWithPlayer Sheath>>
+    <<enable GreatSword false>>
     <<jump Say_that_you_are_a_courier>>
 -> Touch a berry.
     <<jump Touch_a_berry>>
@@ -1255,9 +1274,12 @@ Player: What's so special about the axe?
 
 Daisy: This axe'll be helpful if I ever find out who or what's been taking my berries. This axe will make swift work of the thief.
 
+<<animate DaisyWithPlayer Attack>>
 She swings around the axe.
 
 Daisy: Speaking of the thief. I don't have enough berries to take to my mother's shop. It always seems like every time I pick a basket of berries another basket disappears. My guess is that someone's been stealing them, and I need to get to the bottom of it.
+<<animate DaisyWithPlayer Sheath>>
+<<enable GreatAxe false>>
 
 <<enable FairyGroup true>>
 Out of the corner of your eye you spot a fairy making off with a pile of berries in its clutches.
@@ -1288,9 +1310,12 @@ Daisy: If I know my mother well enough, she must've heard about my thief problem
     Daisy: That must have been the cutlery from Granbell that she's been harping on about.
 <<endif>>
 
-She hugs the axe.
+<<animate DaisyWithPlayer Attack>>
+She swings around the axe.
 
 Daisy: Speaking of the thief. I don't have enough berries to take to my mother's shop. It always seems like every time I pick a basket of berries another basket disappears. My guess is that someone's been stealing them, and I need to get to the bottom of it.
+<<animate DaisyWithPlayer Sheath>>
+<<enable GreatAxe false>>
 
 <<enable FairyGroup true>>
 Out of the corner of your eye you spot a fairy making off with a pile of berries in its clutches.
@@ -1313,6 +1338,7 @@ position: 3548,2238
 ---
 You remain silent as you watch the fairy eat a berry then slip into the bushes with the rest of the berries.
 
+<<animate DaisyWithPlayer Wave>>
 Daisy: Hey, are you there?
 
 What do you do?
@@ -1329,6 +1355,7 @@ Player: Hey! Don't touch those!
 
 The fairy looks toward you in surprise and drops the berries and flies into the woods.
 
+<<animate DaisyWithPlayer Surprise>>
 Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
@@ -1342,6 +1369,7 @@ You push past Daisy and run towards the fairy.
 
 The fairy looks toward you in surprise and drops the berries and flies into the woods.
 
+<<animate DaisyWithPlayer Surprise>>
 Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
@@ -1353,6 +1381,7 @@ position: 3919,2159
 ---
 Player: I just saw a fairy take off with your berries.
 
+<<animate DaisyWithPlayer Surprise>>
 Daisy: GET THAT FAIRY!!
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
@@ -1364,6 +1393,7 @@ position: 3911,2378
 ---
 You walk past Daisy. Ignoring her.
 
+<<animate DaisyWithPlayer DoubleHandout>>
 Daisy: Where are you going?
 
 You reach the point where the fairy was. Not too far from you you see the fairy. It hasn't noticed you but it is moving quite quickly.
@@ -1376,7 +1406,7 @@ title: Chase_the_fairy
 position: 4376,1869
 ---
 <<goToScene FairyChase>>
-<<wait 1>>
+<<wait 2>>
 <<rideHorse true>> 
 <<wait 4>>
 
@@ -1388,11 +1418,13 @@ You chase the fairy riding Stormhoof. Daisy is close behind you following on foo
 <<goToScene FairyHideout>>
 <<wait 2>>
 
+<<wait 10>>
 The fairy has lead you to its hideout. The hideout is a large hollow tree. The fairy escapes up into the trunk of the tree. You see at the base of the hollowed tree a gigantic mound of berries.
 
 <<nextPosition none>>
 <<wait 2>>
 
+<<animate DaisyStanding AngryPoint>>
 Daisy: So this is where they've been hiding them. Lets take them back before that fairy finds it's friends.
 
 <<jump Gather_the_berries>>
@@ -1415,6 +1447,7 @@ You chase the fairy riding Stormhoof.
 <<wait 3>>
 <<enable Lantern true>>
 
+<<wait 9>>
 The fairy has lead you to its hide out. The hide out is a large hollowed out tree. The fairy escapes up into the trunk of the tree. You see at the base of the hollowed tree, a gigantic mound of berries.
 
 <<nextPosition none>>
@@ -1452,9 +1485,12 @@ position: 5207,2152
 <<goToScene DaisysBerryFarm>>
 <<wait 4>>
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<enable DaisyWithPlayer true>>
+<<wait 1>>
 Daisy: Thanks for finding the rest of the berries. I had no idea that fairies were stealing them. Here take this, this might help you with your deliveries.
 
+<<animate DaisyWithPlayer Handout>>
 She hands you a compass.
 
 Daisy: This is a magical compass. I think it'll be more useful in your hands than mine. You'll never get lost with this.
@@ -1497,9 +1533,10 @@ You reach futher and touch one of the many berries.
 
 Daisy: I think we found our thief.
 
+<<animate DaisyWithPlayer Attack>>
 Daisy lifts her sword and brings it down on your outstretched arm.
 
-You managed to pull your arm away. You throw her the package to the ground and shoot off down the path.
+You managed to pull your arm away. You throw her package to the ground and shoot off down the path.
 
 <<set $metDaisy to true>>
 

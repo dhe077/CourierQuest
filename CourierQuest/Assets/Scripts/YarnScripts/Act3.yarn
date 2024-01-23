@@ -1503,6 +1503,7 @@ Player: I just need help getting into Eldoria to deliver this package. Call it a
 
     Thakali: Adventure!!? Thakali is coming too!
 <<elseif $metDaisy is true>>
+    <<enable DaisyWalkIn true>>
     A woman wielding a shiny blue greataxe appears before you.
 
     Daisy: I overheard someone say adventure. Anything to let me swing this axe.
@@ -1663,7 +1664,7 @@ You run down the hallway and into another room with tall stone columns. Some of 
 <<elseif $metThakali is true>>
     <<enable ThakaliStanding true>>
 <<elseif $metDaisy is true>>
-    <<enable LeytonStanding true>>
+    <<enable DaisyStanding true>>
 <<elseif $metVal is true>>
     <<enable LeytonStanding true>>
 <<endif>>
@@ -1700,10 +1701,16 @@ You run down the hallway and into another room with tall stone columns. Some of 
     Thakali: Hahah! Thakali wins!
 <<elseif $metDaisy is true>>
     Daisy: Now, you're a big one. But the bigger they are the harder they fall.
-
+    <<enableDisable DaisyAttacking DaisyStanding>>
+    <<animate DaisyAttacking Draw>>
+    <<enable GreatAxe true>>
+    <<wait 7>>
     Daisy runs towards the ogre, axe outstretched, ready to swing. She jumps up into the air with great height. She lifts her axe above her head. The axe comes crashing down onto the ogre. 
 
+    <<enable Ogre false>>
+
     Daisy: Huh. I thought this would have been harder. Get in there courier.
+    <<animate DaisyVictory AngryPoint>>
 <<elseif $metVal is true>>
     Val waves to the ogre.
 
@@ -1725,7 +1732,7 @@ You run down the hallway and into another room with tall stone columns. Some of 
 <<elseif $metThakali is true>>
     <<enableDisable ThakaliWaiting ThakaliVictory>>
 <<elseif $metDaisy is true>>
-    <<enable LeytonWaiting true>>
+    <<enableDisable DaisyWaiting DaisyVictory>>
 <<elseif $metVal is true>>
     <<enable LeytonWaiting true>>
 <<endif>>
@@ -2143,18 +2150,31 @@ position: 3280,1908
 <<elseif $metDaisy is true>>
     <<goToScene InsideVolcanoFriends>>
     <<wait 2>>
+
     The further into the cave you go the higher up the volcano you feel.
+    <<specificPosition VolcanoEntranceSpot>>
+    <<wait 1>>
+    <<enable DaisyWaiting true>>
+    <<wait 1>>
 
     You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
 
     At the top of a steep cliff face sits a ledge where you can just make out the cave's exit.
 
+    <<animate DaisyWaiting Surprise>>
     Daisy: Doesn't look *too* high.
 
+    <<specificPosition VolcanoEntranceSpot>>
+    <<wait 1>>
+    <<enableDisable DaisyJumping DaisyWaiting>>
+    <<wait 8>>
     Daisy runs back. Readies her hooves. She hops, skips, then jumps up just close enough to the edge for her to grab a hold of. She lifts herself up onto the side and lowers a rope down. 
     
     <<specificPosition PlayerDaisyRopeUp>>
-    <<wait 2>>
+    <<wait 1>>
+    <<enableDisable DaisyAtTop DaisyJumping>>
+    <<enable Rope true>>
+    <<wait 1>>
     You climb the rope. 
     <<wait 5>>
 
@@ -2162,6 +2182,7 @@ position: 3280,1908
     <<wait 2>>
     You make it to the top where you can see out the cave's exit.
 
+    <<animate DaisyAtTop Wave>>
     Daisy: I'll wait here. You go do what you need to do sweetie.
 <<elseif $metVal is true>>
     <<goToScene InsideVolcanoFriends>>
