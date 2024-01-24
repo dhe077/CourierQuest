@@ -1693,10 +1693,11 @@ You hear yelling from the other side.
 Bouncer: Oi Val! Some biggun's got you a delivery from Granbell.
 
 You hear foot steps approach the door. 
-
-<<enableDisable OpenDoor Door>>
+<<enable ValWalkingOut true>>
+<<wait 3>>
 As the door swings open you see before you a small halfling woman. 
 
+<<animate ValWithPlayer PointBack>>
 Val: Now what have we got here. Better hurry, I'm losing my table over there.
 
 What do you do?
@@ -1722,9 +1723,11 @@ Bouncer: Oi Val! Some biggun's got you a delivery from Granbell.
 
 You hear foot steps approach the door. 
 
-<<enableDisable OpenDoor Door>>
+<<enable ValWalkingOut true>>
+<<wait 3>>
 As the door swings open you see before you a small halfling woman. 
 
+<<animate ValWithPlayer PointBack>>
 Val: Now what have we got here. Better hurry, I'm losing my table over there.
 
 What do you do?
@@ -1741,11 +1744,14 @@ Player: I just want to gamble.
 
 Bouncer: Oi Val. This biggun wants to gamble. Should we let 'em in.
 
+<<enable ValWalkingOut true>>
+<<wait 3>>
 You hear foot steps approach the door. 
 
 <<enableDisable OpenDoor Door>>
 As the door swings open you see before you a small halfling woman. 
 
+<<animate ValWithPlayer PointBack>>
 Val: Now what have we got here. Better hurry, I'm losing my table over there.
 
 What do you do?
@@ -1760,6 +1766,7 @@ position: 3336,3914
 ---
 Player: Are you Val?
 
+<<animate ValWithPlayer Surprise>>
 Val: The one and only. Have you got something special for me? Or are you in need of some of my services?
 
 What do you do?
@@ -1774,7 +1781,9 @@ position: 3665,4193
 ---
 Player: Who was that other guy?
 
+<<animate ValWithPlayer Angry>>
 Val: That's Teddy. He's our bouncer. Now, have you got something special for me or are you here just to disturb *my* peace.
+<<wait 2>>
 
 What do you say?
 -> Ask what she was just doing.
@@ -1788,28 +1797,10 @@ position: 3951,4681
 ---
 Player: What were you doing in there?
 
+<<animate ValWithPlayer Cocky>>
 Val: A new game of dice has just started and I wanna bet on my lucky numbers.
 
 <<jump Tell_Val_you_have_her_package>>
-===
-
-title: Tell_Val_you_have_her_package
-position: 4351,3885
----
-Player: I have a package for you from Granbell.
-
-You give Val the yellow package. She opens it up and you see the glistening sheen of gold coins. Val affixes her eyes onto the gold coins and she does not look up once.
-
-Val: Boy howdy! Payday has arrived just in time. A new game of dice just started and I'm puttin' it all on my lucky numbers!
-
-Val closes the pouch and swings it over her back and runs into the Gamblers Grotto. 
-
-<<enableDisable Door OpenDoor>>
-The door slams shut on you.
-
-<<set $metVal to true>>
-
-<<jump Ask_for_directions_to_your_next_destination>>
 ===
 
 title: Ask_her_what_her_services_are
@@ -1817,6 +1808,7 @@ position: 4358,4220
 ---
 Player: What services do you offer?
 
+<<animate ValWithPlayer Cocky>>
 Val: I can *take care* of any unwanted enemies that you may have. Fair warning, this service ain't cheap.
 
 What do you say?
@@ -1833,13 +1825,34 @@ Player: Well there is one creature that I don't want around. There's a goblin th
 
 Val: Do you understand how many goblins there are with that description. That could be any old goblin.
 
-You hear from the room.
-
+<<animate ValWithPlayer React>>
 Gambler: Hey Val. Get in here and place your bets.
 
+<<animate ValWithPlayer AngryPoint>>
 Val: You better have something good to tell me or you'll be *my* next unwanted enemy.
 
 <<jump Tell_Val_you_have_her_package>>
+===
+
+title: Tell_Val_you_have_her_package
+position: 4351,3885
+---
+Player: I have a package for you from Granbell.
+
+You give Val the yellow package. She opens it up and you see the glistening sheen of gold coins. Val affixes her eyes onto the gold coins and she does not look up once.
+
+<<animate ValWithPlayer Surprise>>
+Val: Boy howdy! Payday has arrived just in time. A new game of dice just started and I'm puttin' it all on my lucky numbers!
+
+Val closes the pouch and swings it over her back and runs into the Gamblers Grotto. 
+
+<<animate ValWithPlayer TurnAround>>
+<<wait 1.5>>
+<<enableDisable ValWalkingBackIn ValWithPlayer>>
+
+<<set $metVal to true>>
+
+<<jump Ask_for_directions_to_your_next_destination>>
 ===
 
 title: Ask_for_directions_to_your_next_destination
@@ -1854,7 +1867,7 @@ Player: Hey! Which way is it to-
 
 Your question is cut off by loud bangs and then yelling. 
 
-<<enableDisable OpenDoor Door>>
+<<enableDisable ValRunningOut ValWalkingBackIn>>
 Suddenly, the door bursts open and Val jumps out running at full speed towards you. She jumps on the back of Stormhoof.
 
 From the door you see magical projectiles and arrows flying out in every direction.
@@ -1880,8 +1893,11 @@ You've gained enough distance from them to stop and hide for a moment.
 <<nextPosition none>>
 <<wait 1>>
 <<enable Stormhoof true>>
-<<rideHorse false>> 
+<<rideHorse false>>
+<<enable ValWithPlayer true>> 
 <<wait 1>>
+
+<<animate ValWithPlayer WipeSweat>>
 Val: Phew. That was close. Swift riding there partner.
 
 What do you say?
@@ -1896,6 +1912,7 @@ position: 5276,4240
 ---
 Player: Don't call me partner! You almost got me killed. I could have died.
 
+<<animate ValWithPlayer Cocky>>
 Val: You don't look very dead.
 
 <<jump Ask_Val_what_just_happened>>
@@ -1906,13 +1923,14 @@ position: 5661,3853
 ---
 Player: Please, explain what just happened!
 
+<<animate ValWithPlayer Angry>>
 Val: The boys at the Gamblers Grotto did not take kindly to me bettin' with the money that I owed 'em.
-
-Val hops down from Stormhoof.
 
 Val: A cloaked gentleman spoke up about the debts I owed them. So, I told the goons. "Fellas, if I win big I'll give it to ya'll. But if you're lookin' for trouble, you'll find it at the end of these magical fingertips."
 
 Val holds out her finger and a flame shoots out and hits the rocks nearby.
+<<animate ValWithPlayer PointGesture>>
+<<enable Fireball true>>
 
 Val: To settle my debt with you for saving my life. When the time comes, just whisper my name to the wind, and I'll ride in like a shadow to deliver the reckoning you seek.
 
@@ -1930,6 +1948,7 @@ Player: So all I do is call out for you when I need someone to be "taken care of
 
 <<set $assassin to true>>
 
+<<animate ValWithPlayer Cocky>>
 Val: Yup, that's right.
 
 You've strayed from your original path a little. You might need directions to your final destination.
@@ -1949,6 +1968,7 @@ position: 5999,4232
 ---
 Player: I don't need anyone killed. Just stay away from me. You're nothing but trouble.
 
+<<animate ValWithPlayer Cocky>>
 Val: Suit yourself.
 
 You've strayed from your original path a little. You might need directions to your final destination.
@@ -1969,6 +1989,8 @@ position: 6623,3852
 Player: Do you know which way Eldoria is from here?
 
 Val: Eldoria? I heard that place is overrun with the vilest of creatures. Goblins. If you want to find yourself among those creatures then just head down this path here.
+<<animate ValWithPlayer SidePointCross>>
+<<wait 2>>
 
 <<specificPosition LeaveClearing>>
 <<wait 1>>
@@ -1986,6 +2008,8 @@ position: 6599,4218
 Player: Do you know which way the nearest volcano is from here?
 
 Val: My oh my, the volcano? Are you planning on gambling you're winnings at the firey pit? It's just down this path here.
+<<animate ValWithPlayer SidePointCross>>
+<<wait 2>>
 
 <<specificPosition LeaveClearing>>
 <<wait 1>>

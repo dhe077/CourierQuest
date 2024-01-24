@@ -1508,6 +1508,10 @@ Player: I just need help getting into Eldoria to deliver this package. Call it a
 
     Daisy: I overheard someone say adventure. Anything to let me swing this axe.
 <<elseif $metVal is true>>
+    <<enable Smoke true>>
+    <<wait 1>>
+    <<enable ValWalkIn true>>
+    <<animate ValWalkIn CastSpell>>
     A small halfling woman appears from a puff of smoke.
 
     Val: Is there money involved? If there is then I'll partake in your adventure.
@@ -1666,7 +1670,7 @@ You run down the hallway and into another room with tall stone columns. Some of 
 <<elseif $metDaisy is true>>
     <<enable DaisyStanding true>>
 <<elseif $metVal is true>>
-    <<enable LeytonStanding true>>
+    <<enable ValStanding true>>
 <<endif>>
 <<wait 1>>
 
@@ -1712,12 +1716,14 @@ You run down the hallway and into another room with tall stone columns. Some of 
     Daisy: Huh. I thought this would have been harder. Get in there courier.
     <<animate DaisyVictory AngryPoint>>
 <<elseif $metVal is true>>
+    <<animate ValStanding Wave>>
     Val waves to the ogre.
 
     Val: Long time no see Grugnar.
 
     Grugnar: Val? Long time since Grugnar smelled deception.
 
+    <<animate ValStanding Whisper>>
     Val leans over to you and whispers.
 
     Val: Better get moving while Grugnar is distracted. Grugnar is a real talker.
@@ -1734,7 +1740,8 @@ You run down the hallway and into another room with tall stone columns. Some of 
 <<elseif $metDaisy is true>>
     <<enableDisable DaisyWaiting DaisyVictory>>
 <<elseif $metVal is true>>
-    <<enable LeytonWaiting true>>
+    <<enableDisable ValTalkWithOgre ValStanding>>
+    <<enableDisable OgreTalking Ogre>>
 <<endif>>
 <<wait 1>>
 You sprint to the wooden door and push it open. 
@@ -1896,18 +1903,26 @@ Player: It's so good to see you here. I was planning destroying this special pac
 Player: I just need help getting to the volcano to destroy this package. Call it an adventure if you will.
 
 <<if $metLeyton is true>>
+    <<enable LeytonFlyIn true>>
+    <<animate LeytonFlyIn Fly>>
     A man glowing with flames floats down from above.
 
     Leyton: Did someone say adventure? Count me in.
 <<elseif $metThakali is true>>
+    <<enable ThakaliRunIn true>>
     A dragon man runs out into the clearing.
 
     Thakali: Adventure!!? Thakali is coming too!
 <<elseif $metDaisy is true>>
+    <<enable DaisyWalkIn true>>
     A woman wielding a shiny blue greataxe appears before you.
 
     Daisy: I overheard someone say adventure. Anything to let me swing this axe.
 <<elseif $metVal is true>>
+    <<enable Smoke true>>
+    <<wait 1>>
+    <<enable ValWalkIn true>>
+    <<animate ValWalkIn CastSpell>>
     A small halfling woman appears from a puff of smoke.
 
     Val: Is there money involved? If there is then I'll partake in your adventure.
@@ -2189,13 +2204,57 @@ position: 3280,1908
     <<wait 2>>
     The further into the cave you go the higher up the volcano you feel.
 
+    <<specificPosition VolcanoEntranceSpot>>
+    <<wait 1>>
+    <<enable ValWaiting true>>
+    <<wait 1>>
+
     You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
 
     At the top of a steep cliff face sits a ledge where you can just make out the cave's exit.
 
     Val: Stand back. I got this.
 
-    Val fires a few firebolt's into the cave's rooftop. You feel the volcano rumble in anger. A giant stalactite falls from the roof and pierces the floor. It's top, a smooth brittle fracture from it's connection to the roof. Another falls, but smaller. Then another, and another. A set of volcanic rock stairs are formed from fallen stalactites.
+    <<specificPosition VolcanoEntranceSpot>>
+    <<wait 1>>
+    <<enableDisable ValAttacking ValWaiting>>
+    <<wait 1>>
+
+    Val fires a few firebolt's into the cave's rooftop. 
+    <<animate ValAttacking PointGesture>>
+    <<wait 0.4>>
+    <<enable Fireball true>>
+    <<wait 1>>
+    <<enableDisable DownCone1 UpCone1>>
+    <<wait 1>>
+    You feel the volcano rumble in anger. A giant stalactite falls from the roof and pierces the floor. It's top, a smooth brittle fracture from it's connection to the roof.
+    <<animate ValAttacking PointGesture>>
+    <<wait 0.4>>
+    <<enable Fireball true>>
+    <<wait 1>>
+    <<enableDisable DownCone2 UpCone2>>
+    <<wait 1>>
+    Another falls, but smaller.
+    <<animate ValAttacking PointGesture>>
+    <<wait 0.4>>
+    <<enable Fireball true>>
+    <<wait 1>>
+    <<enableDisable DownCone3 UpCone3>>
+    <<wait 1>>
+    <<animate ValAttacking PointGesture>>
+    <<wait 0.4>>
+    <<enable Fireball true>>
+    <<wait 1>>
+    <<enableDisable DownCone4 UpCone4>>
+    <<wait 1>>
+    Then another, and another.
+    <<animate ValAttacking PointGesture>>
+    <<wait 0.4>>
+    <<enable Fireball true>>
+    <<wait 1>>
+    <<enableDisable DownCone5 UpCone5>>
+    <<wait 1>>
+     A set of volcanic rock stairs are formed from fallen stalactites. 
 
     <<specificPosition PlayerValStepUp>>
     <<wait 2>>
@@ -2203,7 +2262,9 @@ position: 3280,1908
     <<wait 5>>
 
     <<specificPosition UpOnCliff>>
-    <<wait 2>>
+    <<wait 1>>
+    <<enableDisable ValAttacking ValAtTop>>
+    <<wait 1>>
     You make it to the top where you can see out the cave's exit.
 <<else>>
     <<goToScene InsideVolcanoStairs>>
@@ -2763,7 +2824,7 @@ You blow a whistle with your mouth and call for Val to deal with this monstrous 
 
 Player: *Whistle*. Hey Val! I could use some help here!
 
-A bolt of ice shoots out form behind you and at the lava guardian. The ice freezes and solidifies part of the lava guardian. More magical icicles fly out from behind you and at the beast. Val appears from a cloud of smoke.
+A bolt of ice shoots out from behind you and at the lava guardian. The ice freezes and solidifies part of the lava guardian. More magical icicles fly out from behind you and at the beast. Val appears from a cloud of smoke.
 
 Val: I see you're playing a dangerous game and your betting with your life.
 
