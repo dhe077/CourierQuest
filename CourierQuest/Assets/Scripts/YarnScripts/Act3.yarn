@@ -313,7 +313,10 @@ You slip into the hallway beside you.
 title: Use_the_smoke_vial_to_escape
 position: 3566,-1454
 ---
-You grip the smoke vial in your pocket and throw it on the ground near the goblin casting its spell. A large dense cloud of smoke engulfs the goblin. 
+You grip the smoke vial in your pocket and throw it on the ground near the goblin casting its spell. 
+
+<<enable Smoke true>>
+A large dense cloud of smoke engulfs the goblin. 
 
 Goblin Shaman: What is this? *cough* *cough* I can't see nuffing. *cough*
 
@@ -347,7 +350,11 @@ position: 4012,-1451
 ---
 <<goToScene OgreRoom>>
 <<wait 2>>
-You run down the hallway. It leads you to a large open area with tall stone columns. Some of these stone columns look very damaged. Opposite the hallway exit you spot a large wooden door. The door is guarded by a gigantic ogre that is wearing a grease soaked rag.
+You run down the hallway. It leads you to a large open area with tall stone columns. Some of these stone columns look very damaged. 
+
+<<specificPosition OgreRoomSpot>>
+<<wait 2>>
+Opposite the hallway exit you spot a large wooden door. The door is guarded by a gigantic ogre that is wearing a grease soaked rag.
 
 What do you do?
 -> Ask the ogre what is behind the wooden door.
@@ -371,19 +378,25 @@ What do you do? (Timed)
 <<startTimer 16>>
 <<if $dagger is true>>
     -> Pull out the obsidian dagger.
+        <<interrruptTimer none>>
         <<jump Pull_out_the_obsidian_dagger>>
 <<elseif $axe is true>>
     -> Use the axe on the weak columns.
+        <<interrruptTimer none>>
         <<jump Use_the_axe_on_the_weak_columns>>
 <<elseif $lantern is true>>
     -> Throw the lantern at the ogre.
+        <<interrruptTimer none>>
         <<jump Throw_the_lantern_at_the_ogre>>
 <<elseif $assassin is true>>
     -> Call for Val's expertise.
+        <<interrruptTimer none>>
         <<jump Call_for_Vals_expertise>>
+<<else>>
+    -> Wait and see what the ogre does. #timed
+        <<interrruptTimer none>>
+        <<jump Wait_and_see_what_the_ogre_does>>
 <<endif>>
--> Wait and see what the ogre does. #timed
-    <<jump Wait_and_see_what_the_ogre_does>>
 ===
 
 title: Tell_the_ogre_you_have_a_special_delivery
@@ -401,19 +414,25 @@ What do you do? (Timed)
 <<startTimer 16>>
 <<if $dagger is true>>
     -> Pull out the obsidian dagger.
+        <<interrruptTimer none>>
         <<jump Pull_out_the_obsidian_dagger>>
 <<elseif $axe is true>>
     -> Use the axe on the weak columns.
+        <<interrruptTimer none>>
         <<jump Use_the_axe_on_the_weak_columns>>
 <<elseif $lantern is true>>
     -> Throw the lantern at the ogre.
+        <<interrruptTimer none>>
         <<jump Throw_the_lantern_at_the_ogre>>
 <<elseif $assassin is true>>
     -> Call for Val's expertise.
+        <<interrruptTimer none>>
         <<jump Call_for_Vals_expertise>>
+<<else>>
+    -> Wait and see what the ogre does. #timed
+        <<interrruptTimer none>>
+        <<jump Wait_and_see_what_the_ogre_does>>
 <<endif>>
--> Wait and see what the ogre does. #timed
-    <<jump Wait_and_see_what_the_ogre_does>>
 ===
 
 title: Pull_out_the_obsidian_dagger
@@ -427,7 +446,13 @@ Ogre: That's the obsidian dagger of the Ogre Slayer! Stay away from me!
 
 Looks like it worked exactly as Leyton had described. Now's your chance to get to the Queen and finally deliver the special package.
 
-<<jump Go_to_the_Queen>>
+<<specificPosition RunToDoor>>
+<<wait 2>>
+You sprint to the wooden door and push it open. 
+// *The player must pedal hard to push the door open.*
+
+<<setNextNodeName Go_to_the_Queen>>
+//<<jump Go_to_the_Queen>>
 ===
 
 title: Use_the_axe_on_the_weak_columns
@@ -439,7 +464,13 @@ The axe ricochet's off the stone as the column begins to rumble and shake. You d
 
 The ogre is crushed beneath the column. Now's your chance to get to the Queen and finally deliver the special package.
 
-<<jump Go_to_the_Queen>>
+<<specificPosition RunToDoor>>
+<<wait 2>>
+You sprint to the wooden door and push it open. 
+// *The player must pedal hard to push the door open.*
+
+<<setNextNodeName Go_to_the_Queen>>
+//<<jump Go_to_the_Queen>>
 ===
 
 title: Throw_the_lantern_at_the_ogre
@@ -451,7 +482,13 @@ You pull the lantern from your pack and reignite it. You wind your arm back read
 
 The ogre is distracted. Now's your chance to get to the Queen and finally deliver the special package.
 
-<<jump Go_to_the_Queen>>
+<<specificPosition RunToDoor>>
+<<wait 2>>
+You sprint to the wooden door and push it open. 
+// *The player must pedal hard to push the door open.*
+
+<<setNextNodeName Go_to_the_Queen>>
+//<<jump Go_to_the_Queen>>
 ===
 
 title: Call_for_Vals_expertise
@@ -461,13 +498,34 @@ You remember you have an ace up your sleeve. You ask Val for help. She said that
 
 Player: Val! Help me! Get rid of this ogre!
 
-A sudden burst of magical energy blasts the ogre in the torso. It stumbles a little bit then gathers its strength for an attack on you. Then another magical blast apears from the sky and then a halfling appears from a cloud of smoke. The ogre stumbles again.
+<<enable MagicMissile true>>
+<<wait 1.5>>
+A sudden burst of magical energy blasts the ogre in the torso. It stumbles a little bit then gathers its strength for an attack on you. 
+
+<<enable MagicMissile true>>
+<<enable Smoke true>>
+<<wait 1.5>>
+<<enable ValStanding true>>
+<<wait 1>>
+<<enable Smoke false>>
+Then another magical blast apears from the sky and then a halfling appears from a cloud of smoke. The ogre stumbles again.
 
 Val: My, my, looks like you've got yourself in a bit of a sticky situation?
 
+<<animate ValStanding PointGesture>>
+<<enable MagicMissile true>>
+<<wait 1.5>>
 Val launches magical spells from her fingers towards the ogre. The ogre is distracted. Now's your chance to get to the Queen and finally deliver the special package.
 
-<<jump Go_to_the_Queen>>
+<<specificPosition RunToDoor>>
+<<wait 1>>
+<<enable Ogre false>>
+<<wait 1>>
+You sprint to the wooden door and push it open. 
+// *The player must pedal hard to push the door open.*
+
+<<setNextNodeName Go_to_the_Queen>>
+//<<jump Go_to_the_Queen>>
 ===
 
 title: Wait_and_see_what_the_ogre_does
@@ -482,17 +540,15 @@ A wave of goblins flows from the hallway and into the open area.
 
 Goblins: Take 'em to the dungeon!!
 
+<<goToScene EldoriaCourtyardAlt>>
+<<wait 3>>
+
 <<jump Go_to_the_dungeon>>
 ===
 
 title: Go_to_the_Queen
 position: 5536,-1687
 ---
-<<nextPosition none>>
-<<wait 2>>
-You sprint to the wooden door and push it open. 
-// *The player must pedal hard to push the door open.*
-
 <<goToScene TreasureRoom>>
 <<wait 2>>
 Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. Atop the mound of riches lies a large goblin. The goblin wears a robe too big for its stature and dons many rings and necklaces. This must be their leader.
@@ -878,7 +934,12 @@ Garbanzo takes the diamond from your hand.
 
 Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
 
-<<jump Follow_Garbanzo_to_the_treasure_room>>
+<<specificPosition RunDownHall>>
+<<enableDisable GarbanzoRunDownHall GarbanzoSneak>>
+<<wait 2>>
+You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
+<<setNextNodeName Follow_Garbanzo_to_the_treasure_room>>
+// <<jump Follow_Garbanzo_to_the_treasure_room>>
 ===
 
 title: Use_the_animal_pendant
@@ -893,7 +954,12 @@ Garbanzo reveals himself from behind the potted plant.
 
 Garbanzo: I think I'll leave that one alone. Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
 
-<<jump Follow_Garbanzo_to_the_treasure_room>>
+<<specificPosition RunDownHall>>
+<<enableDisable GarbanzoRunDownHall GarbanzoSneak>>
+<<wait 2>>
+You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
+<<setNextNodeName Follow_Garbanzo_to_the_treasure_room>>
+// <<jump Follow_Garbanzo_to_the_treasure_room>>
 ===
 
 title: Throw_the_smoke_vial_at_the_goblin
@@ -914,7 +980,12 @@ Garbanzo shrugs.
 
 Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
 
-<<jump Follow_Garbanzo_to_the_treasure_room>>
+<<specificPosition RunDownHall>>
+<<enableDisable GarbanzoRunDownHall GarbanzoSneak>>
+<<wait 2>>
+You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
+<<setNextNodeName Follow_Garbanzo_to_the_treasure_room>>
+// <<jump Follow_Garbanzo_to_the_treasure_room>>
 ===
 
 title: Hide_behind_the_throne
@@ -939,22 +1010,26 @@ Garbanzo rolls his eyes at you.
 
 Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
 
-<<jump Follow_Garbanzo_to_the_treasure_room>>
+<<specificPosition RunDownHall>>
+<<enableDisable GarbanzoRunDownHall GarbanzoSneak>>
+<<wait 2>>
+You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
+<<setNextNodeName Follow_Garbanzo_to_the_treasure_room>>
+// <<jump Follow_Garbanzo_to_the_treasure_room>>
 ===
 
 title: Follow_Garbanzo_to_the_treasure_room
 position: 4190,-75
 ---
-<<specificPosition RunDownHall>>
-<<enableDisable GarbanzoRunDownHall GarbanzoSneak>>
-<<wait 2>>
-You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
-
 <<goToScene OgreRoom>>
 <<wait 2>>
 You approach the exit and you enter a large open area. 
 
-This area is decorated with tall stone columns. Some of these stone columns look very damaged. Opposite the hallway exit you spot a large wooden door. The door is guarded by a gigantic ogre that is wearing a grease soaked rag.
+This area is decorated with tall stone columns. Some of these stone columns look very damaged. 
+
+<<specificPosition OgreRoomSpot>>
+<<wait 2>>
+Opposite the hallway exit you spot a large wooden door. The door is guarded by a gigantic ogre that is wearing a grease soaked rag.
 
 What do you do?
 -> Insult the ogre.
@@ -1052,7 +1127,15 @@ He chuckles to himself.
 
 Garbanzo: The queen is definitely behind that wooden door. Do what you've been doing, distract her, while I'll do what I've been doing, which is cleaning up your mess. I'll go in first.
 
-<<jump Follow_behind_Garbanzo_into_the_room>>
+<<specificPosition RunToDoor>>
+<<wait 1>>
+<<enable GarbanzoWaiting true>>
+<<enable Ogre false>>
+<<wait 1>>
+You sprint to the wooden door and push it open. 
+//*The player must pedal hard to push the door open.*
+<<setNextNodeName Follow_behind_Garbanzo_into_the_room>>
+//<<jump Follow_behind_Garbanzo_into_the_room>>
 ===
 
 title: Use_the_axe_to_try_and_defend_yourself
@@ -1070,7 +1153,15 @@ He chuckles to himself.
 
 Garbanzo: The queen is definitely behind that wooden door. Do what you've been doing, distract her, while I'll do what I've been doing, which is cleaning up your mess. I'll go in first.
 
-<<jump Follow_behind_Garbanzo_into_the_room>>
+<<specificPosition RunToDoor>>
+<<wait 1>>
+<<enable GarbanzoWaiting true>>
+<<enable Ogre false>>
+<<wait 1>>
+You sprint to the wooden door and push it open. 
+//*The player must pedal hard to push the door open.*
+<<setNextNodeName Follow_behind_Garbanzo_into_the_room>>
+//<<jump Follow_behind_Garbanzo_into_the_room>>
 ===
 
 title: Throw_the_lantern_at_the_floor
@@ -1086,7 +1177,15 @@ He chuckles to himself.
 
 Garbanzo: The queen is definitely behind that wooden door. Do what you've been doing, distract her, while I'll do what I've been doing, which is cleaning up your mess. I'll go in first.
 
-<<jump Follow_behind_Garbanzo_into_the_room>>
+<<specificPosition RunToDoor>>
+<<wait 1>>
+<<enable GarbanzoWaiting true>>
+<<enable Ogre false>>
+<<wait 1>>
+You sprint to the wooden door and push it open. 
+//*The player must pedal hard to push the door open.*
+<<setNextNodeName Follow_behind_Garbanzo_into_the_room>>
+//<<jump Follow_behind_Garbanzo_into_the_room>>
 ===
 
 title: Call_out_for_Vals_help
@@ -1116,7 +1215,15 @@ A cloud of smoke engulfs Val and then dissapates. Val is gone.
 
 Garbanzo: The queen is definitely behind that wooden door. Do what you've been doing, distract her, while I'll do what I've been doing, which is cleaning up your mess. I'll go in first.
 
-<<jump Follow_behind_Garbanzo_into_the_room>>
+<<specificPosition RunToDoor>>
+<<wait 1>>
+<<enable GarbanzoWaiting true>>
+<<enable Ogre false>>
+<<wait 1>>
+You sprint to the wooden door and push it open. 
+//*The player must pedal hard to push the door open.*
+<<setNextNodeName Follow_behind_Garbanzo_into_the_room>>
+//<<jump Follow_behind_Garbanzo_into_the_room>>
 ===
 
 title: Prepare_to_be_flattened
@@ -1132,19 +1239,20 @@ Garbanzo: Do you do anything besides stand there?
 
 Garbanzo: The queen is definitely behind that wooden door. Do what you've been doing, distract her, while I'll do what I've been doing, which is cleaning up your mess. I'll go in first.
 
-<<jump Follow_behind_Garbanzo_into_the_room>>
+<<specificPosition RunToDoor>>
+<<wait 1>>
+<<enable GarbanzoWaiting true>>
+<<enable Ogre false>>
+<<wait 1>>
+You sprint to the wooden door and push it open. 
+//*The player must pedal hard to push the door open.*
+<<setNextNodeName Follow_behind_Garbanzo_into_the_room>>
+//<<jump Follow_behind_Garbanzo_into_the_room>>
 ===
 
 title: Follow_behind_Garbanzo_into_the_room
 position: 5582,-106
 ---
-<<nextPosition none>>
-<<wait 1>>
-<<enable GarbanzoWaiting true>>
-<<wait 1>>
-You sprint to the wooden door and push it open. 
-//*The player must pedal hard to push the door open.*
-
 <<goToScene TreasureRoom>>
 <<wait 2>>
 Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. Atop the mound of riches lies a large goblin. The goblin wears a robe too big for its stature and dons many rings and necklaces. This must be their leader.
@@ -2580,6 +2688,8 @@ position: 3443,2814
     <<wait 2>>
     The further into the cave you go the higher up the volcano you feel.
 
+    <<specificPosition VolcanoEntranceSpot>>
+    <<wait 2>>
     You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
 
     You see a strange contraption beside the wall of the cave. It looks like a lift. You look up and it seems to connect to a cliff that gleams with the light of day.
@@ -2596,6 +2706,8 @@ position: 3443,2814
     <<wait 2>>
     The further into the cave you go the higher up the volcano you feel.
 
+    <<specificPosition VolcanoEntranceSpot>>
+    <<wait 2>>
     You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
 
     You see a single tree growing within the cave reaching up to the sunlight from above. Vertically, along the cave wall there is a cliff that gleams with the light of day.
@@ -2612,6 +2724,8 @@ position: 3443,2814
     <<wait 2>>
     The further into the cave you go the higher up the volcano you feel.
     
+    <<specificPosition VolcanoEntranceSpot>>
+    <<wait 2>>
     You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
 
     You see a set of pillars of various heights that lead up to the cliff that gleams with the light of day. You approach the pillars. They are made of a kind of volcanic rock. You touch one. That one seems sturdy enough to stand on. You touch another and it crumbles to the floor in a devastating heap. Seems like some pillars are stronger than others. You'd better follow the right path up the rocks or it could mean you'd have a rough time climbing the rubble.
@@ -2626,6 +2740,8 @@ position: 3443,2814
     <<wait 2>>
     The further into the cave you go the higher up the volcano you feel.
     
+    <<specificPosition VolcanoEntranceSpot>>
+    <<wait 2>>
     You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
 
     A growing hot mass of fiery lava and solid rock form into a large beast before your eyes. The lava beast looks to be guarding the way to the top of the cave. It doesn't say anything to you but you sense that if you were to approach it it would not go well. Across it's back you see a fine set of solid rock stairs that you could safely climb up to reach the cave top.
@@ -2640,6 +2756,8 @@ position: 3443,2814
     <<wait 2>>
     The further into the cave you go the higher up the volcano you feel.
     
+    <<specificPosition VolcanoEntranceSpot>>
+    <<wait 2>>
     You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
 
     A large set of stone stairs spirals to the top of the cave. You can follow these up. Although it may be a little hard with all the weight you are carrying on your back.
@@ -2647,20 +2765,21 @@ position: 3443,2814
     // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
     // *Very Hard. Walk the stone stairs.*
-    <<nextPosition none>>
-    <<wait 10>> // Exercise timer
+    <<specificPosition WalkUpStairs>>
+    <<wait 2>>
+    //<<wait 10>> // Exercise timer
 
-    <<jump Walk_the_stone_stairs_to_the_top_of_the_cave>>
+    <<setNextNodeName Walk_the_stone_stairs_to_the_top_of_the_cave>>
+    //<<jump Walk_the_stone_stairs_to_the_top_of_the_cave>>
 <<endif>>
 ===
 
 title: Use_the_lift_with_the_weights_on
 position: 3976,2982
 ---
-<<nextPosition none>> // Inside Lift
+<<specificPosition LiftUp>> // Inside Lift
 <<wait 1>>
 <<enable LiftParts false>>
-<<enableDisable MovingLift Lift>>
 <<wait 1>>
 
 You place your foot on the crank and use all your strength to pedal the crank and lift the platform. The weights are making the lift alot heavier than if they were off. However, the lift is still operable. 
@@ -2670,10 +2789,10 @@ You use the foot pedal to lift yourself up the cave.
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Hard. Turn the crank.*
-<<nextPosition none>>
-<<prepareExerciseQuest mudbrick>>
+<<specificPosition GoingUp>>
 <<wait 1>>
-<<startExerciseQuest mudbrick>>
+<<enableDisable MovingLift Lift>>
+<<wait 1>>
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Take_the_lift_to_the_top_of_the_cave>>
 // <<jump Take_the_lift_to_the_top_of_the_cave>>
@@ -2682,10 +2801,9 @@ You use the foot pedal to lift yourself up the cave.
 title: Cut_off_the_weights_and_use_the_lift
 position: 3980,2730
 ---
-<<nextPosition none>> // Inside Lift
+<<specificPosition LiftUp>> // Inside Lift
 <<wait 1>>
 <<enable LiftParts false>>
-<<enableDisable MovingLift Lift>>
 <<wait 1>>
 
 You bring the obsidian dagger to the rope holding the weights. Like a hot knife through butter, the dagger slides through the fibres of the ropes and releases the lift from the weights. 
@@ -2697,10 +2815,10 @@ You can now use the foot pedal with ease to lift yourself up the cave.
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Easy. Turn the crank.*
-<<nextPosition none>>
-<<prepareExerciseQuest mudbrick>>
+<<specificPosition GoingUp>>
 <<wait 1>>
-<<startExerciseQuest mudbrick>>
+<<enableDisable MovingLift Lift>>
+<<wait 1>>
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Take_the_lift_to_the_top_of_the_cave>>
 // <<jump Take_the_lift_to_the_top_of_the_cave>>
@@ -2709,7 +2827,7 @@ You can now use the foot pedal with ease to lift yourself up the cave.
 title: Take_the_lift_to_the_top_of_the_cave
 position: 4346,2849
 ---
-<<nextPosition none>>
+<<specificPosition UpOnCliff>>
 <<wait 2>>
 You use the lift to reach the top of the cave. At the top of the cave you see an opening that leads back outside.
 
@@ -2719,7 +2837,7 @@ You use the lift to reach the top of the cave. At the top of the cave you see an
 title: Climb_the_tree_and_jump_to_the_cliff
 position: 3982,3248
 ---
-<<nextPosition none>>
+<<specificPosition NextToTree>>
 <<wait 2>>
 You decide that the best you could do is climb the tree and jump from the top towards the cliff's ledge.
 
@@ -2728,30 +2846,37 @@ The vertical incline of the tree is hard to climb especially with the pack you a
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Hard. Climb the tree.*
-<<wait 10>> // Exercise timer
-<<jump Climb_the_tree_to_the_top_of_the_cave>>
+<<specificPosition ClimbUprightTreePath>>
+//<<wait 10>> // Exercise timer
+<<setNextNodeName Climb_the_tree_to_the_top_of_the_cave>>
+//<<jump Climb_the_tree_to_the_top_of_the_cave>>
 ===
 
 title: Use_the_axe_to_chop_the_tree_for_it_to_lean_over
 position: 3957,3503
 ---
-<<nextPosition none>>
+<<specificPosition NextToTree>>
 <<wait 2>>
-You remember that you have Thakali's axe. You swing at the tree's trunk. It topples over onto the edge of the cliff. It seems sturdy enough to hold your weight.
+You remember that you have Thakali's axe. You swing at the tree's trunk. 
+
+<<enableDisable ToppledTree UprightTree>>
+It topples over onto the edge of the cliff. It seems sturdy enough to hold your weight.
 
 You climb the sloped side of the tree up to the top of the cave.
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Easy. Climb the tree.*
-<<wait 10>> // Exercise timer
-<<jump Climb_the_tree_to_the_top_of_the_cave>>
+<<specificPosition ClimbToppledTreePath>>
+//<<wait 10>> // Exercise timer
+<<setNextNodeName Climb_the_tree_to_the_top_of_the_cave>>
+//<<jump Climb_the_tree_to_the_top_of_the_cave>>
 ===
 
 title: Climb_the_tree_to_the_top_of_the_cave
 position: 4332,3268
 ---
-<<nextPosition none>>
+<<specificPosition UpOnCliff>>
 <<wait 2>>
 You climb the tree to the top of the cave. At the top of the cave you see an opening that leads back outside.
 
@@ -2763,39 +2888,49 @@ position: 3952,3772
 ---
 You decide that if you just quickly but randomly climb the pillars you'd make it to the top in no time.
 
+<<specificPosition BeforePillarsSpot>>
+<<wait 1>>
+<<enableDisable RubblePillars UprightPillars>>
+<<wait 1>>
 The first pillar you stand on crumbles to the floor toppling over others in the process. A large heap of crumbled rock lies in front of you. It is tall enough to just reach the top of the cave.
-<<nextPosition none>>
+
+<<specificPosition WalkUpPillars>>
 <<wait 2>>
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Hard. Climb the rubble.*
-<<wait 10>> // Exercise timer
-<<jump Reach_the_top_of_the_cave_using_the_pillars>>
+//<<wait 10>> // Exercise timer
+<<setNextNodeName Reach_the_top_of_the_cave_using_the_pillars>>
+//<<jump Reach_the_top_of_the_cave_using_the_pillars>>
 ===
 
 title: Use_the_magic_compass_to_guide_you
 position: 3964,4026
 ---
+<<specificPosition BeforePillarsSpot>>
+<<wait 2>>
 You open the cover of the magical compass and you tell it to guide you to the top of the cave.
 
 Player: Magical compass. Please show me the way up to the top of the cave.
 
-<<nextPosition none>>
-<<wait 2>>
 The magical compass swings it's arms from left to right as it guides you to which pillar you must step on.
+
+<<specificPosition WalkUpPillars>>
+<<wait 2>>
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Easy. Step on the pillars.*
-<<wait 10>> // Exercise timer
-<<jump Reach_the_top_of_the_cave_using_the_pillars>>
+//<<wait 10>> // Exercise timer
+<<setNextNodeName Reach_the_top_of_the_cave_using_the_pillars>>
+//<<jump Reach_the_top_of_the_cave_using_the_pillars>>
 ===
 
 title: Reach_the_top_of_the_cave_using_the_pillars
 position: 4332,3675
 ---
-<<nextPosition none>>
+<<specificPosition UpOnCliff>>
 <<wait 2>>
 You climb the pillars one by one all the way to the top of the cave. At the top of the cave you see an opening that leads back outside.
 
@@ -2807,14 +2942,15 @@ position: 3986,4312
 ---
 You quickly run behind the lava guardian and jump onto it's back. The guardian moves about the cave trying to shake you off it's back. You must carefully step on the solid rocks and avoid the lava.
 
-<<nextPosition none>>
+<<specificPosition WalkUpBeast>>
 <<wait 2>>
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Hard. Climb the guardian.*
-<<wait 10>> // Exercise timer
-<<jump Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
+//<<wait 10>> // Exercise timer
+<<setNextNodeName Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
+//<<jump Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
 ===
 
 title: Call_for_Val_to_remove_the_lava_guardian
@@ -2824,19 +2960,37 @@ You blow a whistle with your mouth and call for Val to deal with this monstrous 
 
 Player: *Whistle*. Hey Val! I could use some help here!
 
-A bolt of ice shoots out from behind you and at the lava guardian. The ice freezes and solidifies part of the lava guardian. More magical icicles fly out from behind you and at the beast. Val appears from a cloud of smoke.
+<<enable Icicle true>>
+<<wait 1>>
+A bolt of ice shoots out from behind you and at the lava guardian. The ice freezes and solidifies part of the lava guardian. More magical icicles fly out from behind you and at the beast. 
+<<enable Icicle true>>
+<<wait 1>>
+<<enable Icicle true>>
+<<wait 1>>
+
+<<enable Smoke true>>
+<<wait 1>>
+<<enable ValAttacking true>>
+<<wait 1>>
+<<enable Smoke false>>
+Val appears from a cloud of smoke.
 
 Val: I see you're playing a dangerous game and your betting with your life.
 
+<<animate ValAttacking PointGesture>>
+<<wait 0.4>>
+<<enable Icicle true>>
+<<wait 1>>
 One final icicle flies towards the creature freezing it's last molten limb. The creature has formed a perfectly good set of stairs up to the top of the cave. How convenient. Val disappears into a puff of smoke.
 
-<<nextPosition none>>
+<<specificPosition WalkUpBeast>>
 <<wait 2>>
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Easy. Climb the guardian.*
-<<wait 10>> // Exercise timer
-<<jump Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
+//<<wait 10>> // Exercise timer
+<<setNextNodeName Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
+//<<jump Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
 ===
 
 title: Use_the_lava_guardian_to_reach_the_top_of_the_cave
@@ -2854,7 +3008,7 @@ position: 4000,2452
 ---
 You take your time walking the stone stairs to the top of the cave. 
 
-<<nextPosition none>>
+<<specificPosition UpOnCliff>>
 <<wait 2>>
 At the top of the cave you see an opening that leads back outside.
 
