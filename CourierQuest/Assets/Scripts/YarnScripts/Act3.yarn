@@ -201,6 +201,7 @@ You've entered the castle's throne room. The walls are high and are beautifully 
 
 The goblin looks in your direction and points at you.
 
+<<animate GoblinShaman Taunt>>
 Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot a lightning bolt frew your face.
 
 What do you do?
@@ -215,8 +216,10 @@ position: 3123,-1503
 ---
 Player: I've got a special delivery from Granbell.
 
+<<animate GoblinShaman Yell>>
 Goblin Shaman: Special...delivery...from...Granbell? What could be coming from that stinkin' human place. Is it a bomb? IT'S A BOMB ISNT IT!!
 
+<<animate GoblinShaman Spin>>
 The goblin starts to wave its staff around in the air. Loud rumbling in the air grows as the goblin twirls the staff. You see lightning flash across the sky from a hole in the roof. You get a sense that the goblin is trying to cast some sort of lightning spell.
 
 Goblin Shaman: I'm going to vaporize you.
@@ -229,18 +232,28 @@ What do you do? (Timed)
     -> Use the diamond to counter the lightning.
         <<interrruptTimer none>>
         <<jump Use_the_diamond_to_counter_the_lightning>>
+    -> Run out the way you came in.
+        <<interrruptTimer none>>
+        <<jump Run_out_the_way_you_came_in>>
 <<elseif $animalPendant is true>>
     -> Use the animal pendant to summon forest creatures.
         <<interrruptTimer none>>
         <<jump Use_the_animal_pendant_to_summon_forest_creatures>>
+    -> Run out the way you came in.
+        <<interrruptTimer none>>
+        <<jump Run_out_the_way_you_came_in>>
 <<elseif $smokeVial is true>>
     -> Use the smoke vial to escape.
         <<interrruptTimer none>>
         <<jump Use_the_smoke_vial_to_escape>>
+    -> Run out the way you came in.
+        <<interrruptTimer none>>
+        <<jump Run_out_the_way_you_came_in>>
+<<else>>
+    -> Run out the way you came in.
+        <<interrruptTimer none>>
+        <<jump Run_out_the_way_you_came_in>>
 <<endif>>
--> Run out the way you came in.
-    <<interrruptTimer none>>
-    <<jump Run_out_the_way_you_came_in>>
 ===
 
 title: Ask_where_their_leader_is
@@ -248,8 +261,10 @@ position: 3103,-994
 ---
 Player: I'm here to see your leader. The throne looks empty. I suppose your leader is elsewhere?
 
+<<animate GoblinShaman Yell>>
 Goblin Shaman: Why do you want to see our Queen? Are you here to kill her? No loyal goblin is going to let a stinkin' human go anywhere near our Queen.
 
+<<animate GoblinShaman Spin>>
 The goblin starts to wave its staff around in the air. Loud rumbling in the air grows as the goblin twirls the staff. You see lightning flash across the sky from a hole in the roof. You get a sense that the goblin is trying to cast some sort of lightning spell.
 
 Goblin Shaman: I'm going to vaporize you.
@@ -262,18 +277,28 @@ What do you do? (Timed)
     -> Use the diamond to counter the lightning.
         <<interrruptTimer none>>
         <<jump Use_the_diamond_to_counter_the_lightning>>
+    -> Run out the way you came in.
+        <<interrruptTimer none>>
+        <<jump Run_out_the_way_you_came_in>>
 <<elseif $animalPendant is true>>
     -> Use the animal pendant to summon forest creatures.
         <<interrruptTimer none>>
         <<jump Use_the_animal_pendant_to_summon_forest_creatures>>
+    -> Run out the way you came in.
+        <<interrruptTimer none>>
+        <<jump Run_out_the_way_you_came_in>>
 <<elseif $smokeVial is true>>
     -> Use the smoke vial to escape.
         <<interrruptTimer none>>
         <<jump Use_the_smoke_vial_to_escape>>
+    -> Run out the way you came in.
+        <<interrruptTimer none>>
+        <<jump Run_out_the_way_you_came_in>>
+<<else>>
+    -> Run out the way you came in.
+        <<interrruptTimer none>>
+        <<jump Run_out_the_way_you_came_in>>
 <<endif>>
--> Run out the way you came in.
-    <<interrruptTimer none>>
-    <<jump Run_out_the_way_you_came_in>>
 ===
 
 title: Use_the_diamond_to_counter_the_lightning
@@ -282,9 +307,17 @@ position: 3571,-1688
 You pull out the diamond from your pocket and hold it in front of you.
 
 The goblin laughs and a streak of lightning crashes through the roof towards the goblin and is then redirected at you. 
+<<animate GoblinShaman CastSpell>>
+<<animate GoblinShaman StopSpin>>
+<<enable GoblinLightningRoof true>>
+<<wait 0.25>>
+<<enableDisable GoblinLightningCast GoblinLightningRoof>>
+<<wait 1>>
+<<enable GoblinLightningCast false>>
 
 The lightning hits the diamond with all its energy. The diamond glows a hot blue. The power of the lightning has been absorbed into the diamond. The diamond begins to crack and furiously vibrate. It's going to explode!
 
+<<animate GoblinShaman Stumble>>
 You quickly throw the diamond in the direction of the goblin. You watch the shock on the goblin's face as it lands beside them. 
 
 <<specificPosition RunDownHall>>
@@ -300,6 +333,11 @@ position: 3559,-1253
 ---
 You don the animal pendant and close your eyes. You hear the laughter of the goblin and the rumbling of the sky. You call upon the forest's aid.
 
+<<specificPosition ThroneRoomSpot>>
+<<wait 1>>
+<<animate GoblinShaman StopSpin>>
+<<animate GoblinShaman Stumble>>
+<<wait 1>>
 Suddenly the laughter turns to screams. You open your eyes to witness the goblin surrounded by birds. The goblin is distracted. Good time to escape. 
 
 <<specificPosition RunDownHall>>
@@ -318,12 +356,19 @@ You grip the smoke vial in your pocket and throw it on the ground near the gobli
 <<enable Smoke true>>
 A large dense cloud of smoke engulfs the goblin. 
 
+<<animate GoblinShaman StopSpin>>
+<<animate GoblinShaman Stumble>>
 Goblin Shaman: What is this? *cough* *cough* I can't see nuffing. *cough*
 
 The goblin agrily screams and then a sudden bolt of lightning crashes down through the hole in the roof and into the cloud of smoke. 
+<<enable GoblinLightningRoof true>>
 
 <<specificPosition RunDownHall>>
-<<wait 2>>
+<<wait 1>>
+<<enable GoblinLightningRoof false>>
+<<animate GoblinShaman Death>>
+<<enable Smoke false>>
+<<wait 1>>
 You quickly run into the hallway to your right.
 
 <<setNextNodeName Run_down_the_hall>>
@@ -370,28 +415,40 @@ Player: Hey! What's behind that big wooden door?
 
 Ogre: Behind door? Queen. No one allowed in. No human allowed. Me squash human.
 
+<<animate OgreStanding Squash>>
 The ogre slaps its hands together in a squishing motion. The ogre moves in your direction.
 
 You need to somehow get past the ogre and make your final delivery.
 
-What do you do? (Timed)
 <<startTimer 16>>
 <<if $dagger is true>>
     -> Pull out the obsidian dagger.
         <<interrruptTimer none>>
         <<jump Pull_out_the_obsidian_dagger>>
+    -> Wait and see what the ogre does. #timed
+        <<interrruptTimer none>>
+        <<jump Wait_and_see_what_the_ogre_does>>
 <<elseif $axe is true>>
     -> Use the axe on the weak columns.
         <<interrruptTimer none>>
         <<jump Use_the_axe_on_the_weak_columns>>
+    -> Wait and see what the ogre does. #timed
+        <<interrruptTimer none>>
+        <<jump Wait_and_see_what_the_ogre_does>>
 <<elseif $lantern is true>>
     -> Throw the lantern at the ogre.
         <<interrruptTimer none>>
         <<jump Throw_the_lantern_at_the_ogre>>
+    -> Wait and see what the ogre does. #timed
+        <<interrruptTimer none>>
+        <<jump Wait_and_see_what_the_ogre_does>>
 <<elseif $assassin is true>>
     -> Call for Val's expertise.
         <<interrruptTimer none>>
         <<jump Call_for_Vals_expertise>>
+    -> Wait and see what the ogre does. #timed
+        <<interrruptTimer none>>
+        <<jump Wait_and_see_what_the_ogre_does>>
 <<else>>
     -> Wait and see what the ogre does. #timed
         <<interrruptTimer none>>
@@ -406,28 +463,40 @@ Player: I have a special delivery for your leader. Where are they?
 
 Ogre: Leader? Queen? Behind door. No one allowed in. No human allowed. Me squash human.
 
+<<animate OgreStanding Squash>>
 The ogre slaps its hands together in a squishing motion. The ogre moves in your direction.
 
 You need to somehow get past the ogre and make your final delivery.
 
-What do you do? (Timed)
 <<startTimer 16>>
 <<if $dagger is true>>
     -> Pull out the obsidian dagger.
         <<interrruptTimer none>>
         <<jump Pull_out_the_obsidian_dagger>>
+    -> Wait and see what the ogre does. #timed
+        <<interrruptTimer none>>
+        <<jump Wait_and_see_what_the_ogre_does>>
 <<elseif $axe is true>>
     -> Use the axe on the weak columns.
         <<interrruptTimer none>>
         <<jump Use_the_axe_on_the_weak_columns>>
+    -> Wait and see what the ogre does. #timed
+        <<interrruptTimer none>>
+        <<jump Wait_and_see_what_the_ogre_does>>
 <<elseif $lantern is true>>
     -> Throw the lantern at the ogre.
         <<interrruptTimer none>>
         <<jump Throw_the_lantern_at_the_ogre>>
+    -> Wait and see what the ogre does. #timed
+        <<interrruptTimer none>>
+        <<jump Wait_and_see_what_the_ogre_does>>
 <<elseif $assassin is true>>
     -> Call for Val's expertise.
         <<interrruptTimer none>>
         <<jump Call_for_Vals_expertise>>
+    -> Wait and see what the ogre does. #timed
+        <<interrruptTimer none>>
+        <<jump Wait_and_see_what_the_ogre_does>>
 <<else>>
     -> Wait and see what the ogre does. #timed
         <<interrruptTimer none>>
@@ -440,6 +509,8 @@ position: 4838,-1967
 ---
 You pull out the obsidian dagger that Leyton gave you. He said it would frighten ogres somehow. Let's hope he wasn't lying. You show the dagger to the ogre.
 
+<<enableDisable OgreToTheSide OgreStanding>>
+<<animate OgreToTheSide Terrified>>
 The ogre looks confused then it takes a moment to register what it is looking at. The ogre shocked and afraid it falls back on its hind quarters and begins to cower in fear. It gets up and runs to hide behind a stone column while continuously maintaining eye contact with the dagger.
 
 Ogre: That's the obsidian dagger of the Ogre Slayer! Stay away from me!
@@ -462,10 +533,14 @@ You quickly wield the axe in your hands and run to the closest column that looks
 
 The axe ricochet's off the stone as the column begins to rumble and shake. You drop the axe and push the unbalanced column towards the ogre's gigantic form. The ogre lifts its hands in an attempt to stop the force of the column but it fails. 
 
+<<animate OgreStanding Death>>
 The ogre is crushed beneath the column. Now's your chance to get to the Queen and finally deliver the special package.
 
 <<specificPosition RunToDoor>>
-<<wait 2>>
+<<wait 1>>
+<<enableDisable OgreToTheSide OgreStanding>>
+<<animate OgreToTheSide Death>>
+<<wait 1>>
 You sprint to the wooden door and push it open. 
 // *The player must pedal hard to push the door open.*
 
@@ -478,12 +553,17 @@ position: 4836,-1589
 ---
 You recognise that the ogre is wearing filthy greasy rags. If you throw the lantern at the ogre it will ignite the oily rags and distract the ogre.
 
-You pull the lantern from your pack and reignite it. You wind your arm back readying for a throw. You launch the lantern at the ogre's clothing and it immediately catches fire. The ogre, now in a panicked state, bats at the flames that have engulfed it's gigantic form.
+You pull the lantern from your pack and reignite it. You wind your arm back readying for a throw. You launch the lantern at the ogre's clothing and it immediately catches fire. 
 
-The ogre is distracted. Now's your chance to get to the Queen and finally deliver the special package.
+<<enableDisable OgreOnFire OgreStanding>>
+<<animate OgreOnFire OnFire>>
+The ogre, now in a panicked state, bats at the flames that have engulfed it's gigantic form. The ogre is distracted. Now's your chance to get to the Queen and finally deliver the special package.
 
 <<specificPosition RunToDoor>>
-<<wait 2>>
+<<wait 1>>
+<<enableDisable OgreToTheSide OgreOnFire>>
+<<animate OgreToTheSide Death>>
+<<wait 1>>
 You sprint to the wooden door and push it open. 
 // *The player must pedal hard to push the door open.*
 
@@ -500,11 +580,13 @@ Player: Val! Help me! Get rid of this ogre!
 
 <<enable MagicMissile true>>
 <<wait 1.5>>
+<<animate OgreStanding Hit>>
 A sudden burst of magical energy blasts the ogre in the torso. It stumbles a little bit then gathers its strength for an attack on you. 
 
 <<enable MagicMissile true>>
 <<enable Smoke true>>
 <<wait 1.5>>
+<<animate OgreStanding Hit>>
 <<enable ValStanding true>>
 <<wait 1>>
 <<enable Smoke false>>
@@ -515,11 +597,13 @@ Val: My, my, looks like you've got yourself in a bit of a sticky situation?
 <<animate ValStanding PointGesture>>
 <<enable MagicMissile true>>
 <<wait 1.5>>
+<<animate OgreStanding Hit>>
 Val launches magical spells from her fingers towards the ogre. The ogre is distracted. Now's your chance to get to the Queen and finally deliver the special package.
 
 <<specificPosition RunToDoor>>
 <<wait 1>>
-<<enable Ogre false>>
+<<enableDisable OgreToTheSide OgreStanding>>
+<<animate OgreToTheSide Death>>
 <<wait 1>>
 You sprint to the wooden door and push it open. 
 // *The player must pedal hard to push the door open.*
@@ -531,7 +615,11 @@ You sprint to the wooden door and push it open.
 title: Wait_and_see_what_the_ogre_does
 position: 4832,-1181
 ---
-You stand there stunned not knowing what to do. The ogre lunges to grab you. It succeeds in restraining you. It pulls out a rope and ties it around you. 
+You stand there stunned not knowing what to do. 
+
+<<enableDisable OgreWalking OgreStanding>>
+<<wait 5>>
+The ogre lunges to grab you. It succeeds in restraining you. It pulls out a rope and ties it around you. 
 
 <<specificPosition TiedUp>>
 <<wait 2>>
@@ -811,16 +899,16 @@ Garbanzo: Follow me. There's a secret tunnel this way.
 <<enableDisable StoneUncovered StoneCovered>>
 Garbanzo pushes a large stone out of the way. Behind the stone is a tunnel with a light at the end of it.
 
+<<nextPosition none>>
+<<wait 2>>
+You pass through the tunnel and reach the light ahead. 
+
 <<jump Go_through_the_tunnel>>
 ===
 
 title: Go_through_the_tunnel
 position: 2756,435
 ---
-<<nextPosition none>>
-<<wait 2>>
-You pass through the tunnel and reach the light ahead. 
-
 <<goToScene EldoriaThroneRoomAlt>>
 <<wait 2>>
 You've entered the castles throne room. Looks like you've just come out from behind a secret room behind the throne. 
@@ -833,6 +921,7 @@ You look for Garbanzo but he's run off to somewhere already.
 
 The goblin looks in your direction and points at you.
 
+<<animate GoblinShaman Taunt>>
 Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot a lightning bolt frew your face.
 
 What do you do?
@@ -847,8 +936,10 @@ position: 3138,-115
 ---
 Player: Looks like a lightning bolt already went through yours.
 
+<<animate GoblinShaman Yell>>
 Goblin Shaman: I'll get you for that!
 
+<<animate GoblinShaman Spin>>
 The goblin starts to wave its staff around in the air. Loud rumbling in the air grows as the goblin twirls the staff. You see lightning flash across the sky from a hole in the roof. You get a sense that the goblin is trying to cast some sort of lightning spell.
 
 Goblin Shaman: I'm going to vaporize you.
@@ -864,18 +955,28 @@ What do you do? Timed.
     -> Offer the diamond as a bribe.
         <<interrruptTimer none>>
         <<jump Offer_the_diamond_as_a_bribe>>
+    -> Hide behind the throne.
+        <<interrruptTimer none>>
+        <<jump Hide_behind_the_throne>>
 <<elseif $animalPendant is true>>
     -> Use the animal pendant.
         <<interrruptTimer none>>
         <<jump Use_the_animal_pendant>>
+    -> Hide behind the throne.
+        <<interrruptTimer none>>
+        <<jump Hide_behind_the_throne>>
 <<elseif $smokeVial is true>>
     -> Throw the smoke vial at the goblin.
         <<interrruptTimer none>>
         <<jump Throw_the_smoke_vial_at_the_goblin>>
+    -> Hide behind the throne.
+        <<interrruptTimer none>>
+        <<jump Hide_behind_the_throne>>
+<<else>>
+    -> Hide behind the throne.
+        <<interrruptTimer none>>
+        <<jump Hide_behind_the_throne>>
 <<endif>>
--> Hide behind the throne.
-    <<interrruptTimer none>>
-    <<jump Hide_behind_the_throne>>
 ===
 
 title: Say_that_youre_not_a_human
@@ -883,8 +984,10 @@ position: 3121,272
 ---
 Player: Who're you calling human? I'm actually an elf with short ears.
 
+<<animate GoblinShaman Yell>>
 Goblin Shaman: You don't smell like an elf. You reek of human stench!
 
+<<animate GoblinShaman Spin>>
 The goblin starts to wave its staff around in the air. Loud rumbling in the air grows as the goblin twirls the staff. You see lightning flash across the sky from a hole in the roof. You get a sense that the goblin is trying to cast some sort of lightning spell.
 
 Goblin Shaman: I'm going to vaporize you.
@@ -900,18 +1003,28 @@ What do you do? Timed.
     -> Offer the diamond as a bribe.
         <<interrruptTimer none>>
         <<jump Offer_the_diamond_as_a_bribe>>
+    -> Hide behind the throne.
+        <<interrruptTimer none>>
+        <<jump Hide_behind_the_throne>>
 <<elseif $animalPendant is true>>
     -> Use the animal pendant.
         <<interrruptTimer none>>
         <<jump Use_the_animal_pendant>>
+    -> Hide behind the throne.
+        <<interrruptTimer none>>
+        <<jump Hide_behind_the_throne>>
 <<elseif $smokeVial is true>>
     -> Throw the smoke vial at the goblin.
         <<interrruptTimer none>>
         <<jump Throw_the_smoke_vial_at_the_goblin>>
+    -> Hide behind the throne.
+        <<interrruptTimer none>>
+        <<jump Hide_behind_the_throne>>
+<<else>>
+    -> Hide behind the throne.
+        <<interrruptTimer none>>
+        <<jump Hide_behind_the_throne>>
 <<endif>>
--> Hide behind the throne.
-    <<interrruptTimer none>>
-    <<jump Hide_behind_the_throne>>
 ===
 
 title: Offer_the_diamond_as_a_bribe
@@ -921,11 +1034,15 @@ Player: Wait wait wait. I have a beautiful diamond that I'd like to give to you.
 
 You pull out the diamond and hold it out towards the goblin.
 
+<<animate GoblinShaman StopSpin>>
 The goblin stops swinging its staff for a moment to see the gemstone in your hand.
 
 Goblin Shaman: Is that a real diamond? And it's for me? Why didn't you say that sooner?
 
 <<enableDisable GarbanzoSneak GarbanzoHide>>
+<<wait 3>>
+<<animate GoblinShaman Death>>
+<<enableDisable GarbanzoStanding GarbanzoSneak>>
 As the goblin lowers it's staff Garbanzo reveals himself from behind the potted plant and pounces on the goblin. Garbanzo kicks the staff away and restrains the goblin.
 
 Garbanzo: I'll take that as payment for keeping you alive.
@@ -935,7 +1052,7 @@ Garbanzo takes the diamond from your hand.
 Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
 
 <<specificPosition RunDownHall>>
-<<enableDisable GarbanzoRunDownHall GarbanzoSneak>>
+<<enableDisable GarbanzoRunDownHall GarbanzoStanding>>
 <<wait 2>>
 You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
 <<setNextNodeName Follow_Garbanzo_to_the_treasure_room>>
@@ -947,15 +1064,23 @@ position: 3692,-83
 ---
 You don the animal pendant and close your eyes. You hear the laughter of the goblin and the rumbling of the sky. You call upon the forest's aid.
 
+<<specificPosition ThroneRoomThroneSpot>>
+<<wait 1>>
+<<animate GoblinShaman StopSpin>>
+<<animate GoblinShaman Stumble>>
+<<wait 1>>
+
 Suddenly the laughter turns to screams. You open your eyes to observe the goblin being attacked by a large bear in restraints. Several goblins are trying to stop the bears attacks. 
 
 <<enableDisable GarbanzoSneak GarbanzoHide>>
+<<wait 3>>
 Garbanzo reveals himself from behind the potted plant.
+<<enableDisable GarbanzoStanding GarbanzoSneak>>
 
 Garbanzo: I think I'll leave that one alone. Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
 
 <<specificPosition RunDownHall>>
-<<enableDisable GarbanzoRunDownHall GarbanzoSneak>>
+<<enableDisable GarbanzoRunDownHall GarbanzoStanding>>
 <<wait 2>>
 You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
 <<setNextNodeName Follow_Garbanzo_to_the_treasure_room>>
@@ -967,11 +1092,19 @@ position: 3681,118
 ---
 You grip the smoke vial in your pocket and throw it on the ground near the goblin casting its spell. A large dense cloud of smoke engulfs the goblin. 
 
+<<enable Smoke true>>
+<<animate GoblinShaman StopSpin>>
+
 Goblin Shaman: What is this? *cough* *cough* I can't see nuffing. *cough*
+<<animate GoblinShaman Stumble>>
 
+Garbanzo reveals himself from behind the potted plant.
 <<enableDisable GarbanzoSneak GarbanzoHide>>
-Garbanzo reveals himself from behind the potted plant. Garbanzo dives into the smoke cloud and you hear a scream followed by muffled speech. 
+<<wait 3>>
+Garbanzo dives into the smoke cloud and you hear a scream followed by muffled speech. 
 
+<<enableDisable GarbanzoStanding GarbanzoSneak>>
+<<enable Smoke false>>
 The smoke clears and Garbanzo is standing on the goblin who's in restraints.
 
 Garbanzo: Where'd you get that smoke vial? Was it from a wizard in a tower? I stole his horse but I forgot to check his pockets.
@@ -981,7 +1114,7 @@ Garbanzo shrugs.
 Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
 
 <<specificPosition RunDownHall>>
-<<enableDisable GarbanzoRunDownHall GarbanzoSneak>>
+<<enableDisable GarbanzoRunDownHall GarbanzoStanding>>
 <<wait 2>>
 You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
 <<setNextNodeName Follow_Garbanzo_to_the_treasure_room>>
@@ -999,7 +1132,11 @@ You duck back behind the throne to take cover.
 You hear a commotion outside followed by muffled speech. 
 
 <<specificPosition ThroneRoomThroneSpot>>
-<<wait 2>>
+<<wait 1>>
+<<animate GoblinShaman StopSpin>>
+<<enableDisable GarbanzoStanding GarbanzoSneak>>
+<<animate GoblinShaman Death>>
+<<wait 1>>
 You step out and see Garbanzo is standing on the goblin who is in restraints.
 
 Garbanzo looks in your direction.
@@ -1011,7 +1148,7 @@ Garbanzo rolls his eyes at you.
 Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure room. Come on, let's go.
 
 <<specificPosition RunDownHall>>
-<<enableDisable GarbanzoRunDownHall GarbanzoSneak>>
+<<enableDisable GarbanzoRunDownHall GarbanzoStanding>>
 <<wait 2>>
 You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
 <<setNextNodeName Follow_Garbanzo_to_the_treasure_room>>
@@ -1045,6 +1182,7 @@ Player: Hey, big guy! When was the last time you took a bath?!
 
 The ogre looks at you angrily. Brows furrowed. Teeth bared.
 
+<<animate OgreStanding Squash>>
 Ogre: No bath big enough for ogre in Eldoria! Argh!
 
 The ogre runs at you at an alarming pace. The ground shakes as the ogre thumps it's way towards you.
@@ -1057,22 +1195,35 @@ What do you do? (Timed)
     -> Throw the dagger at the ogre.
         <<interrruptTimer none>>
         <<jump Throw_the_dagger_at_the_ogre>>
+    -> Prepare to be flattened.
+        <<interrruptTimer none>>
+        <<jump Prepare_to_be_flattened>>
 <<elseif $axe is true>>
     -> Use the axe to try and defend yourself.
         <<interrruptTimer none>>
         <<jump Use_the_axe_to_try_and_defend_yourself>>
+    -> Prepare to be flattened.
+        <<interrruptTimer none>>
+        <<jump Prepare_to_be_flattened>>
 <<elseif $lantern is true>>
     -> Throw the lantern at the floor.
         <<interrruptTimer none>>
         <<jump Throw_the_lantern_at_the_floor>>
+    -> Prepare to be flattened.
+        <<interrruptTimer none>>
+        <<jump Prepare_to_be_flattened>>
 <<elseif $assassin is true>>
     -> Call out for Val's help.
         <<interrruptTimer none>>
         <<jump Call_out_for_Vals_help>>
+    -> Prepare to be flattened.
+        <<interrruptTimer none>>
+        <<jump Prepare_to_be_flattened>>
+<<else>>
+    -> Prepare to be flattened.
+        <<interrruptTimer none>>
+        <<jump Prepare_to_be_flattened>>
 <<endif>>
--> Prepare to be flattened.
-    <<interrruptTimer none>>
-    <<jump Prepare_to_be_flattened>>
 ===
 
 title: Try_to_sneak_around_the_ogre
@@ -1082,6 +1233,7 @@ The ogre doesn't seem to have noticed you yet. It's just mindlessly staring at i
 
 You make it to the next column unnoticed. As you push off to the next column you hear a crumbling sound from above you. The last column was particularly weak and there are spots along it where it's been damage. A piece of stone falls from the column and lands on the floor with a loud BANG! 
 
+<<animate OgreStanding Squash>>
 Ogre: Hey! No humans allowed back here!
 
 The ogre runs at you at an alarming pace. The ground shakes as the ogre thumps it's way towards you.
@@ -1094,22 +1246,35 @@ What do you do? (Timed)
     -> Throw the dagger at the ogre.
         <<interrruptTimer none>>
         <<jump Throw_the_dagger_at_the_ogre>>
+    -> Prepare to be flattened.
+        <<interrruptTimer none>>
+        <<jump Prepare_to_be_flattened>>
 <<elseif $axe is true>>
     -> Use the axe to try and defend yourself.
         <<interrruptTimer none>>
         <<jump Use_the_axe_to_try_and_defend_yourself>>
+    -> Prepare to be flattened.
+        <<interrruptTimer none>>
+        <<jump Prepare_to_be_flattened>>
 <<elseif $lantern is true>>
     -> Throw the lantern at the floor.
         <<interrruptTimer none>>
         <<jump Throw_the_lantern_at_the_floor>>
+    -> Prepare to be flattened.
+        <<interrruptTimer none>>
+        <<jump Prepare_to_be_flattened>>
 <<elseif $assassin is true>>
     -> Call out for Val's help.
         <<interrruptTimer none>>
         <<jump Call_out_for_Vals_help>>
+    -> Prepare to be flattened.
+        <<interrruptTimer none>>
+        <<jump Prepare_to_be_flattened>>
+<<else>>
+    -> Prepare to be flattened.
+        <<interrruptTimer none>>
+        <<jump Prepare_to_be_flattened>>
 <<endif>>
--> Prepare to be flattened.
-    <<interrruptTimer none>>
-    <<jump Prepare_to_be_flattened>>
 ===
 
 title: Throw_the_dagger_at_the_ogre
@@ -1119,7 +1284,10 @@ You pull the dagger from your pack and lift your arm behind your head. You focus
 
 You failed to hit the ogre with the dagger. The ogre hasn't noticed your poor attempt at a throw and it still advances towards you.
 
-As ogre stomps in your direction and you wait for your end you hear the ogre yelp in pain as it raises it's foot up and you see the dagger wedged into it's sole. The ogre spins around and you see Garbanzo hanging on the back of the ogre. The ogre spins around once more and it falls forward towards you. THUNK! Garbanzo stands on the ogre's back with a dagger lodged in its spine.
+As the ogre stomps in your direction and you wait for your end you hear the ogre yelp in pain as it raises it's foot up and you see the dagger wedged into it's sole. 
+
+<<animate OgreStanding Death>>
+The ogre spins around and you see Garbanzo hanging on the back of the ogre. The ogre spins around once more before it falls. THUNK! Garbanzo stands on the ogre's back with a dagger lodged in its spine.
 
 Garbanzo: That's one golden arm of yours. Who taught *you* how to throw?
 
@@ -1130,7 +1298,8 @@ Garbanzo: The queen is definitely behind that wooden door. Do what you've been d
 <<specificPosition RunToDoor>>
 <<wait 1>>
 <<enable GarbanzoWaiting true>>
-<<enable Ogre false>>
+<<enableDisable OgreToTheSide OgreStanding>>
+<<animate OgreToTheSide Death>>
 <<wait 1>>
 You sprint to the wooden door and push it open. 
 //*The player must pedal hard to push the door open.*
@@ -1144,8 +1313,9 @@ position: 5058,-206
 You grit your teeth and wield the axe in your hands. You swing wildly in the air. The ogre stops in its tracks.
 
 Ogre: Haha! Human thinks it can hurt me with that little thi-
+<<animate OgreStanding Death>>
 
-The ogre's words are cut off and the ogre begins to fall forward. THUNK! The ogre lands face first onto the floor. Garbanzo stands on the ogre's back with a dagger lodged in its spine.
+The ogre's words are cut off and the ogre begins to fall. THUNK! The ogre lands face first onto the floor. Garbanzo stands on the ogre's back with a dagger lodged in its spine.
 
 Garbanzo: He's right. Did you really think that axe was going to work?
 
@@ -1156,7 +1326,8 @@ Garbanzo: The queen is definitely behind that wooden door. Do what you've been d
 <<specificPosition RunToDoor>>
 <<wait 1>>
 <<enable GarbanzoWaiting true>>
-<<enable Ogre false>>
+<<enableDisable OgreToTheSide OgreStanding>>
+<<animate OgreToTheSide Death>>
 <<wait 1>>
 You sprint to the wooden door and push it open. 
 //*The player must pedal hard to push the door open.*
@@ -1169,7 +1340,8 @@ position: 5061,59
 ---
 In an attempt to slow down the ogre you throw the lantern onto the floor. Oil spills out from the lantern and all over the ground. The ogre unknowingly runs over the oil and loses it's balance.
 
-The ogre spins around and you see Garbanzo hanging on the back of the ogre. The ogre spins around once more and it falls forward towards you. THUNK! Garbanzo stands on the ogre's back with a dagger lodged in its spine.
+<<animate OgreStanding Death>>
+The ogre spins around and you see Garbanzo hanging on the back of the ogre. The ogre spins around once more before it falls. THUNK! Garbanzo stands on the ogre's back with a dagger lodged in its spine.
 
 Garbanzo: That's one golden arm of yours. Who taught *you* how to throw?
 
@@ -1180,7 +1352,8 @@ Garbanzo: The queen is definitely behind that wooden door. Do what you've been d
 <<specificPosition RunToDoor>>
 <<wait 1>>
 <<enable GarbanzoWaiting true>>
-<<enable Ogre false>>
+<<enableDisable OgreToTheSide OgreStanding>>
+<<animate OgreToTheSide Death>>
 <<wait 1>>
 You sprint to the wooden door and push it open. 
 //*The player must pedal hard to push the door open.*
@@ -1198,11 +1371,17 @@ Player: Val! Help me! Get rid of this ogre!
 Magical chains suddenly hold the ogre's legs in place. It struggles to move its legs.
 
 Ogre: Let go! Ogre will squash huma-
+<<animate OgreStanding Death>>
 
-The ogre's words are cut off and the ogre begins to fall forward. THUNK! The ogre lands face first onto the floor. Garbanzo stands on the ogre's back with a dagger lodged in its spine.
+The ogre's words are cut off and the ogre begins to fall. THUNK! The ogre lands face first onto the floor. Garbanzo stands on the ogre's back with a dagger lodged in its spine.
 
 Garbanzo: Those magical chains look familiar.
 
+<<enable Smoke true>>
+<<wait 1>>
+<<enable ValStanding true>>
+<<wait 1>>
+<<enable Smoke false>>
 A halfling appears from a cloud of smoke.
 
 Val: Nice to see you again Garbanzo.
@@ -1212,13 +1391,19 @@ Garbanzo: You still owe me for the game of cards we had.
 Val: Ah, well that sounds like my cue to leave.
 
 A cloud of smoke engulfs Val and then dissapates. Val is gone.
+<<enable Smoke true>>
+<<wait 1>>
+<<enable ValStanding false>>
+<<wait 1>>
+<<enable Smoke false>>
 
 Garbanzo: The queen is definitely behind that wooden door. Do what you've been doing, distract her, while I'll do what I've been doing, which is cleaning up your mess. I'll go in first.
 
 <<specificPosition RunToDoor>>
 <<wait 1>>
 <<enable GarbanzoWaiting true>>
-<<enable Ogre false>>
+<<enableDisable OgreToTheSide OgreStanding>>
+<<animate OgreToTheSide Death>>
 <<wait 1>>
 You sprint to the wooden door and push it open. 
 //*The player must pedal hard to push the door open.*
@@ -1232,8 +1417,9 @@ position: 5048,616
 You stand there stunned by the sheer size of the creature before you. 
 
 Ogre: Ha ha little human too scared to move! Ogre is coming to squish y-
+<<animate OgreStanding Death>>
 
-The ogre's words are cut off and the ogre begins to fall forward. THUNK! The ogre lands face first onto the floor. Garbanzo stands on the ogre's back with a dagger lodged in its spine.
+The ogre's words are cut off and the ogre begins to fall. THUNK! The ogre lands face first onto the floor. Garbanzo stands on the ogre's back with a dagger lodged in its spine.
 
 Garbanzo: Do you do anything besides stand there?
 
@@ -1242,7 +1428,8 @@ Garbanzo: The queen is definitely behind that wooden door. Do what you've been d
 <<specificPosition RunToDoor>>
 <<wait 1>>
 <<enable GarbanzoWaiting true>>
-<<enable Ogre false>>
+<<enableDisable OgreToTheSide OgreStanding>>
+<<animate OgreToTheSide Death>>
 <<wait 1>>
 You sprint to the wooden door and push it open. 
 //*The player must pedal hard to push the door open.*
@@ -1716,6 +1903,7 @@ You've entered the castle's throne room. The walls are high and are beautifully 
 
 The goblin looks in your direction and points at you.
 
+<<animate GoblinShaman Taunt>>
 Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot a lightning bolt frew your face.
 
 <<if $metOli is true>>
@@ -1726,6 +1914,7 @@ Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot
     <<animate OliAttacking LightningAttack>>
     <<wait 1>>
     <<enable LightningAttackObject true>>
+    <<animate GoblinShaman Stumble>>
     <<wait 0.25>>
     <<enable LightningAttackObject false>>
     Oli fires a lightning bolt from his hammer. It lands directly on the goblin's chest, blasting it back, hitting the throne.
@@ -1740,6 +1929,7 @@ Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot
     <<wait 5>>
     
     <<animate MudbrickBigMode Grab>>
+    <<animate GoblinShaman Stumble>>
     What once was a small tortoise is now a giant, house crushing, tortoise. He reaches down at the goblin that stands there stunned at what he's looking at.
 
     Mudbrick: Goooooooo. Iiiiiiii. Willllllllll. Staaaaay. H-heeeeerrreee.
@@ -1748,6 +1938,7 @@ Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot
 
     <<enable FinnArmy true>>
     A group of Finn's seemed to appear out of thin air and surround the goblin. 
+    <<animate GoblinShaman Stumble>>
 
     Finn leans over to you and whispers.
 
@@ -1793,9 +1984,9 @@ You run down the hallway and into another room with tall stone columns. Some of 
     <<animate LeytonStanding SpellLaunch>>
     <<wait 0.3>>
     <<enableDisable FireballLaunch FireballCharge>>
+    <<wait 1.5>>
+    <<animate OgreStanding Death>> 
     Leyton lobs this fireball directly at the ogre. The fireball explodes upon impact with the ogre. The ogre topples over onto the ground.
-
-    <<enable Ogre false>> 
 
     <<animate LeytonStanding Point>>
     Leyton: I think you need to go through that door.
@@ -1805,9 +1996,8 @@ You run down the hallway and into another room with tall stone columns. Some of 
 
     <<enableDisable ThakaliRunning ThakaliStanding>>
     <<wait 10>>
+    <<animate OgreStanding Death>> 
     Thakali runs towards the ogre, swinging his axe's wildly. As he swings he occasionally hits a stone column. The columns begin to topple over and eventually land on the ogre.
-
-    <<enable Ogre false>> 
 
     <<animate ThakaliVictory Cheer>>
     Thakali: Hahah! Thakali wins!
@@ -1816,10 +2006,9 @@ You run down the hallway and into another room with tall stone columns. Some of 
     <<enableDisable DaisyAttacking DaisyStanding>>
     <<animate DaisyAttacking Draw>>
     <<enable GreatAxe true>>
-    <<wait 7>>
+    <<wait 5>>
+    <<animate OgreStanding Death>> 
     Daisy runs towards the ogre, axe outstretched, ready to swing. She jumps up into the air with great height. She lifts her axe above her head. The axe comes crashing down onto the ogre. 
-
-    <<enable Ogre false>>
 
     Daisy: Huh. I thought this would have been harder. Get in there courier.
     <<animate DaisyVictory AngryPoint>>
@@ -1843,13 +2032,20 @@ You run down the hallway and into another room with tall stone columns. Some of 
 <<wait 1>>
 <<if $metLeyton is true>>
     <<enableDisable LeytonWaiting LeytonStanding>>
+    <<enableDisable OgreToTheSide OgreStanding>>
+    <<animate OgreToTheSide Death>>
 <<elseif $metThakali is true>>
     <<enableDisable ThakaliWaiting ThakaliVictory>>
+    <<enableDisable OgreToTheSide OgreStanding>>
+    <<animate OgreToTheSide Death>>
 <<elseif $metDaisy is true>>
     <<enableDisable DaisyWaiting DaisyVictory>>
+    <<enableDisable OgreToTheSide OgreStanding>>
+    <<animate OgreToTheSide Death>>
 <<elseif $metVal is true>>
     <<enableDisable ValTalkWithOgre ValStanding>>
-    <<enableDisable OgreTalking Ogre>>
+    <<enableDisable OgreToTheSide OgreStanding>>
+    <<animate OgreToTheSide Talk>>
 <<endif>>
 <<wait 1>>
 You sprint to the wooden door and push it open. 
@@ -3184,7 +3380,13 @@ You toss the package into the fiery depths and watch it plop into the lava and s
 
 A bubble of molten rock bursts out from where it landed.
 
-A sudden gust of air rushes past you. You shield your eyes from any oncoming debris. Once the air subsides you look out and see a dragon floating above the lava in front of you.
+A sudden gust of air rushes past you. You shield your eyes from any oncoming debris. 
+
+<<specificPosition PlatformSpot>>
+<<wait 1>>
+<<enable Dragon true>>
+<<wait 1>>
+Once the air subsides you look out and see a dragon in front of you.
 
 It looks directly at you. A voice is heard in your head.
 
