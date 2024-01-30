@@ -61,7 +61,7 @@ title: Outrun_the_goblin
 position: 542,-600
 ---
 <<moveClose false>>
-<<wait 10>> // Exercise timer
+<<wait 30>> // Exercise timer
 You zip through the forest on Stormhoof's back. You are much faster than the goblin. A river near by rushes loudly. Stormhoof kicks up a rock and it hits the goblin off it's mount and into the river.
 
 You've outrun the goblin one last time.
@@ -73,14 +73,15 @@ title: Ride_to_Eldoria
 position: 1220,-1015
 ---
 <<goToScene EldoriaGates>>
-<<wait 2>>
+<<wait 5>>
 You ride down the path towards Eldoria. You pass farms and barns as you near the kingdom. Up ahead you can see the walls of Eldoria. The walls look empty. The roads look empty. Seems like no one is here. At least... no humans...
+<<wait 2>>
 
-<<wait 20>>
 <<nextPosition none>>
 <<wait 1>>
 <<enable Stormhoof true>>
 <<rideHorse false>> 
+<<enable BearWithGoblins true>>
 <<wait 1>>
 
 You approach the gates of Eldoria. The gate doors swing open and a large bear lumbers from behind the open doors. To your relief, the bear is being held down by several goblins. 
@@ -107,6 +108,7 @@ Bear Goblin: Well well well. This one here makes demands.
 
 The goblin kicks the bear below in an attempt to get it's attention.
 
+<<animate BearGoblinGuard Taunt>>
 Bear Goblin: Oi, bear. Squash this puny 'uman!
 
 The bear slowly walks towards you.
@@ -130,6 +132,7 @@ Bear Goblin: If you want in. You 'ave to go frew me. Haha.
 
 The other goblins laugh. The goblin kicks the bear below in an attempt to get it's attention.
 
+<<animate BearGoblinGuard Taunt>>
 Bear Goblin: Oi, bear. Squash this puny human!
 
 The bear slowly walks towards you.
@@ -153,6 +156,7 @@ A sudden feeling of immense strength possesses you. You feel the power grip your
 
 The bear falls onto you but you feel nothing. You look up to see the bear above you in the air. You are lifting the bear above your head. The goblins look at you in shock...and fear. The goblins scatter in every direction.
 
+<<enableDisable BearDefeated BearWithGoblins>>
 You drop the bear onto the ground. It lies there tired and defeated. 
 
 <<jump Approach_the_castle_doors>>
@@ -167,6 +171,7 @@ Player: Nothing can resist the temptation of a Pattersby Pastry.
 
 You throw the pastry out towards the forest away from the gates.
 
+<<enable BearWithGoblins false>>
 The bear dashes in the direction the pastry was thrown. The goblins that are still holding onto the restraints are dragged along the dirt path. The others who let go, scatter into the forest.
 
 <<jump Approach_the_castle_doors>> 
@@ -176,10 +181,7 @@ title: Approach_the_castle_doors
 position: 2784,-1294
 ---
 <<goToScene EldoriaCourtyard>>
-<<wait 1>>
-<<enable Stormhoof false>>
-<<rideHorse true>> 
-<<wait 1>>
+<<wait 2>>
 You walk through the gates and towards the inner castle doors. 
 
 <<specificPosition WalkToTheDoors>>
@@ -622,7 +624,9 @@ You stand there stunned not knowing what to do.
 The ogre lunges to grab you. It succeeds in restraining you. It pulls out a rope and ties it around you. 
 
 <<specificPosition TiedUp>>
-<<wait 2>>
+<<wait 1>>
+<<enable GoblinHordeGroup true>>
+<<wait 1>>
 
 A wave of goblins flows from the hallway and into the open area.
 
@@ -638,7 +642,7 @@ title: Go_to_the_Queen
 position: 5536,-1687
 ---
 <<goToScene TreasureRoom>>
-<<wait 2>>
+<<wait 2.2>>
 <<enable GoblinQueenAtTop true>>
 
 Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. Atop the mound of riches lies a large goblin. The goblin wears a robe too big for its stature and dons many rings and necklaces. This must be their leader.
@@ -718,8 +722,8 @@ Seems like you delivered something that changed your destiny forever.
 title: Quickly_get_to_Eldoria
 position: 513,77
 ---
-<<wait 10>> // Exercise timer
-You ride swiftly down the path towards Eldoria. You pass farms and barns as you near the kingdom. Up ahead you can see the walls of Eldoria. The walls look empty. The roads look empty. Seems like no one is here. At least... no humans...
+<<wait 30>> // Exercise timer
+You ride swiftly down the path towards Eldoria.
 
 Garbanzo: You go the gate. Distract the guards and I'll take them out. Oh, by the way, the name's Garbanzo.
 
@@ -733,7 +737,9 @@ title: Approach_the_gates
 position: 1211,45
 ---
 <<goToScene EldoriaGates>>
-<<wait 20>>
+<<wait 5>>
+You pass farms and barns as you near the kingdom. Up ahead you can see the walls of Eldoria. The walls look empty. The roads look empty. Seems like no one is here. At least... no humans...
+<<wait 2>>
 
 <<nextPosition none>>
 <<wait 1>>
@@ -742,8 +748,10 @@ position: 1211,45
 <<wait 1>>
 You approach the gates of Eldoria. Two creatures pop out from behind the gate's doors.
 
+<<enable GoblinGuard1Walking true>>
 Gate Goblin 1: Hey you! Stop!
 
+<<enable GoblinGuard2Walking true>>
 Gate Goblin 2: Stop where you are!
 
 <<enable GarbanzoSneakInWait true>>
@@ -780,15 +788,24 @@ You toss it towards them and they fight over the pastry.
 <<enableDisable GarbanzoSneakInAttack GarbanzoSneakInWait>>
 <<animate GarbanzoSneakInAttack Crouch>>
 <<animate GarbanzoSneakInAttack Sneak>>
-<<wait 3>>
-Garbanzo sneaks up behind them and wacks them on the head. 
+<<wait 2.5>>
 
 <<animate GarbanzoAttack Assassination>>
-They both slump over face first into the dirt.
+<<wait 0.5>>
+<<animate GoblinGuard1Standing Death>>
+<<wait 0.5>>
+<<animate GoblinGuard2Standing Death>>
+<<wait 2>>
 
 Garbanzo picks up the pastry and starts to eat it. He talks to you mouth full of pastry.
 
 Garbanzo: Ok. I'll meet you soon. I know a secret way into the castle through the dungeon.
+
+<<enableDisable GarbanzoSneakInGates GarbanzoAttack>>
+<<animate GarbanzoSneakInGates Crouch>>
+<<animate GarbanzoSneakInGates Sneak>>
+<<wait 3>>
+Garbanzo slips inside the gate and you lose sight of him.
 
 <<jump Head_to_the_dungeon_entrance>>
 ===
@@ -807,13 +824,22 @@ The goblins are enamoured by your performance.
 <<enableDisable GarbanzoSneakInAttack GarbanzoSneakInWait>>
 <<animate GarbanzoSneakInAttack Crouch>>
 <<animate GarbanzoSneakInAttack Sneak>>
-<<wait 3>>
-Garbanzo sneaks up behind them and wacks them on the head. 
+<<wait 2.5>>
 
 <<animate GarbanzoAttack Assassination>>
-They both slump over face first into the dirt.
+<<wait 0.5>>
+<<animate GoblinGuard1Standing Death>>
+<<wait 0.5>>
+<<animate GoblinGuard2Standing Death>>
+<<wait 2>>
 
 Garbanzo: Ok. I'll meet you soon. I know a secret way into the castle through the dungeon.
+
+<<enableDisable GarbanzoSneakInGates GarbanzoAttack>>
+<<animate GarbanzoSneakInGates Crouch>>
+<<animate GarbanzoSneakInGates Sneak>>
+<<wait 3>>
+Garbanzo slips inside the gate and you lose sight of him.
 
 <<jump Head_to_the_dungeon_entrance>>
 ===
@@ -821,17 +847,9 @@ Garbanzo: Ok. I'll meet you soon. I know a secret way into the castle through th
 title: Head_to_the_dungeon_entrance
 position: 2771,-452
 ---
-<<enableDisable GarbanzoSneakInGates GarbanzoAttack>>
-<<animate GarbanzoSneakInGates Crouch>>
-<<animate GarbanzoSneakInGates Sneak>>
-Garbanzo slips inside the gate and you lose sight of him.
-<<wait 3>>
-
 <<goToScene EldoriaCourtyard>>
-<<wait 1>>
-<<enable Stormhoof false>>
-<<rideHorse true>> 
-<<wait 1>>
+<<wait 2.2>>
+<<enable GoblinHordeGroup true>> 
 
 To your dismay, a horde of goblins await you.
 
@@ -846,7 +864,9 @@ position: 2767,15
 <<specificPosition WalkToDungeon>>
 <<wait 1>>
 <<enable Stormhoof true>>
-<<rideHorse false>> 
+<<rideHorse false>>
+<<enable GoblinsAtDungeon true>> 
+<<enable GoblinHordeGroup false>> 
 <<wait 1>>
 The goblins lead you towards the dungeon entrance.
 
@@ -870,13 +890,16 @@ It's very dark in here. The occational torch lights the tunnel. You pass by seve
 <<endif>>
 
 <<nextPosition none>>
+<<wait 1>>
 <<enableDisable ClosedDoor OpenDoor>>
-<<wait 2>>
+<<enable GoblinGuardStanding true>>
+<<wait 1>>
 
 The goblin pushes you into an empty looking room and closes the metal gate behind you.
 
 Dungeon Goblin: Don't even fink about escaping because there's no way out. Haha.
 
+<<enableDisable GoblinGuardWalking GoblinGuardStanding>>
 The dungeon goblin laughs as he walks back to the entrance on the dungeon tunnel. The laughter echoes down the tunnel until you can hear it no more. 
 
 You sit in the darkness awaiting your end.
@@ -1076,6 +1099,7 @@ You don the animal pendant and close your eyes. You hear the laughter of the gob
 <<wait 1>>
 <<animate GoblinShaman StopSpin>>
 <<animate GoblinShaman Stumble>>
+<<enable BearWithGoblins true>>
 <<wait 1>>
 
 Suddenly the laughter turns to screams. You open your eyes to observe the goblin being attacked by a large bear in restraints. Several goblins are trying to stop the bears attacks. 
@@ -1449,7 +1473,7 @@ title: Follow_behind_Garbanzo_into_the_room
 position: 5582,-106
 ---
 <<goToScene TreasureRoom>>
-<<wait 2>>
+<<wait 2.2>>
 <<enable GoblinQueenChoking true>>
 <<enable GarbanzoChoking true>>
 <<animate GarbanzoChoking Choking>>
@@ -1853,7 +1877,10 @@ You and your party set off towards Eldoria.
 <<wait 30>> // Exercise timer
 
 <<goToScene EldoriaGates>>
-<<wait 20>>
+<<wait 5>>
+You pass farms and barns as you near the kingdom. Up ahead you can see the walls of Eldoria. The walls look empty. The roads look empty. Seems like no one is here. At least... no humans...
+<<wait 2>>
+
 <<nextPosition none>>
 <<wait 1>>
 <<if $metBjorn is true>>
@@ -1863,30 +1890,33 @@ You and your party set off towards Eldoria.
 <<endif>>
 <<enable Stormhoof true>>
 <<rideHorse false>> 
+<<enable BearWithGoblins true>>
 <<wait 1>>
 You approach the gates of Eldoria. The gate doors swing open and a large bear lumbers from behind the open doors. To your relief, the bear is being held down by several goblins. 
 
 A goblin atop the bear speaks to you.
 
+<<animate BearGoblinGuard Taunt>>
 Bear Goblin: Oi you. What a'you doin' 'ere?! You'd better get outa 'ere before my bear eats you alive. Haha.
 
 The other goblins laugh too. The bear growls and flails its arms around nearly hitting you. The goblins tighten the restraints around its neck.
 
 <<if $metBjorn is true>>
-    <<animate BjornAtGates Gesture>>
     Bjorn: WAIT!! I KNOW THAT BEAR!! That's *MY* bear! You were late for the show and now I see why.
 
     <<animate BjornAtGates Stomp>>
-    <<animate BjornAtGates FlexDown>>
+    <<wait 1>>
+    <<enable BearGoblinGuard false>>
     Bjorn growls and charges at the goblins. One by one the goblins scamper in all directions. Bjorn rips off the restraints from the bear and gives his bear a big hug.
 
+    <<enableDisable BearDefeated BearWithGoblins>>
     Bjorn: I will look out for any more who try to come in. You go inside and make your delivery.
 
 <<elseif $metPetunia is true>>
-    <<animate PetuniaAtGates Wave>>
     Petunia: No one can resist my pastries. Would you all like a pastry? I've got plenty.
 
     <<animate PetuniaAtGates Cookies>>
+    <<enableDisable DistractedGoblins BearWithGoblins>>
     Petunia pulls out an array of pastries from her backpack. All the goblins let go of the bear and run towards the pastry selection. Petunia looks over to you.
 
     Petunia: Don't worry deary. I'll keep these goblins busy. You go ahead and deliver that package.
