@@ -3002,7 +3002,7 @@ position: 3443,2814
     <<wait 2>>
     You look up, the glow of sunlight shines through the cave. Seems like you might be near the top.
 
-    A growing hot mass of fiery lava and solid rock form into a large beast before your eyes. The lava beast looks to be guarding the way to the top of the cave. It doesn't say anything to you but you sense that if you were to approach it it would not go well. Across it's back you see a fine set of solid rock stairs that you could safely climb up to reach the cave top.
+    A growing hot mass of fiery lava and solid rock form into a large beast before your eyes. The lava beast looks to be guarding the way to the top of the cave. It doesn't say anything to you but you sense that if you were to approach it it would not go well. Around it you see a fine set of solid rock stairs that you could safely climb up to reach the cave top.
 
     What do you do?
     -> Attempt to climb the lava guardian.
@@ -3239,7 +3239,13 @@ Val: I see you're playing a dangerous game and your betting with your life.
 <<wait 0.4>>
 <<enable Icicle true>>
 <<wait 1>>
-One final icicle flies towards the creature freezing it's last molten limb. The creature has formed a perfectly good set of stairs up to the top of the cave. How convenient. Val disappears into a puff of smoke.
+<<enableDisable ColdPillars HotPillars>>
+One final icicle flies towards the creature freezing it's last molten limb. The ice around the creature has formed a perfectly good set of stairs up to the top of the cave. How convenient. Val disappears into a puff of smoke.
+<<enable Smoke true>>
+<<wait 1>>
+<<enable ValAttacking false>>
+<<wait 1>>
+<<enable Smoke false>>
 
 <<specificPosition WalkUpBeast>>
 <<wait 2>>
@@ -3599,7 +3605,7 @@ Everything goes dark.
 
 You open your eyes. Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. You wear a robe too big for your stature and you are wearing many rings and necklaces.
 
-You feel alot closer to the ground than usual. You feel you ears. Pointy. You feel your nose. Big. You find a mirror amongst the treasure. You look at yourself in the mirror. Skin. Green. 
+You feel alot closer to the ground than usual. You feel your ears. Pointy. You feel your nose. Big. You find a mirror amongst the treasure. You look at yourself in the mirror. Skin. Green. 
 
 You found yourself delivering something that altered the course of your destiny forever.
 
