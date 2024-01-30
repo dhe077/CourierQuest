@@ -639,6 +639,8 @@ position: 5536,-1687
 ---
 <<goToScene TreasureRoom>>
 <<wait 2>>
+<<enable GoblinQueenAtTop true>>
+
 Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. Atop the mound of riches lies a large goblin. The goblin wears a robe too big for its stature and dons many rings and necklaces. This must be their leader.
 
 <<jump Tell_them_you_have_a_special_delivery_from_Granbell>>
@@ -653,13 +655,19 @@ The goblin looks down at you.
 
 Goblin Queen: A delivery? For meee? From Granbell you say? I hope that the humans there have acknowledged my goblin army as a force to be reckoned with. 
 
-The goblin slides down the hill of treasure and meets you. It looks you in the eyes as you hand over the package. It's gaze switched to the package now. The goblin takes it from your hands.
+The goblin slides down the hill of treasure and meets you. 
+<<enableDisable GoblinQueenSlideDown GoblinQueenAtTop>>
+<<wait 3>>
+
+It looks you in the eyes as you hand over the package. It's gaze switched to the package now. The goblin takes it from your hands.
 
 The goblin opens the package. The package reveals a magnificent and opulent crown. The crown is adorned with precious materials and gemstones unique to the ones found in the piles of treasure in front of you. The package also contained a note which the goblin reads and ponders for a moment.
 
 Goblin Queen: Ahh. Finally. The humans are seeing us as equals. No longer do they see us as just filthy creatures to be stepped on. They've offered this crown as a means to call a truce in the war.
 
 The goblin wears the crown with glee.
+<<enable Crown true>>
+<<animate GoblinQueenWithPlayer JoyJump>>
 
 Goblin Queen: Fits perfectly. I think its time I had a talk with the humans and settled this whole war between our peoples.
 
@@ -1442,6 +1450,10 @@ position: 5582,-106
 ---
 <<goToScene TreasureRoom>>
 <<wait 2>>
+<<enable GoblinQueenChoking true>>
+<<enable GarbanzoChoking true>>
+<<animate GarbanzoChoking Choking>>
+<<animate GoblinQueenChoking ChokeLift>>
 Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. Atop the mound of riches lies a large goblin. The goblin wears a robe too big for its stature and dons many rings and necklaces. This must be their leader.
 
 The goblin leader holds Garbanzo above the ground and looks in your direction then back at Garbanzo.
@@ -1452,7 +1464,7 @@ Through Garbanzo's choked voice.
 
 Garbanzo: I realised that they ain't so bad.
 
-Goblin Queen: "Ain't so bad?" Do you understand that we are at war with the humans, Garbanzo. It seems like you've gone soft over the years.
+Goblin Queen: "Ain't so bad?" Do you understand that we are at war with the humans, Garbanzo! It seems like you've gone soft over the years.
 
 Garbanzo: They're tryin' to survive just like us.
 
@@ -1466,12 +1478,25 @@ position: 6057,-107
 ---
 Player: I just want the war to end!
 
-The goblin throws Garbanzo behind her and slides down the hill of treasure. It meets your eyes and speaks with an angry tone.
+<<animate GoblinQueenChoking ChokeDrop>>
+<<wait 0.75>>
+<<animate GarbanzoChoking StopChoking>>
+The goblin throws Garbanzo behind her and slides down the hill of treasure. 
+<<enableDisable GoblinQueenSlideDown GoblinQueenChoking>>
+<<wait 3>>
 
+It meets your eyes and speaks with an angry tone.
+
+<<animate GoblinQueenWithPlayer Yell>>
 Goblin Queen: Do you understand how the humans have been treating goblins for the past century. We just want to be acknowledged and respected but you humans keep on putting us down. So I decided that it was about time that we took matters into our own hands and demanded the respect we deserved. That's why Eldoria is now mine. Then Granbell will be next.
 
-The goblin queen laughs manically to herself. From the top of the mountain of riches you spot Garbanzo crawling up and readying to jump.
+<<animate GoblinQueenWithPlayer Laugh>>
+The goblin queen laughs manically to herself. 
 
+<<enableDisable GarbanzoStanding GarbanzoChoking>>
+From the top of the mountain of riches you spot Garbanzo crawling up and readying to jump.
+
+<<enableDisable GarbanzoRunning GarbanzoStanding>>
 Goblin Queen: Guards! Guards! Seize these t-
 
 Garbanzo leaps from above and plunges his knife into the back of the goblin leader. Goblins crash into the room behind you.
@@ -1496,9 +1521,8 @@ position: 6570,-109
 You ride back to Granbell at a fast pace. On the way back you see the locations that you delivered to and some you don't recognise.
 
 <<goToScene ReturnToGranbell>>
-<<wait 1>>
+<<wait 2>>
 <<rideHorse true>> 
-<<wait 1>>
 You reach Granbell and tell Mistress Ellastra about what happened. She notifies the guards and they relay the information back up to the Aurelians.
 
 Word around the town has spread saying that the goblin forces in Eldoria are retreating.
@@ -2065,26 +2089,35 @@ Before you is a mound of golden coins and various treasures all speckled with fi
 Your party walks in from behind you.
 
 <<if $metPetunia is true>>
+    <<enable PetuniaWalking true>>
     Petunia: This is alot of treasure deary.
 <<elseif $metBjorn is true>>
+    <<enable BjornWalking true>>
     Bjorn: Wow! That's incredible.
 <<endif>>
 
 <<if $metOli is true>>
+    <<enable OliWalking true>>
     Oli: Hmmph. Doesn't seem like there are any goblins in here.
 <<elseif $metMudbrick is true>>
+    <<enable MudbrickWalking true>>
     Mudbrick: I-I-I don't know if we can c-carry all of this.
 <<elseif $metFinn is true>>
+    <<enable FinnWalking true>>
     Finn: Hmm maybe I have a spell that'll make this easier to take home.
 <<endif>>
 
 <<if $metLeyton is true>>
+    <<enable LeytonWalking true>>
     Leyton: I'm going to spend my portion on buying a house full of fireplaces.
 <<elseif $metThakali is true>>
+    <<enable ThakaliWalking true>>
     Thakali: Thakali can buy more tomatoes!!
 <<elseif $metDaisy is true>>
+    <<enable DaisyWalking true>>
     Daisy: Maybe I could invest it into growing more berry bushes. Or another axe.
 <<elseif $metVal is true>>
+    <<enable ValWalking true>>
     Val: Pinch me. I must be dreaming!
 <<endif>>
 
@@ -2165,9 +2198,8 @@ position: 4535,1436
 ---
 You leave Eldoria. 
 <<goToScene ForestPath>>
-<<wait 1>>
+<<wait 2>>
 <<rideHorse true>> 
-<<wait 1>>
 
 One of your party members approaches you and asks if you'd like to go on more adventures with them. You can abandon your job as a courier and make your riches through adventuring with them. You accept their offer and ride with them to your next adventure. 
 

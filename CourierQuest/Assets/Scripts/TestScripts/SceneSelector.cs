@@ -206,10 +206,10 @@ public class SceneSelector : MonoBehaviour
         //variables.SetValue("$metLeyton", true);
         
         //variables.SetValue("$metFinn", true);
-        //variables.SetValue("$metOli", true);
+        variables.SetValue("$metOli", true);
         //variables.SetValue("$metMudbrick", true);
 
-        //variables.SetValue("$metBjorn", true);
+        variables.SetValue("$metBjorn", true);
         //variables.SetValue("$metPetunia", true);
 
         //variables.SetValue("$specialPackage", true);
