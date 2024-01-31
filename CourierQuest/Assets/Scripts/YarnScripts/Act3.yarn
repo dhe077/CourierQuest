@@ -2161,10 +2161,12 @@ What do you do?
 title: Open_the_package_and_leave_the_treasure
 position: 4098,1293
 ---
-You tear off the cloth wrapping that covers the package. You hold in your hands a glorious crown. The crown is adorned with precious materials and gemstones that seem foreign and otherworldy. The package also contains a note which says that this crown is an offering for the goblin leader in Eldoria.
+<<enable CrownWithPlayer true>>
+You tear off the cloth wrapping that covers the package. You hold in your hands a glorious crown. The crown is adorned with precious materials and gemstones that seem foreign and other-worldly. The package also contains a note which says that this crown is an offering for the goblin leader in Eldoria.
 
 "To the Goblin Queen, we hope that this reaches you safely by our esteemed courier. We, the Aurelians, bring this crown to you to acknowledge your presence in the lands. We want to grant you your freedom and your own kingdom. We hope that you will see this offering as a sign of a truce between the humans and goblins. Let this be a symbol of our peaceful future together."
 
+<<enableDisable CrownDrop CrownWithPlayer>>
 Seems like this would have been useful if there were someone here to deliver to. Maybe they will be back. You decide that it would be best to just leave the crown with the treasures.
 
 <<jump Leave_Eldoria>>
@@ -2663,9 +2665,10 @@ position: 3644,1899
 <<wait 2>>
 You leave the cave and follow the path up the volcano a little further. You've reached the top of the volcano. You look out to the landscape and you can see Granbell and Eldoria from here. You see the forest below and the farms in the distance.
 
-<<nextPosition none>>
+<<specificPosition BeforePlatform>>
 <<wait 2>>
 There is an outcropping that leans over the volcano's pit of lava.
+<<specificPosition ToPlatform>>
 <<wait 10>>
 
 What do you do?
@@ -2678,9 +2681,11 @@ What do you do?
 title: Open_the_package_then_throw_it_into_the_lava
 position: 4079,1851
 ---
-<<nextPosition none>>
-<<wait 2>>
-You tear off the cloth wrapping that covers the package. You hold in your hands a glorious crown. The crown is adorned with precious materials and gemstones that seem foreign and otherworldy. The package also contains a note which says that this crown is an offering for the goblin leader in Eldoria.
+<<specificPosition PlatformSpot>>
+<<wait 1>>
+<<enable CrownWithPlayer true>>
+<<wait 1>>
+You tear off the cloth wrapping that covers the package. You hold in your hands a glorious crown. The crown is adorned with precious materials and gemstones that seem foreign and other-worldly. The package also contains a note which says that this crown is an offering for the goblin leader in Eldoria.
 
 "To the Goblin Queen, we hope that this reaches you safely by our esteemed courier. We, the Aurelians, bring this crown to you to acknowledge your presence in the lands. We want to grant you your freedom and your own kingdom. We hope that you will see this offering as a sign of a truce between the humans and goblins. Let this be a symbol of our peaceful future together."
 
@@ -2700,6 +2705,7 @@ You remain clueless to what hides beneath the package's cloth wrapping.
 title: Drop_it_into_the_lava
 position: 4521,1992
 ---
+<<enableDisable CrownDrop CrownWithPlayer>>
 You toss the package into the fiery depths and watch it plop into the lava and sink below.
 
 A bubble of molten rock bursts out from where it landed. The bubbles of molten rock begin to multiply. The volcano starts to shake. The lava rises. You need to get off the volcano, QUICKLY!
@@ -3334,6 +3340,7 @@ position: 5309,4408
 <<nextPosition none>>
 <<wait 2>>
 You run at the goblin as fast as you can. 
+<<wait 5>>
 
 <<animate GarbanzoWithPackage GripPackage>>
 The goblin, shocked at your performance grips the package close to it's chest. You manage to reach the goblin and grab hold of the package.
@@ -3424,7 +3431,8 @@ What do you do?
 title: Open_the_package_then_drop_it
 position: 6306,3650
 ---
-You tear off the cloth wrapping that covers the package. You hold in your hands a glorious crown. The crown is adorned with precious materials and gemstones that seem foreign and otherworldy. The package also contains a note which says that this crown is an offering for the goblin leader in Eldoria.
+<<enable CrownWithPlayer true>>
+You tear off the cloth wrapping that covers the package. You hold in your hands a glorious crown. The crown is adorned with precious materials and gemstones that seem foreign and other-worldly. The package also contains a note which says that this crown is an offering for the goblin leader in Eldoria.
 
 "To the Goblin Queen, we hope that this reaches you safely by our esteemed courier. We, the Aurelians, bring this crown to you to acknowledge your presence in the lands. We want to grant you your freedom and your own kingdom. We hope that you will see this offering as a sign of a truce between the humans and goblins. Let this be a symbol of our peaceful future together."
 
@@ -3444,6 +3452,7 @@ You remain clueless to what hides beneath the package's cloth wrapping.
 title: Drop_the_package_into_the_lava
 position: 6685,3764
 ---
+<<enableDisable CrownDrop CrownWithPlayer>>
 You toss the package into the fiery depths and watch it plop into the lava and sink below.
 
 A bubble of molten rock bursts out from where it landed.

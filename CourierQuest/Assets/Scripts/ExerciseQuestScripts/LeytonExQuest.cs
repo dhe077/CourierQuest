@@ -13,11 +13,13 @@ public class LeytonExQuest : MonoBehaviour
     [SerializeField] private bool heating = false;
     [SerializeField] private float exerciseTime = 60;
     // [SerializeField] private float speedMultiplier = 10;
-    public float angleMin = 45f;
-    public float angleMax = 315f;
+    // public float angleMin = 45f;
+    // public float angleMax = 315f;
 
     [SerializeField] private float timer = 0;
     private float halfTime;
+
+    [SerializeField] private float rotationSpeed = 30;
 
     public void Update()
     {
@@ -36,12 +38,11 @@ public class LeytonExQuest : MonoBehaviour
     {
         timer -= Time.deltaTime;
     
-        //float rotationSpeed = exerciseQuestManager.GetPlayerView().GetComponent<PlayerMovement>().GetBikeSpeed() * speedMultiplier;
-        float rotationSpeed = 30;
+        float rotationSpeed = exerciseQuestManager.GetPlayerView().GetComponent<PlayerMovement>().GetBikeRPM();
         float rotationAngle = Mathf.PingPong(Time.time * rotationSpeed, 60) - 30;
 
         // Apply the rotation around the Y-axis
-        bellowsTop.transform.Rotate(rotationAngle * Vector3.right * Time.deltaTime);
+        bellowsTop.transform.Rotate(rotationAngle * Time.deltaTime * Vector3.right);
 
         if (timer <= 0)
         {

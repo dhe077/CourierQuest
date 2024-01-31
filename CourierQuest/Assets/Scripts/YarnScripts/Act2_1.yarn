@@ -750,10 +750,12 @@ You hand her the small package.
 
 Petunia: Oh thank you so much deary.
 
+<<enable Silverware true>>
 She proceeds to open her package. The package held a set of silver cutlery.
 
 Petunia: Finally! The silver cutlery that I ordered. Now my customers can enjoy their Pattersby pastries with these beautiful utensils. My last set of silver cutlery was stolen from me not too long ago. Wait here a moment I've got something for you.
 
+<<enable Silverware false>>
 <<enableDisable PetuniaGoingIn PetuniaStanding>>
 She walks into the store. You wait for a moment.
 <<enableDisable PetuniaComingOutAgain PetuniaGoingIn>>
@@ -900,7 +902,8 @@ You hand him the large package.
 
 Bjorn: Ho ho ho! It's finally here!
 
-He proceeds to open his package. The package held a giant set of barbells.
+<<enable Dumbbell true>>
+He proceeds to open his package. The package held a giant set of dumbbells.
 
 Bjorn: Now I can get even stronger! Granbell makes the best training equipment! How can I thank you for your service?!
 
@@ -908,7 +911,6 @@ He stands and thinks for a moment before reaching a conclusion.
 
 <<animate BjornCrouch Point>>
 Bjorn: I can give you the MUSCLE SPIRIT!
-
 
 He strikes a pose and puts his arm on your bicep.
 <<animate BjornCrouch Crouch>>

@@ -198,6 +198,7 @@ Leyton: Oh yeah! That'll help me feel better.
 <<wait 1.5>>
 Leyton floats down the side of the cliff face and lands softly on the dirt.
 
+<<enable CoalBag true>>
 You give the package to Leyton and he proceeds to open it revealing that it was a sack of coals.
 
 Leyton: Let's heat these up. I'm feeling hungry.
@@ -242,7 +243,10 @@ Leyton: Is that my package?!
 <<wait 8.5>>
 <<animate LeytonFlyDown Land>>
 <<wait 1.5>>
-Leyton floats down the side of the cliff face and lands softly on the dirt. He proceeds to open the package revealing a sack of coals. Leyton shakes the bag of coals.
+Leyton floats down the side of the cliff face and lands softly on the dirt. 
+
+<<enable CoalBag true>>
+He proceeds to open the package revealing a sack of coals. Leyton shakes the bag of coals.
 
 Leyton: Yup this'll help. We're going to heat these up and I'm going to need your help.
 
@@ -268,7 +272,10 @@ Leyton: Is that my package?!
 <<wait 8.5>>
 <<animate LeytonFlyDown Land>>
 <<wait 1.5>>
-Leyton floats down the side of the cliff face and lands softly on the dirt. He proceeds to open the package revealing a sack of coals. Leyton shakes the bag of coals.
+Leyton floats down the side of the cliff face and lands softly on the dirt. 
+
+<<enable CoalBag true>>
+He proceeds to open the package revealing a sack of coals. Leyton shakes the bag of coals.
 
 Leyton: Yup this'll help. We're going to heat these up and I'm going to need your help.
 
@@ -322,6 +329,7 @@ Leyton looks to your pack and sees his delivery.
 
 Leyton: Oh you have my package there. That'll help me out.
 
+<<enable CoalBag true>>
 You give the package to Leyton and he proceeds to open it revealing that it was a sack of coals. Leyton shakes the bag of coals.
 
 Leyton: We're going to heat these up and I'm going to need your help.
@@ -401,6 +409,7 @@ position: 3968,-2488
 ---
 <<specificPosition ExerciseQuest>>
 <<wait 1>>
+<<enableDisable CoalBagWithFire CoalBag>>
 <<enableDisable LeytonAtFirePit LeytonAtBottom>>
 <<wait 1>>
 Player: How can I help heat up the coals? I don't have anything that'll get them started.
@@ -778,6 +787,7 @@ You think it must be a gift from someone. You look at the packaging and it is sa
     You recall that Finn was the wizard from the tower. You suppose that Finn might have already met Thakali and realised Thakali's mistake.
 <<endif>>
 
+<<enable TomatoSeedsWithPlayer true>>
 You give the package to Thakali. Thakali tears open the package and finds a pouch of tomato seeds. In fact the tomato seeds look extremely large. 
 <<if $metFinn is true>>
     You think that maybe Finn casted a spell on the seeds and made them magical. Better be careful with magic.
@@ -906,6 +916,7 @@ Thakali: That is good idea. Thakali need rest after slicing plants.
 <<wait 1>>
 <<enableDisable PlowUsing PlowNotUsing>>
 <<enableDisable ThakaliWaitingForPlayer ThakaliWithPlayer>>
+<<enableDisable TomatoSeedsWithThakali TomatoSeedsWithPlayer>>
 <<enable Stormhoof false>>
 <<rideHorse true>> 
 <<wait 1>>
@@ -1713,7 +1724,7 @@ position: 2907,4319
 Player: I'm just a courier from Granbell.
 
 The pair of eyes narrow. 
-
+<<wait 2>>
 <<enableDisable DoorSliderClosing DoorSliderOpen>>
 Then the window slides shut.
 
@@ -1742,6 +1753,8 @@ position: 2915,4708
 ---
 Player: I just want to gamble.
 
+<<wait 1>>
+<<enableDisable DoorSliderClosing DoorSliderOpen>>
 Bouncer: Oi Val. This biggun wants to gamble. Should we let 'em in.
 
 <<enable ValWalkingOut true>>
@@ -1839,12 +1852,14 @@ position: 4351,3885
 ---
 Player: I have a package for you from Granbell.
 
+<<enable SackOfGold true>>
 You give Val the yellow package. She opens it up and you see the glistening sheen of gold coins. Val affixes her eyes onto the gold coins and she does not look up once.
 
 <<animate ValWithPlayer Surprise>>
 Val: Boy howdy! Payday has arrived just in time. A new game of dice just started and I'm puttin' it all on my lucky numbers!
 
 Val closes the pouch and swings it over her back and runs into the Gamblers Grotto. 
+<<enable SackOfGold false>>
 
 <<animate ValWithPlayer TurnAround>>
 <<wait 1.5>>

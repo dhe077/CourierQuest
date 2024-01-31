@@ -33,6 +33,7 @@ public class SceneSelector : MonoBehaviour
     {
         dialogueRunner.Stop();
         variables.SetValue("$secondPackage", "square");
+        variables.SetValue("$diamond", true);
         dialogueRunner.StartDialogue("Arrive_at_your_second_destination");
     }
 

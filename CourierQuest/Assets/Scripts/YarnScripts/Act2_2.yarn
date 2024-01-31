@@ -180,6 +180,8 @@ Player: I have a package for you from Granbell.
 Mudbrick: Oh m-my. All the way from Granbell. That m-must have been far.
 
 <<animate MudbrickStanding Handout>>
+<<wait 1>>
+<<enable ShellOrnament true>>
 He unwraps the package and reveals that what was inside. The package contained a round and smooth shell cover made from various animal hides. 
 
 <<animate MudbrickStanding Nod>>
@@ -334,6 +336,7 @@ It seems like nobody is here. You can just leave the package near his camp in a 
     You remember that Oli gave you a diamond to safely get into his camp. You pull out the diamond and raise it above your head. You walk slowly toward the center of his camp.
 
     <<specificPosition WalkIntoOlisCamp>>
+    <<wait 2>>
 
     All of a sudden a bolt of lightning streaks down from above and strikes the diamond above your head. You feel nothing. The diamond has kept you safe from the lightning. The sky rumbles with thunder.
 
@@ -436,7 +439,9 @@ It's headed towards Oli's campsite.
 title: Walk_to_Olis_camp
 position: 2627,49
 ---
+<<enable HammerHead true>>
 You survive Oli's defences. You leave the package near the tent's entrance. You believe that it will be safe from creatures since there is already a line of defence.
+<<set $metOli to true>>
 
 // *The player must walk (pedal) away from the camp.*
 <<jump Walk_away_from_Olis_camp>>
@@ -455,7 +460,7 @@ You need to move as much as you can to get out of the slime!
 <<prepareExerciseQuest oli>>
 <<wait 2>>
 <<startExerciseQuest oli>>
-<<wait 30>>
+<<wait 30>> //Exercise timer.
 <<jump Escape_the_slime>>
 ===
 
@@ -472,15 +477,16 @@ You need to move as much as you can to get out of the slime!
 <<prepareExerciseQuest oli>>
 <<wait 2>>
 <<startExerciseQuest oli>>
-<<wait 30>>
+<<wait 30>> //Exercise timer.
 <<jump Escape_the_slime>>
 ===
 
 title: Jump_out_and_stop_the_slime
 position: 2285,1090
 ---
+<<enableDisable BushesSlimeGroup MovingIntoCampSlimeGroup>>
 You jump out and distract the blue slime in an attempt to misdirect it away from Oli's campsite. It changes its movement from a slow viscous crawl in the direction of Oli's camp to a quick glooping flow towards your location.
-<<enableDisable MovingIntoCampSlimeGroup BushesSlimeGroup>>
+<<enableDisable AttackingSlimeGroup BushesSlimeGroup>>
 
 <<startTimer 6>>
 -> Run from the cube!
@@ -496,9 +502,7 @@ position: 2443,1388
 ---
 You sit in silence waiting for the slime to advance into Oli's campsite. 
 
-<<enableDisable MovingIntoCampSlimeGroup BushesSlimeGroup>>
 It lurches towards the campsite but as it approaches closer to the campsite you hear the sky begin to rumble then a loud CRACK, as a bolt of lightning from above spears through the slime turning its cuboid form into an explosion of goo.
-<<enable MovingIntoCampSlimeGroup false>>
 
 Seems like you avoided two things that would have been detrimental to your delivery process.
 
@@ -556,6 +560,8 @@ title: Throw_package_towards_the_campsite
 position: 3542,1200
 ---
 You swing the package above your head and attempt to throw it as far as you can. It flies through the air and lands about half way up to the camp.
+<<enable HammerHeadHalfway true>>
+<<set $metOli to true>>
 
 Mistress Ellastra won't be happy when she finds out about this delivery. Hopefully you don't get fired or worse...
 
@@ -578,12 +584,13 @@ position: 2885,1591
 ---
 You remember that Oli gave you a diamond to safely get into his camp. You pull out the diamond and raise it above your head. You walk slowly toward the center of his camp.
 
+<<specificPosition WalkIntoOlisCamp>>
+<<wait 2>>
+
 All of a sudden a bolt of lightning streaks down from above and strikes the diamond above your head. You feel nothing. The diamond has kept you safe from the lightning. The sky rumbles with thunder.
 
 You continue walking towards Oli's camp and lightning keeps striking the diamond above you. As long as you keep the diamond above your head you will be fine. 
 
-<<specificPosition WalkIntoOlisCamp>>
-<<wait 2>>
 // *The player must walk (pedal) towards the camp.*
 <<jump Walk_to_Olis_camp>>
 ===
@@ -771,12 +778,13 @@ Finn disappears up the stairs and returns with a book in his hands.
 Finn: If I can split my mind into many versions of myself a few times then just merge my mind back into one I'd have all the knowledge collected from these books in no time.
 
 <<enableDisable FinnWithBook FinnStairsWithBook>>
-<<animate FinnWithBook LookAround>>
 Finn looks around.
 
 Finn: But first I need something to channel my magic through.
 
 <<animate FinnWithBook Search>>
+<<wait 1>>
+<<enable WizardHatWithFinn true>>
 Finn's eyes light up and grabs the triangular package from his pouch. He proceeds to unwrap the package revealing a pointed wizard's hat.
 
 Finn: This is exactly what I need. I can use this with the magic generator.
@@ -857,8 +865,8 @@ Finn: Ok just put your feet in the pedals there and begin pedaling. Are you read
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 <<prepareExerciseQuest finn>>
 <<wait 2>>
-<<enable GreenJuice true>>
 <<startExerciseQuest finn>>
+<<enable GreenJuice true>>
 <<wait 30>> // Exercise timer
 <<jump Pedal_to_help_Finn>>
 ===
