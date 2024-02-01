@@ -39,7 +39,9 @@ The land has been ravaged by the ongoing war between human and goblin civilizati
 
 Where are you in all of this you ask? You are a villager living in the kingdom of Granbell, a large human settlement ruled by the Aurelian royal family. You've had a comfortable life so far, working as a simple courier. Now that the war has escalated, courier jobs have been scarce. You've been taking any job that the courier guildhall provides just to survive.
 
-Yet today, you might find yourself delivering something that could alter the course of your destiny forever.
+As a courier for Granbell, you're required to wear a magical bracer that allows the courier guild to record your performance. There are three crystals within the bracer which react when you move. You must move to keep the crystals from becoming inactive. If the guild detects that all your crystals are inactive you will be fired.
+
+Today, you might find yourself delivering something that could alter the course of your destiny forever.
  
 <<jump Start_the_day>>
 ===
@@ -47,6 +49,8 @@ Yet today, you might find yourself delivering something that could alter the cou
 title: Start_the_day
 position: 182,-84
 ---
+<<goToScene GranbellOpening>>
+<<wait 2>>
 You wake up. Look around. The weather is grey and gloomy. Looks like it might rain. 
 
 You need to make a delivery today. You start walking to work.
