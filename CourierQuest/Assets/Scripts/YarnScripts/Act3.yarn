@@ -2,7 +2,9 @@
 position: -153,88
 ---
 <<goToScene WakeUpLargeTree>>
-<<wait 2>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
+<<wait 3>>
 You wake up under the tree that you made camp under. 
 
 <<nextPosition none>>
@@ -30,7 +32,9 @@ You look to your pouch where the special delivery should be.
     You're relieved that the special package sits there in your pouch. You think to yourself. What could be inside the package? Why do the Aurelians want this delivered to Eldoria?
 
     <<goToScene OutrunGoblin>>
-    <<wait 5>>
+    <<wait 2.2>>
+    <<setBackgroundMusic Combat 0.5>>
+    <<wait 3>>
     <<startChase none>>
     <<moveClose true>>
     Once again you spot a creature riding a large rat beside you. It's the goblin.
@@ -45,7 +49,9 @@ You look to your pouch where the special delivery should be.
 <<elseif $specialPackage is false>>
     The special package isn't there. You think to yourself. Where could the package have gone?
     <<goToScene OutrunGoblin>>
-    <<wait 5>>
+    <<wait 2.2>>
+    <<setBackgroundMusic Combat 0.5>>
+    <<wait 3>>
     <<startChase none>>
     <<moveClose true>>
     Once again you spot a creature riding a large rat beside you. It's the goblin.
@@ -73,12 +79,15 @@ title: Ride_to_Eldoria
 position: 1220,-1015
 ---
 <<goToScene EldoriaGates>>
-<<wait 5>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
+<<wait 3>>
 You ride down the path towards Eldoria. You pass farms and barns as you near the kingdom. Up ahead you can see the walls of Eldoria. The walls look empty. The roads look empty. Seems like no one is here. At least... no humans...
 <<wait 2>>
 
 <<nextPosition none>>
 <<wait 1>>
+<<setBackgroundMusic tension_loop 0.3>>
 <<enable Stormhoof true>>
 <<rideHorse false>> 
 <<enable BearWithGoblins true>>
@@ -90,6 +99,7 @@ A goblin atop the bear speaks to you.
 
 Bear Goblin: Oi you. What are you doin' 'ere?! You'd better get outa 'ere before my bear eats you alive. Haha.
 
+<<playSoundFrom BearWithGoblins BearGrowl2 0.5>>
 The other goblins laugh too. The bear growls and flails its arms around nearly hitting you. The goblins tighten the restraints around its neck.
 
 What do you say?
@@ -181,7 +191,7 @@ title: Approach_the_castle_doors
 position: 2784,-1294
 ---
 <<goToScene EldoriaCourtyard>>
-<<wait 2>>
+<<wait 2.2>>
 You walk through the gates and towards the inner castle doors. 
 
 <<specificPosition WalkToTheDoors>>
@@ -327,6 +337,7 @@ You quickly throw the diamond in the direction of the goblin. You watch the shoc
 You slip into the hallway beside you. You hear a loud explosion behind you.
 
 <<setNextNodeName Run_down_the_hall>>
+<<stop>>
 //<<jump Run_down_the_hall>>
 ===
 
@@ -347,6 +358,7 @@ Suddenly the laughter turns to screams. You open your eyes to witness the goblin
 You slip into the hallway beside you.
 
 <<setNextNodeName Run_down_the_hall>>
+<<stop>>
 //<<jump Run_down_the_hall>>
 ===
 
@@ -374,6 +386,7 @@ The goblin agrily screams and then a sudden bolt of lightning crashes down throu
 You quickly run into the hallway to your right.
 
 <<setNextNodeName Run_down_the_hall>>
+<<stop>>
 //<<jump Run_down_the_hall>>
 ===
 
@@ -525,6 +538,7 @@ You sprint to the wooden door and push it open.
 // *The player must pedal hard to push the door open.*
 
 <<setNextNodeName Go_to_the_Queen>>
+<<stop>>
 //<<jump Go_to_the_Queen>>
 ===
 
@@ -547,6 +561,7 @@ You sprint to the wooden door and push it open.
 // *The player must pedal hard to push the door open.*
 
 <<setNextNodeName Go_to_the_Queen>>
+<<stop>>
 //<<jump Go_to_the_Queen>>
 ===
 
@@ -570,6 +585,7 @@ You sprint to the wooden door and push it open.
 // *The player must pedal hard to push the door open.*
 
 <<setNextNodeName Go_to_the_Queen>>
+<<stop>>
 //<<jump Go_to_the_Queen>>
 ===
 
@@ -611,6 +627,7 @@ You sprint to the wooden door and push it open.
 // *The player must pedal hard to push the door open.*
 
 <<setNextNodeName Go_to_the_Queen>>
+<<stop>>
 //<<jump Go_to_the_Queen>>
 ===
 
@@ -687,14 +704,16 @@ position: 6564,-1718
 ---
 // *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
 <<goToScene ForestPath>>
-<<wait 1>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
 <<rideHorse true>> 
 <<wait 1>>
 
 You ride back to Granbell at a fast pace. On the way back you see the locations that you delivered to and some you don't recognise.
 
 <<goToScene ReturnToGranbell>>
-<<wait 1>>
+<<wait 2.2>>
+<<setBackgroundMusic Medieval_City 0.5>>
 <<rideHorse true>> 
 <<wait 1>>
 You reach Granbell and tell Mistress Ellastra about what happened. She notifies the guards and they relay the information back up to the Aurelians.
@@ -737,12 +756,15 @@ title: Approach_the_gates
 position: 1211,45
 ---
 <<goToScene EldoriaGates>>
-<<wait 5>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
+<<wait 3>>
 You pass farms and barns as you near the kingdom. Up ahead you can see the walls of Eldoria. The walls look empty. The roads look empty. Seems like no one is here. At least... no humans...
 <<wait 2>>
 
 <<nextPosition none>>
 <<wait 1>>
+<<setBackgroundMusic tension_loop 0.3>>
 <<enable Stormhoof true>>
 <<rideHorse false>> 
 <<wait 1>>
@@ -792,8 +814,10 @@ You toss it towards them and they fight over the pastry.
 
 <<animate GarbanzoAttack Assassination>>
 <<wait 0.5>>
+<<playSoundFrom GoblinGuard1Standing BloodyPunch 0.2>>
 <<animate GoblinGuard1Standing Death>>
 <<wait 0.5>>
+<<playSoundFrom GoblinGuard1Standing BloodyPunch 0.2>>
 <<animate GoblinGuard2Standing Death>>
 <<wait 2>>
 
@@ -828,8 +852,10 @@ The goblins are enamoured by your performance.
 
 <<animate GarbanzoAttack Assassination>>
 <<wait 0.5>>
+<<playSoundFrom GoblinGuard1Standing BloodyPunch 0.2>>
 <<animate GoblinGuard1Standing Death>>
 <<wait 0.5>>
+<<playSoundFrom GoblinGuard1Standing BloodyPunch 0.2>>
 <<animate GoblinGuard2Standing Death>>
 <<wait 2>>
 
@@ -877,7 +903,8 @@ Dungeon Goblin: Go on. Off to the dungeon for you.
 The dungeon goblin leads you down a set of old stone stairs towards a dark tunnel. 
 
 <<goToScene Dungeon>>
-<<wait 2>>
+<<wait 2.2>>
+<<setBackgroundMusic CavernAtmosphereLoop 0.25>>
 
 It's very dark in here. The occational torch lights the tunnel. You pass by several dungeon cells barred by large thick metal rods.
 
@@ -931,7 +958,9 @@ Garbanzo: Follow me. There's a secret tunnel this way.
 Garbanzo pushes a large stone out of the way. Behind the stone is a tunnel with a light at the end of it.
 
 <<nextPosition none>>
-<<wait 2>>
+<<wait 1>>
+<<setBackgroundMusic tension_loop 0.3>>
+<<wait 1>>
 You pass through the tunnel and reach the light ahead. 
 
 <<jump Go_through_the_tunnel>>
@@ -1086,7 +1115,9 @@ Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure
 <<enableDisable GarbanzoRunDownHall GarbanzoStanding>>
 <<wait 2>>
 You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
+
 <<setNextNodeName Follow_Garbanzo_to_the_treasure_room>>
+<<stop>>
 // <<jump Follow_Garbanzo_to_the_treasure_room>>
 ===
 
@@ -1102,6 +1133,7 @@ You don the animal pendant and close your eyes. You hear the laughter of the gob
 <<enable BearWithGoblins true>>
 <<wait 1>>
 
+<<playSoundFrom BearWithGoblins BearGrowl1 0.5>>
 Suddenly the laughter turns to screams. You open your eyes to observe the goblin being attacked by a large bear in restraints. Several goblins are trying to stop the bears attacks. 
 
 <<enableDisable GarbanzoSneak GarbanzoHide>>
@@ -1115,7 +1147,9 @@ Garbanzo: I think I'll leave that one alone. Looks like the Queen isn't here rig
 <<enableDisable GarbanzoRunDownHall GarbanzoStanding>>
 <<wait 2>>
 You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
+
 <<setNextNodeName Follow_Garbanzo_to_the_treasure_room>>
+<<stop>>
 // <<jump Follow_Garbanzo_to_the_treasure_room>>
 ===
 
@@ -1149,7 +1183,9 @@ Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure
 <<enableDisable GarbanzoRunDownHall GarbanzoStanding>>
 <<wait 2>>
 You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
+
 <<setNextNodeName Follow_Garbanzo_to_the_treasure_room>>
+<<stop>>
 // <<jump Follow_Garbanzo_to_the_treasure_room>>
 ===
 
@@ -1183,7 +1219,9 @@ Garbanzo: Looks like the Queen isn't here right now. Maybe she's in the treasure
 <<enableDisable GarbanzoRunDownHall GarbanzoStanding>>
 <<wait 2>>
 You follow close behind Garbanzo. He moves so quickly you start to lose him again. He turns a corner and he's gone but you see an exit. 
+
 <<setNextNodeName Follow_Garbanzo_to_the_treasure_room>>
+<<stop>>
 // <<jump Follow_Garbanzo_to_the_treasure_room>>
 ===
 
@@ -1335,7 +1373,9 @@ Garbanzo: The queen is definitely behind that wooden door. Do what you've been d
 <<wait 1>>
 You sprint to the wooden door and push it open. 
 //*The player must pedal hard to push the door open.*
+
 <<setNextNodeName Follow_behind_Garbanzo_into_the_room>>
+<<stop>>
 //<<jump Follow_behind_Garbanzo_into_the_room>>
 ===
 
@@ -1363,7 +1403,9 @@ Garbanzo: The queen is definitely behind that wooden door. Do what you've been d
 <<wait 1>>
 You sprint to the wooden door and push it open. 
 //*The player must pedal hard to push the door open.*
+
 <<setNextNodeName Follow_behind_Garbanzo_into_the_room>>
+<<stop>>
 //<<jump Follow_behind_Garbanzo_into_the_room>>
 ===
 
@@ -1389,7 +1431,9 @@ Garbanzo: The queen is definitely behind that wooden door. Do what you've been d
 <<wait 1>>
 You sprint to the wooden door and push it open. 
 //*The player must pedal hard to push the door open.*
+
 <<setNextNodeName Follow_behind_Garbanzo_into_the_room>>
+<<stop>>
 //<<jump Follow_behind_Garbanzo_into_the_room>>
 ===
 
@@ -1439,7 +1483,9 @@ Garbanzo: The queen is definitely behind that wooden door. Do what you've been d
 <<wait 1>>
 You sprint to the wooden door and push it open. 
 //*The player must pedal hard to push the door open.*
+
 <<setNextNodeName Follow_behind_Garbanzo_into_the_room>>
+<<stop>>
 //<<jump Follow_behind_Garbanzo_into_the_room>>
 ===
 
@@ -1465,7 +1511,9 @@ Garbanzo: The queen is definitely behind that wooden door. Do what you've been d
 <<wait 1>>
 You sprint to the wooden door and push it open. 
 //*The player must pedal hard to push the door open.*
+
 <<setNextNodeName Follow_behind_Garbanzo_into_the_room>>
+<<stop>>
 //<<jump Follow_behind_Garbanzo_into_the_room>>
 ===
 
@@ -1530,7 +1578,8 @@ Garbanzo: Run! I'll hold them off!
 You jump from the window nearby. Stormhoof rides below and you land atop her.
 
 <<goToScene ForestPath>>
-<<wait 1>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
 <<rideHorse true>> 
 <<wait 1>>
 
@@ -1545,7 +1594,8 @@ position: 6570,-109
 You ride back to Granbell at a fast pace. On the way back you see the locations that you delivered to and some you don't recognise.
 
 <<goToScene ReturnToGranbell>>
-<<wait 2>>
+<<wait 2.2>>
+<<setBackgroundMusic Medieval_City 0.5>>
 <<rideHorse true>> 
 You reach Granbell and tell Mistress Ellastra about what happened. She notifies the guards and they relay the information back up to the Aurelians.
 
@@ -1573,7 +1623,9 @@ title: Wake_up_near_the_rocks
 position: -146,1543
 ---
 <<goToScene WakeUpLargeRocks>>
-<<wait 2>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
+<<wait 3>>
 You wake up near the rocks that you camped near. 
 
 <<nextPosition none>>
@@ -1606,7 +1658,8 @@ You look to your pouch where the special delivery should be.
         <<jump Blow_the_whistle>>
     <<else>>
         <<goToScene VolcanoBase>>
-        <<wait 2>>
+        <<wait 2.2>>
+        <<setBackgroundMusic Earthquake 0.1>>
         You spot the jagged rocks of the volcano ahead of you. You are getting closer.
     
         <<jump Ride_to_the_volcano>>
@@ -1615,7 +1668,8 @@ You look to your pouch where the special delivery should be.
     The special package isn't there! You think to yourself. Where could the package have gone?
 
     <<goToScene VolcanoBase>>
-    <<wait 2>>
+    <<wait 2.2>>
+    <<setBackgroundMusic Earthquake 0.1>>
     You spot the jagged rocks of the volcano ahead of you. You are getting closer. Up ahead you see the same creature again atop his giant rat mount. You could get the package back if you can catch him!
 
     <<jump Chase_the_goblin>>
@@ -1877,12 +1931,15 @@ You and your party set off towards Eldoria.
 <<wait 30>> // Exercise timer
 
 <<goToScene EldoriaGates>>
-<<wait 5>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
+<<wait 3>>
 You pass farms and barns as you near the kingdom. Up ahead you can see the walls of Eldoria. The walls look empty. The roads look empty. Seems like no one is here. At least... no humans...
 <<wait 2>>
 
 <<nextPosition none>>
 <<wait 1>>
+<<setBackgroundMusic tension_loop 0.3>>
 <<if $metBjorn is true>>
     <<enable BjornAtGates true>>
 <<elseif $metPetunia is true>>
@@ -1899,6 +1956,7 @@ A goblin atop the bear speaks to you.
 <<animate BearGoblinGuard Taunt>>
 Bear Goblin: Oi you. What a'you doin' 'ere?! You'd better get outa 'ere before my bear eats you alive. Haha.
 
+<<playSoundFrom BearWithGoblins BearGrowl2 0.5>>
 The other goblins laugh too. The bear growls and flails its arms around nearly hitting you. The goblins tighten the restraints around its neck.
 
 <<if $metBjorn is true>>
@@ -2004,6 +2062,7 @@ You'd better get a move on. You spot a hallway nearby. Lets hope it takes you wh
 <<specificPosition RunDownHall>>
 
 <<setNextNodeName Run_down_the_hallway>>
+<<stop>>
 // <<jump Run_down_the_hallway>>
 ===
 
@@ -2106,6 +2165,7 @@ You sprint to the wooden door and push it open.
 //*The player must pedal hard to push the door open.*
 
 <<setNextNodeName Go_through_the_door>>
+<<stop>>
 //<<jump Go_through_the_door>>
 ===
 
@@ -2230,7 +2290,8 @@ position: 4535,1436
 ---
 You leave Eldoria. 
 <<goToScene ForestPath>>
-<<wait 2>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
 <<rideHorse true>> 
 
 One of your party members approaches you and asks if you'd like to go on more adventures with them. You can abandon your job as a courier and make your riches through adventuring with them. You accept their offer and ride with them to your next adventure. 
@@ -2314,7 +2375,8 @@ You and your party set off towards the volcano.
 <<wait 30>> // Exercise timer
 
 <<goToScene VolcanoBase>>
-<<wait 2>>
+<<wait 2.2>>
+<<setBackgroundMusic Earthquake 0.1>>
 
 You ride swiftly up the path towards the volcano. You see the forest around you transform into a bleak landscape. Jagged rocks pepper the land and molten rivers stream from the volcano. The smell of ash lingers in the air around you. There is no way anything lives here.
 
@@ -2329,7 +2391,8 @@ You follow a path to the top of the volcano. If you're going to get rid of this 
 
 <<if $metBjorn is true>>
     <<goToScene LavaRiverBjorn>>
-    <<wait 2>>
+    <<wait 2.2>>
+    <<setBackgroundMusic Earthquake 0.2>>
     The path up ahead has been covered by flowing lava that is seeping out of a hole in the side of the volcano. The lava has created a barrier between your side of the track and the rest of the track that leads up the volcano.
 
     Bjorn: No worries I've got this.
@@ -2351,7 +2414,8 @@ You follow a path to the top of the volcano. If you're going to get rid of this 
 
 <<elseif $metPetunia is true>>
     <<goToScene LavaRiverPetunia>>
-    <<wait 2>>
+    <<wait 2.2>>
+    <<setBackgroundMusic Earthquake 0.2>>
     The path up ahead has been covered by flowing lava that is seeping out of a hole in the side of the volcano. The lava has created a barrier between your side of the track and the rest of the track that leads up the volcano.
 
     Petunia: You're lucky that I always carry a set of heat resistant plates. I'll spread them across the lava and you just run over them.
@@ -2380,7 +2444,8 @@ title: Continue_following_the_path_up_the_volcano
 position: 2902,1879
 ---
 <<goToScene MagicFog>>
-<<wait 2>>
+<<wait 2.2>>
+<<setBackgroundMusic Earthquake 0.1>>
 The path you follow advances up the volcano and leads you to a very dark cave entrance. Looks like you must enter the cave to go up the volcano. 
 
 <<nextPosition none>>
@@ -2409,7 +2474,8 @@ You approach the cave entrance. This cave seems alot darker than normal, almost 
     <<enableDisable OliWalkIn OliOutsideCave>>
     <<animate OliWalkIn HammerWalk>>
     <<wait 10>>
-
+    <<setBackgroundMusic CavernAtmosphereLoop 0.25>>
+    
     <<nextPosition none>>
     <<wait 2>>
 
@@ -2425,6 +2491,7 @@ You approach the cave entrance. This cave seems alot darker than normal, almost 
     <<enableDisable MudbrickWalkIn MudbrickOutsideCave>>
     <<enable Berries true>>
     <<wait 10>>
+    <<setBackgroundMusic CavernAtmosphereLoop 0.25>>
 
     <<nextPosition none>>
     <<wait 2>>
@@ -2441,6 +2508,7 @@ You approach the cave entrance. This cave seems alot darker than normal, almost 
     The smog is then sucked into Finn's palms. You both walk through. Finn coughs up a small smog cloud.
     <<enableDisable FinnWalkIn FinnOutsideCave>> 
     <<wait 10>>
+    <<setBackgroundMusic CavernAtmosphereLoop 0.25>>
 
     Finn: This'll only last a moment. I'll wait here for you. Go on ahead.
 
@@ -2452,7 +2520,9 @@ You approach the cave entrance. This cave seems alot darker than normal, almost 
     // *Pedal to push through the smog.*
 
     <<specificPosition IntoCaveLava>>
-    <<wait 2>>
+    <<wait 1>>
+    <<setBackgroundMusic CavernAtmosphereLoop 0.25>>
+    <<wait 1>>
     You reach the other side of the smog and run close to a pool of lava. You turn and look behind you at the smog. Seems like running through the smog worked out.
 <<endif>>
 
@@ -2662,7 +2732,8 @@ title: Go_to_the_top_of_the_volcano
 position: 3644,1899
 ---
 <<goToScene VolcanoTop>>
-<<wait 2>>
+<<wait 2.2>>
+<<setBackgroundMusic Earthquake 0.2>>
 You leave the cave and follow the path up the volcano a little further. You've reached the top of the volcano. You look out to the landscape and you can see Granbell and Eldoria from here. You see the forest below and the farms in the distance.
 
 <<specificPosition BeforePlatform>>
@@ -2683,6 +2754,7 @@ position: 4079,1851
 ---
 <<specificPosition PlatformSpot>>
 <<wait 1>>
+<<setBackgroundMusic Earthquake 0.3>>
 <<enable CrownWithPlayer true>>
 <<wait 1>>
 You tear off the cloth wrapping that covers the package. You hold in your hands a glorious crown. The crown is adorned with precious materials and gemstones that seem foreign and other-worldly. The package also contains a note which says that this crown is an offering for the goblin leader in Eldoria.
@@ -2695,8 +2767,10 @@ You tear off the cloth wrapping that covers the package. You hold in your hands 
 title: Just_drop_the_package_into_the_lava_without_opening_it
 position: 4073,2102
 ---
-<<nextPosition none>>
-<<wait 2>>
+<<specificPosition PlatformSpot>>
+<<wait 1>>
+<<setBackgroundMusic Earthquake 0.3>>
+<<wait 1>>
 You remain clueless to what hides beneath the package's cloth wrapping. 
 
 <<jump Drop_it_into_the_lava>>
@@ -2708,10 +2782,12 @@ position: 4521,1992
 <<enableDisable CrownDrop CrownWithPlayer>>
 You toss the package into the fiery depths and watch it plop into the lava and sink below.
 
+<<setBackgroundMusic Earthquake 0.6>>
 A bubble of molten rock bursts out from where it landed. The bubbles of molten rock begin to multiply. The volcano starts to shake. The lava rises. You need to get off the volcano, QUICKLY!
 
 <<goToScene ForestPath>>
-<<wait 1>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
 <<rideHorse true>> 
 <<wait 1>>
 You run back to your party and escape into the forest far from the volcano. An eruption can be heard away in the distance. One of your party members approaches you and asks if you'd like to go on more adventures with them. You can abandon your job as a courier and make your riches through adventuring with them. You accept their offer and ride with them to your next adventure. 
@@ -2772,7 +2848,8 @@ position: 995,2617
 // *Pedal hard to climb the steep sections of the volcano.*
 <<if $muscleSpirit is true>>
     <<goToScene LavaRiverMuscleSpirit>>
-    <<wait 2>>
+    <<wait 2.2>>
+    <<setBackgroundMusic Earthquake 0.2>>
     The path up ahead has been covered by flowing lava that is seeping out of a hole in the side of the volcano. The lava has created a barrier between your side of the track and the rest of the track that leads up the volcano.
 
     What do you do?
@@ -2780,7 +2857,8 @@ position: 995,2617
         <<jump Embrace_the_muscle_spirit>>
 <<elseif $pattersbyOriginal is true>>
     <<goToScene LavaRiverPastry>>
-    <<wait 2>>
+    <<wait 2.2>>
+    <<setBackgroundMusic Earthquake 0.2>>
     The path up ahead has been covered by flowing lava that is seeping out of a hole in the side of the volcano. The lava has created a barrier between your side of the track and the rest of the track that leads up the volcano.
 
     What do you do?
@@ -2886,6 +2964,8 @@ The smog feels heavier than the last time you went into the smog.
 You reach the other side of the smog and run close to a pool of lava. You turn and look behind you at the smog. Seems like running through the smog worked out.
 
 <<setNextNodeName Delve_further_into_the_volcano>>
+<<wait 1>>
+<<setBackgroundMusic CavernAtmosphereLoop 0.25>>
 <<stop>>
 // <<jump Delve_further_into_the_volcano>>
 ===
@@ -2900,6 +2980,8 @@ To your surprise the darkness seems to be lessening directly in front of the dia
 <<specificPosition IntoCave>>
 
 <<setNextNodeName Delve_further_into_the_volcano>>
+<<wait 1>>
+<<setBackgroundMusic CavernAtmosphereLoop 0.25>>
 <<stop>>
 // <<jump Delve_further_into_the_volcano>>
 ===
@@ -2914,13 +2996,15 @@ You open your pouch to find the animal pendant. You wear the pendant around your
 <<enableDisable PartedSmog Smog>>
 <<wait 1>>
 
-Before you open your eyes you hear a "squawk" and a "craw". You open your eyes and witness a flock of forest birds. They beat their wings in unison, creating a strong gust of wind directed at the smog. The darkness dissipates and you can clearly see the other side of the track. 
+Before you open your eyes you hear a "squawk" and a "craw". You open your eyes and witness a flock of forest birds. They beat their wings in unison, creating a strong gust of wind directed at the smog. The darkness dissipates and you can clearly see the other side of the track. setBackgroundMusic
 
 You remove the pendant and the birds fly away.
 
 <<specificPosition IntoCave>>
 
 <<setNextNodeName Delve_further_into_the_volcano>>
+<<wait 1>>
+<<setBackgroundMusic CavernAtmosphereLoop 0.25>>
 <<stop>>
 // <<jump Delve_further_into_the_volcano>>
 ===
@@ -2940,6 +3024,8 @@ Exactly as you had thought, the smog from the cave is sucked into the vial you h
 <<specificPosition IntoCave>>
 
 <<setNextNodeName Delve_further_into_the_volcano>>
+<<wait 1>>
+<<setBackgroundMusic CavernAtmosphereLoop 0.25>>
 <<stop>>
 // <<jump Delve_further_into_the_volcano>>
 ===
@@ -3034,6 +3120,7 @@ position: 3443,2814
     //<<wait 10>> // Exercise timer
 
     <<setNextNodeName Walk_the_stone_stairs_to_the_top_of_the_cave>>
+    <<stop>>
     //<<jump Walk_the_stone_stairs_to_the_top_of_the_cave>>
 <<endif>>
 ===
@@ -3059,6 +3146,7 @@ You use the foot pedal to lift yourself up the cave.
 <<wait 1>>
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Take_the_lift_to_the_top_of_the_cave>>
+<<stop>>
 // <<jump Take_the_lift_to_the_top_of_the_cave>>
 ===
 
@@ -3085,6 +3173,7 @@ You can now use the foot pedal with ease to lift yourself up the cave.
 <<wait 1>>
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Take_the_lift_to_the_top_of_the_cave>>
+<<stop>>
 // <<jump Take_the_lift_to_the_top_of_the_cave>>
 ===
 
@@ -3113,6 +3202,7 @@ The vertical incline of the tree is hard to climb especially with the pack you a
 <<specificPosition ClimbUprightTreePath>>
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Climb_the_tree_to_the_top_of_the_cave>>
+<<stop>>
 //<<jump Climb_the_tree_to_the_top_of_the_cave>>
 ===
 
@@ -3134,6 +3224,7 @@ You climb the sloped side of the tree up to the top of the cave.
 <<specificPosition ClimbToppledTreePath>>
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Climb_the_tree_to_the_top_of_the_cave>>
+<<stop>>
 //<<jump Climb_the_tree_to_the_top_of_the_cave>>
 ===
 
@@ -3166,6 +3257,7 @@ The first pillar you stand on crumbles to the floor toppling over others in the 
 // *Hard. Climb the rubble.*
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Reach_the_top_of_the_cave_using_the_pillars>>
+<<stop>>
 //<<jump Reach_the_top_of_the_cave_using_the_pillars>>
 ===
 
@@ -3188,6 +3280,7 @@ The magical compass swings it's arms from left to right as it guides you to whic
 // *Easy. Step on the pillars.*
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Reach_the_top_of_the_cave_using_the_pillars>>
+<<stop>>
 //<<jump Reach_the_top_of_the_cave_using_the_pillars>>
 ===
 
@@ -3214,6 +3307,7 @@ You quickly run behind the lava guardian and jump onto it's back. The guardian m
 // *Hard. Climb the guardian.*
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
+<<stop>>
 //<<jump Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
 ===
 
@@ -3260,6 +3354,7 @@ One final icicle flies towards the creature freezing it's last molten limb. The 
 // *Easy. Climb the guardian.*
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
+<<stop>>
 //<<jump Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
 ===
 
@@ -3289,7 +3384,8 @@ title: Leave_the_cave
 position: 4921,3571
 ---
 <<goToScene VolcanoTop>>
-<<wait 2>>
+<<wait 2.2>>
+<<setBackgroundMusic Earthquake 0.3>>
 
 You leave the cave and follow the path up the volcano a little further. You've reached the top of the volcano. You look out to the landscape and you can see Granbell and Eldoria from here. You see the forest below and the farms in the distance.
 
@@ -3431,6 +3527,7 @@ What do you do?
 title: Open_the_package_then_drop_it
 position: 6306,3650
 ---
+<<setBackgroundMusic Earthquake 0.3>>
 <<enable CrownWithPlayer true>>
 You tear off the cloth wrapping that covers the package. You hold in your hands a glorious crown. The crown is adorned with precious materials and gemstones that seem foreign and other-worldly. The package also contains a note which says that this crown is an offering for the goblin leader in Eldoria.
 
@@ -3455,6 +3552,7 @@ position: 6685,3764
 <<enableDisable CrownDrop CrownWithPlayer>>
 You toss the package into the fiery depths and watch it plop into the lava and sink below.
 
+<<setBackgroundMusic Earthquake 0.6>>
 A bubble of molten rock bursts out from where it landed.
 
 A sudden gust of air rushes past you. You shield your eyes from any oncoming debris. 
@@ -3462,6 +3560,7 @@ A sudden gust of air rushes past you. You shield your eyes from any oncoming deb
 <<specificPosition PlatformSpot>>
 <<wait 1>>
 <<enable Dragon true>>
+<<setBackgroundMusic Earthquake 0.3>>
 <<wait 1>>
 Once the air subsides you look out and see a dragon in front of you.
 
@@ -3522,6 +3621,7 @@ You look around nothing seems different so far.
 
 <<goToScene ReturnToGranbell>>
 <<wait 1>>
+<<setBackgroundMusic Medieval_City 0.5>>
 <<enableDisable GuildhallFuture Guildhall>>
 <<rideHorse true>> 
 <<wait 1>>
@@ -3579,12 +3679,17 @@ Dragon: Very well. Your wish is granted.
 
 The dragon disappears into a puff of smoke.
 
-Everything goes dark. You wake up. Look around. The weather is grey and gloomy. Looks like it might rain. 
+<<goToScene StartScene>>
+<<wait 2>>
+Everything goes dark. 
 
 <<goToScene GranbellEnding>>
 <<wait 1>>
+<<setBackgroundMusic forest_loop 0.3>>
 <<rideHorse false>> 
 <<wait 3>>
+You wake up. Look around. The weather is grey and gloomy. Looks like it might rain. 
+
 You need to make a delivery today. You start walking to work.
 
 <<goToScene KingdomStreet>>
@@ -3639,6 +3744,7 @@ title: The_end
 position: 10318,2089
 ---
 <<goToScene EndScene>>
-<<wait 2>>
+<<wait 2.2>>
+<<setBackgroundMusic resolution_loop 0.5>>
 The end. Thank you for playing.
 ===

@@ -219,7 +219,7 @@ public class SceneSelector : MonoBehaviour
         //variables.SetValue("$pattersbyOriginal", true);
 
         //variables.SetValue("$diamond", true);
-        //variables.SetValue("$animalPendant", true);
+        variables.SetValue("$animalPendant", true);
         //variables.SetValue("$smokeVial", true);
 
         //variables.SetValue("$dagger", true);

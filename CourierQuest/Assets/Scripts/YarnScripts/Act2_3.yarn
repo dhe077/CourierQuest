@@ -69,6 +69,7 @@ position: 392,476
     The address on the third package has lead you to a door situated within a hill. There is a sign above the door that reads "Gamblers Grotto". The door has a small window that looks like it can slide open.
     <<nextPosition none>>
     <<wait 1>>
+    <<setBackgroundMusic TavernLoop2 0.1>>
     <<enable Stormhoof true>>
     <<rideHorse false>> 
     <<wait 1>>
@@ -590,6 +591,7 @@ position: 1194,-91
 Player: Delivery for Thakali!
 
 <<enable ThakaliFallOntoBranch true>>
+<<playSoundFrom ThakaliFallOntoBranch Gorilla1 1>>
 You hear a groaning from the trees. Then a scream that grows louder. 
 
 <<enableDisable ThakaliJumpFromTree ThakaliFallOntoBranch>>
@@ -621,6 +623,7 @@ position: 1571,437
 Player: This garden looks immaculate!
 
 <<enable ThakaliFallOntoBranch true>>
+<<playSoundFrom ThakaliFallOntoBranch Gorilla1 1>>
 You hear a groaning from the trees. Then a scream that grows louder. 
 
 <<enableDisable ThakaliJumpFromTree ThakaliFallOntoBranch>>
@@ -932,6 +935,7 @@ You start plowing the land.
 <<startExerciseQuest thakali>>
 <<wait 30>> // Exercise timer
 <<setNextNodeName Pull_the_plow>>
+<<stop>>
 //<<jump Pull_the_plow>>
 ===
 
@@ -1601,6 +1605,7 @@ title: Knock_on_the_door_of_the_Gamblers_Grotto
 position: 1406,3891
 ---
 <<enableDisable DoorSliderOpening DoorSliderClosed>>
+<<setBackgroundMusic TavernLoop2 0.25>>
 The small window slides open. You see a pair of eyes on the other side.
 
 Bouncer: Waddaya want?
@@ -1632,6 +1637,7 @@ position: 1679,4719
 Player: Val! Delivery for Val!
 
 <<enableDisable DoorSliderOpening DoorSliderClosed>>
+<<setBackgroundMusic TavernLoop2 0.25>>
 You look towards the door and the window slides open. You see a pair of eyes on the other side.
 
 Bouncer: Waddaya want?
@@ -1697,6 +1703,7 @@ Player: I have a delivery from Granbell.
 The pair of eyes narrow. 
 
 <<enableDisable DoorSliderClosing DoorSliderOpen>>
+<<setBackgroundMusic TavernLoop2 0.1>>
 Then the window slides shut.
 
 You hear yelling from the other side.
@@ -1704,8 +1711,10 @@ You hear yelling from the other side.
 Bouncer: Oi Val! Some biggun's got you a delivery from Granbell.
 
 You hear foot steps approach the door. 
+
 <<enable ValWalkingOut true>>
 <<wait 3>>
+<<setBackgroundMusic TavernLoop2 0.5>>
 As the door swings open you see before you a small halfling woman. 
 
 <<animate ValWithPlayer PointBack>>
@@ -1726,6 +1735,7 @@ Player: I'm just a courier from Granbell.
 The pair of eyes narrow. 
 <<wait 2>>
 <<enableDisable DoorSliderClosing DoorSliderOpen>>
+<<setBackgroundMusic TavernLoop2 0.1>>
 Then the window slides shut.
 
 You hear yelling from the other side.
@@ -1736,6 +1746,7 @@ You hear foot steps approach the door.
 
 <<enable ValWalkingOut true>>
 <<wait 3>>
+<<setBackgroundMusic TavernLoop2 0.5>>
 As the door swings open you see before you a small halfling woman. 
 
 <<animate ValWithPlayer PointBack>>
@@ -1757,11 +1768,11 @@ Player: I just want to gamble.
 <<enableDisable DoorSliderClosing DoorSliderOpen>>
 Bouncer: Oi Val. This biggun wants to gamble. Should we let 'em in.
 
+You hear foot steps approach the door.
+
 <<enable ValWalkingOut true>>
 <<wait 3>>
-You hear foot steps approach the door. 
-
-<<enableDisable OpenDoor Door>>
+<<setBackgroundMusic TavernLoop2 0.5>>
 As the door swings open you see before you a small halfling woman. 
 
 <<animate ValWithPlayer PointBack>>
@@ -1853,16 +1864,19 @@ position: 4351,3885
 Player: I have a package for you from Granbell.
 
 <<enable SackOfGold true>>
+<<playSoundFrom SackOfGold Coins 1>>
 You give Val the yellow package. She opens it up and you see the glistening sheen of gold coins. Val affixes her eyes onto the gold coins and she does not look up once.
 
 <<animate ValWithPlayer Surprise>>
 Val: Boy howdy! Payday has arrived just in time. A new game of dice just started and I'm puttin' it all on my lucky numbers!
 
 Val closes the pouch and swings it over her back and runs into the Gamblers Grotto. 
+<<playSoundFrom SackOfGold Coins 1>>
 <<enable SackOfGold false>>
 
 <<animate ValWithPlayer TurnAround>>
 <<wait 1.5>>
+<<setBackgroundMusic TavernLoop2 0.1>>
 <<enableDisable ValWalkingBackIn ValWithPlayer>>
 
 <<set $metVal to true>>
@@ -1883,6 +1897,7 @@ Player: Hey! Which way is it to-
 Your question is cut off by loud bangs and then yelling. 
 
 <<enableDisable ValRunningOut ValWalkingBackIn>>
+<<setBackgroundMusic TavernLoop2 0.5>>
 Suddenly, the door bursts open and Val jumps out running at full speed towards you. She jumps on the back of Stormhoof.
 
 From the door you see magical projectiles and arrows flying out in every direction.
@@ -1897,13 +1912,15 @@ title: Escape_the_shooters
 position: 5290,3856
 ---
 <<goToScene ValsEscape>>
-<<wait 2>>
+<<wait 2.2>>
+<<setBackgroundMusic Combat 0.5>>
 <<rideHorse true>> 
 <<wait 1>>
 As you ride away from the shooters. Magic missles and swift arrows wizz past your head and scatter along the ground.
 <<wait 30>> // Exercise timer
 <<goToScene ValClearing>>
-<<wait 2>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
 You've gained enough distance from them to stop and hide for a moment.
 <<nextPosition none>>
 <<wait 1>>
@@ -2044,6 +2061,7 @@ Player: Fine! I'm just going to leave the package here. Good riddance!
 <<set $metDaisy to true>>
 
 <<enableDisable DoorSliderClosing DoorSliderOpen>>
+<<setBackgroundMusic TavernLoop2 0.1>>
 The laugher and cheering continues on the other side of the door once more.
 
 <<specificPosition LeaveGamblersGrotto>>
@@ -2062,14 +2080,16 @@ title: You_spot_the_creature_again
 position: 8348,604
 ---
 <<goToScene OutrunGoblin>>
-<<wait 5>>
+<<wait 2.2>>
+<<setBackgroundMusic Combat 0.5>>
+<<wait 3>>
 <<startChase none>>
 That creature is back again. It looks at you angrily and doesn't make any demands this time. It rides close.
 <<moveClose true>>
 You need to outrun the creature again.
 <<moveClose false>>
 <<wait 30>> // Exercise timer
-
+<<setBackgroundMusic forest_loop 0.3>>
 You escape the creature once more.
 
 <<jump Continue_on_your_journey>>
@@ -2086,7 +2106,8 @@ The sky above has become an angry herd of dark clouds. The sun is setting it'll 
 
 <<if $path is "left">>
     <<goToScene LargeTreeTent>>
-    <<wait 2>>
+    <<wait 2.2>>
+    <<setBackgroundMusic forest_loop 0.1>>
     You ride a bit further down the path and find a good spot to make camp. 
     <<nextPosition none>>
     <<wait 1>>
@@ -2100,7 +2121,8 @@ The sky above has become an angry herd of dark clouds. The sun is setting it'll 
     Thunder rumbles and rain starts to pour down on your tent. You need to sleep.
 <<elseif $path is "right">>
     <<goToScene LargeRocksTent>>
-    <<wait 2>>
+    <<wait 2.2>>
+    <<setBackgroundMusic forest_loop 0.1>>
     You ride a bit further down the path and find a good spot to make camp. 
     <<nextPosition none>>
     <<wait 1>>

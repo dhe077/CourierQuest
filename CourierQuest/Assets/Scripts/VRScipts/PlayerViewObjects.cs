@@ -6,6 +6,7 @@ public class PlayerViewObjects : MonoBehaviour
 {
     public StoryCommands storyCommands;
     public GameObject mainCamera;
+    public AudioSource backgroundMusic;
 
     public StoryCommands GetStoryCommands()
     {
@@ -15,5 +16,10 @@ public class PlayerViewObjects : MonoBehaviour
     public GameObject GetMainCamera()
     {
         return mainCamera;
+    }
+
+    public AudioSource GetBackgroundMusic()
+    {
+        return backgroundMusic;
     }
 }

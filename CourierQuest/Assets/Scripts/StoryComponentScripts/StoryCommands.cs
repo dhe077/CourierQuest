@@ -21,6 +21,7 @@ public class StoryCommands : MonoBehaviour
     private EnvironmentManager environmentManager;
     private ExerciseQuestManager exerciseQuestManager;
     private AnimationManager animationManager;
+    private AudioManager audioManager;
 
     private float timer = 0f;
     private float endTimer;
@@ -115,6 +116,18 @@ public class StoryCommands : MonoBehaviour
         dialogueRunner.AddCommandHandler<string, string>(
             "animate",
             Animate
+        );
+        dialogueRunner.AddCommandHandler<string, float>(
+            "playSound",
+            PlaySound
+        );
+        dialogueRunner.AddCommandHandler<string, string, float>(
+            "playSoundFrom",
+            PlaySoundFrom
+        );
+        dialogueRunner.AddCommandHandler<string, float>(
+            "setBackgroundMusic",
+            SetBackgroundMusic
         );
     }
 
@@ -271,6 +284,27 @@ public class StoryCommands : MonoBehaviour
     {
         animationManager = GameObject.Find("AnimationManager").GetComponent<AnimationManager>();
         animationManager.PlayAnimation(objectName, animationName);
+    }
+
+    // This command plays an audio clip from the list in the AudioManager object using its audio clip name
+    public void PlaySound(string soundName, float volume)
+    {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager.PlaySound(soundName, volume);
+    }
+
+    // This command plays an audio clip from the list in the AudioManager object using its audio clip name
+    public void PlaySoundFrom(string objectName, string soundName, float volume)
+    {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager.PlaySoundFrom(objectName, soundName, volume);
+    }
+
+    // This command plays an audio clip from the list in the AudioManager object using its audio clip name
+    public void SetBackgroundMusic(string soundName, float volume)
+    {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager.SetBackgroundMusic(soundName, volume);
     }
 
 

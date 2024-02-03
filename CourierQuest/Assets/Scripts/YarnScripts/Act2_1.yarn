@@ -3,10 +3,12 @@ position: -304,-609
 ---
 <<if $followedPath is true>>
     <<goToScene WakeUpBushesHut>>
-    <<wait 3>>
+    <<wait 2.2>>
+    <<setBackgroundMusic forest_loop 0.3>>
 <<elseif $followedPath is false>>
     <<goToScene WakeUpBushesRoad>>
-    <<wait 3>>
+    <<wait 2.2>>
+    <<setBackgroundMusic forest_loop 0.3>>
 <<endif>>
 You open your eyes. You're safe.
 
@@ -326,7 +328,7 @@ position: 2688,-88
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<goToScene ForestPath>>
-<<wait  2>>
+<<wait 2>>
 <<if $firstPackage is "small">>
     <<jump Deliver_the_small_package>>
 <<elseif $firstPackage is "large">>
@@ -338,7 +340,8 @@ title: Wake_up_in_the_hut
 position: -294,318
 ---
 <<goToScene WakeUpHut>>
-<<wait  3>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
 You open your eyes. The morning sun streaks across the hut's interior. You're safe.
 
 <<nextPosition none>>
@@ -363,7 +366,7 @@ position: 2679,563
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<goToScene ForestPath>>
-<<wait  2>>
+<<wait 2>>
 <<if $firstPackage is "small">>
     <<jump Deliver_the_small_package>>
 <<elseif $firstPackage is "large">>
@@ -375,7 +378,8 @@ title: Wake_up_near_the_road
 position: -283,1193
 ---
 <<goToScene WakeUpRoad>>
-<<wait 3>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
 
 <<animate Garbanzo KnifeOut>>
 You open your eyes. The creature stands over you, dagger outstretched towards you.
@@ -626,7 +630,7 @@ position: 2691,1230
 You ride atop Stormhoof and decide you should deliver your first package.
 
 <<goToScene ForestPath>>
-<<wait  2>>
+<<wait 2>>
 <<if $firstPackage is "small">>
     <<jump Deliver_the_small_package>>
 <<elseif $firstPackage is "large">>
@@ -668,6 +672,7 @@ position: 4678,605
     The address on the first package has lead you to a small bakery store. Above the entrance to the store is a sign that says, "Pattersby's Pastries".
     <<nextPosition none>>
     <<wait 1>>
+    <<setBackgroundMusic TavernLoop2 0.5>>
     <<enable Stormhoof true>>
     <<rideHorse false>> 
     <<wait 1>>
@@ -826,6 +831,7 @@ Petunia: No, thank you.
 
 <<nextPosition none>>
 <<wait 1>>
+<<setBackgroundMusic forest_loop 0.3>>
 <<enable Stormhoof false>>
 <<rideHorse true>> 
 <<wait 1>>
