@@ -223,10 +223,10 @@ public class SceneSelector : MonoBehaviour
         //variables.SetValue("$smokeVial", true);
 
         //variables.SetValue("$dagger", true);
-        //variables.SetValue("$axe", true);
+        variables.SetValue("$axe", true);
         //variables.SetValue("$lantern", true);
         //variables.SetValue("$magicalCompass", true);
-        variables.SetValue("$assassin", true);
+        //variables.SetValue("$assassin", true);
 
         dialogueRunner.StartDialogue(nodeName);
     }

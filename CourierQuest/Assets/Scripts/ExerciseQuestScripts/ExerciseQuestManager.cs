@@ -36,6 +36,9 @@ public class ExerciseQuestManager : MonoBehaviour
             case "thakali":
                 GetComponent<ThakaliExQuest>().StartPlowing();
                 break;
+            case "volcano":
+                GetComponent<VolcanoExQuest>().Start();
+                break;
         }
     }
 
@@ -58,9 +61,9 @@ public class ExerciseQuestManager : MonoBehaviour
             case "thakali":
                 GetComponent<ThakaliExQuest>().PreparePlayer();
                 break;
-            // case "finn":
-            //     GetComponent<FinnExQuest>().PreparePlayer();
-            //     break;
+            case "volcano":
+                GetComponent<VolcanoExQuest>().PreparePlayer();
+                break;
         }
     }
 

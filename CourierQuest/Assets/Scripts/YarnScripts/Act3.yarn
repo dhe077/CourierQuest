@@ -2825,8 +2825,6 @@ position: 513,2721
 ---
 You ride swiftly up the path towards the volcano. You see the forest around you transform into a bleak landscape. Jagged rocks pepper the land and molten rivers stream from the volcano. The smell of ash lingers in the air around you. There is no way anything lives here.
 
-<<wait 10>>
-
 The path is becoming too narrow for Stormhoof to safely traverse. You leave Stormhoof at the base of the volcano.
 
 <<nextPosition none>>
@@ -3116,7 +3114,9 @@ position: 3443,2814
 
     // *Very Hard. Walk the stone stairs.*
     <<specificPosition WalkUpStairs>>
+    <<prepareExerciseQuest volcano>>
     <<wait 2>>
+    <<startExerciseQuest volcano>>
     //<<wait 10>> // Exercise timer
 
     <<setNextNodeName Walk_the_stone_stairs_to_the_top_of_the_cave>>
@@ -3144,7 +3144,11 @@ You use the foot pedal to lift yourself up the cave.
 <<wait 1>>
 <<enableDisable MovingLift Lift>>
 <<wait 1>>
-//<<wait 10>> // Exercise timer
+
+<<prepareExerciseQuest volcano>>
+<<wait 2>>
+<<startExerciseQuest volcano>>
+//<<wait 30>> // Exercise timer
 <<setNextNodeName Take_the_lift_to_the_top_of_the_cave>>
 <<stop>>
 // <<jump Take_the_lift_to_the_top_of_the_cave>>
@@ -3171,7 +3175,11 @@ You can now use the foot pedal with ease to lift yourself up the cave.
 <<wait 1>>
 <<enableDisable MovingLift Lift>>
 <<wait 1>>
-//<<wait 10>> // Exercise timer
+
+<<prepareExerciseQuest volcano>>
+<<wait 2>>
+<<startExerciseQuest volcano>>
+//<<wait 30>> // Exercise timer
 <<setNextNodeName Take_the_lift_to_the_top_of_the_cave>>
 <<stop>>
 // <<jump Take_the_lift_to_the_top_of_the_cave>>
@@ -3200,6 +3208,9 @@ The vertical incline of the tree is hard to climb especially with the pack you a
 
 // *Hard. Climb the tree.*
 <<specificPosition ClimbUprightTreePath>>
+<<prepareExerciseQuest volcano>>
+<<wait 2>>
+<<startExerciseQuest volcano>>
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Climb_the_tree_to_the_top_of_the_cave>>
 <<stop>>
@@ -3222,6 +3233,9 @@ You climb the sloped side of the tree up to the top of the cave.
 
 // *Easy. Climb the tree.*
 <<specificPosition ClimbToppledTreePath>>
+<<prepareExerciseQuest volcano>>
+<<wait 2>>
+<<startExerciseQuest volcano>>
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Climb_the_tree_to_the_top_of_the_cave>>
 <<stop>>
@@ -3250,11 +3264,12 @@ You decide that if you just quickly but randomly climb the pillars you'd make it
 The first pillar you stand on crumbles to the floor toppling over others in the process. A large heap of crumbled rock lies in front of you. It is tall enough to just reach the top of the cave.
 
 <<specificPosition WalkUpPillars>>
-<<wait 2>>
-
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Hard. Climb the rubble.*
+<<prepareExerciseQuest volcano>>
+<<wait 2>>
+<<startExerciseQuest volcano>>
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Reach_the_top_of_the_cave_using_the_pillars>>
 <<stop>>
@@ -3273,11 +3288,12 @@ Player: Magical compass. Please show me the way up to the top of the cave.
 The magical compass swings it's arms from left to right as it guides you to which pillar you must step on.
 
 <<specificPosition WalkUpPillars>>
-<<wait 2>>
-
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Easy. Step on the pillars.*
+<<prepareExerciseQuest volcano>>
+<<wait 2>>
+<<startExerciseQuest volcano>>
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Reach_the_top_of_the_cave_using_the_pillars>>
 <<stop>>
@@ -3300,11 +3316,13 @@ position: 3986,4312
 You quickly run behind the lava guardian and jump onto it's back. The guardian moves about the cave trying to shake you off it's back. You must carefully step on the solid rocks and avoid the lava.
 
 <<specificPosition WalkUpBeast>>
-<<wait 2>>
 
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Hard. Climb the guardian.*
+<<prepareExerciseQuest volcano>>
+<<wait 2>>
+<<startExerciseQuest volcano>>
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
 <<stop>>
@@ -3348,10 +3366,12 @@ One final icicle flies towards the creature freezing it's last molten limb. The 
 <<enable Smoke false>>
 
 <<specificPosition WalkUpBeast>>
-<<wait 2>>
 // *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
 
 // *Easy. Climb the guardian.*
+<<prepareExerciseQuest volcano>>
+<<wait 2>>
+<<startExerciseQuest volcano>>
 //<<wait 10>> // Exercise timer
 <<setNextNodeName Use_the_lava_guardian_to_reach_the_top_of_the_cave>>
 <<stop>>
