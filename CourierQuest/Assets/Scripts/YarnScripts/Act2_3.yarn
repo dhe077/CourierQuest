@@ -23,7 +23,7 @@ position: 392,476
     <<enable Fireball true>>
     Suddenly, you hear a sneeze from within the cave and a blast of fire comes streaking out of the cave.
 
-    What do you do?
+    
     -> Call out for Leyton.
         <<jump Call_out_for_Leyton>>
     -> Ask if whoever sneezed is ok.
@@ -38,7 +38,7 @@ position: 392,476
     <<enable Stormhoof true>>
     <<rideHorse false>> 
     <<wait 1>>
-    What do you do?
+    
     -> Call out for Thakali.
         <<jump Call_out_for_Thakali>>
     -> Compliment the garden.
@@ -57,7 +57,7 @@ position: 392,476
     <<enable Stormhoof true>>
     <<rideHorse false>> 
     <<wait 1>>
-    What do you do?
+    
     -> Call out for Daisy.
         <<jump Call_out_for_Daisy>>
     -> Take some berries.
@@ -73,7 +73,7 @@ position: 392,476
     <<enable Stormhoof true>>
     <<rideHorse false>> 
     <<wait 1>>
-    What do you do?
+    
     -> Call out for Val.
         <<jump Call_out_for_Val>>
     -> Knock on the door of the Gamblers Grotto.
@@ -95,7 +95,7 @@ Leyton: I'm inside the cave. I'll be with you in a moment.
 <<enable Fireball true>>
 You hear another sneeze come from the cave and again, a blast of flames shoot out of the cave.
 
-What do you do?
+
 -> Ask if he needs help getting down.
     <<jump Ask_if_he_needs_help_getting_down>>
 -> Ask why there is fire coming out of the cave.
@@ -111,7 +111,7 @@ Player: Are you ok in there?
 
 Leyton: Yup. Just a little under the weather is all. I'll be down in a moment.
 
-What do you do?
+
 -> Ask if he needs help getting down.
     <<jump Ask_if_he_needs_help_getting_down>>
 -> Ask why there is fire coming out of the cave.
@@ -132,7 +132,7 @@ Leyton appears from the cave. You see a man with firey red hair wearing an exoti
 
 Leyton: Now, why are you here again?
 
-What do you say?
+
 -> Tell Leyton you have a package for him.
     <<jump Tell_Leyton_you_have_a_package_for_him>>
 -> Tell Leyton that you're here to help him get better.
@@ -153,7 +153,7 @@ Leyton appears from the cave. You see a man with firey red hair wearing an exoti
 
 Leyton: Now, why are you here again?
 
-What do you say?
+
 -> Tell Leyton you have a package for him.
     <<jump Tell_Leyton_you_have_a_package_for_him>>
 -> Tell Leyton that you're here to help him get better.
@@ -177,7 +177,7 @@ Leyton: Hey! Where are you going? Where's my package!
 
 You freeze.
 
-What do you do?
+
 -> Tell him that you don't want to catch whatever he has.
     <<jump Tell_him_that_you_dont_want_to_catch_whatever_he_has>>
 -> Tell him that you were just looking around the place.
@@ -206,7 +206,7 @@ Leyton: Let's heat these up. I'm feeling hungry.
 
 <<set $metLeyton to true>>
 
-What do you say?
+
 -> Ask how he floated down the cliff.
     <<jump Ask_how_he_floated_down_the_cliff>>
 -> Offer Leyton some rations.
@@ -221,7 +221,7 @@ Player: I'm here to help you get better. Seems like you might need it.
 <<animate LeytonExitCave Dismiss>>
 Leyton: Thanks but unless you have something that can heat me up then I don't need your help. Was there anything else?
 
-What do you do?
+
 -> Tell Leyton you have a package for him.
     <<jump Tell_Leyton_you_have_a_package_for_him>>
 -> Tell him that you have some hot food for him.
@@ -253,7 +253,7 @@ Leyton: Yup this'll help. We're going to heat these up and I'm going to need you
 
 <<set $metLeyton to true>>
 
-What do you say?
+
 -> Ask how he floated down the cliff.
     <<jump Ask_how_he_floated_down_the_cliff>>
 -> Ask how you can help heat up the coals.
@@ -282,7 +282,7 @@ Leyton: Yup this'll help. We're going to heat these up and I'm going to need you
 
 <<set $metLeyton to true>>
 
-What do you say?
+
 -> Ask how he floated down the cliff.
     <<jump Ask_how_he_floated_down_the_cliff>>
 -> Ask how you can help heat up the coals.
@@ -298,7 +298,7 @@ Player: How did you just float down the cliff like that?
 
 Leyton: I have the magical ability to fly. That's how I got up there as well.
 
-What do you say?
+
 -> Ask him if he's a wizard.
     <<jump Ask_him_if_hes_a_wizard>>
 -> Ask him what he's going to do with the coals.
@@ -337,7 +337,7 @@ Leyton: We're going to heat these up and I'm going to need your help.
 
 <<set $metLeyton to true>>
 
-What do you say?
+
 -> Ask how he floated down the cliff.
     <<jump Ask_how_he_floated_down_the_cliff>>
 -> Ask how you can help heat up the coals.
@@ -360,7 +360,7 @@ Leyton: So we're going to heat these up and I'm going to need your help.
 
 <<set $metLeyton to true>>
 
-What do you say?
+
 -> Ask how you can help heat up the coals.
     <<jump Ask_how_you_can_help_heat_up_the_coals>>
 -> Tell him that you're busy and you've a special delivery to complete.
@@ -398,7 +398,7 @@ Leyton shakes the bag of coals.
 <<animate LeytonAtBottom LookBehind>>
 Leyton: So we're going to heat these up and I'm going to need your help.
 
-What do you say?
+
 -> Ask how you can help heat up the coals.
     <<jump Ask_how_you_can_help_heat_up_the_coals>>
 -> Tell him that you're busy and you've a special delivery to complete.
@@ -453,7 +453,7 @@ Leyton: I think they're hot enough now!
 <<animate LeytonJumpIn Dive>>
 Leyton jumps onto the bed of coals and proceeds to get comfy.
 
-What do you do?
+
 -> Ask if it hurts.
     <<jump Ask_if_it_hurts>>
 -> Ask if he feels better.
@@ -604,7 +604,7 @@ He gets up and starts slashing wildly at the plants with his handaxes.
 The dragon man stops slashing and turns to face you.
 <<enableDisable ThakaliLookingAtPlayer ThakaliAttackGarden>>
 
-What do you do? (Timed)
+ (Timed)
 <<startTimer 10>>
 -> Try and stop him from destroying more of the garden.
     <<interrruptTimer none>>
@@ -636,7 +636,7 @@ He gets up and starts slashing wildly at the plants with his handaxes.
 The dragon man stops slashing and turns to face you.
 <<enableDisable ThakaliLookingAtPlayer ThakaliAttackGarden>>
 
-What do you do? (Timed)
+ (Timed)
 <<startTimer 10>>
 -> Try and stop him from destroying more of the garden.
     <<interrruptTimer none>>
@@ -656,7 +656,7 @@ Player: Hey what are you doing! Stop it!
 
 Thakali: No tomatoes! Where. Are. Thakali's. Tomatoes!
 
-What do you say?
+
 -> Ask if he's Thakali.
     <<jump Ask_if_hes_Thakali>>
 -> Ask why he wants tomatoes.
@@ -672,7 +672,7 @@ Player: Hey! Why do you want tomatoes anyway?
 Thakali: They are the best vegetable for delicious meals. Thakali grows garden. But no tomato.
 <<animate ThakaliLookingAtPlayer StopCheer>>
 
-What do you say?
+
 -> Ask if he's Thakali.
     <<jump Ask_if_hes_Thakali>>
 -> Ask him if he planted tomato seeds.
@@ -691,7 +691,7 @@ You see him continue to slash the crops and destroy the remaining plants.
 
 Thakali: Do you have tomatoes?
 
-What do you say?
+
 -> Ask if he's Thakali.
     <<jump Ask_if_hes_Thakali>>
 -> Say that you're just a courier.
@@ -705,7 +705,7 @@ Player: Did you even plant any *tomato* seeds?
 
 Thakali: *Tomato* seeds? Thakali just plant seeds that small creature give Thakali.
 
-What do you say?
+
 -> Ask what the creature looked like.
     <<jump Ask_what_the_creature_looked_like>>
 -> Say that he needs tomato seeds.
@@ -721,7 +721,7 @@ Thakali: Small, green, big nose, pointy ears.
 
 You think that it sounds similar to the creature that chased you.
 
-What do you say?
+
 -> Say that he needs tomato seeds.
     <<jump Say_that_he_needs_tomato_seeds>>
 -> Ask if he's Thakali.
@@ -751,7 +751,7 @@ Thakali gives a low growl then continues slashing at the plants.
 <<wait 1>>
 <<enableDisable ThakaliLookingAtPlayer ThakaliAttackGarden>>
 
-What do you say?
+
 -> Ask if he's Thakali.
     <<jump Ask_if_hes_Thakali>>
 -> Ask why he wants tomatoes.
@@ -767,7 +767,7 @@ Thakali: Yes.
 
 He nods and points to himself. Seems like a man of very few words.
 
-What do you say?
+
 -> Remind him of his package.
     <<jump Remind_him_of_his_package>>
 -> Say that he needs tomato seeds.
@@ -800,7 +800,7 @@ Thakali: What are these?
 
 <<set $metThakali to true>>
 
-What do you say?
+
 <<if $metFinn is true>>
     -> Say that they are magical tomato seeds.
         <<jump Say_that_they_are_magical_tomato_seeds>>
@@ -825,7 +825,7 @@ Thakali does a small dance in celebration.
 
 Thakali: We need to plant these right away!
 
-What do you do?
+
 -> Offer to help plant them.
     <<jump Offer_to_help_plant_them>>
 -> Say that you can't help plant.
@@ -846,7 +846,7 @@ Thakali does a small dance in celebration.
 
 Thakali: We need to plant these right away!
 
-What do you do?
+
 -> Offer to help plant them.
     <<jump Offer_to_help_plant_them>>
 -> Say that you can't help plant.
@@ -869,7 +869,7 @@ Thakali: Thakali has a big machine for that.
 <<wait 1>>
 He pulls out a plowing device from behind a bush. Farmers uses these to efficiently dig up the land. Usually strong oxen pull these. You don't see any animals nearby.
 
-What do you do?
+
 -> Ask if he has something to pull the plow.
     <<jump Ask_if_he_has_something_to_pull_the_plow>>
 -> Offer to use Stormhoof to pull the plow.
@@ -960,7 +960,7 @@ Player: Now just cover them up and water them.
 <<animate ThakaliWithTomatoes LookBehind>>
 Thakali: How long will tomato grow?
 
-What do you do?
+
 -> Tell him that it won't be any time soon.
     <<jump Tell_him_that_it_wont_be_any_time_soon>>
 -> Tell him that if he dances they will grow faster.
@@ -1001,7 +1001,7 @@ Thakali: TOMATO!!
 <<animate ThakaliDivesIntoTomatoes Cheer>>
 Thakali drops his axes and dives into the tomato bushes, harvesting the ripest tomatoes with a big grin on his face. Seems like Thakali is occupied with the tomatoes. He's left his axes on the ground. Maybe an axe might come in handy.
 
-What do you do?
+
 -> Take the axe.
     <<jump Take_the_axe>>
 -> Leave the axe.
@@ -1037,7 +1037,7 @@ Thakali: TOMATO!!
 <<animate ThakaliDivesIntoTomatoes Cheer>>
 Thakali drops his axes and dives into the tomato bushes, harvesting the ripest tomatoes with a big grin on his face. Seems like Thakali is occupied with the tomatoes. He's left his axes on the ground. Maybe an axe might come in handy.
 
-What do you do?
+
 -> Take the axe.
     <<jump Take_the_axe>>
 -> Leave the axe.
@@ -1119,7 +1119,7 @@ Daisy: I'll be with you in a sec, sweetie.
 
 You look to your side. A basket of the most delicious looking berries you've ever seen lies beside you.
 
-What do you do?
+
 -> Wait for Daisy.
     <<jump Wait_for_Daisy>>
 -> Take some berries.
@@ -1136,7 +1136,7 @@ You reach down towards the baskets of berries and attempt to grab a handful. Jus
 <<animate DaisyWithPlayer AngryPoint>>
 Daisy: Hey! What are you doing! Those aren't for you!
 
-What do you do?
+
 -> Say that you wanted to sample them.
     <<jump Say_that_you_wanted_to_sample_them>>
 -> Say that you'd like some berries.
@@ -1155,7 +1155,7 @@ A woman with hooves and horns steps forth from the bushes.
 <<animate DaisyWithPlayer Wave>>
 Daisy: Hello there sweetie. What can I do for you today. Are you here for some berries?
 
-What do you say?
+
 -> Say that you are a courier.
     <<jump Say_that_you_are_a_courier>>
 -> Say that you'd like some berries.
@@ -1170,7 +1170,7 @@ Player: I just wanted some berries.
 <<animate DaisyWithPlayer DoubleHandout>>
 Daisy: Sorry, these aren't for you. The baskets you see around you are for my mother's bakery.
 
-What do you say?
+
 -> Say that you are a courier.
     <<jump Say_that_you_are_a_courier>>
 -> Ask why her mother needs so many berries.
@@ -1190,7 +1190,7 @@ Player: I just wanted to sample your delicious looking berries.
 <<animate DaisyWithPlayer DoubleHandout>>
 Daisy: Sorry, these aren't for you. The baskets you see around you are for my mother's bakery.
 
-What do you say?
+
 -> Say that you are a courier.
     <<jump Say_that_you_are_a_courier>>
 -> Ask why her mother needs so many berries.
@@ -1214,7 +1214,7 @@ Daisy makes a deep sigh.
 
 Daisy: She's asked me to pick the berries from this orchard, but I don't have quite enough yet. Anyway, why are you even here?
 
-What do you say?
+
 -> Ask why she needs more when she's picked so many.
     <<jump Ask_why_she_needs_more_when_shes_picked_so_many>>
 -> Say that you are a courier.
@@ -1251,7 +1251,7 @@ Daisy: Now this'll be very helpful. I know exactly who got this for me.
 
 <<set $metDaisy to true>>
 
-What do you say?
+
 -> Ask who got Daisy the axe.
     <<jump Ask_who_got_Daisy_the_axe>>
 -> Ask why the axe will be helpful.
@@ -1271,7 +1271,7 @@ Daisy: If you touch a berry I will slice that arm clean off without hesitation.
 
 You feel an intimidating presense from her.
 
-What do you do?
+
 -> Say that you wanted to sample them.
     <<jump Say_that_you_wanted_to_sample_them>>
 -> Say that you are a courier.
@@ -1299,7 +1299,7 @@ Daisy: Speaking of the thief. I don't have enough berries to take to my mother's
 <<enable FairyGroup true>>
 Out of the corner of your eye you spot a fairy making off with a pile of berries in its clutches.
 
-What do you do? (Timed)
+ (Timed)
 <<startTimer 12>>
 -> Yell at the fairy.
     <<interrruptTimer none>>
@@ -1335,7 +1335,7 @@ Daisy: Speaking of the thief. I don't have enough berries to take to my mother's
 <<enable FairyGroup true>>
 Out of the corner of your eye you spot a fairy making off with a pile of berries in its clutches.
 
-What do you do? (Timed)
+ (Timed)
 <<startTimer 12>>
 -> Yell at the fairy.
     <<interrruptTimer none>>
@@ -1356,7 +1356,7 @@ You remain silent as you watch the fairy eat a berry then slip into the bushes w
 <<animate DaisyWithPlayer Wave>>
 Daisy: Hey, are you there?
 
-What do you do?
+
 -> Tell Daisy about the fairy.
     <<jump Tell_Daisy_about_the_fairy>>
 -> Walk towards where the fairy was.
@@ -1524,7 +1524,7 @@ Player: Thank you for the compass. It'll help me with my last delivery.
 
 Daisy: Just let the compass know where it is and it'll guide you there. Where is your last delivery?
 
-What do you do?
+
 <<if $path is "left">>
     Player: I have a very important delivery to make to Eldoria.
 
@@ -1610,7 +1610,7 @@ The small window slides open. You see a pair of eyes on the other side.
 
 Bouncer: Waddaya want?
 
-What do you say?
+
 -> Ask what this place is.
     <<jump Ask_what_this_place_is>>
 -> Say that you're looking for Val.
@@ -1624,7 +1624,7 @@ Player: Delivery for Val!
 
 You hear no response. You move closer to the door. You hear cheering and laughter from the other side.
 
-What do you do?
+
 -> Knock on the door of the Gamblers Grotto.
     <<jump Knock_on_the_door_of_the_Gamblers_Grotto>>
 -> Call out for Val again.
@@ -1642,7 +1642,7 @@ You look towards the door and the window slides open. You see a pair of eyes on 
 
 Bouncer: Waddaya want?
 
-What do you say?
+
 -> Say that you're looking for Val.
     <<jump Say_that_youre_looking_for_Val>>
 -> Ask what this place is.
@@ -1658,7 +1658,7 @@ The pair of eyes narrow.
 
 Bouncer: What kind of delivery are we talkin 'bout? This ain't a place for big folk like yourself.
 
-What do you say?
+
 -> Ask what he means by big folk.
     <<jump Ask_what_he_means_by_big_folk>>
 -> Say that you have a delivery from Granbell.
@@ -1674,7 +1674,7 @@ The pair of eyes narrow.
 
 Bouncer: Who wants to know? This ain't a place for big folk like yourself.
 
-What do you say?
+
 -> Ask what he means by big folk.
     <<jump Ask_what_he_means_by_big_folk>>
 -> Say that you're a courier from Granbell.
@@ -1688,7 +1688,7 @@ Player: Hey! Who you calling big!
 
 Bouncer: Alot of the big folk who pass by are not so kind to us halflings.
 
-What do you do?
+
 -> Drop the package at the door.
     <<jump Drop_the_package_at_the_door>>
 -> Say that you want to gamble.
@@ -1720,7 +1720,7 @@ As the door swings open you see before you a small halfling woman.
 <<animate ValWithPlayer PointBack>>
 Val: Now what have we got here. Better hurry, I'm losing my table over there.
 
-What do you do?
+
 -> Ask if she's Val.
     <<jump Ask_if_shes_Val>>
 -> Ask who that other guy was.
@@ -1752,7 +1752,7 @@ As the door swings open you see before you a small halfling woman.
 <<animate ValWithPlayer PointBack>>
 Val: Now what have we got here. Better hurry, I'm losing my table over there.
 
-What do you do?
+
 -> Ask if she's Val.
     <<jump Ask_if_shes_Val>>
 -> Ask who that other guy was.
@@ -1778,7 +1778,7 @@ As the door swings open you see before you a small halfling woman.
 <<animate ValWithPlayer PointBack>>
 Val: Now what have we got here. Better hurry, I'm losing my table over there.
 
-What do you do?
+
 -> Ask if she's Val.
     <<jump Ask_if_shes_Val>>
 -> Ask who that other guy was.
@@ -1793,7 +1793,7 @@ Player: Are you Val?
 <<animate ValWithPlayer Surprise>>
 Val: The one and only. Have you got something special for me? Or are you in need of some of my services?
 
-What do you do?
+
 -> Tell Val you have her package.
     <<jump Tell_Val_you_have_her_package>>
 -> Ask her what her services are.
@@ -1809,7 +1809,7 @@ Player: Who was that other guy?
 Val: That's Teddy. He's our bouncer. Now, have you got something special for me or are you here just to disturb *my* peace.
 <<wait 2>>
 
-What do you say?
+
 -> Ask what she was just doing.
     <<jump Ask_what_she_was_just_doing>>
 -> Tell Val you have her package.
@@ -1835,7 +1835,7 @@ Player: What services do you offer?
 <<animate ValWithPlayer Cocky>>
 Val: I can *take care* of any unwanted enemies that you may have. Fair warning, this service ain't cheap.
 
-What do you say?
+
 -> Tell her about the creature that chased you.
     <<jump Tell_her_about_the_creature_that_chased_you>>
 -> Tell Val you have her package.
@@ -1932,7 +1932,7 @@ You've gained enough distance from them to stop and hide for a moment.
 <<animate ValWithPlayer WipeSweat>>
 Val: Phew. That was close. Swift riding there partner.
 
-What do you say?
+
 -> Ask Val what just happened.
     <<jump Ask_Val_what_just_happened>>
 -> Tell Val not to call you partner.
@@ -1966,7 +1966,7 @@ Val holds out her finger and a flame shoots out and hits the rocks nearby.
 
 Val: To settle my debt with you for saving my life. When the time comes, just whisper my name to the wind, and I'll ride in like a shadow to deliver the reckoning you seek.
 
-What do you say?
+
 -> Turn down her offer.
     <<jump Turn_down_her_offer>>
 -> Take her offer.

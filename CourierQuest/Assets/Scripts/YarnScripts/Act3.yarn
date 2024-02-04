@@ -102,7 +102,7 @@ Bear Goblin: Oi you. What are you doin' 'ere?! You'd better get outa 'ere before
 <<playSoundFrom BearWithGoblins BearGrowl2 0.5>>
 The other goblins laugh too. The bear growls and flails its arms around nearly hitting you. The goblins tighten the restraints around its neck.
 
-What do you say?
+
 -> Tell them that you're here to make a special delivery.
     <<jump Tell_them_that_youre_here_to_make_a_special_delivery>>
 -> Tell them that you need to get inside.
@@ -123,7 +123,7 @@ Bear Goblin: Oi, bear. Squash this puny 'uman!
 
 The bear slowly walks towards you.
 
-What do you do?
+
 <<if $muscleSpirit is true>>
     -> Wrestle the bear with your muscle spirit.
         <<jump Wrestle_the_bear_with_your_muscle_spirit>>
@@ -147,7 +147,7 @@ Bear Goblin: Oi, bear. Squash this puny human!
 
 The bear slowly walks towards you.
 
-What do you do?
+
 <<if $muscleSpirit is true>>
     -> Wrestle the bear with your muscle spirit.
         <<jump Wrestle_the_bear_with_your_muscle_spirit>>
@@ -216,7 +216,7 @@ The goblin looks in your direction and points at you.
 <<animate GoblinShaman Taunt>>
 Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot a lightning bolt frew your face.
 
-What do you do?
+
 -> Ask where their leader is.
     <<jump Ask_where_their_leader_is>>
 -> Say that you have a special delivery from Granbell.
@@ -238,7 +238,7 @@ Goblin Shaman: I'm going to vaporize you.
 
 You spot a hallway to your right that leads away out of the throne room. If you could distract them somehow you could escape down that hallway.
 
-What do you do? (Timed)
+ (Timed)
 <<startTimer 14>>
 <<if $diamond is true>>
     -> Use the diamond to counter the lightning.
@@ -283,7 +283,7 @@ Goblin Shaman: I'm going to vaporize you.
 
 You spot a hallway to your right that leads away out of the throne room. If you could distract them somehow you could escape down that hallway.
 
-What do you do? (Timed)
+ (Timed)
 <<startTimer 14>>
 <<if $diamond is true>>
     -> Use the diamond to counter the lightning.
@@ -416,7 +416,7 @@ You run down the hallway. It leads you to a large open area with tall stone colu
 <<wait 2>>
 Opposite the hallway exit you spot a large wooden door. The door is guarded by a gigantic ogre that is wearing a grease soaked rag.
 
-What do you do?
+
 -> Ask the ogre what is behind the wooden door.
     <<jump Ask_the_ogre_what_is_behind_the_wooden_door>>
 -> Tell the ogre you have a special delivery.
@@ -782,7 +782,7 @@ Gate Goblin 2: Stop where you are!
 <<wait 2>>
 You can see Garbanzo nearby out of sight from the guards.
 
-What do you do?
+
 <<if $muscleSpirit is true>>
     -> Use the muscle spirit.
         <<jump Use_the_muscle_spirit>>
@@ -984,7 +984,7 @@ The goblin looks in your direction and points at you.
 <<animate GoblinShaman Taunt>>
 Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot a lightning bolt frew your face.
 
-What do you do?
+
 -> Insult the goblin.
     <<jump Insult_the_goblin>>
 -> Say that you're not a human.
@@ -1009,7 +1009,7 @@ Goblin Shaman: I'm going to vaporize you.
 <<animate GarbanzoHide Sneak>>
 You spot Garbanzo close by. He's hidden behind a potted plant. You need to distract the goblin somehow.
 
-What do you do? Timed.
+ Timed.
 <<startTimer 12>>
 <<if $diamond is true>>
     -> Offer the diamond as a bribe.
@@ -1057,7 +1057,7 @@ Goblin Shaman: I'm going to vaporize you.
 <<animate GarbanzoHide Sneak>>
 You spot Garbanzo close by. He's hidden behind a potted plant. You need to distract the goblin somehow.
 
-What do you do? Timed.
+ Timed.
 <<startTimer 12>>
 <<if $diamond is true>>
     -> Offer the diamond as a bribe.
@@ -1238,7 +1238,7 @@ This area is decorated with tall stone columns. Some of these stone columns look
 <<wait 2>>
 Opposite the hallway exit you spot a large wooden door. The door is guarded by a gigantic ogre that is wearing a grease soaked rag.
 
-What do you do?
+
 -> Insult the ogre.
     <<jump Insult_the_ogre>>
 -> Try to sneak around the ogre.
@@ -1259,7 +1259,7 @@ The ogre runs at you at an alarming pace. The ground shakes as the ogre thumps i
 
 This time around Garbanzo is nowhere to be seen. Who's going to save you this time? You need to think fast.
 
-What do you do? (Timed)
+ (Timed)
 <<startTimer 16>>
 <<if $dagger is true>>
     -> Throw the dagger at the ogre.
@@ -1310,7 +1310,7 @@ The ogre runs at you at an alarming pace. The ground shakes as the ogre thumps i
 
 This time around Garbanzo is nowhere to be seen. Who's going to save you this time? You need to think fast.
 
-What do you do? (Timed)
+ (Timed)
 <<startTimer 16>>
 <<if $dagger is true>>
     -> Throw the dagger at the ogre.
@@ -1694,7 +1694,7 @@ The creature winks at you.
 
 Garbanzo: The package. Where is it?
 
-What do you do?
+
 -> Tell the goblin that he fell for your trap.
     <<jump Tell_the_goblin_that_he_fell_for_your_trap>>
 -> Kick off the goblin.
@@ -1732,7 +1732,7 @@ Adventurers: Hey! I see the goblin. He's over there! Get him!
 
 Seems like someone wants the goblin. This could be your chance to finally get rid of him.
 
-What do you do?
+
 -> Grab onto the goblin.
     <<jump Grab_onto_the_goblin>>
 -> Distract the goblin.
@@ -1770,7 +1770,7 @@ Adventurer: Hey! I see the goblin. He's over there! Get him!
 
 Seems like someone wants the goblin. This could be your chance to finally get rid of him.
 
-What do you do?
+
 -> Grab onto the goblin.
     <<jump Grab_onto_the_goblin>>
 -> Distract the goblin.
@@ -1851,7 +1851,7 @@ The goblin cowers in absolute terror. He drops the package to the floor. You qui
 
 Now that you've lost all your items it'll be dangerous travelling alone. 
 
-What do you do?
+
 -> Ask for help to get rid of the package.
     <<jump Ask_for_help_to_get_rid_of_the_package>>
 -> Ask for help to deliver the package.
@@ -2211,7 +2211,7 @@ Your party walks in from behind you.
     Val: Pinch me. I must be dreaming!
 <<endif>>
 
-What do you do?
+
 -> Open the package and leave the treasure.
     <<jump Open_the_package_and_leave_the_treasure>>
 -> Drop the package and take the treasure.
@@ -2742,7 +2742,7 @@ There is an outcropping that leans over the volcano's pit of lava.
 <<specificPosition ToPlatform>>
 <<wait 10>>
 
-What do you do?
+
 -> Open the package then throw it into the lava.
     <<jump Open_the_package_then_throw_it_into_the_lava>>
 -> Just drop the package into the lava without opening it.
@@ -2850,7 +2850,7 @@ position: 995,2617
     <<setBackgroundMusic Earthquake 0.2>>
     The path up ahead has been covered by flowing lava that is seeping out of a hole in the side of the volcano. The lava has created a barrier between your side of the track and the rest of the track that leads up the volcano.
 
-    What do you do?
+    
     -> Embrace the muscle spirit.
         <<jump Embrace_the_muscle_spirit>>
 <<elseif $pattersbyOriginal is true>>
@@ -2859,7 +2859,7 @@ position: 995,2617
     <<setBackgroundMusic Earthquake 0.2>>
     The path up ahead has been covered by flowing lava that is seeping out of a hole in the side of the volcano. The lava has created a barrier between your side of the track and the rest of the track that leads up the volcano.
 
-    What do you do?
+    
     -> Eat the Pattersby Pastry.
         <<jump Eat_the_Pattersby_Pastry>>
 <<endif>>
@@ -2925,7 +2925,7 @@ You try to walk through the mist. Everything goes pitch black as you continue wa
 <<wait 2>>
 You come out of the mist to the exact place you came in. Something seems odd about this fog.
 
-What do you do?
+
 <<if $diamond is true>>
     -> Hold out the diamond in front of you.
         <<jump Hold_out_the_diamond_in_front_of_you>>
@@ -3044,7 +3044,7 @@ position: 3443,2814
 
     The lift is held down on the floor by stones which are tied by a rope to the side of the lift. In the center of the lift is a foot crank. The foot crank must be the way to pull the lift up.
 
-    What do you do?
+    
     -> Use the lift with the weights on.
         <<jump Use_the_lift_with_the_weights_on>>
     -> Cut off the weights and use the lift.
@@ -3062,7 +3062,7 @@ position: 3443,2814
 
     The tree is not close to the cliff but if it were to topple over and lean on the cliff it would reach the ledge.
 
-    What do you do?
+    
     -> Climb the tree and jump to the cliff.
         <<jump Climb_the_tree_and_jump_to_the_cliff>>
     -> Use the axe to chop the tree for it to lean over.
@@ -3078,7 +3078,7 @@ position: 3443,2814
 
     You see a set of pillars of various heights that lead up to the cliff that gleams with the light of day. You approach the pillars. They are made of a kind of volcanic rock. You touch one. That one seems sturdy enough to stand on. You touch another and it crumbles to the floor in a devastating heap. Seems like some pillars are stronger than others. You'd better follow the right path up the rocks or it could mean you'd have a rough time climbing the rubble.
 
-    What do you do?
+    
     -> Climb the pillars randomly.
         <<jump Climb_the_pillars_randomly>>
     -> Use the magic compass to guide you.
@@ -3094,7 +3094,7 @@ position: 3443,2814
 
     A growing hot mass of fiery lava and solid rock form into a large beast before your eyes. The lava beast looks to be guarding the way to the top of the cave. It doesn't say anything to you but you sense that if you were to approach it it would not go well. Around it you see a fine set of solid rock stairs that you could safely climb up to reach the cave top.
 
-    What do you do?
+    
     -> Attempt to climb the lava guardian.
         <<jump Attempt_to_climb_the_lava_guardian>>
     -> Call for Val to remove the lava guardian.
@@ -3426,7 +3426,7 @@ There is an outcropping that leans over the volcano's pit of lava.
 
     <<nextPosition none>>
     <<wait 2>>
-    What do you do?
+    
     -> Open the package then drop it.
         <<jump Open_the_package_then_drop_it>>
     -> Drop the package without opening it.
@@ -3437,7 +3437,7 @@ There is an outcropping that leans over the volcano's pit of lava.
 
     Garbanzo: Finally! I will become all powerful! Hahaha!
 
-    What do you do?
+    
     <<if $magicRock is true>> 
         -> Run to grab the package from him before he drops it.
             <<jump Run_to_grab_the_package_from_him_before_he_drops_it>>
@@ -3471,7 +3471,7 @@ You both struggle for the package on the volcano's precipice. Back and forth you
 The goblin stumbles backwards towards the edge.
 <<animate GarbanzoWithoutPackage Stumble>>
 
-What do you do? (Timed)
+ (Timed)
 <<startTimer 6>>
 -> Grab hold of the goblin.
     <<interrruptTimer none>>
@@ -3501,7 +3501,7 @@ While the goblin is blinded you run as fast as you can towards the package. You 
 In his daze, the goblin stumbles backwards towards the edge, rubbing his eyes.
 <<animate GarbanzoWithoutPackage Stumble>>
 
-What do you do? (Timed)
+ (Timed)
 <<startTimer 6>>
 -> Grab hold of the goblin.
     <<interrruptTimer none>>
@@ -3520,7 +3520,7 @@ You quickly grab onto the goblin before he falls into the lava. You hold him dow
 Now *you* have the package. 
 <<set $specialPackage to true>>
 
-What do you do?
+
 -> Open the package then drop it.
     <<jump Open_the_package_then_drop_it>>
 -> Drop the package without opening it.
@@ -3537,7 +3537,7 @@ You nudge the goblin slightly and he topples over the edge. The goblin screams a
 Now *you* have the package. 
 <<set $specialPackage to true>>
 
-What do you do?
+
 -> Open the package then drop it.
     <<jump Open_the_package_then_drop_it>>
 -> Drop the package without opening it.
@@ -3588,7 +3588,7 @@ It looks directly at you. A voice is heard in your head.
 
 Dragon: Thank you for your payment! What do you wish for?
 
-What do you say?
+
 -> Ask what the dragon is talking about.
     <<jump Ask_what_the_dragon_is_talking_about>>
 -> Ask what you can wish for.
@@ -3766,5 +3766,7 @@ position: 10318,2089
 <<goToScene EndScene>>
 <<wait 2.2>>
 <<setBackgroundMusic resolution_loop 0.5>>
+
+<<recordVariables none>>
 The end. Thank you for playing.
 ===

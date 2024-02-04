@@ -64,7 +64,6 @@ Frankie, your childhood friend walks beside you leading a cow alongside him.
 
 Frankie: Hey pal! How’s your morning going?
 
-What do you say? (Timed) 
 <<startTimer 8>>
 -> Say that you're headed to work.
     <<interrruptTimer none>>
@@ -88,7 +87,6 @@ Frankie pats the cow on the belly.
 
 Frankie: Have you heard the news about the war.
 
-What do you say?
 -> Ask about the war.
     <<jump Ask_about_the_war>>
 -> Say that you don't care.
@@ -104,7 +102,7 @@ Player: I'm on my way to the tavern for an early morning pick me up.
 
 Frankie: Ha ha! Sounds like some serious business. Have you heard the news about the war.
 
-What do you say?
+
 -> Ask about the war.
     <<jump Ask_about_the_war>>
 -> Say that you don't care.
@@ -120,7 +118,6 @@ Player: What's happened now?
 
 Frankie: Don't you know? Eldoria has been taken over by goblins. Which means that we're the next closest human settlement. What's worse is that people are saying that the Aurelian's haven't been putting any more guards on the walls of the kingdom. Any day now we'll be swarmed with goblins. Make sure you're prepared for anything.
 
-What do you say?
 -> Ask Frankie what goblins look like.
     <<jump Ask_Frankie_what_goblins_look_like>>
 -> Tell Frankie that he's acting a little crazy.
@@ -134,7 +131,6 @@ Player: Sorry Frankie, I don't feel like hearing about the war today. I've alrea
 
 Frankie: Well, at least be careful about delivering today. You might see some goblins.
 
-What do you say?
 -> Tell Frankie that you'd better hurry to work.
     <<jump Tell_Frankie_that_youd_better_hurry_to_work>>
 -> Tell Frankie that he's acting a little crazy.
@@ -150,7 +146,6 @@ Player: Frankie, that sounds like nonsense. I heard that the Goblins haven't mad
 
 Frankie: That's just it! I don't think any of us were expecting it. Apparently, there were Goblins disguised as people within the walls of Eldoria. *Frankie wearily looks around*. 
 
-What do you do?
 -> Ask Frankie what goblins look like.
     <<jump Ask_Frankie_what_goblins_look_like>>
 -> Tell Frankie that you'd better hurry to work.
@@ -164,7 +159,6 @@ Player: I've never seen a goblin. What do they look like? In case I ever run acr
 
 Frankie: Oh, they're terribly hideous creatures. Short. Big ears. Big nose. Green. Thats about all I can remember. If you ever come across one make sure you run as fast as you can. They can be cunning little creatures.
 
-What do you say?
 -> Thank Frankie for the info.
     <<jump Thank_Frankie_for_the_info>>
 -> Jokingly tell Frankie that you think you've seen plenty of drunk goblins at the tavern.
@@ -180,7 +174,6 @@ Frankie: No problem. Oh one more thing, I heard that they don't like magic. Here
 
 *Frankie hands you a magical rock*
 
-What do you do?
 -> Take the rock.
     <<jump Take_the_rock>>
 -> Tell Frankie that you'd better hurry to work.
@@ -194,7 +187,6 @@ Player: From that description, I think I've seen plenty of goblins coming out of
 
 Frankie: Ha ha, that sounds about right. But seriously be cafeful today when you're delivering outside of the kingdom.
 
-What do you say?
 -> Thank Frankie for the info.
     <<jump Thank_Frankie_for_the_info>>
 -> Tell Frankie that you'd better hurry to work.
@@ -212,7 +204,6 @@ Frankie: You got it.
 
 <<set $magicRock to true>>
 
-What do you say?
 -> Tell Frankie that you'd better hurry to work.
     <<jump Tell_Frankie_that_youd_better_hurry_to_work>>
 -> Ignore Frankie.
@@ -263,7 +254,6 @@ Mistress Ellastra turns around and sees that you've turned up to work.
 
 <<set $specialPackage to false>>
 
-What do you say? (Timed)
 <<startTimer 8>>
 -> Ask what that was about.
     <<interrruptTimer none>>
@@ -284,7 +274,7 @@ Player: What were you talking to the guards about? Are we shutting down?
 <<animate MistressEllastraPlayer HandOutTalk>>
 Ellastra: Don't be ridiculous there will always be a need for couriers. The guards and I were just speaking about a very special package that needs delivering ASAP, and since you've arrived today at this time. How would you like to deliver the package?
 
-What do you say?
+
 -> Say that you can deliver the package.
     <<jump Say_that_you_can_deliver_the_package>>
 -> Turn down the special delivery.
@@ -299,7 +289,7 @@ Player: Good morning, Mistress Ellastra. Are there any packages for me today?
 <<animate MistressEllastraPlayer HandOutTalk>>
 Ellastra: There sure is. Hmm. Since you're here. How would you feel about delivering a special package?
 
-What do you say?
+
 -> Say that you can deliver the package.
     <<jump Say_that_you_can_deliver_the_package>>
 -> Turn down the special delivery.
@@ -325,7 +315,6 @@ Player: I can deliver the package. But why's it so special?
 <<animate MistressEllastraPlayer WordsTalk>>
 Ellastra: I can't disclose that to you until it has been delivered.
 
-What do you say?
 -> Ask what is inside the package.
     <<jump Ask_what_is_inside_the_package>>
 -> Take the package.
@@ -352,7 +341,6 @@ Player: What's inside the package?
 <<animate MistressEllastraPlayer WordsTalk>>
 Ellastra: All I can tell you is that the package comes straight from the Aurelians. Apparently, it will help us settle this war once and for all. Now, are you going to take the package or what?
 
-What do you say?
 -> Further ask what the package is.
     <<jump Further_ask_what_the_package_is>>
 -> Take the package.
@@ -387,7 +375,6 @@ Player: Come on, Ellastra, you can tell me what's inside. I am your *best* couri
 <<animate MistressEllastraPlayer AngryPoint>>
 Ellastra: If you ask me one more time you won't have *ANY* packages to deliver today.
 
-What do you do?
 -> Take the package.
     <<jump Take_the_package>>
 -> Turn down the special delivery.
@@ -408,7 +395,7 @@ position: 3165,-473
 <<spawnPackages none>>
 <<animate MistressEllastraPackages Point>>
 
-Choose your first package?
+Choose your first package.
 -> Choose the small package.
     <<jump First_Package_Choose_the_small_package>>
 -> Choose the large package.
@@ -441,7 +428,7 @@ position: 3780,-95
 <<spawnPackages none>>
 <<animate MistressEllastraPackages Point>>
 
-Choose your second package?
+Choose your second package.
 -> Choose the round package.
     <<jump Second_Package_Choose_the_round_package>>
 -> Choose the square package.
@@ -486,7 +473,7 @@ position: 4764,119
 <<spawnPackages none>>
 <<animate MistressEllastraPackages Point>>
 
-Choose your third package?
+Choose your third package.
 -> Choose the red package.
     <<jump Third_Package_Choose_the_red_package>>
 -> Choose the green package.
@@ -557,7 +544,7 @@ You gather supplies for your journey. You head to the courier stables where the 
 
 Stablemaster: Seeing as there might be a storm coming. Stormhoof here won't be startled by thunder. Take care of her will ya.
 
-What do you do?
+
 -> Thank the stablemaster.
     <<jump Thank_the_stablemaster>>
 -> Say nothing and take the reins.
@@ -636,7 +623,6 @@ Looks like you'll keep your job.
 
 <<set $followedPath to true>>
 
-What do you do? (Timed)
 <<startTimer 6>>
 -> Give Stormhoof a treat.
     <<interrruptTimer none>>
@@ -749,7 +735,6 @@ Garbanzo: Do you have it? Where is it? Give it to me.
 
 The creature doesn't seem hostile. Yet.
 
-What do you say? (Timed)
 <<startTimer 12>>
 -> Ask what the creature is talking about.
     <<interrruptTimer none>>
@@ -783,7 +768,6 @@ Garbanzo: Looks like you're lost. I can help you find you're way back. But only 
 
 The creature doesn't seem hostile. Yet.
 
-What do you say? (Timed)
 <<startTimer 8>>
 -> Ask what the creature wants.
     <<interrruptTimer none>>
@@ -803,7 +787,6 @@ Player: What are you talking about?
 
 Garbanzo: The offering! I know you have it!
 
-What do you say? (Timed)
 <<startTimer 12>>
 -> Ask what exactly is the offering.
     <<interrruptTimer none>>
@@ -832,7 +815,7 @@ Player: I don't have what you're talking about. Now get away from me!
 
 The creature must be talking about Mistress Ellastra. How did it know?
 
-What do you say?
+
 -> Ask how it knew that.
     <<jump Ask_how_it_knew_that>>
 -> Remain silent.
@@ -850,7 +833,7 @@ Garbanzo: I won't hurt you. I promise.
 
 You don't believe a word the creature has said.
 
-What do you do?
+
 -> Remain silent.
     <<jump Remain_silent>>
 -> Ask what the creature is talking about.
@@ -870,7 +853,7 @@ The creature laughs out loud.
 
 Garbanzo: Now..., you know what I want. So give it!
 
-What do you say?
+
 -> Ask why the creature wants the package.
     <<jump Ask_why_the_creature_wants_the_package>>
 -> Remain silent.
@@ -884,7 +867,6 @@ Player: What do you want from me?
 
 Garbanzo: The offering! I know you have it!
 
-What do you say? (Timed)
 <<startTimer 6>>
 -> Ask what the offering is.
     <<interrruptTimer none>>
@@ -904,7 +886,6 @@ Player: I don't recognise this road. Where am I?
 
 Garbanzo: No idea, all I know is that this is the wrong path to Eldoria. You're wanting to go to Eldoria, right?
 
-What do you say? (Timed)
 <<startTimer 10>>
 <<if $specialPackage is false>>
     -> Tell the creature that you're not going to Eldoria.
@@ -933,8 +914,7 @@ The creature appears to get angrier the longer you wait to answer its demands.
 Garbanzo: I won't hurt you. I promise.
 
 You don't believe a word the creature has said.
-
-What do you do? (Timed)
+ 
 <<startTimer 8>>
 -> Ask what the creature wants.
     <<interrruptTimer none>>
@@ -960,7 +940,6 @@ The creature laughs out loud.
 
 Garbanzo: Now..., you know what I want. So give it!
 
-What do you say? (Timed)
 <<startTimer 8>>
 -> Say that you can't give it.
     <<interrruptTimer none>>
@@ -982,7 +961,7 @@ Garbanzo: That can't be right?! You have the offering. I saw you talking to the 
 
 You assume that the creature is talking about Mistress Ellastra's job to deliver a special package. But how did it know?
 
-What do you say?
+
 -> Ask how it knew about the job.
     <<jump Ask_how_it_knew_about_the_job>>
 -> Say that you can help it find the package.
@@ -1002,7 +981,6 @@ The creature laughs out loud.
 
 Garbanzo: Now..., you know what I want. So give it!
 
-What do you say? (Timed)
 <<startTimer 8>>
 -> Say that you can't give it.
     <<interrruptTimer none>>

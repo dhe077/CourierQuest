@@ -19,7 +19,7 @@ position: -408,698
     <<enable Stormhoof true>>
     <<rideHorse false>>
     <<wait 1>>
-    What do you do?
+    
     -> Call out for Mudbrick.
         <<jump Call_out_for_Mudbrick>>
     -> Approach the tortoises.
@@ -33,7 +33,7 @@ position: -408,698
     <<enable Stormhoof true>>
     <<rideHorse false>> 
     <<wait 1>>
-    What do you do?
+    
     -> Call out for Oli.
         <<jump Call_out_for_Oli>>
     -> Examine the scorch marks.
@@ -47,7 +47,7 @@ position: -408,698
     <<enable Stormhoof true>>
     <<rideHorse false>> 
     <<wait 1>>
-    What do you do?
+    
     -> Call out for Finn.
         <<jump Call_out_for_Finn>>
     -> Approach the tower and knock on the door.
@@ -66,7 +66,7 @@ From the pond a tortoise approaches you. The tortoise is standing on two legs an
 
 Mudbrick: H-h-hello. You said you have a d-delivery for me?
 
-What do you say?
+
 -> Ask Mudbrick what he is.
     <<jump Ask_Mudbrick_what_he_is>>
 -> Say that you have Mudbrick's delivery.
@@ -88,7 +88,7 @@ From the pond a tortoise approaches you. The tortoise is standing on two legs an
 
 Mudbrick: H-h-hello. You said you have a d-delivery for me?
 
-What do you say?
+
 -> Ask Mudbrick what he is.
     <<jump Ask_Mudbrick_what_he_is>>
 -> Say that you have Mudbrick's delivery.
@@ -102,7 +102,7 @@ Player: Um, may I ask...what are you?
 
 Mudbrick: I'm M-mudbrick. I'm here for the annual ritual.
 
-What do you say?
+
 -> Ask what kind of creature he is.
     <<jump Ask_what_kind_of_creature_he_is>>
 -> Ask about the ritual.
@@ -116,7 +116,7 @@ Player: What ritual are you talking about?
 
 Mudbrick: The annual Druids of the P-pond ritual.
 
-What do you say?
+
 -> Say that you have Mudbrick's delivery.
     <<jump Say_that_you_have_Mudbricks_delivery>>
 -> Ask what the ritual does.
@@ -131,7 +131,7 @@ Player: What is the Druids of the Pond ritual for?
 <<animate MudbrickStanding Gesture>>
 Mudbrick: This ritual is done once a year. It gathers magical essence from across the lands to this p-p-pond and allows for creatures like myself to be born from the mixture of pond life and magic.
 
-What do you say?
+
 -> Ask Mudbrick if he's seen any bad creatures lately.
     <<jump Ask_Mudbrick_if_hes_seen_any_bad_creatures_lately>>
 -> Say that you have Mudbrick's delivery.
@@ -155,7 +155,7 @@ Player: No, I mean what *are* you?
 
 Mudbrick: Have you not seen a t-t-tortoise before.
 
-What do you say?
+
 -> Say that you have Mudbrick's delivery.
     <<jump Say_that_you_have_Mudbricks_delivery>>
 -> Say that you've never seen a tortoise walk on two legs before.
@@ -199,7 +199,7 @@ Mudbrick: Would you mind helping us lift up our ritual's m-m-monument? Someone o
 
 <<set $metMudbrick to true>>
 
-What do you say?
+
 -> Say that you can help. (Exercise Quest)
     <<jump Say_that_you_can_help>>
 -> Apologise and say that you need to make more deliveries.
@@ -308,7 +308,7 @@ You wait for a moment for any response. Nothing.
     You remember that you saw Oli earlier. He's probably still away from his camp.
 <<endif>>
 
-What do you do?
+
 -> Leave the package at Oli's camp.
     <<jump Leave_the_package_at_Olis_camp>>
 -> Call out for Oli again.
@@ -320,7 +320,7 @@ position: 1189,926
 ---
 You examine the scorch marks. There are small craters of exposed dirt at the center of every scorch mark. The scorch marks seem like they were created with such energy and force that you assume there was a small explosion at each scorch location.
 
-What do you do?
+
 -> Leave the package at Oli's camp.
     <<jump Leave_the_package_at_Olis_camp>>
 -> Take a closer examination of the scorch marks.
@@ -370,7 +370,7 @@ Player: Hello?! Is anyone here? I have a delivery for Oli!
 
 You call out again but no response. Then suddenly you hear a rustling in the bushes.
 
-What do you do?
+
 -> Wait to see what made the noise. (Exercise Quest)
     <<jump Wait_to_see_what_made_the_noise>>
 -> Hide from the noise.
@@ -382,7 +382,7 @@ position: 1491,1144
 ---
 As you approach the scorch marks to get a closer look, there is a rustling in the bushes that catches your attention.
 
-What do you do?
+
 -> Wait to see what made the noise. (Exercise Quest)
     <<jump Wait_to_see_what_made_the_noise>>
 -> Hide from the noise.
@@ -506,7 +506,7 @@ It lurches towards the campsite but as it approaches closer to the campsite you 
 
 Seems like you avoided two things that would have been detrimental to your delivery process.
 
-What do you do?
+
 <<if $diamond is true>>
     -> Throw package towards the campsite.
         <<jump Throw_package_towards_the_campsite>>
@@ -526,7 +526,7 @@ You walk out of the campsite's defences. You can surely say you made a perfect d
 
 The diamond that you were using has cracked in several places but remains intact. It seems after all it's use against the lightning the diamond has been damaged quite badly.
 
-What do you do?
+
 -> Discard the diamond.
     <<jump Discard_the_diamond>>
 -> Keep the diamond.
@@ -545,7 +545,7 @@ The slime retreats back into the forest. You still need to make that delivery.
 
 <<set $escapedSlime to true>>
 
-What do you do?
+
 <<if $diamond is true>>
     -> Throw package towards the campsite.
         <<jump Throw_package_towards_the_campsite>>
@@ -693,7 +693,7 @@ You place the triangular package in his grasp and await his response. He doesn't
 
 <<set $metFinn to true>>
 
-What do you say?
+
 -> Ask him if he's ok.
     <<jump Ask_him_if_hes_ok>>
 -> Ask what he is reading.
@@ -709,7 +709,7 @@ Finn: Sorry, I need to finish reading all these books before they all go to wast
 
 You've made your delivery already but it seems like Finn might need some help.
 
-What do you do?
+
 -> Ask how you can help.
     <<jump Ask_how_you_can_help>>
 -> Wish him good luck and continue delivering.
@@ -723,7 +723,7 @@ Player: Seems like that book has got you hooked.
 
 Finn: This *book* is just one of many in this tower that contains various useful spells.
 
-What do you say?
+
 -> Ask why he needs all those spells.
     <<jump Ask_why_he_needs_all_those_spells>>
 -> Ask how you can help.
@@ -742,7 +742,7 @@ Finn looks behind him at all the books piled up near the stairs.
 
 Finn: But this might take years.
 
-What do you do?
+
 -> Ask how you can help.
     <<jump Ask_how_you_can_help>>
 -> Say that you've never met a real wizard before.
@@ -789,7 +789,7 @@ Finn's eyes light up and grabs the triangular package from his pouch. He proceed
 
 Finn: This is exactly what I need. I can use this with the magic generator.
 
-What do you do?
+
 -> Ask when you can get started helping.
     <<jump Ask_when_you_can_get_started_helping>>
 -> Ask what the magic generator is.
@@ -829,7 +829,7 @@ The object floats up and begins to shake then it burts into a grand structure mu
 
 Finn: Here is the magic generator. It'll help in creating all the magic needed for my spell. Could you please get inside the machine?
 
-What do you say?
+
 -> Ask if it's safe.
     <<jump Ask_if_its_safe>>
 -> Get into the machine. (Exercise Quest)
@@ -845,7 +845,7 @@ Finn: Oh, it's *extremely* safe.
 
 You can sense a feeling of sarcasm in his voice.
 
-What do you do?
+
 -> Get into the machine. (Exercise Quest)
     <<jump Get_into_the_machine>>
 -> Wish him good luck and continue delivering.
@@ -908,7 +908,7 @@ Finn: Ok everyone get inside and start reading.
 The mass of Finn clones march up the tower.
 <<enable FinnArmy false>>
 
-What do you say?
+
 -> Ask if he'll need help later to bring them together.
     <<jump Ask_if_hell_need_help_later_to_bring_them_together>>
 -> Tell him that you hope that this works.

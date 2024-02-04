@@ -16,6 +16,7 @@ public class StoryCommands : MonoBehaviour
     public Slider timerBar;
     public CanvasGroup sliderCanvasGroup;
     private OptionView timeoutOption = null;
+    public RecordData dataRecorder;
 
     private PlayerViewManager playerViewManager;
     private EnvironmentManager environmentManager;
@@ -129,6 +130,10 @@ public class StoryCommands : MonoBehaviour
             "setBackgroundMusic",
             SetBackgroundMusic
         );
+        dialogueRunner.AddCommandHandler<string>(
+            "recordVariables",
+            RecordAllVariables
+        );
     }
 
     public void Start()
@@ -178,6 +183,7 @@ public class StoryCommands : MonoBehaviour
     {
         startTicking = false;
         updateTimerBar = false;
+        dataRecorder.RecordTimer(timer);
         
         StopAllCoroutines();
         FadeOutTimerBar();
@@ -305,6 +311,12 @@ public class StoryCommands : MonoBehaviour
     {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         audioManager.SetBackgroundMusic(soundName, volume);
+    }
+
+    // This command records all the variables from the game that the player chose to obtain
+    public void RecordAllVariables(string none)
+    {
+        dataRecorder.RecordVariables();
     }
 
 

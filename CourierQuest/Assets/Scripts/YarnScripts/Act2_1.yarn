@@ -43,7 +43,6 @@ You follow the tracks. // Remove
 <<wait 2>>
 You finally see Stormhoof, but shes standing with a very large man. He looks to be about 8ft tall. He's holding the reins of Stormhoof in his hands. He's also carrying around what looks to be a rod.
 
-What do you do? (Timed)
 <<startTimer 8>>
 -> Call out to the man.
     <<interrruptTimer none>>
@@ -66,7 +65,7 @@ The man turns to face you. His eyes are glowing white. Small streaks of lightnin
 
 Oli: This is your horse? I scared away the foul creature that was trying to steal it. Who are you?
 
-What do you say?
+
 -> Say that you're a courier.
     <<jump Say_that_youre_a_courier>>
 -> Say that you're an adventurer.
@@ -85,7 +84,6 @@ The man turns to face you. His eyes are glowing white. Small streaks of lightnin
 
 Oli: I can still smell you. I know you're still here.
 
-What do you do? (Timed)
 <<startTimer 6>>
 -> Call out to the man.
     <<interrruptTimer none>>
@@ -103,7 +101,7 @@ You wait and watch the man as he ties Stormhoof to a tree then rummages around i
 <<animate OliLookingAround LookAround>>
 Oli: I can still smell you. I know you're still here.
 
-What do you do?
+
 -> Call out to the man.
     <<jump Call_out_to_the_man>>
 -> Attempt to take Stormhoof.
@@ -138,7 +136,6 @@ He hands you the reins. // Remove.
 <<animate OliWithPlayer LookAround>>
 Oli: It was an evil creature. A goblin.
 
-What do you say?
 -> Ask what it looked like.
     <<jump Ask_what_it_looked_like>>
 -> Thank the man.
@@ -159,7 +156,6 @@ He hands you the reins. // Remove.
 <<animate OliWithPlayer Think>>
 Oli: An adventurer who has not seen a goblin?
 
-What do you say?
 -> Ask the man about the rod.
     <<jump Ask_the_man_about_the_rod>>
 -> Ask what it looked like.
@@ -197,7 +193,6 @@ The man looks inquisitively at you.
 Oli: You said you're a courier from Granbell? I've been awaiting a delivery from there. My name is Oli.
 <<animate OliWithPlayer Stand>>
 
-What do you do?
 <<if $secondPackage is "square">>
     -> Tell him that you have his package.
         <<jump Tell_him_that_you_have_his_package>>
@@ -216,7 +211,6 @@ Player: What is that rod you are carrying?
 <<animate OliWithPlayer SelfLook>>
 Oli: It is my hammer. I know it might not look like it but it is. I am waiting on a delivery from Granbell for Oli.
 
-What do you say?
 <<if $secondPackage is "square">>
     -> Tell him that you have his package.
         <<jump Tell_him_that_you_have_his_package>>
@@ -239,8 +233,6 @@ Player: Don't tell me you're working with the creature?
 Oli: I most certainly am NOT! How dare you assume I'd work with evil.
 
 His eyes glow brighter and the streaks of lightning grow longer and more frequent.
-
-What do you say?
 
 <<if $secondPackage is "square">>
     -> Tell him that you have his package.
@@ -267,7 +259,6 @@ He looks at you closely.
 Oli: I sense no evil on you... So far.
 <<animate OliWithPlayer Stand>>
 
-What do you say?
 <<if $secondPackage is "square">>
     -> Tell him that you have his package.
         <<jump Tell_him_that_you_have_his_package>>
@@ -388,7 +379,6 @@ You open your eyes. The creature stands over you, dagger outstretched towards yo
     <<set $whistleBlown to false>>
     Garbanzo: I heard the whistle. You better have what I want.
 
-    What do you do?
     <<if $specialPackage is true>>
         -> Say that you have the package.
             <<jump Say_that_you_have_the_package>>
@@ -401,7 +391,7 @@ You open your eyes. The creature stands over you, dagger outstretched towards yo
     Garbanzo: Peekaboo!
 <<endif>>
 
-What do you do? (Timed)
+
 <<startTimer 6>>
 <<if $magicRock is true>>
     -> Attempt to escape.
@@ -430,7 +420,6 @@ Player: I have the package that you wanted.
 
 Garbanzo: Well, cough it up human.
 
-What do you do?
 -> Pretend to give the creature the package.
     <<jump Pretend_to_give_the_creature_the_package>>
 -> Don't give it to the creature.
@@ -470,7 +459,6 @@ position: 81,1717
 ---
 You remember you have the rock that Frankie gave you. You quickly pull out the rock from your pouch and hold it out towards the creature.
 
-What do you do? (Timed)
 <<startTimer 6>>
 -> Say "Lux".
     <<interrruptTimer none>>
@@ -495,7 +483,6 @@ Garbanzo: Foul?! I'll get you for that.
 
 The creature moves closer to you.
 
-What do you do?
 <<if $magicRock is true>>
     <<if $specialPackage is true>>
         -> Hold out the magical rock.
@@ -676,7 +663,7 @@ position: 4678,605
     <<enable Stormhoof true>>
     <<rideHorse false>> 
     <<wait 1>>
-    What do you do?
+    
     -> Call out for Petunia.
         <<jump Call_out_for_Petunia>>
     -> Wait and see if anyone comes.
@@ -690,7 +677,7 @@ position: 4678,605
     <<enable Stormhoof true>>
     <<rideHorse false>> 
     <<wait 1>>
-    What do you do?
+    
     -> Call out for Bjorn.
         <<jump Call_out_for_Bjorn>>
     -> Drop the package at the entrance.
@@ -708,7 +695,7 @@ A little old woman comes out from the entrance of the store. She waves you down.
 
 Petunia: Hello deary. I'm Petunia Pattersby. Are you the sweet courier with my delivery?
 
-What do you say?
+
 -> Say that you have Petunia's delivery.
     <<jump Say_that_you_have_Petunias_delivery>>
 -> Ask her what she sells.
@@ -737,7 +724,6 @@ Player: What do you sell here? I've never seen this shop before on my journeys a
 <<animate PetuniaStanding TellSecret>>
 Petunia: Well deary, pastries. Pastries that I have perfected over the 400 years of baking and cooking that I've lived through. One bite of my original Patersby Pastries will sweeten your day.
 
-What do you say?
 -> Ask her how she's lived for over 400 years.
     <<jump Ask_her_how_shes_lived_for_over_400_years>>
 -> Say that you have Petunia's delivery.
@@ -774,7 +760,6 @@ She comes back out with what looks like a baked pastry and hands it to you.
 
 Petunia: Here you go deary, a Pattersby Pastry. This is for your wonderful delivery service. I hope you enjoy it. Take care now. I've heard that there are goblins around these parts.
 
-What do you say?
 -> Ask Petunia what goblins look like.
     <<jump Ask_Petunia_what_goblins_look_like>>
 -> Thank her for the pastry and continue delivering.
@@ -804,7 +789,6 @@ Player: What do goblins look like?
 <<animate PetuniaStanding TellSecret>>
 Petunia: Oh they're terrible creatures they are. They lurk in the shadows and get up to all kinds of evil mischief. They're small, about my height, and green, like the trees. Oh and they have big noses and pointy ears too. If you see any, make sure you run as fast as you can. They can be *very* sneaky.
 
-What do you say?
 -> Tell her that you saw one.
     <<jump Tell_her_that_you_saw_one>>
 -> Thank her for the pastry and continue delivering.
@@ -868,7 +852,6 @@ A very large muscular man steps out from under the tent.
 
 Bjorn: Ah hallo! Are you the delivery human that has my package?
 
-What do you say?
 -> Say that you have Bjorn's delivery.
     <<jump Say_that_you_have_Bjorns_delivery>>
 -> Ask why he is wrestling a bear.
@@ -891,7 +874,6 @@ Bjorn proceeds to strike a pose.
 
 Bjorn: I'm wrestling a bear because the bear is the strongest animal of the forest. Conviniently, I happen to have a friend that is a bear. He's agreed to wrestle me but he hasn't arrived yet. I hope he isn't lost.
 
-What do you say?
 -> Tell him that you've never heard of him.
     <<jump Tell_him_that_youve_never_heard_of_him>>
 -> Say that you have Bjorn's delivery.
@@ -928,7 +910,7 @@ He strikes a pose and puts his arm on your bicep.
 Bjorn: Now you have the muscle spirit. Be careful out there. I saw a few goblins around.
 <<animate BjornCrouch Stand>>
 
-What do you say?
+
 -> Ask what muscle spirit is.
     <<jump Ask_what_muscle_spirit_is>>
 -> Thank him for the muscle spirit and continue delivering.
@@ -956,7 +938,6 @@ Player: You didn't give me anything. What is muscle spirit?
 <<animate BjornCrouch FlexUp>>
 Bjorn: You do have something. Muscle spirit is the compelling force within you that you can use any time you need extra strength!
 
-What do you say?
 -> Tell him that you think you saw a goblin.
     <<jump Tell_him_that_you_think_you_saw_a_goblin>>
 -> Thank him for the muscle spirit and continue delivering.

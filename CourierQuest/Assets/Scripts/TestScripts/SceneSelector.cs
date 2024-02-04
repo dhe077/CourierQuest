@@ -201,6 +201,16 @@ public class SceneSelector : MonoBehaviour
     public void JumpToCustom(string nodeName)
     {
         dialogueRunner.Stop();
+        variables.SetValue("$firstPackage", "large");
+        //variables.SetValue("$firstPackage", "small");
+        variables.SetValue("$secondPackage", "round");
+        //variables.SetValue("$secondPackage", "square");
+        //variables.SetValue("$secondPackage", "triangle");
+        variables.SetValue("$thirdPackage", "red");
+        //variables.SetValue("$thirdPackage", "green");
+        //variables.SetValue("$thirdPackage", "blue");
+        //variables.SetValue("$thirdPackage", "yellow");
+
         variables.SetValue("$metVal", true);
         //variables.SetValue("$metDaisy", true);
         //variables.SetValue("$metThakali", true);

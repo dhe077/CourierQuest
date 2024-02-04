@@ -57,6 +57,10 @@ public class ObstacleGame : MonoBehaviour
 
                 // Generate the split path
                 forestPathGeneration.GenerateSplitPath();
+
+                // Record the number of obstacles hit
+                RecordData recordData = GameObject.Find("PlayerView").GetComponent<RecordData>();
+                recordData.RecordObstaclesHit(obstaclesHit);
             }
             else if (timer >= spawnTimer)
             {
