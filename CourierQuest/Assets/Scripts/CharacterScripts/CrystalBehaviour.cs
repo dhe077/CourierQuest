@@ -11,6 +11,7 @@ public class CrystalBehaviour : MonoBehaviour
     private float thirdTime;
     private string blinkingColour = "green";
     [SerializeField] private float pingPongSpeed = 1.0f;
+    public AudioSource blinkingSound;
 
     [Header ("----Objects----")]
     [SerializeField] private GameObject greenColored;
@@ -68,6 +69,8 @@ public class CrystalBehaviour : MonoBehaviour
 
             redColored.SetActive(true);
 
+            if (!blinkingSound.isPlaying)
+                blinkingSound.Play();
             blinkingColour = "red";
         }
         else if (timer > thirdTime && timer < thirdTime * 2) // red, orange
@@ -80,6 +83,7 @@ public class CrystalBehaviour : MonoBehaviour
 
             redColored.SetActive(true);
 
+            blinkingSound.Stop();
             blinkingColour = "orange";
         }
         else if (timer > thirdTime * 2 && timer < thirdTime * 3) // red, orange, green
@@ -93,6 +97,7 @@ public class CrystalBehaviour : MonoBehaviour
             redColored.SetActive(true);
             redTransparent.SetActive(false);
 
+            blinkingSound.Stop();
             blinkingColour = "green";
         }
     }
