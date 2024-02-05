@@ -978,6 +978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerView: {fileID: 0}
+  environmentManager: {fileID: 0}
   playerBackgroundMusic: {fileID: 0}
   playableAudioSource: {fileID: 1533866434}
   audioSources:
@@ -1193,7 +1194,7 @@ MonoBehaviour:
   playerView: {fileID: 0}
   splineComputers:
   - {fileID: 1046883354}
-  moveSpeedMultiplier: 1
+  moveSpeedMultiplier: 20
   enableHeadMovement: 1
   maxDist: 9
   calibrationTarget: {fileID: 0}

@@ -14848,7 +14848,7 @@ MonoBehaviour:
   - {fileID: 1053960125}
   - {fileID: 181468809}
   - {fileID: 2115951209}
-  moveSpeedMultiplier: 1
+  moveSpeedMultiplier: 20
   enableHeadMovement: 0
   maxDist: 9
   calibrationTarget: {fileID: 0}
@@ -21528,6 +21528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerView: {fileID: 0}
+  environmentManager: {fileID: 0}
   playerBackgroundMusic: {fileID: 0}
   playableAudioSource: {fileID: 1251012482}
   audioSources:
