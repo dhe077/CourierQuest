@@ -1,0 +1,1736 @@
+﻿title: Wake_up_in_the_bushes
+position: -1298,-628
+---
+<<if $followedPath is true>>
+    <<goToScene WakeUpBushesHut>>
+    <<wait 2.2>>
+    <<setBackgroundMusic forest_loop 0.3>>
+<<elseif $followedPath is false>>
+    <<goToScene WakeUpBushesRoad>>
+    <<wait 2.2>>
+    <<setBackgroundMusic forest_loop 0.3>>
+<<endif>>
+You open your eyes. You're safe.
+
+You pack up your camp and head to the tree that Stormhoof is tied to.
+
+<<nextPosition none>>
+<<wait 1>>
+<<enable Tent false>>
+<<wait 1>>
+<<enable GarbanzoRunAcrossRoad true>>
+<<wait 3>>
+On your way to Stormhoof's tree you spot a small creature dart across the path. 
+
+That creature seems to have been trying to find you. It's missed you this time. Best be on your guard from now on.
+
+You see the tree that Stormhoof should be tied to but no Stormhoof.
+
+<<jump Find_Stormhoof>>
+===
+
+title: Find_Stormhoof
+position: -846,-750
+---
+Looking around you see hoof prints leading down the path a little.
+
+<<nextPosition none>>
+// <<wait 2>>
+// You follow the tracks. // Remove
+<<wait 10>>
+
+<<nextPosition none>>
+<<wait 2>>
+You finally see Stormhoof, but shes standing with a very large man. He looks to be about 8ft tall. He's holding the reins of Stormhoof in his hands. He's also carrying around what looks to be a rod.
+
+// <<startTimer 8>>
+// -> Call out to the man.
+//     <<interrruptTimer none>>
+//     <<jump Call_out_to_the_man>>
+// -> Whistle for Stormhoof.
+//     <<interrruptTimer none>>
+//     <<jump Whistle_for_Stormhoof>>
+// -> Wait to see what he does.
+//     <<interrruptTimer none>>
+//     <<jump Wait_to_see_what_he_does>>
+
+<<jump Call_out_to_the_man>>
+===
+
+title: Call_out_to_the_man
+position: -274,-1048
+---
+Player: Excuse me sir! That's my horse.
+
+<<enableDisable OliFacingPlayer OliLookingAround>>
+The man turns to face you. His eyes are glowing white. Small streaks of lightning shoot out from his gaze.
+
+Oli: This is your horse? I scared away the foul creature that was trying to steal it. Who are you?
+
+// -> Say that you're a courier.
+//     <<jump Say_that_youre_a_courier>>
+// -> Say that you're an adventurer.
+//     <<jump Say_that_youre_an_adventurer>>
+
+<<jump Say_that_youre_a_courier>>
+===
+
+// title: Whistle_for_Stormhoof
+// position: 472,-709
+// ---
+// You attempt a whistle to catch Stormhoof's attention. 
+
+// Stormhoof pays no attention.
+
+// <<enableDisable OliFacingPlayer OliLookingAround>>
+// The man turns to face you. His eyes are glowing white. Small streaks of lightning shoot out from his gaze.
+
+// Oli: I can still smell you. I know you're still here.
+
+// <<startTimer 6>>
+// -> Call out to the man.
+//     <<interrruptTimer none>>
+//     <<jump Call_out_to_the_man>>
+// -> Wait to see what he does.
+//     <<interrruptTimer none>>
+//     <<jump Wait_to_see_what_he_does>>
+// ===
+
+// title: Wait_to_see_what_he_does
+// position: 572,-348
+// ---
+// You wait and watch the man as he ties Stormhoof to a tree then rummages around in the bushes.
+
+// <<animate OliLookingAround LookAround>>
+// Oli: I can still smell you. I know you're still here.
+
+
+// -> Call out to the man.
+//     <<jump Call_out_to_the_man>>
+// -> Attempt to take Stormhoof.
+//     <<jump Attempt_to_take_Stormhoof>>
+// ===
+
+// title: Attempt_to_take_Stormhoof
+// position: 1217,-332
+// ---
+// You walk up to the ropes that tie Stormhoof to the tree. You loosen the ropes without a sound. The man seems oblivious to the situation.
+
+// <<enable Stormhoof false>>
+// <<rideHorse true>> 
+// You quickly jump on Stormhoof and ride into the woods and towards the path.
+
+// You have a job to do.
+
+// <<jump Find_the_path_and_deliver_the_packages>>
+// ===
+
+title: Say_that_youre_a_courier
+position: 35,-1265
+---
+Player: Yes that is my horse, and I'm just a courier from Granbell. Who did you scare off?
+<<enableDisable OliWalking OliFacingPlayer>>
+<<wait 6>>
+
+<<animate OliWithPlayer Handout>>
+He hands you the reins. // Remove.
+<<enableDisable StormhoofWithPlayer Stormhoof>>
+
+<<animate OliWithPlayer LookAround>>
+Oli: It was an evil creature. A goblin.
+
+// -> Ask what it looked like.
+//     <<jump Ask_what_it_looked_like>>
+// -> Thank the man.
+//     <<jump Thank_the_man>>
+
+<<jump Ask_what_it_looked_like>>
+===
+
+// title: Say_that_youre_an_adventurer
+// position: 1119,-822
+// ---
+// Player: Yes, that is my horse. I'm an adventurer. Who did you scare off?
+// <<enableDisable OliWalking OliFacingPlayer>>
+// <<wait 6>>
+
+// <<animate OliWithPlayer Handout>>
+// He hands you the reins. // Remove.
+// <<enableDisable StormhoofWithPlayer Stormhoof>>
+
+// <<animate OliWithPlayer Think>>
+// Oli: An adventurer who has not seen a goblin?
+
+// -> Ask the man about the rod.
+//     <<jump Ask_the_man_about_the_rod>>
+// -> Ask what it looked like.
+//     <<jump Ask_what_it_looked_like>>
+// ===
+
+title: Ask_what_it_looked_like
+position: 368,-1457
+---
+Player: A goblin!? What did the creature look like?
+
+<<animate OliWithPlayer Kneel>>
+The man lowers himself close to the ground and gestures as if to show height.
+
+Oli: Small.
+
+<<animate OliWithPlayer SelfPoint>>
+The man stands and points to his nose.
+
+Oli: Big nose.
+
+<<animate OliWithPlayer SelfPoint>>
+The man points to his ears.
+
+Oli: Pointy ears.
+
+<<animate OliWithPlayer LookAround>>
+The man points to the foliage around him.
+
+Oli: Green.
+
+<<animate OliWithPlayer Bend>>
+The man looks inquisitively at you.
+
+Oli: You said you're a courier from Granbell? I've been awaiting a delivery from there. My name is Oli.
+<<animate OliWithPlayer Stand>>
+
+// <<if $secondPackage is "square">>
+//     -> Tell him that you have his package.
+//         <<jump Tell_him_that_you_have_his_package>>
+//     -> Ask if he's working with the goblin.
+//         <<jump Ask_if_hes_working_with_the_goblin>>
+// <<else>>
+//     <<jump Ask_if_hes_working_with_the_goblin>>
+// <<endif>>
+
+<<jump Ask_if_hes_working_with_the_goblin>>
+===
+
+// title: Ask_the_man_about_the_rod
+// position: 1678,-850
+// ---
+// Player: What is that rod you are carrying?
+
+// <<animate OliWithPlayer SelfLook>>
+// Oli: It is my hammer. I know it might not look like it but it is. I am waiting on a delivery from Granbell for Oli.
+
+// <<if $secondPackage is "square">>
+//     -> Tell him that you have his package.
+//         <<jump Tell_him_that_you_have_his_package>>
+//     -> Thank the man.
+//         <<jump Thank_the_man>>
+// <<else>>
+//     <<jump Thank_the_man>>
+// <<endif>>
+// ===
+
+title: Ask_if_hes_working_with_the_goblin
+position: 1185,-1475
+---
+You look him up and down.
+
+Player: Don't tell me you're working with the creature?
+
+<<enableDisable OliWithPlayerAngry OliWithPlayer>>
+<<animate OliWithPlayerAngry AngryPoint>>
+Oli: I most certainly am NOT! How dare you assume I'd work with evil.
+
+His eyes glow brighter and the streaks of lightning grow longer and more frequent.
+
+// <<if $secondPackage is "square">>
+//     -> Tell him that you have his package.
+//         <<jump Tell_him_that_you_have_his_package>>
+//     -> Apologise for insulting him.
+//         <<jump Apologise_for_insulting_him>>
+// <<else>>
+//     <<jump Apologise_for_insulting_him>>
+// <<endif>>
+
+<<jump Apologise_for_insulting_him>>
+===
+
+title: Apologise_for_insulting_him
+position: 1865,-1224
+---
+Player: I'm sorry!
+
+<<enableDisable OliWithPlayer OliWithPlayerAngry>>
+<<animate OliWithPlayer AngryPoint>>
+Oli: I *destroy* evil.
+
+<<animate OliWithPlayer Bend>>
+He looks at you closely.
+
+Oli: I sense no evil on you... So far.
+<<animate OliWithPlayer Stand>>
+
+// <<if $secondPackage is "square">>
+//     -> Tell him that you have his package.
+//         <<jump Tell_him_that_you_have_his_package>>
+//     -> Thank the man.
+//         <<jump Thank_the_man>>
+// <<else>>
+//     <<jump Thank_the_man>>
+// <<endif>>
+
+<<jump Thank_the_man>>
+===
+
+// title: Tell_him_that_you_have_his_package
+// position: 1715,-1438
+// ---
+// Player: Sir, I have a delivery for you.
+
+// You pull out the square package.
+
+// <<animate OliWithPlayer Handout>>
+// Oli: Yes, thank you. This must be the hammer head I ordered.
+
+// <<animate OliWithPlayer SelfLook>>
+// He lifts up the rod he has been holding.
+
+// Oli: Could you please just deliver it to my camp nearby, I will pick it up once I deal with the goblin. Be careful when entering my camp. I've put up a defensive spell to protect my belongings.
+
+// Oli reaches into a pouch on his waist and pulls out a crystal.
+
+// Oli: Use this diamond to enter my campsite safely. Hold it above your head and walk toward the center of my campsite. As long as you keep the diamond above your head you will be safe.
+
+// <<animate OliWithPlayer Handout>>
+// Oli demonstrates his instructions then hands you the diamond. *You take the diamond.* 
+
+// <<set $diamond to true>>
+// <<set $metOli to true>>
+
+// <<jump Thank_the_man>>
+// ===
+
+title: Thank_the_man
+position: 2263,-774
+---
+Player: Thank you for keeping my horse safe.
+
+<<animate OliWithPlayer Dismiss>>
+Oli: You're welcome.
+
+<<jump Find_the_path_and_deliver_the_packages>>
+===
+
+title: Find_the_path_and_deliver_the_packages
+position: 2688,-88
+---
+<<nextPosition none>>
+<<wait 1>>
+<<enable StormhoofWithPlayer false>>
+<<rideHorse true>> 
+<<wait 1>>
+You ride atop Stormhoof and decide you should deliver your first package.
+
+<<goToScene ForestPath>>
+<<wait 2>>
+// <<if $firstPackage is "small">>
+//     <<jump Deliver_the_small_package>>
+// <<elseif $firstPackage is "large">>
+//     <<jump Deliver_the_large_package>>
+// <<endif>>
+
+<<jump Deliver_the_small_package>>
+===
+
+title: Deliver_the_small_package
+position: 3618,335
+---
+The package is small and light. You look at the delivery label. It is addressed to Petunia Pattersby. The address isn't too far from where you are. You'd better start moving.
+
+<<jump Travel_to_your_first_delivery>>
+===
+
+// title: Deliver_the_large_package
+// position: 3612,838
+// ---
+// The package is large and heavy. You look at the delivery label. It is addressed to Bjorn. The address isn't too far from where you are. You'd better start moving.
+
+// <<jump Travel_to_your_first_delivery>>
+// ===
+
+title: Travel_to_your_first_delivery
+position: 4242,601
+---
+Unlike the day before, the weather is bright and sunny. What an amazing day!
+
+// *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
+<<jump Arrive_at_your_first_destination>>
+===
+
+title: Arrive_at_your_first_destination
+position: 4678,605
+---
+// <<if $firstPackage is "small">>
+//     <<goToScene PetuniasShop>>
+//     <<wait 2>>
+//     The address on the first package has lead you to a small bakery store. Above the entrance to the store is a sign that says, "Pattersby's Pastries".
+//     <<nextPosition none>>
+//     <<wait 1>>
+//     <<setBackgroundMusic TavernLoop2 0.5>>
+//     <<enable Stormhoof true>>
+//     <<rideHorse false>> 
+//     <<wait 1>>
+    
+//     -> Call out for Petunia.
+//         <<jump Call_out_for_Petunia>>
+//     -> Wait and see if anyone comes.
+//         <<jump Wait_and_see_if_anyone_comes>>
+// <<elseif $firstPackage is "large">>
+//     <<goToScene BjornsCampsite>>
+//     <<wait 2>>
+//     The address on the first package has lead you to a large tent. A wooden sign stuck in the dirt reads, "See the mighty Bjorn wrestle a bear!".
+//     <<nextPosition none>>
+//     <<wait 1>>
+//     <<enable Stormhoof true>>
+//     <<rideHorse false>> 
+//     <<wait 1>>
+    
+//     -> Call out for Bjorn.
+//         <<jump Call_out_for_Bjorn>>
+//     -> Drop the package at the entrance.
+//         <<jump Drop_the_package_at_the_entrance>>
+// <<endif>>
+
+<<goToScene PetuniasShop>>
+<<wait 2>>
+The address on the first package has lead you to a small bakery store. Above the entrance to the store is a sign that says, "Pattersby's Pastries".
+<<nextPosition none>>
+<<wait 1>>
+<<setBackgroundMusic TavernLoop2 0.5>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
+
+<<jump Call_out_for_Petunia>>
+===
+
+title: Call_out_for_Petunia
+position: 5335,-168
+---
+Player: Delivery for Petunia Pattersby!
+
+<<enable PetuniaComingOut true>>
+A little old woman comes out from the entrance of the store. She waves you down.
+
+Petunia: Hello deary. I'm Petunia Pattersby. Are you the sweet courier with my delivery?
+
+// -> Say that you have Petunia's delivery.
+//     <<jump Say_that_you_have_Petunias_delivery>>
+// -> Ask her what she sells.
+//     <<jump Ask_her_what_she_sells>>
+
+<<jump Ask_her_what_she_sells>>
+===
+
+// title: Wait_and_see_if_anyone_comes
+// position: 5318,239
+// ---
+// You wait in silence for someone to come out.
+
+// <<enable PetuniaComingOut true>>
+// A small old woman comes out from the entrance of the store. She waves you down.
+
+// Petunia: Hello deary. I'm Petunia Pattersby. Are you the sweet courier with my delivery?
+
+// <<jump Say_that_you_have_Petunias_delivery>>
+// ===
+
+title: Ask_her_what_she_sells
+position: 5721,-343
+---
+<<enableDisable PetuniaStanding PetuniaComingOut>>
+Player: What do you sell here? I've never seen this shop before on my journeys along this path.
+
+<<animate PetuniaStanding TellSecret>>
+Petunia: Well deary, pastries. Pastries that I have perfected over the 400 years of baking and cooking that I've lived through. One bite of my original Patersby Pastries will sweeten your day.
+
+// -> Ask her how she's lived for over 400 years.
+//     <<jump Ask_her_how_shes_lived_for_over_400_years>>
+// -> Say that you have Petunia's delivery.
+//     <<jump Say_that_you_have_Petunias_delivery>>
+
+<<jump Say_that_you_have_Petunias_delivery>>
+===
+
+title: Say_that_you_have_Petunias_delivery
+position: 6062,63
+---
+<<enableDisable PetuniaStanding PetuniaComingOut>>
+Player: Here is your delivery from Granbell.
+
+<<animate PetuniaStanding Talk>>
+You hand her the small package.
+
+Petunia: Oh thank you so much deary.
+
+<<enable Silverware true>>
+She proceeds to open her package. The package held a set of silver cutlery.
+
+Petunia: Finally! The silver cutlery that I ordered. Now my customers can enjoy their Pattersby pastries with these beautiful utensils. My last set of silver cutlery was stolen from me not too long ago. Wait here a moment I've got something for you.
+
+<<enable Silverware false>>
+<<enableDisable PetuniaGoingIn PetuniaStanding>>
+She walks into the store. You wait for a moment.
+<<enableDisable PetuniaComingOutAgain PetuniaGoingIn>>
+<<wait 3>>
+She comes back out with what looks like a baked pastry and hands it to you.
+<<enableDisable PetuniaStanding PetuniaComingOutAgain>>
+
+*You take the Pattersby Pastry*
+
+<<set $pattersbyOriginal to true>>
+
+Petunia: Here you go deary, a Pattersby Pastry. This is for your wonderful delivery service. I hope you enjoy it. Take care now. I've heard that there are goblins around these parts.
+
+// -> Ask Petunia what goblins look like.
+//     <<jump Ask_Petunia_what_goblins_look_like>>
+// -> Thank her for the pastry and continue delivering.
+//     <<jump Thank_her_for_the_pastry_and_continue_delivering>>
+
+<<jump Thank_her_for_the_pastry_and_continue_delivering>>
+===
+
+// title: Ask_her_how_shes_lived_for_over_400_years
+// position: 6083,-339
+// ---
+// Player: How have you lived for over 400 years?
+
+// <<animate PetuniaStanding Talk>>
+// Petunia: Oh sweetie, I'm a gnome. Gnomes tend to live for quite a long time. Which I'm quite grateful for since you don't become good at baking over night.
+
+// Petunia puts on a wide smile.
+
+// Petunia: Now deary, are you the courier from Granbell with my delivery?
+
+// <<jump Say_that_you_have_Petunias_delivery>>
+// ===
+
+// title: Ask_Petunia_what_goblins_look_like
+// position: 6529,-363
+// ---
+// Player: What do goblins look like?
+
+// <<animate PetuniaStanding TellSecret>>
+// Petunia: Oh they're terrible creatures they are. They lurk in the shadows and get up to all kinds of evil mischief. They're small, about my height, and green, like the trees. Oh and they have big noses and pointy ears too. If you see any, make sure you run as fast as you can. They can be *very* sneaky.
+
+// -> Tell her that you saw one.
+//     <<jump Tell_her_that_you_saw_one>>
+// -> Thank her for the pastry and continue delivering.
+//     <<jump Thank_her_for_the_pastry_and_continue_delivering>>
+// ===
+
+// title: Tell_her_that_you_saw_one
+// position: 6694,-470
+// ---
+// Player: I think I saw one recently. It tried stealing my packages. I ran as fast as I could and I managed to outrun it. It might be trying to follow me. Do you have any tips on how to deter goblins?
+
+// Petunia: Well, if I remember from my adventuring days. Magical light seems to ward them off for a while. I also remember that goblins hate the smell of heartberries. I'd give you some deary but unfortunately I'm all out of heartberries.
+
+// <<jump Thank_her_for_the_pastry_and_continue_delivering>>
+// ===
+
+title: Thank_her_for_the_pastry_and_continue_delivering
+position: 6540,27
+---
+Player: Thank you for the pastry Petunia. It looks delicious.
+
+<<animate PetuniaStanding Talk>>
+Petunia: No, thank you.
+
+<<nextPosition none>>
+<<wait 1>>
+<<setBackgroundMusic forest_loop 0.3>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
+
+<<animate PetuniaStanding Wave>>
+Petunia waves you a goodbye as you leave. You start to head on your way to your second delivery.
+<<animate PetuniaStanding Wave>>
+
+<<set $metPetunia to true>>
+
+<<jump Make_your_second_delivery>>
+===
+
+title: Make_your_second_delivery
+position: 7524,75
+---
+You ride atop Stormhoof and decide you should deliver your second package.
+
+<<goToScene ForestPath>>
+<<wait  2>>
+// <<if $secondPackage is "round">>
+//     <<jump Deliver_the_round_package>>
+// <<elseif $secondPackage is "square">>
+//     <<jump Deliver_the_square_package>>
+// <<elseif $secondPackage is "triangle">>
+//     <<jump Deliver_the_triangle_package>>
+// <<endif>>
+
+<<jump Deliver_the_triangle_package>>
+===
+
+title: Deliver_the_triangle_package
+position: 8024,253
+---
+The package is triangle and soft. You look at the delivery label. It is addressed to Finn. The address isn't too far from where you are. You'd better start moving.
+
+<<jump Travel_to_your_second_delivery>>
+===
+
+title: Travel_to_your_second_delivery
+position: 9387,272
+---
+So far the weather has been wonderful but you have a gut feeling like another storm may happen.
+
+// *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
+<<jump Arrive_at_your_second_destination>>
+===
+
+title: Arrive_at_your_second_destination
+position: 9766,268
+---
+// <<if $secondPackage is "round">>
+//     <<goToScene MudbricksLake>>
+//     <<wait 2>>
+//     The address on the second package has lead you to a murky pond covered in algae and lily pads. It doesn't look like there is a house here. You notice a small group of tortoises gathering together into a circular formation, near the lake.
+//     <<nextPosition none>>
+//     <<wait 1>>
+//     <<enable Stormhoof true>>
+//     <<rideHorse false>>
+//     <<wait 1>>
+    
+//     -> Call out for Mudbrick.
+//         <<jump Call_out_for_Mudbrick>>
+//     -> Approach the tortoises.
+//         <<jump Approach_the_tortoises>>
+// <<elseif $secondPackage is "square">>
+//     <<goToScene OlisCamp>>
+//     <<wait 2>>
+//     The address on the second package has lead you to a typical campsite with a large tent. Around the campsite you see a random array of what looks like scorch marks.
+//     <<nextPosition none>>
+//     <<wait 1>>
+//     <<enable Stormhoof true>>
+//     <<rideHorse false>> 
+//     <<wait 1>>
+    
+//     -> Call out for Oli.
+//         <<jump Call_out_for_Oli>>
+//     -> Examine the scorch marks.
+//         <<jump Examine_the_scorch_marks>>
+// <<elseif $secondPackage is "triangle">>
+//     <<goToScene FinnsTower>>
+//     <<wait 2>>
+//     The address on the second package has lead you to a tower. Atop the tower sits a room with a tall spire. Seems like this tower was used a long time ago but is now abandoned or at least it seems to look that way. 
+//     <<nextPosition none>>
+//     <<wait 1>>
+//     <<enable Stormhoof true>>
+//     <<rideHorse false>> 
+//     <<wait 1>>
+    
+//     -> Call out for Finn.
+//         <<jump Call_out_for_Finn>>
+//     -> Approach the tower and knock on the door.
+//         <<jump Approach_the_tower_and_knock_on_the_door>>
+// <<endif>>
+
+<<goToScene FinnsTower>>
+<<wait 2>>
+The address on the second package has lead you to a tower. Atop the tower sits a room with a tall spire. Seems like this tower was used a long time ago but is now abandoned or at least it seems to look that way. 
+<<specificPosition TowerDoorSpot>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
+
+// -> Call out for Finn.
+//     <<jump Call_out_for_Finn>>
+// -> Approach the tower and knock on the door.
+//     <<jump Approach_the_tower_and_knock_on_the_door>>
+
+<<jump Approach_the_tower_and_knock_on_the_door>>
+===
+
+title: Approach_the_tower_and_knock_on_the_door
+position: 10800,258
+---
+You approach the tower with caution. You knock lightly on the door. No answer. 
+
+You bang loudly on the door.
+<<enable FinnDescendingStairs true>>
+<<wait 3>>
+The sound of footsteps come from within the tower. The door opens and you see, before you, a half-elf. He's reading a thick book. Seems like he is entranced by the words on the pages.
+
+Finn: Could you please stop making such loud noises. It makes it hard to concentrate.
+
+<<jump Tell_Finn_you_have_a_package_for_him>>
+===
+
+// title: Call_out_for_Finn
+// position: 1103,3353
+// ---
+// Player: Delivery for Finn!
+
+// <<enable FinnDescendingStairs true>>
+// <<animate FinnDescendingStairs Carrying>>
+// <<wait 3>>
+// You hear the footsteps of someone coming down the tower's staircase. The door opens and you see before you, a half-elf. He's reading a thick book. Seems like he is entranced by the words on the pages.
+
+// <<specificPosition TowerDoorSpot>>
+// <<wait 2>>
+// Finn: Hello? What do you want?
+
+// <<jump Tell_Finn_you_have_a_package_for_him>>
+// ===
+
+title: Tell_Finn_you_have_a_package_for_him
+position: 11233,582
+---
+Player: I have a package delivery from Granbell.
+
+Finn: Really? Give it to me.
+
+<<enableDisable FinnBottomOfStairs FinnDescendingStairs>>
+<<animate FinnBottomOfStairs Carrying>>
+At no point does he look up from his book to see you. His arm reaches out to you and gestures for you to place the package in his hand. 
+
+You place the triangular package in his grasp and await his response. He doesn't look at the package at all and puts it in his pouch.
+
+<<set $metFinn to true>>
+
+// -> Ask him if he's ok.
+//     <<jump Ask_him_if_hes_ok>>
+// -> Ask what he is reading.
+//     <<jump Ask_what_he_is_reading>>
+
+<<jump Ask_what_he_is_reading>>
+===
+
+// title: Ask_him_if_hes_ok
+// position: 2012,3104
+// ---
+// Player: Are you ok?
+
+// Finn: Sorry, I need to finish reading all these books before they all go to waste sitting in this abandoned tower.
+
+// You've made your delivery already but it seems like Finn might need some help.
+
+
+// -> Ask how you can help.
+//     <<jump Ask_how_you_can_help>>
+// -> Wish him good luck and continue delivering.
+//     <<jump Wish_him_good_luck_and_continue_delivering>>
+// ===
+
+title: Ask_what_he_is_reading
+position: 11021,1057
+---
+Player: Seems like that book has got you hooked.
+
+Finn: This *book* is just one of many in this tower that contains various useful spells.
+
+// -> Ask why he needs all those spells.
+//     <<jump Ask_why_he_needs_all_those_spells>>
+// -> Ask how you can help.
+//     <<jump Ask_how_you_can_help>>
+
+<<jump Ask_how_you_can_help>>
+===
+
+// title: Ask_why_he_needs_all_those_spells
+// position: 1796,4104
+// ---
+// Player: Why do you even need all those spells?
+
+// Finn: These spells will prove useful against dangerous enemies. You see, spells are like tools. The more tools you have, the more situations you can pull yourself out of. If I see spells that're worth learning I'll spend my time learning those spells. It takes time to learn a spell, days or weeks, and other times it takes a few hours.
+
+// <<animate FinnBottomOfStairs Look>>
+// Finn looks behind him at all the books piled up near the stairs.
+
+// Finn: But this might take years.
+
+
+// -> Ask how you can help.
+//     <<jump Ask_how_you_can_help>>
+// -> Say that you've never met a real wizard before.
+//     <<jump Say_that_youve_never_met_a_real_wizard_before>>
+// -> Wish him good luck and continue delivering.
+//     <<jump Wish_him_good_luck_and_continue_delivering>>
+// ===
+
+// title: Say_that_youve_never_met_a_real_wizard_before
+// position: 2183,4250
+// ---
+// Player: I've never met a *real* wizard before. I've only ever heard stories about them.
+
+// Finn: Yes, there are very few of us left. Especially, since we are being hunted by those who despise magic in all its forms. In fact, I met a dastardly creature that hated me using magic so much that it stole my horse.
+
+// <<animate FinnBottomOfStairs Angry>>
+// Finn angrily looks away.
+
+// <<jump Ask_how_you_can_help>>
+// ===
+
+title: Ask_how_you_can_help
+position: 12302,840
+---
+Player: Is there anything I can do to help you?
+
+Finn: No there isn't much you can d--wait, there is something you can do!
+
+<<enableDisable FinnAscendingStairs FinnBottomOfStairs>>
+Finn disappears up the stairs and returns with a book in his hands.
+<<enableDisable FinnStairsWithBook FinnAscendingStairs>>
+
+Finn: If I can split my mind into many versions of myself a few times then just merge my mind back into one I'd have all the knowledge collected from these books in no time.
+
+<<enableDisable FinnWithBook FinnStairsWithBook>>
+Finn looks around.
+
+Finn: But first I need something to channel my magic through.
+
+<<animate FinnWithBook Search>>
+<<wait 1>>
+<<enable WizardHatWithFinn true>>
+Finn's eyes light up and grabs the triangular package from his pouch. He proceeds to unwrap the package revealing a pointed wizard's hat.
+
+Finn: This is exactly what I need. I can use this with the magic generator.
+
+// -> Ask when you can get started helping.
+//     <<jump Ask_when_you_can_get_started_helping>>
+// -> Ask what the magic generator is.
+//     <<jump Ask_what_the_magic_generator_is>>
+// -> Wish him good luck and continue delivering.
+//     <<jump Wish_him_good_luck_and_continue_delivering>>
+
+<<jump Ask_what_the_magic_generator_is>>
+===
+
+title: Ask_what_the_magic_generator_is
+position: 12242,1445
+---
+Player: What is a magic generator?
+
+Finn: The magic generator is a special contraption that I've found within this tower. I'm assuming the previous owner of this tower used it to create magic out of physical movement.
+
+<<jump Ask_when_you_can_get_started_helping>>
+===
+
+title: Ask_when_you_can_get_started_helping
+position: 12564,1503
+---
+Player: When can I start helping?
+
+Finn: We can get started immediately.
+
+<<specificPosition TowerSpot>>
+<<wait 1>>
+<<enableDisable FinnMagicGenerator FinnWithBook>>
+<<wait 1>>
+Finn bolts up the tower again and comes down holding a small metal object. 
+
+He places the object on the floor and starts casting a spell on it. 
+
+<<enable SmallMagicGeneratorGroup true>>
+<<wait 10>>
+The object floats up and begins to shake then it burts into a grand structure much larger than its previous form.
+
+Finn: Here is the magic generator. It'll help in creating all the magic needed for my spell. Could you please get inside the machine?
+
+// -> Ask if it's safe.
+//     <<jump Ask_if_its_safe>>
+// -> Get into the machine. (Exercise Quest)
+//     <<jump Get_into_the_machine>>
+
+<<jump Get_into_the_machine>>
+===
+
+// title: Ask_if_its_safe
+// position: 3154,3812
+// ---
+// Player: Is this safe? You know, I still have more deliveries to make.
+
+// Finn: Oh, it's *extremely* safe.
+
+// You can sense a feeling of sarcasm in his voice.
+
+
+// -> Get into the machine. (Exercise Quest)
+//     <<jump Get_into_the_machine>>
+// -> Wish him good luck and continue delivering.
+//     <<jump Wish_him_good_luck_and_continue_delivering>>
+// ===
+
+title: Get_into_the_machine
+position: 12873,1270
+---
+<<specificPosition MachineSpot>>
+<<wait 2>>
+You hop into the contraption. It's surprisingly comfortable.
+
+Finn: Ok just put your feet in the pedals there and begin pedaling. Are you ready? I'll be casting the spell now.
+<<animate FinnMagicGenerator StartSpell>>
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+<<prepareExerciseQuest finn>>
+<<wait 2>>
+<<startExerciseQuest finn>>
+<<enable GreenJuice true>>
+<<wait 30>> // Exercise timer
+<<jump Pedal_to_help_Finn>>
+===
+
+title: Pedal_to_help_Finn
+position: 13248,1115
+---
+You move around in the machine to pump out magic for Finn. 
+<<specificPosition MachineSpot>>
+<<wait 1>>
+<<enable FinnGroup1 true>>
+<<wait 1>>
+It seems to be working. 
+<<specificPosition MachineSpot>>
+<<wait 1>>
+<<enable FinnGroup2 true>>
+<<wait 1>>
+More Finn's are appearing from bursts of magical energy around you!
+<<specificPosition MachineSpot>>
+<<wait 1>>
+<<enable FinnGroup3 true>>
+<<wait 1>>
+
+<<animate FinnMagicGenerator StopSpell>>
+Finn: Ok I think that is enough. You can stop now.
+
+<<specificPosition TowerSpot>>
+<<wait 1>>
+<<enable FinnGroup1 false>>
+<<enable FinnGroup2 false>>
+<<enable FinnGroup3 false>>
+<<enable FinnArmy true>>
+<<enableDisable FinnOriginal FinnMagicGenerator>>
+<<wait 1>>
+An army of Finns surround you.
+
+Finn: Ok everyone get inside and start reading.
+
+The mass of Finn clones march up the tower.
+<<enable FinnArmy false>>
+
+// -> Ask if he'll need help later to bring them together.
+//     <<jump Ask_if_hell_need_help_later_to_bring_them_together>>
+// -> Tell him that you hope that this works.
+//     <<jump Tell_him_that_you_hope_that_this_works>>
+
+<<jump Ask_if_hell_need_help_later_to_bring_them_together>>
+===
+
+// title: Tell_him_that_you_hope_that_this_works
+// position: 3927,3655
+// ---
+// Player: I hope for your sake that this will work.
+
+// Finn: I think that it'll work out exactly as I need it to. Thank you so much for the help. Here take this.
+
+// <<animate FinnOriginal Handout>>
+// He hands you a small vial.
+
+// // *You take the vial.*
+
+// <<set $smokeVial to true>>
+
+// Finn: It's a vial of magical smoke. If you ever need a quick escape just throw this on the ground and it'll create a large cloud of smog, blinding your enemies.
+
+// <<jump Thank_Finn_for_the_vial_and_continue_delivering>>
+// ===
+
+title: Ask_if_hell_need_help_later_to_bring_them_together
+position: 13660,1141
+---
+Player: I hope for your sake that this will work.
+
+Finn: I think that it'll work out exactly as I need it to. Thank you so much for the help. Here take this.
+
+<<animate FinnOriginal Handout>>
+He hands you a small vial.
+
+// *You take the vial.*
+
+<<set $smokeVial to true>>
+
+Finn: It's a vial of magical smoke. If you ever need a quick escape just throw this on the ground and it'll create a large cloud of smog, blinding your enemies.
+
+<<jump Thank_Finn_for_the_vial_and_continue_delivering>>
+===
+
+title: Thank_Finn_for_the_vial_and_continue_delivering
+position: 14193,610
+---
+Player: Thank you for the smoke vial. I hope you'll be able to read all these books soon enough.
+
+Finn: Thank you. Make sure you stay safe on the path to Eldoria. I bumped into a nasty looking goblin asking if I had seen someone carrying an "offering".
+
+<<specificPosition LeaveTheTower>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
+He waves you a goodbye.
+
+<<jump Make_your_third_delivery>>
+===
+
+// title: Wish_him_good_luck_and_continue_delivering
+// position: 4481,2921
+// ---
+// Player: Well I hope you manage to read them all. Don't forget to get some fresh air every now and then.
+
+// <<specificPosition LeaveTheTower>>
+// <<wait 1>>
+// <<enable Stormhoof false>>
+// <<rideHorse true>> 
+// <<wait 1>>
+// You continue down the path towards your next delivery location.
+
+// You sense an evil presence in the air.
+
+// <<jump You_spot_the_creature>>
+// ===
+
+// title: You_spot_the_creature
+// position: 5382,-194
+// ---
+// <<goToScene OutrunGoblin>>
+// <<wait 2.2>>
+// <<setBackgroundMusic Combat 0.5>>
+// <<wait 3>>
+// <<startChase none>>
+// That creature that chased you has appeared once again. It does not ask questions and it doesn't seem to have any intention to speak with you. It rides close.
+// <<moveClose true>>
+// You need to outrun the creature again.
+// <<moveClose false>>
+// <<wait 30>> // Exercise timer
+
+// <<setBackgroundMusic forest_loop 0.3>>
+// You escape the creature once more.
+
+// <<jump Make_your_third_delivery>>
+// ===
+
+title: Make_your_third_delivery
+position: 14726,611
+---
+<<goToScene ForestPath>>
+<<wait 2>>
+You ride atop Stormhoof and decide you should deliver your third package.
+
+// <<if $thirdPackage is "red">>
+//     <<jump Deliver_the_red_package>>
+// <<elseif $thirdPackage is "green">>
+//     <<jump Deliver_the_green_package>>
+// <<elseif $thirdPackage is "blue">>
+//     <<jump Deliver_the_blue_package>>
+// <<elseif $thirdPackage is "yellow">>
+//     <<jump Deliver_the_yellow_package>>
+// <<endif>>
+
+<<jump Deliver_the_blue_package>>
+===
+
+title: Deliver_the_blue_package
+position: 15203,585
+---
+The package is a small pouch that has been dyed blue. You look at the delivery label. It is addressed to Daisy. The address isn't too far from where you are. You'd better start moving.
+
+<<jump Travel_to_your_third_delivery>>
+===
+
+title: Travel_to_your_third_delivery
+position: 16184,559
+---
+The clouds above you begin to gather. Seems like the storm will arrive soon. You'd better deliver your third package before you find shelter.
+
+// *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
+<<jump Arrive_at_your_third_destination>>
+===
+
+title: Arrive_at_your_third_destination
+position: 16546,566
+---
+// <<if $thirdPackage is "red">>
+//     <<goToScene LeytonsCave>>
+//     <<wait 2>>
+//     The address on the third package has lead you to the entrance of a cave on a cliff above you. You notice nothing out of the ordinary for a cave mouth.
+//     <<nextPosition none>>
+//     <<wait 1>>
+//     <<enable Stormhoof true>>
+//     <<rideHorse false>> 
+//     <<wait 3>>
+
+//     <<enable Fireball true>>
+//     Suddenly, you hear a sneeze from within the cave and a blast of fire comes streaking out of the cave.
+
+    
+//     -> Call out for Leyton.
+//         <<jump Call_out_for_Leyton>>
+//     -> Ask if whoever sneezed is ok.
+//         <<jump Ask_if_whoever_sneezed_is_ok>>
+
+// <<elseif $thirdPackage is "green">>
+//     <<goToScene ThakalisGarden>>
+//     <<wait 2>>
+//     The address on the third package has lead you to a luscious garden full of fruits, vegetables, and herbs. Although the clouds are gathering above you, this garden seems to have a perfect window of sunlight that shines down on the produce.
+//     <<nextPosition none>>
+//     <<wait 1>>
+//     <<enable Stormhoof true>>
+//     <<rideHorse false>> 
+//     <<wait 1>>
+    
+//     -> Call out for Thakali.
+//         <<jump Call_out_for_Thakali>>
+//     -> Compliment the garden.
+//         <<jump Compliment_the_garden>>
+
+// <<elseif $thirdPackage is "blue">>
+//     <<goToScene DaisysBerryFarm>>
+//     <<wait 2>>
+//     The address on the third package has lead you to a small campsite. There are baskets of berries dotted around the camp. A sign that says "Picked by Pattersbys" is painted on the side of a wagon nearby.
+//     <<if $metPetunia is true>>
+//         You recognise the name Pattersby. You met Petunia Pattersby earlier. Maybe this is her berry picking company?
+//     <<endif>>
+
+//     <<specificPosition BerrySpot>>
+//     <<wait 1>>
+//     <<enable Stormhoof true>>
+//     <<rideHorse false>> 
+//     <<wait 1>>
+    
+//     -> Call out for Daisy.
+//         <<jump Call_out_for_Daisy>>
+//     -> Take some berries.
+//         <<jump Take_some_berries>>
+
+// <<elseif $thirdPackage is "yellow">>
+//     <<goToScene ValsGamblersGrotto>>
+//     <<wait 2>>
+//     The address on the third package has lead you to a door situated within a hill. There is a sign above the door that reads "Gamblers Grotto". The door has a small window that looks like it can slide open.
+//     <<nextPosition none>>
+//     <<wait 1>>
+//     <<setBackgroundMusic TavernLoop2 0.1>>
+//     <<enable Stormhoof true>>
+//     <<rideHorse false>> 
+//     <<wait 1>>
+    
+//     -> Call out for Val.
+//         <<jump Call_out_for_Val>>
+//     -> Knock on the door of the Gamblers Grotto.
+//         <<jump Knock_on_the_door_of_the_Gamblers_Grotto>>
+// <<endif>>
+
+<<goToScene LeytonsCave>>
+<<wait 2>>
+The address on the third package has lead you to the entrance of a cave on a cliff above you. You notice nothing out of the ordinary for a cave mouth.
+<<nextPosition none>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 3>>
+
+<<enable Fireball true>>
+Suddenly, you hear a sneeze from within the cave and a blast of fire comes streaking out of the cave.
+
+// -> Call out for Leyton.
+//     <<jump Call_out_for_Leyton>>
+// -> Ask if whoever sneezed is ok.
+//     <<jump Ask_if_whoever_sneezed_is_ok>>
+
+<<jump Call_out_for_Leyton>>
+===
+
+title: Call_out_for_Leyton
+position: 17678,559
+---
+Player: Delivery for Leyton!
+
+You hear a groaning from inside the cave.
+
+Leyton: I'm inside the cave. I'll be with you in a moment.
+
+// You sit and wait for Leyton. 
+
+<<enable Fireball true>>
+You hear another sneeze come from the cave and again, a blast of flames shoot out of the cave.
+
+// -> Ask if he needs help getting down.
+//     <<jump Ask_if_he_needs_help_getting_down>>
+// -> Ask why there is fire coming out of the cave.
+//     <<jump Ask_why_there_is_fire_coming_out_of_the_cave>>
+// -> Leave the package on the ground and go.
+//     <<jump Leave_the_package_on_the_ground_and_go>>
+
+<<jump Ask_why_there_is_fire_coming_out_of_the_cave>>
+===
+
+// title: Ask_if_whoever_sneezed_is_ok
+// position: 1201,-1530
+// ---
+// Player: Are you ok in there?
+
+// Leyton: Yup. Just a little under the weather is all. I'll be down in a moment.
+
+// -> Ask if he needs help getting down.
+//     <<jump Ask_if_he_needs_help_getting_down>>
+// -> Ask why there is fire coming out of the cave.
+//     <<jump Ask_why_there_is_fire_coming_out_of_the_cave>>
+// ===
+
+// title: Ask_if_he_needs_help_getting_down
+// position: 1784,-2410
+// ---
+// Player: Uh. Do you need help getting down from there?
+
+// Leyton: No, I'll be fine.
+
+// <<enable LeytonExitCave true>>
+// <<wait 3>>
+// <<animate LeytonExitCave Wave>>
+// Leyton appears from the cave. You see a man with firey red hair wearing an exotic red outfit. He carries a staff with a lantern wreathed in flames.
+
+// Leyton: Now, why are you here again?
+
+
+// -> Tell Leyton you have a package for him.
+//     <<jump Tell_Leyton_you_have_a_package_for_him>>
+// -> Tell Leyton that you're here to help him get better.
+//     <<jump Tell_Leyton_that_youre_here_to_help_him_get_better>>
+// ===
+
+title: Ask_why_there_is_fire_coming_out_of_the_cave
+position: 18235,515
+---
+Player: Why are there flames coming from the cave? Are you sure you're ok in the cave?
+
+Leyton: Sorry, those flames are coming from me.
+
+<<enable LeytonExitCave true>>
+<<wait 3>>
+<<animate LeytonExitCave Wave>>
+Leyton appears from the cave. You see a man with firey red hair wearing an exotic red outfit. He carries a staff with a lantern wreathed in flames.
+
+Leyton: Now, why are you here again?
+
+// -> Tell Leyton you have a package for him.
+//     <<jump Tell_Leyton_you_have_a_package_for_him>>
+// -> Tell Leyton that you're here to help him get better.
+//     <<jump Tell_Leyton_that_youre_here_to_help_him_get_better>>
+
+<<jump Tell_Leyton_you_have_a_package_for_him>>
+===
+
+// title: Leave_the_package_on_the_ground_and_go
+// position: 1709,-1516
+// ---
+// You leave the package on the ground for him to collect. You don't want to catch whatever he has. It seems like a very dangerous disease.
+
+// You slowly try sneak off.
+
+// <<enable LeytonExitCave true>>
+// <<wait 3>>
+// <<animate LeytonExitCave Wave>>
+// Leyton appears from the cave. You see a man with firey red hair wearing an exotic red outfit. He carries a staff with a lantern wreathed in flames.
+
+// <<animate LeytonExitCave LookDown>>
+// Leyton: Hey! Where are you going? Where's my package!
+
+// You freeze.
+
+// -> Tell him that you don't want to catch whatever he has.
+//     <<jump Tell_him_that_you_dont_want_to_catch_whatever_he_has>>
+// -> Tell him that you were just looking around the place.
+//     <<jump Tell_him_that_you_were_just_looking_around_the_place>>
+// ===
+
+title: Tell_Leyton_you_have_a_package_for_him
+position: 18922,-48
+---
+Player: I have a package for you from Granbell.
+
+<<animate LeytonExitCave Victory>>
+Leyton: Oh yeah! That'll help me feel better.
+
+<<enableDisable LeytonFlyDown LeytonExitCave>>
+<<animate LeytonFlyDown Fly>>
+<<wait 8.5>>
+<<animate LeytonFlyDown Land>>
+<<wait 1.5>>
+Leyton floats down the side of the cliff face and lands softly on the dirt.
+
+<<enable CoalBag true>>
+You give the package to Leyton and he proceeds to open it revealing that it was a sack of coals.
+
+Leyton: Let's heat these up. I'm feeling hungry.
+
+<<set $metLeyton to true>>
+
+// -> Ask how he floated down the cliff.
+//     <<jump Ask_how_he_floated_down_the_cliff>>
+// -> Offer Leyton some rations.
+//     <<jump Offer_Leyton_some_rations>>
+
+<<jump Ask_how_he_floated_down_the_cliff>>
+===
+
+// title: Tell_Leyton_that_youre_here_to_help_him_get_better
+// position: 2452,-2288
+// ---
+// Player: I'm here to help you get better. Seems like you might need it.
+
+// <<animate LeytonExitCave Dismiss>>
+// Leyton: Thanks but unless you have something that can heat me up then I don't need your help. Was there anything else?
+
+
+// -> Tell Leyton you have a package for him.
+//     <<jump Tell_Leyton_you_have_a_package_for_him>>
+// -> Tell him that you have some hot food for him.
+//     <<jump Tell_him_that_you_have_some_hot_food_for_him>>
+// ===
+
+// title: Tell_him_that_you_dont_want_to_catch_whatever_he_has
+// position: 2451,-1983
+// ---
+// Player: You sound diseased. I'm just trying to keep my distance.
+
+// <<animate LeytonExitCave Dismiss>>
+// Leyton: Don't worry, what I've got can't be passed to humans. I managed to avoid that storm, but some small creature poured water all over my tent and doused my flames. Now I need something to heat me up.
+
+// <<animate LeytonExitCave LookDown>>
+// Leyton: Is that my package?!
+
+// <<enableDisable LeytonFlyDown LeytonExitCave>>
+// <<animate LeytonFlyDown Fly>>
+// <<wait 8.5>>
+// <<animate LeytonFlyDown Land>>
+// <<wait 1.5>>
+// Leyton floats down the side of the cliff face and lands softly on the dirt. 
+
+// <<enable CoalBag true>>
+// He proceeds to open the package revealing a sack of coals. Leyton shakes the bag of coals.
+
+// Leyton: Yup this'll help. We're going to heat these up and I'm going to need your help.
+
+// <<set $metLeyton to true>>
+
+
+// -> Ask how he floated down the cliff.
+//     <<jump Ask_how_he_floated_down_the_cliff>>
+// -> Ask how you can help heat up the coals.
+//     <<jump Ask_how_you_can_help_heat_up_the_coals>>
+// ===
+
+// title: Tell_him_that_you_were_just_looking_around_the_place
+// position: 2449,-1707
+// ---
+// Player: I was just checking my surroundings. A goblin chased me recently so I'm being cautious about where I go. Your package is on the ground here.
+
+// <<animate LeytonExitCave LookDown>>
+// Leyton: Is that my package?!
+
+// <<enableDisable LeytonFlyDown LeytonExitCave>>
+// <<animate LeytonFlyDown Fly>>
+// <<wait 8.5>>
+// <<animate LeytonFlyDown Land>>
+// <<wait 1.5>>
+// Leyton floats down the side of the cliff face and lands softly on the dirt. 
+
+// <<enable CoalBag true>>
+// He proceeds to open the package revealing a sack of coals. Leyton shakes the bag of coals.
+
+// Leyton: Yup this'll help. We're going to heat these up and I'm going to need your help.
+
+// <<set $metLeyton to true>>
+
+
+// -> Ask how he floated down the cliff.
+//     <<jump Ask_how_he_floated_down_the_cliff>>
+// -> Ask how you can help heat up the coals.
+//     <<jump Ask_how_you_can_help_heat_up_the_coals>>
+// -> Tell him that you're busy and you've a special delivery to complete.
+//     <<jump Tell_him_that_youre_busy_and_that_youve_a_special_delivery_to_complete>>
+// ===
+
+title: Ask_how_he_floated_down_the_cliff
+position: 19548,-89
+---
+Player: How did you just float down the cliff like that?
+
+Leyton: I have the magical ability to fly. That's how I got up there as well.
+
+// -> Ask him if he's a wizard.
+//     <<jump Ask_him_if_hes_a_wizard>>
+// -> Ask him what he's going to do with the coals.
+//     <<jump Ask_him_what_hes_going_to_do_with_the_coals>>
+
+<<jump Ask_him_what_hes_going_to_do_with_the_coals>>
+===
+
+// title: Tell_him_that_you_have_some_hot_food_for_him
+// position: 3093,-2041
+// ---
+// Player: I have something that'll heat you up.
+
+// Leyton: Really?
+
+// <<enableDisable LeytonFlyDown LeytonExitCave>>
+// <<animate LeytonFlyDown Fly>>
+// <<wait 8.5>>
+// <<animate LeytonFlyDown Land>>
+// <<wait 1.5>>
+// Leyton floats down the side of the cliff face and lands softly on the dirt.
+
+// Leyton: I was promised something hot where is it?
+
+// Player: Hot food?
+
+// Leyton: No no no, I don't want food. I want fire. All that sneezing and sickness has me leaking all my heat out. I need something to warm me up for a while.
+
+// <<animate LeytonAtBottom LookDown>>
+// Leyton looks to your pack and sees his delivery.
+
+// Leyton: Oh you have my package there. That'll help me out.
+
+// <<enable CoalBag true>>
+// You give the package to Leyton and he proceeds to open it revealing that it was a sack of coals. Leyton shakes the bag of coals.
+
+// Leyton: We're going to heat these up and I'm going to need your help.
+
+// <<set $metLeyton to true>>
+
+
+// -> Ask how he floated down the cliff.
+//     <<jump Ask_how_he_floated_down_the_cliff>>
+// -> Ask how you can help heat up the coals.
+//     <<jump Ask_how_you_can_help_heat_up_the_coals>>
+// -> Tell him that you're busy and you've a special delivery to complete.
+//     <<jump Tell_him_that_youre_busy_and_that_youve_a_special_delivery_to_complete>>
+// ===
+
+// title: Offer_Leyton_some_rations
+// position: 3092,-1785
+// ---
+// Player: Here, if you're hungry I have some rations.
+
+// Leyton: No no no, I don't want food. I want fire. All that sneezing and sickness has me leaking all my heat out. I need something to warm me up for a while.
+
+// Leyton shakes the bag of coals.
+
+// <<animate LeytonAtBottom LookBehind>>
+// Leyton: So we're going to heat these up and I'm going to need your help.
+
+// <<set $metLeyton to true>>
+
+
+// -> Ask how you can help heat up the coals.
+//     <<jump Ask_how_you_can_help_heat_up_the_coals>>
+// -> Tell him that you're busy and you've a special delivery to complete.
+//     <<jump Tell_him_that_youre_busy_and_that_youve_a_special_delivery_to_complete>>
+// ===
+
+// title: Ask_him_if_hes_a_wizard
+// position: 3425,-3078
+// ---
+// Player: Are you a wizard? Not many people know how to wield magic. 
+
+// <<if $metFinn is true>>
+//     Player: I recently met a wizard named Finn he was quite the oddball.
+
+//     <<animate LeytonAtBottom Victory>>
+//     Leyton: You met Finn? I used to adventure with that guy.
+// <<endif>>
+
+// He looks around.
+
+// Leyton: No I'm not a wizard. I'm a warlock. I sold my soul to get these cool magical powers.
+
+// <<jump Ask_him_what_hes_going_to_do_with_the_coals>>
+// ===
+
+title: Ask_him_what_hes_going_to_do_with_the_coals
+position: 20061,-133
+---
+Player: What are you going to do with the coals?
+
+Leyton: All that sneezing and sickness has me leaking all my heat out. I need something to warm me up for a while.
+
+Leyton shakes the bag of coals.
+
+<<animate LeytonAtBottom LookBehind>>
+Leyton: So we're going to heat these up and I'm going to need your help.
+
+
+// -> Ask how you can help heat up the coals.
+//     <<jump Ask_how_you_can_help_heat_up_the_coals>>
+// -> Tell him that you're busy and you've a special delivery to complete.
+//     <<jump Tell_him_that_youre_busy_and_that_youve_a_special_delivery_to_complete>>
+
+<<jump Ask_how_you_can_help_heat_up_the_coals>>
+===
+
+title: Ask_how_you_can_help_heat_up_the_coals
+position: 20440,3
+---
+<<specificPosition ExerciseQuest>>
+<<wait 1>>
+<<enableDisable CoalBagWithFire CoalBag>>
+<<enableDisable LeytonAtFirePit LeytonAtBottom>>
+<<wait 1>>
+Player: How can I help heat up the coals? I don't have anything that'll get them started.
+
+Leyton flies up to the cave and brings back a set of bellows.
+<<specificPosition ExerciseQuest>>
+<<wait 1>>
+<<enable BellowsObject true>>
+<<wait 1>>
+
+<<animate LeytonAtFirePit Point>>
+Leyton: On my call, use these and keep the fire stoked. 
+
+<<enable AllCoals true>>
+Leyton pours the coals into a stone fit pit. This'll be my last push of flames before I'm all fizzled out.
+
+Leyton: A-a-aaaaachooo!!
+<<animate LeytonAtFirePit Sneeze>>
+<<wait 1>>
+<<enable Fire true>>
+
+Leyton sneezes all over the coals. A hot flame bursts from his face and onto the coals starting the heating process.
+
+// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+<<prepareExerciseQuest leyton>>
+<<wait 2>>
+<<startExerciseQuest leyton>>
+<<wait 30>> // Exercise timer
+<<jump Keep_the_coals_hot>>
+===
+
+title: Keep_the_coals_hot
+position: 20796,21
+---
+You manage to keep the coals hot by following Leyton's orders.
+
+Leyton: I think they're hot enough now!
+
+<<enableDisable LeytonJumpIn LeytonAtFirePit>>
+<<animate LeytonJumpIn Dive>>
+Leyton jumps onto the bed of coals and proceeds to get comfy.
+
+// -> Ask if it hurts.
+//     <<jump Ask_if_it_hurts>>
+// -> Ask if he feels better.
+//     <<jump Ask_if_he_feels_better>>
+
+<<jump Ask_if_it_hurts>>
+===
+
+title: Ask_if_it_hurts
+position: 21335,-277
+---
+Player: Doesn't that hurt?
+
+Leyton: No this feels just right. Ahhhh.
+
+Leyton lets out a sigh of relief.
+
+<<specificPosition LeytonsCave>>
+<<wait 1>>
+<<enableDisable LeytonAtBottom LeytonJumpIn>>
+<<wait 1>>
+You start to head to the path.
+
+<<animate LeytonAtBottom Handout>>
+Leyton: Wait, I forgot to give you this.
+
+Leyton hands you an obsidian dagger.
+
+*You take the obsidian dagger.* 
+
+<<set $dagger to true>>
+
+Leyton: Be careful when holding it. It's exetremely sharp. I've use to it cut through almost everything. I won't be needing it any more, so you can have it.
+
+<<jump Thank_Leyton_for_the_dagger>>
+===
+
+// title: Ask_if_he_feels_better
+// position: 4880,-2258
+// ---
+// Player: Does this feel good to you?
+
+// Leyton: Ohh this feels great. I can't thank you enough for the help. I'll be better in no time.
+
+// <<specificPosition LeytonsCave>>
+// <<wait 1>>
+// <<enableDisable LeytonAtBottom LeytonJumpIn>>
+// <<wait 1>>
+// You start to head to the path.
+
+// <<animate LeytonAtBottom Handout>>
+// Leyton: Wait, I forgot to give you this.
+
+// Leyton hands you an obsidian dagger.
+
+// // *You take the obsidian dagger.* 
+
+// <<set $dagger to true>>
+
+// Leyton:  Be careful when holding it. It's exetremely sharp. I've use to it cut through almost everything. I won't be needing it any more, so you can have it.
+
+// <<jump Thank_Leyton_for_the_dagger>>
+// ===
+
+title: Thank_Leyton_for_the_dagger
+position: 23017,-61
+---
+Player: Thank you for the gift. I'll be careful when handling it.
+
+<<specificPosition LeaveLeytonsCave>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
+Leyton: Oh if you see any ogres. They will be terrified of that thing too. No idea why.
+
+<<jump Continue_on_your_journey>>
+===
+
+// title: Tell_him_that_youre_busy_and_that_youve_a_special_delivery_to_complete
+// position: 4356,-1586
+// ---
+// <<if $path is "left">>
+//     Player: Sorry, sir. I can't help you right now. I have a very important delivery to make to Eldoria.
+
+//     Leyton: Eldoria? Why are you going there? Isn't it overrun with goblins?
+
+//     <<jump Tell_him_you_must_do_this_because_Granbell_needs_it>>
+// <<elseif $path is "right">>
+//     Player: Sorry, sir. I can't help you right now. I have a very important package that needs disposing off.
+
+//     Leyton: A courier disposing of one of their packages? If you'd like I could use my flames to burn it.
+
+//     <<jump Ask_him_where_the_volcano_is>>
+// <<endif>>
+// ===
+
+// title: Ask_him_where_the_volcano_is
+// position: 6535,-1477
+// ---
+// Player:  I don't think you're in a good condition to do that. Where is the volcano that is nearby?
+
+// Leyton looks at you in disbelief.
+
+// Leyton: There's a volcano nearby? If I knew that I'd have gone there. Try further down the path.
+
+// <<nextPosition none>>
+// <<wait 1>>
+// <<enable Stormhoof false>>
+// <<rideHorse true>> 
+// <<wait 1>>
+// You get a feeling like you are being watched. 
+
+// <<jump You_spot_the_creature_again>>
+// ===
+
+// title: Tell_him_you_must_do_this_because_Granbell_needs_it
+// position: 6535,-1910
+// ---
+// Player: I was given this task by my boss at the Granbell courier hall. She told me it was important. This package must be crucial to stopping the war between humans and goblins.
+
+// Leyton: I wish you luck.
+
+// <<nextPosition none>>
+// <<wait 1>>
+// <<enable Stormhoof false>>
+// <<rideHorse true>> 
+// <<wait 1>>
+// You get a feeling like you are being watched. 
+
+// <<jump You_spot_the_creature_again>>
+// ===
+
+title: Continue_on_your_journey
+position: 23926,534
+---
+<<goToScene ForestPath>>
+<<wait 2>>
+You follow the path to your final destination. 
+
+The sky above has become an angry herd of dark clouds. The sun is setting it'll be night soon. You should make camp nearby.
+
+// <<if $path is "left">>
+//     <<goToScene LargeTreeTent>>
+//     <<wait 2.2>>
+//     <<setBackgroundMusic forest_loop 0.1>>
+//     You ride a bit further down the path and find a good spot to make camp. 
+//     <<nextPosition none>>
+//     <<wait 1>>
+//     <<enable Stormhoof true>>
+//     <<rideHorse false>> 
+//     <<wait 1>>
+//     You decide to make camp at the base of a large tree tonight.
+//     <<nextPosition none>>
+//     <<wait 2>>
+
+//     Thunder rumbles and rain starts to pour down on your tent. You need to sleep.
+// <<elseif $path is "right">>
+//     <<goToScene LargeRocksTent>>
+//     <<wait 2.2>>
+//     <<setBackgroundMusic forest_loop 0.1>>
+//     You ride a bit further down the path and find a good spot to make camp. 
+//     <<nextPosition none>>
+//     <<wait 1>>
+//     <<enable Stormhoof true>>
+//     <<rideHorse false>> 
+//     <<wait 1>>
+//     You decide to make camp near a few large jagged rocks. 
+//     <<nextPosition none>>
+//     <<wait 2>>
+//     The weather seems to clear before you go to sleep.
+// <<endif>>
+
+<<goToScene LargeTreeTent>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.1>>
+You ride a bit further down the path and find a good spot to make camp. 
+<<nextPosition none>>
+<<wait 1>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<wait 1>>
+You decide to make camp at the base of a large tree tonight.
+<<nextPosition none>>
+<<wait 2>>
+
+Thunder rumbles and rain starts to pour down on your tent. You need to sleep.
+
+Hopefully you'll be safe.
+
+*Player must take a break here before moving on.*
+// <<if $path is "left">>
+//     -> Wake up under the tree.
+//         <<jump Wake_up_under_the_tree>>
+
+// <<elseif $path is "right">>
+//     -> Wake up near the rocks.
+//         <<jump Wake_up_near_the_rocks>>
+// <<endif>>
+
+<<jump Wake_up_under_the_tree>>
+===

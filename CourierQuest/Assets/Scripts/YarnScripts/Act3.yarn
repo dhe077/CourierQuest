@@ -238,7 +238,7 @@ Goblin Shaman: I'm going to vaporize you.
 
 You spot a hallway to your right that leads away out of the throne room. If you could distract them somehow you could escape down that hallway.
 
- (Timed)
+ 
 <<startTimer 14>>
 <<if $diamond is true>>
     -> Use the diamond to counter the lightning.
@@ -283,7 +283,7 @@ Goblin Shaman: I'm going to vaporize you.
 
 You spot a hallway to your right that leads away out of the throne room. If you could distract them somehow you could escape down that hallway.
 
- (Timed)
+ 
 <<startTimer 14>>
 <<if $diamond is true>>
     -> Use the diamond to counter the lightning.
@@ -1259,7 +1259,7 @@ The ogre runs at you at an alarming pace. The ground shakes as the ogre thumps i
 
 This time around Garbanzo is nowhere to be seen. Who's going to save you this time? You need to think fast.
 
- (Timed)
+ 
 <<startTimer 16>>
 <<if $dagger is true>>
     -> Throw the dagger at the ogre.
@@ -1310,7 +1310,6 @@ The ogre runs at you at an alarming pace. The ground shakes as the ogre thumps i
 
 This time around Garbanzo is nowhere to be seen. Who's going to save you this time? You need to think fast.
 
- (Timed)
 <<startTimer 16>>
 <<if $dagger is true>>
     -> Throw the dagger at the ogre.
@@ -3471,7 +3470,7 @@ You both struggle for the package on the volcano's precipice. Back and forth you
 The goblin stumbles backwards towards the edge.
 <<animate GarbanzoWithoutPackage Stumble>>
 
- (Timed)
+ 
 <<startTimer 6>>
 -> Grab hold of the goblin.
     <<interrruptTimer none>>
@@ -3501,7 +3500,7 @@ While the goblin is blinded you run as fast as you can towards the package. You 
 In his daze, the goblin stumbles backwards towards the edge, rubbing his eyes.
 <<animate GarbanzoWithoutPackage Stumble>>
 
- (Timed)
+ 
 <<startTimer 6>>
 -> Grab hold of the goblin.
     <<interrruptTimer none>>

@@ -26,7 +26,7 @@ public class ObstacleGame : MonoBehaviour
 
     private void Start()
     {
-        storyCommands = GameObject.Find("Custom Dialogue System").GetComponent<StoryCommands>();
+        storyCommands = GameObject.Find("PlayerView").GetComponent<PlayerViewObjects>().GetStoryCommands();
 
         // Start generating forest paths
         forestPathGeneration.SetGenerate(true);

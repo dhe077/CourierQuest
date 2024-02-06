@@ -40,8 +40,9 @@ public class EnvironmentManager : MonoBehaviour
 
     void Update()
     {
-        DecreaseLightningIntensity();
-        IncreaseRainIntensity();
+        if (lightning != null)
+            DecreaseLightningIntensity();
+        //IncreaseRainIntensity();
     }
 
     public void SpawnPackageObjects()
@@ -103,19 +104,19 @@ public class EnvironmentManager : MonoBehaviour
         rainGroup.SetActive(rainSwitch);
     }
 
-    public void IncreaseRainIntensity()
-    {
-        try
-        {
-            if (rainGroup.activeSelf == true)
-            {
-                RainScript rainScript = rainGroup.transform.GetChild(0).GetComponent<RainScript>();
-                // Lower the intensity gradually
-                rainScript.RainIntensity = Mathf.Min(1, rainScript.RainIntensity + increaseRate * Time.deltaTime);
-            }
-        } catch (NullReferenceException) { Debug.Log("No Rain set in EnvironmentManager!"); }
-        catch (UnassignedReferenceException) { Debug.Log("No Rain set in EnvironmentManager!"); }
-    }
+    // public void IncreaseRainIntensity()
+    // {
+    //     try
+    //     {
+    //         if (rainGroup.activeSelf == true)
+    //         {
+    //             RainScript rainScript = rainGroup.transform.GetChild(0).GetComponent<RainScript>();
+    //             // Lower the intensity gradually
+    //             rainScript.RainIntensity = Mathf.Min(1, rainScript.RainIntensity + increaseRate * Time.deltaTime);
+    //         }
+    //     } catch (NullReferenceException) { Debug.Log("No Rain set in EnvironmentManager!"); }
+    //     catch (UnassignedReferenceException) { Debug.Log("No Rain set in EnvironmentManager!"); }
+    // }
 
     public void EnableObject(string enableObj, bool enableBool)
     {

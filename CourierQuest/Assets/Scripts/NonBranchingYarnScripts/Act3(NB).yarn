@@ -1,0 +1,775 @@
+﻿title: Wake_up_under_the_tree
+position: -153,88
+---
+<<goToScene WakeUpLargeTree>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
+<<wait 3>>
+You wake up under the tree that you made camp under. 
+
+<<nextPosition none>>
+<<wait 2>>
+The weather did not let up over night. It's no longer raining but the clouds are still grey.
+
+<<nextPosition none>>
+<<wait 1>>
+<<enable Stormhoof false>>
+<<rideHorse true>> 
+<<wait 1>>
+It's about time that you make your final delivery to Eldoria.
+
+<<jump Ride_towards_Eldoria>>
+===
+
+title: Ride_towards_Eldoria
+position: 256,-244
+---
+<<goToScene ForestPath>>
+<<wait 2>>
+You look to your pouch where the special delivery should be.
+
+// <<if $specialPackage is true>>
+//     You're relieved that the special package sits there in your pouch. You think to yourself. What could be inside the package? Why do the Aurelians want this delivered to Eldoria?
+
+//     <<goToScene OutrunGoblin>>
+//     <<wait 2.2>>
+//     <<setBackgroundMusic Combat 0.5>>
+//     <<wait 3>>
+//     <<startChase none>>
+//     <<moveClose true>>
+//     Once again you spot a creature riding a large rat beside you. It's the goblin.
+
+//     Garbanzo: Aren't you happy to see me again?
+
+//     The creature looks more hell bent to get the package from you. It's more prepared this time.
+
+//     //*Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+//     <<jump Outrun_the_goblin>>
+
+// <<elseif $specialPackage is false>>
+//     The special package isn't there. You think to yourself. Where could the package have gone?
+//     <<goToScene OutrunGoblin>>
+//     <<wait 2.2>>
+//     <<setBackgroundMusic Combat 0.5>>
+//     <<wait 3>>
+//     <<startChase none>>
+//     <<moveClose true>>
+//     Once again you spot a creature riding a large rat beside you. It's the goblin.
+    
+//     Garbanzo: Are you looking for this? I can't let you take this to Eldoria. But you've convinced me that humans aren't so bad. I'll help you push back the army of goblins from Eldoria. Just help me get in unnoticed. We need to get there quickly before they find out their offering isn't going to arrive any time soon.
+    
+//     //*Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+//     <<jump Quickly_get_to_Eldoria>>
+// <<endif>>
+
+You're relieved that the special package sits there in your pouch. You think to yourself. What could be inside the package? Why do the Aurelians want this delivered to Eldoria?
+
+<<goToScene OutrunGoblin>>
+<<wait 2.2>>
+<<setBackgroundMusic Combat 0.5>>
+<<wait 3>>
+<<startChase none>>
+<<moveClose true>>
+Once again you spot a creature riding a large rat beside you. It's the goblin.
+
+Garbanzo: Aren't you happy to see me again?
+
+The creature looks more hell bent to get the package from you. It's more prepared this time.
+
+//*Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+<<jump Outrun_the_goblin>>
+===
+
+title: Outrun_the_goblin
+position: 542,-600
+---
+<<moveClose false>>
+<<wait 30>> // Exercise timer
+You zip through the forest on Stormhoof's back. You are much faster than the goblin. A river near by rushes loudly. Stormhoof kicks up a rock and it hits the goblin off it's mount and into the river.
+
+You've outrun the goblin one last time.
+
+<<jump Ride_to_Eldoria>>
+===
+
+title: Ride_to_Eldoria
+position: 1220,-1015
+---
+<<goToScene EldoriaGates>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
+<<wait 3>>
+You ride down the path towards Eldoria. You pass farms and barns as you near the kingdom. Up ahead you can see the walls of Eldoria. The walls look empty. The roads look empty. Seems like no one is here. At least... no humans...
+<<wait 2>>
+
+<<nextPosition none>>
+<<wait 1>>
+<<setBackgroundMusic tension_loop 0.3>>
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+<<enable BearWithGoblins true>>
+<<wait 1>>
+
+You approach the gates of Eldoria. The gate doors swing open and a large bear lumbers from behind the open doors. To your relief, the bear is being held down by several goblins. 
+
+A goblin atop the bear speaks to you.
+
+Bear Goblin: Oi you. What are you doin' 'ere?! You'd better get outa 'ere before my bear eats you alive. Haha.
+
+<<playSoundFrom BearWithGoblins BearGrowl2 0.5>>
+The other goblins laugh too. The bear growls and flails its arms around nearly hitting you. The goblins tighten the restraints around its neck.
+
+// -> Tell them that you're here to make a special delivery.
+//     <<jump Tell_them_that_youre_here_to_make_a_special_delivery>>
+// -> Tell them that you need to get inside.
+//     <<jump Tell_them_that_you_need_to_get_inside>>
+
+<<jump Tell_them_that_youre_here_to_make_a_special_delivery>>
+===
+
+title: Tell_them_that_youre_here_to_make_a_special_delivery
+position: 1713,-1339
+---
+Player: I have a special delivery to make. Let. Me. In.
+
+Bear Goblin: Well well well. This one here makes demands.
+
+The goblin kicks the bear below in an attempt to get it's attention.
+
+<<animate BearGoblinGuard Taunt>>
+Bear Goblin: Oi, bear. Squash this puny 'uman!
+
+The bear slowly walks towards you.
+
+
+// <<if $muscleSpirit is true>>
+//     -> Wrestle the bear with your muscle spirit.
+//         <<jump Wrestle_the_bear_with_your_muscle_spirit>>
+// <<elseif $pattersbyOriginal is true>>
+//     -> Feed the bear the Pattersby Pastry.
+//         <<jump Feed_the_bear_the_Pattersby_Pastry>>
+// <<endif>>
+
+<<jump Feed_the_bear_the_Pattersby_Pastry>>
+===
+
+// title: Tell_them_that_you_need_to_get_inside
+// position: 1663,-696
+// ---
+// Player: I need to get inside it's urget.
+
+// Bear Goblin: If you want in. You 'ave to go frew me. Haha.
+
+// The other goblins laugh. The goblin kicks the bear below in an attempt to get it's attention.
+
+// <<animate BearGoblinGuard Taunt>>
+// Bear Goblin: Oi, bear. Squash this puny human!
+
+// The bear slowly walks towards you.
+
+
+// <<if $muscleSpirit is true>>
+//     -> Wrestle the bear with your muscle spirit.
+//         <<jump Wrestle_the_bear_with_your_muscle_spirit>>
+// <<elseif $pattersbyOriginal is true>>
+//     -> Feed the bear the Pattersby Pastry.
+//         <<jump Feed_the_bear_the_Pattersby_Pastry>>
+// <<endif>>
+// ===
+
+// title: Wrestle_the_bear_with_your_muscle_spirit
+// position: 2171,-901
+// ---
+// You stand your ground as the bear advances towards you. The bear stands on its hind legs and falls forward attempting to crush you underneath its paws.
+
+// A sudden feeling of immense strength possesses you. You feel the power grip your muscles. It's as if you've lost control of your own body's movement. Your arms lift and outstretch towards the bear as if to hold up against its crushing weight.
+
+// The bear falls onto you but you feel nothing. You look up to see the bear above you in the air. You are lifting the bear above your head. The goblins look at you in shock...and fear. The goblins scatter in every direction.
+
+// <<enableDisable BearDefeated BearWithGoblins>>
+// You drop the bear onto the ground. It lies there tired and defeated. 
+
+// <<jump Approach_the_castle_doors>>
+// ===
+
+title: Feed_the_bear_the_Pattersby_Pastry
+position: 2166,-1273
+---
+You pull out from your pack the Pattersby Pastry. You waft the delicious smelling pastry in front of the bear's nose. The bear's eyes follow the movements of the pastry. 
+
+Player: Nothing can resist the temptation of a Pattersby Pastry.
+
+You throw the pastry out towards the forest away from the gates.
+
+<<enable BearWithGoblins false>>
+The bear dashes in the direction the pastry was thrown. The goblins that are still holding onto the restraints are dragged along the dirt path. The others who let go, scatter into the forest.
+
+<<jump Approach_the_castle_doors>> 
+===
+
+title: Approach_the_castle_doors
+position: 2784,-1294
+---
+<<goToScene EldoriaCourtyard>>
+<<wait 2.2>>
+You walk through the gates and towards the inner castle doors. 
+
+<<specificPosition WalkToTheDoors>>
+<<wait 2>>
+You pass a stable full of horses but unlike Granbell there is no stable master tending to them. 
+
+<<enable Stormhoof true>>
+<<rideHorse false>> 
+You leave Stormhoof with the other horses in the stable.
+
+You approach the castle doors. They swing open with ease. 
+
+<<goToScene EldoriaThroneRoom>>
+<<wait 2>>
+You've entered the castle's throne room. The walls are high and are beautifully decorated. It's a shame that the goblins have destroyed much of the structure. Ahead of you there is a goblin wielding an ornamented staff standing next to the throne. However, no one is sitting in the throne. The leader must be somewhere else.
+
+<<specificPosition ThroneRoomSpot>>
+<<wait 2>>
+
+The goblin looks in your direction and points at you.
+
+<<animate GoblinShaman Taunt>>
+Goblin Shaman: Oi, no 'umans allowed in 'ere. So, get out of 'ere before I shoot a lightning bolt frew your face.
+
+// -> Ask where their leader is.
+//     <<jump Ask_where_their_leader_is>>
+// -> Say that you have a special delivery from Granbell.
+//     <<jump Say_that_you_have_a_special_delivery_from_Granbell>>
+
+<<jump Say_that_you_have_a_special_delivery_from_Granbell>>
+===
+
+title: Say_that_you_have_a_special_delivery_from_Granbell
+position: 3123,-1503
+---
+Player: I've got a special delivery from Granbell.
+
+<<animate GoblinShaman Yell>>
+Goblin Shaman: Special...delivery...from...Granbell? What could be coming from that stinkin' human place. Is it a bomb? IT'S A BOMB ISNT IT!!
+
+<<animate GoblinShaman Spin>>
+The goblin starts to wave its staff around in the air. Loud rumbling in the air grows as the goblin twirls the staff. You see lightning flash across the sky from a hole in the roof. You get a sense that the goblin is trying to cast some sort of lightning spell.
+
+Goblin Shaman: I'm going to vaporize you.
+
+You spot a hallway to your right that leads away out of the throne room. If you could distract them somehow you could escape down that hallway.
+
+// <<startTimer 14>>
+// <<if $diamond is true>>
+//     -> Use the diamond to counter the lightning.
+//         <<interrruptTimer none>>
+//         <<jump Use_the_diamond_to_counter_the_lightning>>
+//     -> Run out the way you came in.
+//         <<interrruptTimer none>>
+//         <<jump Run_out_the_way_you_came_in>>
+// <<elseif $animalPendant is true>>
+//     -> Use the animal pendant to summon forest creatures.
+//         <<interrruptTimer none>>
+//         <<jump Use_the_animal_pendant_to_summon_forest_creatures>>
+//     -> Run out the way you came in.
+//         <<interrruptTimer none>>
+//         <<jump Run_out_the_way_you_came_in>>
+// <<elseif $smokeVial is true>>
+//     -> Use the smoke vial to escape.
+//         <<interrruptTimer none>>
+//         <<jump Use_the_smoke_vial_to_escape>>
+//     -> Run out the way you came in.
+//         <<interrruptTimer none>>
+//         <<jump Run_out_the_way_you_came_in>>
+// <<else>>
+//     -> Run out the way you came in.
+//         <<interrruptTimer none>>
+//         <<jump Run_out_the_way_you_came_in>>
+// <<endif>>
+
+<<jump Use_the_smoke_vial_to_escape>>
+===
+
+// title: Ask_where_their_leader_is
+// position: 3103,-994
+// ---
+// Player: I'm here to see your leader. The throne looks empty. I suppose your leader is elsewhere?
+
+// <<animate GoblinShaman Yell>>
+// Goblin Shaman: Why do you want to see our Queen? Are you here to kill her? No loyal goblin is going to let a stinkin' human go anywhere near our Queen.
+
+// <<animate GoblinShaman Spin>>
+// The goblin starts to wave its staff around in the air. Loud rumbling in the air grows as the goblin twirls the staff. You see lightning flash across the sky from a hole in the roof. You get a sense that the goblin is trying to cast some sort of lightning spell.
+
+// Goblin Shaman: I'm going to vaporize you.
+
+// You spot a hallway to your right that leads away out of the throne room. If you could distract them somehow you could escape down that hallway.
+
+//  (Timed)
+// <<startTimer 14>>
+// <<if $diamond is true>>
+//     -> Use the diamond to counter the lightning.
+//         <<interrruptTimer none>>
+//         <<jump Use_the_diamond_to_counter_the_lightning>>
+//     -> Run out the way you came in.
+//         <<interrruptTimer none>>
+//         <<jump Run_out_the_way_you_came_in>>
+// <<elseif $animalPendant is true>>
+//     -> Use the animal pendant to summon forest creatures.
+//         <<interrruptTimer none>>
+//         <<jump Use_the_animal_pendant_to_summon_forest_creatures>>
+//     -> Run out the way you came in.
+//         <<interrruptTimer none>>
+//         <<jump Run_out_the_way_you_came_in>>
+// <<elseif $smokeVial is true>>
+//     -> Use the smoke vial to escape.
+//         <<interrruptTimer none>>
+//         <<jump Use_the_smoke_vial_to_escape>>
+//     -> Run out the way you came in.
+//         <<interrruptTimer none>>
+//         <<jump Run_out_the_way_you_came_in>>
+// <<else>>
+//     -> Run out the way you came in.
+//         <<interrruptTimer none>>
+//         <<jump Run_out_the_way_you_came_in>>
+// <<endif>>
+// ===
+
+// title: Use_the_diamond_to_counter_the_lightning
+// position: 3571,-1688
+// ---
+// You pull out the diamond from your pocket and hold it in front of you.
+
+// The goblin laughs and a streak of lightning crashes through the roof towards the goblin and is then redirected at you. 
+// <<animate GoblinShaman CastSpell>>
+// <<animate GoblinShaman StopSpin>>
+// <<enable GoblinLightningRoof true>>
+// <<wait 0.25>>
+// <<enableDisable GoblinLightningCast GoblinLightningRoof>>
+// <<wait 1>>
+// <<enable GoblinLightningCast false>>
+
+// The lightning hits the diamond with all its energy. The diamond glows a hot blue. The power of the lightning has been absorbed into the diamond. The diamond begins to crack and furiously vibrate. It's going to explode!
+
+// <<animate GoblinShaman Stumble>>
+// You quickly throw the diamond in the direction of the goblin. You watch the shock on the goblin's face as it lands beside them. 
+
+// <<specificPosition RunDownHall>>
+// <<wait 2>>
+// You slip into the hallway beside you. You hear a loud explosion behind you.
+
+// <<setNextNodeName Run_down_the_hall>>
+// <<stop>>
+// //<<jump Run_down_the_hall>>
+// ===
+
+// title: Use_the_animal_pendant_to_summon_forest_creatures
+// position: 3559,-1253
+// ---
+// You don the animal pendant and close your eyes. You hear the laughter of the goblin and the rumbling of the sky. You call upon the forest's aid.
+
+// <<specificPosition ThroneRoomSpot>>
+// <<wait 1>>
+// <<animate GoblinShaman StopSpin>>
+// <<animate GoblinShaman Stumble>>
+// <<wait 1>>
+// Suddenly the laughter turns to screams. You open your eyes to witness the goblin surrounded by birds. The goblin is distracted. Good time to escape. 
+
+// <<specificPosition RunDownHall>>
+// <<wait 2>>
+// You slip into the hallway beside you.
+
+// <<setNextNodeName Run_down_the_hall>>
+// <<stop>>
+// //<<jump Run_down_the_hall>>
+// ===
+
+title: Use_the_smoke_vial_to_escape
+position: 3566,-1454
+---
+You grip the smoke vial in your pocket and throw it on the ground near the goblin casting its spell. 
+
+<<enable Smoke true>>
+A large dense cloud of smoke engulfs the goblin. 
+
+<<animate GoblinShaman StopSpin>>
+<<animate GoblinShaman Stumble>>
+Goblin Shaman: What is this? *cough* *cough* I can't see nuffing. *cough*
+
+The goblin agrily screams and then a sudden bolt of lightning crashes down through the hole in the roof and into the cloud of smoke. 
+<<enable GoblinLightningRoof true>>
+
+<<specificPosition RunDownHall>>
+<<wait 1>>
+<<enable GoblinLightningRoof false>>
+<<animate GoblinShaman Death>>
+<<enable Smoke false>>
+<<wait 1>>
+You quickly run into the hallway to your right.
+
+<<setNextNodeName Run_down_the_hall>>
+<<stop>>
+//<<jump Run_down_the_hall>>
+===
+
+// title: Run_out_the_way_you_came_in
+// position: 3564,-1026
+// ---
+// You couldn't manage to pull out anything useful from your pack. You quickly turn and jump out the castle doors that you once entered with ease.
+
+// <<goToScene EldoriaCourtyardAlt>>
+// <<wait 2>>
+
+// To your dismay, a horde of goblins await you.
+
+// Goblins: Take 'em to the dungeon!!
+
+// <<jump Go_to_the_dungeon>>
+// ===
+
+title: Run_down_the_hall
+position: 4012,-1451
+---
+<<goToScene OgreRoom>>
+<<wait 2>>
+You run down the hallway. It leads you to a large open area with tall stone columns. Some of these stone columns look very damaged. 
+
+<<specificPosition OgreRoomSpot>>
+<<wait 2>>
+Opposite the hallway exit you spot a large wooden door. The door is guarded by a gigantic ogre that is wearing a grease soaked rag.
+
+// -> Ask the ogre what is behind the wooden door.
+//     <<jump Ask_the_ogre_what_is_behind_the_wooden_door>>
+// -> Tell the ogre you have a special delivery.
+//     <<jump Tell_the_ogre_you_have_a_special_delivery>>
+
+<<jump Tell_the_ogre_you_have_a_special_delivery>>
+===
+
+// title: Ask_the_ogre_what_is_behind_the_wooden_door
+// position: 4368,-1314
+// ---
+// Player: Hey! What's behind that big wooden door?
+
+// Ogre: Behind door? Queen. No one allowed in. No human allowed. Me squash human.
+
+// <<animate OgreStanding Squash>>
+// The ogre slaps its hands together in a squishing motion. The ogre moves in your direction.
+
+// You need to somehow get past the ogre and make your final delivery.
+
+// <<startTimer 16>>
+// <<if $dagger is true>>
+//     -> Pull out the obsidian dagger.
+//         <<interrruptTimer none>>
+//         <<jump Pull_out_the_obsidian_dagger>>
+//     -> Wait and see what the ogre does. #timed
+//         <<interrruptTimer none>>
+//         <<jump Wait_and_see_what_the_ogre_does>>
+// <<elseif $axe is true>>
+//     -> Use the axe on the weak columns.
+//         <<interrruptTimer none>>
+//         <<jump Use_the_axe_on_the_weak_columns>>
+//     -> Wait and see what the ogre does. #timed
+//         <<interrruptTimer none>>
+//         <<jump Wait_and_see_what_the_ogre_does>>
+// <<elseif $lantern is true>>
+//     -> Throw the lantern at the ogre.
+//         <<interrruptTimer none>>
+//         <<jump Throw_the_lantern_at_the_ogre>>
+//     -> Wait and see what the ogre does. #timed
+//         <<interrruptTimer none>>
+//         <<jump Wait_and_see_what_the_ogre_does>>
+// <<elseif $assassin is true>>
+//     -> Call for Val's expertise.
+//         <<interrruptTimer none>>
+//         <<jump Call_for_Vals_expertise>>
+//     -> Wait and see what the ogre does. #timed
+//         <<interrruptTimer none>>
+//         <<jump Wait_and_see_what_the_ogre_does>>
+// <<else>>
+//     -> Wait and see what the ogre does. #timed
+//         <<interrruptTimer none>>
+//         <<jump Wait_and_see_what_the_ogre_does>>
+// <<endif>>
+// ===
+
+title: Tell_the_ogre_you_have_a_special_delivery
+position: 4367,-1645
+---
+Player: I have a special delivery for your leader. Where are they?
+
+Ogre: Leader? Queen? Behind door. No one allowed in. No human allowed. Me squash human.
+
+<<animate OgreStanding Squash>>
+The ogre slaps its hands together in a squishing motion. The ogre moves in your direction.
+
+You need to somehow get past the ogre and make your final delivery.
+
+// <<startTimer 16>>
+// <<if $dagger is true>>
+//     -> Pull out the obsidian dagger.
+//         <<interrruptTimer none>>
+//         <<jump Pull_out_the_obsidian_dagger>>
+//     -> Wait and see what the ogre does. #timed
+//         <<interrruptTimer none>>
+//         <<jump Wait_and_see_what_the_ogre_does>>
+// <<elseif $axe is true>>
+//     -> Use the axe on the weak columns.
+//         <<interrruptTimer none>>
+//         <<jump Use_the_axe_on_the_weak_columns>>
+//     -> Wait and see what the ogre does. #timed
+//         <<interrruptTimer none>>
+//         <<jump Wait_and_see_what_the_ogre_does>>
+// <<elseif $lantern is true>>
+//     -> Throw the lantern at the ogre.
+//         <<interrruptTimer none>>
+//         <<jump Throw_the_lantern_at_the_ogre>>
+//     -> Wait and see what the ogre does. #timed
+//         <<interrruptTimer none>>
+//         <<jump Wait_and_see_what_the_ogre_does>>
+// <<elseif $assassin is true>>
+//     -> Call for Val's expertise.
+//         <<interrruptTimer none>>
+//         <<jump Call_for_Vals_expertise>>
+//     -> Wait and see what the ogre does. #timed
+//         <<interrruptTimer none>>
+//         <<jump Wait_and_see_what_the_ogre_does>>
+// <<else>>
+//     -> Wait and see what the ogre does. #timed
+//         <<interrruptTimer none>>
+//         <<jump Wait_and_see_what_the_ogre_does>>
+// <<endif>>
+
+<<jump Pull_out_the_obsidian_dagger>>
+===
+
+title: Pull_out_the_obsidian_dagger
+position: 4838,-1967
+---
+You pull out the obsidian dagger that Leyton gave you. He said it would frighten ogres somehow. Let's hope he wasn't lying. You show the dagger to the ogre.
+
+<<enableDisable OgreToTheSide OgreStanding>>
+<<animate OgreToTheSide Terrified>>
+The ogre looks confused then it takes a moment to register what it is looking at. The ogre shocked and afraid it falls back on its hind quarters and begins to cower in fear. It gets up and runs to hide behind a stone column while continuously maintaining eye contact with the dagger.
+
+Ogre: That's the obsidian dagger of the Ogre Slayer! Stay away from me!
+
+Looks like it worked exactly as Leyton had described. Now's your chance to get to the Queen and finally deliver the special package.
+
+<<specificPosition RunToDoor>>
+<<wait 2>>
+You sprint to the wooden door and push it open. 
+// *The player must pedal hard to push the door open.*
+
+<<setNextNodeName Go_to_the_Queen>>
+<<stop>>
+//<<jump Go_to_the_Queen>>
+===
+
+// title: Use_the_axe_on_the_weak_columns
+// position: 4833,-1787
+// ---
+// You quickly wield the axe in your hands and run to the closest column that looks weak enough to break. You lift the axe above your head and swing it at the column. You aim for the weakest spot in the column.
+
+// The axe ricochet's off the stone as the column begins to rumble and shake. You drop the axe and push the unbalanced column towards the ogre's gigantic form. The ogre lifts its hands in an attempt to stop the force of the column but it fails. 
+
+// <<animate OgreStanding Death>>
+// The ogre is crushed beneath the column. Now's your chance to get to the Queen and finally deliver the special package.
+
+// <<specificPosition RunToDoor>>
+// <<wait 1>>
+// <<enableDisable OgreToTheSide OgreStanding>>
+// <<animate OgreToTheSide Death>>
+// <<wait 1>>
+// You sprint to the wooden door and push it open. 
+// // *The player must pedal hard to push the door open.*
+
+// <<setNextNodeName Go_to_the_Queen>>
+// <<stop>>
+// //<<jump Go_to_the_Queen>>
+// ===
+
+// title: Throw_the_lantern_at_the_ogre
+// position: 4836,-1589
+// ---
+// You recognise that the ogre is wearing filthy greasy rags. If you throw the lantern at the ogre it will ignite the oily rags and distract the ogre.
+
+// You pull the lantern from your pack and reignite it. You wind your arm back readying for a throw. You launch the lantern at the ogre's clothing and it immediately catches fire. 
+
+// <<enableDisable OgreOnFire OgreStanding>>
+// <<animate OgreOnFire OnFire>>
+// The ogre, now in a panicked state, bats at the flames that have engulfed it's gigantic form. The ogre is distracted. Now's your chance to get to the Queen and finally deliver the special package.
+
+// <<specificPosition RunToDoor>>
+// <<wait 1>>
+// <<enableDisable OgreToTheSide OgreOnFire>>
+// <<animate OgreToTheSide Death>>
+// <<wait 1>>
+// You sprint to the wooden door and push it open. 
+// // *The player must pedal hard to push the door open.*
+
+// <<setNextNodeName Go_to_the_Queen>>
+// <<stop>>
+// //<<jump Go_to_the_Queen>>
+// ===
+
+// title: Call_for_Vals_expertise
+// position: 4839,-1390
+// ---
+// You remember you have an ace up your sleeve. You ask Val for help. She said that you can ask her to "take care" of any enemies that I have. Now's a good time to do that. You whisper out for Val's help.
+
+// Player: Val! Help me! Get rid of this ogre!
+
+// <<enable MagicMissile true>>
+// <<wait 1.5>>
+// <<animate OgreStanding Hit>>
+// A sudden burst of magical energy blasts the ogre in the torso. It stumbles a little bit then gathers its strength for an attack on you. 
+
+// <<enable MagicMissile true>>
+// <<enable Smoke true>>
+// <<wait 1.5>>
+// <<animate OgreStanding Hit>>
+// <<enable ValStanding true>>
+// <<wait 1>>
+// <<enable Smoke false>>
+// Then another magical blast apears from the sky and then a halfling appears from a cloud of smoke. The ogre stumbles again.
+
+// Val: My, my, looks like you've got yourself in a bit of a sticky situation?
+
+// <<animate ValStanding PointGesture>>
+// <<enable MagicMissile true>>
+// <<wait 1.5>>
+// <<animate OgreStanding Hit>>
+// Val launches magical spells from her fingers towards the ogre. The ogre is distracted. Now's your chance to get to the Queen and finally deliver the special package.
+
+// <<specificPosition RunToDoor>>
+// <<wait 1>>
+// <<enableDisable OgreToTheSide OgreStanding>>
+// <<animate OgreToTheSide Death>>
+// <<wait 1>>
+// You sprint to the wooden door and push it open. 
+// // *The player must pedal hard to push the door open.*
+
+// <<setNextNodeName Go_to_the_Queen>>
+// <<stop>>
+// //<<jump Go_to_the_Queen>>
+// ===
+
+// title: Wait_and_see_what_the_ogre_does
+// position: 4832,-1181
+// ---
+// You stand there stunned not knowing what to do. 
+
+// <<enableDisable OgreWalking OgreStanding>>
+// <<wait 5>>
+// The ogre lunges to grab you. It succeeds in restraining you. It pulls out a rope and ties it around you. 
+
+// <<specificPosition TiedUp>>
+// <<wait 1>>
+// <<enable GoblinHordeGroup true>>
+// <<wait 1>>
+
+// A wave of goblins flows from the hallway and into the open area.
+
+// Goblins: Take 'em to the dungeon!!
+
+// <<goToScene EldoriaCourtyardAlt>>
+// <<wait 3>>
+
+// <<jump Go_to_the_dungeon>>
+// ===
+
+title: Go_to_the_Queen
+position: 5536,-1687
+---
+<<goToScene TreasureRoom>>
+<<wait 2.2>>
+<<enable GoblinQueenAtTop true>>
+
+Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. Atop the mound of riches lies a large goblin. The goblin wears a robe too big for its stature and dons many rings and necklaces. This must be their leader.
+
+<<jump Tell_them_you_have_a_special_delivery_from_Granbell>>
+===
+
+title: Tell_them_you_have_a_special_delivery_from_Granbell
+position: 6042,-1679
+---
+Player: Are you the goblin leader? I have a special delivery from Granbell just for you.
+
+The goblin looks down at you.
+
+Goblin Queen: A delivery? For meee? From Granbell you say? I hope that the humans there have acknowledged my goblin army as a force to be reckoned with. 
+
+The goblin slides down the hill of treasure and meets you. 
+<<enableDisable GoblinQueenSlideDown GoblinQueenAtTop>>
+<<wait 3>>
+
+It looks you in the eyes as you hand over the package. It's gaze switched to the package now. The goblin takes it from your hands.
+
+The goblin opens the package. The package reveals a magnificent and opulent crown. The crown is adorned with precious materials and gemstones unique to the ones found in the piles of treasure in front of you. The package also contained a note which the goblin reads and ponders for a moment.
+
+Goblin Queen: Ahh. Finally. The humans are seeing us as equals. No longer do they see us as just filthy creatures to be stepped on. They've offered this crown as a means to call a truce in the war.
+
+The goblin wears the crown with glee.
+<<enable Crown true>>
+<<animate GoblinQueenWithPlayer JoyJump>>
+
+Goblin Queen: Fits perfectly. I think its time I had a talk with the humans and settled this whole war between our peoples.
+
+The goblin queen looks to you.
+
+Goblin Queen: Thank you, humble courier, for this delivery. You risked your life to end a very long and arduous war. There has been enough bloodshed. Please, courier, quickly ride back to Granbell and tell them I wish to speak with them.
+
+<<jump Ride_back_to_Granbell>>
+===
+
+title: Ride_back_to_Granbell
+position: 6564,-1718
+---
+// *During this section the player will pedal at a light to moderate intensity to keep Stormhoof moving until the time is up by which point the player would have arrived at the destination.*
+<<goToScene ForestPath>>
+<<wait 2.2>>
+<<setBackgroundMusic forest_loop 0.3>>
+<<rideHorse true>> 
+<<wait 1>>
+
+You ride back to Granbell at a fast pace. On the way back you see the locations that you delivered to and some you don't recognise.
+
+<<goToScene ReturnToGranbell>>
+<<wait 2.2>>
+<<setBackgroundMusic Medieval_City 0.5>>
+<<rideHorse true>> 
+<<wait 1>>
+You reach Granbell and tell Mistress Ellastra about what happened. She notifies the guards and they relay the information back up to the Aurelians.
+
+Word around the town has spread saying that the goblin Queen is coming to Granbell to speak with the Aurelians about ending the war.
+
+<<nextPosition none>>
+<<wait 1>>
+<<rideHorse false>> 
+<<wait 1>>
+
+The goblin Queen arrives at Granbell and all the people of Granbell stare in silence. She rests on the detatched throne of Eldoria, carried on the back of the ogre you fought. They head into the castle. 
+
+After a few hours a guardsman walks into the market center and reads an announcement.
+
+Guard: Listen all! The Aurelians have made an announcement. "We Aurelians have talked with the goblin Queen. We have made a unanimous agreement to end the 50 year war between humans and goblins. Both human and goblin-kind will take time to heal from their wounds as a people, but once all has been done we hope to learn from the past and work towards a brighter future." That is all from the announcement. As you were!
+
+You hear the good news about the end of the war. People around you rejoice and cheer.
+
+Seems like you delivered something that changed your destiny forever.
+
+<<jump The_end>>
+===
+
+title: The_end
+position: 7450,-1678
+---
+<<goToScene EndScene>>
+<<wait 2.2>>
+<<setBackgroundMusic resolution_loop 0.5>>
+
+<<recordVariables none>>
+The end. Thank you for playing.
+===

@@ -70,7 +70,11 @@ public class CrystalBehaviour : MonoBehaviour
             redColored.SetActive(true);
 
             if (!blinkingSound.isPlaying)
+            {
                 blinkingSound.Play();
+                playerView.GetComponent<RecordData>().CountRed();
+            }
+                
             blinkingColour = "red";
         }
         else if (timer > thirdTime && timer < thirdTime * 2) // red, orange

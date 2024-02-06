@@ -17,9 +17,12 @@ public class RecordData : MonoBehaviour
 
     [SerializeField] private float recordDataTime = 5.0f;
     private float timer = 0f;
+
+    private int redCount = 0;
     
     void Awake()
     {
+        dialogueRunner = GetComponent<PlayerViewObjects>().GetDialogueRunner();
         CreatePlayerDataFile();
         CreateStoryDataFile();
         CreateTimedChoiceDataFile();
@@ -108,6 +111,7 @@ public class RecordData : MonoBehaviour
         File.AppendAllText(gameDataFileName, currentNodeString);
     }
 
+    // This function records the time it takes for the player to choose the option they want
     public void RecordTimer(float totalTime)
     {
         // read from dialoguerunner
@@ -117,6 +121,7 @@ public class RecordData : MonoBehaviour
         File.AppendAllText(timedDataFileName, timedChoiceString);
     }
 
+    // This function records the number of obstacles hit during the obstacle game
     public void RecordObstaclesHit(int obstaclesHit)
     {
         // read from dialoguerunner
@@ -126,6 +131,7 @@ public class RecordData : MonoBehaviour
         File.AppendAllText(gameDataFileName, obstaclesString);
     }
 
+    // This function records the variables chosen throughout the game
     public void RecordVariables()
     {
         Dictionary<string, string> stringVariables = dialogueRunner.VariableStorage.GetAllVariables().StringVariables;
@@ -139,6 +145,22 @@ public class RecordData : MonoBehaviour
         
         // read from dialoguerunner
         string currentNodeString = $"String Variables: \n{stringVarString}\n\nBool Variables: \n{boolVarString}\n\nFloat Variables: \n{floatVarString}";
+
+        // write to file
+        File.AppendAllText(gameDataFileName, currentNodeString);
+    }
+
+    // This function adds a count to the numebr of times the player has had the crystals at red
+    public void CountRed()
+    {
+        redCount += 1;
+    }
+
+    // This function records the number of times that the player had the crystals turn red
+    public void RecordRedCount()
+    {
+        // read from dialoguerunner
+        string currentNodeString = $"No. of times player hit red: {redCount}\n";
 
         // write to file
         File.AppendAllText(gameDataFileName, currentNodeString);
