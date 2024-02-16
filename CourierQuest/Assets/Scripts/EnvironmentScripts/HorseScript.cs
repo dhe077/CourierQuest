@@ -20,7 +20,7 @@ public class HorseScript : MonoBehaviour
 
     private void Start()
     {
-        horse = this.transform.GetChild(0).gameObject;
+        horse = this.gameObject;
         horseTransform = horse.transform;
         animator = horse.GetComponent<Animator>();
     }

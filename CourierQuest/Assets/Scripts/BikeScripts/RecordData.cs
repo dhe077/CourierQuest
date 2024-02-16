@@ -20,8 +20,9 @@ public class RecordData : MonoBehaviour
 
     private int redCount = 0;
     
-    void Awake()
+    public void SetUpRecording()
     {
+        Debug.Log("Record");
         dialogueRunner = GetComponent<PlayerViewObjects>().GetDialogueRunner();
         CreatePlayerDataFile();
         CreateStoryDataFile();

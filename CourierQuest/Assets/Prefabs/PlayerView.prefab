@@ -38184,12 +38184,12 @@ GameObject:
   - component: {fileID: 2094318414101331990}
   - component: {fileID: 2094318414101331989}
   - component: {fileID: 2094318414101331988}
+  - component: {fileID: 1249333903}
   - component: {fileID: 9089230329798326716}
   - component: {fileID: 3088808452231683221}
   - component: {fileID: 2094318414101331985}
   - component: {fileID: 2094318414101331986}
   - component: {fileID: 2094318414101331991}
-  - component: {fileID: 1249333903}
   m_Layer: 6
   m_Name: PlayerView
   m_TagString: Player
@@ -38334,11 +38334,11 @@ MonoBehaviour:
   targetRigidbody2D: {fileID: 0}
   targetTransform: {fileID: 2094318414101331987}
   _result:
-    position: {x: 2.033, y: -0.904, z: 3.199}
-    up: {x: 0, y: 1, z: 0}
-    forward: {x: -1.0000001, y: 0, z: -0.00000011920929}
-    color: {r: 1, g: 1, b: 1, a: 1}
-    size: 1
+    position: {x: 0, y: 0, z: 0}
+    up: {x: 0, y: 0, z: 0}
+    forward: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 0}
+    size: 0
     percent: 0
   _finalResult:
     position: {x: 2.033, y: -0.904, z: 3.199}
@@ -38403,6 +38403,21 @@ MonoBehaviour:
   status: -1
   enableBike: 1
   ending: 0
+--- !u!114 &1249333903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094318414101331993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22fde59658737574d8561c3c3dc85e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bikeController: {fileID: 2094318414101331988}
+  dialogueRunner: {fileID: 0}
+  recordDataTime: 5
 --- !u!114 &9089230329798326716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38509,21 +38524,6 @@ MonoBehaviour:
   RecoveryMinutes: 3
   OVRRig: {fileID: 0}
   MainCamera: {fileID: 0}
---- !u!114 &1249333903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094318414101331993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22fde59658737574d8561c3c3dc85e85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bikeController: {fileID: 2094318414101331988}
-  dialogueRunner: {fileID: 0}
-  recordDataTime: 5
 --- !u!1 &2094318414157622727
 GameObject:
   m_ObjectHideFlags: 0
@@ -39734,7 +39734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 664.5, y: -85.599976}
+  m_AnchoredPosition: {x: 664.5, y: -85.600006}
   m_SizeDelta: {x: -1328.9, y: 115.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &4024827757273037015

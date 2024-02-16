@@ -18,6 +18,7 @@ public class PlayerViewObjects : MonoBehaviour
 
     public void Awake()
     {
+        Debug.Log("Objects");
         if (playBranchingStory)
         {
             branchingStoryObject.SetActive(true);
@@ -32,6 +33,7 @@ public class PlayerViewObjects : MonoBehaviour
             storyCommands = nonBranchingStoryObject.GetComponent<StoryCommands>();
             dialogueRunner = nonBranchingStoryObject.GetComponent<DialogueRunner>();
         }
+        GetComponent<RecordData>().SetUpRecording();
     }
 
 
