@@ -15,6 +15,8 @@ public class RecordData : MonoBehaviour
     private string timedDataFileName = Application.streamingAssetsPath + "/GameData/" + "timedChoiceData" + ".txt";
     private string dataString = "";
 
+    public string playerId = "";
+
     [SerializeField] private float recordDataTime = 5.0f;
     private float timer = 0f;
 
@@ -49,12 +51,12 @@ public class RecordData : MonoBehaviour
 
         if (!File.Exists(txtDocumentName))
         {
-            File.WriteAllText(txtDocumentName, "----Player Bike Data----\n");
+            File.WriteAllText(txtDocumentName, $"----Player Bike Data: ID {playerId}----\n");
         }
         else
         {
             File.Delete(txtDocumentName);
-            File.WriteAllText(txtDocumentName, "----Player Bike Data----\n");
+            File.WriteAllText(txtDocumentName, $"----Player Bike Data: ID {playerId}----\n");
         }
     }
 
@@ -66,12 +68,12 @@ public class RecordData : MonoBehaviour
 
         if (!File.Exists(txtDocumentName))
         {
-            File.WriteAllText(txtDocumentName, "----Game Story Data----\n");
+            File.WriteAllText(txtDocumentName, $"----Game Story Data: ID {playerId}----\n");
         }
         else
         {
             File.Delete(txtDocumentName);
-            File.WriteAllText(txtDocumentName, "----Game Story Data----\n");
+            File.WriteAllText(txtDocumentName, $"----Game Story Data: ID {playerId}----\n");
         }
     }
 
@@ -83,12 +85,12 @@ public class RecordData : MonoBehaviour
 
         if (!File.Exists(txtDocumentName))
         {
-            File.WriteAllText(txtDocumentName, "----Timed Choice Data----\n");
+            File.WriteAllText(txtDocumentName, $"----Timed Choice Data: ID {playerId}----\n");
         }
         else
         {
             File.Delete(txtDocumentName);
-            File.WriteAllText(txtDocumentName, "----Timed Choice Data----\n");
+            File.WriteAllText(txtDocumentName, $"----Timed Choice Data: ID {playerId}----\n");
         }
     }
 
