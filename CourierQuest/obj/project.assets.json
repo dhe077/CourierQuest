@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETStandard,Version=v2.1": {}
+    ".NETStandard,Version=v2.1": {
+      "Dreamteck.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Dreamteck.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Dreamteck.Utilities.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Dreamteck.Utilities/1.0.0": {
+      "type": "project",
+      "path": "Dreamteck.Utilities.csproj",
+      "msbuildProject": "Dreamteck.Utilities.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETStandard,Version=v2.1": []
+    ".NETStandard,Version=v2.1": [
+      "Dreamteck.Utilities >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\GGPC\\.nuget\\packages\\": {}
@@ -13,9 +32,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Hands.Samples.VisualizerSample.csproj",
-      "projectName": "Unity.XR.Hands.Samples.VisualizerSample",
-      "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Hands.Samples.VisualizerSample.csproj",
+      "projectUniqueName": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Splines.csproj",
+      "projectName": "Dreamteck.Splines",
+      "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Splines.csproj",
       "packagesPath": "C:\\Users\\GGPC\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\obj\\",
       "projectStyle": "PackageReference",
@@ -31,7 +50,11 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Utilities.csproj": {
+              "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Dreamteck.Utilities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
