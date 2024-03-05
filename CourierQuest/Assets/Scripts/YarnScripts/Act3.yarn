@@ -3635,16 +3635,17 @@ Player: I wish for peace between humans and goblins!
 Dragon: Very well. Your wish is granted.
 
 The dragon disappears into a puff of smoke.
+<<enable Dragon false>>
 
-You look around nothing seems different so far. 
+You look around nothing seems different so far. You make your way back to Granbell.
 
 <<goToScene ReturnToGranbell>>
-<<wait 1>>
+<<wait 2.2>>
 <<setBackgroundMusic Medieval_City 0.5>>
 <<enableDisable GuildhallFuture Guildhall>>
 <<rideHorse true>> 
 <<wait 1>>
-You make your way back to Granbell. At Granbell people are rejoicing and cheering along the streets. You hear them say that the war has ended.
+At Granbell people are rejoicing and cheering along the streets. You hear them say that the war has ended.
 
 People: Finally! The war is over! There is peace across the land! Goblins are no longer a problem!
 
@@ -3701,7 +3702,7 @@ The dragon disappears into a puff of smoke.
 Everything goes dark. 
 
 <<goToScene GranbellEnding>>
-<<wait 1>>
+<<wait 2.2>>
 <<setBackgroundMusic forest_loop 0.3>>
 <<rideHorse false>> 
 <<wait 3>>
@@ -3732,7 +3733,7 @@ The dragon disappears into a puff of smoke.
 Everything goes dark. 
 
 <<goToScene TreasureRoom>>
-<<wait 2>>
+<<wait 2.2>>
 
 You open your eyes. Before you is a mound of golden coins and various treasures all speckled with fine jewellery and gemstones. You wear a robe too big for your stature and you are wearing many rings and necklaces.
 

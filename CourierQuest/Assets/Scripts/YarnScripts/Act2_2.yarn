@@ -182,7 +182,7 @@ Mudbrick: Oh m-my. All the way from Granbell. That m-must have been far.
 <<animate MudbrickStanding Handout>>
 <<wait 1>>
 <<enable ShellOrnament true>>
-He unwraps the package and reveals that what was inside. The package contained a round and smooth shell cover made from various animal hides. 
+He unwraps the package and reveals what was inside. The package contained a round and smooth shell cover made from various animal hides. 
 
 <<animate MudbrickStanding Nod>>
 Mudbrick: W-w-wow! This is the exact ritual sh-sh-shell cover I requested. Thank you! Good timing as well. You've d-d-delivered this to me just in time for our annual ritual.
@@ -200,7 +200,7 @@ Mudbrick: Would you mind helping us lift up our ritual's m-m-monument? Someone o
 <<set $metMudbrick to true>>
 
 
--> Say that you can help. (Exercise Quest)
+-> Say that you can help.
     <<jump Say_that_you_can_help>>
 -> Apologise and say that you need to make more deliveries.
     <<jump Apologise_and_say_that_you_need_to_make_more_deliveries>>
@@ -218,7 +218,7 @@ You go to the statue. The tortoises gather around you. A rope is attatched to St
 
 Mudbrick: Ok courier. Start p-p-pulling the rope.
 
-*Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+*Exercise Quest: The player will need to pedal to complete the quest.*
 
 <<specificPosition LiftStatue>>
 <<prepareExerciseQuest mudbrick>>
@@ -250,7 +250,7 @@ You continue down the path towards your next delivery location.
 
 You sense an evil presence in the air around you.
 
-// *Ignore Exercise Quest: The player will need to exercise to outrun the goblin.*
+*Ignore Exercise Quest: The player will need to pedal to outrun the goblin.*
 <<jump You_spot_the_creature>>
 ===
 
@@ -371,7 +371,7 @@ Player: Hello?! Is anyone here? I have a delivery for Oli!
 You call out again but no response. Then suddenly you hear a rustling in the bushes.
 
 
--> Wait to see what made the noise. (Exercise Quest)
+-> Wait to see what made the noise.
     <<jump Wait_to_see_what_made_the_noise>>
 -> Hide from the noise.
     <<jump Hide_from_the_noise>>
@@ -383,7 +383,7 @@ position: 1491,1144
 As you approach the scorch marks to get a closer look, there is a rustling in the bushes that catches your attention.
 
 
--> Wait to see what made the noise. (Exercise Quest)
+-> Wait to see what made the noise.
     <<jump Wait_to_see_what_made_the_noise>>
 -> Hide from the noise.
     <<jump Hide_from_the_noise>>
@@ -428,7 +428,7 @@ It's headed towards Oli's campsite.
 <<enableDisable MovingIntoCampSlimeGroup BushesSlimeGroup>>
 
 <<startTimer 8>>
--> Jump out and stop the slime. (Exercise Quest)
+-> Jump out and stop the slime.
     <<interrruptTimer none>>
     <<jump Jump_out_and_stop_the_slime>>
 -> Let the slime move towards Oli's camp.
@@ -454,7 +454,7 @@ You wait for its approach. It quickly lurches towards you then it grabs you and 
 
 You need to move as much as you can to get out of the slime!
 
-// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+*Exercise Quest: The player will need to pedal to complete the quest.*
 <<enableDisable ExerciseSlimeGroup AttackingSlimeGroup>>
 <<specificPosition EscapeSlime>>
 <<prepareExerciseQuest oli>>
@@ -471,7 +471,7 @@ You turn to start running from the cube but the slime is too fast and you're gra
 
 You need to move as much as you can to get out of the slime!
 
-// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+*Exercise Quest: The player will need to pedal to complete the quest.*
 <<enableDisable ExerciseSlimeGroup AttackingSlimeGroup>>
 <<specificPosition EscapeSlime>>
 <<prepareExerciseQuest oli>>
@@ -831,7 +831,7 @@ Finn: Here is the magic generator. It'll help in creating all the magic needed f
 
 -> Ask if it's safe.
     <<jump Ask_if_its_safe>>
--> Get into the machine. (Exercise Quest)
+-> Get into the machine.
     <<jump Get_into_the_machine>>
 ===
 
@@ -845,7 +845,7 @@ Finn: Oh, it's *extremely* safe.
 You can sense a feeling of sarcasm in his voice.
 
 
--> Get into the machine. (Exercise Quest)
+-> Get into the machine.
     <<jump Get_into_the_machine>>
 -> Wish him good luck and continue delivering.
     <<jump Wish_him_good_luck_and_continue_delivering>>
@@ -861,7 +861,7 @@ You hop into the contraption. It's surprisingly comfortable.
 Finn: Ok just put your feet in the pedals there and begin pedaling. Are you ready? I'll be casting the spell now.
 <<animate FinnMagicGenerator StartSpell>>
 
-// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+*Exercise Quest: The player will need to pedal to complete the quest.*
 <<prepareExerciseQuest finn>>
 <<wait 2>>
 <<startExerciseQuest finn>>
