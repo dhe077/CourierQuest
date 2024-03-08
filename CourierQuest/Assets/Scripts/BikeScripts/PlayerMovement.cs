@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
         ReadBikeData();
 
         TestControls();
+
+        DetectBike();
     }
 
     void FixedUpdate()
@@ -79,5 +81,13 @@ public class PlayerMovement : MonoBehaviour
             testRPMMod += 10;
         }
             
+    }
+
+    public void DetectBike()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            bikeController.ReinitialiseBike();
+        }
     }
 }

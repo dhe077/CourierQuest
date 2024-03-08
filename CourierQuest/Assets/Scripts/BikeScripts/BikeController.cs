@@ -61,7 +61,7 @@ public class BikeController : MonoBehaviour {
 	//The method to be used for the separate thread that reads the serial port. We're using a side thread because Mono's implementation of Serial is bugged
 	//when it comes to checking if the port has data, so we need the thread to sit there listening for it.
 	void SideThreadStart() {
-		//Debug.Log ("Opening Port");
+		Debug.Log ("Opening Port");
 		port = new SerialPort (PortName, 9600, Parity.None, 8, StopBits.One);
 		try {
 			port.Open();

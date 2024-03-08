@@ -18,7 +18,6 @@ public class PlayerViewObjects : MonoBehaviour
 
     public void Awake()
     {
-        Debug.Log("Objects");
         if (playBranchingStory)
         {
             branchingStoryObject.SetActive(true);

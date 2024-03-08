@@ -24,7 +24,6 @@ public class RecordData : MonoBehaviour
     
     public void SetUpRecording()
     {
-        Debug.Log("Record");
         dialogueRunner = GetComponent<PlayerViewObjects>().GetDialogueRunner();
         CreatePlayerDataFile();
         CreateStoryDataFile();
