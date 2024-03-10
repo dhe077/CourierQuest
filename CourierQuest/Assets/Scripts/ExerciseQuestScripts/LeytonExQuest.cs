@@ -19,7 +19,7 @@ public class LeytonExQuest : MonoBehaviour
     [SerializeField] private float timer = 0;
     private float halfTime;
 
-    [SerializeField] private float rotationSpeed = 30;
+    //[SerializeField] private float rotationSpeed = 30;
 
     public void Update()
     {

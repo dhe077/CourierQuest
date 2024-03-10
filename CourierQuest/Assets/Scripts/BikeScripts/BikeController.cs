@@ -148,7 +148,7 @@ public class BikeController : MonoBehaviour {
 	
 	//Looks at the data in the buffer, picks out the data structures, splits them, and sends them to be read
 	void ProcessDataStructures() {
-		Debug.Log ("Processing Data structures");
+		//Debug.Log ("Processing Data structures");
 		int dataBytesRemaining = bufferIndex - 4; //start, status, checksum, stop
 		int currentDataStructureStartPoint = 2; //skip start and status	
 		bool dataStructuresRemaining = true;
