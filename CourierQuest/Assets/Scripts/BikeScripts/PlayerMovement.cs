@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // Tell the user to slow down
             hitHR100 = false;
+            hitHRMax = false;
         }
     }
 

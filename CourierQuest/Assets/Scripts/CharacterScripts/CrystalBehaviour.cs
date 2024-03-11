@@ -177,13 +177,19 @@ public class CrystalBehaviour : MonoBehaviour
     {
         if (playerView.GetComponent<PlayerMovement>().hitHRMax)
         {
-            HR100Sound.Stop();
-            HRMaxSound.Play();
+            if (!HRMaxSound.isPlaying)
+            {
+                HR100Sound.Stop();
+                HRMaxSound.Play();
+            }
         }
         else if (playerView.GetComponent<PlayerMovement>().hitHR100)
         {
-            HRMaxSound.Stop();
-            HR100Sound.Play();
+            if (!HR100Sound.isPlaying)
+            {
+                HRMaxSound.Stop();
+                HR100Sound.Play();
+            }
         }
         else
         {
