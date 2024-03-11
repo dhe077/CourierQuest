@@ -16,11 +16,18 @@ public class RecordData : MonoBehaviour
     private string dataString = "";
 
     public string playerId = "";
+    public int playerAge = -1;
+    public double playerMaxHR = 0;
 
     [SerializeField] private float recordDataTime = 5.0f;
     private float timer = 0f;
 
     private int redCount = 0;
+
+    public void Start()
+    {
+        playerMaxHR = 208 - (0.7 * playerAge);
+    }
     
     public void SetUpRecording()
     {
@@ -50,7 +57,7 @@ public class RecordData : MonoBehaviour
 
         if (!File.Exists(txtDocumentName))
         {
-            File.WriteAllText(txtDocumentName, $"----Player Bike Data: ID {playerId}----\n");
+            File.WriteAllText(txtDocumentName, $"----Player Bike Data: ID {playerId}, HRmax: {playerAge}----\n");
         }
         else
         {

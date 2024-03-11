@@ -12,6 +12,8 @@ public class CrystalBehaviour : MonoBehaviour
     private string blinkingColour = "green";
     [SerializeField] private float pingPongSpeed = 1.0f;
     public AudioSource blinkingSound;
+    public AudioSource HR100Sound;
+    public AudioSource HRMaxSound;
 
     [Header ("----Objects----")]
     [SerializeField] private GameObject greenColored;
@@ -44,8 +46,10 @@ public class CrystalBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-            ResetTimer();
+        // if (Input.GetKeyDown(KeyCode.T))
+        //     ResetTimer();
+
+        DetectHighHR();
 
         TimerCalculator();
         
@@ -55,6 +59,8 @@ public class CrystalBehaviour : MonoBehaviour
             timer = Mathf.Clamp(timer + Time.deltaTime, 0, maxTime);
         else
             timer = Mathf.Clamp(timer - Time.deltaTime, 0, maxTime);
+
+        
     }
 
     private void TimerCalculator()
@@ -162,8 +168,27 @@ public class CrystalBehaviour : MonoBehaviour
 
     }
 
-    private void ResetTimer()
+    // private void ResetTimer()
+    // {
+    //     timer = maxTime;
+    // }
+
+    private void DetectHighHR()
     {
-        timer = maxTime;
+        if (playerView.GetComponent<PlayerMovement>().hitHRMax)
+        {
+            HR100Sound.Stop();
+            HRMaxSound.Play();
+        }
+        else if (playerView.GetComponent<PlayerMovement>().hitHR100)
+        {
+            HRMaxSound.Stop();
+            HR100Sound.Play();
+        }
+        else
+        {
+            HR100Sound.Stop();
+            HRMaxSound.Stop();
+        }
     }
 }

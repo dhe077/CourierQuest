@@ -7,10 +7,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public SplineFollower splineFollower;
     public BikeController bikeController;
+    public RecordData recordData;
     [SerializeField] private float bikeSpeed = 0.0f;
     [SerializeField] private int bikeRPM = 0;
-    private int bikeHeartRate = 0;
-
+    [SerializeField] private int bikeHeartRate = 0;
+    public bool hitHRMax = false;
+    public bool hitHR100 = false;
     private float moveSpeed = 10.0f;
 
     [SerializeField] private float testSpeedMod = 0;
@@ -40,6 +42,23 @@ public class PlayerMovement : MonoBehaviour
         bikeRPM = bikeController.RPM + testRPMMod;
 
         bikeHeartRate = bikeController.heartRate;
+
+        // Use the maximum hr from the records and trigger an event to notify researcher.
+        if (bikeHeartRate > recordData.playerMaxHR)
+        {
+            // Tell the user to stop pedalling
+            hitHRMax = true;
+        }
+        else if (bikeHeartRate >= 100)
+        {
+            // Tell the user to slow down
+            hitHR100 = true;
+        }
+        else if (bikeHeartRate < 100)
+        {
+            // Tell the user to slow down
+            hitHR100 = false;
+        }
     }
 
     // This function moves the player along the spline.
