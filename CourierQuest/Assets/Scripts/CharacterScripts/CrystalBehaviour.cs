@@ -14,6 +14,7 @@ public class CrystalBehaviour : MonoBehaviour
     public AudioSource blinkingSound;
     public AudioSource HR100Sound;
     public AudioSource HRMaxSound;
+    private int playCount = 3;
 
     [Header ("----Objects----")]
     [SerializeField] private GameObject greenColored;
@@ -185,16 +186,18 @@ public class CrystalBehaviour : MonoBehaviour
         }
         else if (playerView.GetComponent<PlayerMovement>().hitHR100)
         {
-            if (!HR100Sound.isPlaying)
+            if (!HR100Sound.isPlaying && playCount > 0)
             {
                 HRMaxSound.Stop();
                 HR100Sound.Play();
+                playCount -= 1;
             }
         }
         else
         {
             HR100Sound.Stop();
             HRMaxSound.Stop();
+            playCount = 3;
         }
     }
 }
