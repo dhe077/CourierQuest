@@ -12,9 +12,11 @@ public class CrystalBehaviour : MonoBehaviour
     private string blinkingColour = "green";
     [SerializeField] private float pingPongSpeed = 1.0f;
     public AudioSource blinkingSound;
-    public AudioSource HR100Sound;
+    // public AudioSource HR100Sound;
+    //private int playCount = 3;
     public AudioSource HRMaxSound;
-    private int playCount = 3;
+    public GameObject warningTextObject;
+    
 
     [Header ("----Objects----")]
     [SerializeField] private GameObject greenColored;
@@ -176,28 +178,44 @@ public class CrystalBehaviour : MonoBehaviour
 
     private void DetectHighHR()
     {
+        // If player HR reaches MaxHR then tell them to slow down
+        // if (playerView.GetComponent<PlayerMovement>().hitHRMax)
+        // {
+        //     if (!HRMaxSound.isPlaying)
+        //     {
+        //         HR100Sound.Stop();
+        //         HRMaxSound.Play();
+        //     }
+        // }
+        // else if (playerView.GetComponent<PlayerMovement>().hitHR100)
+        // {
+        //     if (!HR100Sound.isPlaying && playCount > 0)
+        //     {
+        //         HRMaxSound.Stop();
+        //         HR100Sound.Play();
+        //         playCount -= 1;
+        //     }
+        // }
+        // else
+        // {
+        //     HR100Sound.Stop();
+        //     HRMaxSound.Stop();
+        //     playCount = 3;
+        // }
+
+        // If player HR reaches MaxHR then tell them to slow down
         if (playerView.GetComponent<PlayerMovement>().hitHRMax)
         {
+            warningTextObject.SetActive(true);
             if (!HRMaxSound.isPlaying)
             {
-                HR100Sound.Stop();
                 HRMaxSound.Play();
-            }
-        }
-        else if (playerView.GetComponent<PlayerMovement>().hitHR100)
-        {
-            if (!HR100Sound.isPlaying && playCount > 0)
-            {
-                HRMaxSound.Stop();
-                HR100Sound.Play();
-                playCount -= 1;
             }
         }
         else
         {
-            HR100Sound.Stop();
+            warningTextObject.SetActive(false);
             HRMaxSound.Stop();
-            playCount = 3;
         }
     }
 }
