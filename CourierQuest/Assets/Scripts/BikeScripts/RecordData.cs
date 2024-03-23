@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Enumeration;
 using UnityEngine;
 using Yarn.Unity;
 
@@ -9,32 +10,34 @@ public class RecordData : MonoBehaviour
 {
     public BikeController bikeController;
     public DialogueRunner dialogueRunner;
-
-    private string bikeDataFileName = Application.streamingAssetsPath + "/BikeData/" + "playerData" + ".txt";
-    private string gameDataFileName = Application.streamingAssetsPath + "/GameData/" + "storyData" + ".txt";
-    private string timedDataFileName = Application.streamingAssetsPath + "/GameData/" + "timedChoiceData" + ".txt";
-    private string dataString = "";
-
     public string playerId = "";
     public int playerAge = -1;
     public double playerMaxHR = 0;
-
     [SerializeField] private float recordDataTime = 5.0f;
     private float timer = 0f;
-
     private int redCount = 0;
-
-    public void Start()
-    {
-        playerMaxHR = 208 - (0.7 * playerAge);
-    }
+    private TextWriter tw;
+    private string bikeDataFilename = "";
+    private string storyDataFilename = "";
     
+    
+    // This function is called in the Awake() of the PlayerViewObjects game objbect
     public void SetUpRecording()
     {
+        Directory.CreateDirectory(Application.streamingAssetsPath + $"/{playerId}_Data/");
+        string dirName = Application.streamingAssetsPath + $"/{playerId}_Data/";
+
         dialogueRunner = GetComponent<PlayerViewObjects>().GetDialogueRunner();
-        CreatePlayerDataFile();
-        CreateStoryDataFile();
-        CreateTimedChoiceDataFile();
+        playerMaxHR = 208 - (0.7 * playerAge);
+        
+        // Set up files
+        // Bike Data
+        bikeDataFilename = CreateDataTextFile(dirName, $"{playerId}_playerData", $"----Player Bike Data: ID {playerId}, HRmax: {playerMaxHR}----\n");
+        CreateCSV(bikeDataFilename + ".csv", "Timestamp, RPM, HR, Speed");
+
+        // Story Data and Timed Data
+        storyDataFilename = CreateDataTextFile(dirName, $"{playerId}_gameData", $"----Game Story Data: ID {playerId}----\n");
+        CreateCSV(storyDataFilename + ".csv", "Timestamp, Node, Time Taken");
     }
 
     // Update is called once per frame
@@ -46,78 +49,61 @@ public class RecordData : MonoBehaviour
             WriteDataString();
             timer = 0f;
         }
-        
     }
 
-    public void CreatePlayerDataFile()
+    public string CreateDataTextFile(string dirName, string fileName, string topLine)
     {
-        Directory.CreateDirectory(Application.streamingAssetsPath + "/BikeData/");
+        string newFilename = dirName + fileName;
 
-        string txtDocumentName = Application.streamingAssetsPath + "/BikeData/" + "playerData" + ".txt";
-
-        if (!File.Exists(txtDocumentName))
+        if (!File.Exists(newFilename))
         {
-            File.WriteAllText(txtDocumentName, $"----Player Bike Data: ID {playerId}, HRmax: {playerAge}----\n");
+            File.WriteAllText(newFilename + ".txt", topLine);
         }
         else
         {
-            File.Delete(txtDocumentName);
-            File.WriteAllText(txtDocumentName, $"----Player Bike Data: ID {playerId}----\n");
+            File.Delete(newFilename + ".txt");
+            File.WriteAllText(newFilename + ".txt", topLine);
         }
-    }
 
-    public void CreateStoryDataFile()
-    {
-        Directory.CreateDirectory(Application.streamingAssetsPath + "/GameData/");
-
-        string txtDocumentName = Application.streamingAssetsPath + "/GameData/" + "storyData" + ".txt";
-
-        if (!File.Exists(txtDocumentName))
-        {
-            File.WriteAllText(txtDocumentName, $"----Game Story Data: ID {playerId}----\n");
-        }
-        else
-        {
-            File.Delete(txtDocumentName);
-            File.WriteAllText(txtDocumentName, $"----Game Story Data: ID {playerId}----\n");
-        }
-    }
-
-    public void CreateTimedChoiceDataFile()
-    {
-        Directory.CreateDirectory(Application.streamingAssetsPath + "/GameData/");
-
-        string txtDocumentName = Application.streamingAssetsPath + "/GameData/" + "timedChoiceData" + ".txt";
-
-        if (!File.Exists(txtDocumentName))
-        {
-            File.WriteAllText(txtDocumentName, $"----Timed Choice Data: ID {playerId}----\n");
-        }
-        else
-        {
-            File.Delete(txtDocumentName);
-            File.WriteAllText(txtDocumentName, $"----Timed Choice Data: ID {playerId}----\n");
-        }
+        return newFilename;
     }
 
     // This function writes the data from the bike controller class into a txt file
     public void WriteDataString()
     {
         // read from bikeController
-        dataString = $"DateTime: {DateTime.Now}, RPM: {bikeController.RPM}, HR: {bikeController.heartRate}, Speed: {bikeController.speed}\n";
+        string dataString = $"DateTime: {DateTime.Now}, RPM: {bikeController.RPM}, HR: {bikeController.heartRate}, Speed: {bikeController.speed}\n";
+        List<string> dataList = new List<string>
+        {
+            $"{DateTime.Now}",
+            $"{bikeController.RPM}",
+            $"{bikeController.heartRate}",
+            $"{bikeController.speed}"
+        };
 
-        // write to file
-        File.AppendAllText(bikeDataFileName, dataString);
+        // write to txt file
+        File.AppendAllText(bikeDataFilename + ".txt", dataString);
+
+        // write to CSV file
+        WriteCSV(bikeDataFilename + ".csv", dataList);
     }
 
-    // This function writes the data from the dialogue runner class into a txt file
+    // This function writes the data from the dialogue runner class into a txt file. (Called within the inspector in DialogueRunner.Events)
     public void WriteStoryDataString()
     {   
         // read from dialoguerunner
         string currentNodeString = $"DateTime: {DateTime.Now}, Current Node: {dialogueRunner.CurrentNodeName}\n";
-        
-        // write to file
-        File.AppendAllText(gameDataFileName, currentNodeString);
+        List<string> dataList = new List<string>
+        {
+            $"{DateTime.Now}",
+            $"{dialogueRunner.CurrentNodeName}"
+        };
+
+        // write to txt file
+        File.AppendAllText(storyDataFilename + ".txt", currentNodeString);
+
+        // write to CSV file
+        WriteCSV(storyDataFilename + ".csv", dataList);
     }
 
     // This function records the time it takes for the player to choose the option they want
@@ -125,9 +111,18 @@ public class RecordData : MonoBehaviour
     {
         // read from dialoguerunner
         string timedChoiceString = $"DateTime: {DateTime.Now}, Current Node: {dialogueRunner.CurrentNodeName}, Timed Choice: {totalTime}\n";
+        List<string> dataList = new List<string>
+        {
+            $"{DateTime.Now}",
+            $"{dialogueRunner.CurrentNodeName}",
+            $"{totalTime}"
+        };
         
         // write to file
-        File.AppendAllText(timedDataFileName, timedChoiceString);
+        File.AppendAllText(storyDataFilename + ".txt", timedChoiceString);
+
+        // write to CSV file
+        WriteCSV(storyDataFilename + ".csv", dataList);
     }
 
     // This function records the number of obstacles hit during the obstacle game
@@ -135,14 +130,16 @@ public class RecordData : MonoBehaviour
     {
         // read from dialoguerunner
         string obstaclesString = $"DateTime: {DateTime.Now}, Current Node: Start_your_journey, Obstacles Hit: {obstaclesHit}\n";
-        
+
         // write to file
-        File.AppendAllText(gameDataFileName, obstaclesString);
+        File.AppendAllText(storyDataFilename + ".txt", obstaclesString);
     }
 
     // This function records the variables chosen throughout the game
     public void RecordVariables()
     {
+        RecordRedCount();
+
         Dictionary<string, string> stringVariables = dialogueRunner.VariableStorage.GetAllVariables().StringVariables;
         string stringVarString = string.Join(Environment.NewLine, stringVariables);
 
@@ -150,13 +147,13 @@ public class RecordData : MonoBehaviour
         string boolVarString = string.Join(Environment.NewLine, boolVariables);
 
         Dictionary<string, float> floatVariables = dialogueRunner.VariableStorage.GetAllVariables().FloatVariables;
-        string floatVarString = string.Join(Environment.NewLine, boolVariables);
+        string floatVarString = string.Join(Environment.NewLine, floatVariables);
         
         // read from dialoguerunner
         string currentNodeString = $"String Variables: \n{stringVarString}\n\nBool Variables: \n{boolVarString}\n\nFloat Variables: \n{floatVarString}";
 
         // write to file
-        File.AppendAllText(gameDataFileName, currentNodeString);
+        File.AppendAllText(storyDataFilename + ".txt", currentNodeString);
     }
 
     // This function adds a count to the numebr of times the player has had the crystals at red
@@ -165,13 +162,38 @@ public class RecordData : MonoBehaviour
         redCount += 1;
     }
 
-    // This function records the number of times that the player had the crystals turn red
+    // This function records the number of times that the player had the crystals turn red.
     public void RecordRedCount()
     {
         // read from dialoguerunner
         string currentNodeString = $"No. of times player hit red: {redCount}\n";
 
         // write to file
-        File.AppendAllText(gameDataFileName, currentNodeString);
+        File.AppendAllText(storyDataFilename + ".txt", currentNodeString);
+    }
+
+    // This function creates a csv file for record keeping.
+    public void CreateCSV(string filename, string columnNames)
+    {  
+        tw = new StreamWriter(filename, false);
+        tw.WriteLine(columnNames);
+        tw.Close();
+    }
+
+    // This function writes a csv file for record keeping.
+    public void WriteCSV(string filename, List<string> dataList)
+    {
+        string dataString = "";
+        for (int i = 0; i < dataList.Count; i++)
+        {
+            if (i == dataList.Count-1)
+                dataString = dataString + $"{dataList[i]}";
+            else
+                dataString = dataString + $"{dataList[i]},";
+        }
+        
+        tw = new StreamWriter(filename, true);
+        tw.WriteLine(dataString);
+        tw.Close();
     }
 }
