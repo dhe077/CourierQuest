@@ -186,7 +186,7 @@ public class PlayerViewManager : MonoBehaviour
 
     private void PlayerViewChangeScene()
     {
-        Debug.Log($"Changing scene: {sceneToChangeTo}");
+        //Debug.Log($"Changing scene: {sceneToChangeTo}");
         StoryCommands storyCommands = playerView.GetComponent<PlayerViewObjects>().GetStoryCommands();
         if (storyCommands.StillRunning() == false && sceneToChangeTo != "")
         {

@@ -19,7 +19,7 @@ public class AnimationManager : MonoBehaviour
         
         if (character != null)
         {
-            Debug.Log($"Play animation: {animationName}");
+            //Debug.Log($"Play animation: {animationName}");
             Animator animator = character.GetComponent<Animator>();
             try
             {
