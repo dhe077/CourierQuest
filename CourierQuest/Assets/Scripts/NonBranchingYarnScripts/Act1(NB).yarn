@@ -35,6 +35,8 @@ position: -156,-57
 <<declare $metVal = false>>
 <<declare $assassin = false>>
 
+Ready to begin your journey? Press continue to start.
+
 The land has been ravaged by the ongoing war between human and goblin civilizations. It's been 50 years. However, recently, the war has escalated. Goblins have been spotted near major human settlements. Rumors abound that their intentions for an imminent assault are gaining momentum.
 
 Where are you in all of this you ask? You are a villager living in the kingdom of Granbell, a large human settlement ruled by the Aurelian royal family. You've had a comfortable life so far, working as a simple courier. Now that the war has escalated, courier jobs have been scarce. You've been taking any job that the courier guildhall provides just to survive.
@@ -619,7 +621,7 @@ The storm above you looks like it's getting worse. The clouds are a darker grey 
 
 You need to make sure you follow the well-trodden path and avoid any obstructions on the path. Any wrong turns or slip-ups will have an impact on your delivery quality and if Mistress Ellastra finds out you'd be sent to the jail house for sure.
 
-Are you ready? Continue when you're ready.
+Move your body left and right to avoid obstacles. Are you ready? Continue when you're ready.
 <<goToScene ObstacleForestRoad>>
 <<wait 2.2>>
 <<setBackgroundMusic HurryLoop 0.5>>

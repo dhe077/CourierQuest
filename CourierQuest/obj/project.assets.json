@@ -1,181 +1,26 @@
 {
   "version": 3,
   "targets": {
-    ".NETStandard,Version=v2.1": {
-      "Dreamteck.Splines/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "Dreamteck.Utilities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Dreamteck.Splines.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dreamteck.Splines.dll": {}
-        }
-      },
-      "Dreamteck.Splines.Editor/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "Dreamteck.Splines": "1.0.0",
-          "Dreamteck.Utilities": "1.0.0",
-          "Dreamteck.Utilities.Editor": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Dreamteck.Splines.Editor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dreamteck.Splines.Editor.dll": {}
-        }
-      },
-      "Dreamteck.Utilities/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Dreamteck.Utilities.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dreamteck.Utilities.dll": {}
-        }
-      },
-      "Dreamteck.Utilities.Editor/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Dreamteck.Utilities.Editor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dreamteck.Utilities.Editor.dll": {}
-        }
-      },
-      "Unity.XR.Hands.Samples.VisualizerSample/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Unity.XR.Hands.Samples.VisualizerSample.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Unity.XR.Hands.Samples.VisualizerSample.dll": {}
-        }
-      },
-      "Unity.XR.Interaction.Toolkit.Samples.Hands/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.Hands.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.Hands.dll": {}
-        }
-      },
-      "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.dll": {}
-        }
-      },
-      "Unity.XR.Interaction.Toolkit.Samples.StarterAssets/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.dll": {}
-        }
-      },
-      "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.dll": {}
-        }
-      }
-    }
+    ".NETStandard,Version=v2.1": {}
   },
-  "libraries": {
-    "Dreamteck.Splines/1.0.0": {
-      "type": "project",
-      "path": "Dreamteck.Splines.csproj",
-      "msbuildProject": "Dreamteck.Splines.csproj"
-    },
-    "Dreamteck.Splines.Editor/1.0.0": {
-      "type": "project",
-      "path": "Dreamteck.Splines.Editor.csproj",
-      "msbuildProject": "Dreamteck.Splines.Editor.csproj"
-    },
-    "Dreamteck.Utilities/1.0.0": {
-      "type": "project",
-      "path": "Dreamteck.Utilities.csproj",
-      "msbuildProject": "Dreamteck.Utilities.csproj"
-    },
-    "Dreamteck.Utilities.Editor/1.0.0": {
-      "type": "project",
-      "path": "Dreamteck.Utilities.Editor.csproj",
-      "msbuildProject": "Dreamteck.Utilities.Editor.csproj"
-    },
-    "Unity.XR.Hands.Samples.VisualizerSample/1.0.0": {
-      "type": "project",
-      "path": "Unity.XR.Hands.Samples.VisualizerSample.csproj",
-      "msbuildProject": "Unity.XR.Hands.Samples.VisualizerSample.csproj"
-    },
-    "Unity.XR.Interaction.Toolkit.Samples.Hands/1.0.0": {
-      "type": "project",
-      "path": "Unity.XR.Interaction.Toolkit.Samples.Hands.csproj",
-      "msbuildProject": "Unity.XR.Interaction.Toolkit.Samples.Hands.csproj"
-    },
-    "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor/1.0.0": {
-      "type": "project",
-      "path": "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj",
-      "msbuildProject": "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj"
-    },
-    "Unity.XR.Interaction.Toolkit.Samples.StarterAssets/1.0.0": {
-      "type": "project",
-      "path": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj",
-      "msbuildProject": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj"
-    },
-    "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor/1.0.0": {
-      "type": "project",
-      "path": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj",
-      "msbuildProject": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETStandard,Version=v2.1": [
-      "Dreamteck.Splines >= 1.0.0",
-      "Dreamteck.Splines.Editor >= 1.0.0",
-      "Dreamteck.Utilities >= 1.0.0",
-      "Dreamteck.Utilities.Editor >= 1.0.0",
-      "Unity.XR.Hands.Samples.VisualizerSample >= 1.0.0",
-      "Unity.XR.Interaction.Toolkit.Samples.Hands >= 1.0.0",
-      "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor >= 1.0.0",
-      "Unity.XR.Interaction.Toolkit.Samples.StarterAssets >= 1.0.0",
-      "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor >= 1.0.0"
-    ]
+    ".NETStandard,Version=v2.1": []
   },
   "packageFolders": {
-    "C:\\Users\\dhe077\\.nuget\\packages\\": {}
+    "C:\\Users\\GGPC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Assembly-CSharp.csproj",
-      "projectName": "Assembly-CSharp",
-      "projectPath": "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Assembly-CSharp.csproj",
-      "packagesPath": "C:\\Users\\dhe077\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\obj\\",
+      "projectUniqueName": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj",
+      "projectName": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets",
+      "projectPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj",
+      "packagesPath": "C:\\Users\\GGPC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\GGPC\\Desktop\\ResearchProject\\ProjectFiles\\CourierQuest\\CourierQuest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dhe077\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\GGPC\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -186,35 +31,7 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {
-            "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Dreamteck.Splines.csproj": {
-              "projectPath": "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Dreamteck.Splines.csproj"
-            },
-            "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Dreamteck.Splines.Editor.csproj": {
-              "projectPath": "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Dreamteck.Splines.Editor.csproj"
-            },
-            "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Dreamteck.Utilities.csproj": {
-              "projectPath": "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Dreamteck.Utilities.csproj"
-            },
-            "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Dreamteck.Utilities.Editor.csproj": {
-              "projectPath": "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Dreamteck.Utilities.Editor.csproj"
-            },
-            "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Unity.XR.Hands.Samples.VisualizerSample.csproj": {
-              "projectPath": "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Unity.XR.Hands.Samples.VisualizerSample.csproj"
-            },
-            "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.Hands.csproj": {
-              "projectPath": "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.Hands.csproj"
-            },
-            "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj": {
-              "projectPath": "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj"
-            },
-            "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj": {
-              "projectPath": "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj"
-            },
-            "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj": {
-              "projectPath": "C:\\Users\\dhe077\\Documents\\ResearchProject\\CourierQuest\\CourierQuest\\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -237,7 +54,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

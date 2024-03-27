@@ -35,9 +35,9 @@ position: -846,-750
 Looking around you see hoof prints leading down the path a little.
 
 <<nextPosition none>>
-// <<wait 2>>
-// You follow the tracks. // Remove
-<<wait 10>>
+<<wait 2>>
+You follow the tracks. // Remove
+<<wait 5>>
 
 <<nextPosition none>>
 <<wait 2>>
@@ -880,7 +880,7 @@ You hop into the contraption. It's surprisingly comfortable.
 Finn: Ok just put your feet in the pedals there and begin pedaling. Are you ready? I'll be casting the spell now.
 <<animate FinnMagicGenerator StartSpell>>
 
-// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+*Exercise Quest: The player will need to pedal to complete the quest.*
 <<prepareExerciseQuest finn>>
 <<wait 2>>
 <<startExerciseQuest finn>>
@@ -1513,7 +1513,7 @@ Leyton: A-a-aaaaachooo!!
 
 Leyton sneezes all over the coals. A hot flame bursts from his face and onto the coals starting the heating process.
 
-// *Exercise Quest: The player will need to pedal to complete the quest. Difficuly may vary depending on the quest.*
+*Exercise Quest: The player will need to pedal to complete the quest.*
 <<prepareExerciseQuest leyton>>
 <<wait 2>>
 <<startExerciseQuest leyton>>
